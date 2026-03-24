@@ -1,0 +1,107 @@
+﻿▲ Next.js 16.2.0 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.6s
+  Running TypeScript ...
+  Finished TypeScript in 3.6s ...
+  Collecting page data using 9 workers ...
+node.exe : Error: 
+Failed to collect 
+configuration for 
+/contacto
+En línea: 1 
+Carácter: 1
++ & "C:\Program Fil
+es\nodejs/node.exe"
+ "C:\Users\USER\App
+Data\Roaming\n ...
++ ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+    + CategoryInfo 
+             : No  
+  tSpecified: (E   
+ rror: Failed t    
+...n for /cont    
+acto:String) [    
+], RemoteExcep    
+tion
+    + FullyQualifi 
+   edErrorId : Na  
+  tiveCommandErr   
+ or
+ 
+    at 
+ignore-listed 
+frames {
+  [cause]: 
+TypeError: c.defaul
+t.createContext is 
+not a function
+      at module 
+evaluation (C:\User
+s\USER\Documents\On
+tour\.next\server\c
+hunks\ssr\_0juiwj~.
+_.js:1:9688)
+      at 
+instantiateModule (
+C:\Users\USER\Docum
+ents\Ontour\.next\s
+erver\chunks\ssr\[t
+urbopack]_runtime.j
+s:853:9)
+      at getOrInsta
+ntiateModuleFromPar
+ent (C:\Users\USER\
+Documents\Ontour\.n
+ext\server\chunks\s
+sr\[turbopack]_runt
+ime.js:877:12)
+      at 
+Context.esmImport 
+[as i] (C:\Users\US
+ER\Documents\Ontour
+\.next\server\chunk
+s\ssr\[turbopack]_r
+untime.js:281:20)
+      at module 
+evaluation (C:\User
+s\USER\Documents\On
+tour\.next\server\c
+hunks\ssr\_0juiwj~.
+_.js:1:22364)
+      at 
+instantiateModule (
+C:\Users\USER\Docum
+ents\Ontour\.next\s
+erver\chunks\ssr\[t
+urbopack]_runtime.j
+s:853:9)
+      at getOrInsta
+ntiateModuleFromPar
+ent (C:\Users\USER\
+Documents\Ontour\.n
+ext\server\chunks\s
+sr\[turbopack]_runt
+ime.js:877:12)
+      at Context.co
+mmonJsRequire [as 
+r] (C:\Users\USER\D
+ocuments\Ontour\.ne
+xt\server\chunks\ss
+r\[turbopack]_runti
+me.js:302:12)
+}
+
+> Build error 
+occurred
+Error: Failed to 
+collect page data 
+for /contacto
+    at 
+ignore-listed 
+frames {
+  type: 'Error'
+}
