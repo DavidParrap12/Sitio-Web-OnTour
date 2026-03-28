@@ -15,12 +15,6 @@ export default async function CircuitoPage({ params }: { params: Promise<{ id: s
 
   if (!circuito) return notFound();
 
-  const formattedPrice = new Intl.NumberFormat("es-CO", {
-    style: "currency",
-    currency: "COP",
-    minimumFractionDigits: 0,
-  }).format(circuito.price);
-
   const whatsappMessage = `Hola, interesad@ en el circuito: ${circuito.name}`;
   const whatsappUrl = `https://wa.me/573000000000?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -53,7 +47,7 @@ export default async function CircuitoPage({ params }: { params: Promise<{ id: s
         <div className="bg-white rounded-2xl shadow-lg p-6 flex items-center justify-between border border-gray-100">
           <div>
             <p className="text-sm text-foreground/60 font-medium">Inversión Desde</p>
-            <p className="text-2xl font-bold text-primary">{formattedPrice === "$ 0" || formattedPrice === "$\xa00" ? "Por Cotizar" : formattedPrice}</p>
+            <p className="text-2xl font-bold text-primary">Por Cotizar</p>
           </div>
           <a
             href={whatsappUrl}
@@ -142,7 +136,7 @@ export default async function CircuitoPage({ params }: { params: Promise<{ id: s
               <div className="border-t pt-6 mb-8 text-center">
                 <p className="text-sm text-foreground/60 mb-2">Precio sugerido por persona</p>
                 <div className="text-4xl font-black text-primary mb-2">
-                  {formattedPrice === "$ 0" || formattedPrice === "$\xa00"  ? "A Cotizar" : formattedPrice}
+                  A Cotizar
                 </div>
                 <p className="text-xs text-foreground/50">Sujeto a cambios y disponibilidad</p>
               </div>

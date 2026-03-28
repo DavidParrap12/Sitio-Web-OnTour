@@ -19,7 +19,7 @@ export default function Nosotros() {
     <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
       {/* Hero Header */}
       <div className="bg-primary text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('/image/on-tour-ofc-centro-2025-scaled.jpg ')" }} />
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('/image/on-tour-ofc-centro-2025-scaled.jpg')" }} />
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">Nuestra Historia</h1>
           <p className="text-xl max-w-2xl mx-auto text-white/90">

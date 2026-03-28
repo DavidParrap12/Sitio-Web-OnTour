@@ -23,7 +23,6 @@ export default function Circuitos() {
               type="circuito"
               title={circuito.name}
               description={circuito.description}
-              price={circuito.price}
               duration={`${circuito.days} Días / ${circuito.nights} Noches`}
               image={circuito.image}
               href={`/circuitos/${circuito.id}`}

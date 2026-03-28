@@ -4,7 +4,6 @@ export interface Circuito {
   description: string;
   days: number;
   nights: number;
-  price: number;
   image: string;
   highlights: string[];
   itinerary: string[];
@@ -17,7 +16,6 @@ export const circuitos: Circuito[] = [
     description: "Un viaje profundo de 9 días descubriendo el corazón de la cultura precolombina, la gastronomía andina, el desierto de La Tatacoa y la historia arqueológica de Bogotá, Tolima y Huila.",
     days: 9,
     nights: 8,
-    price: 0, // Precio no proporcionado, se requerirá consultar
     image: "/image/estatuas-san-agustin-antiguedad-portada.jpg", // Bogota
     highlights: [
       "Monserrate y Museo del Oro",
@@ -44,7 +42,6 @@ export const circuitos: Circuito[] = [
     description: "Un recorrido épico de 13 días por lo mejor de Colombia: desde la vibrante Bogotá hasta el Eje Cafetero, pasando por el Tolima, Honda y Guaduas. Cultura, naturaleza, gastronomía e historia colonial en una sola experiencia.",
     days: 13,
     nights: 12,
-    price: 0,
     image: "/image/makalu-colombia-3631740.jpg", //cocora
     highlights: [
       "City tour en Bogotá con cena en Monserrate",
@@ -80,7 +77,6 @@ export const circuitos: Circuito[] = [
   description: "Un viaje de 8 días por el corazón histórico de Colombia: desde la cosmopolita Bogotá hasta los pueblos patrimonio de Boyacá. Arte, arqueología, termales, lagos y artesanías en una experiencia única por la cuna de la independencia colombiana.",
   days: 8,
   nights: 7,
-  price: 0,
   image: "/image/villa de leyva.jpg",
   highlights: [
     "City tour en Bogotá con cena en Monserrate",
@@ -110,7 +106,6 @@ export const circuitos: Circuito[] = [
   description: "Un recorrido de 14 días por las tres joyas de Colombia: la cosmopolita Bogotá, la innovadora Medellín y la mágica Cartagena de Indias. Historia colonial, cultura paisa, playas del Caribe, arte urbano y experiencias únicas en un solo viaje.",
   days: 14,
   nights: 13,
-  price: 0,
   image: "/image/cuidad-amurallada.jpg",
   highlights: [
     "City tour en Bogotá con cena en Monserrate",
@@ -147,7 +142,6 @@ export const circuitos: Circuito[] = [
   description: "Un recorrido de 12 días por la ruta del café y la historia de Colombia: desde Bogotá hasta el Eje Cafetero pasando por el Tolima, la Ciudad Perdida y Honda Pueblo Patrimonio. Naturaleza, gastronomía, cultura colonial y paisajes andinos en una sola aventura.",
   days: 12,
   nights: 11,
-  price: 0,
   image: "/image/nevado-tolima.jpg",
   highlights: [
     "City tour en Bogotá con cena en Monserrate",

@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function WhatsappButton() {
-  const phoneNumber = "573002322335"; // Placeholder
+  const phoneNumber = "573132322335"; // Placeholder
   const message = "Hola Ontour, me gustaría recibir más información sobre sus paquetes turísticos.";
   const url = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
