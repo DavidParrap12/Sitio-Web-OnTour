@@ -1,0 +1,164 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "dayTrips": "Pasadías",
+    "circuits": "Circuitos",
+    "contact": "Contacto",
+    "quote": "Cotizar viaje",
+    "contactAdvisor": "Contactar Asesor"
+  },
+  "hero": {
+    "tagline": "Descubre el mundo con Ontour",
+    "title1": "Experiencias Inolvidables,",
+    "title2": "Destinos Extraordinarios",
+    "subtitle": "Ofrecemos los mejores pasadías y circuitos turísticos. Tu próxima gran aventura comienza aquí.",
+    "ctaDayTrips": "Ver Pasadías",
+    "ctaCircuits": "Ver Circuitos",
+    "goToImage": "Ir a imagen {n}"
+  },
+  "home": {
+    "whyUs": "¿Por qué viajar con nosotros?",
+    "whyUsSubtitle": "Nos apasiona mostrarte lo mejor de cada destino con el servicio que mereces.",
+    "features": {
+      "safe": { "title": "Viajes Seguros", "desc": "Contamos con todas las pólizas y protocolos para tu tranquilidad." },
+      "routes": { "title": "Rutas Exclusivas", "desc": "Descubre lugares increíbles que no están en las guías tradicionales." },
+      "human": { "title": "Trato Humano", "desc": "Atención personalizada para que tu viaje sea exactamente lo que sueñas." },
+      "support": { "title": "Soporte 24/7", "desc": "Asistencia continua durante todo tu recorrido con nosotros." }
+    },
+    "popularDayTrips": "Pasadías Populares",
+    "popularDayTripsSubtitle": "Escapas de un día para recargar energía",
+    "viewAllDayTrips": "Ver todos los pasadías →",
+    "memorableCircuits": "Circuitos Inolvidables",
+    "memorableCircuitsSubtitle": "Aventuras de varios días para exploradores",
+    "viewAllCircuits": "Ver todos los circuitos →",
+    "ctaTitle": "¿Listo para tu próxima aventura?",
+    "ctaSubtitle": "Contáctanos hoy mismo y recibe una asesoría personalizada para planear tus vacaciones o pasadía soñado.",
+    "ctaButton": "Cotiza con Nosotros"
+  },
+  "about": {
+    "metaTitle": "Quiénes Somos | Ontour",
+    "metaDesc": "Conoce más sobre Ontour, nuestra misión, visión y equipo de expertos en turismo.",
+    "title": "Nuestra Historia",
+    "subtitle": "Somos una empresa con sede en el corazón de los Andes Colombianos comprometidos a enseñar lo mejor del País de la Belleza, somos un equipo de más de 20 Personas en la compañía y nos destacamos por nuestro conocimiento, profesionalismo y cercanía con los pasajeros.",
+    "missionTitle": "Nuestra Misión",
+    "missionText": "Brindar experiencias turísticas excepcionales, promoviendo el desarrollo sostenible de las regiones, el respeto por la cultura local y la máxima satisfacción de nuestros viajeros a través de pasadías y circuitos inolvidables.",
+    "visionTitle": "Experiencias únicas en Colombia",
+    "visionText": "En On Tour DMC Colombia, conectamos a los viajeros con experiencias auténticas y memorables en todo el país. Somos expertos locales, diseñamos y operamos recorridos a la medida con atención personalizada, confianza y un acompañamiento cercano en cada etapa del viaje.",
+    "valuesTitle": "Nuestros Valores",
+    "valuesSubtitle": "Los pilares de cada uno de nuestros viajes.",
+    "values": {
+      "adventure": { "title": "Aventura", "desc": "Buscamos siempre nuevos horizontes." },
+      "community": { "title": "Comunidad", "desc": "Viajar es compartir grandes momentos." },
+      "excellence": { "title": "Excelencia", "desc": "El mejor servicio en cada paso." },
+      "passion": { "title": "Pasión", "desc": "Amamos lo que hacemos." }
+    }
+  },
+  "contact": {
+    "metaTitle": "Contacto | Ontour",
+    "metaDesc": "Ponte en contacto con nosotros para planear tus próximas vacaciones y vivir la mejor experiencia.",
+    "title": "Contáctanos",
+    "subtitle": "Estamos listos para hacer realidad tu próxima aventura. Escríbenos y te responderemos a la brevedad.",
+    "infoTitle": "Información de Contacto",
+    "infoSubtitle": "Llena el formulario y nuestro equipo experto de Ontour se pondrá en contacto contigo para ofrecerte la mejor asesoría turística.",
+    "schedule": "Lunes a Sábado, 8am - 6pm",
+    "support": "Soporte y reservas",
+    "mainOffice": "Sede Principal",
+    "mapTitle": "Encuéntranos en Ibagué"
+  },
+  "contactForm": {
+    "title": "Envíanos un Mensaje",
+    "successTitle": "¡Mensaje Enviado!",
+    "successText": "Gracias por contactarnos. Te responderemos pronto.",
+    "sendAnother": "Enviar otro mensaje",
+    "nameLabel": "Nombre Completo",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "Correo Electrónico",
+    "emailPlaceholder": "tucorreo@ejemplo.com",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "¿En qué te podemos ayudar?",
+    "sending": "Enviando...",
+    "submit": "Enviar Mensaje"
+  },
+  "dayTrips": {
+    "metaTitle": "Pasadías | Ontour",
+    "metaDesc": "Descubre nuestros fantásticos pasadías turísticos repletos de actividades.",
+    "title": "Pasadías y Excursiones",
+    "subtitle": "Explora nuestra selección de planes de un día perfectos para escapar de la rutina."
+  },
+  "circuits": {
+    "metaTitle": "Circuitos Turísticos | Ontour",
+    "metaDesc": "Aventuras de varios días para los exploradores de verdad con Ontour.",
+    "title": "Circuitos de Varios Días",
+    "subtitle": "Sumérgete en unas vacaciones inolvidables descubriendo lo mejor de cada región."
+  },
+  "card": {
+    "colombia": "Colombia",
+    "from": "Desde",
+    "quotePrice": "A Cotizar",
+    "book": "Reservar",
+    "brochure": "Ver Folleto",
+    "whatsappDayTrip": "Hola, me interesa el pasadía: {title}",
+    "whatsappCircuit": "Hola, me interesa el circuito: {title}"
+  },
+  "circuitDetail": {
+    "badge": "Circuito Turístico",
+    "colombia": "Colombia",
+    "investmentFrom": "Inversión Desde",
+    "toQuote": "Por Cotizar",
+    "bookNow": "Reservar Ahora",
+    "tripDescription": "Descripción del Viaje",
+    "youWillEnjoy": "Lo que disfrutarás",
+    "itinerary": "Itinerario Día a Día",
+    "tripSummary": "Resumen del Viaje",
+    "duration": "Duración",
+    "location": "Ubicación",
+    "nationalDest": "Destinos Nacionales",
+    "pricePerPerson": "Precio sugerido por persona",
+    "priceLabel": "A Cotizar",
+    "priceNote": "Sujeto a cambios y disponibilidad",
+    "requestQuote": "Solicitar Cotización Ahora",
+    "daysNights": "{days} Días / {nights} Noches",
+    "whatsappMessage": "Hola, interesad@ en el circuito: {name}"
+  },
+  "pasadiaDetail": {
+    "badge": "Pasadía",
+    "colombia": "Colombia",
+    "activityDesc": "Descripción de la Actividad",
+    "youWillFind": "Lo que encontrarás",
+    "summary": "Resumen",
+    "duration": "Duración",
+    "suggestedPrice": "Precio sugerido",
+    "priceLabel": "A Cotizar",
+    "bookNow": "Reservar Pasadía Ahora",
+    "whatsappMessage": "Hola, interesad@ en el pasadía: {name}"
+  },
+  "footer": {
+    "tagline": "Creamos experiencias inolvidables.",
+    "explore": "Explorar",
+    "home": "Inicio",
+    "about": "Quiénes Somos",
+    "dayTrips": "Pasadías",
+    "circuits": "Circuitos",
+    "legal": "Legal",
+    "terms": "Términos y Condiciones",
+    "privacy": "Política de Privacidad",
+    "tourism": "Registro Nacional de Turismo",
+    "faq": "Preguntas Frecuentes",
+    "contact": "Contáctanos",
+    "rights": "Todos los derechos reservados.",
+    "designed": "Diseñado para inspirar viajeros."
+  },
+  "metadata": {
+    "home": {
+      "title": "Ontour | Pasadías y Circuitos Turísticos",
+      "description": "Explora los mejores destinos, pasadías y circuitos con Ontour. Turismo en Colombia."
+    }
+  },
+  "langSelector": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "English (US)",
+    "en-GB": "English (UK)"
+  }
+}

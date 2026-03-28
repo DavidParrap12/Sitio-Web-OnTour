@@ -1,30 +1,41 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "@/i18n/navigation";
 
-const navLinks = [
-  { name: "Inicio", href: "/" },
-  { name: "Nosotros", href: "/nosotros" },
-  { name: "Pasadías", href: "/pasadias" },
-  { name: "Circuitos", href: "/circuitos" },
-  { name: "Contacto", href: "/contacto" },
+const LOCALES = [
+  { code: "es", flag: "🇨🇴", label: "Español" },
+  { code: "en", flag: "🇺🇸", label: "English (US)" },
+  { code: "en-GB", flag: "🇬🇧", label: "English (UK)" },
 ];
 
 export function Navbar() {
+  const t = useTranslations("nav");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+
+  const navLinks = [
+    { name: t("home"), href: "/" },
+    { name: t("about"), href: "/nosotros" },
+    { name: t("dayTrips"), href: "/pasadias" },
+    { name: t("circuits"), href: "/circuitos" },
+    { name: t("contact"), href: "/contacto" },
+  ];
 
   // Handle scroll effect
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -34,10 +45,28 @@ export function Navbar() {
     setIsOpen(false);
   }, [pathname]);
 
+  // Close lang dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const isHome = pathname === "/";
   const navClass = scrolled
     ? "bg-white/95 backdrop-blur-md shadow-sm py-4 text-foreground"
     : `py-6 ${isHome ? "bg-transparent text-white" : "bg-white text-foreground"}`;
+
+  const currentLocale = LOCALES.find((l) => l.code === locale) ?? LOCALES[0];
+
+  function switchLocale(newLocale: string) {
+    router.replace(pathname, { locale: newLocale });
+    setLangOpen(false);
+  }
 
   return (
     <>
@@ -61,21 +90,30 @@ export function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href || (link.href !== "/" && pathname?.startsWith(link.href));
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname?.startsWith(link.href));
               return (
                 <Link
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
-                  className={`font-medium text-sm lg:text-base relative transition-colors ${isActive
-                      ? (scrolled || !isHome ? "text-primary" : "text-white")
-                      : (scrolled || !isHome ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white")
-                    }`}
+                  className={`font-medium text-sm lg:text-base relative transition-colors ${
+                    isActive
+                      ? scrolled || !isHome
+                        ? "text-primary"
+                        : "text-white"
+                      : scrolled || !isHome
+                      ? "text-foreground/70 hover:text-primary"
+                      : "text-white/80 hover:text-white"
+                  }`}
                 >
                   {link.name}
                   {isActive && (
                     <motion.div
                       layoutId="navbar-indicator"
-                      className={`absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full ${scrolled || !isHome ? "bg-primary" : "bg-white"}`}
+                      className={`absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full ${
+                        scrolled || !isHome ? "bg-primary" : "bg-white"
+                      }`}
                       initial={false}
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
@@ -84,14 +122,63 @@ export function Navbar() {
               );
             })}
 
+            {/* Language Selector */}
+            <div className="relative" ref={langRef}>
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className={`flex items-center gap-1.5 font-medium text-sm transition-colors ${
+                  scrolled || !isHome
+                    ? "text-foreground/70 hover:text-primary"
+                    : "text-white/80 hover:text-white"
+                }`}
+                aria-label="Select language"
+              >
+                <Globe className="w-4 h-4" />
+                <span>{currentLocale.flag}</span>
+                <span className="hidden xl:inline">{currentLocale.code.toUpperCase()}</span>
+                <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              <AnimatePresence>
+                {langOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden min-w-[160px] z-60"
+                  >
+                    {LOCALES.map((loc) => (
+                      <button
+                        key={loc.code}
+                        onClick={() => switchLocale(loc.code)}
+                        className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors hover:bg-gray-50 ${
+                          locale === loc.code
+                            ? "text-primary font-semibold bg-primary/5"
+                            : "text-foreground/80"
+                        }`}
+                      >
+                        <span className="text-base">{loc.flag}</span>
+                        <span>{loc.label}</span>
+                        {locale === loc.code && (
+                          <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />
+                        )}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <Link
               href="/contacto"
-              className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all shadow-sm ${scrolled || !isHome
+              className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all shadow-sm ${
+                scrolled || !isHome
                   ? "bg-accent text-white hover:brightness-90 hover:shadow-md hover:-translate-y-0.5"
                   : "bg-white text-primary hover:bg-gray-50 border border-transparent"
-                }`}
+              }`}
             >
-              Cotizar viaje
+              {t("quote")}
             </Link>
           </div>
 
@@ -121,21 +208,41 @@ export function Navbar() {
                 const isActive = pathname === link.href;
                 return (
                   <Link
-                    key={link.name}
+                    key={link.href}
                     href={link.href}
-                    className={`text-2xl font-bold font-heading ${isActive ? "text-primary" : "text-foreground/80"
-                      }`}
+                    className={`text-2xl font-bold font-heading ${
+                      isActive ? "text-primary" : "text-foreground/80"
+                    }`}
                   >
                     {link.name}
                   </Link>
                 );
               })}
+
+              {/* Mobile Language Switcher */}
+              <div className="flex items-center justify-center gap-3 mt-4">
+                {LOCALES.map((loc) => (
+                  <button
+                    key={loc.code}
+                    onClick={() => switchLocale(loc.code)}
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-all ${
+                      locale === loc.code
+                        ? "bg-primary text-white"
+                        : "bg-gray-100 text-foreground/70 hover:bg-gray-200"
+                    }`}
+                  >
+                    <span>{loc.flag}</span>
+                    <span>{loc.code.toUpperCase()}</span>
+                  </button>
+                ))}
+              </div>
+
               <div className="mt-8 pt-8 border-t border-gray-100 flex flex-col gap-4">
                 <Link
                   href="/contacto"
                   className="bg-accent text-white px-6 py-4 rounded-full font-bold text-lg w-full"
                 >
-                  Contactar Asesor
+                  {t("contactAdvisor")}
                 </Link>
               </div>
             </div>

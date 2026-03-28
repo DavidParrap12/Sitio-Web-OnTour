@@ -2,31 +2,21 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { Compass, Calendar } from "lucide-react";
 
 const slides = [
-  {
-    src: "/image/makalu-colombia-3631740.jpg",
-    alt: "Paisaje montañoso de Colombia",
-  },
-  {
-    src: "/image/cuidad-amurallada.jpg",
-    alt: "Ciudad Amurallada de Cartagena",
-  },
-  {
-    src: "/image/desierto-tatacoa.jpg",
-    alt: "Desierto de la Tatacoa",
-  },
-  {
-    src: "/image/guatape.jpg",
-    alt: "Guatapé",
-  },
+  { src: "/image/makalu-colombia-3631740.jpg", alt: "Paisaje montañoso de Colombia" },
+  { src: "/image/cuidad-amurallada.jpg", alt: "Ciudad Amurallada de Cartagena" },
+  { src: "/image/desierto-tatacoa.jpg", alt: "Desierto de la Tatacoa" },
+  { src: "/image/guatape.jpg", alt: "Guatapé" },
 ];
 
-const INTERVAL = 5000; // ms entre cambios
+const INTERVAL = 5000;
 
 export function Hero() {
+  const t = useTranslations("hero");
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -38,8 +28,8 @@ export function Hero() {
 
   return (
     <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      
-      {/* Slider de imágenes de fondo: todas apiladas, sólo la activa tiene opacity 1 */}
+
+      {/* Background slider */}
       {slides.map((slide, i) => (
         <motion.div
           key={slide.src}
@@ -63,7 +53,7 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide mb-6 uppercase"
         >
-          Descubre el mundo con Ontour
+          {t("tagline")}
         </motion.span>
 
         <motion.h1
@@ -72,9 +62,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 leading-tight"
         >
-          Experiencias Inolvidables,<br />
+          {t("title1")}<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-400">
-            Destinos Extraordinarios
+            {t("title2")}
           </span>
         </motion.h1>
 
@@ -84,7 +74,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light"
         >
-          Ofrecemos los mejores pasadías y circuitos turísticos. Tu próxima gran aventura comienza aquí.
+          {t("subtitle")}
         </motion.p>
 
         <motion.div
@@ -98,24 +88,24 @@ export function Hero() {
             className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:brightness-90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
           >
             <Compass className="w-5 h-5" />
-            Ver Pasadías
+            {t("ctaDayTrips")}
           </Link>
           <Link
             href="/circuitos"
             className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-primary px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
           >
             <Calendar className="w-5 h-5" />
-            Ver Circuitos
+            {t("ctaCircuits")}
           </Link>
         </motion.div>
 
-        {/* Indicadores de slide */}
+        {/* Slide indicators */}
         <div className="flex items-center justify-center gap-2 mt-12">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              aria-label={`Ir a imagen ${i + 1}`}
+              aria-label={t("goToImage", { n: i + 1 })}
               className={`transition-all duration-300 rounded-full ${
                 i === current
                   ? "bg-white w-8 h-2"
@@ -126,7 +116,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Gradiente inferior */}
+      {/* Bottom gradient */}
       <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </div>
   );
