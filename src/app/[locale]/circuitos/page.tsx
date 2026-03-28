@@ -13,6 +13,7 @@ export default async function Circuitos({
   setRequestLocale(locale);
 
   const t = await getTranslations("circuits");
+  const tData = await getTranslations("circuitosData");
 
   return (
     <div className="pt-24 pb-16 min-h-screen bg-white">
@@ -27,8 +28,8 @@ export default async function Circuitos({
             <CardDestino
               key={circuito.id}
               type="circuito"
-              title={circuito.name}
-              description={circuito.description}
+              title={tData(`${circuito.id}.name`)}
+              description={tData(`${circuito.id}.description`)}
               duration={`${circuito.days} / ${circuito.nights}`}
               image={circuito.image}
               href={`/circuitos/${circuito.id}`}

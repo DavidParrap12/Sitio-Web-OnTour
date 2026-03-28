@@ -17,6 +17,8 @@ export default async function Home({
   setRequestLocale(locale);
 
   const t = await getTranslations("home");
+  const tDestinos = await getTranslations("destinosData");
+  const tCircuitos = await getTranslations("circuitosData");
 
   const topPasadias = destinos.slice(0, 3);
   const topCircuitos = circuitos.slice(0, 3);
@@ -88,9 +90,9 @@ export default async function Home({
               <CardDestino
                 key={destino.id}
                 type="pasadia"
-                title={destino.name}
-                description={destino.description}
-                duration={destino.duration}
+                title={tDestinos(`${destino.id}.name`)}
+                description={tDestinos(`${destino.id}.description`)}
+                duration={tDestinos(`${destino.id}.duration`)}
                 image={destino.image}
                 href={`/pasadias/${destino.id}`}
                 brochureUrl={destino.brochureUrl}
@@ -119,8 +121,8 @@ export default async function Home({
               <CardDestino
                 key={circuito.id}
                 type="circuito"
-                title={circuito.name}
-                description={circuito.description}
+                title={tCircuitos(`${circuito.id}.name`)}
+                description={tCircuitos(`${circuito.id}.description`)}
                 duration={circuito.days + " / " + circuito.nights}
                 image={circuito.image}
                 href={`/circuitos/${circuito.id}`}

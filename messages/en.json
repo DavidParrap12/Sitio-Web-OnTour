@@ -160,5 +160,186 @@
     "es": "Español",
     "en": "English (US)",
     "en-GB": "English (UK)"
+  },
+  "circuitosData": {
+    "legado-ancestral-muiscas-pijaos-opitas": {
+      "name": "Muiscas, Pijaos, Opitas – Ancestral Legacy",
+      "description": "A profound 9-day journey discovering the heart of Pre-Columbian culture, Andean gastronomy, the Tatacoa Desert, and the archaeological history of Bogotá, Tolima and Huila.",
+      "highlights": [
+        "Monserrate and the Gold Museum",
+        "Zipaquirá Salt Cathedral",
+        "Prado Reservoir and the Pijaos tribe",
+        "Tatacoa Desert",
+        "San Agustín Archaeological Park"
+      ],
+      "itinerary": [
+        "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to hotel. Free time. Accommodation.",
+        "DAY 2: BOGOTÁ CITY TOUR & MONSERRATE. Panoramic tour of Bogotá's historic center, gastronomic experience in La Candelaria, and ascent to Monserrate by cable car with sunset dinner.",
+        "DAY 3: GOLD MUSEUM & SALT CATHEDRAL. Guided tour of the Muisca legacy at the Gold Museum. Departure to Zipaquirá to taste local cuisine and enter the Salt Cathedral (180 m underground). Return to Bogotá.",
+        "DAY 4: BOGOTÁ – EL ESPINAL – INLAND SEA. Travel to Tolima. Visit the mythological park in El Espinal, tasting of authentic Lechona Tolimense. Boat transfer to Prado Reservoir (4,400 hectares). Bonfire and stargazing.",
+        "DAY 5: PRADO – PIJAOS OF TOLIMA GRANDE. Tour of the reservoir (Enchanted Lagoon, Mohán's Cave, Morgan Island, Love Waterfall). Visit Purificación, Saldaña and Chaparral to meet the Pijao tribe. Transfer to Neiva.",
+        "DAY 6: NEIVA & TATACOA DESERT. Visit Villa Vieja (Paleontological and Artisan Museum). Hike along the Rainbow Trail, Los Hoyos, Valley of Ghosts, and swim in a natural pool. Return to Neiva.",
+        "DAY 7: SAN AGUSTÍN. 5-hour drive to San Agustín. 4-hour tour of the Archaeological Park (Mesitas, Fuente del Lavapatas, Forest of Statues). Eco-tour to El Tablón, La Chaquira and the Magdalena River gorge.",
+        "DAY 8: SALTO DEL MORTIÑO. Visit the 170-m waterfall and cross the Crystal Bridge. Entry to the Alto de los Ídolos archaeological park (burial mounds, monolithic sarcophagi). Lunch and return to Neiva.",
+        "DAY 9: NEIVA – BOGOTÁ. Transfer to Benito Salas Airport for flight to Bogotá. (Option to add an extra night in Bogotá, not included). End of services."
+      ]
+    },
+    "tour-colombia-corazon-andes": {
+      "name": "Heart of the Andes – Complete Colombia",
+      "description": "An epic 13-day tour of the best of Colombia: from vibrant Bogotá to the Coffee Region, through Tolima, Honda and Guaduas. Culture, nature, gastronomy and colonial history in one single experience.",
+      "highlights": [
+        "Bogotá city tour with dinner at Monserrate",
+        "Gold Museum and Zipaquirá Salt Cathedral",
+        "Lechona Tolimense in El Espinal",
+        "Combeima Canyon in Jeep Willys and cable car",
+        "Wax Palm Forest and Cerro Machín Volcano",
+        "Quindío Botanical Garden with over 1,400 butterfly species",
+        "Salento, Cocora Valley and Filandia with 360° panoramic view",
+        "Ascent to Los Nevados National Park at 4,000 m above sea level",
+        "Lost City of San Felipe de Falan (18th century)",
+        "Honda Heritage Town and Magdalena River cruise"
+      ],
+      "itinerary": [
+        "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to chosen hotel. Free time. Accommodation.",
+        "DAY 2: BOGOTÁ CITY TOUR & DINNER AT MONSERRATE. Panoramic tour of Bogotá: historic center, La Candelaria, historic squares and urban art. Ascent to Monserrate (3,152 m) by funicular and/or cable car. Dinner with panoramic city views. Accommodation.",
+        "DAY 3: GOLD MUSEUM & ZIPAQUIRÁ SALT CATHEDRAL. Guided tour of the Gold Museum and Muisca culture heritage. Travel to Zipaquirá: gastronomic experience and entry to the Salt Cathedral, 180 m underground. Return to Bogotá. Accommodation.",
+        "DAY 4: BOGOTÁ – EL ESPINAL – IBAGUÉ, THE MUSICAL CITY. Travel to the Department of Tolima. Gastronomic tour in El Espinal: history and tasting of authentic Lechona Tolimense. Arrival in Ibagué, the Musical City of Colombia. Accommodation.",
+        "DAY 5: IBAGUÉ – COMBEIMA CANYON. Visit to Combeima Canyon, buffer zone of Los Nevados NNP. Jeep Willys tour through Villa Restrepo and Juntas. Cable car over 300 m high. Visit to Finca La Rivera, viewpoints, guided hike and possible sighting of Nevado del Tolima. Endemic birdwatching. Accommodation.",
+        "DAY 6: IBAGUÉ – WAX PALM FOREST – QUINDÍO. Visit to the world's largest Wax Palm Forest in Toche. Jeep Willys tour around the crater of Cerro Machín Volcano (2nd most active in the world): ascent to the dome, sulfur hot springs and fumarole. Transfer to Armenia, Quindío. Accommodation.",
+        "DAY 7: ARMENIA – BOTANICAL GARDEN – PIJAO. Visit to Quindío Botanical Garden: over 1,400 butterfly and bird species and natural trails. Afternoon in Pijao: stroll through the streets, export coffee tasting and live folklore experience. Accommodation.",
+        "DAY 8: SALENTO – COCORA – FILANDIA. Tour of Salento: steep streets, colorful facades and viewpoint. Visit to Cocora Valley by jeep: viewpoints and horseback riding among remnants of the Wax Palm Forest. Afternoon in Filandia: typical coffee at the main square and Colina Iluminada viewpoint with 360° view of the three mountain ranges. Accommodation.",
+        "DAY 9: MANIZALES – LOS NEVADOS NNP – MURILLO. Ascent to Los Nevados NNP: sighting of Nevado del Cumanday, frailejones at 4,000 m, sulfur water springs and Lagunilla River waterfalls. Visit to Murillo, Tolima: colonial history, organic products and El Silencio waterfall. Transfer to Líbano, Tolima. Accommodation.",
+        "DAY 10: LÍBANO – LOST CITY – HONDA. Visit to Armero, Tolima: vestiges of the 1985 tragedy. 7 km jungle hike in San Felipe de Falan to the 18th-century Lost City: colonial gold caves and warehouses connected to Cartagena and Spain. Arrival in Honda. Accommodation.",
+        "DAY 11: HONDA HERITAGE TOWN. Tour of Honda: market square, Las Trampas street, cathedral, bridges and colonial cobblestone streets. Visit to Colombia's first hotel and first pharmacy in the Andes. Cultural afternoon with local graffiti artists and visit to the River Museum. Accommodation.",
+        "DAY 12: HONDA & MAGDALENA RIVER – GUADUAS. River cruise on the Magdalena: fauna, flora and artisanal fishing experience. Afternoon in Guaduas Heritage Town, birthplace of Policarpa Salavarrieta: main square and tour of Colombia's independence history. Accommodation.",
+        "DAY 13: GUADUAS – BOGOTÁ EL DORADO AIRPORT. Breakfast at the hotel. Transfer to El Dorado International Airport according to flight time. Option to add 1 night in Bogotá (not included). End of services."
+      ]
+    },
+    "tour-colombia-boyaca-colonial": {
+      "name": "Colonial Boyacá – History, Culture and Nature",
+      "description": "An 8-day journey through the historic heart of Colombia: from cosmopolitan Bogotá to the heritage towns of Boyacá. Art, archaeology, hot springs, lakes and crafts in a unique experience at the cradle of Colombian independence.",
+      "highlights": [
+        "Bogotá city tour with dinner at Monserrate",
+        "Zipaquirá Salt Cathedral, 180 m underground",
+        "Ceramic workshop with ancestral potters in Ráquira",
+        "Villa de Leyva Heritage Town: fossils, museums and blue pools",
+        "Buggy tour through semi-desert terrain",
+        "Paipa medicinal sulfur hot springs",
+        "Lake Tota: Colombia's largest freshwater lake",
+        "Craft experience in Nobsa: weaving a Ruana with the grandmothers",
+        "Boyacá Bridge, symbol of Colombia's freedom"
+      ],
+      "itinerary": [
+        "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to chosen hotel. Free time. Accommodation.",
+        "DAY 2: BOGOTÁ CITY TOUR & DINNER AT MONSERRATE. Panoramic tour of Bogotá: historic center, La Candelaria, historic squares and urban art. Ascent to Monserrate (3,152 m) by funicular and/or cable car. Dinner with panoramic city views. Accommodation.",
+        "DAY 3: SALT CATHEDRAL – ANCESTRAL RÁQUIRA – VILLA DE LEYVA. Visit to Zipaquirá Salt Cathedral with audio guide, 180 m underground. Afternoon in Ráquira: experience with potters, clay ceramics process and personalized sculpture. Arrival in Villa de Leyva. Accommodation.",
+        "DAY 4: VILLA DE LEYVA HERITAGE & ARCHAEOLOGICAL TOWN. Tour of the colonial city: Fossil Museum (400+ Cretaceous pieces), Chocolate Museum, First Congress House, Casa Museo Antonio Nariño and Nuestra Señora del Rosario Church. Visit to Pozos Azules Lagoon and buggy tour through semi-desert terrain. Accommodation.",
+        "DAY 5: TUNJA – PAIPA HOT SPRINGS. Panoramic city tour of Tunja (Boyacá's capital): Plaza de Bolívar and Cathedral. Arrival in Paipa and evening visit to medicinal sulfur hot springs in the cold highland climate. Accommodation.",
+        "DAY 6: LAKE TOTA & CULTURAL TOUR. Visit to the Lancers Monument with live exhibition. Local dessert tasting in Iza. 1-hour tour of Lake Tota (white sandy beach, Colombia's largest freshwater lake). Visit to Aquitania, world capital of onion. Tibasosa: feijoa cultivation and personalized leather workshop with the community. Return to Paipa. Accommodation.",
+        "DAY 7: NOBSA – BOYACÁ BRIDGE – BOGOTÁ. Craft experience in Nobsa: wool Ruana weaving with the grandmothers and creation of a personalized ruana. Visit to the Boyacá Bridge in Venta Quemada, symbol of Colombia's freedom. Arrival in Bogotá. Accommodation.",
+        "DAY 8: BOGOTÁ – EL DORADO AIRPORT. Breakfast at the hotel. Transfer to El Dorado International Airport according to flight time. Option to add 1 night in Bogotá (not included). End of services."
+      ]
+    },
+    "tour-colombia-tres-ciudades": {
+      "name": "Colombia – Bogotá, Medellín and Cartagena de Indias",
+      "description": "A 14-day journey through Colombia's three jewels: cosmopolitan Bogotá, innovative Medellín and magical Cartagena de Indias. Colonial history, paisa culture, Caribbean beaches, urban art and unique experiences in a single trip.",
+      "highlights": [
+        "Bogotá city tour with dinner at Monserrate",
+        "Gold Museum and Zipaquirá Salt Cathedral",
+        "Welcome dinner in Medellín with live show by Trío América",
+        "Graffitour in Comuna 13 with local guide",
+        "Boat ride and ascent to Piedra del Peñol in Guatapé",
+        "Flower carrier (silletera) experience in Santa Elena and El Picacho viewpoint",
+        "Cartagena city tour: Castillo de San Felipe and La Popa Convent",
+        "Full day at Islas del Rosario by catamaran with snorkeling",
+        "Swim in bioluminescent plankton at Playa Tranquila",
+        "Panoramic tour of Barranquilla and Magdalena River boardwalk"
+      ],
+      "itinerary": [
+        "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to chosen hotel. Free time. Accommodation.",
+        "DAY 2: BOGOTÁ CITY TOUR & DINNER AT MONSERRATE. Panoramic tour of Bogotá: historic center, La Candelaria, historic squares and urban art. Ascent to Monserrate (3,152 m) by funicular and/or cable car. Dinner with panoramic city views. Accommodation.",
+        "DAY 3: GOLD MUSEUM & ZIPAQUIRÁ SALT CATHEDRAL. Guided tour of the Gold Museum and Muisca culture heritage. Travel to Zipaquirá: gastronomic experience and entry to the Salt Cathedral, 180 m underground. Return to Bogotá. Accommodation.",
+        "DAY 4: BOGOTÁ – MEDELLÍN. Transfer to El Dorado Airport and flight to Medellín. Welcome dinner at the city's most iconic venue with live show by Trío América. Night tour of the Laureles neighborhood. Accommodation.",
+        "DAY 5: MEDELLÍN – COMUNA 13 – CITY TOUR – GRAFFITOUR. Visit to Pueblito Paisa, Botero Square, Parque de los Deseos and Parque de los Pies Descalzos. Metro and Metrocable ride to Comuna 13: local guide tour through its escalators, murals and urban art. Accommodation.",
+        "DAY 6: MEDELLÍN – GUATAPÉ & PIEDRA DEL PEÑOL. Tour of the Peñol Town replica. Boat ride across Guatapé Reservoir. Ascent of Piedra del Peñol (700+ steps) with 360° panoramic view. Traditional mountain lunch. Return to Medellín. Accommodation.",
+        "DAY 7: SILLETERA TOUR – EL PICACHO VIEWPOINT – EL POBLADO. Visit to a flower-carrier farm in Santa Elena: silleta making, paisa tradition and mountain lunch. Stop at El Picacho viewpoint. Afternoon in the Provenza area with Medellín's most exclusive restaurants. Accommodation.",
+        "DAY 8: MEDELLÍN – BOTANICAL GARDEN. 2 to 3-hour tour of Medellín's Botanical Garden. Free afternoon and evening. (Optional: El Cielo restaurant, chef Juan Manuel Barrientos – Michelin Star, not included). Accommodation.",
+        "DAY 9: MEDELLÍN – CARTAGENA DE INDIAS. Transfer to the airport and flight to Cartagena. Welcome dinner in the exclusive walled city with a fine dining dish facing the Caribbean Sea. Accommodation.",
+        "DAY 10: CARTAGENA CITY TOUR & CASTILLO DE SAN FELIPE. Tour of Bocagrande, Castillogrande, Clock Tower, Getsemaní and Convention Center. Visit to the Santa Cruz de La Popa Convent (the city's highest point). Entry to Castillo de San Felipe de Barajas and visit to the Blas de Lezo statue. Accommodation.",
+        "DAY 11: ISLAS DEL ROSARIO & BARÚ BY CATAMARAN. Full day by catamaran from Cartagena to the Rosario Islands: snorkeling in reefs, turquoise waters, white sandy beach and seafood rice lunch. Return to Cartagena at 4:00 pm. Accommodation.",
+        "DAY 12: PLAYA TRANQUILA – BIOLUMINESCENT PLANKTON EXPERIENCE. Overland trip to Playa Tranquila via Barú: tropical fruits, local lunch and sunset. At nightfall, swim in blue bioluminescent plankton in the sea. Night return to Cartagena. Accommodation.",
+        "DAY 13: FULL DAY BARRANQUILLA. Panoramic tour of Barranquilla: Puerto Colombia, Lighthouse, Castillo de Salgar, Mallorquín Lagoon, Vía 40, Magdalena River boardwalk and monuments to Shakira, El Tiburón and Joe Arroyo. Tour of Barrio Abajo, the epicenter of Caribbean folklore. Return to Cartagena. Accommodation.",
+        "DAY 14: CARTAGENA – RAFAEL NÚÑEZ AIRPORT. Breakfast at the hotel. Transfer to Rafael Núñez Airport for flight to Bogotá or home country. Option to add 1 night in Bogotá (not included). End of services."
+      ]
+    },
+    "tour-colombia-capitales-rubiaceas": {
+      "name": "Colombia's Coffee Capitals",
+      "description": "A 12-day tour along Colombia's coffee and history route: from Bogotá to the Coffee Region through Tolima, the Lost City and Honda Heritage Town. Nature, gastronomy, colonial culture and Andean landscapes in a single adventure.",
+      "highlights": [
+        "Bogotá city tour with dinner at Monserrate",
+        "Authentic Lechona Tolimense tasting in El Espinal",
+        "Combeima Canyon in Jeep Willys and cable car at 300 m altitude",
+        "Wax Palm Forest and Cerro Machín Volcano (2nd most active in the world)",
+        "Quindío Botanical Garden with over 1,400 butterfly species",
+        "Salento, Cocora Valley and Filandia with views of 4 mountain ranges",
+        "Ascent to Los Nevados NNP with frailejones at 4,000 m above sea level",
+        "Lost City of San Felipe de Falan (18th century)",
+        "Honda Heritage Town and Magdalena River cruise",
+        "Guaduas, birthplace of Policarpa Salavarrieta"
+      ],
+      "itinerary": [
+        "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to chosen hotel. Free time. Accommodation.",
+        "DAY 2: BOGOTÁ CITY TOUR & DINNER AT MONSERRATE. Panoramic tour of Bogotá: historic center, La Candelaria, historic squares and urban art. Ascent to Monserrate (3,152 m) by funicular and/or cable car. Dinner with the best Bogotá view. Accommodation.",
+        "DAY 3: BOGOTÁ – EL ESPINAL – IBAGUÉ, THE MUSICAL CITY. Gastronomic tour in El Espinal: history and tasting of authentic Lechona Tolimense, a culinary secret handed down since the Spanish colonial era. Arrival in Ibagué, the Musical City of Colombia. Accommodation.",
+        "DAY 4: IBAGUÉ – COMBEIMA CANYON. Jeep Willys tour through Villa Restrepo and Juntas. Cable car through Combeima Canyon at over 300 m altitude. Visit to Finca La Rivera, viewpoints, guided hike and possible sighting of Nevado del Tolima. Endemic birdwatching. Accommodation.",
+        "DAY 5: IBAGUÉ – WAX PALM FOREST – QUINDÍO. Visit to the world's largest Wax Palm Forest in Toche. Jeep Willys tour around the crater of Cerro Machín Volcano (2nd most active in the world): ascent to the dome, sulfur hot springs and fumarole. Transfer to Armenia, Quindío. Accommodation.",
+        "DAY 6: ARMENIA – BOTANICAL GARDEN – PIJAO. Visit to Quindío Botanical Garden: over 1,400 butterfly and bird species and natural trails. Afternoon in Pijao: stroll through the streets, export coffee tasting and local folklore experience. Accommodation.",
+        "DAY 7: SALENTO – COCORA – FILANDIA. Tour of Salento: steep streets, colorful facades and viewpoint. Visit to Cocora Valley by jeep: viewpoints and horseback riding among remnants of the Wax Palm Forest and the Quindío Royal Road. Afternoon in Filandia: typical coffee at the main square and viewpoint with views of 4 mountain ranges. Accommodation.",
+        "DAY 8: MANIZALES – LOS NEVADOS NNP – MURILLO. Ascent to Los Nevados NNP: sighting of Nevado del Cumanday, frailejones at 4,000 m, sulfur water springs and Lagunilla River waterfalls. Visit to Murillo, Tolima: colonial history and organic products. Transfer to Líbano, Tolima. Accommodation.",
+        "DAY 9: LÍBANO – LOST CITY – HONDA. Visit to Armero, Tolima: vestiges of the 1985 tragedy. 7 km jungle hike in San Felipe de Falan to the 18th-century Lost City: colonial gold caves and warehouses connected to Cartagena and Spain. Arrival in Honda. Accommodation.",
+        "DAY 10: HONDA HERITAGE TOWN. Tour of Honda: market square, Las Trampas street, church, bridges and colonial cobblestone streets. Visit to Colombia's first hotel and first pharmacy in the Andes. Cultural afternoon with local graffiti artists and the River Museum. Accommodation.",
+        "DAY 11: HONDA & MAGDALENA RIVER – GUADUAS. Magdalena River cruise: fauna, flora and artisanal fishing experience. Afternoon in Guaduas Heritage Town, birthplace of Policarpa Salavarrieta: main square and tour of Colombia's independence history. Accommodation.",
+        "DAY 12: GUADUAS – BOGOTÁ EL DORADO AIRPORT. Breakfast at the hotel. Transfer to El Dorado International Airport according to flight time. End of services."
+      ]
+    }
+  },
+  "destinosData": {
+    "rafting-coello-pasadia": {
+      "name": "Antioquia is Magic – Rafting & Adventure on the Coello River",
+      "description": "Pure adrenaline on the waters of Tolima. Enjoy an unforgettable experience practicing rafting, zip-lining and other extreme sports in Coello, a perfect destination for adventure and nature lovers.",
+      "duration": "Full Day",
+      "highlights": [
+        "Transport included",
+        "Safety equipment",
+        "Professional guides",
+        "Rafting activity",
+        "Assistance insurance"
+      ]
+    },
+    "bogota-tu-casa-pasadia": {
+      "name": "Bogotá, Your Home",
+      "description": "Discover the magic of Bogotá and its surroundings in a day full of history, culture and gastronomy. Explore the impressive Zipaquirá Salt Cathedral, the colonial heritage town of Villa de Leyva and the colorful artisan streets of Ráquira. Complete the experience with a gastronomic tour of the region's most authentic flavors and an unparalleled panoramic view of the Colombian capital.",
+      "duration": "Full Day",
+      "highlights": [
+        "Transport included",
+        "Zipaquirá Salt Cathedral",
+        "Villa de Leyva tour",
+        "Gastronomic tour",
+        "Bogotá panoramic view",
+        "Professional tour guide"
+      ]
+    },
+    "cascada-la-plata-pasadia": {
+      "name": "Tolima, Heart of the Andes – La Plata Waterfall",
+      "description": "Discover one of Ibagué's most impressive natural treasures. Through an ecological hike, immerse yourself in jungle landscapes, rivers and mountains until you reach the majestic La Plata Waterfall. A nature-connecting experience ideal for hiking and adventure lovers.",
+      "duration": "Full Day",
+      "highlights": [
+        "Optional transport",
+        "Ecological guide",
+        "Nature reserve entry",
+        "Hydration included",
+        "Hiking insurance"
+      ]
+    }
   }
 }

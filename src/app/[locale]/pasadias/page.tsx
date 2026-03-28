@@ -13,6 +13,7 @@ export default async function Pasadias({
   setRequestLocale(locale);
 
   const t = await getTranslations("dayTrips");
+  const tData = await getTranslations("destinosData");
 
   return (
     <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
@@ -27,9 +28,9 @@ export default async function Pasadias({
             <CardDestino
               key={destino.id}
               type="pasadia"
-              title={destino.name}
-              description={destino.description}
-              duration={destino.duration}
+              title={tData(`${destino.id}.name`)}
+              description={tData(`${destino.id}.description`)}
+              duration={tData(`${destino.id}.duration`)}
               image={destino.image}
               href={`/pasadias/${destino.id}`}
               brochureUrl={destino.brochureUrl}

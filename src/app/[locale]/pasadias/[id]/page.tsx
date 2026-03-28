@@ -4,7 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { destinos } from "@/data/destinos";
 import { routing } from "@/i18n/routing";
-import { CheckCircle2, Clock, MapPin, Map } from "lucide-react";
+import { CheckCircle2, Clock, MapPin } from "lucide-react";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -21,11 +21,18 @@ export default async function PasadiaPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("pasadiaDetail");
+  const tData = await getTranslations("destinosData");
   const pasadia = destinos.find((d) => d.id === id);
 
   if (!pasadia) return notFound();
 
-  const whatsappMessage = t("whatsappMessage", { name: pasadia.name });
+  // Read translated content from messages
+  const name = tData(`${id}.name`);
+  const description = tData(`${id}.description`);
+  const duration = tData(`${id}.duration`);
+  const highlights = tData.raw(`${id}.highlights`) as string[];
+
+  const whatsappMessage = t("whatsappMessage", { name });
   const whatsappUrl = `https://wa.me/573132322335?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
@@ -33,7 +40,7 @@ export default async function PasadiaPage({
       <div className="relative w-full h-[50vh] min-h-[400px]">
         <Image
           src={pasadia.image}
-          alt={pasadia.name}
+          alt={name}
           fill
           className="object-cover"
           priority
@@ -45,14 +52,14 @@ export default async function PasadiaPage({
               {t("badge")}
             </span>
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4 drop-shadow-md">
-              {pasadia.name}
+              {name}
             </h1>
             <div className="flex items-center justify-center gap-6 text-white/90 font-medium">
               <span className="flex items-center gap-2">
                 <MapPin className="w-5 h-5" /> {t("colombia")}
               </span>
               <span className="flex items-center gap-2">
-                <Clock className="w-5 h-5" /> {pasadia.duration}
+                <Clock className="w-5 h-5" /> {duration}
               </span>
             </div>
           </div>
@@ -68,7 +75,7 @@ export default async function PasadiaPage({
                 {t("activityDesc")}
               </h2>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                {pasadia.description}
+                {description}
               </p>
             </section>
 
@@ -77,7 +84,7 @@ export default async function PasadiaPage({
                 {t("youWillFind")}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {pasadia.highlights.map((highlight, idx) => (
+                {highlights.map((highlight, idx) => (
                   <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                     <CheckCircle2 className="w-6 h-6 text-accent shrink-0" />
                     <span className="text-foreground/80 font-medium">{highlight}</span>
@@ -98,7 +105,7 @@ export default async function PasadiaPage({
                   </div>
                   <div>
                     <p className="text-sm text-foreground/60">{t("duration")}</p>
-                    <p className="font-semibold">{pasadia.duration}</p>
+                    <p className="font-semibold">{duration}</p>
                   </div>
                 </div>
               </div>

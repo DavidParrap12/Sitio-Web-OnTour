@@ -21,11 +21,18 @@ export default async function CircuitoPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("circuitDetail");
+  const tData = await getTranslations("circuitosData");
   const circuito = circuitos.find((c) => c.id === id);
 
   if (!circuito) return notFound();
 
-  const whatsappMessage = t("whatsappMessage", { name: circuito.name });
+  // Read translated content from messages
+  const name = tData(`${id}.name`);
+  const description = tData(`${id}.description`);
+  const highlights = tData.raw(`${id}.highlights`) as string[];
+  const itinerary = tData.raw(`${id}.itinerary`) as string[];
+
+  const whatsappMessage = t("whatsappMessage", { name });
   const whatsappUrl = `https://wa.me/573000000000?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
@@ -33,7 +40,7 @@ export default async function CircuitoPage({
       <div className="relative w-full h-[50vh] min-h-[400px]">
         <Image
           src={circuito.image}
-          alt={circuito.name}
+          alt={name}
           fill
           className="object-cover"
           priority
@@ -45,7 +52,7 @@ export default async function CircuitoPage({
               {t("badge")}
             </span>
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4 drop-shadow-md">
-              {circuito.name}
+              {name}
             </h1>
             <div className="flex items-center justify-center gap-6 text-white/90 font-medium">
               <span className="flex items-center gap-2">
@@ -87,7 +94,7 @@ export default async function CircuitoPage({
                 {t("tripDescription")}
               </h2>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                {circuito.description}
+                {description}
               </p>
             </section>
 
@@ -96,7 +103,7 @@ export default async function CircuitoPage({
                 {t("youWillEnjoy")}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {circuito.highlights.map((highlight, idx) => (
+                {highlights.map((highlight, idx) => (
                   <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                     <CheckCircle2 className="w-6 h-6 text-accent shrink-0" />
                     <span className="text-foreground/80 font-medium">{highlight}</span>
@@ -110,7 +117,7 @@ export default async function CircuitoPage({
                 {t("itinerary")}
               </h2>
               <div className="space-y-6">
-                {circuito.itinerary.map((day, idx) => {
+                {itinerary.map((day, idx) => {
                   const [dayLabel, ...desc] = day.split(":");
                   return (
                     <div key={idx} className="flex gap-4">
@@ -118,7 +125,7 @@ export default async function CircuitoPage({
                         <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">
                           {idx + 1}
                         </div>
-                        {idx !== circuito.itinerary.length - 1 && (
+                        {idx !== itinerary.length - 1 && (
                           <div className="flex-grow w-px bg-primary/20 my-2" />
                         )}
                       </div>
