@@ -15,14 +15,8 @@ export default async function PasadiaPage({ params }: { params: Promise<{ id: st
 
   if (!pasadia) return notFound();
 
-  const formattedPrice = new Intl.NumberFormat("es-CO", {
-    style: "currency",
-    currency: "COP",
-    minimumFractionDigits: 0,
-  }).format(pasadia.price);
-
   const whatsappMessage = `Hola, interesad@ en el pasadía: ${pasadia.name}`;
-  const whatsappUrl = `https://wa.me/573000000000?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/573132322335?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <div className="pt-20 bg-secondary/50 min-h-screen pb-20">
@@ -92,7 +86,7 @@ export default async function PasadiaPage({ params }: { params: Promise<{ id: st
               <div className="border-t pt-6 mb-8 text-center">
                 <p className="text-sm text-foreground/60 mb-2">Precio sugerido</p>
                 <div className="text-4xl font-black text-primary mb-2">
-                  {formattedPrice === "$ 0" || formattedPrice === "$\xa00" ? "A Cotizar" : formattedPrice}
+                  A Cotizar
                 </div>
               </div>
 

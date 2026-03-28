@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 interface CardDestinoProps {
   title: string;
   description: string;
-  price?: number;
   duration: string;
   image: string;
   href: string;
@@ -16,15 +15,10 @@ interface CardDestinoProps {
   brochureUrl?: string;
 }
 
-export function CardDestino({ title, description, price = 0, duration, image, href, type = "pasadia", brochureUrl }: CardDestinoProps) {
-  const formattedPrice = new Intl.NumberFormat("es-CO", {
-    style: "currency",
-    currency: "COP",
-    minimumFractionDigits: 0,
-  }).format(price);
+export function CardDestino({ title, description, duration, image, href, type = "pasadia", brochureUrl }: CardDestinoProps) {
 
   const whatsappMessage = `Hola, me interesa el ${type === "pasadia" ? "pasadía" : "circuito"}: ${title}`;
-  const whatsappUrl = `https://api.whatsapp.com/send/?phone=573002322335&text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://api.whatsapp.com/send/?phone=573132322335&text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <motion.div
@@ -79,7 +73,7 @@ export function CardDestino({ title, description, price = 0, duration, image, hr
         ) : (
           <div>
             <p className="text-xs text-foreground/50 font-medium uppercase tracking-wider mb-0.5">Desde</p>
-            <p className="text-lg font-bold text-primary">{price === 0 ? "A Cotizar" : formattedPrice}</p>
+            <p className="text-lg font-bold text-primary">A Cotizar</p>
           </div>
         )}
         
