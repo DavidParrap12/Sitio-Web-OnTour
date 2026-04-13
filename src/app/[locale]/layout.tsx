@@ -5,10 +5,12 @@ import { getMessages } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
+import "../splash.css";
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsappButton } from "@/components/WhatsappButton";
+import { SplashScreen } from "@/components/SplashScreen";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -71,6 +73,7 @@ export default async function LocaleLayout({
     >
       <body className="font-sans min-h-full flex flex-col bg-background text-foreground">
         <NextIntlClientProvider messages={messages}>
+          <SplashScreen />
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />

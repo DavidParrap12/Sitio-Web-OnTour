@@ -92,6 +92,21 @@
     "title": "Multi-Day Circuits",
     "subtitle": "Immerse yourself in unforgettable holidays discovering the best of each region."
   },
+  "bookingForm": {
+    "title": "When do we leave?",
+    "departureDate": "Departure date",
+    "guestsRooms": "Guests & rooms",
+    "rooms": "Rooms",
+    "room": "Room",
+    "adults": "Adults",
+    "children": "Children",
+    "cta": "Let's go!",
+    "selectedDate": "Selected date",
+    "flexibleDates": "Over 4 guests! You can choose any available date",
+    "fixedDateHint": "Highlighted dates are the scheduled departures for each month",
+    "whatsappIntro": "Hello! I'd like to book a trip with the following details:",
+    "whatsappOutro": "Could you send me more information and availability? Thank you!"
+  },
   "card": {
     "colombia": "Colombia",
     "from": "From",
@@ -119,7 +134,10 @@
     "priceNote": "Subject to change and availability",
     "requestQuote": "Request a Quote Now",
     "daysNights": "{days} Days / {nights} Nights",
-    "whatsappMessage": "Hello, I'm interested in the circuit: {name}"
+    "whatsappMessage": "Hello, I'm interested in the circuit: {name}",
+    "galleryClose": "Close",
+    "galleryPhotoOf": "Photo __n__ of __total__",
+    "galleryClickToEnlarge": "Click to enlarge image"
   },
   "pasadiaDetail": {
     "badge": "Day Trip",
@@ -158,8 +176,9 @@
   "langSelector": {
     "label": "Language",
     "es": "Español",
-    "en": "English (US)",
-    "en-GB": "English (UK)"
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français"
   },
   "circuitosData": {
     "legado-ancestral-muiscas-pijaos-opitas": {

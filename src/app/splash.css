@@ -1,0 +1,344 @@
+/* ============================================
+   OnTour Splash Screen — Avianca-style loader
+   Bus ON the road + smooth CSS-driven movement
+   ============================================ */
+
+/* Fullscreen overlay */
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.splash-fade-out {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+/* Animated gradient background */
+.splash-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    #0a3566 0%,
+    #0d4a8a 25%,
+    #1c7ed6 50%,
+    #38a3f1 75%,
+    #87ceeb 100%
+  );
+  background-size: 400% 400%;
+  animation: splashGradient 4s ease infinite;
+}
+
+@keyframes splashGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* =====================
+   LANDSCAPE SCENE
+   ===================== */
+.splash-scene {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  min-height: 280px;
+  pointer-events: none;
+}
+
+.splash-landscape {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =====================
+   BUS — CSS ANIMATION
+   Moves from left to right across the SVG
+   ===================== */
+.splash-bus-group {
+  animation: busTravel 3.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards,
+             busBounce 0.35s ease-in-out infinite;
+}
+
+/* Travel from offscreen-left to ~80% across the road */
+@keyframes busTravel {
+  0% {
+    transform: translateX(-150px);
+  }
+  5% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(1200px);
+  }
+}
+
+/* Subtle vertical bounce — simulates road vibration */
+@keyframes busBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Wheel spinning */
+.splash-wheel-left,
+.splash-wheel-right {
+  transform-origin: center;
+  animation: wheelSpin 0.4s linear infinite;
+}
+
+.splash-wheel-left {
+  transform-origin: 35px 443px;
+}
+.splash-wheel-right {
+  transform-origin: 90px 443px;
+}
+
+@keyframes wheelSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Headlight pulsing */
+.splash-headlight {
+  animation: headlightPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes headlightPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+/* SVG Smoke particles */
+.smoke-svg {
+  animation: smokeSvgRise 1s ease-out infinite;
+}
+
+.smoke-svg-1 { animation-delay: 0s; }
+.smoke-svg-2 { animation-delay: 0.33s; }
+.smoke-svg-3 { animation-delay: 0.66s; }
+
+@keyframes smokeSvgRise {
+  0% {
+    opacity: 0.5;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-25px, -20px) scale(2);
+  }
+}
+
+/* Road line animation — dashes moving backwards for motion effect */
+.splash-road-line {
+  animation: roadDash 0.8s linear infinite;
+}
+
+@keyframes roadDash {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -86; }
+}
+
+/* =====================
+   CENTER CONTENT
+   ===================== */
+.splash-content {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18vh;
+}
+
+.splash-logo-container {
+  animation: logoAppear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes logoAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.splash-logo {
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+  width: auto;
+  height: auto;
+}
+
+.splash-tagline {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  animation: taglineFade 1.2s 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes taglineFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    letter-spacing: 0.6em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.25em;
+  }
+}
+
+/* Progress bar — pure CSS animation (no JS needed) */
+.splash-progress-track {
+  width: 220px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 2rem;
+  backdrop-filter: blur(4px);
+}
+
+.splash-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b, #fbbf24);
+  background-size: 200% 100%;
+  border-radius: 999px;
+  animation: progressGrow 3.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards,
+             progressShine 1.5s ease-in-out infinite;
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+}
+
+@keyframes progressGrow {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes progressShine {
+  0%, 100% { background-position: 200% 0; }
+  50% { background-position: 0% 0; }
+}
+
+/* =====================
+   FLOATING ICONS
+   ===================== */
+.splash-floating {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.splash-float-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0;
+  animation: floatUp 4s ease-in-out infinite;
+}
+
+.float-1 {
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+  font-size: 1.8rem;
+}
+.float-2 {
+  right: 15%;
+  top: 30%;
+  animation-delay: 0.8s;
+}
+.float-3 {
+  left: 25%;
+  top: 15%;
+  animation-delay: 1.6s;
+}
+.float-4 {
+  right: 30%;
+  top: 10%;
+  animation-delay: 2.4s;
+  font-size: 2rem;
+}
+.float-5 {
+  left: 60%;
+  top: 25%;
+  animation-delay: 3.2s;
+  font-size: 1.6rem;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.5);
+  }
+  20% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) scale(1.2);
+  }
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media (max-width: 768px) {
+  .splash-logo {
+    max-width: 140px;
+  }
+
+  .splash-tagline {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+  }
+
+  .splash-progress-track {
+    width: 160px;
+  }
+
+  .splash-content {
+    margin-bottom: 22vh;
+  }
+
+  .splash-float-icon {
+    font-size: 1.2rem;
+  }
+
+  .float-1 { font-size: 1.4rem; }
+  .float-4 { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .splash-content {
+    margin-bottom: 25vh;
+  }
+}

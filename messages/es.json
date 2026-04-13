@@ -92,6 +92,21 @@
     "title": "Circuitos de Varios Días",
     "subtitle": "Sumérgete en unas vacaciones inolvidables descubriendo lo mejor de cada región."
   },
+  "bookingForm": {
+    "title": "¿Y cuándo salimos?",
+    "departureDate": "Fecha de salida",
+    "guestsRooms": "Huéspedes y habitaciones",
+    "rooms": "Habitaciones",
+    "room": "Hab.",
+    "adults": "Adultos",
+    "children": "Niños",
+    "cta": "¡Pues vámonos!",
+    "selectedDate": "Fecha seleccionada",
+    "flexibleDates": "¡Más de 4 personas! Puedes elegir cualquier fecha disponible",
+    "fixedDateHint": "Las fechas resaltadas son las salidas programadas del mes",
+    "whatsappIntro": "¡Hola! Quiero reservar un viaje con los siguientes datos:",
+    "whatsappOutro": "¿Me pueden enviar más información y disponibilidad? ¡Gracias!"
+  },
   "card": {
     "colombia": "Colombia",
     "from": "Desde",
@@ -119,7 +134,10 @@
     "priceNote": "Sujeto a cambios y disponibilidad",
     "requestQuote": "Solicitar Cotización Ahora",
     "daysNights": "{days} Días / {nights} Noches",
-    "whatsappMessage": "Hola, interesad@ en el circuito: {name}"
+    "whatsappMessage": "Hola, interesad@ en el circuito: {name}",
+    "galleryClose": "Cerrar",
+    "galleryPhotoOf": "Foto __n__ de __total__",
+    "galleryClickToEnlarge": "Clic para ampliar imagen"
   },
   "pasadiaDetail": {
     "badge": "Pasadía",
@@ -158,8 +176,9 @@
   "langSelector": {
     "label": "Idioma",
     "es": "Español",
-    "en": "English (US)",
-    "en-GB": "English (UK)"
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français"
   },
   "circuitosData": {
     "legado-ancestral-muiscas-pijaos-opitas": {

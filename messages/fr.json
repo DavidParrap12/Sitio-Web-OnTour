@@ -1,0 +1,364 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "dayTrips": "Excursions",
+    "circuits": "Circuits",
+    "contact": "Contact",
+    "quote": "Demander un devis",
+    "contactAdvisor": "Contacter un conseiller"
+  },
+  "hero": {
+    "tagline": "Découvrez le monde avec Ontour",
+    "title1": "Expériences inoubliables,",
+    "title2": "Destinations extraordinaires",
+    "subtitle": "Nous proposons les meilleures excursions et circuits touristiques. Votre prochaine grande aventure commence ici.",
+    "ctaDayTrips": "Voir les excursions",
+    "ctaCircuits": "Voir les circuits",
+    "goToImage": "Aller à l'image {n}"
+  },
+  "home": {
+    "whyUs": "Pourquoi voyager avec nous ?",
+    "whyUsSubtitle": "Nous vous montrons avec passion le meilleur de chaque destination avec le service que vous méritez.",
+    "features": {
+      "safe": { "title": "Voyages sûrs", "desc": "Nous disposons de toutes les polices et protocoles pour votre tranquillité d'esprit." },
+      "routes": { "title": "Itinéraires exclusifs", "desc": "Découvrez des lieux incroyables absents des guides touristiques traditionnels." },
+      "human": { "title": "Service personnalisé", "desc": "Une attention sur mesure pour que votre voyage corresponde exactement à vos rêves." },
+      "support": { "title": "Assistance 24h/24", "desc": "Un accompagnement continu tout au long de votre voyage avec nous." }
+    },
+    "popularDayTrips": "Excursions populaires",
+    "popularDayTripsSubtitle": "Escapades d'une journée pour recharger vos batteries",
+    "viewAllDayTrips": "Voir toutes les excursions →",
+    "memorableCircuits": "Circuits inoubliables",
+    "memorableCircuitsSubtitle": "Aventures de plusieurs jours pour les explorateurs",
+    "viewAllCircuits": "Voir tous les circuits →",
+    "ctaTitle": "Prêt pour votre prochaine aventure ?",
+    "ctaSubtitle": "Contactez-nous dès aujourd'hui et recevez des conseils personnalisés pour planifier vos vacances de rêve ou votre excursion.",
+    "ctaButton": "Demander un devis"
+  },
+  "about": {
+    "metaTitle": "À propos | Ontour",
+    "metaDesc": "En savoir plus sur Ontour, notre mission, notre vision et notre équipe d'experts en tourisme.",
+    "title": "Notre histoire",
+    "subtitle": "Nous sommes une entreprise basée au cœur des Andes colombiennes, engagée à montrer le meilleur du Pays de la Beauté. Notre équipe de plus de 20 personnes se distingue par son expertise, son professionnalisme et sa proximité avec nos voyageurs.",
+    "missionTitle": "Notre mission",
+    "missionText": "Offrir des expériences touristiques exceptionnelles, promouvoir le développement durable des régions, respecter la culture locale et garantir la satisfaction maximale de nos voyageurs à travers des excursions et des circuits inoubliables.",
+    "visionTitle": "Expériences uniques en Colombie",
+    "visionText": "Chez On Tour DMC Colombia, nous connectons les voyageurs avec des expériences authentiques et mémorables à travers tout le pays. En tant qu'experts locaux, nous concevons et organisons des circuits sur mesure avec une attention personnalisée, confiance et accompagnement étroit à chaque étape du voyage.",
+    "valuesTitle": "Nos valeurs",
+    "valuesSubtitle": "Les piliers de chacun de nos voyages.",
+    "values": {
+      "adventure": { "title": "Aventure", "desc": "Nous cherchons toujours de nouveaux horizons." },
+      "community": { "title": "Communauté", "desc": "Voyager, c'est partager de grands moments." },
+      "excellence": { "title": "Excellence", "desc": "Le meilleur service à chaque étape." },
+      "passion": { "title": "Passion", "desc": "Nous aimons ce que nous faisons." }
+    }
+  },
+  "contact": {
+    "metaTitle": "Contact | Ontour",
+    "metaDesc": "Contactez-nous pour planifier vos prochaines vacances et vivre la meilleure expérience.",
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes prêts à concrétiser votre prochaine aventure. Écrivez-nous et nous vous répondrons rapidement.",
+    "infoTitle": "Coordonnées",
+    "infoSubtitle": "Remplissez le formulaire et notre équipe experte Ontour vous contactera pour vous offrir les meilleurs conseils de voyage.",
+    "schedule": "Lundi au samedi, 8h – 18h",
+    "support": "Assistance & réservations",
+    "mainOffice": "Siège principal",
+    "mapTitle": "Retrouvez-nous à Ibagué"
+  },
+  "contactForm": {
+    "title": "Envoyez-nous un message",
+    "successTitle": "Message envoyé !",
+    "successText": "Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.",
+    "sendAnother": "Envoyer un autre message",
+    "nameLabel": "Nom complet",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "votreemail@exemple.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Comment pouvons-nous vous aider ?",
+    "sending": "Envoi en cours...",
+    "submit": "Envoyer le message"
+  },
+  "dayTrips": {
+    "metaTitle": "Excursions | Ontour",
+    "metaDesc": "Découvrez nos fantastiques excursions d'une journée pleines d'activités.",
+    "title": "Excursions d'une journée",
+    "subtitle": "Explorez notre sélection de sorties idéales pour échapper à la routine."
+  },
+  "circuits": {
+    "metaTitle": "Circuits touristiques | Ontour",
+    "metaDesc": "Aventures de plusieurs jours pour les vrais explorateurs avec Ontour.",
+    "title": "Circuits de plusieurs jours",
+    "subtitle": "Plongez dans des vacances inoubliables en découvrant le meilleur de chaque région."
+  },
+  "bookingForm": {
+    "title": "On part quand ?",
+    "departureDate": "Date de départ",
+    "guestsRooms": "Voyageurs & chambres",
+    "rooms": "Chambres",
+    "room": "Ch.",
+    "adults": "Adultes",
+    "children": "Enfants",
+    "cta": "C'est parti !",
+    "selectedDate": "Date sélectionnée",
+    "flexibleDates": "Plus de 4 personnes ! Vous pouvez choisir n'importe quelle date disponible",
+    "fixedDateHint": "Les dates en surbrillance sont les départs programmés du mois",
+    "whatsappIntro": "Bonjour ! Je souhaite réserver un voyage avec les détails suivants :",
+    "whatsappOutro": "Pourriez-vous m'envoyer plus d'informations et les disponibilités ? Merci !"
+  },
+  "card": {
+    "colombia": "Colombie",
+    "from": "À partir de",
+    "quotePrice": "Demander un devis",
+    "book": "Réserver",
+    "brochure": "Voir la brochure",
+    "whatsappDayTrip": "Bonjour, je suis intéressé(e) par l'excursion : {title}",
+    "whatsappCircuit": "Bonjour, je suis intéressé(e) par le circuit : {title}"
+  },
+  "circuitDetail": {
+    "badge": "Circuit touristique",
+    "colombia": "Colombie",
+    "investmentFrom": "Investissement à partir de",
+    "toQuote": "Sur devis",
+    "bookNow": "Réserver maintenant",
+    "tripDescription": "Description du voyage",
+    "youWillEnjoy": "Ce qui vous attend",
+    "itinerary": "Itinéraire jour par jour",
+    "tripSummary": "Résumé du voyage",
+    "duration": "Durée",
+    "location": "Lieu",
+    "nationalDest": "Destinations nationales",
+    "pricePerPerson": "Prix suggéré par personne",
+    "priceLabel": "Sur devis",
+    "priceNote": "Sous réserve de modifications et de disponibilité",
+    "requestQuote": "Demander un devis maintenant",
+    "daysNights": "{days} jours / {nights} nuits",
+    "whatsappMessage": "Bonjour, je suis intéressé(e) par le circuit : {name}",
+    "galleryClose": "Fermer",
+    "galleryPhotoOf": "Photo __n__ sur __total__",
+    "galleryClickToEnlarge": "Cliquez pour agrandir l'image"
+  },
+  "pasadiaDetail": {
+    "badge": "Excursion d'une journée",
+    "colombia": "Colombie",
+    "activityDesc": "Description de l'activité",
+    "youWillFind": "Ce que vous trouverez",
+    "summary": "Résumé",
+    "duration": "Durée",
+    "suggestedPrice": "Prix suggéré",
+    "priceLabel": "Sur devis",
+    "bookNow": "Réserver l'excursion maintenant",
+    "whatsappMessage": "Bonjour, je suis intéressé(e) par l'excursion : {name}"
+  },
+  "footer": {
+    "tagline": "Nous créons des expériences inoubliables.",
+    "explore": "Explorer",
+    "home": "Accueil",
+    "about": "À propos",
+    "dayTrips": "Excursions",
+    "circuits": "Circuits",
+    "legal": "Mentions légales",
+    "terms": "Conditions générales",
+    "privacy": "Politique de confidentialité",
+    "tourism": "Registre national du tourisme",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "rights": "Tous droits réservés.",
+    "designed": "Conçu pour inspirer les voyageurs."
+  },
+  "metadata": {
+    "home": {
+      "title": "Ontour | Excursions & Circuits touristiques",
+      "description": "Découvrez les meilleures destinations, excursions et circuits avec Ontour. Tourisme en Colombie."
+    }
+  },
+  "langSelector": {
+    "label": "Langue",
+    "es": "Español",
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français"
+  },
+  "circuitosData": {
+    "legado-ancestral-muiscas-pijaos-opitas": {
+      "name": "Muiscas, Pijaos, Opitas – Héritage ancestral",
+      "description": "Un voyage profond de 9 jours à la découverte du cœur de la culture précolombienne, de la gastronomie andine, du désert de Tatacoa et de l'histoire archéologique de Bogotá, Tolima et Huila.",
+      "highlights": [
+        "Monserrate et le Musée de l'Or",
+        "Cathédrale de sel de Zipaquirá",
+        "Réservoir de Prado et le peuple Pijao",
+        "Désert de Tatacoa",
+        "Parc archéologique de San Agustín"
+      ],
+      "itinerary": [
+        "JOUR 1 : BOGOTÁ – AÉROPORT EL DORADO. Accueil à l'aéroport international El Dorado, transfert à l'hôtel. Temps libre. Hébergement.",
+        "JOUR 2 : BOGOTÁ CITY TOUR & MONSERRATE. Visite panoramique du centre historique de Bogotá, expérience gastronomique à La Candelaria et montée au Monserrate en téléphérique avec dîner au coucher du soleil.",
+        "JOUR 3 : MUSÉE DE L'OR & CATHÉDRALE DE SEL. Visite guidée de l'héritage Muisca au Musée de l'Or. Départ vers Zipaquirá pour déguster la cuisine locale et visiter la Cathédrale de sel (180 m sous terre). Retour à Bogotá.",
+        "JOUR 4 : BOGOTÁ – EL ESPINAL – MER INTÉRIEURE. Route vers le Tolima. Visite du parc mythologique à El Espinal, dégustation de l'authentique Lechona Tolimense. Transfert en bateau vers le réservoir de Prado (4 400 hectares). Feu de camp et observation des étoiles.",
+        "JOUR 5 : PRADO – PIJAOS DU TOLIMA GRANDE. Tour du réservoir (Lagune enchantée, Grotte du Mohán, Île Morgan, Cascade de l'Amour). Visite de Purificación, Saldaña et Chaparral pour rencontrer le peuple Pijao. Transfert à Neiva.",
+        "JOUR 6 : NEIVA & DÉSERT DE TATACOA. Visite de Villa Vieja (Musée paléontologique et artisanal). Randonnée sur le Sentier de l'Arc-en-ciel, Los Hoyos, la Vallée des Fantômes et baignade dans une piscine naturelle. Retour à Neiva.",
+        "JOUR 7 : SAN AGUSTÍN. 5 heures de route jusqu'à San Agustín. Visite de 4 heures du Parc archéologique (Mesitas, Fuente del Lavapatas, Forêt des Statues). Écotour vers El Tablón, La Chaquira et les gorges du fleuve Magdalena.",
+        "JOUR 8 : SALTO DEL MORTIÑO. Visite de la cascade de 170 m et traversée du Pont de Cristal. Visite du parc archéologique Alto de los Ídolos (tertres funéraires, sarcophages monolithiques). Déjeuner et retour à Neiva.",
+        "JOUR 9 : NEIVA – BOGOTÁ. Transfert à l'aéroport Benito Salas pour le vol vers Bogotá. (Option d'une nuit supplémentaire à Bogotá, non incluse). Fin des prestations."
+      ]
+    },
+    "tour-colombia-corazon-andes": {
+      "name": "Cœur des Andes – Colombie complète",
+      "description": "Un voyage épique de 13 jours à travers le meilleur de la Colombie : de la vibrante Bogotá à la Région du café, en passant par le Tolima, Honda et Guaduas. Culture, nature, gastronomie et histoire coloniale en une seule expérience.",
+      "highlights": [
+        "Visite de Bogotá avec dîner au Monserrate",
+        "Musée de l'Or et Cathédrale de sel de Zipaquirá",
+        "Lechona Tolimense à El Espinal",
+        "Canyon de Combeima en Jeep Willys et téléphérique",
+        "Forêt de palmiers à cire et volcan Cerro Machín",
+        "Jardin botanique du Quindío avec plus de 1 400 espèces de papillons",
+        "Salento, Vallée de Cocora et Filandia avec vue panoramique à 360°",
+        "Ascension du Parc national Los Nevados à 4 000 m d'altitude",
+        "Cité perdue de San Felipe de Falan (XVIIIe siècle)",
+        "Honda, ville patrimoine, et croisière sur le fleuve Magdalena"
+      ],
+      "itinerary": [
+        "JOUR 1 : BOGOTÁ – AÉROPORT EL DORADO. Accueil à l'aéroport international El Dorado, transfert à l'hôtel de votre choix. Temps libre. Hébergement.",
+        "JOUR 2 : BOGOTÁ CITY TOUR & DÎNER AU MONSERRATE. Visite panoramique de Bogotá : centre historique, La Candelaria, places historiques et art urbain. Montée au Monserrate (3 152 m) en funiculaire et/ou téléphérique. Dîner avec vue panoramique sur la ville. Hébergement.",
+        "JOUR 3 : MUSÉE DE L'OR & CATHÉDRALE DE SEL DE ZIPAQUIRÁ. Visite guidée du Musée de l'Or et de l'héritage culturel Muisca. Route vers Zipaquirá : expérience gastronomique et entrée à la Cathédrale de sel, 180 m sous terre. Retour à Bogotá. Hébergement.",
+        "JOUR 4 : BOGOTÁ – EL ESPINAL – IBAGUÉ, LA VILLE MUSICALE. Route vers le département du Tolima. Tour gastronomique à El Espinal : histoire et dégustation de l'authentique Lechona Tolimense. Arrivée à Ibagué, la Ville musicale de Colombie. Hébergement.",
+        "JOUR 5 : IBAGUÉ – CANYON DE COMBEIMA. Visite du Canyon de Combeima, zone tampon du Parc national Los Nevados. Tour en Jeep Willys à travers Villa Restrepo et Juntas. Téléphérique à plus de 300 m d'altitude. Visite de la Finca La Rivera, points de vue, randonnée guidée et observation possible du Nevado del Tolima. Observation d'oiseaux endémiques. Hébergement.",
+        "JOUR 6 : IBAGUÉ – FORÊT DE PALMIERS À CIRE – QUINDÍO. Visite de la plus grande forêt de palmiers à cire du monde à Toche. Tour en Jeep Willys autour du cratère du volcan Cerro Machín (2e plus actif au monde) : ascension du dôme, sources thermales sulfureuses et fumerolles. Transfert à Armenia, Quindío. Hébergement.",
+        "JOUR 7 : ARMENIA – JARDIN BOTANIQUE – PIJAO. Visite du Jardin botanique du Quindío : plus de 1 400 espèces de papillons et d'oiseaux et sentiers naturels. Après-midi à Pijao : promenade dans les rues, dégustation de café d'exportation et expérience folklorique en direct. Hébergement.",
+        "JOUR 8 : SALENTO – COCORA – FILANDIA. Visite de Salento : ruelles escarpées, façades colorées et point de vue. Visite de la Vallée de Cocora en jeep : panoramas et balade à cheval parmi les vestiges de la forêt de palmiers à cire. Après-midi à Filandia : café typique sur la place principale et belvédère Colina Iluminada avec vue à 360° sur les trois cordillères. Hébergement.",
+        "JOUR 9 : MANIZALES – PARC NATIONAL LOS NEVADOS – MURILLO. Ascension du Parc national Los Nevados : observation du Nevado del Cumanday, frailejones à 4 000 m, sources d'eau sulfureuses et cascades du Río Lagunilla. Visite de Murillo, Tolima : histoire coloniale, produits biologiques et cascade El Silencio. Transfert à Líbano, Tolima. Hébergement.",
+        "JOUR 10 : LÍBANO – CITÉ PERDUE – HONDA. Visite d'Armero, Tolima : vestiges de la tragédie de 1985. Randonnée de 7 km dans la jungle de San Felipe de Falan jusqu'à la Cité perdue du XVIIIe siècle : grottes à or coloniales et entrepôts reliés à Cartagena et l'Espagne. Arrivée à Honda. Hébergement.",
+        "JOUR 11 : HONDA, VILLE PATRIMOINE. Visite de Honda : place du marché, rue Las Trampas, cathédrale, ponts et rues pavées coloniales. Visite du premier hôtel et de la première pharmacie de Colombie dans les Andes. Après-midi culturel avec les graffeurs locaux et visite du Musée du Fleuve. Hébergement.",
+        "JOUR 12 : HONDA & FLEUVE MAGDALENA – GUADUAS. Croisière fluviale sur le Magdalena : faune, flore et expérience de pêche artisanale. Après-midi à Guaduas, ville patrimoine, lieu de naissance de Policarpa Salavarrieta : place principale et tour de l'histoire de l'indépendance colombienne. Hébergement.",
+        "JOUR 13 : GUADUAS – BOGOTÁ, AÉROPORT EL DORADO. Petit-déjeuner à l'hôtel. Transfert à l'aéroport international El Dorado selon l'heure du vol. Option d'une nuit supplémentaire à Bogotá (non incluse). Fin des prestations."
+      ]
+    },
+    "tour-colombia-boyaca-colonial": {
+      "name": "Boyacá colonial – Histoire, culture et nature",
+      "description": "Un voyage de 8 jours au cœur historique de la Colombie : de la cosmopolite Bogotá aux villes patrimoniales du Boyacá. Art, archéologie, sources thermales, lacs et artisanat dans une expérience unique au berceau de l'indépendance colombienne.",
+      "highlights": [
+        "Visite de Bogotá avec dîner au Monserrate",
+        "Cathédrale de sel de Zipaquirá, 180 m sous terre",
+        "Atelier de céramique avec les potiers traditionnels de Ráquira",
+        "Villa de Leyva, ville patrimoine : fossiles, musées et bassins bleus",
+        "Balade en buggy à travers le terrain semi-désertique",
+        "Sources thermales sulfureuses médicinales de Paipa",
+        "Lac Tota : le plus grand lac d'eau douce de Colombie",
+        "Expérience artisanale à Nobsa : tissage d'une Ruana avec les grands-mères",
+        "Pont de Boyacá, symbole de la liberté colombienne"
+      ],
+      "itinerary": [
+        "JOUR 1 : BOGOTÁ – AÉROPORT EL DORADO. Accueil à l'aéroport international El Dorado, transfert à l'hôtel de votre choix. Temps libre. Hébergement.",
+        "JOUR 2 : BOGOTÁ CITY TOUR & DÎNER AU MONSERRATE. Visite panoramique de Bogotá : centre historique, La Candelaria, places historiques et art urbain. Montée au Monserrate (3 152 m) en funiculaire et/ou téléphérique. Dîner avec vue panoramique sur la ville. Hébergement.",
+        "JOUR 3 : CATHÉDRALE DE SEL – RÁQUIRA ANCESTRAL – VILLA DE LEYVA. Visite de la Cathédrale de sel de Zipaquirá avec audioguide, 180 m sous terre. Après-midi à Ráquira : expérience avec les potiers, processus de céramique d'argile et sculpture personnalisée. Arrivée à Villa de Leyva. Hébergement.",
+        "JOUR 4 : VILLA DE LEYVA – PATRIMOINE & ARCHÉOLOGIE. Visite de la ville coloniale : Musée des fossiles (plus de 400 pièces du Crétacé), Musée du chocolat, Maison du Premier Congrès, Casa Museo Antonio Nariño et Église Nuestra Señora del Rosario. Visite de la Lagune Pozos Azules et balade en buggy à travers le terrain semi-désertique. Hébergement.",
+        "JOUR 5 : TUNJA – SOURCES THERMALES DE PAIPA. Visite panoramique de Tunja (capitale du Boyacá) : Plaza de Bolívar et Cathédrale. Arrivée à Paipa et visite en soirée des sources thermales sulfureuses médicinales dans le contraste du froid andin. Hébergement.",
+        "JOUR 6 : LAC TOTA & TOUR CULTUREL. Visite du Monument aux Lanciers avec exposition en direct. Dégustation de desserts locaux à Iza. Tour d'une heure sur le lac Tota (plage de sable blanc, plus grand lac d'eau douce de Colombie). Visite d'Aquitania, capitale mondiale de l'oignon. Tibasosa : culture de feijoa et atelier de maroquinerie personnalisé avec la communauté. Retour à Paipa. Hébergement.",
+        "JOUR 7 : NOBSA – PONT DE BOYACÁ – BOGOTÁ. Expérience artisanale à Nobsa : tissage de Ruana en laine avec les grands-mères et création d'une ruana personnalisée. Visite du Pont de Boyacá à Venta Quemada, symbole de la liberté colombienne. Arrivée à Bogotá. Hébergement.",
+        "JOUR 8 : BOGOTÁ – AÉROPORT EL DORADO. Petit-déjeuner à l'hôtel. Transfert à l'aéroport international El Dorado selon l'heure du vol. Option d'une nuit supplémentaire à Bogotá (non incluse). Fin des prestations."
+      ]
+    },
+    "tour-colombia-tres-ciudades": {
+      "name": "Colombie – Bogotá, Medellín et Cartagena de Indias",
+      "description": "Un voyage de 14 jours à travers les trois joyaux de la Colombie : la cosmopolite Bogotá, l'innovante Medellín et la magique Cartagena de Indias. Histoire coloniale, culture paisa, plages caribéennes, art urbain et expériences uniques en un seul voyage.",
+      "highlights": [
+        "Visite de Bogotá avec dîner au Monserrate",
+        "Musée de l'Or et Cathédrale de sel de Zipaquirá",
+        "Dîner de bienvenue à Medellín avec spectacle du Trío América",
+        "Graffitour dans la Comuna 13 avec guide local",
+        "Balade en bateau et ascension de la Piedra del Peñol à Guatapé",
+        "Expérience silletera (porteur de fleurs) à Santa Elena et belvédère El Picacho",
+        "Visite de Cartagena : Castillo de San Felipe et Couvent de La Popa",
+        "Journée aux Îles du Rosaire en catamaran avec plongée en apnée",
+        "Baignade dans le plancton bioluminescent à Playa Tranquila",
+        "Tour panoramique de Barranquilla et promenade du fleuve Magdalena"
+      ],
+      "itinerary": [
+        "JOUR 1 : BOGOTÁ – AÉROPORT EL DORADO. Accueil à l'aéroport international El Dorado, transfert à l'hôtel de votre choix. Temps libre. Hébergement.",
+        "JOUR 2 : BOGOTÁ CITY TOUR & DÎNER AU MONSERRATE. Visite panoramique de Bogotá : centre historique, La Candelaria, places historiques et art urbain. Montée au Monserrate (3 152 m) en funiculaire et/ou téléphérique. Dîner avec vue panoramique sur la ville. Hébergement.",
+        "JOUR 3 : MUSÉE DE L'OR & CATHÉDRALE DE SEL DE ZIPAQUIRÁ. Visite guidée du Musée de l'Or et de l'héritage culturel Muisca. Route vers Zipaquirá : expérience gastronomique et entrée à la Cathédrale de sel, 180 m sous terre. Retour à Bogotá. Hébergement.",
+        "JOUR 4 : BOGOTÁ – MEDELLÍN. Transfert à l'aéroport El Dorado et vol vers Medellín. Dîner de bienvenue dans le lieu le plus emblématique de la ville avec spectacle en direct du Trío América. Tour nocturne du quartier Laureles. Hébergement.",
+        "JOUR 5 : MEDELLÍN – COMUNA 13 – CITY TOUR – GRAFFITOUR. Visite du Pueblito Paisa, de la Place Botero, du Parque de los Deseos et du Parque de los Pies Descalzos. Trajet en métro et Metrocable jusqu'à la Comuna 13 : tour avec guide local à travers ses escaliers mécaniques, fresques et art urbain. Hébergement.",
+        "JOUR 6 : MEDELLÍN – GUATAPÉ & PIEDRA DEL PEÑOL. Visite de la réplique de la ville de Peñol. Balade en bateau sur le réservoir de Guatapé. Ascension de la Piedra del Peñol (plus de 700 marches) avec vue panoramique à 360°. Déjeuner traditionnel de montagne. Retour à Medellín. Hébergement.",
+        "JOUR 7 : TOUR SILLETERA – BELVÉDÈRE EL PICACHO – EL POBLADO. Visite d'une ferme de porteurs de fleurs à Santa Elena : fabrication de silleta, tradition paisa et déjeuner de montagne. Arrêt au belvédère El Picacho. Après-midi dans le quartier Provenza avec les restaurants les plus exclusifs de Medellín. Hébergement.",
+        "JOUR 8 : MEDELLÍN – JARDIN BOTANIQUE. Visite de 2 à 3 heures du Jardin botanique de Medellín. Après-midi et soirée libres. (Optionnel : restaurant El Cielo, chef Juan Manuel Barrientos – étoile Michelin, non inclus). Hébergement.",
+        "JOUR 9 : MEDELLÍN – CARTAGENA DE INDIAS. Transfert à l'aéroport et vol vers Cartagena. Dîner de bienvenue dans l'exclusive ville fortifiée avec un plat gastronomique face à la mer des Caraïbes. Hébergement.",
+        "JOUR 10 : CARTAGENA CITY TOUR & CASTILLO DE SAN FELIPE. Tour de Bocagrande, Castillogrande, Tour de l'Horloge, Getsemaní et Centre de Conventions. Visite du Couvent Santa Cruz de La Popa (point culminant de la ville). Entrée au Castillo de San Felipe de Barajas et visite de la statue de Blas de Lezo. Hébergement.",
+        "JOUR 11 : ÎLES DU ROSAIRE & BARÚ EN CATAMARAN. Journée complète en catamaran de Cartagena aux Îles du Rosaire : plongée en apnée dans les récifs, eaux turquoise, plage de sable blanc et riz aux fruits de mer au déjeuner. Retour à Cartagena à 16h. Hébergement.",
+        "JOUR 12 : PLAYA TRANQUILA – PLANCTON BIOLUMINESCENT. Trajet terrestre vers Playa Tranquila via Barú : fruits tropicaux, déjeuner local et coucher de soleil. À la tombée de la nuit, baignade dans le plancton bioluminescent bleu dans la mer. Retour nocturne à Cartagena. Hébergement.",
+        "JOUR 13 : JOURNÉE COMPLÈTE À BARRANQUILLA. Tour panoramique de Barranquilla : Puerto Colombia, Phare, Castillo de Salgar, Lagune Mallorquín, Vía 40, promenade du fleuve Magdalena et monuments à Shakira, El Tiburón et Joe Arroyo. Tour du Barrio Abajo, épicentre du folklore caribéen. Retour à Cartagena. Hébergement.",
+        "JOUR 14 : CARTAGENA – AÉROPORT RAFAEL NÚÑEZ. Petit-déjeuner à l'hôtel. Transfert à l'aéroport Rafael Núñez pour le vol vers Bogotá ou le pays d'origine. Option d'une nuit supplémentaire à Bogotá (non incluse). Fin des prestations."
+      ]
+    },
+    "tour-colombia-capitales-rubiaceas": {
+      "name": "Les capitales du café colombien",
+      "description": "Un circuit de 12 jours le long de la route du café et de l'histoire de la Colombie : de Bogotá à la Région du café en passant par le Tolima, la Cité perdue et Honda, ville patrimoine. Nature, gastronomie, culture coloniale et paysages andins en une seule aventure.",
+      "highlights": [
+        "Visite de Bogotá avec dîner au Monserrate",
+        "Dégustation de l'authentique Lechona Tolimense à El Espinal",
+        "Canyon de Combeima en Jeep Willys et téléphérique à 300 m d'altitude",
+        "Forêt de palmiers à cire et volcan Cerro Machín (2e plus actif au monde)",
+        "Jardin botanique du Quindío avec plus de 1 400 espèces de papillons",
+        "Salento, Vallée de Cocora et Filandia avec vue sur 4 cordillères",
+        "Ascension du Parc national Los Nevados avec frailejones à 4 000 m",
+        "Cité perdue de San Felipe de Falan (XVIIIe siècle)",
+        "Honda, ville patrimoine, et croisière sur le fleuve Magdalena",
+        "Guaduas, lieu de naissance de Policarpa Salavarrieta"
+      ],
+      "itinerary": [
+        "JOUR 1 : BOGOTÁ – AÉROPORT EL DORADO. Accueil à l'aéroport international El Dorado, transfert à l'hôtel de votre choix. Temps libre. Hébergement.",
+        "JOUR 2 : BOGOTÁ CITY TOUR & DÎNER AU MONSERRATE. Visite panoramique de Bogotá : centre historique, La Candelaria, places historiques et art urbain. Montée au Monserrate (3 152 m) en funiculaire et/ou téléphérique. Dîner avec la plus belle vue de Bogotá. Hébergement.",
+        "JOUR 3 : BOGOTÁ – EL ESPINAL – IBAGUÉ, LA VILLE MUSICALE. Tour gastronomique à El Espinal : histoire et dégustation de l'authentique Lechona Tolimense, un secret culinaire transmis depuis l'époque coloniale espagnole. Arrivée à Ibagué, la Ville musicale de Colombie. Hébergement.",
+        "JOUR 4 : IBAGUÉ – CANYON DE COMBEIMA. Tour en Jeep Willys à travers Villa Restrepo et Juntas. Téléphérique dans le Canyon de Combeima à plus de 300 m d'altitude. Visite de la Finca La Rivera, points de vue, randonnée guidée et observation possible du Nevado del Tolima. Observation d'oiseaux endémiques. Hébergement.",
+        "JOUR 5 : IBAGUÉ – FORÊT DE PALMIERS À CIRE – QUINDÍO. Visite de la plus grande forêt de palmiers à cire du monde à Toche. Tour en Jeep Willys autour du cratère du volcan Cerro Machín (2e plus actif au monde) : ascension du dôme, sources thermales sulfureuses et fumerolles. Transfert à Armenia, Quindío. Hébergement.",
+        "JOUR 6 : ARMENIA – JARDIN BOTANIQUE – PIJAO. Visite du Jardin botanique du Quindío : plus de 1 400 espèces de papillons et d'oiseaux et sentiers naturels. Après-midi à Pijao : promenade dans les rues, dégustation de café d'exportation et expérience folklorique locale. Hébergement.",
+        "JOUR 7 : SALENTO – COCORA – FILANDIA. Visite de Salento : ruelles escarpées, façades colorées et point de vue. Visite de la Vallée de Cocora en jeep : panoramas et balade à cheval parmi les vestiges de la forêt de palmiers à cire et le Chemin royal du Quindío. Après-midi à Filandia : café typique sur la place principale et point de vue avec vue sur 4 cordillères. Hébergement.",
+        "JOUR 8 : MANIZALES – PARC NATIONAL LOS NEVADOS – MURILLO. Ascension du Parc national Los Nevados : observation du Nevado del Cumanday, frailejones à 4 000 m, sources d'eau sulfureuses et cascades du Río Lagunilla. Visite de Murillo, Tolima : histoire coloniale et produits biologiques. Transfert à Líbano, Tolima. Hébergement.",
+        "JOUR 9 : LÍBANO – CITÉ PERDUE – HONDA. Visite d'Armero, Tolima : vestiges de la tragédie de 1985. Randonnée de 7 km dans la jungle de San Felipe de Falan jusqu'à la Cité perdue du XVIIIe siècle : grottes à or coloniales et entrepôts reliés à Cartagena et l'Espagne. Arrivée à Honda. Hébergement.",
+        "JOUR 10 : HONDA, VILLE PATRIMOINE. Visite de Honda : place du marché, rue Las Trampas, église, ponts et rues pavées coloniales. Visite du premier hôtel et de la première pharmacie de Colombie dans les Andes. Après-midi culturel avec les graffeurs locaux et le Musée du Fleuve. Hébergement.",
+        "JOUR 11 : HONDA & FLEUVE MAGDALENA – GUADUAS. Croisière fluviale sur le Magdalena : faune, flore et expérience de pêche artisanale. Après-midi à Guaduas, ville patrimoine, lieu de naissance de Policarpa Salavarrieta : place principale et tour de l'histoire de l'indépendance colombienne. Hébergement.",
+        "JOUR 12 : GUADUAS – BOGOTÁ, AÉROPORT EL DORADO. Petit-déjeuner à l'hôtel. Transfert à l'aéroport international El Dorado selon l'heure du vol. Fin des prestations."
+      ]
+    }
+  },
+  "destinosData": {
+    "rafting-coello-pasadia": {
+      "name": "Antioquia est magique – Rafting & Aventure sur le Río Coello",
+      "description": "Adrénaline pure sur les eaux du Tolima. Vivez une expérience inoubliable de rafting, tyrolienne et autres sports extrêmes à Coello, une destination parfaite pour les amateurs d'aventure et de nature.",
+      "duration": "Journée complète",
+      "highlights": [
+        "Transport inclus",
+        "Équipement de sécurité",
+        "Guides professionnels",
+        "Activité de rafting",
+        "Assurance assistance"
+      ]
+    },
+    "bogota-tu-casa-pasadia": {
+      "name": "Bogotá, votre maison",
+      "description": "Découvrez la magie de Bogotá et de ses environs lors d'une journée riche en histoire, culture et gastronomie. Explorez l'impressionnante Cathédrale de sel de Zipaquirá, la ville patrimoniale coloniale de Villa de Leyva et les rues artisanales colorées de Ráquira. Complétez l'expérience avec un tour gastronomique des saveurs les plus authentiques de la région et une vue panoramique incomparable sur la capitale colombienne.",
+      "duration": "Journée complète",
+      "highlights": [
+        "Transport inclus",
+        "Cathédrale de sel de Zipaquirá",
+        "Tour de Villa de Leyva",
+        "Tour gastronomique",
+        "Vue panoramique de Bogotá",
+        "Guide touristique professionnel"
+      ]
+    },
+    "cascada-la-plata-pasadia": {
+      "name": "Tolima, cœur des Andes – Cascade La Plata",
+      "description": "Découvrez l'un des trésors naturels les plus impressionnants d'Ibagué. À travers une randonnée écologique, plongez dans des paysages de jungle, de rivières et de montagnes jusqu'à la majestueuse Cascade La Plata. Une expérience de connexion avec la nature idéale pour les amateurs de randonnée et d'aventure.",
+      "duration": "Journée complète",
+      "highlights": [
+        "Transport optionnel",
+        "Guide écologique",
+        "Entrée à la réserve naturelle",
+        "Hydratation incluse",
+        "Assurance randonnée"
+      ]
+    }
+  }
+}

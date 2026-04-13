@@ -10,8 +10,9 @@ import { Link } from "@/i18n/navigation";
 
 const LOCALES = [
   { code: "es", flag: "🇨🇴", label: "Español" },
-  { code: "en", flag: "🇺🇸", label: "English (US)" },
-  { code: "en-GB", flag: "🇬🇧", label: "English (UK)" },
+  { code: "en", flag: "🇺🇸", label: "English" },
+  { code: "de", flag: "🇩🇪", label: "Deutsch" },
+  { code: "fr", flag: "🇫🇷", label: "Français" },
 ];
 
 export function Navbar() {

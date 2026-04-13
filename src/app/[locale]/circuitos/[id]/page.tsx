@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { circuitos } from "@/data/circuitos";
 import { routing } from "@/i18n/routing";
 import { CheckCircle2, Clock, MapPin, Map } from "lucide-react";
+import ItineraryTimeline from "@/components/ItineraryTimeline";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -116,27 +117,15 @@ export default async function CircuitoPage({
               <h2 className="text-3xl font-heading font-bold mb-6 text-primary border-b pb-4">
                 {t("itinerary")}
               </h2>
-              <div className="space-y-6">
-                {itinerary.map((day, idx) => {
-                  const [dayLabel, ...desc] = day.split(":");
-                  return (
-                    <div key={idx} className="flex gap-4">
-                      <div className="flex flex-col items-center">
-                        <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">
-                          {idx + 1}
-                        </div>
-                        {idx !== itinerary.length - 1 && (
-                          <div className="flex-grow w-px bg-primary/20 my-2" />
-                        )}
-                      </div>
-                      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex-grow mb-4">
-                        <h3 className="text-xl font-bold font-heading mb-2">{dayLabel}</h3>
-                        <p className="text-foreground/70 leading-relaxed">{desc.join(":") || day}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+              <ItineraryTimeline
+                itinerary={itinerary}
+                dayImages={circuito.dayImages}
+                t={{
+                  close: t("galleryClose"),
+                  photoOf: t("galleryPhotoOf"),
+                  clickToEnlarge: t("galleryClickToEnlarge"),
+                }}
+              />
             </section>
           </div>
 
