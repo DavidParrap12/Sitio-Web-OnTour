@@ -15,11 +15,12 @@ export async function Footer() {
           <div className="flex flex-col">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/image/logo-ON-TOUR.png"
+                src="/image/logo-ON-TOUR-Nuevo.png"
                 alt="Ontour"
                 width={180}
                 height={70}
-                className="object-contain brightness-[10] grayscale contrast-100 opacity-90 hover:opacity-100 transition-opacity"
+                style={{ width: 'auto', height: 'auto' }}
+                className="object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mt-2">

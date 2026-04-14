@@ -77,13 +77,12 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="/image/logo-ON-TOUR.png"
+              src="/image/logo-ON-TOUR-Nuevo.png"
               alt="Ontour Logo"
               width={140}
               height={48}
-              className={`h-12 w-auto object-contain transition-all duration-300 ${
-                scrolled || !isHome ? "brightness-100" : "brightness-0 invert"
-              }`}
+              className="h-12 object-contain transition-all duration-300"
+              style={{ width: 'auto', height: 'auto' }}
               priority
             />
           </Link>

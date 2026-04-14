@@ -55,9 +55,10 @@ export type DepartureDates = Record<string, number>;
 /**
  * Fetches departure dates from a public Google Sheet.
  * Falls back to hardcoded dates if the fetch fails.
+ * Supports both regular Sheet IDs and published (2PACX-) IDs.
  */
 export async function fetchDepartureDates(): Promise<DepartureDates> {
-  const sheetId = process.env.NEXT_PUBLIC_SHEETS_ID;
+  const sheetId = process.env.NEXT_PUBLIC_SHEETS_ID?.trim();
 
   if (!sheetId) {
     console.warn("[DepartureDates] No NEXT_PUBLIC_SHEETS_ID set, using fallback dates.");
@@ -65,7 +66,10 @@ export async function fetchDepartureDates(): Promise<DepartureDates> {
   }
 
   try {
-    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=0`;
+    // Published sheets (2PACX-...) use a different URL format
+    const url = sheetId.startsWith("2PACX-")
+      ? `https://docs.google.com/spreadsheets/d/e/${sheetId}/pub?gid=0&single=true&output=csv`
+      : `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=0`;
 
     const res = await fetch(url, {
       next: { revalidate: 300 }, // Re-fetch every 5 minutes (ISR)
@@ -76,6 +80,7 @@ export async function fetchDepartureDates(): Promise<DepartureDates> {
     }
 
     const csv = await res.text();
+    console.log("[DepartureDates] Raw CSV from Google Sheets (first 500 chars):", csv.substring(0, 500));
     const dates = parseCSV(csv);
 
     if (Object.keys(dates).length === 0) {
@@ -83,6 +88,7 @@ export async function fetchDepartureDates(): Promise<DepartureDates> {
       return FALLBACK_DATES;
     }
 
+    console.log("[DepartureDates] ✅ Loaded dates from Google Sheets:", dates);
     return dates;
   } catch (error) {
     console.error("[DepartureDates] Failed to fetch from Google Sheets:", error);
@@ -91,29 +97,55 @@ export async function fetchDepartureDates(): Promise<DepartureDates> {
 }
 
 /**
- * Parses a simple 2-column CSV (mes, dia) into a Record<string, number>.
+ * Parses a 2-column CSV into a Record<string, number>.
+ * Column A = month (YYYY-MM), Column B = day number.
+ * Flexible: accepts any header names, and tries multiple date formats.
  */
 function parseCSV(csv: string): DepartureDates {
   const dates: DepartureDates = {};
   const lines = csv.trim().split("\n");
 
-  // Skip header row
+  if (lines.length < 2) return dates;
+
+  // Skip header row (line 0)
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
 
-    // Handle both comma and tab separators, and quoted values
-    const parts = line.split(/[,\t]/).map((s) => s.replace(/"/g, "").trim());
+    // Handle comma, tab, and semicolon separators, and quoted values
+    const parts = line.split(/[,;\t]/).map((s) => s.replace(/"/g, "").trim());
 
-    if (parts.length >= 2) {
-      const month = parts[0]; // e.g. "2026-04"
-      const day = parseInt(parts[1], 10);
+    if (parts.length < 2) continue;
 
-      if (/^\d{4}-\d{2}$/.test(month) && !isNaN(day) && day >= 1 && day <= 31) {
-        dates[month] = day;
-      }
+    let month = parts[0];
+    const day = parseInt(parts[1], 10);
+
+    // Try to normalize common date formats:
+    // "2026-04" or "2026-4" → "2026-04"
+    // "04/2026" → "2026-04"
+    // "2026/4" → "2026-04"
+    if (/^\d{4}-\d{1,2}$/.test(month)) {
+      // YYYY-M or YYYY-MM → normalize to YYYY-MM
+      const [y, m] = month.split("-");
+      month = `${y}-${m.padStart(2, "0")}`;
+    } else if (/^\d{1,2}\/\d{4}$/.test(month)) {
+      // MM/YYYY → YYYY-MM
+      const [m, y] = month.split("/");
+      month = `${y}-${m.padStart(2, "0")}`;
+    } else if (/^\d{4}\/\d{1,2}$/.test(month)) {
+      // YYYY/MM → YYYY-MM
+      const [y, m] = month.split("/");
+      month = `${y}-${m.padStart(2, "0")}`;
+    } else {
+      console.warn(`[DepartureDates] Skipping unrecognized format: "${month}"`);
+      continue;
+    }
+
+    if (!isNaN(day) && day >= 1 && day <= 31) {
+      dates[month] = day;
     }
   }
 
   return dates;
 }
+

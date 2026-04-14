@@ -1,6 +1,6 @@
 /* ============================================
    OnTour Splash Screen — Avianca-style loader
-   Bus ON the road + smooth CSS-driven movement
+   Fully responsive: bus visible & centered on mobile
    ============================================ */
 
 /* Fullscreen overlay */
@@ -44,48 +44,102 @@
   50% { background-position: 100% 50%; }
 }
 
-/* =====================
-   LANDSCAPE SCENE
-   ===================== */
-.splash-scene {
+/* =============================================
+   MOUNTAINS — sits above the road
+   ============================================= */
+.splash-mountains-wrap {
   position: absolute;
-  bottom: 0;
+  bottom: 60px;       /* sits right above the road strip */
   left: 0;
   width: 100%;
-  height: 55%;
-  min-height: 280px;
+  height: 35%;
+  min-height: 140px;
   pointer-events: none;
+  z-index: 2;
 }
 
-.splash-landscape {
+.splash-mountains-svg {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-/* =====================
-   BUS — CSS ANIMATION
-   Moves from left to right across the SVG
-   ===================== */
-.splash-bus-group {
-  animation: busTravel 3.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards,
-             busBounce 0.35s ease-in-out infinite;
+/* =============================================
+   ROAD SCENE — bottom strip + bus
+   ============================================= */
+.splash-road-scene {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  pointer-events: none;
 }
 
-/* Travel from offscreen-left to ~80% across the road */
+/* Road strip (flat bar across the bottom) */
+.splash-road-strip {
+  width: 100%;
+  height: 60px;
+}
+
+.splash-road-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Road center line animation */
+.splash-road-line {
+  animation: roadDash 0.6s linear infinite;
+}
+
+@keyframes roadDash {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -100; }
+}
+
+/* =============================================
+   BUS — HTML positioned for full responsive control
+   ============================================= */
+.splash-bus-wrapper {
+  position: absolute;
+  bottom: 12px;       /* sits ON the road */
+  z-index: 10;
+
+  /* Desktop: 120px wide bus */
+  width: 120px;
+  height: auto;
+
+  /* Start position & travel animation */
+  animation:
+    busTravel 3.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards,
+    busBounce 0.3s ease-in-out infinite;
+}
+
+.splash-bus-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* ==== DESKTOP: bus travels from left edge to right edge ==== */
 @keyframes busTravel {
   0% {
-    transform: translateX(-150px);
+    left: -130px;
   }
-  5% {
-    transform: translateX(0px);
+  8% {
+    left: 5%;
+  }
+  50% {
+    left: 45%;
   }
   100% {
-    transform: translateX(1200px);
+    left: calc(100% + 10px);
   }
 }
 
-/* Subtle vertical bounce — simulates road vibration */
+/* Subtle bounce — road vibration feel */
 @keyframes busBounce {
   0%, 100% {
     transform: translateY(0);
@@ -96,17 +150,15 @@
 }
 
 /* Wheel spinning */
-.splash-wheel-left,
-.splash-wheel-right {
-  transform-origin: center;
-  animation: wheelSpin 0.4s linear infinite;
+.splash-wheel {
+  animation: wheelSpin 0.35s linear infinite;
 }
 
 .splash-wheel-left {
-  transform-origin: 35px 443px;
+  transform-origin: 38px 57px;
 }
 .splash-wheel-right {
-  transform-origin: 90px 443px;
+  transform-origin: 95px 57px;
 }
 
 @keyframes wheelSpin {
@@ -126,12 +178,11 @@
 
 /* SVG Smoke particles */
 .smoke-svg {
-  animation: smokeSvgRise 1s ease-out infinite;
+  animation: smokeSvgRise 0.9s ease-out infinite;
 }
-
 .smoke-svg-1 { animation-delay: 0s; }
-.smoke-svg-2 { animation-delay: 0.33s; }
-.smoke-svg-3 { animation-delay: 0.66s; }
+.smoke-svg-2 { animation-delay: 0.3s; }
+.smoke-svg-3 { animation-delay: 0.6s; }
 
 @keyframes smokeSvgRise {
   0% {
@@ -140,30 +191,20 @@
   }
   100% {
     opacity: 0;
-    transform: translate(-25px, -20px) scale(2);
+    transform: translate(-20px, -18px) scale(2);
   }
 }
 
-/* Road line animation — dashes moving backwards for motion effect */
-.splash-road-line {
-  animation: roadDash 0.8s linear infinite;
-}
-
-@keyframes roadDash {
-  0% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: -86; }
-}
-
-/* =====================
-   CENTER CONTENT
-   ===================== */
+/* =============================================
+   CENTER CONTENT (logo, tagline, progress)
+   ============================================= */
 .splash-content {
   position: relative;
   z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 18vh;
+  margin-bottom: 14vh;
 }
 
 .splash-logo-container {
@@ -213,7 +254,7 @@
   }
 }
 
-/* Progress bar — pure CSS animation (no JS needed) */
+/* Progress bar */
 .splash-progress-track {
   width: 220px;
   height: 4px;
@@ -245,9 +286,9 @@
   50% { background-position: 0% 0; }
 }
 
-/* =====================
+/* =============================================
    FLOATING ICONS
-   ===================== */
+   ============================================= */
 .splash-floating {
   position: absolute;
   inset: 0;
@@ -262,56 +303,60 @@
   animation: floatUp 4s ease-in-out infinite;
 }
 
-.float-1 {
-  left: 10%;
-  top: 20%;
-  animation-delay: 0s;
-  font-size: 1.8rem;
-}
-.float-2 {
-  right: 15%;
-  top: 30%;
-  animation-delay: 0.8s;
-}
-.float-3 {
-  left: 25%;
-  top: 15%;
-  animation-delay: 1.6s;
-}
-.float-4 {
-  right: 30%;
-  top: 10%;
-  animation-delay: 2.4s;
-  font-size: 2rem;
-}
-.float-5 {
-  left: 60%;
-  top: 25%;
-  animation-delay: 3.2s;
-  font-size: 1.6rem;
-}
+.float-1 { left: 10%; top: 20%; animation-delay: 0s; font-size: 1.8rem; }
+.float-2 { right: 15%; top: 30%; animation-delay: 0.8s; }
+.float-3 { left: 25%; top: 15%; animation-delay: 1.6s; }
+.float-4 { right: 30%; top: 10%; animation-delay: 2.4s; font-size: 2rem; }
+.float-5 { left: 60%; top: 25%; animation-delay: 3.2s; font-size: 1.6rem; }
 
 @keyframes floatUp {
   0% {
     opacity: 0;
     transform: translateY(30px) scale(0.5);
   }
-  20% {
-    opacity: 0.7;
-  }
-  80% {
-    opacity: 0.5;
-  }
+  20% { opacity: 0.7; }
+  80% { opacity: 0.5; }
   100% {
     opacity: 0;
     transform: translateY(-60px) scale(1.2);
   }
 }
 
-/* =====================
-   RESPONSIVE
-   ===================== */
+/* =============================================
+   RESPONSIVE — TABLET
+   ============================================= */
 @media (max-width: 768px) {
+  .splash-bus-wrapper {
+    width: 100px;
+    bottom: 10px;
+  }
+
+  /* Slower, centered travel on tablet */
+  @keyframes busTravel {
+    0% {
+      left: -110px;
+    }
+    10% {
+      left: 10%;
+    }
+    45% {
+      left: 40%;
+    }
+    100% {
+      left: calc(100% + 10px);
+    }
+  }
+
+  .splash-mountains-wrap {
+    bottom: 55px;
+    height: 30%;
+    min-height: 120px;
+  }
+
+  .splash-road-strip {
+    height: 55px;
+  }
+
   .splash-logo {
     max-width: 140px;
   }
@@ -322,23 +367,104 @@
   }
 
   .splash-progress-track {
-    width: 160px;
+    width: 180px;
   }
 
   .splash-content {
-    margin-bottom: 22vh;
+    margin-bottom: 16vh;
   }
 
-  .splash-float-icon {
-    font-size: 1.2rem;
-  }
-
+  .splash-float-icon { font-size: 1.2rem; }
   .float-1 { font-size: 1.4rem; }
   .float-4 { font-size: 1.5rem; }
 }
 
+/* =============================================
+   RESPONSIVE — MOBILE
+   ============================================= */
 @media (max-width: 480px) {
+  .splash-bus-wrapper {
+    width: 80px;
+    bottom: 8px;
+  }
+
+  /* Mobile: bus spends more time in the center, visible area */
+  @keyframes busTravel {
+    0% {
+      left: -90px;
+    }
+    12% {
+      left: 5%;
+    }
+    35% {
+      left: 25%;
+    }
+    55% {
+      left: 45%;
+    }
+    75% {
+      left: 60%;
+    }
+    100% {
+      left: calc(100% + 10px);
+    }
+  }
+
+  .splash-mountains-wrap {
+    bottom: 48px;
+    height: 25%;
+    min-height: 100px;
+  }
+
+  .splash-road-strip {
+    height: 48px;
+  }
+
   .splash-content {
-    margin-bottom: 25vh;
+    margin-bottom: 18vh;
+  }
+
+  .splash-logo {
+    max-width: 120px;
+  }
+
+  .splash-tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+
+  .splash-progress-track {
+    width: 150px;
+  }
+
+  .splash-floating {
+    display: none; /* too cluttered on small screens */
+  }
+}
+
+/* =============================================
+   RESPONSIVE — SMALL MOBILE (<380px)
+   ============================================= */
+@media (max-width: 380px) {
+  .splash-bus-wrapper {
+    width: 65px;
+    bottom: 6px;
+  }
+
+  .splash-road-strip {
+    height: 42px;
+  }
+
+  .splash-mountains-wrap {
+    bottom: 42px;
+    height: 22%;
+  }
+
+  .splash-content {
+    margin-bottom: 20vh;
+  }
+
+  .splash-logo {
+    max-width: 100px;
   }
 }
