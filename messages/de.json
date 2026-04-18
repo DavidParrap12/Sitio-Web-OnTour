@@ -4,6 +4,7 @@
     "about": "Über uns",
     "dayTrips": "Tagesausflüge",
     "circuits": "Rundreisen",
+    "tickets": "Flüge",
     "contact": "Kontakt",
     "quote": "Angebot anfordern",
     "contactAdvisor": "Berater kontaktieren"
@@ -113,6 +114,10 @@
     "quotePrice": "Angebot anfordern",
     "book": "Buchen",
     "brochure": "Broschüre ansehen",
+    "bookWhatsapp": "WhatsApp",
+    "bookWhatsappHint": "Sofortige Antwort",
+    "bookEmail": "E-Mail",
+    "bookEmailHint": "Kontaktformular",
     "whatsappDayTrip": "Hallo, ich interessiere mich für den Tagesausflug: {title}",
     "whatsappCircuit": "Hallo, ich interessiere mich für die Rundreise: {title}"
   },
@@ -149,7 +154,9 @@
     "suggestedPrice": "Empfohlener Preis",
     "priceLabel": "Auf Anfrage",
     "bookNow": "Tagesausflug jetzt buchen",
-    "whatsappMessage": "Hallo, ich interessiere mich für den Tagesausflug: {name}"
+    "whatsappMessage": "Hallo, ich interessiere mich für den Tagesausflug: {name}",
+    "gallery": "Fotogalerie",
+    "galleryLangNotice": "Broschüren sind nur auf Spanisch verfügbar."
   },
   "footer": {
     "tagline": "Wir schaffen unvergessliche Erlebnisse.",

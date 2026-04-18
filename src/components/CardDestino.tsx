@@ -1,9 +1,10 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { Clock, MapPin, MessageCircle, FileText } from "lucide-react";
-import { motion } from "framer-motion";
+import { Clock, MapPin, MessageCircle, Mail, ChevronDown, Eye } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 interface CardDestinoProps {
@@ -26,13 +27,28 @@ export function CardDestino({
   brochureUrl,
 }: CardDestinoProps) {
   const t = useTranslations("card");
+  const [showOptions, setShowOptions] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const whatsappMessage =
     type === "pasadia"
       ? t("whatsappDayTrip", { title })
       : t("whatsappCircuit", { title });
 
-  const whatsappUrl = `https://api.whatsapp.com/send/?phone=573132322335&text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://api.whatsapp.com/send/?phone=573002322335&text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setShowOptions(false);
+      }
+    }
+    if (showOptions) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showOptions]);
 
   return (
     <motion.div
@@ -74,34 +90,69 @@ export function CardDestino({
 
       {/* Footer — outside Link to avoid invalid nested <a> */}
       <div className="px-6 pb-6 pt-4 flex items-center justify-between mt-auto border-t border-gray-50/50 gap-3">
-        {brochureUrl ? (
-          <a
-            href={brochureUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-full font-medium transition-colors text-sm"
-          >
-            <FileText className="w-4 h-4" />
-            {t("brochure")}
-          </a>
-        ) : (
-          <div>
-            <p className="text-xs text-foreground/50 font-medium uppercase tracking-wider mb-0.5">
-              {t("from")}
-            </p>
-            <p className="text-lg font-bold text-primary">{t("quotePrice")}</p>
-          </div>
-        )}
-
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-accent hover:brightness-90 text-white px-4 py-2 rounded-full font-medium transition-colors cursor-pointer text-sm"
+        {/* "Ver Folleto" → now goes to detail page */}
+        <Link
+          href={href}
+          className="flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-full font-medium transition-colors text-sm"
         >
-          {t("book")}
-          <MessageCircle className="w-4 h-4" />
-        </a>
+          <Eye className="w-4 h-4" />
+          {t("brochure")}
+        </Link>
+
+        {/* "Reservar" dropdown */}
+        <div className="relative" ref={dropdownRef}>
+          <button
+            onClick={() => setShowOptions(!showOptions)}
+            className="flex items-center gap-2 bg-accent hover:brightness-90 text-white px-4 py-2 rounded-full font-medium transition-colors cursor-pointer text-sm"
+          >
+            {t("book")}
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-200 ${showOptions ? "rotate-180" : ""}`}
+            />
+          </button>
+
+          <AnimatePresence>
+            {showOptions && (
+              <motion.div
+                initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                transition={{ duration: 0.15 }}
+                className="absolute bottom-full right-0 mb-2 w-52 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50"
+              >
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-green-50 transition-colors text-sm font-medium text-foreground/80 group/opt"
+                  onClick={() => setShowOptions(false)}
+                >
+                  <div className="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center group-hover/opt:bg-green-200 transition-colors">
+                    <MessageCircle className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block font-semibold text-foreground">{t("bookWhatsapp")}</span>
+                    <span className="block text-xs text-foreground/50">{t("bookWhatsappHint")}</span>
+                  </div>
+                </a>
+                <div className="border-t border-gray-100" />
+                <Link
+                  href="/contacto"
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors text-sm font-medium text-foreground/80 group/opt"
+                  onClick={() => setShowOptions(false)}
+                >
+                  <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center group-hover/opt:bg-blue-200 transition-colors">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block font-semibold text-foreground">{t("bookEmail")}</span>
+                    <span className="block text-xs text-foreground/50">{t("bookEmailHint")}</span>
+                  </div>
+                </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </motion.div>
   );

@@ -6,6 +6,9 @@ import { circuitos } from "@/data/circuitos";
 import { routing } from "@/i18n/routing";
 import { CheckCircle2, Clock, MapPin, Map } from "lucide-react";
 import ItineraryTimeline from "@/components/ItineraryTimeline";
+import CircuitRouteMap from "@/components/CircuitRouteMap";
+import { BookingForm } from "@/components/BookingForm";
+import { fetchDepartureDates } from "@/lib/googleSheets";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -33,8 +36,11 @@ export default async function CircuitoPage({
   const highlights = tData.raw(`${id}.highlights`) as string[];
   const itinerary = tData.raw(`${id}.itinerary`) as string[];
 
+  // Fetch departure dates for the booking form
+  const departureDates = await fetchDepartureDates();
+
   const whatsappMessage = t("whatsappMessage", { name });
-  const whatsappUrl = `https://wa.me/573000000000?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/573002322335?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <div className="pt-20 bg-secondary/50 min-h-screen pb-20">
@@ -68,25 +74,12 @@ export default async function CircuitoPage({
         </div>
       </div>
 
-      {/* Sticky top bar (desktop) */}
-      <div className="container mx-auto px-4 md:px-6 -mt-16 relative z-10 hidden md:block">
-        <div className="bg-white rounded-2xl shadow-lg p-6 flex items-center justify-between border border-gray-100">
-          <div>
-            <p className="text-sm text-foreground/60 font-medium">{t("investmentFrom")}</p>
-            <p className="text-2xl font-bold text-primary">{t("toQuote")}</p>
-          </div>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-accent hover:brightness-90 text-white px-8 py-3 rounded-full font-bold transition-all shadow-md hover:-translate-y-1"
-          >
-            {t("bookNow")}
-          </a>
-        </div>
+      {/* Booking Form — overlapping the hero */}
+      <div className="container mx-auto px-4 md:px-6 -mt-20 relative z-10 max-w-6xl">
+        <BookingForm locale={locale} departureDates={departureDates} />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 mt-12 md:mt-24">
+      <div className="container mx-auto px-4 md:px-6 mt-16 md:mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
           <div className="lg:col-span-2 space-y-12">
@@ -129,7 +122,8 @@ export default async function CircuitoPage({
             </section>
           </div>
 
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 space-y-8">
+            <CircuitRouteMap dayImages={circuito.dayImages} circuitName={name} />
             <div className="sticky top-28 bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
               <h3 className="text-2xl font-heading font-bold mb-6 text-primary">{t("tripSummary")}</h3>
 

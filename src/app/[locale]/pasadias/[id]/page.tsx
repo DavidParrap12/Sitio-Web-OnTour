@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { destinos } from "@/data/destinos";
 import { routing } from "@/i18n/routing";
 import { CheckCircle2, Clock, MapPin } from "lucide-react";
+import { PasadiaGallery } from "@/components/PasadiaGallery";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -33,7 +34,9 @@ export default async function PasadiaPage({
   const highlights = tData.raw(`${id}.highlights`) as string[];
 
   const whatsappMessage = t("whatsappMessage", { name });
-  const whatsappUrl = `https://wa.me/573132322335?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/573002322335?text=${encodeURIComponent(whatsappMessage)}`;
+
+  const gallery = pasadia.gallery ?? [];
 
   return (
     <div className="pt-20 bg-secondary/50 min-h-screen pb-20">
@@ -92,6 +95,22 @@ export default async function PasadiaPage({
                 ))}
               </div>
             </section>
+
+            {/* Gallery — only shows if images exist */}
+            {gallery.length > 0 && (
+              <section>
+                <h2 className="text-3xl font-heading font-bold mb-6 text-primary border-b pb-4">
+                  {t("gallery")}
+                </h2>
+                {locale !== "es" && (
+                  <div className="flex items-center gap-2 mb-4 px-4 py-3 rounded-xl bg-blue-50 border border-blue-100 text-blue-700 text-sm">
+                    <span className="text-base">ℹ️</span>
+                    <span>{t("galleryLangNotice")}</span>
+                  </div>
+                )}
+                <PasadiaGallery images={gallery} altPrefix={name} />
+              </section>
+            )}
           </div>
 
           <div className="lg:col-span-1">

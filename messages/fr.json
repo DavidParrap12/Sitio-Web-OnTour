@@ -4,6 +4,7 @@
     "about": "À propos",
     "dayTrips": "Excursions",
     "circuits": "Circuits",
+    "tickets": "Vols",
     "contact": "Contact",
     "quote": "Demander un devis",
     "contactAdvisor": "Contacter un conseiller"
@@ -113,6 +114,10 @@
     "quotePrice": "Demander un devis",
     "book": "Réserver",
     "brochure": "Voir la brochure",
+    "bookWhatsapp": "WhatsApp",
+    "bookWhatsappHint": "Réponse immédiate",
+    "bookEmail": "E-mail",
+    "bookEmailHint": "Formulaire de contact",
     "whatsappDayTrip": "Bonjour, je suis intéressé(e) par l'excursion : {title}",
     "whatsappCircuit": "Bonjour, je suis intéressé(e) par le circuit : {title}"
   },
@@ -149,7 +154,9 @@
     "suggestedPrice": "Prix suggéré",
     "priceLabel": "Sur devis",
     "bookNow": "Réserver l'excursion maintenant",
-    "whatsappMessage": "Bonjour, je suis intéressé(e) par l'excursion : {name}"
+    "whatsappMessage": "Bonjour, je suis intéressé(e) par l'excursion : {name}",
+    "gallery": "Galerie photos",
+    "galleryLangNotice": "Les brochures sont disponibles uniquement en espagnol."
   },
   "footer": {
     "tagline": "Nous créons des expériences inoubliables.",

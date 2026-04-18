@@ -4,6 +4,7 @@
     "about": "Nosotros",
     "dayTrips": "Pasadías",
     "circuits": "Circuitos",
+    "tickets": "Tiquetes",
     "contact": "Contacto",
     "quote": "Cotizar viaje",
     "contactAdvisor": "Contactar Asesor"
@@ -113,6 +114,10 @@
     "quotePrice": "A Cotizar",
     "book": "Reservar",
     "brochure": "Ver Folleto",
+    "bookWhatsapp": "WhatsApp",
+    "bookWhatsappHint": "Respuesta inmediata",
+    "bookEmail": "Correo",
+    "bookEmailHint": "Formulario de contacto",
     "whatsappDayTrip": "Hola, me interesa el pasadía: {title}",
     "whatsappCircuit": "Hola, me interesa el circuito: {title}"
   },
@@ -149,7 +154,9 @@
     "suggestedPrice": "Precio sugerido",
     "priceLabel": "A Cotizar",
     "bookNow": "Reservar Pasadía Ahora",
-    "whatsappMessage": "Hola, interesad@ en el pasadía: {name}"
+    "whatsappMessage": "Hola, interesad@ en el pasadía: {name}",
+    "gallery": "Galería de Fotos",
+    "galleryLangNotice": "Los folletos están disponibles solo en español."
   },
   "footer": {
     "tagline": "Creamos experiencias inolvidables.",

@@ -213,15 +213,6 @@ export function SplashScreen() {
           <div className="splash-progress-fill" />
         </div>
       </div>
-
-      {/* Floating travel elements */}
-      <div className="splash-floating">
-        <span className="splash-float-icon float-1">✈️</span>
-        <span className="splash-float-icon float-2">🌴</span>
-        <span className="splash-float-icon float-3">🗻</span>
-        <span className="splash-float-icon float-4">☀️</span>
-        <span className="splash-float-icon float-5">🦜</span>
-      </div>
     </div>
   );
 }

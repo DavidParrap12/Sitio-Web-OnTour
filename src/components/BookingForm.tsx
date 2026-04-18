@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Users,
   Baby,
   BedDouble,
@@ -57,6 +58,7 @@ export function BookingForm({ locale, departureDates }: BookingFormProps) {
   const [baseMonth, setBaseMonth] = useState(now.getMonth());
   const [baseYear, setBaseYear] = useState(now.getFullYear());
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
   const [rooms, setRooms] = useState<Room[]>([{ adults: 2, children: 0 }]);
 
   const monthNames = MONTH_LABELS[locale] || MONTH_LABELS.es;
@@ -141,7 +143,7 @@ export function BookingForm({ locale, departureDates }: BookingFormProps) {
     msg += "\n" + t("whatsappOutro");
 
     window.open(
-      `https://api.whatsapp.com/send/?phone=573132322335&text=${encodeURIComponent(msg)}`,
+      `https://api.whatsapp.com/send/?phone=573002322335&text=${encodeURIComponent(msg)}`,
       "_blank"
     );
   }
@@ -212,29 +214,44 @@ export function BookingForm({ locale, departureDates }: BookingFormProps) {
         background: "linear-gradient(135deg, #071e3d 0%, #0a3566 40%, #1a4f8b 100%)",
       }}
     >
-      {/* Header */}
-      <div className="text-center py-5 px-4">
+      {/* Collapsible Header */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full text-center py-5 px-4 cursor-pointer group transition-colors hover:bg-white/[0.04]"
+      >
         <motion.h3
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="inline-flex items-center gap-2 text-lg md:text-xl font-bold text-white border-2 border-white/30 rounded-full px-6 py-2.5 backdrop-blur-sm"
+          className="inline-flex items-center gap-2 text-lg md:text-xl font-bold text-white border-2 border-white/30 rounded-full px-6 py-2.5 backdrop-blur-sm group-hover:border-white/50 transition-colors"
         >
           <CalendarDays className="w-5 h-5" />
           {t("title")}
-        </motion.h3>
-        {isFlexible ? (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-secondary text-sm mt-2 font-medium"
+          <motion.span
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
           >
-            ✨ {t("flexibleDates")}
-          </motion.p>
-        ) : (
-          <p className="text-white/50 text-xs mt-2">{t("fixedDateHint")}</p>
+            <ChevronDown className="w-5 h-5" />
+          </motion.span>
+        </motion.h3>
+        {!isOpen && (
+          <p className="text-white/40 text-xs mt-2">{t("fixedDateHint")}</p>
         )}
-      </div>
+      </button>
 
+      <AnimatePresence>
+      {isOpen && (
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: "auto", opacity: 1 }}
+        exit={{ height: 0, opacity: 0 }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        className="overflow-hidden"
+      >
+      {isFlexible && (
+        <p className="text-secondary text-sm font-medium text-center mb-4">
+          ✨ {t("flexibleDates")}
+        </p>
+      )}
       <div className="px-4 md:px-8 pb-8">
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Calendar */}
@@ -371,6 +388,9 @@ export function BookingForm({ locale, departureDates }: BookingFormProps) {
           </div>
         </div>
       </div>
+      </motion.div>
+      )}
+      </AnimatePresence>
     </motion.div>
   );
 }

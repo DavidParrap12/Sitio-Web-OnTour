@@ -50,29 +50,8 @@ export default async function Home({
     <div className="flex flex-col min-h-screen">
       <Hero />
 
-      {/* Features Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <SectionTitle
-            title={t("whyUs")}
-            subtitle={t("whyUsSubtitle")}
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mt-16">
-            {features.map((feature, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary border border-slate-100 hover:shadow-lg transition-all">
-                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-6">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold font-heading mb-3">{feature.title}</h3>
-                <p className="text-foreground/70 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Featured Pasadias */}
-      <section className="py-16 md:py-24 bg-secondary">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <SectionTitle
@@ -103,7 +82,7 @@ export default async function Home({
       </section>
 
       {/* Featured Circuitos */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <SectionTitle
@@ -127,6 +106,27 @@ export default async function Home({
                 image={circuito.image}
                 href={`/circuitos/${circuito.id}`}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section — Why travel with us */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <SectionTitle
+            title={t("whyUs")}
+            subtitle={t("whyUsSubtitle")}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mt-16">
+            {features.map((feature, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary border border-slate-100 hover:shadow-lg transition-all">
+                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-6">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold font-heading mb-3">{feature.title}</h3>
+                <p className="text-foreground/70 leading-relaxed">{feature.description}</p>
+              </div>
             ))}
           </div>
         </div>

@@ -31,6 +31,7 @@ export function Navbar() {
     { name: t("about"), href: "/nosotros" },
     { name: t("dayTrips"), href: "/pasadias" },
     { name: t("circuits"), href: "/circuitos" },
+    { name: t("tickets"), href: "https://www.aviatur.com/vuelos", external: true },
     { name: t("contact"), href: "/contacto" },
   ];
 
@@ -91,21 +92,39 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => {
               const isActive =
-                pathname === link.href ||
-                (link.href !== "/" && pathname?.startsWith(link.href));
+                !link.external &&
+                (pathname === link.href ||
+                (link.href !== "/" && pathname?.startsWith(link.href)));
+
+              const linkClass = `font-medium text-sm lg:text-base relative transition-colors ${
+                isActive
+                  ? scrolled || !isHome
+                    ? "text-primary"
+                    : "text-white"
+                  : scrolled || !isHome
+                  ? "text-foreground/70 hover:text-primary"
+                  : "text-white/80 hover:text-white"
+              }`;
+
+              if (link.external) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClass}
+                  >
+                    {link.name}
+                  </a>
+                );
+              }
+
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-medium text-sm lg:text-base relative transition-colors ${
-                    isActive
-                      ? scrolled || !isHome
-                        ? "text-primary"
-                        : "text-white"
-                      : scrolled || !isHome
-                      ? "text-foreground/70 hover:text-primary"
-                      : "text-white/80 hover:text-white"
-                  }`}
+                  className={linkClass}
                 >
                   {link.name}
                   {isActive && (
@@ -205,7 +224,22 @@ export function Navbar() {
           >
             <div className="flex flex-col gap-6 text-center">
               {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive = !link.external && pathname === link.href;
+
+                if (link.external) {
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-2xl font-bold font-heading text-foreground/80"
+                    >
+                      {link.name}
+                    </a>
+                  );
+                }
+
                 return (
                   <Link
                     key={link.href}

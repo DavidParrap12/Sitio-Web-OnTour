@@ -15,7 +15,7 @@ export default async function Contacto({
   const t = await getTranslations("contact");
 
   return (
-    <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
+    <div className="pt-32 pb-16 min-h-screen bg-secondary/50">
       <div className="container mx-auto px-4 md:px-6">
         <SectionTitle
           title={t("title")}
@@ -34,8 +34,8 @@ export default async function Contacto({
                 <div className="flex items-start gap-4">
                   <Phone className="w-6 h-6 text-accent shrink-0" />
                   <div>
+                    <p className="font-semibold text-lg">+57 316 538 6892</p>
                     <p className="font-semibold text-lg">+57 300 232 2335</p>
-                    <p className="font-semibold text-lg">57 316 538 6892</p>
                     <p className="text-sm text-white/70">{t("schedule")}</p>
                   </div>
                 </div>

@@ -4,6 +4,7 @@
     "about": "About Us",
     "dayTrips": "Day Trips",
     "circuits": "Circuits",
+    "tickets": "Flights",
     "contact": "Contact",
     "quote": "Get a Quote",
     "contactAdvisor": "Contact Advisor"
@@ -113,6 +114,10 @@
     "quotePrice": "Get a Quote",
     "book": "Book",
     "brochure": "View Brochure",
+    "bookWhatsapp": "WhatsApp",
+    "bookWhatsappHint": "Instant response",
+    "bookEmail": "Email",
+    "bookEmailHint": "Contact form",
     "whatsappDayTrip": "Hello, I'm interested in the day trip: {title}",
     "whatsappCircuit": "Hello, I'm interested in the circuit: {title}"
   },
@@ -149,7 +154,9 @@
     "suggestedPrice": "Suggested price",
     "priceLabel": "To Be Quoted",
     "bookNow": "Book Day Trip Now",
-    "whatsappMessage": "Hello, I'm interested in the day trip: {name}"
+    "whatsappMessage": "Hello, I'm interested in the day trip: {name}",
+    "gallery": "Photo Gallery",
+    "galleryLangNotice": "Brochures are available in Spanish only."
   },
   "footer": {
     "tagline": "We create unforgettable experiences.",
