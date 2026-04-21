@@ -76,7 +76,7 @@ export function Navbar() {
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center gap-2.5 group">
             <Image
               src="/image/logo-ON-TOUR-Nuevo.png"
               alt="Ontour Logo"
@@ -86,6 +86,12 @@ export function Navbar() {
               style={{ width: 'auto', height: 'auto' }}
               priority
             />
+            <span className={`hidden sm:inline-flex flex-col text-[10px] font-bold tracking-widest uppercase leading-tight transition-colors ${
+              scrolled || !isHome ? "text-primary" : "text-white"
+            }`}>
+              <span>DMC</span>
+              <span className="text-[9px] font-medium tracking-wider opacity-70">Colombia</span>
+            </span>
           </Link>
 
           {/* Desktop Nav */}

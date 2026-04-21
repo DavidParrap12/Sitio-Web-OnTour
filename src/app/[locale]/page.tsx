@@ -6,6 +6,7 @@ import { CardDestino } from "@/components/CardDestino";
 import { destinos } from "@/data/destinos";
 import { circuitos } from "@/data/circuitos";
 import { ShieldCheck, Map, HeartHandshake, Headphones } from "lucide-react";
+import { Testimonials } from "@/components/Testimonials";
 import { Link } from "@/i18n/navigation";
 
 export default async function Home({
@@ -131,6 +132,9 @@ export default async function Home({
           </div>
         </div>
       </section>
+
+      {/* Testimonials — Google Reviews */}
+      <Testimonials />
 
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">

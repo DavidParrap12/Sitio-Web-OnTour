@@ -230,15 +230,43 @@
 }
 
 .splash-tagline {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   font-size: 1.15rem;
   font-weight: 500;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  margin-top: 1rem;
+  text-align: center;
+  line-height: 1.8;
+  margin-top: 1.25rem;
+  max-width: 500px;
   animation: taglineFade 1.2s 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   opacity: 0;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.splash-tagline-main {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #fff;
+}
+
+.splash-tagline-divider {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.splash-tagline-sub {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 @keyframes taglineFade {
@@ -364,6 +392,16 @@
   .splash-tagline {
     font-size: 0.9rem;
     letter-spacing: 0.15em;
+    max-width: 380px;
+  }
+
+  .splash-tagline-main {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+  }
+
+  .splash-tagline-sub {
+    font-size: 0.8rem;
   }
 
   .splash-progress-track {
@@ -431,6 +469,17 @@
   .splash-tagline {
     font-size: 0.8rem;
     letter-spacing: 0.12em;
+    max-width: 280px;
+  }
+
+  .splash-tagline-main {
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+  }
+
+  .splash-tagline-sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
   }
 
   .splash-progress-track {

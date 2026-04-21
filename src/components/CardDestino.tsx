@@ -82,7 +82,7 @@ export function CardDestino({
             {title}
           </h3>
 
-          <p className="text-foreground/70 text-sm line-clamp-3 flex-grow">
+          <p className="text-foreground/70 text-sm line-clamp-2 flex-grow">
             {description}
           </p>
         </div>

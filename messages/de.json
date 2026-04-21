@@ -367,5 +367,144 @@
         "Wanderversicherung"
       ]
     }
+  },
+  "testimonials": {
+    "googleBadge": "Google-Bewertungen",
+    "title": "Was unsere Reisenden sagen",
+    "subtitle": "Echte Erfahrungen von Menschen, die uns vertraut haben, um Kolumbien zu entdecken.",
+    "verifiedReview": "Verifizierte Bewertung",
+    "googleUser": "Google-Nutzer",
+    "goToReview": "Zur Bewertung",
+    "prevReview": "Vorherige Bewertung",
+    "nextReview": "Nächste Bewertung",
+    "seeAllOnGoogle": "Alle Bewertungen auf Google ansehen",
+    "reviews": {
+      "yamel": {
+        "text": "Wir hatten großartige Erlebnisse auf unserer Kreuzfahrt nach Aruba und Curaçao. Danke On Tour, dass ihr meinen Traum wahr gemacht habt!"
+      },
+      "angie": {
+        "text": "Ausgezeichneter Service und tolle Reisepläne. Absolut empfehlenswert für jede Art von Reise."
+      },
+      "samsung": {
+        "text": "Sehr gutes Unternehmen. Man merkt die Professionalität und Hingabe in jedem Detail der Reise."
+      },
+      "sandra": {
+        "text": "Guter Service in der Agentur. Immer bereit zu helfen und die beste Option zu finden."
+      }
+    }
+  },
+  "legalTerms": {
+    "title": "Allgemeine Geschäftsbedingungen",
+    "subtitle": "Allgemeine Bedingungen für die Erbringung touristischer Dienstleistungen durch Ontour DMC Colombia.",
+    "general": {
+      "title": "1. Allgemeine Bedingungen",
+      "text": "Mit der Buchung eines touristischen Service bei Ontour S.A.S. (im Folgenden \"Ontour\") akzeptiert der Kunde die in diesem Dokument beschriebenen Bedingungen. Ontour ist ein ordnungsgemäß nach den Gesetzen der Republik Kolumbien gegründetes Reisebüro mit Sitz in Ibagué, Tolima, eingetragen im Nationalen Tourismusregister, verwaltet vom Autonomen Vermögen Nationaler Tourismusfonds (FONTUR)."
+    },
+    "bookings": {
+      "title": "2. Buchungen & Zahlungen",
+      "text": "Buchungen werden nach Eingang der entsprechenden Anzahlung (mindestens 30% des Gesamtbetrags) bestätigt. Der Restbetrag muss spätestens 7 Tage vor Beginn der Leistung beglichen werden. Zahlungen können per Banküberweisung, Nequi, Daviplata oder bar in unserem Büro erfolgen. Veröffentlichte Preise unterliegen der Verfügbarkeit und können ohne vorherige Ankündigung geändert werden."
+    },
+    "cancellations": {
+      "title": "3. Stornierungen & Erstattungen",
+      "text": "Stornierung mehr als 15 Tage im Voraus: 100% Erstattung der Anzahlung.\nStornierung zwischen 8 und 14 Tagen: 50% Erstattung der Anzahlung.\nStornierung weniger als 7 Tage: keine Erstattung.\nBei höherer Gewalt (Wetter, öffentliche Ordnung, Naturkatastrophen) bietet Ontour eine kostenlose Umbuchung oder ein Guthaben für künftige Leistungen an."
+    },
+    "responsibilities": {
+      "title": "4. Verantwortlichkeiten",
+      "text": "Ontour handelt als Vermittler und haftet nicht für die Nichterfüllung durch Drittanbieter (Fluggesellschaften, Hotels, Restaurants). Alle unsere Leistungen sind durch Versicherungs- und Erfüllungspolicen abgesichert. Der Kunde ist verantwortlich für gültige Ausweisdokumente und die Mitteilung etwaiger gesundheitlicher Einschränkungen oder Mobilitätsbeschränkungen vor Reiseantritt."
+    },
+    "modifications": {
+      "title": "5. Änderungen am Reiseverlauf",
+      "text": "Ontour behält sich das Recht vor, den Reiseverlauf aus Sicherheits-, Wetter-, Ordnungs- oder Verfügbarkeitsgründen zu ändern. Jede Änderung wahrt die gleichwertige Qualität und den Umfang der gebuchten Leistung. Der Kunde wird so früh wie möglich benachrichtigt."
+    },
+    "jurisdiction": {
+      "title": "6. Gerichtsstand & anwendbares Recht",
+      "text": "Dieser Vertrag unterliegt den Gesetzen der Republik Kolumbien. Jede Streitigkeit wird den zuständigen Gerichten der Stadt Ibagué, Tolima, vorgelegt. Es gelten die aktuellen Tourismusvorschriften des Ministeriums für Handel, Industrie und Tourismus."
+    },
+    "lastUpdated": "Letzte Aktualisierung: April 2026"
+  },
+  "legalPrivacy": {
+    "title": "Datenschutzrichtlinie",
+    "subtitle": "Wie wir Ihre persönlichen Daten erheben, verwenden und schützen.",
+    "dataCollection": {
+      "title": "1. Erhobene Daten",
+      "text": "Wir erheben folgende Informationen, wenn Sie unsere Dienste oder Kontaktformulare nutzen: vollständiger Name, E-Mail-Adresse, Telefonnummer, Herkunftsstadt, Reisepräferenzen und bei Buchungen Zahlungsinformationen. Wir speichern keine Kreditkartendaten auf unseren Servern."
+    },
+    "usage": {
+      "title": "2. Verwendung der Daten",
+      "text": "Ihre Daten werden ausschließlich verwendet für: Bearbeitung von Buchungen und Angeboten, Versand von Bestätigungen und Reiseplänen, Mitteilung von Änderungen an gebuchten Leistungen und Verbesserung Ihres Erlebnisses mit relevanten Angeboten (nur mit Ihrer Einwilligung)."
+    },
+    "sharing": {
+      "title": "3. Datenweitergabe",
+      "text": "Wir verkaufen oder vermieten Ihre persönlichen Daten nicht an Dritte. Wir geben Informationen nur an direkte Leistungserbringer (Hotels, Transportunternehmen, Reiseführer) weiter und nur die für die Leistungserbringung notwendigen Daten."
+    },
+    "security": {
+      "title": "4. Sicherheit",
+      "text": "Wir setzen technische und organisatorische Maßnahmen zum Schutz Ihrer Daten vor unbefugtem Zugriff, Verlust oder Veränderung ein. Unsere Website verwendet SSL/TLS-Verschlüsselung für die Datenübertragung."
+    },
+    "rights": {
+      "title": "5. Ihre Rechte",
+      "text": "Gemäß Gesetz 1581 von 2012 (Datenschutz in Kolumbien) haben Sie das Recht, Ihre persönlichen Daten einzusehen, zu aktualisieren, zu berichtigen und zu löschen. Schreiben Sie uns dazu an ontoursas@gmail.com."
+    },
+    "cookies": {
+      "title": "6. Cookies",
+      "text": "Wir verwenden technische und analytische Cookies zur Verbesserung der Website-Leistung und zum Verständnis der Nutzung. Sie können Cookies in Ihren Browsereinstellungen deaktivieren, wobei einige Website-Funktionen beeinträchtigt werden können."
+    },
+    "lastUpdated": "Letzte Aktualisierung: April 2026"
+  },
+  "legalTourism": {
+    "title": "Nationales Tourismusregister",
+    "subtitle": "Ontour DMC Colombia ist eine bei den kolumbianischen Tourismusbehörden offiziell registrierte Agentur.",
+    "registryTitle": "Verifizierte Agentur",
+    "registryBody": "Ontour S.A.S. ist im Nationalen Tourismusregister eingetragen, verwaltet vom Autonomen Vermögen Nationaler Tourismusfonds (FONTUR).",
+    "rntNumber": "RNT 145702",
+    "whatIsRnt": {
+      "title": "Was ist das RNT?",
+      "text": "Das Nationale Tourismusregister (RNT) ist eine gesetzliche Pflicht für alle Tourismusdienstleister in Kolumbien gemäß Gesetz 300 von 1996 und Gesetz 1558 von 2012. Die Eintragung garantiert, dass das Unternehmen die vom Ministerium für Handel, Industrie und Tourismus geforderten Qualitäts-, Sicherheits- und Rechtsstandards erfüllt."
+    },
+    "guarantee": {
+      "title": "Was garantiert es dem Reisenden?",
+      "text": "Bei einer Reise mit einem im RNT registrierten Unternehmen ist der Reisende sicher, dass:\n• Das Unternehmen über Haftpflicht- und Erfüllungsversicherungen verfügt.\n• Die Leistungen nach geltendem Recht erbracht werden.\n• Institutionelle Unterstützung bei Eventualitäten besteht.\n• Die Reise zur nachhaltigen Tourismusentwicklung in Kolumbien beiträgt."
+    },
+    "fontur": {
+      "title": "Autonomes Vermögen FONTUR",
+      "text": "Der Nationale Tourismusfonds (FONTUR) ist das autonome Vermögen, das die Ressourcen für Förderung, Wettbewerbsfähigkeit und Nachhaltigkeit des Tourismus in Kolumbien verwaltet. Als registrierte Agentur trägt Ontour zur Stärkung des nationalen Tourismussektors bei."
+    },
+    "lastUpdated": "Letzte Aktualisierung: April 2026"
+  },
+  "legalFaq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Antworten auf die häufigsten Fragen unserer Reisenden.",
+    "q1": {
+      "question": "Wie kann ich eine Reise bei Ontour buchen?",
+      "answer": "Sie können uns per WhatsApp unter +57 316 538 6892, per E-Mail an ontoursas@gmail.com oder über das Kontaktformular auf unserer Website erreichen. Ein Berater wird Ihnen mit einem personalisierten Angebot antworten."
+    },
+    "q2": {
+      "question": "Was ist in den Rundreisen enthalten?",
+      "answer": "Unsere Rundreisen beinhalten Landtransport, Unterkunft, professionellen Reiseleiter, Eintrittsgelder zu den aufgeführten Zielen und Reiseversicherung. Die Verpflegung variiert je nach Plan. Details finden Sie auf der jeweiligen Rundreisenseite."
+    },
+    "q3": {
+      "question": "Kann ich meinen Reiseplan individuell gestalten?",
+      "answer": "Ja! Wir sind ein DMC (Destination Management Company) und gestalten maßgeschneiderte Erlebnisse. Teilen Sie uns Ihre bevorzugten Daten, Ziele und Ihr Budget mit und wir erstellen einen personalisierten Plan."
+    },
+    "q4": {
+      "question": "Ist es sicher, in Kolumbien zu reisen?",
+      "answer": "Kolumbien hat enorme Fortschritte bei der Tourismussicherheit gemacht. Alle unsere Rundreisen finden in etablierten Tourismusgebieten statt und umfassen Versicherungspolicen, professionelle Guides und zertifizierte Fahrzeuge. Ihre Sicherheit ist unsere Priorität."
+    },
+    "q5": {
+      "question": "Welche Zahlungsmethoden akzeptieren Sie?",
+      "answer": "Wir akzeptieren nationale Banküberweisung, Nequi, Daviplata und Barzahlung in unserem Büro in Ibagué. Für internationale Buchungen bieten wir Zahlungsoptionen über Western Union oder PayPal."
+    },
+    "q6": {
+      "question": "Wie lautet die Stornierungsrichtlinie?",
+      "answer": "Mehr als 15 Tage im Voraus: 100% Erstattung. Zwischen 8-14 Tagen: 50% Erstattung. Weniger als 7 Tage: keine Erstattung. Bei höherer Gewalt bieten wir kostenlose Umbuchung."
+    },
+    "q7": {
+      "question": "Betreuen Sie große Gruppen oder Unternehmen?",
+      "answer": "Ja, wir organisieren Firmengruppen, Incentive-Reisen, Tagungen und Schulausflüge. Kontaktieren Sie uns für Sondertarife und individuelle Planung."
+    },
+    "q8": {
+      "question": "Sind Sie legal etabliert?",
+      "answer": "Ja. Ontour S.A.S. ist im Nationalen Tourismusregister (RNT 145702) eingetragen, verwaltet vom Autonomen Vermögen Nationaler Tourismusfonds (FONTUR), und erfüllt alle Tourismusvorschriften in Kolumbien."
+    }
   }
 }

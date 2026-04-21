@@ -367,5 +367,144 @@
         "Hiking insurance"
       ]
     }
+  },
+  "testimonials": {
+    "googleBadge": "Google Reviews",
+    "title": "What our travelers say",
+    "subtitle": "Real experiences from those who trusted us to discover Colombia.",
+    "verifiedReview": "Verified review",
+    "googleUser": "Google User",
+    "goToReview": "Go to review",
+    "prevReview": "Previous review",
+    "nextReview": "Next review",
+    "seeAllOnGoogle": "See all reviews on Google",
+    "reviews": {
+      "yamel": {
+        "text": "We had amazing experiences on our cruise to Aruba and Curaçao. Thank you On Tour for making my dream come true!"
+      },
+      "angie": {
+        "text": "Excellent service and great travel plans. Totally recommended for any type of trip."
+      },
+      "samsung": {
+        "text": "Very good company. You can tell the professionalism and dedication in every detail of the trip."
+      },
+      "sandra": {
+        "text": "Great service at the agency. Always willing to help and find the best option."
+      }
+    }
+  },
+  "legalTerms": {
+    "title": "Terms & Conditions",
+    "subtitle": "General conditions for the provision of tourism services by Ontour DMC Colombia.",
+    "general": {
+      "title": "1. General Conditions",
+      "text": "By contracting any tourism service with Ontour S.A.S. (hereinafter \"Ontour\"), the client accepts the conditions described in this document. Ontour is a travel agency duly incorporated under the laws of the Republic of Colombia, headquartered in Ibagué, Tolima, registered in the National Tourism Registry administered by the Autonomous Heritage National Tourism Fund (FONTUR)."
+    },
+    "bookings": {
+      "title": "2. Bookings & Payments",
+      "text": "Bookings are confirmed upon receipt of the corresponding deposit (minimum 30% of the total value). The remaining balance must be paid at least 7 days before the service start date. Payments can be made by bank transfer, Nequi, Daviplata, or cash at our office. Published prices are subject to availability and may change without prior notice."
+    },
+    "cancellations": {
+      "title": "3. Cancellations & Refunds",
+      "text": "Cancellation more than 15 days in advance: 100% deposit refund.\nCancellation between 8 and 14 days: 50% deposit refund.\nCancellation less than 7 days: no refund.\nIn case of force majeure (weather, public order, natural disasters), Ontour will offer rescheduling at no additional cost or a credit applicable to future services."
+    },
+    "responsibilities": {
+      "title": "4. Responsibilities",
+      "text": "Ontour acts as an intermediary operator and is not responsible for non-compliance by third-party providers (airlines, hotels, restaurants). All our services are covered by insurance and compliance policies. The client is responsible for carrying valid identification documents and informing us of any medical conditions or mobility restrictions prior to travel."
+    },
+    "modifications": {
+      "title": "5. Itinerary Modifications",
+      "text": "Ontour reserves the right to modify the itinerary for reasons of safety, weather, public order, or provider availability. Any change will maintain the equivalent quality and scope of the contracted service. The client will be notified as far in advance as possible."
+    },
+    "jurisdiction": {
+      "title": "6. Jurisdiction & Applicable Law",
+      "text": "This contract is governed by the laws of the Republic of Colombia. Any dispute will be submitted to the competent courts of the city of Ibagué, Tolima. The current tourism sector regulations established by the Ministry of Commerce, Industry and Tourism apply."
+    },
+    "lastUpdated": "Last updated: April 2026"
+  },
+  "legalPrivacy": {
+    "title": "Privacy Policy",
+    "subtitle": "How we collect, use, and protect your personal information.",
+    "dataCollection": {
+      "title": "1. Data We Collect",
+      "text": "We collect the following information when you use our services or contact forms: full name, email address, phone number, city of origin, travel preferences and, in the case of bookings, payment information. We do not store credit card data on our servers."
+    },
+    "usage": {
+      "title": "2. Use of Information",
+      "text": "Your data is used exclusively to: process bookings and quotes, send confirmations and itineraries, communicate changes to contracted services, and improve your experience with relevant offers and content (only if you opt in)."
+    },
+    "sharing": {
+      "title": "3. Information Sharing",
+      "text": "We do not sell or rent your personal data to third parties. We share information only with direct providers of the contracted service (hotels, transport companies, guides) and only the information necessary for service delivery."
+    },
+    "security": {
+      "title": "4. Security",
+      "text": "We implement technical and organizational measures to protect your data against unauthorized access, loss, or alteration. Our website uses SSL/TLS encryption for data transmission."
+    },
+    "rights": {
+      "title": "5. Your Rights",
+      "text": "In accordance with Law 1581 of 2012 (Personal Data Protection in Colombia), you have the right to access, update, rectify, and delete your personal data. To exercise these rights, email us at ontoursas@gmail.com."
+    },
+    "cookies": {
+      "title": "6. Cookies",
+      "text": "We use technical and analytical cookies to improve site performance and understand how you use it. You can disable cookies from your browser settings, although some site features may be affected."
+    },
+    "lastUpdated": "Last updated: April 2026"
+  },
+  "legalTourism": {
+    "title": "National Tourism Registry",
+    "subtitle": "Ontour DMC Colombia is a legally registered agency with Colombian tourism authorities.",
+    "registryTitle": "Verified Agency",
+    "registryBody": "Ontour S.A.S. is registered in the National Tourism Registry, administered by the Autonomous Heritage National Tourism Fund (FONTUR).",
+    "rntNumber": "RNT 145702",
+    "whatIsRnt": {
+      "title": "What is the RNT?",
+      "text": "The National Tourism Registry (RNT) is a mandatory legal requirement for all tourism service providers in Colombia, as established by Law 300 of 1996 and Law 1558 of 2012. Registration guarantees that the company meets quality, safety, and legality standards required by the Ministry of Commerce, Industry and Tourism."
+    },
+    "guarantee": {
+      "title": "What does it guarantee for travelers?",
+      "text": "By traveling with an RNT-registered company, travelers are assured that:\n• The company has civil liability and compliance insurance policies.\n• Services are operated under current regulations.\n• There is institutional backing for any eventuality.\n• The trip contributes to the sustainable development of tourism in Colombia."
+    },
+    "fontur": {
+      "title": "FONTUR Autonomous Heritage",
+      "text": "The National Tourism Fund (FONTUR) is the autonomous heritage that administers resources for the promotion, competitiveness, and sustainability of tourism in Colombia. As a registered agency, Ontour contributes to strengthening the national tourism sector."
+    },
+    "lastUpdated": "Last updated: April 2026"
+  },
+  "legalFaq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the most common questions from our travelers.",
+    "q1": {
+      "question": "How can I book a trip with Ontour?",
+      "answer": "You can contact us via WhatsApp at +57 316 538 6892, by email at ontoursas@gmail.com, or through the contact form on our website. An advisor will respond with a personalized quote."
+    },
+    "q2": {
+      "question": "What is included in the tourist circuits?",
+      "answer": "Our circuits include ground transportation, accommodation, professional tour guide, entrance fees to listed destinations, and travel insurance. Meals vary by plan. Specific details are available on each circuit's page."
+    },
+    "q3": {
+      "question": "Can I customize my itinerary?",
+      "answer": "Yes! We are a DMC (Destination Management Company) and design custom experiences. Contact us with your preferred dates, destinations, and budget and we'll create a personalized plan."
+    },
+    "q4": {
+      "question": "Is it safe to travel in Colombia?",
+      "answer": "Colombia has made tremendous progress in tourism safety. All our circuits operate in established tourist zones and include insurance policies, professional guides, and certified vehicles. Your safety is our priority."
+    },
+    "q5": {
+      "question": "What payment methods do you accept?",
+      "answer": "We accept national bank transfers, Nequi, Daviplata, and cash at our Ibagué office. For international bookings, we offer payment options via Western Union or PayPal."
+    },
+    "q6": {
+      "question": "What is the cancellation policy?",
+      "answer": "More than 15 days in advance: 100% refund. Between 8-14 days: 50% refund. Less than 7 days: no refund. In case of force majeure, we offer free rescheduling."
+    },
+    "q7": {
+      "question": "Do you serve large groups or companies?",
+      "answer": "Yes, we operate corporate groups, incentive trips, conventions, and school excursions. Contact us for special rates and customized scheduling."
+    },
+    "q8": {
+      "question": "Are you legally established?",
+      "answer": "Yes. Ontour S.A.S. is registered in the National Tourism Registry (RNT 145702), administered by the Autonomous Heritage National Tourism Fund (FONTUR), and complies with all tourism sector regulations in Colombia."
+    }
   }
 }

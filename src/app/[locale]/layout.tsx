@@ -22,30 +22,72 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.agenciaontour.com"),
-  title: "Ontour | Pasadías y Circuitos Turísticos",
-  description:
-    "Explora los mejores destinos, pasadías y circuitos con Ontour. Turismo en Colombia.",
-  icons: {
-    icon: "/image/Fav-Ontour.ico",
+const metadataByLocale: Record<string, { title: string; description: string; ogTitle: string; ogDesc: string; ogLocale: string; twTitle: string; twDesc: string }> = {
+  es: {
+    title: "Ontour | Pasadías y Circuitos Turísticos",
+    description: "Explora los mejores destinos, pasadías y circuitos con Ontour. Turismo en Colombia.",
+    ogTitle: "Ontour | Pasadías y Circuitos Turísticos en Colombia",
+    ogDesc: "Explora los mejores destinos, pasadías y circuitos con Ontour. Turismo en Colombia.",
+    ogLocale: "es_CO",
+    twTitle: "Ontour | Turismo en Colombia",
+    twDesc: "Pasadías y circuitos turísticos en Colombia.",
   },
-  openGraph: {
-    title: "Ontour | Pasadías y Circuitos Turísticos en Colombia",
-    description:
-      "Explora los mejores destinos, pasadías y circuitos con Ontour. Turismo en Colombia.",
-    url: "https://www.agenciaontour.com",
-    siteName: "Ontour DMC Colombia",
-    images: [{ url: "/image/logo-ON-TOUR.png" }],
-    locale: "es_CO",
-    type: "website",
+  en: {
+    title: "OnTour DMC Colombia | Day Trips & Tourist Circuits",
+    description: "Explore the best destinations, day trips and circuits with OnTour. Tourism in Colombia.",
+    ogTitle: "OnTour DMC Colombia | Day Trips & Tourist Circuits",
+    ogDesc: "Explore the best destinations, day trips and tourist circuits with OnTour. Tourism in Colombia.",
+    ogLocale: "en_US",
+    twTitle: "OnTour DMC Colombia | Tourism in Colombia",
+    twDesc: "Day trips and tourist circuits in Colombia.",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontour | Turismo en Colombia",
-    description: "Pasadías y circuitos turísticos en Colombia.",
+  de: {
+    title: "OnTour DMC Kolumbien | Tagesausflüge & Rundreisen",
+    description: "Entdecken Sie die besten Reiseziele, Tagesausflüge und Rundreisen mit OnTour. Tourismus in Kolumbien.",
+    ogTitle: "OnTour DMC Kolumbien | Tagesausflüge & Rundreisen",
+    ogDesc: "Entdecken Sie die besten Reiseziele, Tagesausflüge und Rundreisen mit OnTour. Tourismus in Kolumbien.",
+    ogLocale: "de_DE",
+    twTitle: "OnTour DMC Kolumbien | Tourismus in Kolumbien",
+    twDesc: "Tagesausflüge und Rundreisen in Kolumbien.",
+  },
+  fr: {
+    title: "OnTour DMC Colombie | Excursions & Circuits Touristiques",
+    description: "Découvrez les meilleures destinations, excursions et circuits avec OnTour. Tourisme en Colombie.",
+    ogTitle: "OnTour DMC Colombie | Excursions & Circuits Touristiques",
+    ogDesc: "Découvrez les meilleures destinations, excursions et circuits avec OnTour. Tourisme en Colombie.",
+    ogLocale: "fr_FR",
+    twTitle: "OnTour DMC Colombie | Tourisme en Colombie",
+    twDesc: "Excursions et circuits touristiques en Colombie.",
   },
 };
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = metadataByLocale[locale] ?? metadataByLocale.es;
+
+  return {
+    metadataBase: new URL("https://www.agenciaontour.com"),
+    title: t.title,
+    description: t.description,
+    icons: {
+      icon: "/image/Fav-Ontour.ico",
+    },
+    openGraph: {
+      title: t.ogTitle,
+      description: t.ogDesc,
+      url: "https://www.agenciaontour.com",
+      siteName: "Ontour DMC Colombia",
+      images: [{ url: "/image/logo-ON-TOUR-Nuevo.png" }],
+      locale: t.ogLocale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t.twTitle,
+      description: t.twDesc,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

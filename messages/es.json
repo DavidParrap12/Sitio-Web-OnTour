@@ -367,5 +367,144 @@
         "Seguro de caminata"
       ]
     }
+  },
+  "testimonials": {
+    "googleBadge": "Reseñas en Google",
+    "title": "Lo que dicen nuestros viajeros",
+    "subtitle": "Experiencias reales de quienes confiaron en nosotros para descubrir Colombia.",
+    "verifiedReview": "Reseña verificada",
+    "googleUser": "Usuario de Google",
+    "goToReview": "Ir a la reseña",
+    "prevReview": "Reseña anterior",
+    "nextReview": "Siguiente reseña",
+    "seeAllOnGoogle": "Ver todas las reseñas en Google",
+    "reviews": {
+      "yamel": {
+        "text": "Grandes experiencias vivimos en nuestro crucero por Aruba, Curazao. ¡Gracias On Tour por cumplir mi sueño!"
+      },
+      "angie": {
+        "text": "Un excelente servicio y buenos planes. Totalmente recomendados para cualquier tipo de viaje."
+      },
+      "samsung": {
+        "text": "Muy buena empresa. Se nota el profesionalismo y la dedicación en cada detalle del viaje."
+      },
+      "sandra": {
+        "text": "Buena atención en la agencia. Siempre dispuestos a ayudar y a encontrar la mejor opción."
+      }
+    }
+  },
+  "legalTerms": {
+    "title": "Términos y Condiciones",
+    "subtitle": "Condiciones generales para la prestación de servicios turísticos de Ontour DMC Colombia.",
+    "general": {
+      "title": "1. Condiciones Generales",
+      "text": "Al contratar cualquier servicio turístico con Ontour S.A.S. (en adelante \"Ontour\"), el cliente acepta las condiciones descritas en este documento. Ontour es una agencia de viajes debidamente constituida bajo las leyes de la República de Colombia, con sede en Ibagué, Tolima, inscrita en el Registro Nacional de Turismo administrado por el Patrimonio Autónomo Fondo Nacional del Turismo (FONTUR)."
+    },
+    "bookings": {
+      "title": "2. Reservas y Pagos",
+      "text": "Las reservas se confirman una vez recibido el anticipo correspondiente (mínimo el 30% del valor total). El saldo restante deberá cancelarse al menos 7 días antes de la fecha de inicio del servicio. Los pagos pueden realizarse por transferencia bancaria, Nequi, Daviplata o efectivo en nuestra oficina. Los precios publicados están sujetos a disponibilidad y pueden variar sin previo aviso."
+    },
+    "cancellations": {
+      "title": "3. Cancelaciones y Reembolsos",
+      "text": "Cancelación con más de 15 días de anticipación: reembolso del 100% del anticipo.\nCancelación entre 8 y 14 días: reembolso del 50% del anticipo.\nCancelación con menos de 7 días: no se realiza reembolso.\nEn caso de fuerza mayor (clima, orden público, desastres naturales), Ontour ofrecerá reprogramación sin costo adicional o un crédito aplicable a servicios futuros."
+    },
+    "responsibilities": {
+      "title": "4. Responsabilidades",
+      "text": "Ontour actúa como operador intermediario y no se hace responsable por incumplimientos de terceros proveedores (aerolíneas, hoteles, restaurantes). Todos nuestros servicios cuentan con póliza de seguros y cumplimiento. El cliente es responsable de portar documentos de identificación vigentes y de informar condiciones médicas o restricciones de movilidad previo al viaje."
+    },
+    "modifications": {
+      "title": "5. Modificaciones al Itinerario",
+      "text": "Ontour se reserva el derecho de realizar modificaciones al itinerario por razones de seguridad, clima, orden público o disponibilidad de proveedores. Se garantiza que cualquier cambio mantendrá la calidad y alcance equivalente del servicio contratado. El cliente será notificado con la mayor anticipación posible."
+    },
+    "jurisdiction": {
+      "title": "6. Jurisdicción y Ley Aplicable",
+      "text": "Este contrato se rige por las leyes de la República de Colombia. Cualquier controversia será sometida a los tribunales competentes de la ciudad de Ibagué, Tolima. Aplica la normatividad vigente del sector turismo establecida por el Ministerio de Comercio, Industria y Turismo."
+    },
+    "lastUpdated": "Última actualización: abril 2026"
+  },
+  "legalPrivacy": {
+    "title": "Política de Privacidad",
+    "subtitle": "Cómo recopilamos, usamos y protegemos tu información personal.",
+    "dataCollection": {
+      "title": "1. Datos que Recopilamos",
+      "text": "Recopilamos la siguiente información cuando utilizas nuestros servicios o formularios de contacto: nombre completo, correo electrónico, número de teléfono, ciudad de origen, preferencias de viaje y, en caso de reservas, información de pago. No almacenamos datos de tarjetas de crédito en nuestros servidores."
+    },
+    "usage": {
+      "title": "2. Uso de la Información",
+      "text": "Tus datos se utilizan exclusivamente para: procesar reservas y cotizaciones, enviar confirmaciones e itinerarios, comunicar cambios en los servicios contratados, y mejorar tu experiencia con ofertas y contenido relevante (solo si aceptas recibirlo)."
+    },
+    "sharing": {
+      "title": "3. Compartir Información",
+      "text": "No vendemos ni alquilamos tus datos personales a terceros. Compartimos información únicamente con proveedores directos del servicio contratado (hoteles, transportistas, guías) y solo la información necesaria para la prestación del servicio."
+    },
+    "security": {
+      "title": "4. Seguridad",
+      "text": "Implementamos medidas técnicas y organizativas para proteger tus datos contra acceso no autorizado, pérdida o alteración. Nuestra web usa cifrado SSL/TLS para la transmisión de datos."
+    },
+    "rights": {
+      "title": "5. Tus Derechos",
+      "text": "De acuerdo con la Ley 1581 de 2012 (Protección de Datos Personales en Colombia), tienes derecho a conocer, actualizar, rectificar y suprimir tus datos personales. Para ejercer estos derechos, escríbenos a ontoursas@gmail.com."
+    },
+    "cookies": {
+      "title": "6. Cookies",
+      "text": "Utilizamos cookies técnicas y analíticas para mejorar el rendimiento del sitio y entender cómo lo usas. Puedes desactivar las cookies desde la configuración de tu navegador, aunque algunas funcionalidades del sitio podrían verse afectadas."
+    },
+    "lastUpdated": "Última actualización: abril 2026"
+  },
+  "legalTourism": {
+    "title": "Registro Nacional de Turismo",
+    "subtitle": "Ontour DMC Colombia es una agencia legalmente registrada ante las autoridades colombianas de turismo.",
+    "registryTitle": "Agencia Verificada",
+    "registryBody": "Ontour S.A.S. se encuentra inscrita en el Registro Nacional de Turismo, administrado por el Patrimonio Autónomo Fondo Nacional del Turismo (FONTUR).",
+    "rntNumber": "RNT 145702",
+    "whatIsRnt": {
+      "title": "¿Qué es el RNT?",
+      "text": "El Registro Nacional de Turismo es un requisito legal obligatorio para todos los prestadores de servicios turísticos en Colombia, según la Ley 300 de 1996 y la Ley 1558 de 2012. Estar inscrito garantiza que la empresa cumple con los estándares de calidad, seguridad y legalidad exigidos por el Ministerio de Comercio, Industria y Turismo."
+    },
+    "guarantee": {
+      "title": "¿Qué garantiza al viajero?",
+      "text": "Al viajar con una empresa inscrita en el RNT, el viajero tiene la certeza de que:\n• La empresa cuenta con pólizas de responsabilidad civil y cumplimiento.\n• Los servicios son operados bajo normatividad vigente.\n• Existe respaldo institucional ante cualquier eventualidad.\n• Se contribuye al desarrollo sostenible del turismo en Colombia."
+    },
+    "fontur": {
+      "title": "Patrimonio Autónomo FONTUR",
+      "text": "El Fondo Nacional del Turismo (FONTUR) es el patrimonio autónomo que administra los recursos destinados a la promoción, competitividad y sostenibilidad del turismo en Colombia. Como agencia registrada, Ontour contribuye al fortalecimiento del sector turístico nacional."
+    },
+    "lastUpdated": "Última actualización: abril 2026"
+  },
+  "legalFaq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Respuestas a las dudas más comunes de nuestros viajeros.",
+    "q1": {
+      "question": "¿Cómo puedo reservar un viaje con Ontour?",
+      "answer": "Puedes contactarnos por WhatsApp al +57 316 538 6892, por correo a ontoursas@gmail.com, o a través del formulario de contacto en nuestra web. Un asesor te responderá con una cotización personalizada."
+    },
+    "q2": {
+      "question": "¿Qué incluyen los circuitos turísticos?",
+      "answer": "Nuestros circuitos incluyen transporte terrestre, alojamiento, guía turístico profesional, entradas a los destinos indicados y seguro de viaje. La alimentación varía según el plan. Los detalles específicos están en la ficha de cada circuito."
+    },
+    "q3": {
+      "question": "¿Puedo personalizar mi itinerario?",
+      "answer": "¡Sí! Somos un DMC (Destination Management Company) y diseñamos experiencias a medida. Contáctanos con tus preferencias de fechas, destinos y presupuesto y te armaremos un plan personalizado."
+    },
+    "q4": {
+      "question": "¿Es seguro viajar por Colombia?",
+      "answer": "Colombia ha avanzado enormemente en seguridad turística. Todos nuestros circuitos operan en zonas turísticas establecidas y cuentan con pólizas de seguro, guías profesionales y vehículos certificados. Tu seguridad es nuestra prioridad."
+    },
+    "q5": {
+      "question": "¿Cuáles son los métodos de pago?",
+      "answer": "Aceptamos transferencia bancaria nacional, Nequi, Daviplata y efectivo en nuestra oficina en Ibagué. Para reservas internacionales, ofrecemos opciones de pago vía Western Union o PayPal."
+    },
+    "q6": {
+      "question": "¿Cuál es la política de cancelación?",
+      "answer": "Con más de 15 días de anticipación: reembolso del 100%. Entre 8-14 días: reembolso del 50%. Menos de 7 días: sin reembolso. En caso de fuerza mayor ofrecemos reprogramación gratuita."
+    },
+    "q7": {
+      "question": "¿Atienden grupos grandes o empresas?",
+      "answer": "Sí, operamos grupos corporativos, incentivos, convenciones y excursiones escolares. Contáctanos para tarifas especiales y programación personalizada."
+    },
+    "q8": {
+      "question": "¿Están legalmente constituidos?",
+      "answer": "Sí. Ontour S.A.S. está inscrita en el Registro Nacional de Turismo (RNT 145702), administrado por el Patrimonio Autónomo Fondo Nacional del Turismo (FONTUR), y cumple con toda la normatividad del sector turismo en Colombia."
+    }
   }
 }

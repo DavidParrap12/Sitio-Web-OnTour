@@ -13,7 +13,7 @@ export async function Footer() {
 
           {/* Brand Col */}
           <div className="flex flex-col">
-            <Link href="/" className="inline-block mb-6">
+            <Link href="/" className="inline-block mb-4">
               <Image
                 src="/image/logo-ON-TOUR-Nuevo.png"
                 alt="Ontour"
@@ -23,7 +23,11 @@ export async function Footer() {
                 className="object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mt-2">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.2em] uppercase text-accent/90 mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent/80" />
+              DMC Colombia
+            </span>
+            <p className="text-gray-400 text-sm leading-relaxed">
               {t("tagline")}
             </p>
             <div className="flex items-center gap-4 mt-2">
@@ -51,10 +55,10 @@ export async function Footer() {
           <div>
             <h4 className="text-white font-semibold font-heading mb-6 text-lg">{t("legal")}</h4>
             <ul className="flex flex-col gap-3 text-sm">
-              <li><Link href="/contacto" className="hover:text-accent transition-colors">{t("terms")}</Link></li>
-              <li><Link href="/contacto" className="hover:text-accent transition-colors">{t("privacy")}</Link></li>
-              <li><Link href="/contacto" className="hover:text-accent transition-colors">{t("tourism")}</Link></li>
-              <li><Link href="/contacto" className="hover:text-accent transition-colors">{t("faq")}</Link></li>
+              <li><Link href="/legal/terminos" className="hover:text-accent transition-colors">{t("terms")}</Link></li>
+              <li><Link href="/legal/privacidad" className="hover:text-accent transition-colors">{t("privacy")}</Link></li>
+              <li><Link href="/legal/registro-turismo" className="hover:text-accent transition-colors">{t("tourism")}</Link></li>
+              <li><Link href="/legal/faq" className="hover:text-accent transition-colors">{t("faq")}</Link></li>
             </ul>
           </div>
 

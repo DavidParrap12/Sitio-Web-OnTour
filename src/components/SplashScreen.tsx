@@ -206,7 +206,11 @@ export function SplashScreen() {
             className="splash-logo"
           />
         </div>
-        <p className="splash-tagline">Descubriendo Colombia</p>
+        <p className="splash-tagline">
+          <span className="splash-tagline-main">Descubriendo Colombia</span>
+          <span className="splash-tagline-divider" />
+          <span className="splash-tagline-sub">Experiencias diseñadas a medida para cada viajero</span>
+        </p>
 
         {/* Progress bar — pure CSS animation */}
         <div className="splash-progress-track">

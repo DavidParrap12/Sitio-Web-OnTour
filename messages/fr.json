@@ -367,5 +367,144 @@
         "Assurance randonnée"
       ]
     }
+  },
+  "testimonials": {
+    "googleBadge": "Avis Google",
+    "title": "Ce que disent nos voyageurs",
+    "subtitle": "Expériences réelles de ceux qui nous ont fait confiance pour découvrir la Colombie.",
+    "verifiedReview": "Avis vérifié",
+    "googleUser": "Utilisateur Google",
+    "goToReview": "Aller à l'avis",
+    "prevReview": "Avis précédent",
+    "nextReview": "Avis suivant",
+    "seeAllOnGoogle": "Voir tous les avis sur Google",
+    "reviews": {
+      "yamel": {
+        "text": "Nous avons vécu de grandes expériences lors de notre croisière à Aruba et Curaçao. Merci On Tour d'avoir réalisé mon rêve !"
+      },
+      "angie": {
+        "text": "Un excellent service et de bons plans de voyage. Totalement recommandés pour tout type de voyage."
+      },
+      "samsung": {
+        "text": "Très bonne entreprise. On remarque le professionnalisme et le dévouement dans chaque détail du voyage."
+      },
+      "sandra": {
+        "text": "Bon service à l'agence. Toujours disposés à aider et à trouver la meilleure option."
+      }
+    }
+  },
+  "legalTerms": {
+    "title": "Conditions générales",
+    "subtitle": "Conditions générales pour la prestation de services touristiques par Ontour DMC Colombia.",
+    "general": {
+      "title": "1. Conditions générales",
+      "text": "En contractant tout service touristique auprès d'Ontour S.A.S. (ci-après \"Ontour\"), le client accepte les conditions décrites dans ce document. Ontour est une agence de voyages dûment constituée selon les lois de la République de Colombie, basée à Ibagué, Tolima, inscrite au Registre national du tourisme administré par le Patrimoine autonome Fonds national du tourisme (FONTUR)."
+    },
+    "bookings": {
+      "title": "2. Réservations et paiements",
+      "text": "Les réservations sont confirmées à réception de l'acompte correspondant (minimum 30% du montant total). Le solde doit être réglé au moins 7 jours avant le début de la prestation. Les paiements peuvent être effectués par virement bancaire, Nequi, Daviplata ou en espèces à notre bureau. Les prix publiés sont sous réserve de disponibilité et peuvent être modifiés sans préavis."
+    },
+    "cancellations": {
+      "title": "3. Annulations et remboursements",
+      "text": "Annulation plus de 15 jours à l'avance : remboursement de 100% de l'acompte.\nAnnulation entre 8 et 14 jours : remboursement de 50% de l'acompte.\nAnnulation à moins de 7 jours : aucun remboursement.\nEn cas de force majeure (météo, ordre public, catastrophes naturelles), Ontour proposera un report sans frais supplémentaires ou un avoir applicable aux prestations futures."
+    },
+    "responsibilities": {
+      "title": "4. Responsabilités",
+      "text": "Ontour agit en tant qu'opérateur intermédiaire et n'est pas responsable des manquements des prestataires tiers (compagnies aériennes, hôtels, restaurants). Toutes nos prestations sont couvertes par des polices d'assurance et de conformité. Le client est responsable de détenir des documents d'identité valides et d'informer de toute condition médicale ou restriction de mobilité avant le voyage."
+    },
+    "modifications": {
+      "title": "5. Modifications de l'itinéraire",
+      "text": "Ontour se réserve le droit de modifier l'itinéraire pour des raisons de sécurité, météo, ordre public ou disponibilité des prestataires. Tout changement maintiendra la qualité et la portée équivalentes du service contracté. Le client sera notifié dans les meilleurs délais."
+    },
+    "jurisdiction": {
+      "title": "6. Juridiction et loi applicable",
+      "text": "Ce contrat est régi par les lois de la République de Colombie. Tout litige sera soumis aux tribunaux compétents de la ville d'Ibagué, Tolima. La réglementation touristique en vigueur établie par le Ministère du Commerce, de l'Industrie et du Tourisme s'applique."
+    },
+    "lastUpdated": "Dernière mise à jour : avril 2026"
+  },
+  "legalPrivacy": {
+    "title": "Politique de confidentialité",
+    "subtitle": "Comment nous collectons, utilisons et protégeons vos informations personnelles.",
+    "dataCollection": {
+      "title": "1. Données collectées",
+      "text": "Nous collectons les informations suivantes lorsque vous utilisez nos services ou formulaires de contact : nom complet, adresse e-mail, numéro de téléphone, ville d'origine, préférences de voyage et, dans le cas de réservations, informations de paiement. Nous ne stockons pas les données de carte bancaire sur nos serveurs."
+    },
+    "usage": {
+      "title": "2. Utilisation des données",
+      "text": "Vos données sont utilisées exclusivement pour : traiter les réservations et devis, envoyer les confirmations et itinéraires, communiquer les changements des services contractés, et améliorer votre expérience avec des offres et contenus pertinents (uniquement si vous y consentez)."
+    },
+    "sharing": {
+      "title": "3. Partage des données",
+      "text": "Nous ne vendons ni ne louons vos données personnelles à des tiers. Nous partageons les informations uniquement avec les prestataires directs du service contracté (hôtels, transporteurs, guides) et uniquement les informations nécessaires à la prestation."
+    },
+    "security": {
+      "title": "4. Sécurité",
+      "text": "Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre l'accès non autorisé, la perte ou l'altération. Notre site web utilise le chiffrement SSL/TLS pour la transmission des données."
+    },
+    "rights": {
+      "title": "5. Vos droits",
+      "text": "Conformément à la loi 1581 de 2012 (Protection des données personnelles en Colombie), vous avez le droit d'accéder, mettre à jour, rectifier et supprimer vos données personnelles. Pour exercer ces droits, écrivez-nous à ontoursas@gmail.com."
+    },
+    "cookies": {
+      "title": "6. Cookies",
+      "text": "Nous utilisons des cookies techniques et analytiques pour améliorer les performances du site et comprendre son utilisation. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur, bien que certaines fonctionnalités puissent être affectées."
+    },
+    "lastUpdated": "Dernière mise à jour : avril 2026"
+  },
+  "legalTourism": {
+    "title": "Registre national du tourisme",
+    "subtitle": "Ontour DMC Colombia est une agence légalement enregistrée auprès des autorités touristiques colombiennes.",
+    "registryTitle": "Agence vérifiée",
+    "registryBody": "Ontour S.A.S. est inscrite au Registre national du tourisme, administré par le Patrimoine autonome Fonds national du tourisme (FONTUR).",
+    "rntNumber": "RNT 145702",
+    "whatIsRnt": {
+      "title": "Qu'est-ce que le RNT ?",
+      "text": "Le Registre national du tourisme (RNT) est une obligation légale pour tous les prestataires de services touristiques en Colombie, conformément à la loi 300 de 1996 et à la loi 1558 de 2012. L'inscription garantit que l'entreprise respecte les normes de qualité, de sécurité et de légalité exigées par le Ministère du Commerce, de l'Industrie et du Tourisme."
+    },
+    "guarantee": {
+      "title": "Que garantit-il au voyageur ?",
+      "text": "En voyageant avec une entreprise inscrite au RNT, le voyageur est assuré que :\n• L'entreprise dispose de polices de responsabilité civile et de conformité.\n• Les services sont opérés selon la réglementation en vigueur.\n• Il existe un soutien institutionnel en cas d'éventualité.\n• Le voyage contribue au développement durable du tourisme en Colombie."
+    },
+    "fontur": {
+      "title": "Patrimoine autonome FONTUR",
+      "text": "Le Fonds national du tourisme (FONTUR) est le patrimoine autonome qui administre les ressources destinées à la promotion, la compétitivité et la durabilité du tourisme en Colombie. En tant qu'agence enregistrée, Ontour contribue au renforcement du secteur touristique national."
+    },
+    "lastUpdated": "Dernière mise à jour : avril 2026"
+  },
+  "legalFaq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Réponses aux questions les plus courantes de nos voyageurs.",
+    "q1": {
+      "question": "Comment puis-je réserver un voyage avec Ontour ?",
+      "answer": "Vous pouvez nous contacter via WhatsApp au +57 316 538 6892, par e-mail à ontoursas@gmail.com, ou via le formulaire de contact sur notre site web. Un conseiller vous répondra avec un devis personnalisé."
+    },
+    "q2": {
+      "question": "Que comprennent les circuits touristiques ?",
+      "answer": "Nos circuits incluent le transport terrestre, l'hébergement, un guide touristique professionnel, les droits d'entrée aux destinations indiquées et l'assurance voyage. Les repas varient selon le plan. Les détails spécifiques sont disponibles sur la page de chaque circuit."
+    },
+    "q3": {
+      "question": "Puis-je personnaliser mon itinéraire ?",
+      "answer": "Oui ! Nous sommes un DMC (Destination Management Company) et concevons des expériences sur mesure. Contactez-nous avec vos dates, destinations et budget préférés et nous créerons un plan personnalisé."
+    },
+    "q4": {
+      "question": "Est-il sûr de voyager en Colombie ?",
+      "answer": "La Colombie a fait d'énormes progrès en matière de sécurité touristique. Tous nos circuits opèrent dans des zones touristiques établies et comprennent des polices d'assurance, des guides professionnels et des véhicules certifiés. Votre sécurité est notre priorité."
+    },
+    "q5": {
+      "question": "Quels modes de paiement acceptez-vous ?",
+      "answer": "Nous acceptons les virements bancaires nationaux, Nequi, Daviplata et les espèces dans notre bureau à Ibagué. Pour les réservations internationales, nous proposons des options de paiement via Western Union ou PayPal."
+    },
+    "q6": {
+      "question": "Quelle est la politique d'annulation ?",
+      "answer": "Plus de 15 jours à l'avance : remboursement de 100%. Entre 8-14 jours : remboursement de 50%. Moins de 7 jours : aucun remboursement. En cas de force majeure, nous proposons un report gratuit."
+    },
+    "q7": {
+      "question": "Gérez-vous de grands groupes ou des entreprises ?",
+      "answer": "Oui, nous gérons des groupes d'entreprises, des voyages d'incentive, des congrès et des excursions scolaires. Contactez-nous pour des tarifs spéciaux et une programmation personnalisée."
+    },
+    "q8": {
+      "question": "Êtes-vous légalement constitués ?",
+      "answer": "Oui. Ontour S.A.S. est inscrite au Registre national du tourisme (RNT 145702), administré par le Patrimoine autonome Fonds national du tourisme (FONTUR), et respecte toute la réglementation du secteur touristique en Colombie."
+    }
   }
 }
