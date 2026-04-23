@@ -172,7 +172,7 @@ export function CircuitCarousel({ slides }: CircuitCarouselProps) {
 
               {/* CTA */}
               <Link
-                href={`/circuitos/${slide.id}`}
+                href={`/circuitos/${slide.id}` as any}
                 className="inline-flex items-center gap-2 bg-white text-primary px-5 py-2.5 md:px-6 md:py-3 rounded-full font-semibold text-xs md:text-sm hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 group/btn"
               >
                 {t("book")}

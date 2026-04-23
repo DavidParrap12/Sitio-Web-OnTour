@@ -44,10 +44,12 @@ export async function Footer() {
           <div>
             <h4 className="text-white font-semibold font-heading mb-6 text-lg">{t("explore")}</h4>
             <ul className="flex flex-col gap-3 text-sm">
-              <li><Link href="/" className="hover:text-accent transition-colors">{t("home")}</Link></li>
-              <li><Link href="/nosotros" className="hover:text-accent transition-colors">{t("about")}</Link></li>
-              <li><Link href="/pasadias" className="hover:text-accent transition-colors">{t("dayTrips")}</Link></li>
-              <li><Link href="/circuitos" className="hover:text-accent transition-colors">{t("circuits")}</Link></li>
+              <li><Link href={"/" as any} className="hover:text-accent transition-colors">{t("home")}</Link></li>
+              <li><Link href={"/nosotros" as any} className="hover:text-accent transition-colors">{t("about")}</Link></li>
+              <li><Link href={"/pasadias" as any} className="hover:text-accent transition-colors">{t("dayTrips")}</Link></li>
+              <li><Link href={"/circuitos" as any} className="hover:text-accent transition-colors">{t("circuits")}</Link></li>
+              <li><Link href={"/servicios" as any} className="hover:text-accent transition-colors">{t("services")}</Link></li>
+              <li><Link href={"/galeria" as any} className="hover:text-accent transition-colors">{t("gallery")}</Link></li>
             </ul>
           </div>
 
@@ -55,10 +57,10 @@ export async function Footer() {
           <div>
             <h4 className="text-white font-semibold font-heading mb-6 text-lg">{t("legal")}</h4>
             <ul className="flex flex-col gap-3 text-sm">
-              <li><Link href="/legal/terminos" className="hover:text-accent transition-colors">{t("terms")}</Link></li>
-              <li><Link href="/legal/privacidad" className="hover:text-accent transition-colors">{t("privacy")}</Link></li>
-              <li><Link href="/legal/registro-turismo" className="hover:text-accent transition-colors">{t("tourism")}</Link></li>
-              <li><Link href="/legal/faq" className="hover:text-accent transition-colors">{t("faq")}</Link></li>
+              <li><Link href={"/legal/terminos" as any} className="hover:text-accent transition-colors">{t("terms")}</Link></li>
+              <li><Link href={"/legal/privacidad" as any} className="hover:text-accent transition-colors">{t("privacy")}</Link></li>
+              <li><Link href={"/legal/registro-turismo" as any} className="hover:text-accent transition-colors">{t("tourism")}</Link></li>
+              <li><Link href={"/legal/faq" as any} className="hover:text-accent transition-colors">{t("faq")}</Link></li>
             </ul>
           </div>
 

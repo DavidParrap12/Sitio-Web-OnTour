@@ -4,10 +4,16 @@
     "about": "Nosotros",
     "dayTrips": "Pasadías",
     "circuits": "Circuitos",
+    "services": "Servicios",
+    "gallery": "Galería",
     "tickets": "Tiquetes",
     "contact": "Contacto",
     "quote": "Cotizar viaje",
     "contactAdvisor": "Contactar Asesor"
+  },
+  "splash": {
+    "main": "Descubriendo Colombia",
+    "sub": "Experiencias diseñadas a medida para cada viajero"
   },
   "hero": {
     "tagline": "Descubre el mundo con Ontour",
@@ -149,14 +155,11 @@
     "colombia": "Colombia",
     "activityDesc": "Descripción de la Actividad",
     "youWillFind": "Lo que encontrarás",
-    "summary": "Resumen",
-    "duration": "Duración",
-    "suggestedPrice": "Precio sugerido",
-    "priceLabel": "A Cotizar",
-    "bookNow": "Reservar Pasadía Ahora",
-    "whatsappMessage": "Hola, interesad@ en el pasadía: {name}",
     "gallery": "Galería de Fotos",
-    "galleryLangNotice": "Los folletos están disponibles solo en español."
+    "galleryLangNotice": "Los folletos están disponibles solo en español.",
+    "ctaTitle": "¿Te interesa este pasadía?",
+    "ctaSubtitle": "Solicita una cotización personalizada para ti o tu grupo.",
+    "ctaButton": "Cotizar ahora"
   },
   "footer": {
     "tagline": "Creamos experiencias inolvidables.",
@@ -165,6 +168,8 @@
     "about": "Quiénes Somos",
     "dayTrips": "Pasadías",
     "circuits": "Circuitos",
+    "services": "Servicios",
+    "gallery": "Galería",
     "legal": "Legal",
     "terms": "Términos y Condiciones",
     "privacy": "Política de Privacidad",
@@ -330,21 +335,21 @@
     }
   },
   "destinosData": {
-    "rafting-coello-pasadia": {
-      "name": "Antioquia es Mágica – Rafting y Aventura en el Río Coello",
-      "description": "Adrenalina pura en las aguas del Tolima. Disfruta de una experiencia inolvidable practicando rafting, canopy y otros deportes extremos en Coello, un destino perfecto para los amantes de la aventura y la naturaleza.",
+    "Medellin-Magica": {
+      "name": "Medellín Mágica",
+      "description": "Descubre Medellín desde adentro: recorre sus barrios más vibrantes, sus jardines, gastronomía típica antioqueña y los miradores más espectaculares de la ciudad. Una experiencia completa para conocer la capital de Antioquia en un solo día.",
       "duration": "Full Day",
       "highlights": [
         "Transporte incluido",
-        "Equipo de seguridad",
         "Guías profesionales",
-        "Actividad de rafting",
+        "Recorrido por zonas icónicas",
+        "Gastronomía típica antioqueña",
         "Seguro de asistencia"
       ]
-    },
+},
     "bogota-tu-casa-pasadia": {
       "name": "Bogotá, Tú Casa",
-      "description": "Descubre la magia de Bogotá y sus alrededores en un día lleno de historia, cultura y gastronomía. Recorre la imponente Catedral de Sal de Zipaquirá, el colonial pueblo patrimonio de Villa de Leyva y las coloridas calles artesanales de Ráquira. Completa la experiencia con un tour gastronómico por los sabores más auténticos de la región y una panorámica inigualable de la capital colombiana.",
+      "description": "Descubre la magia de Bogotá en un día lleno de historia, cultura y gastronomía. Recorre la imponente Catedral de Sal de Zipaquirá, el colonial pueblo patrimonio de Villa de Leyva y las coloridas calles artesanales de Ráquira. Completa la experiencia con un tour gastronómico por los sabores más auténticos de la región y una panorámica inigualable de la capital colombiana.",
       "duration": "Full Day",
       "highlights": [
         "Transporte incluido",
@@ -366,7 +371,56 @@
         "Hidratación incluida",
         "Seguro de caminata"
       ]
-    }
+    },
+    "Cali-es-donde-debe-estar": {
+      "name": "Cali es donde debes estar",
+      "description": "Descubre y vive la salsa y la cultura de Cali en un día lleno de sabor y alegría. Recorre los puntos más emblemáticos de la ciudad, disfruta de su gastronomía típica y déjate contagiar por la energía de la capital de la salsa.",
+      "duration": "Full Day",
+      "highlights": [
+        "Transporte incluido",
+        "Guías profesionales",
+        "Recorrido por zonas icónicas",
+        "Gastronomía típica caleña",
+        "Seguro de asistencia"
+      ]
+    },
+    "Cartagena-Mas-Heroica": {
+      "name": "Cartagena, Más Heroica",
+      "description": "Descubre la magia de Cartagena y sus alrededores en un día lleno de historia, cultura y gastronomía. Recorre la imponente Catedral de Sal de Zipaquirá, el colonial pueblo patrimonio de Villa de Leyva y las coloridas calles artesanales de Ráquira. Completa la experiencia con un tour gastronómico por los sabores más auténticos de la región y una panorámica inigualable de la capital colombiana.",
+      "duration": "Full Day",
+      "highlights": [
+        "Transporte incluido",
+        "Catedral de Sal de Zipaquirá",
+        "Recorrido por Villa de Leyva",
+        "Tour gastronómico",
+        "Panorámica de Bogotá",
+        "Guía turístico profesional"
+      ]
+    },
+    "Santa-Marta-Naturalmente-Magica": {
+      "name": "Santa Marta, Naturalmente Mágica",
+      "description": "Descubre la magia natural y cultural de Santa Marta en un día lleno de aventura y descubrimientos. Recorre los puntos más emblemáticos de la ciudad, disfruta de su gastronomía caribeña y déjate contagiar por la energía de la ciudad más antigua de Colombia.",
+      "duration": "Full Day",
+      "highlights": [
+        "Transporte incluido",
+        "Guías profesionales",
+        "Recorrido por zonas icónicas",
+        "Gastronomía típica caribeña",
+        "Seguro de asistencia"
+      ]
+    },
+    "San-Andres-Islas-Vas-A-mar": {
+      "name": "San Andrés Islas, Vas A Mar",
+      "description": "Descubre el paraíso caribeño de San Andrés, la isla de los siete colores. Sumérgete en sus aguas cristalinas, recorre sus playas de arena blanca, explora el centro comercial a cielo abierto y disfruta de la vibrante cultura raizal en una experiencia única en el Caribe colombiano.",
+      "duration": "Full Day",
+      "highlights": [
+        "Transporte incluido",
+        "Guías profesionales",
+        "Recorrido por zonas icónicas",
+        "Gastronomía típica raizal",
+        "Seguro de asistencia"
+          ]
+      }
   },
   "testimonials": {
     "googleBadge": "Reseñas en Google",
@@ -456,7 +510,8 @@
     "subtitle": "Ontour DMC Colombia es una agencia legalmente registrada ante las autoridades colombianas de turismo.",
     "registryTitle": "Agencia Verificada",
     "registryBody": "Ontour S.A.S. se encuentra inscrita en el Registro Nacional de Turismo, administrado por el Patrimonio Autónomo Fondo Nacional del Turismo (FONTUR).",
-    "rntNumber": "RNT 145702",
+    "rntNumber": "RNT 62212",
+    "downloadCertificate": "Descargar certificado oficial",
     "whatIsRnt": {
       "title": "¿Qué es el RNT?",
       "text": "El Registro Nacional de Turismo es un requisito legal obligatorio para todos los prestadores de servicios turísticos en Colombia, según la Ley 300 de 1996 y la Ley 1558 de 2012. Estar inscrito garantiza que la empresa cumple con los estándares de calidad, seguridad y legalidad exigidos por el Ministerio de Comercio, Industria y Turismo."
@@ -506,5 +561,63 @@
       "question": "¿Están legalmente constituidos?",
       "answer": "Sí. Ontour S.A.S. está inscrita en el Registro Nacional de Turismo (RNT 145702), administrado por el Patrimonio Autónomo Fondo Nacional del Turismo (FONTUR), y cumple con toda la normatividad del sector turismo en Colombia."
     }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones integrales de turismo para viajeros y agencias. Cada detalle de su viaje, cubierto por profesionales.",
+    "transport": {
+      "title": "Transporte Terrestre",
+      "description": "Flota propia y aliados certificados para traslados seguros y cómodos en todo el territorio colombiano.",
+      "feature1": "Vehículos con aire acondicionado y GPS",
+      "feature2": "Conductores profesionales bilingües",
+      "feature3": "Cobertura nacional puerta a puerta"
+    },
+    "accommodation": {
+      "title": "Alojamiento",
+      "description": "Alianzas con los mejores hoteles, fincas y eco-lodges de cada destino, adaptados a todo presupuesto.",
+      "feature1": "Hoteles 3 a 5 estrellas verificados",
+      "feature2": "Fincas y eco-lodges exclusivos",
+      "feature3": "Tarifas preferenciales garantizadas"
+    },
+    "guides": {
+      "title": "Guías Turísticos",
+      "description": "Equipo de guías profesionales certificados con conocimiento profundo de cada región.",
+      "feature1": "Guías bilingües y trilingües",
+      "feature2": "Certificación nacional de turismo",
+      "feature3": "Especialistas por región y cultura"
+    },
+    "insurance": {
+      "title": "Seguros de Viaje",
+      "description": "Pólizas de asistencia, responsabilidad civil y cumplimiento para su total tranquilidad.",
+      "feature1": "Asistencia médica 24/7",
+      "feature2": "Cobertura de cancelación",
+      "feature3": "Póliza de responsabilidad civil"
+    },
+    "food": {
+      "title": "Alimentación",
+      "description": "Experiencias gastronómicas auténticas con la cocina regional de cada destino visitado.",
+      "feature1": "Menús con cocina regional típica",
+      "feature2": "Opciones vegetarianas y especiales",
+      "feature3": "Tours gastronómicos incluidos"
+    },
+    "events": {
+      "title": "Logística de Eventos",
+      "description": "Organización integral de viajes corporativos, incentivos, convenciones y excursiones grupales.",
+      "feature1": "Grupos corporativos e incentivos",
+      "feature2": "Convenciones y team building",
+      "feature3": "Excursiones escolares y universitarias"
+    },
+    "ctaTitle": "¿Necesita un servicio personalizado?",
+    "ctaSubtitle": "Contáctenos y diseñaremos la solución perfecta para su grupo, agencia o empresa.",
+    "ctaButton": "Solicitar cotización"
+  },
+  "gallery": {
+    "title": "Galería de Fotos",
+    "subtitle": "Los paisajes más impresionantes de Colombia capturados en nuestras rutas y circuitos.",
+    "all": "Todas",
+    "noPhotos": "No hay fotos en esta categoría.",
+    "close": "Cerrar",
+    "prev": "Anterior",
+    "next": "Siguiente"
   }
 }

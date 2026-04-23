@@ -233,7 +233,7 @@ export function PasadiaCarousel({ slides }: PasadiaCarouselProps) {
                         </a>
                         <div className="border-t border-gray-100" />
                         <Link
-                          href="/contacto"
+                          href={"/contacto" as any}
                           className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors text-sm font-medium text-foreground/80 group/opt"
                           onClick={() => setShowOptions(false)}
                         >
@@ -252,7 +252,7 @@ export function PasadiaCarousel({ slides }: PasadiaCarouselProps) {
 
                 {/* Ver Folleto → now links to detail page */}
                 <Link
-                  href={`/pasadias/${slide.id}`}
+                  href={`/pasadias/${slide.id}` as any}
                   className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/30 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full font-semibold text-xs md:text-sm hover:bg-white/25 transition-all duration-300"
                 >
                   <Eye className="w-3.5 h-3.5 md:w-4 md:h-4" />

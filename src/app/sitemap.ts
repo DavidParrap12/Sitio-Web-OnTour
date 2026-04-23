@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/pasadias`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/circuitos`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/contacto`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/servicios`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/galeria`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/legal/terminos`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/legal/privacidad`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/legal/registro-turismo`, changeFrequency: "yearly", priority: 0.4 },

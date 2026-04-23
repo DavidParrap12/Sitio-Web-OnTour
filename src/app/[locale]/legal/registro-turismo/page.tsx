@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { BadgeCheck } from "lucide-react";
+import { BadgeCheck, FileDown } from "lucide-react";
 
 export default async function RegistroTurismoPage({
   params,
@@ -33,8 +33,19 @@ export default async function RegistroTurismoPage({
             <BadgeCheck className="w-12 h-12 text-primary mx-auto mb-4" />
             <h2 className="text-2xl font-heading font-bold text-primary mb-2">{t("registryTitle")}</h2>
             <p className="text-foreground/70 mb-4">{t("registryBody")}</p>
-            <div className="inline-block bg-primary text-white px-6 py-3 rounded-xl font-mono text-lg font-bold tracking-wider">
+            <div className="inline-block bg-primary text-white px-6 py-3 rounded-xl font-mono text-lg font-bold tracking-wider mb-4">
               {t("rntNumber")}
+            </div>
+            <div>
+              <a
+                href="/RNT-ON-TOUR-2027.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent hover:brightness-90 text-white px-6 py-3 rounded-full font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <FileDown className="w-5 h-5" />
+                {t("downloadCertificate")}
+              </a>
             </div>
           </div>
 

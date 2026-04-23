@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export function SplashScreen() {
+  const t = useTranslations("splash");
   const [isVisible, setIsVisible] = useState(true);
   const [isFading, setIsFading] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
@@ -207,9 +209,9 @@ export function SplashScreen() {
           />
         </div>
         <p className="splash-tagline">
-          <span className="splash-tagline-main">Descubriendo Colombia</span>
+          <span className="splash-tagline-main">{t("main")}</span>
           <span className="splash-tagline-divider" />
-          <span className="splash-tagline-sub">Experiencias diseñadas a medida para cada viajero</span>
+          <span className="splash-tagline-sub">{t("sub")}</span>
         </p>
 
         {/* Progress bar — pure CSS animation */}

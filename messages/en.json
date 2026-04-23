@@ -4,10 +4,16 @@
     "about": "About Us",
     "dayTrips": "Day Trips",
     "circuits": "Circuits",
+    "services": "Services",
+    "gallery": "Gallery",
     "tickets": "Flights",
     "contact": "Contact",
     "quote": "Get a Quote",
     "contactAdvisor": "Contact Advisor"
+  },
+  "splash": {
+    "main": "Discovering Colombia",
+    "sub": "Tailor-made experiences for every traveler"
   },
   "hero": {
     "tagline": "Discover the world with Ontour",
@@ -149,14 +155,11 @@
     "colombia": "Colombia",
     "activityDesc": "Activity Description",
     "youWillFind": "What you'll find",
-    "summary": "Summary",
-    "duration": "Duration",
-    "suggestedPrice": "Suggested price",
-    "priceLabel": "To Be Quoted",
-    "bookNow": "Book Day Trip Now",
-    "whatsappMessage": "Hello, I'm interested in the day trip: {name}",
     "gallery": "Photo Gallery",
-    "galleryLangNotice": "Brochures are available in Spanish only."
+    "galleryLangNotice": "Brochures are available in Spanish only.",
+    "ctaTitle": "Interested in this day trip?",
+    "ctaSubtitle": "Request a personalized quote for you or your group.",
+    "ctaButton": "Get a quote"
   },
   "footer": {
     "tagline": "We create unforgettable experiences.",
@@ -165,6 +168,8 @@
     "about": "About Us",
     "dayTrips": "Day Trips",
     "circuits": "Circuits",
+    "services": "Services",
+    "gallery": "Gallery",
     "legal": "Legal",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
@@ -330,21 +335,21 @@
     }
   },
   "destinosData": {
-    "rafting-coello-pasadia": {
-      "name": "Antioquia is Magic – Rafting & Adventure on the Coello River",
-      "description": "Pure adrenaline on the waters of Tolima. Enjoy an unforgettable experience practicing rafting, zip-lining and other extreme sports in Coello, a perfect destination for adventure and nature lovers.",
+    "Medellin-Magica": {
+      "name": "Magical Medellín",
+      "description": "Discover Medellín from the inside: explore its most vibrant neighborhoods, gardens, typical Antioquian cuisine and the most spectacular viewpoints of the city. A complete experience to discover the capital of Antioquia in a single day.",
       "duration": "Full Day",
       "highlights": [
         "Transport included",
-        "Safety equipment",
         "Professional guides",
-        "Rafting activity",
+        "Iconic area tour",
+        "Typical Antioquian cuisine",
         "Assistance insurance"
       ]
     },
     "bogota-tu-casa-pasadia": {
       "name": "Bogotá, Your Home",
-      "description": "Discover the magic of Bogotá and its surroundings in a day full of history, culture and gastronomy. Explore the impressive Zipaquirá Salt Cathedral, the colonial heritage town of Villa de Leyva and the colorful artisan streets of Ráquira. Complete the experience with a gastronomic tour of the region's most authentic flavors and an unparalleled panoramic view of the Colombian capital.",
+      "description": "Discover the magic of Bogotá in a day full of history, culture and gastronomy. Explore the impressive Zipaquirá Salt Cathedral, the colonial heritage town of Villa de Leyva and the colorful artisan streets of Ráquira. Complete the experience with a gastronomic tour of the region's most authentic flavors and an unparalleled panoramic view of the Colombian capital.",
       "duration": "Full Day",
       "highlights": [
         "Transport included",
@@ -365,6 +370,55 @@
         "Nature reserve entry",
         "Hydration included",
         "Hiking insurance"
+      ]
+    },
+    "Cali-es-donde-debe-estar": {
+      "name": "Cali is where you should be",
+      "description": "Discover and experience the salsa and culture of Cali in a day full of flavor and joy. Explore the city's most iconic spots, enjoy its typical cuisine and let yourself be swept up by the energy of the salsa capital.",
+      "duration": "Full Day",
+      "highlights": [
+        "Transport included",
+        "Professional guides",
+        "Iconic area tour",
+        "Typical Cali cuisine",
+        "Assistance insurance"
+      ]
+    },
+    "Cartagena-Mas-Heroica": {
+      "name": "Cartagena, More Heroic",
+      "description": "Discover the magic of Cartagena and its surroundings in a day full of history, culture and gastronomy. Stroll through the walled city, explore colonial fortresses, vibrant plazas and colorful streets. Complete the experience with a gastronomic tour of the most authentic Caribbean flavors and an unforgettable panoramic view of the heroic city.",
+      "duration": "Full Day",
+      "highlights": [
+        "Transport included",
+        "Walled city tour",
+        "Colonial fortress visit",
+        "Gastronomic tour",
+        "Panoramic view of Cartagena",
+        "Professional tour guide"
+      ]
+    },
+    "Santa-Marta-Naturalmente-Magica": {
+      "name": "Santa Marta, Naturally Magical",
+      "description": "Discover the natural and cultural magic of Santa Marta in a day full of adventure and discoveries. Explore the city's most iconic spots, enjoy its Caribbean cuisine and let yourself be swept up by the energy of Colombia's oldest city.",
+      "duration": "Full Day",
+      "highlights": [
+        "Transport included",
+        "Professional guides",
+        "Iconic area tour",
+        "Typical Caribbean cuisine",
+        "Assistance insurance"
+      ]
+    },
+    "San-Andres-Islas-Vas-A-mar": {
+      "name": "San Andrés Islands, You'll Sea",
+      "description": "Discover the Caribbean paradise of San Andrés, the island of seven colors. Dive into its crystal-clear waters, explore its white sand beaches, browse the open-air shopping district and enjoy the vibrant Raizal culture in a unique experience in the Colombian Caribbean.",
+      "duration": "Full Day",
+      "highlights": [
+        "Transport included",
+        "Professional guides",
+        "Iconic area tour",
+        "Typical Raizal cuisine",
+        "Assistance insurance"
       ]
     }
   },
@@ -456,7 +510,8 @@
     "subtitle": "Ontour DMC Colombia is a legally registered agency with Colombian tourism authorities.",
     "registryTitle": "Verified Agency",
     "registryBody": "Ontour S.A.S. is registered in the National Tourism Registry, administered by the Autonomous Heritage National Tourism Fund (FONTUR).",
-    "rntNumber": "RNT 145702",
+    "rntNumber": "RNT 62212",
+    "downloadCertificate": "Download official certificate",
     "whatIsRnt": {
       "title": "What is the RNT?",
       "text": "The National Tourism Registry (RNT) is a mandatory legal requirement for all tourism service providers in Colombia, as established by Law 300 of 1996 and Law 1558 of 2012. Registration guarantees that the company meets quality, safety, and legality standards required by the Ministry of Commerce, Industry and Tourism."
@@ -506,5 +561,63 @@
       "question": "Are you legally established?",
       "answer": "Yes. Ontour S.A.S. is registered in the National Tourism Registry (RNT 145702), administered by the Autonomous Heritage National Tourism Fund (FONTUR), and complies with all tourism sector regulations in Colombia."
     }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive tourism solutions for travelers and agencies. Every detail of your trip, handled by professionals.",
+    "transport": {
+      "title": "Ground Transportation",
+      "description": "Own fleet and certified partners for safe, comfortable transfers across all of Colombia.",
+      "feature1": "Air-conditioned vehicles with GPS",
+      "feature2": "Professional bilingual drivers",
+      "feature3": "Nationwide door-to-door coverage"
+    },
+    "accommodation": {
+      "title": "Accommodation",
+      "description": "Partnerships with the best hotels, country estates, and eco-lodges at every destination.",
+      "feature1": "Verified 3 to 5-star hotels",
+      "feature2": "Exclusive farms and eco-lodges",
+      "feature3": "Guaranteed preferential rates"
+    },
+    "guides": {
+      "title": "Tour Guides",
+      "description": "Team of certified professional guides with deep knowledge of each region.",
+      "feature1": "Bilingual and trilingual guides",
+      "feature2": "National tourism certification",
+      "feature3": "Regional and cultural specialists"
+    },
+    "insurance": {
+      "title": "Travel Insurance",
+      "description": "Assistance, liability, and compliance policies for your complete peace of mind.",
+      "feature1": "24/7 medical assistance",
+      "feature2": "Cancellation coverage",
+      "feature3": "Civil liability policy"
+    },
+    "food": {
+      "title": "Dining",
+      "description": "Authentic gastronomic experiences featuring the regional cuisine of each destination.",
+      "feature1": "Traditional regional menus",
+      "feature2": "Vegetarian and special options",
+      "feature3": "Gastronomic tours included"
+    },
+    "events": {
+      "title": "Event Logistics",
+      "description": "Full-service organization for corporate travel, incentives, conventions, and group excursions.",
+      "feature1": "Corporate groups and incentives",
+      "feature2": "Conventions and team building",
+      "feature3": "School and university excursions"
+    },
+    "ctaTitle": "Need a customized service?",
+    "ctaSubtitle": "Contact us and we'll design the perfect solution for your group, agency, or company.",
+    "ctaButton": "Request a quote"
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "subtitle": "Colombia's most stunning landscapes captured on our routes and circuits.",
+    "all": "All",
+    "noPhotos": "No photos in this category.",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next"
   }
 }

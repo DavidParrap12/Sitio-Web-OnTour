@@ -4,10 +4,16 @@
     "about": "Über uns",
     "dayTrips": "Tagesausflüge",
     "circuits": "Rundreisen",
+    "services": "Dienstleistungen",
+    "gallery": "Galerie",
     "tickets": "Flüge",
     "contact": "Kontakt",
     "quote": "Angebot anfordern",
     "contactAdvisor": "Berater kontaktieren"
+  },
+  "splash": {
+    "main": "Kolumbien entdecken",
+    "sub": "Maßgeschneiderte Erlebnisse für jeden Reisenden"
   },
   "hero": {
     "tagline": "Entdecken Sie die Welt mit Ontour",
@@ -149,14 +155,11 @@
     "colombia": "Kolumbien",
     "activityDesc": "Aktivitätsbeschreibung",
     "youWillFind": "Das erwartet Sie",
-    "summary": "Zusammenfassung",
-    "duration": "Dauer",
-    "suggestedPrice": "Empfohlener Preis",
-    "priceLabel": "Auf Anfrage",
-    "bookNow": "Tagesausflug jetzt buchen",
-    "whatsappMessage": "Hallo, ich interessiere mich für den Tagesausflug: {name}",
     "gallery": "Fotogalerie",
-    "galleryLangNotice": "Broschüren sind nur auf Spanisch verfügbar."
+    "galleryLangNotice": "Broschüren sind nur auf Spanisch verfügbar.",
+    "ctaTitle": "Interesse an diesem Tagesausflug?",
+    "ctaSubtitle": "Fordern Sie ein individuelles Angebot für sich oder Ihre Gruppe an.",
+    "ctaButton": "Angebot anfordern"
   },
   "footer": {
     "tagline": "Wir schaffen unvergessliche Erlebnisse.",
@@ -165,6 +168,8 @@
     "about": "Über uns",
     "dayTrips": "Tagesausflüge",
     "circuits": "Rundreisen",
+    "services": "Dienstleistungen",
+    "gallery": "Galerie",
     "legal": "Rechtliches",
     "terms": "Allgemeine Geschäftsbedingungen",
     "privacy": "Datenschutzrichtlinie",
@@ -330,21 +335,21 @@
     }
   },
   "destinosData": {
-    "rafting-coello-pasadia": {
-      "name": "Antioquia ist magisch – Rafting & Abenteuer auf dem Río Coello",
-      "description": "Pures Adrenalin auf den Gewässern von Tolima. Erleben Sie ein unvergessliches Erlebnis beim Rafting, Zip-Lining und anderen Extremsportarten in Coello – ein perfektes Ziel für Abenteuer- und Naturliebhaber.",
+    "Medellin-Magica": {
+      "name": "Magisches Medellín",
+      "description": "Entdecken Sie Medellín von innen: Erkunden Sie die lebendigsten Viertel, Gärten, typische antioquianische Küche und die spektakulärsten Aussichtspunkte der Stadt. Ein umfassendes Erlebnis, um die Hauptstadt von Antioquia an einem einzigen Tag kennenzulernen.",
       "duration": "Ganztag",
       "highlights": [
         "Transport inbegriffen",
-        "Sicherheitsausrüstung",
         "Professionelle Guides",
-        "Rafting-Aktivität",
+        "Tour durch ikonische Viertel",
+        "Typische antioquianische Küche",
         "Unfallversicherung"
       ]
     },
     "bogota-tu-casa-pasadia": {
       "name": "Bogotá, Ihr Zuhause",
-      "description": "Entdecken Sie die Magie Bogotás und seiner Umgebung an einem Tag voller Geschichte, Kultur und Gastronomie. Erkunden Sie die beeindruckende Salzkathedrale von Zipaquirá, die koloniale Kulturerbe-Stadt Villa de Leyva und die farbenfrohen Handwerksstraßen von Ráquira. Vervollständigen Sie das Erlebnis mit einer kulinarischen Tour zu den authentischsten Geschmäckern der Region und einem unvergleichlichen Panoramablick auf die kolumbianische Hauptstadt.",
+      "description": "Entdecken Sie die Magie Bogotás an einem Tag voller Geschichte, Kultur und Gastronomie. Erkunden Sie die beeindruckende Salzkathedrale von Zipaquirá, die koloniale Kulturerbe-Stadt Villa de Leyva und die farbenfrohen Handwerksstraßen von Ráquira. Vervollständigen Sie das Erlebnis mit einer kulinarischen Tour zu den authentischsten Geschmäckern der Region und einem unvergleichlichen Panoramablick auf die kolumbianische Hauptstadt.",
       "duration": "Ganztag",
       "highlights": [
         "Transport inbegriffen",
@@ -365,6 +370,55 @@
         "Eintritt zum Naturreservat",
         "Getränke inbegriffen",
         "Wanderversicherung"
+      ]
+    },
+    "Cali-es-donde-debe-estar": {
+      "name": "Cali ist, wo Sie sein sollten",
+      "description": "Entdecken und erleben Sie die Salsa und Kultur von Cali an einem Tag voller Geschmack und Freude. Erkunden Sie die ikonischsten Orte der Stadt, genießen Sie die typische Küche und lassen Sie sich von der Energie der Salsa-Hauptstadt mitreißen.",
+      "duration": "Ganztag",
+      "highlights": [
+        "Transport inbegriffen",
+        "Professionelle Guides",
+        "Tour durch ikonische Viertel",
+        "Typische Cali-Küche",
+        "Unfallversicherung"
+      ]
+    },
+    "Cartagena-Mas-Heroica": {
+      "name": "Cartagena, noch heldenhafter",
+      "description": "Entdecken Sie die Magie von Cartagena und seiner Umgebung an einem Tag voller Geschichte, Kultur und Gastronomie. Schlendern Sie durch die ummauerte Stadt, erkunden Sie Kolonialfestungen, lebhafte Plätze und bunte Straßen. Vervollständigen Sie das Erlebnis mit einer kulinarischen Tour zu den authentischsten karibischen Aromen und einem unvergesslichen Panoramablick auf die heldenhafte Stadt.",
+      "duration": "Ganztag",
+      "highlights": [
+        "Transport inbegriffen",
+        "Tour durch die ummauerte Stadt",
+        "Besuch der Kolonialfestung",
+        "Kulinarische Tour",
+        "Panoramablick auf Cartagena",
+        "Professioneller Reiseführer"
+      ]
+    },
+    "Santa-Marta-Naturalmente-Magica": {
+      "name": "Santa Marta, natürlich magisch",
+      "description": "Entdecken Sie die natürliche und kulturelle Magie von Santa Marta an einem Tag voller Abenteuer und Entdeckungen. Erkunden Sie die ikonischsten Orte der Stadt, genießen Sie die karibische Küche und lassen Sie sich von der Energie der ältesten Stadt Kolumbiens mitreißen.",
+      "duration": "Ganztag",
+      "highlights": [
+        "Transport inbegriffen",
+        "Professionelle Guides",
+        "Tour durch ikonische Viertel",
+        "Typische karibische Küche",
+        "Unfallversicherung"
+      ]
+    },
+    "San-Andres-Islas-Vas-A-mar": {
+      "name": "San Andrés Inseln, Meer erleben",
+      "description": "Entdecken Sie das karibische Paradies von San Andrés, die Insel der sieben Farben. Tauchen Sie ein in kristallklares Wasser, erkunden Sie weiße Sandstrände, schlendern Sie durch das Freiluft-Einkaufsviertel und genießen Sie die lebendige Raizal-Kultur in einem einzigartigen Erlebnis in der kolumbianischen Karibik.",
+      "duration": "Ganztag",
+      "highlights": [
+        "Transport inbegriffen",
+        "Professionelle Guides",
+        "Tour durch ikonische Viertel",
+        "Typische Raizal-Küche",
+        "Unfallversicherung"
       ]
     }
   },
@@ -456,7 +510,8 @@
     "subtitle": "Ontour DMC Colombia ist eine bei den kolumbianischen Tourismusbehörden offiziell registrierte Agentur.",
     "registryTitle": "Verifizierte Agentur",
     "registryBody": "Ontour S.A.S. ist im Nationalen Tourismusregister eingetragen, verwaltet vom Autonomen Vermögen Nationaler Tourismusfonds (FONTUR).",
-    "rntNumber": "RNT 145702",
+    "rntNumber": "RNT 62212",
+    "downloadCertificate": "Offizielles Zertifikat herunterladen",
     "whatIsRnt": {
       "title": "Was ist das RNT?",
       "text": "Das Nationale Tourismusregister (RNT) ist eine gesetzliche Pflicht für alle Tourismusdienstleister in Kolumbien gemäß Gesetz 300 von 1996 und Gesetz 1558 von 2012. Die Eintragung garantiert, dass das Unternehmen die vom Ministerium für Handel, Industrie und Tourismus geforderten Qualitäts-, Sicherheits- und Rechtsstandards erfüllt."
@@ -506,5 +561,63 @@
       "question": "Sind Sie legal etabliert?",
       "answer": "Ja. Ontour S.A.S. ist im Nationalen Tourismusregister (RNT 145702) eingetragen, verwaltet vom Autonomen Vermögen Nationaler Tourismusfonds (FONTUR), und erfüllt alle Tourismusvorschriften in Kolumbien."
     }
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Umfassende Tourismuslösungen für Reisende und Agenturen. Jedes Detail Ihrer Reise, professionell betreut.",
+    "transport": {
+      "title": "Bodentransport",
+      "description": "Eigene Flotte und zertifizierte Partner für sichere, komfortable Transfers in ganz Kolumbien.",
+      "feature1": "Klimatisierte Fahrzeuge mit GPS",
+      "feature2": "Professionelle zweisprachige Fahrer",
+      "feature3": "Landesweiter Tür-zu-Tür-Service"
+    },
+    "accommodation": {
+      "title": "Unterkunft",
+      "description": "Partnerschaften mit den besten Hotels, Landgütern und Öko-Lodges an jedem Reiseziel.",
+      "feature1": "Geprüfte 3- bis 5-Sterne-Hotels",
+      "feature2": "Exklusive Fincas und Öko-Lodges",
+      "feature3": "Garantierte Vorzugspreise"
+    },
+    "guides": {
+      "title": "Reiseführer",
+      "description": "Team zertifizierter professioneller Führer mit tiefem Wissen über jede Region.",
+      "feature1": "Zwei- und dreisprachige Führer",
+      "feature2": "Nationale Tourismuszertifizierung",
+      "feature3": "Regional- und Kulturspezialisten"
+    },
+    "insurance": {
+      "title": "Reiseversicherung",
+      "description": "Hilfs-, Haftpflicht- und Compliance-Policen für Ihre vollständige Sicherheit.",
+      "feature1": "24/7 medizinische Hilfe",
+      "feature2": "Stornierungsschutz",
+      "feature3": "Haftpflichtversicherung"
+    },
+    "food": {
+      "title": "Verpflegung",
+      "description": "Authentische gastronomische Erlebnisse mit der regionalen Küche jedes Reiseziels.",
+      "feature1": "Traditionelle regionale Menüs",
+      "feature2": "Vegetarische und spezielle Optionen",
+      "feature3": "Gastronomische Touren inklusive"
+    },
+    "events": {
+      "title": "Veranstaltungslogistik",
+      "description": "Komplettorganisation für Geschäftsreisen, Incentives, Kongresse und Gruppenausflüge.",
+      "feature1": "Firmengruppen und Incentives",
+      "feature2": "Kongresse und Teambuilding",
+      "feature3": "Schul- und Universitätsausflüge"
+    },
+    "ctaTitle": "Benötigen Sie einen maßgeschneiderten Service?",
+    "ctaSubtitle": "Kontaktieren Sie uns und wir entwickeln die perfekte Lösung für Ihre Gruppe, Agentur oder Firma.",
+    "ctaButton": "Angebot anfordern"
+  },
+  "gallery": {
+    "title": "Fotogalerie",
+    "subtitle": "Die beeindruckendsten Landschaften Kolumbiens, eingefangen auf unseren Routen und Rundreisen.",
+    "all": "Alle",
+    "noPhotos": "Keine Fotos in dieser Kategorie.",
+    "close": "Schließen",
+    "prev": "Zurück",
+    "next": "Weiter"
   }
 }

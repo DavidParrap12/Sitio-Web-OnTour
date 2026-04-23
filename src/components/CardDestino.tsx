@@ -55,7 +55,7 @@ export function CardDestino({
       whileHover={{ y: -8 }}
       className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 relative"
     >
-      <Link href={href} className="flex flex-col flex-grow">
+      <Link href={href as any} className="flex flex-col flex-grow">
         <div className="relative h-56 w-full overflow-hidden">
           <div className="absolute inset-0 bg-gray-200 animate-pulse" />
           <Image
@@ -92,7 +92,7 @@ export function CardDestino({
       <div className="px-6 pb-6 pt-4 flex items-center justify-between mt-auto border-t border-gray-50/50 gap-3">
         {/* "Ver Folleto" → now goes to detail page */}
         <Link
-          href={href}
+          href={href as any}
           className="flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-full font-medium transition-colors text-sm"
         >
           <Eye className="w-4 h-4" />
@@ -137,7 +137,7 @@ export function CardDestino({
                 </a>
                 <div className="border-t border-gray-100" />
                 <Link
-                  href="/contacto"
+                  href={"/contacto" as any}
                   className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors text-sm font-medium text-foreground/80 group/opt"
                   onClick={() => setShowOptions(false)}
                 >
