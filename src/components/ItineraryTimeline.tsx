@@ -69,7 +69,7 @@ export default function ItineraryTimeline({
           const dayImage = dayImages[idx];
 
           return (
-            <div key={idx} className="itinerary-day-row">
+            <div key={idx} id={`itinerary-day-${idx}`} className="itinerary-day-row">
               {/* === DESKTOP LAYOUT (lg+) === */}
               <div className="hidden lg:grid lg:grid-cols-[1fr_48px_1fr] lg:gap-0 lg:items-stretch min-h-[280px]">
                 {/* Image Column */}
