@@ -37,6 +37,11 @@ const CITIES: Record<string, [number, number]> = {
   "ISLAS DEL ROSARIO":[10.1750, -75.7450],  // Archipiélago
   "BARÚ":             [10.2145, -75.5880],  // Península
   "LAGO DE TOTA":     [5.5600, -72.9500],   // Lago
+  "PLAYA TRANQUILA":  [10.1850, -75.7600],  // Playa cercana a Islas del Rosario
+  "NOBSA":            [5.7700, -72.9400],   // Plaza principal
+  "PEREIRA":          [4.8133, -75.6961],   // Plaza de Bolívar
+  "MURILLO":          [4.8764, -75.1720],   // Centro del municipio
+  "MELGAR":           [4.2040, -74.6460],   // Plaza principal
 };
 
 /* ────────────────────────────────────────────────────────────────
