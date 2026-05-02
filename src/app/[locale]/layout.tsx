@@ -1,26 +1,13 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import "../globals.css";
-import "../splash.css";
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsappButton } from "@/components/WhatsappButton";
 import { SplashScreen } from "@/components/SplashScreen";
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
 
 const metadataByLocale: Record<string, { title: string; description: string; ogTitle: string; ogDesc: string; ogLocale: string; twTitle: string; twDesc: string }> = {
   es: {
@@ -69,9 +56,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     metadataBase: new URL("https://www.agenciaontour.com"),
     title: t.title,
     description: t.description,
-    icons: {
-      icon: "/image/Fav-Ontour.ico",
-    },
     openGraph: {
       title: t.ogTitle,
       description: t.ogDesc,
@@ -109,19 +93,13 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html
-      lang={locale}
-      className={`${dmSans.variable} ${playfairDisplay.variable} h-full antialiased`}
-    >
-      <body className="font-sans min-h-full flex flex-col bg-background text-foreground">
-        <NextIntlClientProvider messages={messages}>
-          <SplashScreen />
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <WhatsappButton />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <SplashScreen />
+      <Navbar />
+      <main className="flex-grow">{children}</main>
+      <Footer />
+      <WhatsappButton />
+    </NextIntlClientProvider>
   );
 }
+
