@@ -159,7 +159,12 @@
     "galleryLangNotice": "Brochures are available in Spanish only.",
     "ctaTitle": "Interested in this day trip?",
     "ctaSubtitle": "Request a personalized quote for you or your group.",
-    "ctaButton": "Get a quote"
+    "ctaButton": "Get a quote",
+    "downloadPdf": "Download PDF",
+    "downloadWord": "Download Word",
+    "downloadBrochure": "Download Brochure",
+    "generating": "Generating...",
+    "downloaded": "Downloaded!"
   },
   "footer": {
     "tagline": "We create unforgettable experiences.",
@@ -203,6 +208,7 @@
         "Tatacoa Desert",
         "San Agustín Archaeological Park"
       ],
+      "price": "650USD",
       "itinerary": [
         "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to hotel. Free time. Accommodation.",
         "DAY 2: BOGOTÁ CITY TOUR & MONSERRATE. Panoramic tour of Bogotá's historic center, gastronomic experience in La Candelaria, and ascent to Monserrate by cable car with sunset dinner.",
@@ -332,6 +338,109 @@
         "DAY 11: HONDA & MAGDALENA RIVER – GUADUAS. Magdalena River cruise: fauna, flora and artisanal fishing experience. Afternoon in Guaduas Heritage Town, birthplace of Policarpa Salavarrieta: main square and tour of Colombia's independence history. Accommodation.",
         "DAY 12: GUADUAS – BOGOTÁ EL DORADO AIRPORT. Breakfast at the hotel. Transfer to El Dorado International Airport according to flight time. End of services."
       ]
+    },
+    "tour-camino-real": {
+      "name": "Camino Real",
+      "description": "A 7-day journey through the historic heart of Colombia: from Bogotá to Honda Heritage Town, passing through the deep Tolima region. Colonial gastronomy, Andean nature, volcanoes, canyons and heritage towns in a single adventure.",
+      "highlights": [
+        "Panoramic city tour of Bogotá",
+        "Gastronomic experience in El Espinal: Lechona Tolimense inherited from the Spanish colony",
+        "Mythological Park of the Magdalena in El Espinal",
+        "Jeep Willys tour through Villa Restrepo and Juntas",
+        "Cable car through Combeima Canyon at over 300 m altitude",
+        "World's largest Wax Palm Forest in Toche",
+        "Crater of Cerro Machín Volcano, the 2nd most active in the world",
+        "El Sifón Hot Springs and frailejones in Murillo at 3,200 m",
+        "Honda Heritage Town: cobblestone city of bridges",
+        "Guaduas Heritage Town and Villeta, panela capital"
+      ],
+      "itinerary": [
+        "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to the hotel and passenger registration. If the flight arrives in the morning, we will do a panoramic city tour of Bogotá. Otherwise, accommodation.",
+        "DAY 2: BOGOTÁ – EL ESPINAL – IBAGUÉ, THE MUSICAL CITY. Breakfast at the hotel. Departure towards the Department of Tolima. In El Espinal, a gastronomic experience inherited from the Spanish colony and visit to the Mythological Park, setting of the legends and myths of the Magdalena. Transfer to Ibagué, Colombia's Musical City. Accommodation.",
+        "DAY 3: IBAGUÉ – COMBEIMA CANYON. Breakfast at the hotel. Departure towards Combeima Canyon, buffer zone of Los Nevados NNP. Jeep Willys tour through Villa Restrepo and Juntas. Cable car through the canyon at over 300 m altitude. Visit to Finca La Rivera, viewpoints, guided hike and possible sighting of Nevado del Tolima (weather permitting). Endemic birdwatching. Return to Ibagué. Accommodation.",
+        "DAY 4: IBAGUÉ – TOCHE – CERRO MACHÍN VOLCANO. Breakfast at the hotel. Departure to Toche to visit the world's largest Wax Palm Forest and its colonial houses. Jeep Willys tour through the crater of Cerro Machín Volcano, the 2nd most active in the world. Visit to the hot springs and the forest. Return to Ibagué. Accommodation.",
+        "DAY 5: IBAGUÉ – MURILLO – HONDA HERITAGE TOWN. Breakfast at the hotel. Departure to Murillo to visit El Sifón Hot Springs, frailejones at over 3,200 m and sighting of Nevado del Ruiz. Transfer to Honda via the road to Manizales. Arrival at Colombia's main colonial port: cobblestone city of bridges. Accommodation in Honda Heritage Town.",
+        "DAY 6: HONDA – GUADUAS – VILLETA – BOGOTÁ. Breakfast at the hotel. Panoramic tour of Guaduas Heritage Town. Departure through the eastern mountain range towards Villeta, renowned for its panela production. Transfer to Bogotá. Accommodation.",
+        "DAY 7: BOGOTÁ – EL DORADO AIRPORT. Breakfast at the hotel. At the agreed time, transfer to El Dorado International Airport to board the flight to the country of origin. End of services."
+      ]
+    },
+    "tour-colombia-colonial-aventurera": {
+      "name": "Colonial & Adventurous Colombia",
+      "description": "A 7-day journey through the colonial heart of Colombia: from Bogotá to the Salt Cathedral, the heritage towns of Boyacá, the Paipa hot springs and Lake Tota. Ancestral ceramics, independence history, crafts and Andean landscapes in a unique experience.",
+      "highlights": [
+        "Zipaquirá Salt Cathedral, 180 m underground",
+        "Chiquinquirá Basilica",
+        "Clay ceramic workshop in Ráquira",
+        "Villa de Leyva Heritage Town: fossils, museums and blue pools",
+        "City tour of Tunja, capital of Boyacá",
+        "Paipa medicinal sulfur hot springs",
+        "Lake Tota: Colombia's largest freshwater lake",
+        "Craft experience in Nobsa: weaving a Ruana with the grandmothers",
+        "Boyacá Bridge, symbol of Colombia's freedom"
+      ],
+      "itinerary": [
+        "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to the hotel and passenger registration. If the flight arrives in the morning, we will do a panoramic city tour of Bogotá. Otherwise, accommodation.",
+        "DAY 2: BOGOTÁ – SALT CATHEDRAL – ANCESTRAL RÁQUIRA. Breakfast at the hotel. Departure to the Salt Cathedral in Zipaquirá, entry 180 m underground with bilingual audio guide. Visit to Chiquinquirá: Basilica and main square. Tour of Ráquira to discover the clay ceramics process. Arrival in Villa de Leyva. Accommodation.",
+        "DAY 3: VILLA DE LEYVA HERITAGE & ARCHAEOLOGICAL TOWN. Breakfast at the hotel. Day to explore the colonial city: Fossil Museum, Chocolate Museum, First Congress House, Casa Museo Antonio Nariño, Nuestra Señora del Rosario Church and Pozos Azules Lagoon. Accommodation.",
+        "DAY 4: TUNJA – PAIPA HOT SPRINGS. Breakfast at the hotel. Panoramic city tour of Tunja (Boyacá's capital): Plaza de Bolívar and Cathedral. Arrival in Paipa and evening visit to the medicinal sulfur hot springs. Accommodation.",
+        "DAY 5: LIBERATING & CULTURAL HERITAGE. Breakfast at the hotel. Visit to the Lancers Monument. Local dessert tasting in Iza. Boat tour of Lake Tota. Visit to Aquitania, world capital of onion. Tibasosa: feijoa cultivation and leather goods. Return to Paipa. Accommodation.",
+        "DAY 6: NOBSA – BOYACÁ BRIDGE – BOGOTÁ. Breakfast at the hotel. Craft experience in Nobsa: wool Ruana weaving with the grandmothers. Visit to the Boyacá Bridge in Ventaquemada, symbol of Colombia's freedom. Arrival in Bogotá. Accommodation.",
+        "DAY 7: BOGOTÁ – EL DORADO AIRPORT. Breakfast at the hotel. At the agreed time, transfer to El Dorado International Airport to board the flight to the country of origin. End of services."
+      ]
+    },
+    "tour-colombia-eje-cafetero": {
+      "name": "Colombia Coffee Region",
+      "description": "A 7-day tour along Colombia's coffee route: from Bogotá to the Coffee Region, through Tolima, Salento, Cocora, coffee farms, hot springs and the capitals of the coffee triangle. Coffee culture, Andean landscapes and colonial tradition in a single adventure.",
+      "highlights": [
+        "Gastronomic experience in El Espinal: Lechona Tolimense",
+        "Mythological Park of the Magdalena",
+        "Salento: colonial town and Wax Palm",
+        "Cocora Valley and coffee farm with overnight stay",
+        "Recuca Park: coffee culture tour in Calarcá",
+        "Pijao: colonial streets and viewpoint",
+        "San Vicente Hot Springs in Santa Rosa de Cabal",
+        "Panoramic city tour of Pereira and Manizales",
+        "World's largest coffee cup (Guinness World Record)",
+        "Metrocable in Villa María"
+      ],
+      "itinerary": [
+        "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to the hotel and passenger registration. If the flight arrives in the morning, we will do a panoramic city tour of Bogotá. Otherwise, accommodation.",
+        "DAY 2: BOGOTÁ – EL ESPINAL – IBAGUÉ, THE MUSICAL CITY. Breakfast at the hotel. Departure towards Tolima. In El Espinal, gastronomic experience inherited from the Spanish colony and visit to the Mythological Park, setting of the legends and myths of the Magdalena. Transfer to Ibagué, Colombia's Musical City. Accommodation.",
+        "DAY 3: SALENTO – COCORA – FILANDIA. Breakfast at the hotel. Departure towards Quindío via La Línea highway with views of the central mountain range. Arrival in Salento: colonial streets, Wax Palm (national tree) and viewpoint. Arrival at the coffee farm. Accommodation.",
+        "DAY 4: COFFEE CULTURE TOUR. Breakfast at the farm. Visit to Recuca Park in Calarcá: tour of coffee culture. In the afternoon, visit to Pijao: colonial streets, viewpoint and main square. Return to the coffee farm. Accommodation.",
+        "DAY 5: PEREIRA CITY TOUR & HOT SPRINGS. Breakfast at the farm. Panoramic tour of Pereira, the city of eternal spring. In the evening, experience at San Vicente Hot Springs. Night in Santa Rosa de Cabal. Accommodation.",
+        "DAY 6: MANIZALES & VILLA MARÍA CITY TOUR. Breakfast at the hotel. Tour through Dosquebradas and route to Manizales: visit to the world's largest coffee cup (Guinness Record), Metropolitan Basilica and Chipre viewpoint. Metrocable tour through Villa María. Return to Pereira. Accommodation.",
+        "DAY 7: PEREIRA – EDÉN/MATECAÑA AIRPORT. Breakfast at the hotel. At the agreed time, transfer to Edén or Matecaña airport to board the flight to Bogotá. End of services."
+      ]
+    },
+    "tour-tras-leyenda-dorado": {
+      "name": "In Search of the Legend of El Dorado",
+      "description": "A 10-day journey following the route of the Spanish explorers through the heart of Colombia: Bogotá Botanical Garden, heritage towns, colonial Honda, the Royal Botanical Expedition in Mariquita, Los Nevados National Park, the Combeima Canyon, the Inland Sea of Prado and the water parks of Melgar. History, nature and adventure on the route of El Dorado.",
+      "highlights": [
+        "José Celestino Mutis Botanical Garden in Bogotá",
+        "Guaduas Heritage Town: home of Policarpa Salavarrieta",
+        "Colonial Honda: gold export port to Spain",
+        "San Sebastián de Mariquita: seat of the Royal Botanical Expedition",
+        "Los Nevados NNP: frailejones at over 3,400 m.a.s.l.",
+        "Eco Glamping with views of the Nevado del Ruiz in Murillo",
+        "El Sifón Hot Springs and Líbano: birthplace of writers and philosophers",
+        "Ibagué: oldest Music Conservatory in Latin America",
+        "Combeima Canyon: cable car and Jeep Willys",
+        "Prado: Colombia's Inland Sea aboard the Nautical Chiva",
+        "Piscilago Water Park in Melgar"
+      ],
+      "itinerary": [
+        "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to the hotel and passenger registration. If the flight arrives in the morning, we will do a panoramic city tour of Bogotá. Otherwise, accommodation.",
+        "DAY 2: BOGOTÁ – BOTANICAL GARDEN – GUADUAS HERITAGE TOWN. Breakfast at the hotel. Visit to the José Celestino Mutis Botanical Garden to begin the explorer's route of the Spanish expeditionary who celebrated the territory's biodiversity. Transfer to Guaduas, first heritage town: visit to the home of Policarpa Salavarrieta and the Convent of Soledad. Accommodation.",
+        "DAY 3: COLONIAL HONDA & SAN SEBASTIÁN DE MARIQUITA. Breakfast at the hotel. Tour of Honda: cobblestone streets, colonial architecture, Alto del Rosario Church, Magdalena River Museum, Alfonso López Pumarejo Museum and guided tour of the main gold export port to Spain. In the afternoon, visit to Mariquita: seat of the Royal Botanical Expedition, Colombia's first botanical garden, La Ermita Church, Painters' House and Santa Lucía ruins. Accommodation.",
+        "DAY 4: FRESNO – LOS NEVADOS NNP – MURILLO. Breakfast at the hotel. Route via Manizales to the border between Tolima and Caldas. Ascent towards the Nevado del Ruiz in Los Nevados NNP: frailejones at over 3,400 m.a.s.l. and panoramic views of the sulfur hot springs. Arrival in Murillo. Accommodation in Eco Glamping with views of the snow-capped volcano.",
+        "DAY 5: MURILLO – EL SIFÓN HOT SPRINGS – LÍBANO. Breakfast at the Eco Glamping. Visit to El Sifón Hot Springs in Murillo. Transfer to Líbano, birthplace of writers and philosophers descended from Europe and the Middle East. Visit to the main park. Integration night. Accommodation.",
+        "DAY 6: IBAGUÉ – THE MUSICAL CITY. Breakfast at the hotel. Panoramic tour of Ibagué: plazas, churches and the oldest Music Conservatory in Latin America. Live Colombian music show. Accommodation.",
+        "DAY 7: COMBEIMA CANYON. Breakfast at the hotel. Jeep Willys tour through Villa Restrepo and Juntas. Cable car through the Combeima Canyon at over 300 m height. Visit to Finca La Rivera: viewpoints, guided hike and possible sighting of the Nevado del Tolima. Endemic bird watching. Return to Ibagué. Accommodation.",
+        "DAY 8: PRADO – COLOMBIA'S INLAND SEA. Breakfast at the hotel. Visit to Prado: 4,400 hectares of freshwater. Waterfall of Love, Morgan Island, Enchanted Lagoon and Mohán Cave aboard the Nautical Chiva. In the afternoon, transfer to Melgar, the city of swimming pools. Accommodation.",
+        "DAY 9: WATER PARK – BOGOTÁ. Breakfast at the hotel. Visit to Piscilago water park: slides, zoo and pool afternoon. Transfer to Bogotá. Night in the capital. Accommodation.",
+        "DAY 10: BOGOTÁ – EL DORADO AIRPORT. Breakfast at the hotel. At the agreed time, transfer to El Dorado International Airport to board the flight to the country of origin. End of services."
+      ]
     }
   },
   "destinosData": {
@@ -434,7 +543,7 @@
     "seeAllOnGoogle": "See all reviews on Google",
     "reviews": {
       "yamel": {
-        "text": "We had amazing experiences on our cruise to Aruba and Curaçao. Thank you On Tour for making my dream come true!"
+        "text": "We did the Coffee Region and Tolima circuit with On Tour and it was a wonderful experience. Impeccable organization, amazing guides and breathtaking landscapes. Totally recommended!"
       },
       "angie": {
         "text": "Excellent service and great travel plans. Totally recommended for any type of trip."
@@ -497,7 +606,7 @@
     },
     "rights": {
       "title": "5. Your Rights",
-      "text": "In accordance with Law 1581 of 2012 (Personal Data Protection in Colombia), you have the right to access, update, rectify, and delete your personal data. To exercise these rights, email us at ontoursas@gmail.com."
+      "text": "In accordance with Law 1581 of 2012 (Personal Data Protection in Colombia), you have the right to access, update, rectify, and delete your personal data. To exercise these rights, email us at gerencia@agenciaontour.com."
     },
     "cookies": {
       "title": "6. Cookies",
@@ -531,7 +640,7 @@
     "subtitle": "Answers to the most common questions from our travelers.",
     "q1": {
       "question": "How can I book a trip with Ontour?",
-      "answer": "You can contact us via WhatsApp at +57 316 538 6892, by email at ontoursas@gmail.com, or through the contact form on our website. An advisor will respond with a personalized quote."
+      "answer": "You can contact us via WhatsApp at +57 316 538 6892, by email at gerencia@agenciaontour.com, or through the contact form on our website. An advisor will respond with a personalized quote."
     },
     "q2": {
       "question": "What is included in the tourist circuits?",

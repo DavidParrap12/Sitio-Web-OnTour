@@ -210,7 +210,7 @@ export function SplashScreen() {
         </div>
         <p className="splash-tagline">
           <span className="splash-tagline-main">{t("main")}</span>
-          <span className="splash-tagline-divider" />
+          <span className="splash-tagline-divider" aria-hidden="true">{"\u00A0"}</span>
           <span className="splash-tagline-sub">{t("sub")}</span>
         </p>
 

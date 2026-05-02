@@ -24,12 +24,12 @@ const playfairDisplay = Playfair_Display({
 
 const metadataByLocale: Record<string, { title: string; description: string; ogTitle: string; ogDesc: string; ogLocale: string; twTitle: string; twDesc: string }> = {
   es: {
-    title: "Ontour | Pasadías y Circuitos Turísticos",
+    title: "OnTour DMC Colombia | Pasadías y Circuitos Turísticos",
     description: "Explora los mejores destinos, pasadías y circuitos con Ontour. Turismo en Colombia.",
-    ogTitle: "Ontour | Pasadías y Circuitos Turísticos en Colombia",
+    ogTitle: "OnTour DMC Colombia | Pasadías y Circuitos Turísticos",
     ogDesc: "Explora los mejores destinos, pasadías y circuitos con Ontour. Turismo en Colombia.",
     ogLocale: "es_CO",
-    twTitle: "Ontour | Turismo en Colombia",
+    twTitle: "OnTour DMC Colombia | Turismo en Colombia",
     twDesc: "Pasadías y circuitos turísticos en Colombia.",
   },
   en: {

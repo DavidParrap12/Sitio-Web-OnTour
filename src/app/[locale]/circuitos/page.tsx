@@ -23,6 +23,7 @@ export default async function Circuitos({
     nights: c.nights,
     name: tData(`${c.id}.name`),
     description: tData(`${c.id}.description`),
+    price: tData(`${c.id}.price`),
   }));
 
   return (

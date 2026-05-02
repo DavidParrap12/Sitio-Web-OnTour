@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import Image from "next/image";
@@ -20,6 +21,7 @@ export function Navbar() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
+  const params = useParams();
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -64,7 +66,11 @@ export function Navbar() {
   const currentLocale = LOCALES.find((l) => l.code === locale) ?? LOCALES[0];
 
   function switchLocale(newLocale: string) {
-    router.replace(pathname as any, { locale: newLocale as any });
+    router.replace(
+      // @ts-expect-error – dynamic params typed loosely
+      { pathname: pathname as any, params },
+      { locale: newLocale as any }
+    );
     setLangOpen(false);
   }
 

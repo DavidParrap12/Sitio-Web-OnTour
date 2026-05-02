@@ -33,7 +33,7 @@ export const destinos: Destino[] = [
   },
   {
     id: "cascada-la-plata-pasadia",
-    image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.13 PM (2).jpeg",
+    image: "/image/Tolima-fotos/tolima-cascada-la-plata.jpeg",
     gallery: [
       "/image/pasadias/Pasadias_por_tolima_2026/PASADIAS POR EL TOLIMA 2026_page-0001.jpg",
       "/image/pasadias/Pasadias_por_tolima_2026/PASADIAS POR EL TOLIMA 2026_page-0002.jpg",

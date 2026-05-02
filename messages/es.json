@@ -159,7 +159,12 @@
     "galleryLangNotice": "Los folletos están disponibles solo en español.",
     "ctaTitle": "¿Te interesa este pasadía?",
     "ctaSubtitle": "Solicita una cotización personalizada para ti o tu grupo.",
-    "ctaButton": "Cotizar ahora"
+    "ctaButton": "Cotizar ahora",
+    "downloadPdf": "Descargar PDF",
+    "downloadWord": "Descargar Word",
+    "downloadBrochure": "Descargar Folleto",
+    "generating": "Generando...",
+    "downloaded": "¡Descargado!"
   },
   "footer": {
     "tagline": "Creamos experiencias inolvidables.",
@@ -181,7 +186,7 @@
   },
   "metadata": {
     "home": {
-      "title": "Ontour | Pasadías y Circuitos Turísticos",
+      "title": "OnTour DMC Colombia | Pasadías y Circuitos Turísticos",
       "description": "Explora los mejores destinos, pasadías y circuitos con Ontour. Turismo en Colombia."
     }
   },
@@ -203,6 +208,7 @@
         "Desierto de la Tatacoa",
         "Parque Arqueológico San Agustín"
       ],
+      "price": "Desde 640 USD",
       "itinerary": [
         "DÍA 1: BOGOTÁ-AEROPUERTO EL DORADO. Recepción en el Aeropuerto Internacional 'EL Dorado', traslado al hotel. Tiempo libre. Alojamiento.",
         "DÍA 2: BOGOTÁ CITY TOUR Y MONSERRATE. Tour panorámico por el centro histórico de Bogotá, experiencia gastronómica en La Candelaria y ascenso a Monserrate en funicular/teleférico con cena al atardecer.",
@@ -332,6 +338,109 @@
         "DÍA 11: HONDA Y EL RÍO MAGDALENA – GUADUAS. Crucero por el Río Magdalena: fauna, flora y experiencia de pesca artesanal. Tarde en Guaduas Pueblo Patrimonio, cuna de Policarpa Salavarrieta: plaza principal y recorrido por la historia de la independencia de Colombia. Alojamiento.",
         "DÍA 12: GUADUAS – BOGOTÁ AEROPUERTO EL DORADO. Desayuno en el hotel. Traslado al Aeropuerto Internacional El Dorado según hora de vuelo. Fin de nuestros servicios."
       ]
+    },
+    "tour-camino-real": {
+    "name": "Camino Real",
+      "description": "Un recorrido de 7 días por el corazón histórico de Colombia: desde Bogotá hasta Honda Pueblo Patrimonio, pasando por el Tolima profundo. Gastronomía colonial, naturaleza andina, volcanes, cañones y pueblos patrimonio en una sola aventura.",
+      "highlights": [
+        "City tour panorámico por Bogotá",
+        "Experiencia gastronómica en El Espinal: Lechona Tolimense heredada de la colonia española",
+        "Parque Mitológico del Magdalena en El Espinal",
+      "Recorrido en Jeep Willys por Villa Restrepo y Juntas",
+      "Teleférico por el Cañón del Combeima a más de 300 mts de altura",
+      "Bosque de Palma de Cera más grande del mundo en Toche",
+      "Cráter del Volcán Cerro Machín, el 2do más activo del mundo",
+      "Termales El Sifón y avistamiento de frailejones en Murillo a 3.200 msnm",
+      "Honda Pueblo Patrimonio: ciudad empedrada y de los puentes",
+      "Guaduas Pueblo Patrimonio y Villeta, capital panelera"
+    ],
+      "itinerary": [
+        "DÍA 1: BOGOTÁ –  AEROPUERTO EL DORADO. Recepción en el Aeropuerto Internacional El Dorado, traslado al hotel y registro de pasajeros. Si el vuelo llega en horas de la mañana, realizaremos un city tour panorámico por Bogotá. De lo contrario, alojamiento.",
+        "DÍA 2: BOGOTÁ – EL ESPINAL – IBAGUÉ, LA CIUDAD MUSICAL. Desayuno en el hotel. Salida hacia el Departamento del Tolima. En El Espinal, experiencia gastronómica heredada de la colonia española y visita al Parque Mitológico, escenario de las leyendas y mitos del Magdalena. Traslado a Ibagué, la Ciudad Musical de Colombia. Alojamiento.",
+        "DÍA 3: IBAGUÉ – CAÑÓN DEL COMBEIMA. Desayuno en el hotel. Salida hacia el Cañón del Combeima, zona amortiguadora del PNN Los Nevados. Recorrido en Jeep Willys por Villa Restrepo y Juntas. Teleférico por el cañón a más de 300 mts de altura. Visita a la Finca La Rivera, miradores, caminata guiada y posible avistamiento del Nevado del Tolima (según clima). Avistamiento de aves endémicas. Regreso a Ibagué. Alojamiento.",
+        "DÍA 4: IBAGUÉ – TOCHE – VOLCÁN CERRO MACHÍN. Desayuno en el hotel. Salida hacia Toche para visitar el Bosque de Palma de Cera más grande del mundo y sus casas coloniales. Recorrido en Jeep Willys por el cráter del Volcán Cerro Machín, el 2do más activo del mundo. Visita a las termales y al bosque. Regreso a Ibagué. Alojamiento.",
+        "DÍA 5: IBAGUÉ – MURILLO – HONDA PUEBLO PATRIMONIO. Desayuno en el hotel. Salida hacia Murillo para visitar las Termales El Sifón, avistamiento de frailejones a más de 3.200 msnm y avistamiento del Nevado del Ruiz. Traslado a Honda por la carretera que conduce a Manizales. Llegada al principal puerto colonial de Colombia: ciudad empedrada y de los puentes. Alojamiento en Honda Pueblo Patrimonio.",
+        "DÍA 6: HONDA – GUADUAS – VILLETA – BOGOTÁ. Desayuno en el hotel. Recorrido panorámico por Guaduas Pueblo Patrimonio. Salida por la cordillera oriental hacia Villeta, reconocida por su producción de panela. Traslado a Bogotá. Alojamiento.",
+        "DÍA 7: BOGOTÁ – AEROPUERTO EL DORADO. Desayuno en el hotel. A la hora acordada, traslado al Aeropuerto Internacional El Dorado para tomar vuelo con destino al país de origen. Fin de nuestros servicios."
+      ]
+    },
+    "tour-colombia-colonial-aventurera": {
+      "name": "Colombia Colonial y Aventurera",
+      "description": "Un viaje de 7 días por el corazón colonial de Colombia: desde Bogotá hasta la Catedral de Sal, los pueblos patrimonio de Boyacá, las termales de Paipa y el Lago de Tota. Cerámica ancestral, historia de la independencia, artesanías y paisajes andinos en una experiencia única.",
+      "highlights": [
+        "Catedral de Sal de Zipaquirá a 180 mts bajo tierra",
+        "Basílica de Chiquinquirá",
+        "Taller de cerámica de barro en Ráquira",
+        "Villa de Leyva Pueblo Patrimonio: fósiles, museos y pozos azules",
+        "City tour por Tunja, capital de Boyacá",
+        "Termales de Paipa de aguas azufradas medicinales",
+        "Lago de Tota: el lago de agua dulce más grande de Colombia",
+        "Experiencia artesanal en Nobsa: tejido de Ruana con las abuelas",
+        "Puente de Boyacá, símbolo de la Libertad de Colombia"
+      ],
+      "itinerary": [
+        "DÍA 1: BOGOTÁ – AEROPUERTO EL DORADO. Recepción en el Aeropuerto Internacional El Dorado, traslado al hotel y registro de pasajeros. Si el vuelo llega en horas de la mañana, realizaremos un city tour panorámico por Bogotá. De lo contrario, alojamiento.",
+        "DÍA 2: BOGOTÁ – CATEDRAL DE SAL – RÁQUIRA ANCESTRAL. Desayuno en el hotel. Salida rumbo a la Catedral de Sal en Zipaquirá, ingreso a más de 180 mts de profundidad con audioguía bilingüe. Visita a Chiquinquirá: Basílica y plaza principal. Recorrido por Ráquira para conocer el proceso de la cerámica de barro. Llegada a Villa de Leyva. Alojamiento.",
+        "DÍA 3: VILLA DE LEYVA PUEBLO PATRIMONIO Y ARQUEOLÓGICO. Desayuno en el hotel. Día para conocer la ciudad colonial: Museo del Fósil, Museo del Chocolate, Casa del Primer Congreso, Casa Museo Antonio Nariño, Iglesia Nuestra Señora del Rosario y Laguna de Pozos Azules. Alojamiento.",
+        "DÍA 4: TUNJA – TERMALES DE PAIPA. Desayuno en el hotel. City tour panorámico por Tunja (capital de Boyacá): Plaza de Bolívar y Catedral. Llegada a Paipa y en la noche visita a las termales de aguas azufradas medicinales. Alojamiento.",
+        "DÍA 5: HERENCIA LIBERTADORA Y CULTURAL. Desayuno en el hotel. Visita al Monumento a los Lanceros. Degustación de postre local en Iza. Recorrido por la Laguna de Tota en lancha. Visita a Aquitania, capital mundial de la cebolla. Tibasosa: cultivo de Feijoa y artículos de marroquinería. Regreso a Paipa. Alojamiento.",
+        "DÍA 6: NOBSA – PUENTE DE BOYACÁ – BOGOTÁ. Desayuno en el hotel. Experiencia artesanal en Nobsa: tejido de Ruana en lana con las abuelas. Visita al Puente de Boyacá en Ventaquemada, símbolo de la Libertad de Colombia. Llegada a Bogotá. Alojamiento.",
+        "DÍA 7: BOGOTÁ – AEROPUERTO EL DORADO. Desayuno en el hotel. A la hora acordada, traslado al Aeropuerto Internacional El Dorado para tomar vuelo con destino al país de origen. Fin de nuestros servicios."
+      ]
+    },
+    "tour-colombia-eje-cafetero": {
+      "name": "Colombia Eje Cafetero",
+      "description": "Un recorrido de 7 días por la ruta del café de Colombia: desde Bogotá hasta el Eje Cafetero, pasando por el Tolima, Salento, Cocora, fincas cafeteras, termales y las capitales del triángulo del café. Cultura cafetera, paisajes andinos y tradición colonial en una sola aventura.",
+      "highlights": [
+        "Experiencia gastronómica en El Espinal: Lechona Tolimense",
+        "Parque Mitológico del Magdalena",
+        "Salento: pueblo colonial y Palma de Cera",
+        "Valle de Cocora y finca cafetera con alojamiento",
+        "Parque Recuca: recorrido por la cultura cafetera en Calarcá",
+        "Pijao: calles coloniales y mirador",
+        "Termales de San Vicente en Santa Rosa de Cabal",
+        "City tour panorámico por Pereira y Manizales",
+        "Taza de café más grande del mundo (récord Guinness)",
+        "Metrocable en Villa María"
+      ],
+      "itinerary": [
+        "DÍA 1: BOGOTÁ – AEROPUERTO EL DORADO. Recepción en el Aeropuerto Internacional El Dorado, traslado al hotel y registro de pasajeros. Si el vuelo llega en horas de la mañana, realizaremos un city tour panorámico por Bogotá. De lo contrario, alojamiento.",
+        "DÍA 2: BOGOTÁ – EL ESPINAL – IBAGUÉ, LA CIUDAD MUSICAL. Desayuno en el hotel. Salida rumbo al Tolima. En El Espinal, experiencia gastronómica heredada de la colonia española y visita al Parque Mitológico, escenario de las leyendas y mitos del Magdalena. Traslado a Ibagué, la Ciudad Musical de Colombia. Alojamiento.",
+        "DÍA 3: SALENTO – COCORA – FILANDIA. Desayuno en el hotel. Salida rumbo al Quindío por la vía de La Línea con vistas a la cordillera central. Llegada a Salento: calles coloniales, Palma de Cera (árbol nacional) y mirador. Llegada a la finca cafetera. Alojamiento.",
+        "DÍA 4: RECORRIDO POR LA CULTURA CAFETERA. Desayuno en la finca. Visita al Parque Recuca en Calarcá: recorrido por la cultura cafetera. En la tarde, visita a Pijao: calles coloniales, mirador y plaza principal. Regreso a la finca cafetera. Alojamiento.",
+        "DÍA 5: CITY TOUR PEREIRA Y TERMALES. Desayuno en la finca. Recorrido panorámico por Pereira, la ciudad de la eterna primavera. En la tarde-noche, experiencia en las Termales de San Vicente. Noche en Santa Rosa de Cabal. Alojamiento.",
+        "DÍA 6: CITY TOUR MANIZALES Y VILLA MARÍA. Desayuno en el hotel. Recorrido por Dosquebradas y ruta hacia Manizales: visita a la Taza de Café más grande del mundo (récord Guinness), Basílica Metropolitana y mirador Chipre. Recorrido en Metrocable por Villa María. Regreso a Pereira. Alojamiento.",
+        "DÍA 7: PEREIRA – AEROPUERTO EDÉN/MATECAÑA. Desayuno en el hotel. A la hora acordada, traslado al aeropuerto Edén o Matecaña para tomar vuelo con destino a Bogotá. Fin de nuestros servicios."
+      ]
+    },
+    "tour-tras-leyenda-dorado": {
+      "name": "Tras la Leyenda del Dorado",
+      "description": "Un viaje de 10 días siguiendo la ruta de los exploradores españoles por el corazón de Colombia: Jardín Botánico de Bogotá, pueblos patrimonio, Honda colonial, la Real Expedición Botánica en Mariquita, el Parque Nacional Natural de los Nevados, el Cañón del Combeima, el Mar Interior de Prado y los parques acuáticos de Melgar. Historia, naturaleza y aventura en la ruta del Dorado.",
+      "highlights": [
+        "Jardín Botánico José Celestino Mutis en Bogotá",
+        "Guaduas Pueblo Patrimonio: casa de Policarpa Salavarrieta",
+        "Honda colonial: puerto de exportación de oro hacia España",
+        "San Sebastián de Mariquita: sede de la Real Expedición Botánica",
+        "PNN Los Nevados: frailejones a más de 3.400 msnm",
+        "Eco Glamping con vistas al Nevado del Ruiz en Murillo",
+        "Termales El Sifón y el Líbano: cuna de escritores y filósofos",
+        "Ibagué: Conservatorio de Música más antiguo de Latinoamérica",
+        "Cañón del Combeima: teleférico y Jeep Willys",
+        "Prado: el Mar Interior de Colombia en Chiva Náutica",
+        "Parque acuático Piscilago en Melgar"
+      ],
+      "itinerary": [
+        "DÍA 1: BOGOTÁ – AEROPUERTO EL DORADO. Recepción en el Aeropuerto Internacional El Dorado, traslado al hotel y registro de pasajeros. Si el vuelo llega en horas de la mañana, realizaremos un city tour panorámico por Bogotá. De lo contrario, alojamiento.",
+        "DÍA 2: BOGOTÁ – JARDÍN BOTÁNICO – GUADUAS PUEBLO PATRIMONIO. Desayuno en el hotel. Visita al Jardín Botánico José Celestino Mutis para iniciar la ruta exploradora del expedicionario español que exaltó la riqueza biodiversa del territorio. Traslado a Guaduas, primer pueblo patrimonio: visita a la casa de Policarpa Salavarrieta y el Convento de la Soledad. Alojamiento.",
+        "DÍA 3: HONDA COLONIAL Y SAN SEBASTIÁN DE MARIQUITA. Desayuno en el hotel. Recorrido por Honda: calles empedradas, arquitectura colonial, Iglesia del Alto del Rosario, Museo del Río Magdalena, Museo Alfonso López Pumarejo y tour guiado por el principal puerto de exportación de oro hacia España. En la tarde, visita a Mariquita: sede de la Real Expedición Botánica, primer jardín botánico de Colombia, Iglesia La Ermita, Casa de los Pintores y ruinas de Santa Lucía. Alojamiento.",
+        "DÍA 4: FRESNO – PNN LOS NEVADOS – MURILLO. Desayuno en el hotel. Ruta por la vía Manizales hasta el límite entre Tolima y Caldas. Ascenso hacia el Nevado del Ruiz en el PNN Los Nevados: avistamiento de frailejones a más de 3.400 msnm y vista panorámica de las termales de agua azufrada. Llegada a Murillo. Alojamiento en Eco Glamping con vistas al nevado.",
+        "DÍA 5: MURILLO – TERMALES EL SIFÓN – LÍBANO. Desayuno en el Eco Glamping. Visita a las Termales El Sifón en Murillo. Traslado al Líbano, cuna de escritores y filósofos descendientes de Europa y Medio Oriente. Visita al parque principal. Noche de integración. Alojamiento.",
+        "DÍA 6: IBAGUÉ – LA CIUDAD MUSICAL. Desayuno en el hotel. Recorrido panorámico por Ibagué: plazas, iglesias y el Conservatorio de Música más antiguo de Latinoamérica. Show en vivo de música colombiana. Alojamiento.",
+        "DÍA 7: CAÑÓN DEL COMBEIMA. Desayuno en el hotel. Recorrido en Jeep Willys por Villa Restrepo y Juntas. Teleférico por el Cañón del Combeima a más de 300 mts de altura. Visita a la Finca La Rivera: miradores, caminata guiada y posible avistamiento del Nevado del Tolima. Avistamiento de aves endémicas. Regreso a Ibagué. Alojamiento.",
+        "DÍA 8: PRADO – EL MAR INTERIOR DE COLOMBIA. Desayuno en el hotel. Visita a Prado: 4.400 hectáreas de agua dulce. Cascada del Amor, Isla de Morgan, Laguna Encantada y Cueva del Mohán a bordo de la Chiva Náutica. En la tarde, traslado a Melgar, la ciudad de las piscinas. Alojamiento.",
+        "DÍA 9: PARQUE ACUÁTICO – BOGOTÁ. Desayuno en el hotel. Visita al parque acuático Piscilago: toboganes, zoológico y tarde de piscina. Traslado a Bogotá. Noche en la capital. Alojamiento.",
+        "DÍA 10: BOGOTÁ – AEROPUERTO EL DORADO. Desayuno en el hotel. A la hora acordada, traslado al Aeropuerto Internacional El Dorado para tomar vuelo con destino al país de origen. Fin de nuestros servicios."
+      ]
     }
   },
   "destinosData": {
@@ -348,7 +457,7 @@
       ]
 },
     "bogota-tu-casa-pasadia": {
-      "name": "Bogotá, Tú Casa",
+      "name": "Bogotá, Tu Casa",
       "description": "Descubre la magia de Bogotá en un día lleno de historia, cultura y gastronomía. Recorre la imponente Catedral de Sal de Zipaquirá, el colonial pueblo patrimonio de Villa de Leyva y las coloridas calles artesanales de Ráquira. Completa la experiencia con un tour gastronómico por los sabores más auténticos de la región y una panorámica inigualable de la capital colombiana.",
       "duration": "Full Day",
       "highlights": [
@@ -434,7 +543,7 @@
     "seeAllOnGoogle": "Ver todas las reseñas en Google",
     "reviews": {
       "yamel": {
-        "text": "Grandes experiencias vivimos en nuestro crucero por Aruba, Curazao. ¡Gracias On Tour por cumplir mi sueño!"
+        "text": "Hicimos el circuito por el Eje Cafetero y el Tolima con On Tour y fue una experiencia maravillosa. Organización impecable, guías increíbles y paisajes de ensueño. ¡Totalmente recomendado!"
       },
       "angie": {
         "text": "Un excelente servicio y buenos planes. Totalmente recomendados para cualquier tipo de viaje."
@@ -497,7 +606,7 @@
     },
     "rights": {
       "title": "5. Tus Derechos",
-      "text": "De acuerdo con la Ley 1581 de 2012 (Protección de Datos Personales en Colombia), tienes derecho a conocer, actualizar, rectificar y suprimir tus datos personales. Para ejercer estos derechos, escríbenos a ontoursas@gmail.com."
+      "text": "De acuerdo con la Ley 1581 de 2012 (Protección de Datos Personales en Colombia), tienes derecho a conocer, actualizar, rectificar y suprimir tus datos personales. Para ejercer estos derechos, escríbenos a gerencia@agenciaontour.com."
     },
     "cookies": {
       "title": "6. Cookies",
@@ -531,7 +640,7 @@
     "subtitle": "Respuestas a las dudas más comunes de nuestros viajeros.",
     "q1": {
       "question": "¿Cómo puedo reservar un viaje con Ontour?",
-      "answer": "Puedes contactarnos por WhatsApp al +57 316 538 6892, por correo a ontoursas@gmail.com, o a través del formulario de contacto en nuestra web. Un asesor te responderá con una cotización personalizada."
+      "answer": "Puedes contactarnos por WhatsApp al +57 316 538 6892, por correo a gerencia@agenciaontour.com, o a través del formulario de contacto en nuestra web. Un asesor te responderá con una cotización personalizada."
     },
     "q2": {
       "question": "¿Qué incluyen los circuitos turísticos?",

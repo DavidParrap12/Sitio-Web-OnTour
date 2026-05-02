@@ -78,7 +78,7 @@ export async function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
-                <span>ontoursas@gmail.com</span>
+                <a href="mailto:gerencia@agenciaontour.com" className="hover:text-accent transition-colors">gerencia@agenciaontour.com</a>
               </li>
             </ul>
           </div>

@@ -43,7 +43,6 @@ export default async function Contacto({
                   <Mail className="w-6 h-6 text-accent shrink-0" />
                   <div>
                     <p className="font-semibold text-lg">gerencia@agenciaontour.com</p>
-                    <p className="font-semibold text-lg">ontoursas@gmail.com</p>
                     <p className="text-sm text-white/70">{t("support")}</p>
                   </div>
                 </div>

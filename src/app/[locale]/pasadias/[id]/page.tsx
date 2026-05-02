@@ -6,6 +6,7 @@ import { destinos } from "@/data/destinos";
 import { routing } from "@/i18n/routing";
 import { CheckCircle2, Clock, MapPin, Send } from "lucide-react";
 import { PasadiaGallery } from "@/components/PasadiaGallery";
+import { BrochureDownloadDynamic as BrochureDownload } from "@/components/BrochureDownloadDynamic";
 import { Link } from "@/i18n/navigation";
 
 export function generateStaticParams() {
@@ -110,6 +111,18 @@ export default async function PasadiaPage({
                 </div>
               )}
               <PasadiaGallery images={gallery} altPrefix={name} />
+              <BrochureDownload
+                images={gallery}
+                title={name}
+                slug={id}
+                labels={{
+                  downloadPdf: t("downloadPdf"),
+                  downloadWord: t("downloadWord"),
+                  downloadBrochure: t("downloadBrochure"),
+                  generating: t("generating"),
+                  downloaded: t("downloaded"),
+                }}
+              />
             </section>
           )}
 

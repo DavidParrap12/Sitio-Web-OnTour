@@ -40,7 +40,7 @@ export default async function CircuitoPage({
   const departureDates = await fetchDepartureDates();
 
   const whatsappMessage = t("whatsappMessage", { name });
-  const whatsappUrl = `https://wa.me/573002322335?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/573223070106?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <div className="pt-20 bg-secondary/50 min-h-screen pb-20">
@@ -153,7 +153,7 @@ export default async function CircuitoPage({
 
               <div className="border-t pt-6 mb-8 text-center">
                 <p className="text-sm text-foreground/60 mb-2">{t("pricePerPerson")}</p>
-                <div className="text-4xl font-black text-primary mb-2">{t("priceLabel")}</div>
+                <div className="text-4xl font-black text-primary mb-2">{tData(`${id}.price`)}</div>
                 <p className="text-xs text-foreground/50">{t("priceNote")}</p>
               </div>
 
