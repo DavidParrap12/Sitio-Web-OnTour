@@ -162,6 +162,8 @@ export default async function CircuitoPage({
                 days={circuito.days}
                 nights={circuito.nights}
                 price={tData(`${id}.price`)}
+                brochureUrl={circuito.brochureUrl}
+                brochurePdfUrl={circuito.brochurePdfUrl}
                 labels={{
                   downloadPdf: t("downloadPdf"),
                   downloadWord: t("downloadWord"),

@@ -12,6 +12,8 @@ interface CircuitProgramDownloadProps {
   days: number;
   nights: number;
   price: string;
+  brochureUrl?: string;
+  brochurePdfUrl?: string;
   labels: {
     downloadPdf: string;
     downloadWord: string;
@@ -74,21 +76,33 @@ async function imageToArrayBuffer(src: string): Promise<{ buffer: ArrayBuffer; w
 }
 
 export function CircuitProgramDownload({
-  name, slug, description, highlights, itinerary, days, nights, price, labels,
+  name, slug, description, highlights, itinerary, days, nights, price, labels, brochureUrl, brochurePdfUrl,
 }: CircuitProgramDownloadProps) {
   const [pdfState, setPdfState] = useState<DownloadState>("idle");
   const [wordState, setWordState] = useState<DownloadState>("idle");
 
   /* ============================================================
-   *  PDF Generation — circuit program with full content
+   *  PDF Download / Generation — real file or dynamic generation
    * ============================================================ */
   const generatePdf = useCallback(async () => {
     if (pdfState === "loading") return;
     setPdfState("loading");
 
     try {
-      const { default: jsPDF } = await import("jspdf");
       const { saveAs } = await import("file-saver");
+
+      /* --- If a real PDF brochure file exists, download it directly --- */
+      if (brochurePdfUrl) {
+        const response = await fetch(brochurePdfUrl);
+        if (!response.ok) throw new Error(`Failed to fetch PDF brochure: ${response.status}`);
+        const blob = await response.blob();
+        saveAs(blob, `OnTour-Programa-${slug}.pdf`);
+        setPdfState("done");
+        setTimeout(() => setPdfState("idle"), 3000);
+        return;
+      }
+
+      const { default: jsPDF } = await import("jspdf");
 
       const pdf = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
       const pageW = pdf.internal.pageSize.getWidth();
@@ -255,21 +269,34 @@ export function CircuitProgramDownload({
       console.error("PDF generation failed:", err);
       setPdfState("idle");
     }
-  }, [name, slug, description, highlights, itinerary, days, nights, price, labels, pdfState]);
+  }, [name, slug, description, highlights, itinerary, days, nights, price, labels, pdfState, brochurePdfUrl]);
 
   /* ============================================================
-   *  WORD Generation — circuit program with full content
+   *  WORD Download / Generation — real file or dynamic generation
    * ============================================================ */
   const generateWord = useCallback(async () => {
     if (wordState === "loading") return;
     setWordState("loading");
 
     try {
+      const { saveAs } = await import("file-saver");
+
+      /* --- If a real brochure file exists, download it directly --- */
+      if (brochureUrl) {
+        const response = await fetch(brochureUrl);
+        if (!response.ok) throw new Error(`Failed to fetch brochure: ${response.status}`);
+        const blob = await response.blob();
+        saveAs(blob, `OnTour-Programa-${slug}.docx`);
+        setWordState("done");
+        setTimeout(() => setWordState("idle"), 3000);
+        return;
+      }
+
+      /* --- Otherwise generate Word dynamically --- */
       const {
         Document, Packer, Paragraph, TextRun, ImageRun,
         AlignmentType, Header, Footer, BorderStyle, HeadingLevel,
       } = await import("docx");
-      const { saveAs } = await import("file-saver");
 
       // Load logo
       let logoData: { buffer: ArrayBuffer; width: number; height: number } | null = null;
@@ -516,7 +543,7 @@ export function CircuitProgramDownload({
       console.error("Word generation failed:", err);
       setWordState("idle");
     }
-  }, [name, slug, description, highlights, itinerary, days, nights, price, labels, wordState]);
+  }, [name, slug, description, highlights, itinerary, days, nights, price, labels, wordState, brochureUrl]);
 
   /* ============================================================
    *  Button rendering

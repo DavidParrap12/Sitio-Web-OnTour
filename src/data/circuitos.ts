@@ -9,14 +9,18 @@ export interface Circuito {
   nights: number;
   image: string;
   dayImages: CircuitoDayImage[];
+  brochureUrl?: string;
+  brochurePdfUrl?: string;
 }
 
 export const circuitos: Circuito[] = [
   {
-    id: "legado-ancestral-muiscas-pijaos-opitas",
+    id: "epoca-precolombina-sur-colombia",
     days: 9,
     nights: 8,
     image: "/image/estatuas-san-agustin-antiguedad-portada.jpg",
+    brochureUrl: "/downloads/circuitos/Epoca-Precolombina-Sur-de-Colombia.docx",
+    brochurePdfUrl: "/downloads/circuitos/Epoca-Precolombina-Sur-de-Colombia.pdf",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
@@ -89,10 +93,12 @@ export const circuitos: Circuito[] = [
     ],
   },
   {
-    id: "tour-colombia-capitales-rubiaceas",
+    id: "tour-colombia-capitales-cafeteras",
     days: 12,
     nights: 11,
     image: "/image/nevado-tolima.jpg",
+    brochureUrl: "/downloads/circuitos/Capitales-Cafeteras-de-Colombia-12-dias.docx",
+    brochurePdfUrl: "/downloads/circuitos/Capitales-Cafeteras-de-Colombia-12-dias.pdf",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "BOGOTÁ" },
