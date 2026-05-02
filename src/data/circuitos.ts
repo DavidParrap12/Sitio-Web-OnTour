@@ -42,7 +42,7 @@ export const circuitos: Circuito[] = [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
       { image: "/image/legado-ancestral/catedral-1.jpg", location: "ZIPAQUIRÁ" },
-      { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.10 PM (3).jpeg", location: "IBAGUÉ" },
+      { image: "/image/Tolima-fotos/ibague_vista-aerea-guayacanes-en-flor.jpeg", location: "IBAGUÉ" },
       { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.12 PM.jpeg", location: "IBAGUÉ" },
       { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.14 PM (3).jpeg", location: "QUINDÍO" },
       { image: "/image/jardin-botanico-quindio.jpg", location: "ARMENIA" },
