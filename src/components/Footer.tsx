@@ -85,7 +85,13 @@ export async function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-6 pb-6 border-t border-gray-800">
+          <p className="text-[10px] text-gray-400 text-justify leading-relaxed">
+            {t("legalDisclaimer")}
+          </p>
+        </div>
+
+        <div className="pt-6 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-500">
             © {new Date().getFullYear()} Ontour DMC. {t("rights")}
           </p>
