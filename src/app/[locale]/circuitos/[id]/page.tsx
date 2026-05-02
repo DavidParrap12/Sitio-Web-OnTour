@@ -8,6 +8,7 @@ import { CheckCircle2, Clock, MapPin, Map } from "lucide-react";
 import ItineraryTimeline from "@/components/ItineraryTimeline";
 import CircuitRouteMap from "@/components/CircuitRouteMap";
 import { BookingForm } from "@/components/BookingForm";
+import { CircuitProgramDownloadDynamic } from "@/components/CircuitProgramDownloadDynamic";
 import { fetchDepartureDates } from "@/lib/googleSheets";
 
 export function generateStaticParams() {
@@ -150,6 +151,31 @@ export default async function CircuitoPage({
                   </div>
                 </div>
               </div>
+
+              {/* Download program as PDF / Word — between summary and price */}
+              <CircuitProgramDownloadDynamic
+                name={name}
+                slug={circuito.id}
+                description={description}
+                highlights={highlights}
+                itinerary={itinerary}
+                days={circuito.days}
+                nights={circuito.nights}
+                price={tData(`${id}.price`)}
+                labels={{
+                  downloadPdf: t("downloadPdf"),
+                  downloadWord: t("downloadWord"),
+                  downloadProgram: t("downloadProgram"),
+                  generating: t("generating"),
+                  downloaded: t("downloaded"),
+                  tripDescription: t("tripDescription"),
+                  youWillEnjoy: t("youWillEnjoy"),
+                  itineraryLabel: t("itinerary"),
+                  duration: t("duration"),
+                  daysNights: t("daysNights", { days: circuito.days, nights: circuito.nights }),
+                  priceLabel: t("pricePerPerson"),
+                }}
+              />
 
               <div className="border-t pt-6 mb-8 text-center">
                 <p className="text-sm text-foreground/60 mb-2">{t("pricePerPerson")}</p>

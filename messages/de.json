@@ -148,7 +148,12 @@
     "whatsappMessage": "Hallo, ich interessiere mich für die Rundreise: {name}",
     "galleryClose": "Schließen",
     "galleryPhotoOf": "Foto __n__ von __total__",
-    "galleryClickToEnlarge": "Klicken zum Vergrößern"
+    "galleryClickToEnlarge": "Klicken zum Vergrößern",
+    "downloadPdf": "PDF herunterladen",
+    "downloadWord": "Word herunterladen",
+    "downloadProgram": "Programm herunterladen",
+    "generating": "Wird generiert...",
+    "downloaded": "Heruntergeladen!"
   },
   "pasadiaDetail": {
     "badge": "Tagesausflug",
@@ -208,6 +213,7 @@
         "Tatacoa-Wüste",
         "Archäologischer Park San Agustín"
       ],
+      "price": "",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel. Freizeit. Übernachtung.",
         "TAG 2: BOGOTÁ CITY TOUR & MONSERRATE. Panorama-Stadtrundfahrt durch das historische Zentrum von Bogotá, kulinarisches Erlebnis in La Candelaria und Auffahrt zum Monserrate mit der Seilbahn inkl. Abendessen bei Sonnenuntergang.",
@@ -235,6 +241,7 @@
         "Verlorene Stadt von San Felipe de Falan (18. Jahrhundert)",
         "Honda, Kulturerbe-Stadt, und Magdalena-Flussfahrt"
       ],
+      "price": "",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel Ihrer Wahl. Freizeit. Übernachtung.",
         "TAG 2: BOGOTÁ CITY TOUR & ABENDESSEN AUF DEM MONSERRATE. Panorama-Stadtrundfahrt durch Bogotá: historisches Zentrum, La Candelaria, historische Plätze und Straßenkunst. Auffahrt zum Monserrate (3.152 m) mit Standseilbahn und/oder Seilbahn. Abendessen mit Panoramablick über die Stadt. Übernachtung.",
@@ -265,6 +272,7 @@
         "Handwerkserlebnis in Nobsa: Ruana-Weberei mit den Großmüttern",
         "Boyacá-Brücke, Symbol der Freiheit Kolumbiens"
       ],
+      "price": "",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel Ihrer Wahl. Freizeit. Übernachtung.",
         "TAG 2: BOGOTÁ CITY TOUR & ABENDESSEN AUF DEM MONSERRATE. Panorama-Stadtrundfahrt durch Bogotá: historisches Zentrum, La Candelaria, historische Plätze und Straßenkunst. Auffahrt zum Monserrate (3.152 m) mit Standseilbahn und/oder Seilbahn. Abendessen mit Panoramablick über die Stadt. Übernachtung.",
@@ -291,6 +299,7 @@
         "Baden im biolumineszierenden Plankton an der Playa Tranquila",
         "Panoramatour durch Barranquilla und Uferpromenade des Magdalena-Flusses"
       ],
+      "price": "",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel Ihrer Wahl. Freizeit. Übernachtung.",
         "TAG 2: BOGOTÁ CITY TOUR & ABENDESSEN AUF DEM MONSERRATE. Panorama-Stadtrundfahrt durch Bogotá: historisches Zentrum, La Candelaria, historische Plätze und Straßenkunst. Auffahrt zum Monserrate (3.152 m) mit Standseilbahn und/oder Seilbahn. Abendessen mit Panoramablick über die Stadt. Übernachtung.",
@@ -323,6 +332,7 @@
         "Honda, Kulturerbe-Stadt, und Magdalena-Flusskreuzfahrt",
         "Guaduas, Geburtsort von Policarpa Salavarrieta"
       ],
+      "price": "",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel Ihrer Wahl. Freizeit. Übernachtung.",
         "TAG 2: BOGOTÁ CITY TOUR & ABENDESSEN AUF DEM MONSERRATE. Panorama-Stadtrundfahrt durch Bogotá: historisches Zentrum, La Candelaria, historische Plätze und Straßenkunst. Auffahrt zum Monserrate (3.152 m) mit Standseilbahn und/oder Seilbahn. Abendessen mit dem besten Blick über Bogotá. Übernachtung.",
@@ -353,6 +363,7 @@
         "Honda, Kulturerbe-Stadt: Kopfsteinpflasterstadt der Brücken",
         "Guaduas, Kulturerbe-Stadt und Villeta, Panela-Hauptstadt"
       ],
+      "price": "",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel und Passagierregistrierung. Wenn der Flug morgens ankommt, machen wir eine Panorama-Stadtrundfahrt durch Bogotá. Andernfalls Übernachtung.",
         "TAG 2: BOGOTÁ – EL ESPINAL – IBAGUÉ, DIE MUSIKSTADT. Frühstück im Hotel. Abfahrt in das Departement Tolima. In El Espinal ein gastronomisches Erlebnis aus der spanischen Kolonialzeit und Besuch des Mythologischen Parks, Schauplatz der Legenden und Mythen des Magdalena. Transfer nach Ibagué, Kolumbiens Musikstadt. Übernachtung.",
@@ -377,6 +388,7 @@
         "Handwerkserlebnis in Nobsa: Ruana-Weberei mit den Großmüttern",
         "Boyacá-Brücke, Symbol der Freiheit Kolumbiens"
       ],
+      "price": "",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel und Passagierregistrierung. Wenn der Flug morgens ankommt, machen wir eine Panorama-Stadtrundfahrt durch Bogotá. Andernfalls Übernachtung.",
         "TAG 2: BOGOTÁ – SALZKATHEDRALE – TRADITIONELLES RÁQUIRA. Frühstück im Hotel. Abfahrt zur Salzkathedrale in Zipaquirá, Eintritt in 180 m Tiefe mit zweisprachigem Audioguide. Besuch von Chiquinquirá: Basilika und Hauptplatz. Rundgang durch Ráquira zur Entdeckung des Tonkeramikprozesses. Ankunft in Villa de Leyva. Übernachtung.",
@@ -402,6 +414,7 @@
         "Größte Kaffeetasse der Welt (Guinness-Weltrekord)",
         "Metrocable in Villa María"
       ],
+      "price": "",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel und Passagierregistrierung. Wenn der Flug morgens ankommt, machen wir eine Panorama-Stadtrundfahrt durch Bogotá. Andernfalls Übernachtung.",
         "TAG 2: BOGOTÁ – EL ESPINAL – IBAGUÉ, DIE MUSIKSTADT. Frühstück im Hotel. Abfahrt Richtung Tolima. In El Espinal gastronomisches Erlebnis aus der spanischen Kolonialzeit und Besuch des Mythologischen Parks, Schauplatz der Legenden und Mythen des Magdalena. Transfer nach Ibagué, Kolumbiens Musikstadt. Übernachtung.",
@@ -428,6 +441,7 @@
         "Prado: Kolumbiens Binnenmeer an Bord der nautischen Chiva",
         "Piscilago-Wasserpark in Melgar"
       ],
+      "price": "",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel und Passagierregistrierung. Wenn der Flug morgens ankommt, machen wir eine Panorama-Stadtrundfahrt durch Bogotá. Andernfalls Übernachtung.",
         "TAG 2: BOGOTÁ – BOTANISCHER GARTEN – GUADUAS KULTURERBE-STADT. Frühstück im Hotel. Besuch des Botanischen Gartens José Celestino Mutis, um die Entdeckerroute des spanischen Expeditionärs zu beginnen, der den Biodiversitätsreichtum des Territoriums würdigte. Transfer nach Guaduas, erste Kulturerbe-Stadt: Besuch des Hauses von Policarpa Salavarrieta und des Klosters der Einsamkeit. Übernachtung.",
