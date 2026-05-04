@@ -42,6 +42,9 @@ const CITIES: Record<string, [number, number]> = {
   "PEREIRA":          [4.8133, -75.6961],   // Plaza de Bolívar
   "MURILLO":          [4.8764, -75.1720],   // Centro del municipio
   "MELGAR":           [4.2040, -74.6460],   // Plaza principal
+  "SAN GIL":          [6.5550, -73.1330],
+  "BARICHARA":        [6.4737, -73.3097],
+  "BUCARAMANGA":        [7.1298, -73.1174],
 };
 
 /* ────────────────────────────────────────────────────────────────
