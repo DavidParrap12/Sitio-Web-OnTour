@@ -455,6 +455,35 @@
         "TAG 9: WASSERPARK – BOGOTÁ. Frühstück im Hotel. Besuch des Piscilago-Wasserparks: Rutschen, Zoo und Poolnachmittag. Transfer nach Bogotá. Nacht in der Hauptstadt. Übernachtung.",
         "TAG 10: BOGOTÁ – FLUGHAFEN EL DORADO. Frühstück im Hotel. Zur vereinbarten Zeit Transfer zum internationalen Flughafen El Dorado zum Abflug ins Heimatland. Ende unserer Leistungen."
       ]
+    },
+    "tour-santander-expedicion-aventurera": {
+      "name": "Santander Abenteuer-Expedition",
+      "description": "Eine 10-tägige Reise, die das kosmopolitische Bogotá mit dem Extremabenteuer von Santander verbindet: die Chicamocha-Schlucht, die Kulturerbe-Städte Girón und Barichara, Höhlenforschung in der Kuh-Höhle, Rafting auf dem Río Fonce und die Juan-Curí-Wasserfälle. Kultur, Natur und Adrenalin in einem einzigen Erlebnis.",
+      "highlights": [
+        "Stadtrundfahrt in Bogotá mit Abendessen auf dem Monserrate",
+        "Goldmuseum und Salzkathedrale von Zipaquirá",
+        "Girón Kulturerbe-Stadt: Kopfsteinpflasterstraßen und Kalksteinbrücken",
+        "Aussichtspunkt Santísimo mit 180°-Panoramablick über Bucaramanga",
+        "Chicamocha-Schlucht: 6,3 km Seilbahn über der zweitgrößten Schlucht der Welt",
+        "Gallineral-Park in San Gil",
+        "Curití: traditioneller Fique-Handwerksworkshop und Kuh-Höhle (Höhlenforschung)",
+        "Barichara Kulturerbe-Stadt: Handwerksworkshops und Steinmetzkunst",
+        "Juan-Curí-Wasserfälle und Rafting Stufe I & II auf dem Río Fonce",
+        "Floridablanca: Obleas (Waffeln) mit Naturprodukten"
+      ],
+      "price": "",
+      "itinerary": [
+        "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel Ihrer Wahl. Freizeit. Übernachtung.",
+        "TAG 2: BOGOTÁ CITY TOUR & ABENDESSEN AUF DEM MONSERRATE. Frühstück im Hotel. Panorama-Stadtrundfahrt durch Bogotá: historisches Zentrum, La Candelaria, historische Plätze, gastronomische Erlebnisse und Graffiti-Straßenkunst. Auffahrt zum Monserrate (3.152 m) mit Standseilbahn und/oder Seilbahn. Abendessen mit dem besten Blick über Bogotá. Rückkehr zum Hotel. Übernachtung.",
+        "TAG 3: GOLDMUSEUM & SALZKATHEDRALE VON ZIPAQUIRÁ. Frühstück im Hotel. Geführte Besichtigung des Goldmuseums und des Muisca-Kulturerbes. Fahrt nach Zipaquirá: kulinarisches Erlebnis und Besuch der Salzkathedrale, 180 m unter der Erde. Rückfahrt nach Bogotá. Übernachtung.",
+        "TAG 4: BOGOTÁ – BUCARAMANGA – GIRÓN – SANTÍSIMO. Frühstück im Hotel. Transfer zum Flughafen für den Flug nach Bucaramanga. City Tour mit Eintauchen in die lokale Gemeinschaft. Besuch von Girón, Kulturerbe-Stadt: Kopfsteinpflasterstraßen, Kalksteinbrücken und Basilika Minor San Juan Bautista. Abendlicher Aufstieg zum Santísimo, einem beleuchteten Aussichtspunkt mit 180°-Panoramablick über Bucaramanga. Übernachtung.",
+        "TAG 5: BUCARAMANGA – CHICAMOCHA-SCHLUCHT-PARK. Frühstück im Hotel. Abfahrt zum Chicamocha-Park mit Stopps an Schlucht-Aussichtspunkten. Besuch des Santanderianidad-Denkmals und 6,3 km Seilbahnfahrt über die Chicamocha-Schlucht, die zweitgrößte Schlucht der Welt mit fast 2.000 m Tiefe. Transfer nach San Gil. Übernachtung.",
+        "TAG 6: SAN GIL – GALLINERAL-PARK – CURITÍ – KUH-HÖHLE. Frühstück im Hotel. Besuch des Gallineral-Parks mit geführtem Rundgang. Transfer nach Curití (Dorf der Weber in der Guane-Sprache): traditioneller Fique-Workshop mit lokalen Bauern. Besuch der Kuh-Höhle: Höhlenforschung durch Tunnel und Säle mit natürlichen Formationen. Rückkehr nach San Gil. Übernachtung.",
+        "TAG 7: SAN GIL – BARICHARA GANZTAG. Frühstück im Hotel. Abfahrt nach Barichara, 'Ort der Ruhe' in der Guane-Sprache und zweite Kulturerbe-Stadt von Santander. Rundfahrt zu Aussichtspunkten per Chiva, Handwerksworkshops (Fique oder Malen mit natürlichen Erden). Koloniale Kopfsteinpflasterstraßen, in Stein gehauene Handwerkskunst und Craft-Bier am Hauptplatz. Rückkehr nach San Gil. Übernachtung.",
+        "TAG 8: JUAN-CURÍ-WASSERFÄLLE – RAFTING AUF DEM RÍO FONCE. Frühstück im Hotel. Abfahrt zum Ökologischen Park Juan Curí über die Straße nach Charalá: Abstieg an einem 70 m hohen Naturwasserfall, Spezialitätenkaffee-Verkostung und Verkostung von Hormigas Culonas (Riesenameisen). Halt am Río Fonce für Rafting Stufe I & II auf einer 10-km-Strecke. Rückkehr nach San Gil. Übernachtung.",
+        "TAG 9: SAN GIL – FLORIDABLANCA – BUCARAMANGA. Frühstück im Hotel. Abfahrt nach Bucaramanga über die Chicamocha-Schlucht mit Stopps an Aussichtspunkten. Besuch von Floridablanca für Obleas (Waffeln) mit Naturprodukten. Ankunft im Hotel in Bucaramanga. Übernachtung.",
+        "TAG 10: BUCARAMANGA – FLUGHAFEN – BOGOTÁ. Frühstück im Hotel. Zur vereinbarten Zeit Transfer zum Flughafen Palonegro für den Flug nach Bogotá. Ende unserer Leistungen."
+      ]
     }
   },
   "destinosData": {
