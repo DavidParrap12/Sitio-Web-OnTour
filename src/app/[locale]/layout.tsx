@@ -7,7 +7,7 @@ import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsappButton } from "@/components/WhatsappButton";
-import { SplashScreen } from "@/components/SplashScreen";
+
 
 const metadataByLocale: Record<string, { title: string; description: string; ogTitle: string; ogDesc: string; ogLocale: string; twTitle: string; twDesc: string }> = {
   es: {
@@ -94,7 +94,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <SplashScreen />
+
       <Navbar />
       <main className="flex-grow">{children}</main>
       <Footer />

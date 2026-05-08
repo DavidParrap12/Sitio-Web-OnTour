@@ -35,7 +35,7 @@ export function Navbar() {
     { name: t("circuits"), href: "/circuitos" as const },
     { name: t("services"), href: "/servicios" as const },
     { name: t("gallery"), href: "/galeria" as const },
-    { name: t("tickets"), href: "reservas.ontourdmc.com", external: true },
+    { name: t("tickets"), href: "https://reservas.ontourdmc.com", external: true },
     { name: t("contact"), href: "/contacto" as const },
   ];
 
