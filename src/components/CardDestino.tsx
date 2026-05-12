@@ -35,7 +35,7 @@ export function CardDestino({
       ? t("whatsappDayTrip", { title })
       : t("whatsappCircuit", { title });
 
-  const whatsappUrl = `https://api.whatsapp.com/send/?phone=573002322335&text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://api.whatsapp.com/send/?phone=573143415177&text=${encodeURIComponent(whatsappMessage)}`;
 
   // Close dropdown when clicking outside
   useEffect(() => {

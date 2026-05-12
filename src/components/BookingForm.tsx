@@ -143,7 +143,7 @@ export function BookingForm({ locale, departureDates }: BookingFormProps) {
     msg += "\n" + t("whatsappOutro");
 
     window.open(
-      `https://api.whatsapp.com/send/?phone=573002322335&text=${encodeURIComponent(msg)}`,
+      `https://api.whatsapp.com/send/?phone=573143415177&text=${encodeURIComponent(msg)}`,
       "_blank"
     );
   }

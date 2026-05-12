@@ -34,8 +34,8 @@ export default async function Contacto({
                 <div className="flex items-start gap-4">
                   <Phone className="w-6 h-6 text-accent shrink-0" />
                   <div>
+                    <p className="font-semibold text-lg">+57 314 341 5177</p>
                     <p className="font-semibold text-lg">+57 316 538 6892</p>
-                    <p className="font-semibold text-lg">+57 300 232 2335</p>
                     <p className="text-sm text-white/70">{t("schedule")}</p>
                   </div>
                 </div>
