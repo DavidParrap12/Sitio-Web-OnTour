@@ -28,10 +28,22 @@
     "whyUs": "¿Por qué viajar con nosotros?",
     "whyUsSubtitle": "Nos apasiona mostrarte lo mejor de cada destino con el servicio que mereces.",
     "features": {
-      "safe": { "title": "Viajes Seguros", "desc": "Contamos con todas las pólizas y protocolos para tu tranquilidad." },
-      "routes": { "title": "Rutas Exclusivas", "desc": "Descubre lugares increíbles que no están en las guías tradicionales." },
-      "human": { "title": "Trato Humano", "desc": "Atención personalizada para que tu viaje sea exactamente lo que sueñas." },
-      "support": { "title": "Soporte 24/7", "desc": "Asistencia continua durante todo tu recorrido con nosotros." }
+      "safe": {
+        "title": "Viajes Seguros",
+        "desc": "Contamos con todas las pólizas y protocolos para tu tranquilidad."
+      },
+      "routes": {
+        "title": "Rutas Exclusivas",
+        "desc": "Descubre lugares increíbles que no están en las guías tradicionales."
+      },
+      "human": {
+        "title": "Trato Humano",
+        "desc": "Atención personalizada para que tu viaje sea exactamente lo que sueñas."
+      },
+      "support": {
+        "title": "Soporte 24/7",
+        "desc": "Asistencia continua durante todo tu recorrido con nosotros."
+      }
     },
     "popularDayTrips": "Pasadías Populares",
     "popularDayTripsSubtitle": "Escapas de un día para recargar energía",
@@ -52,13 +64,28 @@
     "missionText": "Brindar experiencias turísticas excepcionales, promoviendo el desarrollo sostenible de las regiones, el respeto por la cultura local y la máxima satisfacción de nuestros viajeros a través de pasadías y circuitos inolvidables.",
     "visionTitle": "Experiencias únicas en Colombia",
     "visionText": "En On Tour DMC Colombia, conectamos a los viajeros con experiencias auténticas y memorables en todo el país. Somos expertos locales, diseñamos y operamos recorridos a la medida con atención personalizada, confianza y un acompañamiento cercano en cada etapa del viaje.",
+    "recognitionsTitle": "Reconocimientos y Certificaciones",
+    "recognitionsSubtitle": "Programa Exportadora en Turismo de Ibagué 2024 y otros avales que respaldan nuestra excelencia.",
+    "recognitionsClose": "Cerrar",
     "valuesTitle": "Nuestros Valores",
     "valuesSubtitle": "Los pilares de cada uno de nuestros viajes.",
     "values": {
-      "adventure": { "title": "Aventura", "desc": "Buscamos siempre nuevos horizontes." },
-      "community": { "title": "Comunidad", "desc": "Viajar es compartir grandes momentos." },
-      "excellence": { "title": "Excelencia", "desc": "El mejor servicio en cada paso." },
-      "passion": { "title": "Pasión", "desc": "Amamos lo que hacemos." }
+      "adventure": {
+        "title": "Aventura",
+        "desc": "Buscamos siempre nuevos horizontes."
+      },
+      "community": {
+        "title": "Comunidad",
+        "desc": "Viajar es compartir grandes momentos."
+      },
+      "excellence": {
+        "title": "Excelencia",
+        "desc": "El mejor servicio en cada paso."
+      },
+      "passion": {
+        "title": "Pasión",
+        "desc": "Amamos lo que hacemos."
+      }
     }
   },
   "contact": {
@@ -171,7 +198,7 @@
     "generating": "Generando...",
     "downloaded": "¡Descargado!"
   },
-"footer": {
+  "footer": {
     "tagline": "Creamos experiencias inolvidables.",
     "explore": "Explorar",
     "home": "Inicio",
@@ -350,20 +377,20 @@
       ]
     },
     "tour-camino-real": {
-    "name": "Camino Real",
+      "name": "Camino Real",
       "description": "Un recorrido de 7 días por el corazón histórico de Colombia: desde Bogotá hasta Honda Pueblo Patrimonio, pasando por el Tolima profundo. Gastronomía colonial, naturaleza andina, volcanes, cañones y pueblos patrimonio en una sola aventura.",
       "highlights": [
         "City tour panorámico por Bogotá",
         "Experiencia gastronómica en El Espinal: Lechona Tolimense heredada de la colonia española",
         "Parque Mitológico del Magdalena en El Espinal",
-      "Recorrido en Jeep Willys por Villa Restrepo y Juntas",
-      "Teleférico por el Cañón del Combeima a más de 300 mts de altura",
-      "Bosque de Palma de Cera más grande del mundo en Toche",
-      "Cráter del Volcán Cerro Machín, el 2do más activo del mundo",
-      "Termales El Sifón y avistamiento de frailejones en Murillo a 3.200 msnm",
-      "Honda Pueblo Patrimonio: ciudad empedrada y de los puentes",
-      "Guaduas Pueblo Patrimonio y Villeta, capital panelera"
-    ],
+        "Recorrido en Jeep Willys por Villa Restrepo y Juntas",
+        "Teleférico por el Cañón del Combeima a más de 300 mts de altura",
+        "Bosque de Palma de Cera más grande del mundo en Toche",
+        "Cráter del Volcán Cerro Machín, el 2do más activo del mundo",
+        "Termales El Sifón y avistamiento de frailejones en Murillo a 3.200 msnm",
+        "Honda Pueblo Patrimonio: ciudad empedrada y de los puentes",
+        "Guaduas Pueblo Patrimonio y Villeta, capital panelera"
+      ],
       "price": "",
       "itinerary": [
         "DÍA 1: BOGOTÁ –  AEROPUERTO EL DORADO. Recepción en el Aeropuerto Internacional El Dorado, traslado al hotel y registro de pasajeros. Si el vuelo llega en horas de la mañana, realizaremos un city tour panorámico por Bogotá. De lo contrario, alojamiento.",
@@ -498,7 +525,7 @@
         "Gastronomía típica antioqueña",
         "Seguro de asistencia"
       ]
-},
+    },
     "bogota-tu-casa-pasadia": {
       "name": "Bogotá, Tu Casa",
       "description": "Descubre la magia de Bogotá en un día lleno de historia, cultura y gastronomía. Recorre la imponente Catedral de Sal de Zipaquirá, el colonial pueblo patrimonio de Villa de Leyva y las coloridas calles artesanales de Ráquira. Completa la experiencia con un tour gastronómico por los sabores más auténticos de la región y una panorámica inigualable de la capital colombiana.",
@@ -571,8 +598,8 @@
         "Recorrido por zonas icónicas",
         "Gastronomía típica raizal",
         "Seguro de asistencia"
-          ]
-      }
+      ]
+    }
   },
   "testimonials": {
     "googleBadge": "Reseñas en Google",

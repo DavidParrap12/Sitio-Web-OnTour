@@ -28,10 +28,22 @@
     "whyUs": "Why travel with us?",
     "whyUsSubtitle": "We are passionate about showing you the best of every destination with the service you deserve.",
     "features": {
-      "safe": { "title": "Safe Travel", "desc": "We have all the policies and protocols for your peace of mind." },
-      "routes": { "title": "Exclusive Routes", "desc": "Discover incredible places not found in traditional travel guides." },
-      "human": { "title": "Personal Service", "desc": "Personalized attention so your trip is exactly what you dream of." },
-      "support": { "title": "24/7 Support", "desc": "Continuous assistance throughout your entire journey with us." }
+      "safe": {
+        "title": "Safe Travel",
+        "desc": "We have all the policies and protocols for your peace of mind."
+      },
+      "routes": {
+        "title": "Exclusive Routes",
+        "desc": "Discover incredible places not found in traditional travel guides."
+      },
+      "human": {
+        "title": "Personal Service",
+        "desc": "Personalized attention so your trip is exactly what you dream of."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "desc": "Continuous assistance throughout your entire journey with us."
+      }
     },
     "popularDayTrips": "Popular Day Trips",
     "popularDayTripsSubtitle": "One-day escapes to recharge your energy",
@@ -52,13 +64,28 @@
     "missionText": "To provide exceptional tourism experiences, promoting the sustainable development of regions, respect for local culture and the utmost satisfaction of our travelers through unforgettable day trips and circuits.",
     "visionTitle": "Unique Experiences in Colombia",
     "visionText": "At On Tour DMC Colombia, we connect travelers with authentic and memorable experiences throughout the country. We are local experts who design and operate customized tours with personalized attention, trust and close accompaniment at every stage of the journey.",
+    "recognitionsTitle": "Awards & Certifications",
+    "recognitionsSubtitle": "Ibagué Tourism Exporter Program 2024 and other credentials backing our excellence.",
+    "recognitionsClose": "Close",
     "valuesTitle": "Our Values",
     "valuesSubtitle": "The pillars of each and every one of our trips.",
     "values": {
-      "adventure": { "title": "Adventure", "desc": "We always seek new horizons." },
-      "community": { "title": "Community", "desc": "Traveling means sharing great moments." },
-      "excellence": { "title": "Excellence", "desc": "The best service at every step." },
-      "passion": { "title": "Passion", "desc": "We love what we do." }
+      "adventure": {
+        "title": "Adventure",
+        "desc": "We always seek new horizons."
+      },
+      "community": {
+        "title": "Community",
+        "desc": "Traveling means sharing great moments."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "desc": "The best service at every step."
+      },
+      "passion": {
+        "title": "Passion",
+        "desc": "We love what we do."
+      }
     }
   },
   "contact": {

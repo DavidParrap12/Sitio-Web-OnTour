@@ -28,10 +28,22 @@
     "whyUs": "Pourquoi voyager avec nous ?",
     "whyUsSubtitle": "Nous vous montrons avec passion le meilleur de chaque destination avec le service que vous méritez.",
     "features": {
-      "safe": { "title": "Voyages sûrs", "desc": "Nous disposons de toutes les polices et protocoles pour votre tranquillité d'esprit." },
-      "routes": { "title": "Itinéraires exclusifs", "desc": "Découvrez des lieux incroyables absents des guides touristiques traditionnels." },
-      "human": { "title": "Service personnalisé", "desc": "Une attention sur mesure pour que votre voyage corresponde exactement à vos rêves." },
-      "support": { "title": "Assistance 24h/24", "desc": "Un accompagnement continu tout au long de votre voyage avec nous." }
+      "safe": {
+        "title": "Voyages sûrs",
+        "desc": "Nous disposons de toutes les polices et protocoles pour votre tranquillité d'esprit."
+      },
+      "routes": {
+        "title": "Itinéraires exclusifs",
+        "desc": "Découvrez des lieux incroyables absents des guides touristiques traditionnels."
+      },
+      "human": {
+        "title": "Service personnalisé",
+        "desc": "Une attention sur mesure pour que votre voyage corresponde exactement à vos rêves."
+      },
+      "support": {
+        "title": "Assistance 24h/24",
+        "desc": "Un accompagnement continu tout au long de votre voyage avec nous."
+      }
     },
     "popularDayTrips": "Excursions populaires",
     "popularDayTripsSubtitle": "Escapades d'une journée pour recharger vos batteries",
@@ -52,13 +64,28 @@
     "missionText": "Offrir des expériences touristiques exceptionnelles, promouvoir le développement durable des régions, respecter la culture locale et garantir la satisfaction maximale de nos voyageurs à travers des excursions et des circuits inoubliables.",
     "visionTitle": "Expériences uniques en Colombie",
     "visionText": "Chez On Tour DMC Colombia, nous connectons les voyageurs avec des expériences authentiques et mémorables à travers tout le pays. En tant qu'experts locaux, nous concevons et organisons des circuits sur mesure avec une attention personnalisée, confiance et accompagnement étroit à chaque étape du voyage.",
+    "recognitionsTitle": "Reconnaissances et Certifications",
+    "recognitionsSubtitle": "Programme Exportateur en Tourisme d'Ibagué 2024 et autres références attestant de notre excellence.",
+    "recognitionsClose": "Fermer",
     "valuesTitle": "Nos valeurs",
     "valuesSubtitle": "Les piliers de chacun de nos voyages.",
     "values": {
-      "adventure": { "title": "Aventure", "desc": "Nous cherchons toujours de nouveaux horizons." },
-      "community": { "title": "Communauté", "desc": "Voyager, c'est partager de grands moments." },
-      "excellence": { "title": "Excellence", "desc": "Le meilleur service à chaque étape." },
-      "passion": { "title": "Passion", "desc": "Nous aimons ce que nous faisons." }
+      "adventure": {
+        "title": "Aventure",
+        "desc": "Nous cherchons toujours de nouveaux horizons."
+      },
+      "community": {
+        "title": "Communauté",
+        "desc": "Voyager, c'est partager de grands moments."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "desc": "Le meilleur service à chaque étape."
+      },
+      "passion": {
+        "title": "Passion",
+        "desc": "Nous aimons ce que nous faisons."
+      }
     }
   },
   "contact": {

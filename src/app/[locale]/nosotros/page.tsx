@@ -1,8 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { SectionTitle } from "@/components/SectionTitle";
-import Image from "next/image";
-import { Compass, Users, Target, Heart } from "lucide-react";
+import { ReconocimientosGallery } from "@/components/ReconocimientosGallery";
 
 export default async function Nosotros({
   params,
@@ -13,13 +12,6 @@ export default async function Nosotros({
   setRequestLocale(locale);
 
   const t = await getTranslations("about");
-
-  const values = [
-    { icon: <Compass className="w-6 h-6" />, title: t("values.adventure.title"), desc: t("values.adventure.desc") },
-    { icon: <Users className="w-6 h-6" />, title: t("values.community.title"), desc: t("values.community.desc") },
-    { icon: <Target className="w-6 h-6" />, title: t("values.excellence.title"), desc: t("values.excellence.desc") },
-    { icon: <Heart className="w-6 h-6" />, title: t("values.passion.title"), desc: t("values.passion.desc") },
-  ];
 
   return (
     <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
@@ -52,20 +44,10 @@ export default async function Nosotros({
           </div>
         </div>
 
-        {/* Valores */}
+        {/* Reconocimientos y Certificaciones */}
         <div className="mb-24">
-          <SectionTitle title={t("valuesTitle")} subtitle={t("valuesSubtitle")} />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((v, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
-                  {v.icon}
-                </div>
-                <h3 className="font-bold text-xl font-heading mb-3">{v.title}</h3>
-                <p className="text-foreground/70">{v.desc}</p>
-              </div>
-            ))}
-          </div>
+          <SectionTitle title={t("recognitionsTitle")} subtitle={t("recognitionsSubtitle")} />
+          <ReconocimientosGallery closeLabel={t("recognitionsClose")} />
         </div>
       </div>
     </div>
