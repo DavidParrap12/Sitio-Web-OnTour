@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Camera } from "lucide-react";
 import { GalleryGrid, type GalleryImage } from "@/components/GalleryGrid";
+import Image from "next/image";
 
 // Gallery data — add your images here. Categories are used for filtering.
 const galleryImages: GalleryImage[] = [
@@ -63,9 +64,12 @@ export default async function GaleriaPage({
       {/* Hero */}
       <div className="bg-primary text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80" />
-        <div
-          className="absolute inset-0 opacity-15 bg-cover bg-center"
-          style={{ backgroundImage: "url('/image/makalu-colombia-3631740.jpg')" }}
+        <Image
+          src="/image/makalu-colombia-3631740.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="opacity-15 object-cover object-center"
         />
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">

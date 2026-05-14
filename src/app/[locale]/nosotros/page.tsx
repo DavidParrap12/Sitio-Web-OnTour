@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { SectionTitle } from "@/components/SectionTitle";
 import { ReconocimientosGallery } from "@/components/ReconocimientosGallery";
+import Image from "next/image";
 
 export default async function Nosotros({
   params,
@@ -17,7 +18,13 @@ export default async function Nosotros({
     <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
       {/* Hero Header */}
       <div className="bg-primary text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('/image/on-tour-ofc-centro-2025-scaled.jpg')" }} />
+        <Image
+          src="/image/on-tour-ofc-centro-2025-scaled.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="opacity-20 object-cover"
+        />
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">{t("title")}</h1>
           <p className="text-xl max-w-2xl mx-auto text-white/90">{t("subtitle")}</p>

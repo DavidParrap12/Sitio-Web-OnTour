@@ -6,8 +6,13 @@ import { CardDestino } from "@/components/CardDestino";
 import { destinos } from "@/data/destinos";
 import { circuitos } from "@/data/circuitos";
 import { ShieldCheck, Map, HeartHandshake, Headphones } from "lucide-react";
-import { Testimonials } from "@/components/Testimonials";
+import dynamic from "next/dynamic";
 import { Link } from "@/i18n/navigation";
+
+const Testimonials = dynamic(
+  () => import("@/components/Testimonials").then((mod) => mod.Testimonials),
+  { loading: () => <div className="py-16 md:py-24 bg-white" /> }
+);
 
 export default async function Home({
   params,

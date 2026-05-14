@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { Compass, Calendar } from "lucide-react";
+import Image from "next/image";
 
 const slides = [
   { src: "/image/makalu-colombia-3631740.jpg", alt: "Paisaje montañoso de Colombia" },
@@ -29,17 +30,26 @@ export function Hero() {
   return (
     <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
 
-      {/* Background slider */}
+      {/* Background slider — uses next/image for automatic WebP, lazy loading & optimization */}
       {slides.map((slide, i) => (
         <motion.div
           key={slide.src}
           animate={{ opacity: i === current ? 1 : 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('${slide.src}')` }}
-          aria-label={slide.alt}
+          className="absolute inset-0"
           aria-hidden={i !== current}
-        />
+        >
+          <Image
+            src={slide.src}
+            alt={slide.alt}
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            quality={75}
+            preload={i === 0}
+            loading={i === 0 ? "eager" : "lazy"}
+          />
+        </motion.div>
       ))}
 
       {/* Overlay */}

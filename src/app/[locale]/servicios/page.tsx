@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Bus, Hotel, Users, ShieldCheck, Utensils, CalendarCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
 
 const serviceIcons = [Bus, Hotel, Users, ShieldCheck, Utensils, CalendarCheck];
 
@@ -28,9 +29,12 @@ export default async function ServiciosPage({
       {/* Hero */}
       <div className="bg-primary text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80" />
-        <div
-          className="absolute inset-0 opacity-10 bg-cover bg-center"
-          style={{ backgroundImage: "url('/image/nevado-tolima.jpg')" }}
+        <Image
+          src="/image/nevado-tolima.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="opacity-10 object-cover object-center"
         />
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">
