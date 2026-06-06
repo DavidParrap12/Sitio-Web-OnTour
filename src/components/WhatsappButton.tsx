@@ -4,7 +4,6 @@ import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function WhatsappButton() {
-  const phoneNumber = "573143415177"; // Gerencia
   const message = "Hola Ontour, me gustaría recibir más información sobre sus paquetes turísticos.";
   const url = `https://wa.me/573143415177?text=${encodeURIComponent(message)}`;
 
@@ -26,8 +25,17 @@ export function WhatsappButton() {
       }}
       aria-label="Contactar por WhatsApp"
     >
-      <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75" style={{ animationDuration: '3s' }} />
+      {/* Pulse rings */}
+      <span className="absolute inset-0 rounded-full bg-green-400 animate-[wa-pulse_3s_ease-out_infinite]" />
+      <span className="absolute inset-0 rounded-full bg-green-400 animate-[wa-pulse_3s_ease-out_1.5s_infinite]" />
       <MessageCircle className="w-7 h-7 relative z-10" />
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes wa-pulse {
+          0% { transform: scale(1); opacity: 0.5; }
+          100% { transform: scale(2); opacity: 0; }
+        }
+      `}} />
     </motion.a>
   );
 }
