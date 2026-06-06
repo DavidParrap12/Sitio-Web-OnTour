@@ -15,8 +15,9 @@
  * 4. Copy the Sheet ID from the URL:
  *    https://docs.google.com/spreadsheets/d/{THIS_IS_THE_ID}/edit
  *
- * 5. Set the NEXT_PUBLIC_SHEETS_ID env variable in .env.local:
- *    NEXT_PUBLIC_SHEETS_ID=your_sheet_id_here
+ * 5. Set the GOOGLE_SHEETS_ID env variable in .env.local (local)
+ *    or in Vercel Dashboard > Settings > Environment Variables:
+ *    GOOGLE_SHEETS_ID=your_sheet_id_here
  *
  * Example sheet layout:
  * | mes       | dia |
@@ -58,10 +59,10 @@ export type DepartureDates = Record<string, number>;
  * Supports both regular Sheet IDs and published (2PACX-) IDs.
  */
 export async function fetchDepartureDates(): Promise<DepartureDates> {
-  const sheetId = process.env.NEXT_PUBLIC_SHEETS_ID?.trim();
+  const sheetId = process.env.GOOGLE_SHEETS_ID?.trim();
 
   if (!sheetId) {
-    console.warn("[DepartureDates] No NEXT_PUBLIC_SHEETS_ID set, using fallback dates.");
+    console.warn("[DepartureDates] No GOOGLE_SHEETS_ID set, using fallback dates.");
     return FALLBACK_DATES;
   }
 
