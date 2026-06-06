@@ -214,28 +214,60 @@ export function BookingForm({ locale, departureDates }: BookingFormProps) {
         background: "linear-gradient(135deg, #071e3d 0%, #0a3566 40%, #1a4f8b 100%)",
       }}
     >
-      {/* Collapsible Header */}
+      {/* Collapsible Header — eye-catching CTA */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-center py-5 px-4 cursor-pointer group transition-colors hover:bg-white/[0.04]"
+        className="w-full py-6 px-6 cursor-pointer group transition-colors hover:bg-white/[0.06] relative overflow-hidden"
       >
-        <motion.h3
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="inline-flex items-center gap-2 text-lg md:text-xl font-bold text-white border-2 border-white/30 rounded-full px-6 py-2.5 backdrop-blur-sm group-hover:border-white/50 transition-colors"
-        >
-          <CalendarDays className="w-5 h-5" />
-          {t("title")}
-          <motion.span
-            animate={{ rotate: isOpen ? 180 : 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <ChevronDown className="w-5 h-5" />
-          </motion.span>
-        </motion.h3>
+        {/* Animated background shimmer */}
         {!isOpen && (
-          <p className="text-white/40 text-xs mt-2">{t("fixedDateHint")}</p>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent animate-[shimmer_3s_ease-in-out_infinite]" />
         )}
+
+        <div className="flex flex-col items-center gap-3 relative z-10">
+          {/* Main pill CTA */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-accent to-orange-500 text-white rounded-full px-8 py-3.5 shadow-lg shadow-accent/30 group-hover:shadow-xl group-hover:shadow-accent/40 group-hover:scale-[1.03] transition-all duration-300"
+          >
+            {/* Pulse dot */}
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/60" />
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-white" />
+            </span>
+
+            <span className="text-lg md:text-xl font-bold tracking-tight">
+              {t("title")}
+            </span>
+
+            <motion.span
+              animate={isOpen ? { rotate: 180 } : { rotate: 0, y: [0, 3, 0] }}
+              transition={isOpen ? { duration: 0.3 } : { duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
+            >
+              <ChevronDown className="w-5 h-5" />
+            </motion.span>
+          </motion.div>
+
+          {/* Subtitle hint */}
+          {!isOpen && (
+            <motion.p
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-white/50 text-sm font-medium"
+            >
+              📅 {t("fixedDateHint")}
+            </motion.p>
+          )}
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+          }
+        `}} />
       </button>
 
       <AnimatePresence>
