@@ -8,13 +8,33 @@ import { Compass, Calendar } from "lucide-react";
 import Image from "next/image";
 
 const slides = [
-  { src: "/image/makalu-colombia-3631740.jpg", alt: "Paisaje montañoso de Colombia" },
-  { src: "/image/cuidad-amurallada.jpg", alt: "Ciudad Amurallada de Cartagena" },
-  { src: "/image/desierto-tatacoa.jpg", alt: "Desierto de la Tatacoa" },
-  { src: "/image/guatape.jpg", alt: "Guatapé" },
+  { src: "/image/makalu-colombia-3631740.jpg", alt: "Paisaje montañoso de Colombia", kenBurns: "kb-zoom-right" },
+  { src: "/image/cuidad-amurallada.jpg", alt: "Ciudad Amurallada de Cartagena", kenBurns: "kb-zoom-left" },
+  { src: "/image/desierto-tatacoa.jpg", alt: "Desierto de la Tatacoa", kenBurns: "kb-zoom-up" },
+  { src: "/image/guatape.jpg", alt: "Guatapé", kenBurns: "kb-zoom-down" },
 ];
 
 const INTERVAL = 5000;
+
+/* Ken Burns CSS keyframes — each variant pans in a different direction while zooming */
+const kenBurnsStyles = `
+  @keyframes kb-zoom-right {
+    from { transform: scale(1) translate(0, 0); }
+    to   { transform: scale(1.15) translate(-2%, -1%); }
+  }
+  @keyframes kb-zoom-left {
+    from { transform: scale(1) translate(0, 0); }
+    to   { transform: scale(1.15) translate(2%, 1%); }
+  }
+  @keyframes kb-zoom-up {
+    from { transform: scale(1) translate(0, 0); }
+    to   { transform: scale(1.12) translate(-1%, 2%); }
+  }
+  @keyframes kb-zoom-down {
+    from { transform: scale(1) translate(0, 0); }
+    to   { transform: scale(1.12) translate(1%, -2%); }
+  }
+`;
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -28,9 +48,12 @@ export function Hero() {
   }, []);
 
   return (
-    <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
 
-      {/* Background slider — uses next/image for automatic WebP, lazy loading & optimization */}
+      {/* Ken Burns keyframes */}
+      <style dangerouslySetInnerHTML={{ __html: kenBurnsStyles }} />
+
+      {/* Background slider with Ken Burns zoom/pan effect */}
       {slides.map((slide, i) => (
         <motion.div
           key={slide.src}
@@ -39,16 +62,24 @@ export function Hero() {
           className="absolute inset-0"
           aria-hidden={i !== current}
         >
-          <Image
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "center" }}
-            quality={75}
-            preload={i === 0}
-            loading={i === 0 ? "eager" : "lazy"}
-          />
+          <div
+            className="absolute inset-0"
+            style={{
+              animation: i === current ? `${slide.kenBurns} ${INTERVAL / 1000}s ease-out forwards` : "none",
+              willChange: i === current ? "transform" : "auto",
+            }}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              sizes="100vw"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+              quality={75}
+              preload={i === 0}
+              loading={i === 0 ? "eager" : "lazy"}
+            />
+          </div>
         </motion.div>
       ))}
 
