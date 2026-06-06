@@ -58,7 +58,7 @@ const TILE_ATTRIBUTION =
 /* ────────────────────────────────────────────────────────────────
    Custom marker icon builder
    ──────────────────────────────────────────────────────────────── */
-function createMarkerIcon(stopNumber: number) {
+function createMarkerIcon() {
   return L.divIcon({
     className: "ontour-marker",
     iconSize: [18, 18],
@@ -67,7 +67,6 @@ function createMarkerIcon(stopNumber: number) {
     html: `
       <div class="ontour-marker-pulse"></div>
       <div class="ontour-marker-dot"></div>
-      <div class="ontour-stop-badge">${stopNumber}</div>
     `,
   });
 }
@@ -182,7 +181,7 @@ export default function CircuitRouteMapInner({ dayImages, circuitName }: Circuit
     /* Add markers with popups */
     for (let i = 0; i < uniqueStops.length; i++) {
       const stop = uniqueStops[i];
-      const icon = createMarkerIcon(i + 1);
+      const icon = createMarkerIcon();
       const marker = L.marker([stop.lat, stop.lng], { icon });
 
       marker.bindPopup(
