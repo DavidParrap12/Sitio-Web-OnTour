@@ -58,10 +58,9 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const isHome = pathname === "/";
   const navClass = scrolled
     ? "bg-white/95 backdrop-blur-md shadow-sm py-4 text-foreground"
-    : `py-6 ${isHome ? "bg-transparent text-white" : "bg-white text-foreground"}`;
+    : "bg-white py-6 text-foreground";
 
   const currentLocale = LOCALES.find((l) => l.code === locale) ?? LOCALES[0];
 
@@ -90,9 +89,7 @@ export function Navbar() {
               style={{ width: 'auto', height: 'auto' }}
               priority
             />
-            <span className={`hidden sm:inline-flex flex-col text-[10px] font-bold tracking-widest uppercase leading-tight transition-colors ${
-              scrolled || !isHome ? "text-primary" : "text-white"
-            }`}>
+            <span className="hidden sm:inline-flex flex-col text-[10px] font-bold tracking-widest uppercase leading-tight text-primary">
               <span>DMC</span>
               <span className="text-[9px] font-medium tracking-wider opacity-70">Colombia</span>
             </span>
@@ -104,16 +101,12 @@ export function Navbar() {
               const isActive =
                 !("external" in link) &&
                 (pathname === link.href ||
-                (link.href !== "/" && pathname?.startsWith(link.href)));
+                  (link.href !== "/" && pathname?.startsWith(link.href)));
 
               const linkClass = `font-medium text-[13px] xl:text-sm relative transition-colors ${
                 isActive
-                  ? scrolled || !isHome
-                    ? "text-primary"
-                    : "text-white"
-                  : scrolled || !isHome
-                  ? "text-foreground/70 hover:text-primary"
-                  : "text-white/80 hover:text-white"
+                  ? "text-primary"
+                  : "text-foreground/70 hover:text-primary"
               }`;
 
               if ("external" in link) {
@@ -140,9 +133,7 @@ export function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="navbar-indicator"
-                      className={`absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full ${
-                        scrolled || !isHome ? "bg-primary" : "bg-white"
-                      }`}
+                      className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-primary"
                       initial={false}
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
@@ -155,11 +146,7 @@ export function Navbar() {
             <div className="relative" ref={langRef}>
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className={`flex items-center gap-1.5 font-medium text-sm transition-colors ${
-                  scrolled || !isHome
-                    ? "text-foreground/70 hover:text-primary"
-                    : "text-white/80 hover:text-white"
-                }`}
+                className="flex items-center gap-1.5 font-medium text-sm transition-colors text-foreground/70 hover:text-primary"
               >
                 <Globe className="w-4 h-4" />
                 <span>{currentLocale.flag}</span>
@@ -180,11 +167,10 @@ export function Navbar() {
                       <button
                         key={loc.code}
                         onClick={() => switchLocale(loc.code)}
-                        className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
-                          locale === loc.code
+                        className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${locale === loc.code
                             ? "text-primary font-medium bg-primary/5"
                             : "text-foreground/70 hover:bg-gray-50 hover:text-primary"
-                        }`}
+                          }`}
                       >
                         <span className="text-lg">{loc.flag}</span>
                         <span>{loc.label}</span>
@@ -197,11 +183,7 @@ export function Navbar() {
 
             <Link
               href="/contacto"
-              className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all shadow-sm ${
-                scrolled || !isHome
-                  ? "bg-accent text-white hover:brightness-90 hover:shadow-md hover:-translate-y-0.5"
-                  : "bg-white text-primary hover:bg-gray-50 border border-transparent"
-              }`}
+              className="px-5 py-2.5 rounded-full font-medium text-sm transition-all shadow-sm bg-accent text-white hover:brightness-90 hover:shadow-md hover:-translate-y-0.5"
             >
               {t("quote")}
             </Link>
@@ -250,9 +232,8 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href as any}
-                    className={`text-2xl font-bold font-heading ${
-                      isActive ? "text-primary" : "text-foreground/80"
-                    }`}
+                    className={`text-2xl font-bold font-heading ${isActive ? "text-primary" : "text-foreground/80"
+                      }`}
                   >
                     {link.name}
                   </Link>
@@ -265,11 +246,10 @@ export function Navbar() {
                   <button
                     key={loc.code}
                     onClick={() => switchLocale(loc.code)}
-                    className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                      locale === loc.code
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-all ${locale === loc.code
                         ? "bg-primary text-white"
                         : "bg-gray-100 text-foreground/70 hover:bg-gray-200"
-                    }`}
+                      }`}
                   >
                     <span>{loc.flag}</span>
                     <span>{loc.code.toUpperCase()}</span>
