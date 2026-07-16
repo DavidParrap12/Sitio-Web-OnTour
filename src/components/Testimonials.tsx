@@ -74,7 +74,7 @@ export function Testimonials() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-editorial-warm relative overflow-hidden">
       {/* Subtle pattern background */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div
@@ -119,10 +119,10 @@ export function Testimonials() {
               </div>
             </a>
 
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+            <h2 className="display-2 text-editorial-dark mb-4">
               {t("title")}
             </h2>
-            <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+            <p className="body-lg text-editorial-muted max-w-2xl mx-auto">
               {t("subtitle")}
             </p>
           </motion.div>
@@ -134,7 +134,7 @@ export function Testimonials() {
             {/* Arrow LEFT — desktop only, positioned outside card */}
             <button
               onClick={prev}
-              className="hidden md:flex absolute -left-16 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border-2 border-gray-200 items-center justify-center text-foreground/50 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all z-20"
+              className="hidden md:flex absolute -left-16 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border-2 border-editorial-border items-center justify-center text-editorial-muted hover:border-editorial-accent hover:text-editorial-accent hover:bg-editorial-accent/5 transition-all z-20"
               aria-label={t("prevReview")}
             >
               <ChevronLeft className="w-5 h-5" />
@@ -143,7 +143,7 @@ export function Testimonials() {
             {/* Arrow RIGHT — desktop only, positioned outside card */}
             <button
               onClick={next}
-              className="hidden md:flex absolute -right-16 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border-2 border-gray-200 items-center justify-center text-foreground/50 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all z-20"
+              className="hidden md:flex absolute -right-16 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border-2 border-editorial-border items-center justify-center text-editorial-muted hover:border-editorial-accent hover:text-editorial-accent hover:bg-editorial-accent/5 transition-all z-20"
               aria-label={t("nextReview")}
             >
               <ChevronRight className="w-5 h-5" />
@@ -162,20 +162,20 @@ export function Testimonials() {
                   transition={{ duration: 0.35, ease: "easeInOut" }}
                   className="absolute inset-0"
                 >
-                  <div className="bg-white rounded-3xl p-8 md:p-10 border border-gray-100 shadow-lg shadow-gray-100/50 relative">
+                  <div className="bg-white rounded-3xl p-8 md:p-10 border border-editorial-border shadow-lg shadow-editorial-dark/5 relative">
                     {/* Quote icon */}
-                    <Quote className="absolute top-6 right-8 w-10 h-10 text-primary/8" />
+                    <Quote className="absolute top-6 right-8 w-10 h-10 text-editorial-accent/10" />
 
                     {/* Stars + verified */}
                     <div className="flex items-center justify-between mb-5">
                       <StarRating rating={review.rating} />
-                      <span className="text-xs text-foreground/40 font-medium">
+                      <span className="caption text-editorial-muted font-medium">
                         {t("verifiedReview")}
                       </span>
                     </div>
 
                     {/* Review text */}
-                    <p className="text-foreground/80 text-lg md:text-xl leading-relaxed mb-6 italic">
+                    <p className="body-lg text-editorial-dark/90 mb-6 italic">
                       &ldquo;{t(`reviews.${review.reviewKey}.text`)}&rdquo;
                     </p>
 
@@ -183,9 +183,9 @@ export function Testimonials() {
                     <div className="flex items-center gap-4">
                       <Initials name={review.name} />
                       <div className="flex-1">
-                        <p className="font-bold text-foreground">{review.name}</p>
-                        <p className="text-sm text-foreground/50">
-                          <svg className="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" viewBox="0 0 24 24" fill="none">
+                        <p className="heading-3 text-editorial-dark">{review.name}</p>
+                        <p className="caption text-editorial-muted flex items-center">
+                          <svg className="w-3.5 h-3.5 inline-block mr-1" viewBox="0 0 24 24" fill="none">
                             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
                             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
                             <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
@@ -206,7 +206,7 @@ export function Testimonials() {
             {/* Mobile arrow left */}
             <button
               onClick={prev}
-              className="md:hidden w-10 h-10 rounded-full border-2 border-gray-200 flex items-center justify-center text-foreground/50 hover:border-primary hover:text-primary transition-colors"
+              className="md:hidden w-10 h-10 rounded-full border-2 border-editorial-border flex items-center justify-center text-editorial-muted hover:border-editorial-accent hover:text-editorial-accent transition-colors"
               aria-label={t("prevReview")}
             >
               <ChevronLeft className="w-5 h-5" />
@@ -220,8 +220,8 @@ export function Testimonials() {
                   onClick={() => goTo(i, i > current ? 1 : -1)}
                   className={`transition-all duration-300 rounded-full ${
                     i === current
-                      ? "bg-primary w-8 h-2.5"
-                      : "bg-gray-200 hover:bg-gray-300 w-2.5 h-2.5"
+                      ? "bg-editorial-accent w-8 h-2.5"
+                      : "bg-editorial-border hover:bg-editorial-border/80 w-2.5 h-2.5"
                   }`}
                   aria-label={`${t("goToReview")} ${i + 1}`}
                 />
@@ -231,7 +231,7 @@ export function Testimonials() {
             {/* Mobile arrow right */}
             <button
               onClick={next}
-              className="md:hidden w-10 h-10 rounded-full border-2 border-gray-200 flex items-center justify-center text-foreground/50 hover:border-primary hover:text-primary transition-colors"
+              className="md:hidden w-10 h-10 rounded-full border-2 border-editorial-border flex items-center justify-center text-editorial-muted hover:border-editorial-accent hover:text-editorial-accent transition-colors"
               aria-label={t("nextReview")}
             >
               <ChevronRight className="w-5 h-5" />
@@ -244,7 +244,7 @@ export function Testimonials() {
               href={GOOGLE_MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors group"
+              className="inline-flex items-center gap-2 caption font-semibold text-editorial-accent hover:text-editorial-accent-hover transition-colors group"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>

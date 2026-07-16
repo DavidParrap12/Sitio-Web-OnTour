@@ -1,11 +1,13 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import { DESIGN_FLAGS } from "@/lib/flags";
 import { Camera } from "lucide-react";
 import { GalleryGrid, type GalleryImage } from "@/components/GalleryGrid";
+import { GaleriaEditorial, type GalleryImageData } from "./GaleriaEditorial";
 import Image from "next/image";
 
-// Gallery data — add your images here. Categories are used for filtering.
-const galleryImages: GalleryImage[] = [
+// Gallery data — shared between legacy and editorial layouts.
+const galleryImages: (GalleryImage & GalleryImageData)[] = [
   // Tolima
   { src: "/image/Tolima-fotos/tolima_nevado-ruiz-emision-ceniza-vista-aerea.jpeg", alt: "Nevado del Ruiz - Emisión de ceniza", category: "Tolima" },
   { src: "/image/Tolima-fotos/ibague_cañon-combeima-senalizacion-turistica.jpeg", alt: "Cañón de Combeima - Señalización Turística", category: "Tolima" },
@@ -59,6 +61,20 @@ export default async function GaleriaPage({
   setRequestLocale(locale);
   const t = await getTranslations("gallery");
 
+  // -- Editorial Layout ----------------------------------------
+  if (DESIGN_FLAGS.galeria) {
+    return (
+      <GaleriaEditorial
+        images={galleryImages}
+        categories={categories}
+        title={t("title")}
+        subtitle={t("subtitle")}
+        filterAllLabel={t("all")}
+      />
+    );
+  }
+
+  // -- Legacy Layout -------------------------------------------
   return (
     <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
       {/* Hero */}

@@ -1,7 +1,9 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import { DESIGN_FLAGS } from "@/lib/flags";
 import { SectionTitle } from "@/components/SectionTitle";
 import { ReconocimientosGallery } from "@/components/ReconocimientosGallery";
+import { NosotrosEditorial } from "./NosotrosEditorial";
 import Image from "next/image";
 
 export default async function Nosotros({
@@ -14,6 +16,24 @@ export default async function Nosotros({
 
   const t = await getTranslations("about");
 
+  // -- Editorial Layout ----------------------------------------
+  if (DESIGN_FLAGS.nosotros) {
+    return (
+      <NosotrosEditorial
+        title={t("title")}
+        subtitle={t("subtitle")}
+        missionTitle={t("missionTitle")}
+        missionText={t("missionText")}
+        visionTitle={t("visionTitle")}
+        visionText={t("visionText")}
+        recognitionsTitle={t("recognitionsTitle")}
+        recognitionsSubtitle={t("recognitionsSubtitle")}
+        recognitionsClose={t("recognitionsClose")}
+      />
+    );
+  }
+
+  // -- Legacy Layout -------------------------------------------
   return (
     <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
       {/* Hero Header */}

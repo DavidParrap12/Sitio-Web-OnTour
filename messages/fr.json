@@ -189,20 +189,28 @@
     "downloaded": "Téléchargé !"
   },
   "pasadiaDetail": {
-    "badge": "Excursion d'une journée",
+    "badge": "Excursions d'une journée",
     "colombia": "Colombie",
-    "activityDesc": "Description de l'activité",
+    "activityDesc": "Activités et détails de l'excursion",
     "youWillFind": "Ce que vous trouverez",
-    "gallery": "Galerie photos",
-    "galleryLangNotice": "Les brochures sont disponibles uniquement en espagnol.",
-    "ctaTitle": "Intéressé par cette excursion ?",
-    "ctaSubtitle": "Demandez un devis personnalisé pour vous ou votre groupe.",
-    "ctaButton": "Demander un devis",
+    "gallery": "Galerie",
+    "galleryLangNotice": "Les images et contenus visuels peuvent être dans leur langue d'origine.",
+    "ctaTitle": "Prêt pour l'aventure ?",
+    "ctaSubtitle": "Réservez votre place dès maintenant et vivez cette expérience incroyable.",
+    "ctaButton": "Contacter un conseiller",
     "downloadPdf": "Télécharger PDF",
     "downloadWord": "Télécharger Word",
     "downloadBrochure": "Télécharger la brochure",
     "generating": "Génération...",
-    "downloaded": "Téléchargé !"
+    "downloaded": "Téléchargé",
+    "activitiesAndPlans": "Activités et plans",
+    "quote": "Obtenir un devis →",
+    "quoteShort": "Obtenir un devis",
+    "priceFrom": "Prix à partir de",
+    "includes": "Inclus",
+    "consult": "Sur demande",
+    "booking": "Réservation",
+    "departure": "Départ"
   },
   "footer": {
     "tagline": "Nous créons des expériences inoubliables.",
@@ -805,5 +813,442 @@
     "close": "Fermer",
     "prev": "Précédent",
     "next": "Suivant"
+  },
+  "destinosData": {
+    "cascada-la-plata-pasadia": {
+      "name": "Excursions au Tolima",
+      "location": "Tolima, Colombie",
+      "description": "Découvrez le Tolima à travers des excursions uniques : du canyon de Combeima et de la cascade La Plata à la forêt de palmiers à cire et aux expériences de deltaplane. Nature, aventure et culture en une seule journée.",
+      "duration": "1 jour",
+      "highlights": [
+        "Transport privé inclus",
+        "Chauffeur-guide spécialisé",
+        "Déjeuner typique du Tolima",
+        "Carte d'assistance",
+        "Biosécurité garantie",
+        "Réservation jusqu'à 24 heures à l'avance"
+      ],
+      "activities": [
+        {
+          "nombre": "Vol en Deltaplane San Bernardo",
+          "destino": "San Bernardo, Tolima",
+          "precio_desde": 890000,
+          "incluye": [
+            "Transport privé",
+            "Vidéo du vol",
+            "Vol de 15 à 25 minutes",
+            "Déjeuner",
+            "Visite de San Bernardo et belvédères",
+            "Carte d'assistance",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "reserva": "Jusqu'à 24 heures à l'avance"
+        },
+        {
+          "nombre": "Canyon de Combeima - Finca La Rivera",
+          "destino": "Canyon de Combeima, Tolima",
+          "precio_desde": null,
+          "incluye": [
+            "Transport privé",
+            "Trajet en téléphérique",
+            "Mini zoo",
+            "Promenade écologique",
+            "Déjeuner",
+            "Observation d'oiseaux",
+            "Belvédère Los Sauces",
+            "Carte d'assistance",
+            "Baignade en rivière",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "reserva": "Jusqu'à 24 heures à l'avance"
+        },
+        {
+          "nombre": "City Tour Ibagué",
+          "destino": "Ibagué, Tolima",
+          "precio_desde": null,
+          "incluye": [
+            "Transport privé",
+            "Visite du Panoptique",
+            "Visite de la place Murillo Toro",
+            "Visite de la place Bolívar",
+            "Brunch",
+            "Visite du parc de la Musique",
+            "Carte d'assistance",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "reserva": "Jusqu'à 24 heures à l'avance"
+        },
+        {
+          "nombre": "City Tour Ibagué & Belvédère Tesorito",
+          "destino": "Ibagué, Tolima",
+          "precio_desde": null,
+          "incluye": [
+            "Transport privé",
+            "Visite du Panoptique",
+            "Visite de la place Murillo Toro",
+            "Visite de la place Bolívar",
+            "Visite du parc de la Musique",
+            "Visite du belvédère Tesorito",
+            "Brunch",
+            "Carte d'assistance",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "reserva": "Jusqu'à 24 heures à l'avance"
+        },
+        {
+          "nombre": "Cascade La Plata",
+          "destino": "Cascade La Plata, Tolima",
+          "precio_desde": null,
+          "incluye": [
+            "Transport en jeep",
+            "Visite de la cascade",
+            "Déjeuner",
+            "Promenade écologique",
+            "Carte d'assistance",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "reserva": "Jusqu'à 24 heures à l'avance"
+        },
+        {
+          "nombre": "Forêt de palmiers à cire",
+          "destino": "Toche, Tolima",
+          "precio_desde": null,
+          "incluye": [
+            "Transport privé",
+            "Visite du district de Toche",
+            "Visite fumerolle",
+            "Promenade écologique",
+            "Déjeuner",
+            "Visite de la colline du volcan Machín",
+            "Carte d'assistance",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "reserva": "Jusqu'à 24 heures à l'avance"
+        },
+        {
+          "nombre": "Route du Páramo de Murillo",
+          "destino": "Murillo, Tolima",
+          "precio_desde": "460,000 - USD 119",
+          "incluye": [
+            "Transport privé",
+            "Vue sur la vallée des Frailejones",
+            "Promenade écologique",
+            "Petit-déjeuner",
+            "Déjeuner",
+            "Sources chaudes du Sifón",
+            "Carte d'assistance",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "operador": "On Tour Agence de Voyage"
+        },
+        {
+          "nombre": "Parc Thématique Meraki",
+          "destino": "Tolima",
+          "precio_desde": "190,000 - USD 49",
+          "incluye": [
+            "Transport privé",
+            "Vélos aériens",
+            "Belvédère",
+            "Déjeuner",
+            "Observation d'oiseaux",
+            "Promenade écologique",
+            "Carte d'assistance",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "opera": "Tous les jours",
+          "tipo": "Excursion d'une journée",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "operador": "On Tour Agence de Voyage"
+        },
+        {
+          "nombre": "Playa Hawai Aquaparc",
+          "destino": "Tolima",
+          "precio_desde": "150,000 - USD 39",
+          "incluye": [
+            "Transport privé",
+            "Entrée à Pisciplaya",
+            "Entrée au parc aquatique",
+            "Aquaparc",
+            "Carte d'assistance",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "opera": "Tous les jours",
+          "tipo": "Excursion d'une journée",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "operador": "On Tour Agence de Voyage"
+        },
+        {
+          "nombre": "Cascade La Plata",
+          "destino": "Cascade La Plata, Tolima",
+          "precio_desde": "190,000 - USD 49",
+          "incluye": [
+            "Transport privé",
+            "Transport en jeep",
+            "Visite de la cascade",
+            "Déjeuner",
+            "Promenade écologique",
+            "Carte d'assistance",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "opera": "Tous les jours",
+          "tipo": "Excursion d'une journée",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "operador": "On Tour Agence de Voyage"
+        },
+        {
+          "nombre": "Barrage de Rio Prado",
+          "destino": "Prado, Tolima",
+          "precio_desde": "Groupe: 150,000 (USD 39) / Privé: 320,000 (USD 82)",
+          "incluye": [
+            "Transport",
+            "Visite de la Cascade de l'Amour",
+            "Visite de l'île Cubal",
+            "Visite de l'île du Soleil",
+            "Visite de la Grotte du Mohán",
+            "Déjeuner",
+            "Baignade en piscine",
+            "Carte d'assistance",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "salida_grupal": "Dimanches",
+          "opera": "Tous les jours en service personnalisé",
+          "operador": "On Tour Agence de Voyage"
+        },
+        {
+          "nombre": "Canyon de Combeima - Alma Rural",
+          "destino": "Canyon de Combeima, Tolima",
+          "precio_desde": "200,000 - USD 50",
+          "incluye": [
+            "Transport privé",
+            "Promenade à cheval",
+            "Promenade écologique",
+            "Déjeuner",
+            "Observation d'oiseaux",
+            "Belvédère de Los Sauces",
+            "Carte d'assistance",
+            "Baignade en rivière",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "opera": "Tous les jours",
+          "tipo": "Excursion d'une journée",
+          "operador": "On Tour Agence de Voyage"
+        },
+        {
+          "nombre": "Cascades de Chicalá",
+          "destino": "Payandé, Tolima",
+          "precio_desde": "230,000 - USD 60",
+          "incluye": [
+            "Transport privé",
+            "Visite des 7 cascades",
+            "Promenade écologique",
+            "Visite de l'Hôtel Chicalá",
+            "Déjeuner",
+            "Baignade en piscine",
+            "Chauffeur guide",
+            "Mesures de biosécurité"
+          ],
+          "opera": "Tous les jours",
+          "tipo": "Excursion d'une journée",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "operador": "On Tour Agence de Voyage"
+        }
+      ]
+    },
+    "Medellin-Magica": {
+      "name": "Medellín Magique",
+      "location": "Medellín, Antioquia",
+      "description": "Vivez la magie de Medellín : ville de l'éternel printemps, de l'innovation et de la culture. Visitez la Comuna 13, Guatapé et ses quartiers animés.",
+      "duration": "1 jour",
+      "highlights": [
+        "Transport privé",
+        "Chauffeur-guide spécialisé",
+        "Carte d'assistance",
+        "Mesures de biosécurité"
+      ],
+      "activities": []
+    },
+    "bogota-tu-casa-pasadia": {
+      "name": "Bogotá, votre Maison",
+      "location": "Bogotá D.C.",
+      "description": "Découvrez la capitale de la Colombie : Monserrate, le Musée de l'Or, La Candelaria et la vibrante scène culturelle de Bogotá en une seule journée.",
+      "duration": "1 jour",
+      "highlights": [
+        "Transport privé",
+        "Chauffeur-guide spécialisé",
+        "Carte d'assistance",
+        "Mesures de biosécurité"
+      ],
+      "activities": [
+        {
+          "nombre": "Tour de la Cathédrale de Sel de Zipaquirá et de la Mine de Nemocón",
+          "destino": "Zipaquirá et Nemocón, Cundinamarca",
+          "precio_desde": "938,000 - USD 240",
+          "incluye": [
+            "Collation",
+            "Déjeuner",
+            "Route du mineur",
+            "Guide privé",
+            "Transport privé",
+            "Assurance voyage"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Excursion d'une journée",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables",
+          "salida": "Hôtel",
+          "operador": "On Tour Agence de Voyage"
+        },
+        {
+          "nombre": "Tour du lac de Guatavita et de la Cathédrale de Sel",
+          "destino": "Guatavita et Zipaquirá, Cundinamarca",
+          "precio_desde": "978,000 - USD 250",
+          "incluye": [
+            "Transport privé",
+            "Guide privé",
+            "Frais d'entrée",
+            "Carte d'assistance",
+            "Collation",
+            "Mesures de sécurité",
+            "Déjeuner",
+            "Spa ou atelier (1 heure)"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Excursion d'une journée",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables",
+          "salida": "Hôtel",
+          "operador": "On Tour Agence de Voyage"
+        },
+        {
+          "nombre": "Visite de Villa de Leyva",
+          "destino": "Villa de Leyva, Boyacá",
+          "precio_desde": "1,050,000 - USD 270",
+          "incluye": [
+            "Transport privé",
+            "Guide privé",
+            "Frais d'entrée",
+            "Mesures de sécurité",
+            "Déjeuner",
+            "Expérience artisanale",
+            "Carte d'assistance"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Excursion d'une journée",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables",
+          "salida": "Hôtel",
+          "operador": "On Tour Agence de Voyage"
+        },
+        {
+          "nombre": "Tour Gastronomique",
+          "destino": "Bogotá",
+          "precio_desde": "429,000 - USD 110",
+          "incluye": [
+            "Visite du marché",
+            "Gastronomie de rue à La Candelaria",
+            "Expérience café, cacao et arepa",
+            "Visite de San Felipe",
+            "Visite de 3 restaurants",
+            "Transport privé",
+            "Guide",
+            "Assurance voyage"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Excursion d'une journée",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables",
+          "salida": "Hôtel",
+          "operador": "On Tour Agence de Voyage"
+        },
+        {
+          "nombre": "Visite Panoramique de la Ville de Bogotá",
+          "destino": "Bogotá",
+          "precio_desde": "429,000 - USD 110",
+          "incluye": [
+            "Visite de La Candelaria",
+            "Centre International",
+            "Zona G",
+            "Zona T",
+            "Parque de la 93",
+            "Monserrate",
+            "Billet Monserrate (funiculaire ou téléphérique)",
+            "Dégustation de café premium",
+            "Coordinateur bilingue",
+            "Transport aller-retour",
+            "Chauffeur local",
+            "Carte d'assistance"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Excursion d'une journée",
+          "outfit": "Vêtements confortables",
+          "salida": "Hôtel",
+          "operador": "On Tour Agence de Voyage"
+        }
+      ]
+    },
+    "Cali-es-donde-debe-estar": {
+      "name": "Cali est où vous devez être",
+      "location": "Cali, Valle del Cauca",
+      "description": "Ressentez le rythme de Cali : la capitale mondiale de la salsa. Explorez ses quartiers, ses saveurs et sa culture dans une expérience unique.",
+      "duration": "1 jour",
+      "highlights": [
+        "Transport privé",
+        "Chauffeur-guide spécialisé",
+        "Carte d'assistance",
+        "Mesures de biosécurité"
+      ],
+      "activities": []
+    },
+    "Cartagena-Mas-Heroica": {
+      "name": "Carthagène, Plus Héroïque",
+      "location": "Carthagène des Indes, Bolívar",
+      "description": "Explorez la ville fortifiée des Caraïbes : le château de San Felipe, les îles du Rosaire et les plus beaux couchers de soleil de Colombie.",
+      "duration": "1 jour",
+      "highlights": [
+        "Transport privé",
+        "Chauffeur-guide spécialisé",
+        "Carte d'assistance",
+        "Mesures de biosécurité"
+      ],
+      "activities": []
+    },
+    "Santa-Marta-Naturalmente-Magica": {
+      "name": "Santa Marta, Naturellement Magique",
+      "location": "Santa Marta, Magdalena",
+      "description": "Découvrez Santa Marta : plages des Caraïbes, la Sierra Nevada et le plus ancien parc naturel de Colombie dans une expérience purement naturelle.",
+      "duration": "1 jour",
+      "highlights": [
+        "Transport privé",
+        "Chauffeur-guide spécialisé",
+        "Carte d'assistance",
+        "Mesures de biosécurité"
+      ],
+      "activities": []
+    },
+    "San-Andres-Islas-Vas-A-mar": {
+      "name": "Îles San Andrés, Vous allez adorer !",
+      "location": "Îles San Andrés",
+      "description": "Découvrez le paradis des Caraïbes colombiennes : eaux cristallines, coraux, la mer aux sept couleurs et la culture Raizal dans une escapade unique.",
+      "duration": "1 jour",
+      "highlights": [
+        "Transport privé",
+        "Chauffeur-guide spécialisé",
+        "Carte d'assistance",
+        "Mesures de biosécurité"
+      ],
+      "activities": []
+    }
   }
 }

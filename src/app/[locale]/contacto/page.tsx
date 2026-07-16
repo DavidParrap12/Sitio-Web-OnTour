@@ -1,8 +1,10 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import { DESIGN_FLAGS } from "@/lib/flags";
 import { SectionTitle } from "@/components/SectionTitle";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { ContactoEditorial } from "./ContactoEditorial";
 
 export default async function Contacto({
   params,
@@ -14,6 +16,23 @@ export default async function Contacto({
 
   const t = await getTranslations("contact");
 
+  // -- Editorial Layout ----------------------------------------
+  if (DESIGN_FLAGS.contacto) {
+    return (
+      <ContactoEditorial
+        title={t("title")}
+        subtitle={t("subtitle")}
+        infoTitle={t("infoTitle")}
+        infoSubtitle={t("infoSubtitle")}
+        schedule={t("schedule")}
+        support={t("support")}
+        mainOffice={t("mainOffice")}
+        mapTitle={t("mapTitle")}
+      />
+    );
+  }
+
+  // -- Legacy Layout -------------------------------------------
   return (
     <div className="pt-32 pb-16 min-h-screen bg-secondary/50">
       <div className="container mx-auto px-4 md:px-6">

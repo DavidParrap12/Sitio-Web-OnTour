@@ -89,11 +89,15 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center max-w-5xl pt-20">
         <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide mb-6 uppercase"
+          initial={{ opacity: 0, y: 20, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="inline-flex items-center gap-2.5 py-2.5 px-6 rounded-full bg-gradient-to-r from-accent/30 to-sky-500/20 backdrop-blur-xl border border-accent/40 text-white font-semibold text-sm md:text-base tracking-widest uppercase mb-8 shadow-[0_0_30px_rgba(28,126,214,0.3)]"
         >
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent" />
+          </span>
           {t("tagline")}
         </motion.span>
 
@@ -113,7 +117,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light"
+          className="text-lg md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
         >
           {t("subtitle")}
         </motion.p>

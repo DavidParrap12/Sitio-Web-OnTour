@@ -189,20 +189,28 @@
     "downloaded": "¡Descargado!"
   },
   "pasadiaDetail": {
-    "badge": "Pasadía",
+    "badge": "Pasadías",
     "colombia": "Colombia",
-    "activityDesc": "Descripción de la Actividad",
+    "activityDesc": "Actividades y detalles del pasadía",
     "youWillFind": "Lo que encontrarás",
-    "gallery": "Galería de Fotos",
-    "galleryLangNotice": "Los folletos están disponibles solo en español.",
-    "ctaTitle": "¿Te interesa este pasadía?",
-    "ctaSubtitle": "Solicita una cotización personalizada para ti o tu grupo.",
-    "ctaButton": "Cotizar ahora",
+    "gallery": "Galería",
+    "galleryLangNotice": "Las imágenes y contenidos visuales pueden estar en su idioma original.",
+    "ctaTitle": "¿Listo para la aventura?",
+    "ctaSubtitle": "Reserva tu lugar ahora y vive esta increíble experiencia.",
+    "ctaButton": "Contactar Asesor",
     "downloadPdf": "Descargar PDF",
     "downloadWord": "Descargar Word",
     "downloadBrochure": "Descargar Folleto",
     "generating": "Generando...",
-    "downloaded": "¡Descargado!"
+    "downloaded": "Descargado",
+    "activitiesAndPlans": "Actividades y Planes",
+    "quote": "Cotizar →",
+    "quoteShort": "Cotizar",
+    "priceFrom": "Precio desde",
+    "includes": "Incluye",
+    "consult": "A consultar",
+    "booking": "Reserva",
+    "departure": "Salida"
   },
   "footer": {
     "tagline": "Creamos experiencias inolvidables.",
@@ -805,5 +813,754 @@
     "close": "Cerrar",
     "prev": "Anterior",
     "next": "Siguiente"
+  },
+  "destinosData": {
+    "cascada-la-plata-pasadia": {
+      "name": "Pasadías por el Tolima",
+      "location": "Tolima, Colombia",
+      "description": "Descubre el Tolima en pasadías únicas: desde el Cañón del Combeima y la Cascada La Plata hasta el Bosque de Palma de Cera y experiencias de vuelo en ala delta. Naturaleza, aventura y cultura en un solo día.",
+      "duration": "1 día",
+      "highlights": [
+        "Transporte privado incluido",
+        "Guía conductor especializado",
+        "Almuerzo típico tolimense",
+        "Tarjeta de asistencia",
+        "Bioseguridad garantizada",
+        "Reserva hasta 24 horas antes"
+      ],
+      "activities": [
+        {
+          "nombre": "Sobrevuelo Ala Delta San Bernardo",
+          "destino": "San Bernardo, Tolima",
+          "precio_desde": 890000,
+          "incluye": [
+            "Transporte privado",
+            "Video del vuelo",
+            "Vuelo de 15 a 25 minutos",
+            "Almuerzo",
+            "Recorrido por San Bernardo y miradores",
+            "Tarjeta de asistencia",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "reserva": "Hasta 24 horas de antelación"
+        },
+        {
+          "nombre": "Cañón del Combeima - Finca La Rivera",
+          "destino": "Cañón del Combeima, Tolima",
+          "precio_desde": "180,000 - USD 46",
+          "incluye": [
+            "Transporte privado",
+            "Paseo en teleférico",
+            "Mini zoológico",
+            "Caminata ecológica",
+            "Almuerzo",
+            "Avistamiento de aves",
+            "Mirador de los Sauces",
+            "Tarjeta de asistencia",
+            "Baño de río",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "reserva": "Hasta 24 horas de antelación"
+        },
+        {
+          "nombre": "City Tour Ibagué",
+          "destino": "Ibagué, Tolima",
+          "precio_desde": "130,000 - USD 35",
+          "incluye": [
+            "Transporte privado",
+            "Visita al Panóptico",
+            "Visita Plaza Murillo Toro",
+            "Visita Plaza de Bolívar",
+            "Brunch",
+            "Visita Parque de la Música",
+            "Tarjeta de asistencia",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "reserva": "Hasta 24 horas de antelación"
+        },
+        {
+          "nombre": "City Tour Ibagué y Mirador Tesorito",
+          "destino": "Ibagué, Tolima",
+          "precio_desde": "150,000 - USD 39",
+          "incluye": [
+            "Transporte privado",
+            "Visita al Panóptico",
+            "Visita Plaza Murillo Toro",
+            "Visita Plaza de Bolívar",
+            "Visita Parque de la Música",
+            "Visita Mirador Tesorito",
+            "Brunch",
+            "Tarjeta de asistencia",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "reserva": "Hasta 24 horas de antelación"
+        },
+        {
+          "nombre": "Cascada La Plata",
+          "destino": "Cascada La Plata, Tolima",
+          "precio_desde": "190,000 - USD 49",
+          "incluye": [
+            "Transporte en jeep",
+            "Visita a la cascada",
+            "Almuerzo",
+            "Caminata ecológica",
+            "Tarjeta de asistencia",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "reserva": "Hasta 24 horas de antelación"
+        },
+        {
+          "nombre": "Bosque de Palma de Cera",
+          "destino": "Toche, Tolima",
+          "precio_desde": "320,000 - USD 82",
+          "incluye": [
+            "Transporte privado",
+            "Visita al corregimiento de Toche",
+            "Visita fumarola",
+            "Caminata ecológica",
+            "Almuerzo",
+            "Visita al cerro del volcán Machín",
+            "Tarjeta de asistencia",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "reserva": "Hasta 24 horas de antelación"
+        },
+        {
+          "nombre": "Ruta del Páramo Murillo",
+          "destino": "Murillo, Tolima",
+          "precio_desde": "460,000 - USD 119",
+          "incluye": [
+            "Transporte privado",
+            "Vista del Valle de Frailejones",
+            "Caminata ecológica",
+            "Desayuno",
+            "Almuerzo",
+            "Termales del Sifón",
+            "Tarjeta de asistencia",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Parque Temático Meraki",
+          "destino": "Tolima",
+          "precio_desde": "190,000 - USD 49",
+          "incluye": [
+            "Transporte privado",
+            "Bicicletas aéreas",
+            "Mirador",
+            "Almuerzo",
+            "Avistamiento de aves",
+            "Caminata ecológica",
+            "Tarjeta de asistencia",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "opera": "Todos los días",
+          "tipo": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Playa Hawai Aquaparque",
+          "destino": "Tolima",
+          "precio_desde": "150,000 - USD 39",
+          "incluye": [
+            "Transporte privado",
+            "Ingreso a Pisciplaya",
+            "Ingreso a Parque Acuático",
+            "Aquaparque",
+            "Tarjeta de asistencia",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "opera": "Todos los días",
+          "tipo": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Cascada La Plata",
+          "destino": "Cascada La Plata, Tolima",
+          "precio_desde": "190,000 - USD 49",
+          "incluye": [
+            "Transporte privado",
+            "Transporte en jeep",
+            "Visita a la cascada",
+            "Almuerzo",
+            "Caminata ecológica",
+            "Tarjeta de asistencia",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "opera": "Todos los días",
+          "tipo": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Represa de Rio Prado",
+          "destino": "Prado, Tolima",
+          "precio_desde": "Grupal: 150,000 (USD 39) / Privado: 320,000 (USD 82)",
+          "incluye": [
+            "Transporte",
+            "Visita Cascada del Amor",
+            "Visita Isla de Cubal",
+            "Visita Isla del Sol",
+            "Visita Cueva del Mohán",
+            "Almuerzo",
+            "Baño en piscina",
+            "Tarjeta de asistencia",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "salida_grupal": "Domingos",
+          "opera": "Todos los días en servicio personalizado",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Cañón del Combeima - Alma Rural",
+          "destino": "Cañón del Combeima, Tolima",
+          "precio_desde": "200,000 - USD 50",
+          "incluye": [
+            "Transporte privado",
+            "Cabalgata",
+            "Caminata ecológica",
+            "Almuerzo",
+            "Avistamiento de aves",
+            "Mirador de los Sauces",
+            "Tarjeta de asistencia",
+            "Baño de río",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "opera": "Todos los días",
+          "tipo": "Pasadía",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Cascadas de Chicalá",
+          "destino": "Payandé, Tolima",
+          "precio_desde": "230,000 - USD 60",
+          "incluye": [
+            "Transporte privado",
+            "Recorrido por las 7 cascadas",
+            "Caminata ecológica",
+            "Visita al Hotel Chicalá",
+            "Almuerzo",
+            "Baño en piscina",
+            "Conductor guía",
+            "Medidas de bioseguridad"
+          ],
+          "opera": "Todos los días",
+          "tipo": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        }
+      ]
+    },
+    "Medellin-Magica": {
+      "name": "Medellín Mágica",
+      "location": "Medellín, Antioquia",
+      "description": "Vive la magia de Medellín: ciudad de la eterna primavera, innovación y cultura. Recorre la Comuna 13, Guatapé y sus barrios llenos de vida.",
+      "duration": "1 día",
+      "highlights": [
+        "Transporte privado",
+        "Guía conductor especializado",
+        "Tarjeta de asistencia",
+        "Medidas de bioseguridad"
+      ],
+      "activities": [
+        {
+          "nombre": "Tour Guatapé y Piedra del Peñol",
+          "destino": "Guatapé, Antioquia",
+          "precio_desde": "180,000 - USD 46",
+          "duracion": "10 horas",
+          "incluye": [
+            "Transporte ida y regreso",
+            "Desayuno",
+            "Almuerzo",
+            "Visita a Guatapé",
+            "Visita a la Piedra del Peñol",
+            "Recorrido por la réplica del Viejo Peñol",
+            "Guía acompañante",
+            "Tarjeta de asistencia"
+          ],
+          "opera": "Todos los días",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Hacienda Nápoles",
+          "destino": "Puerto Triunfo, Antioquia",
+          "precio_desde": "280,000 - USD 72",
+          "duracion": "Pasadía",
+          "incluye": [
+            "Transporte ida y regreso",
+            "Ingreso al parque",
+            "Safari",
+            "Santuario de fauna",
+            "Parque acuático",
+            "Museo Africano",
+            "Guía acompañante",
+            "Tarjeta de asistencia"
+          ],
+          "opera": "Todos los días",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "City Tour Medellín",
+          "destino": "Medellín, Antioquia",
+          "precio_desde": "120,000 - USD 31",
+          "duracion": "4 horas",
+          "incluye": [
+            "Plaza Botero",
+            "Parque de los Deseos",
+            "Pueblito Paisa",
+            "Comuna 13",
+            "Metro y Metrocable",
+            "Guía local",
+            "Tarjeta de asistencia"
+          ],
+          "opera": "Todos los días",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour del Café",
+          "destino": "Antioquia",
+          "precio_desde": "190,000 - USD 49",
+          "duracion": "Pasadía",
+          "incluye": [
+            "Transporte",
+            "Recorrido por cafetal",
+            "Proceso de producción del café",
+            "Degustación de café",
+            "Almuerzo",
+            "Guía especializado",
+            "Tarjeta de asistencia"
+          ],
+          "opera": "Todos los días",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Santa Fe de Antioquia",
+          "destino": "Santa Fe de Antioquia",
+          "precio_desde": "170,000 - USD 44",
+          "duracion": "Pasadía",
+          "incluye": [
+            "Transporte",
+            "Visita al Puente de Occidente",
+            "Recorrido por el centro histórico",
+            "Almuerzo",
+            "Guía acompañante",
+            "Tarjeta de asistencia"
+          ],
+          "opera": "Todos los días",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Parque Arví",
+          "destino": "Medellín, Antioquia",
+          "precio_desde": "140,000 - USD 36",
+          "duracion": "Pasadía",
+          "incluye": [
+            "Transporte",
+            "Metrocable",
+            "Recorrido ecológico",
+            "Guía local",
+            "Tarjeta de asistencia"
+          ],
+          "opera": "Todos los días",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Jardín Antioquia",
+          "destino": "Jardín, Antioquia",
+          "precio_desde": "220,000 - USD 56",
+          "duracion": "Pasadía",
+          "incluye": [
+            "Transporte",
+            "Recorrido por el municipio",
+            "Miradores",
+            "Almuerzo",
+            "Guía acompañante",
+            "Tarjeta de asistencia"
+          ],
+          "opera": "Todos los días",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        }
+      ]
+    },
+    "bogota-tu-casa-pasadia": {
+      "name": "Bogotá, tu Casa",
+      "location": "Bogotá D.C.",
+      "description": "Descubre la capital de Colombia: Monserrate, el Museo del Oro, La Candelaria y la vibrante escena cultural de Bogotá en un solo día.",
+      "duration": "1 día",
+      "highlights": [
+        "Transporte privado",
+        "Guía conductor especializado",
+        "Tarjeta de asistencia",
+        "Medidas de bioseguridad"
+      ],
+      "activities": [
+        {
+          "nombre": "Tour Catedral de Sal, Zipaquirá y Mina de Nemocón",
+          "destino": "Zipaquirá y Nemocón, Cundinamarca",
+          "precio_desde": "938,000 - USD 240",
+          "incluye": [
+            "Bocadillo",
+            "Almuerzo",
+            "Ruta del minero",
+            "Guía privado",
+            "Transporte privado",
+            "Seguro de viaje"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "outfit": "Ropa cómoda",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour a la Laguna de Guatavita y la Catedral de Sal",
+          "destino": "Guatavita y Zipaquirá, Cundinamarca",
+          "precio_desde": "978,000 - USD 250",
+          "incluye": [
+            "Transporte privado",
+            "Guía privado",
+            "Entradas",
+            "Tarjeta de asistencia",
+            "Bocadillo",
+            "Medidas de seguridad",
+            "Almuerzo",
+            "Spa o taller (1 hora)"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "outfit": "Ropa cómoda",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Recorrido por Villa de Leyva",
+          "destino": "Villa de Leyva, Boyacá",
+          "precio_desde": "1,050,000 - USD 270",
+          "incluye": [
+            "Transporte privado",
+            "Guía privado",
+            "Entradas",
+            "Medidas de seguridad",
+            "Almuerzo",
+            "Experiencia artesanal",
+            "Tarjeta de asistencia"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "outfit": "Ropa cómoda",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Gastronómico",
+          "destino": "Bogotá",
+          "precio_desde": "429,000 - USD 110",
+          "incluye": [
+            "Recorrido por el mercado",
+            "Gastronomía callejera en La Candelaria",
+            "Experiencia de café, cacao y arepa",
+            "Visita a San Felipe",
+            "Visita a 3 restaurantes",
+            "Transporte privado",
+            "Guía",
+            "Seguro de viaje"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "outfit": "Ropa cómoda",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Panorámico por la Ciudad de Bogotá",
+          "destino": "Bogotá",
+          "precio_desde": "429,000 - USD 110",
+          "incluye": [
+            "Visita a La Candelaria",
+            "Centro Internacional",
+            "Zona G",
+            "Zona T",
+            "Parque de la 93",
+            "Monserrate",
+            "Boleto a Monserrate (funicular o teleférico)",
+            "Cata de café premium",
+            "Coordinador bilingüe",
+            "Transporte ida y vuelta",
+            "Conductor local",
+            "Tarjeta de asistencia"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "outfit": "Ropa cómoda",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        }
+      ]
+    },
+    "Cali-es-donde-debe-estar": {
+      "name": "Cali es donde Debe Estar",
+      "location": "Cali, Valle del Cauca",
+      "description": "Siente el ritmo de Cali: la capital mundial de la salsa. Recorre sus barrios, sabores y cultura en una experiencia única.",
+      "duration": "1 día",
+      "highlights": [
+        "Transporte privado",
+        "Guía conductor especializado",
+        "Tarjeta de asistencia",
+        "Medidas de bioseguridad"
+      ],
+      "activities": [
+        {
+          "nombre": "Ruta de la Salsa en Cali",
+          "destino": "Cali, Valle del Cauca",
+          "precio_desde": "250,000 - USD 64",
+          "duracion": "4 horas 30 minutos",
+          "incluye": [
+            "Guía en español",
+            "1 bebida",
+            "Clase de baile y clase de música",
+            "Entrada a 2 o 3 locales de salsa"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour por la Comuna 20",
+          "destino": "Cali, Valle del Cauca",
+          "precio_desde": "125,000 - USD 32",
+          "duracion": "3 horas 30 minutos",
+          "incluye": [
+            "Guía en español",
+            "Billete para el MIO",
+            "Cable de Cali",
+            "Comida y bebida según modalidad"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Privado por Cali",
+          "destino": "Cali, Valle del Cauca",
+          "precio_desde": "390,000 - USD 100",
+          "duracion": "3 horas",
+          "incluye": [
+            "Recogida y traslado de regreso al hotel",
+            "Transporte en coche o minibús según modalidad",
+            "Guía en español",
+            "Tour privado y exclusivo"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Buga",
+          "destino": "Buga, Valle del Cauca",
+          "precio_desde": "420,000 - USD 107",
+          "duracion": "5 horas",
+          "incluye": [
+            "Recogida y traslado al hotel",
+            "Transporte en minibús",
+            "Guía en español",
+            "Refresco",
+            "Comida según modalidad",
+            "Visita a la Hacienda El Paraíso según modalidad"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Excursión al Lago Calima",
+          "destino": "Lago Calima, Valle del Cauca",
+          "precio_desde": "495,000 - USD 126",
+          "duracion": "10 horas",
+          "incluye": [
+            "Recogida y traslado de regreso al hotel",
+            "Transporte en minibús",
+            "Entrada al Museo Arqueológico Calima",
+            "Guía en español",
+            "Comida según modalidad",
+            "Visita a Buga según modalidad"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Reserva Natural San Cipriano",
+          "destino": "San Cipriano, Valle del Cauca",
+          "precio_desde": "550,000 - USD 141",
+          "duracion": "10 horas",
+          "incluye": [
+            "Transporte en minibús o autobús",
+            "Guía de habla española",
+            "Paseo en brujita",
+            "Desayuno y almuerzo",
+            "Entrada a la reserva natural",
+            "Chaleco salvavidas",
+            "Flotador neumático"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        }
+      ]
+    },
+    "Cartagena-Mas-Heroica": {
+      "name": "Cartagena, Más Heroica",
+      "location": "Cartagena de Indias, Bolívar",
+      "description": "Explora la ciudad amurallada del Caribe: el Castillo de San Felipe, las islas del Rosario y los atardeceres más hermosos de Colombia.",
+      "duration": "1 día",
+      "highlights": [
+        "Transporte privado",
+        "Guía conductor especializado",
+        "Tarjeta de asistencia",
+        "Medidas de bioseguridad"
+      ],
+      "activities": [
+        {
+          "nombre": "Tour Panorámico por las Islas del Rosario",
+          "destino": "Islas del Rosario, Cartagena",
+          "precio_desde": "250,000 - USD 64",
+          "incluye": [
+            "Recogida en hoteles de Bocagrande",
+            "Muelle La Bodeguita",
+            "Lancha rápida",
+            "Visita a Isla Grande",
+            "Parada en Playa Blanca de Barú",
+            "Barco con fondo de vidrio",
+            "Seguro de viaje",
+            "Servicio de asistencia"
+          ],
+          "hora_recogida": "07:00 a.m.",
+          "hora_regreso": "03:00 p.m.",
+          "no_incluye": [
+            "Impuesto de muelle",
+            "Gastos no especificados"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Terrestre Playa Blanca Barú",
+          "destino": "Playa Blanca, Barú",
+          "precio_desde": "150,000 - USD 38",
+          "incluye": [
+            "Recogida en hoteles de Bocagrande",
+            "Transporte terrestre",
+            "Almuerzo típico",
+            "Sillas y parasol",
+            "Seguro de viaje",
+            "Servicio de asistencia"
+          ],
+          "hora_recogida": "07:30 a.m.",
+          "hora_regreso": "03:00 p.m.",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Tierra Bomba",
+          "destino": "Isla Tierra Bomba, Cartagena",
+          "precio_desde": "110,000 - USD 28",
+          "incluye": [
+            "Recogida en zona turística",
+            "Transporte en lancha rápida",
+            "Ingreso a balneario",
+            "Uso de instalaciones",
+            "Bebidas según plan",
+            "Retorno al hotel"
+          ],
+          "hora_recogida": "09:30 a.m.",
+          "hora_regreso": "04:00 p.m.",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Volcán del Totumo",
+          "destino": "Volcán del Totumo, Bolívar",
+          "precio_desde": "300,000 - USD 77",
+          "incluye": [
+            "Recogida en zona turística",
+            "Transporte ida y vuelta",
+            "Ingreso al volcán",
+            "Masaje",
+            "Baño en laguna",
+            "Almuerzo típico",
+            "Guía acompañante"
+          ],
+          "hora_recogida": "08:45 a.m.",
+          "hora_regreso": "04:00 p.m.",
+          "no_incluye": [
+            "Consumos no especificados"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "City Tour Panorámico con Entrada al Castillo de San Felipe",
+          "destino": "Cartagena",
+          "precio_desde": "130,000 - USD 34",
+          "incluye": [
+            "Recorrido por bahía de Cartagena",
+            "Centro histórico",
+            "Centro de convenciones",
+            "Entrada al Castillo de San Felipe",
+            "Guía",
+            "Transporte turístico"
+          ],
+          "hora_recogida": "09:00 a.m.",
+          "hora_regreso": "02:30 p.m.",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Playa Tranquila Terrestre + Mapachito",
+          "destino": "Barú, Cartagena",
+          "precio_desde": "340,000 - USD 87",
+          "incluye": [
+            "Recogida en zona turística",
+            "Transporte terrestre ida y vuelta",
+            "Almuerzo",
+            "Avistamiento de mapaches",
+            "Actividad de snorkel",
+            "Tour por Playa Tranquila",
+            "Seguro de viaje"
+          ],
+          "hora_recogida": "07:30 a.m.",
+          "hora_regreso": "03:00 p.m.",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        }
+      ]
+    },
+    "Santa-Marta-Naturalmente-Magica": {
+      "name": "Santa Marta, Naturalmente Mágica",
+      "location": "Santa Marta, Magdalena",
+      "description": "Descubre Santa Marta: playas del Caribe, la Sierra Nevada y el parque natural más antiguo de Colombia en una experiencia de naturaleza pura.",
+      "duration": "1 día",
+      "highlights": [
+        "Transporte privado",
+        "Guía conductor especializado",
+        "Tarjeta de asistencia",
+        "Medidas de bioseguridad"
+      ],
+      "activities": []
+    },
+    "San-Andres-Islas-Vas-A-mar": {
+      "name": "San Andrés Islas, ¡Vas a Mar!",
+      "location": "San Andrés Islas",
+      "description": "Vive el paraíso del Caribe colombiano: aguas cristalinas, corales, el mar de los siete colores y la cultura raizal en una escapada única.",
+      "duration": "1 día",
+      "highlights": [
+        "Transporte privado",
+        "Guía conductor especializado",
+        "Tarjeta de asistencia",
+        "Medidas de bioseguridad"
+      ],
+      "activities": []
+    }
   }
 }

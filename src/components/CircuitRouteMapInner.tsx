@@ -4,11 +4,11 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./LeafletMapStyles.css";
 
-/* ────────────────────────────────────────────────────────────────
+/* ----------------------------------------------------------------
    Real lat/lng coordinates for Colombian cities
-   ──────────────────────────────────────────────────────────────── */
+   ---------------------------------------------------------------- */
 const CITIES: Record<string, [number, number]> = {
-  // ── Ciudades y pueblos (centro / plaza principal) ──────────
+  // -- Ciudades y pueblos (centro / plaza principal) ----------
   "BOGOTÁ":           [4.5981, -74.0761],   // Plaza de Bolívar
   "ZIPAQUIRÁ":        [5.0227, -74.0042],   // Plaza de los Comuneros
   "MEDELLÍN":         [6.2497, -75.5681],   // Parque Berrío
@@ -30,7 +30,7 @@ const CITIES: Record<string, [number, number]> = {
   "TUNJA":            [5.5325, -73.3617],   // Plaza de Bolívar
   "BOYACÁ":           [5.4545, -73.3620],   // Tunja centro
 
-  // ── Sitios geográficos (no son centros urbanos) ────────────
+  // -- Sitios geográficos (no son centros urbanos) ------------
   "MONSERRATE":       [4.6057, -74.0557],   // Cerro de Monserrate
   "COMBEIMA":         [4.5775, -75.3316],   // Cañón del Combeima
   "HUILA":            [2.9273, -75.2819],   // Neiva (capital Huila)
@@ -47,17 +47,17 @@ const CITIES: Record<string, [number, number]> = {
   "BUCARAMANGA":        [7.1298, -73.1174],
 };
 
-/* ────────────────────────────────────────────────────────────────
+/* ----------------------------------------------------------------
    Tile layers (free, no API key needed)
-   ──────────────────────────────────────────────────────────────── */
+   ---------------------------------------------------------------- */
 const TILE_URL =
   "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
 const TILE_ATTRIBUTION =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>';
 
-/* ────────────────────────────────────────────────────────────────
+/* ----------------------------------------------------------------
    Custom marker icon builder
-   ──────────────────────────────────────────────────────────────── */
+   ---------------------------------------------------------------- */
 function createMarkerIcon() {
   return L.divIcon({
     className: "ontour-marker",
@@ -71,9 +71,9 @@ function createMarkerIcon() {
   });
 }
 
-/* ────────────────────────────────────────────────────────────────
+/* ----------------------------------------------------------------
    Popup HTML builder
-   ──────────────────────────────────────────────────────────────── */
+   ---------------------------------------------------------------- */
 function buildPopupHtml(image: string, location: string) {
   return `
     <div class="ontour-popup">
@@ -85,9 +85,9 @@ function buildPopupHtml(image: string, location: string) {
   `;
 }
 
-/* ────────────────────────────────────────────────────────────────
+/* ----------------------------------------------------------------
    Component
-   ──────────────────────────────────────────────────────────────── */
+   ---------------------------------------------------------------- */
 export interface CircuitRouteMapInnerProps {
   dayImages: { image: string; location: string }[];
   circuitName: string;

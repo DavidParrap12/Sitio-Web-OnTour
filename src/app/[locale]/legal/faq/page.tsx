@@ -1,6 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { HelpCircle } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { buildFaqSchema, buildBreadcrumbs } from "@/lib/schema";
 
 export default async function FaqPage({
   params,
@@ -23,7 +25,13 @@ export default async function FaqPage({
   ];
 
   return (
-    <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
+    <>
+      <JsonLd data={buildFaqSchema(faqs)} />
+      <JsonLd data={buildBreadcrumbs([
+        { name: "Home", url: "https://www.agenciaontour.com" },
+        { name: "FAQ", url: `https://www.agenciaontour.com/legal/faq` },
+      ])} />
+      <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
       {/* Hero */}
       <div className="bg-primary text-white py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary" />
@@ -54,6 +62,7 @@ export default async function FaqPage({
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

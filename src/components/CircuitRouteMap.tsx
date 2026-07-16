@@ -2,11 +2,11 @@
 
 import dynamic from "next/dynamic";
 
-/* ────────────────────────────────────────────────────────────────
+/* ----------------------------------------------------------------
    Dynamic import wrapper – SSR disabled.
    Leaflet requires `window` and `document`, so we must prevent
    the inner component from loading during server-side rendering.
-   ──────────────────────────────────────────────────────────────── */
+   ---------------------------------------------------------------- */
 
 interface CircuitRouteMapProps {
   dayImages: { image: string; location: string }[];

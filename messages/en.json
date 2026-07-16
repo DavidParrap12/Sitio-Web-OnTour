@@ -189,20 +189,28 @@
     "downloaded": "Downloaded!"
   },
   "pasadiaDetail": {
-    "badge": "Day Trip",
+    "badge": "Day Trips",
     "colombia": "Colombia",
-    "activityDesc": "Activity Description",
+    "activityDesc": "Activities and day trip details",
     "youWillFind": "What you'll find",
-    "gallery": "Photo Gallery",
-    "galleryLangNotice": "Brochures are available in Spanish only.",
-    "ctaTitle": "Interested in this day trip?",
-    "ctaSubtitle": "Request a personalized quote for you or your group.",
-    "ctaButton": "Get a quote",
+    "gallery": "Gallery",
+    "galleryLangNotice": "Images and visual content may be in their original language.",
+    "ctaTitle": "Ready for the adventure?",
+    "ctaSubtitle": "Book your spot now and live this incredible experience.",
+    "ctaButton": "Contact Advisor",
     "downloadPdf": "Download PDF",
     "downloadWord": "Download Word",
     "downloadBrochure": "Download Brochure",
     "generating": "Generating...",
-    "downloaded": "Downloaded!"
+    "downloaded": "Downloaded",
+    "activitiesAndPlans": "Activities and Plans",
+    "quote": "Get Quote →",
+    "quoteShort": "Get Quote",
+    "priceFrom": "Price from",
+    "includes": "Includes",
+    "consult": "Upon request",
+    "booking": "Booking",
+    "departure": "Departure"
   },
   "footer": {
     "tagline": "We create unforgettable experiences.",
@@ -805,5 +813,754 @@
     "close": "Close",
     "prev": "Previous",
     "next": "Next"
+  },
+  "destinosData": {
+    "cascada-la-plata-pasadia": {
+      "name": "Day Trips around Tolima",
+      "location": "Tolima, Colombia",
+      "description": "Discover Tolima through unique day trips: from the Combeima Canyon and La Plata Waterfall to the Wax Palm Forest and hang gliding experiences. Nature, adventure, and culture in a single day.",
+      "duration": "1 day",
+      "highlights": [
+        "Private transportation included",
+        "Specialized driver-guide",
+        "Typical Tolima lunch",
+        "Assistance card",
+        "Biosecurity guaranteed",
+        "Booking up to 24 hours in advance"
+      ],
+      "activities": [
+        {
+          "nombre": "Hang Gliding Flight San Bernardo",
+          "destino": "San Bernardo, Tolima",
+          "precio_desde": 890000,
+          "incluye": [
+            "Private transportation",
+            "Flight video",
+            "15 to 25 minute flight",
+            "Lunch",
+            "Tour of San Bernardo and viewpoints",
+            "Assistance card",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "reserva": "Up to 24 hours in advance"
+        },
+        {
+          "nombre": "Combeima Canyon - La Rivera Farm",
+          "destino": "Combeima Canyon, Tolima",
+          "precio_desde": null,
+          "incluye": [
+            "Private transportation",
+            "Cable car ride",
+            "Mini zoo",
+            "Ecological walk",
+            "Lunch",
+            "Bird watching",
+            "Los Sauces viewpoint",
+            "Assistance card",
+            "River bath",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "reserva": "Up to 24 hours in advance"
+        },
+        {
+          "nombre": "Ibagué City Tour",
+          "destino": "Ibagué, Tolima",
+          "precio_desde": null,
+          "incluye": [
+            "Private transportation",
+            "Visit to the Panopticon",
+            "Visit Murillo Toro Square",
+            "Visit Bolívar Square",
+            "Brunch",
+            "Visit Music Park",
+            "Assistance card",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "reserva": "Up to 24 hours in advance"
+        },
+        {
+          "nombre": "Ibagué City Tour & Tesorito Viewpoint",
+          "destino": "Ibagué, Tolima",
+          "precio_desde": null,
+          "incluye": [
+            "Private transportation",
+            "Visit to the Panopticon",
+            "Visit Murillo Toro Square",
+            "Visit Bolívar Square",
+            "Visit Music Park",
+            "Visit Tesorito Viewpoint",
+            "Brunch",
+            "Assistance card",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "reserva": "Up to 24 hours in advance"
+        },
+        {
+          "nombre": "La Plata Waterfall",
+          "destino": "La Plata Waterfall, Tolima",
+          "precio_desde": null,
+          "incluye": [
+            "Jeep transportation",
+            "Visit to the waterfall",
+            "Lunch",
+            "Ecological walk",
+            "Assistance card",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "reserva": "Up to 24 hours in advance"
+        },
+        {
+          "nombre": "Wax Palm Forest",
+          "destino": "Toche, Tolima",
+          "precio_desde": null,
+          "incluye": [
+            "Private transportation",
+            "Visit to Toche district",
+            "Visit fumarole",
+            "Ecological walk",
+            "Lunch",
+            "Visit to Machín volcano hill",
+            "Assistance card",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "reserva": "Up to 24 hours in advance"
+        },
+        {
+          "nombre": "Murillo Páramo Route",
+          "destino": "Murillo, Tolima",
+          "precio_desde": "460,000 - USD 119",
+          "incluye": [
+            "Private transportation",
+            "Frailejones Valley view",
+            "Ecological walk",
+            "Breakfast",
+            "Lunch",
+            "Sifón Hot Springs",
+            "Assistance card",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Meraki Theme Park",
+          "destino": "Tolima",
+          "precio_desde": "190,000 - USD 49",
+          "incluye": [
+            "Private transportation",
+            "Aerial bicycles",
+            "Viewpoint",
+            "Lunch",
+            "Bird watching",
+            "Ecological walk",
+            "Assistance card",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "opera": "Every day",
+          "tipo": "Day trip",
+          "reserva": "Up to 24 hours in advance",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Playa Hawai Aquapark",
+          "destino": "Tolima",
+          "precio_desde": "150,000 - USD 39",
+          "incluye": [
+            "Private transportation",
+            "Pisciplaya entrance",
+            "Water Park entrance",
+            "Aquapark",
+            "Assistance card",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "opera": "Every day",
+          "tipo": "Day trip",
+          "reserva": "Up to 24 hours in advance",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "La Plata Waterfall",
+          "destino": "La Plata Waterfall, Tolima",
+          "precio_desde": "190,000 - USD 49",
+          "incluye": [
+            "Private transportation",
+            "Jeep transportation",
+            "Waterfall visit",
+            "Lunch",
+            "Ecological walk",
+            "Assistance card",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "opera": "Every day",
+          "tipo": "Day trip",
+          "reserva": "Up to 24 hours in advance",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Rio Prado Dam",
+          "destino": "Prado, Tolima",
+          "precio_desde": "Group: 150,000 (USD 39) / Private: 320,000 (USD 82)",
+          "incluye": [
+            "Transportation",
+            "Love Waterfall visit",
+            "Cubal Island visit",
+            "Sun Island visit",
+            "Mohán Cave visit",
+            "Lunch",
+            "Pool bath",
+            "Assistance card",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "salida_grupal": "Sundays",
+          "opera": "Every day in personalized service",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Combeima Canyon - Alma Rural",
+          "destino": "Combeima Canyon, Tolima",
+          "precio_desde": "200,000 - USD 50",
+          "incluye": [
+            "Private transportation",
+            "Horseback riding",
+            "Ecological walk",
+            "Lunch",
+            "Bird watching",
+            "Los Sauces viewpoint",
+            "Assistance card",
+            "River bath",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "opera": "Every day",
+          "tipo": "Day trip",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Chicalá Waterfalls",
+          "destino": "Payandé, Tolima",
+          "precio_desde": "230,000 - USD 60",
+          "incluye": [
+            "Private transportation",
+            "Tour of the 7 waterfalls",
+            "Ecological walk",
+            "Chicalá Hotel visit",
+            "Lunch",
+            "Pool bath",
+            "Driver guide",
+            "Biosecurity measures"
+          ],
+          "opera": "Every day",
+          "tipo": "Day trip",
+          "reserva": "Up to 24 hours in advance",
+          "operador": "On Tour Travel Agency"
+        }
+      ]
+    },
+    "Medellin-Magica": {
+      "name": "Magical Medellín",
+      "location": "Medellín, Antioquia",
+      "description": "Experience the magic of Medellín: city of eternal spring, innovation, and culture. Visit Comuna 13, Guatapé, and its vibrant neighborhoods.",
+      "duration": "1 day",
+      "highlights": [
+        "Private transportation",
+        "Specialized driver-guide",
+        "Assistance card",
+        "Biosecurity measures"
+      ],
+      "activities": [
+        {
+          "nombre": "Guatapé and Piedra del Peñol Tour",
+          "destino": "Guatapé, Antioquia",
+          "precio_desde": "180,000 - USD 46",
+          "duracion": "10 hours",
+          "incluye": [
+            "Round-trip transport",
+            "Breakfast",
+            "Lunch",
+            "Visit to Guatapé",
+            "Visit to Piedra del Peñol",
+            "Tour of the Old Peñol replica",
+            "Escort guide",
+            "Assistance card"
+          ],
+          "opera": "Every day",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Hacienda Nápoles Tour",
+          "destino": "Puerto Triunfo, Antioquia",
+          "precio_desde": "280,000 - USD 72",
+          "duracion": "Day trip",
+          "incluye": [
+            "Round-trip transport",
+            "Park entrance",
+            "Safari",
+            "Wildlife sanctuary",
+            "Water park",
+            "African Museum",
+            "Escort guide",
+            "Assistance card"
+          ],
+          "opera": "Every day",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Medellín City Tour",
+          "destino": "Medellín, Antioquia",
+          "precio_desde": "120,000 - USD 31",
+          "duracion": "4 hours",
+          "incluye": [
+            "Botero Square",
+            "Park of Desires",
+            "Pueblito Paisa",
+            "Comuna 13",
+            "Metro and Metrocable",
+            "Local guide",
+            "Assistance card"
+          ],
+          "opera": "Every day",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Coffee Tour",
+          "destino": "Antioquia",
+          "precio_desde": "190,000 - USD 49",
+          "duracion": "Day trip",
+          "incluye": [
+            "Transport",
+            "Coffee plantation tour",
+            "Coffee production process",
+            "Coffee tasting",
+            "Lunch",
+            "Specialized guide",
+            "Assistance card"
+          ],
+          "opera": "Every day",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Santa Fe de Antioquia Tour",
+          "destino": "Santa Fe de Antioquia",
+          "precio_desde": "170,000 - USD 44",
+          "duracion": "Day trip",
+          "incluye": [
+            "Transport",
+            "Visit to the Bridge of the West",
+            "Tour of the historic center",
+            "Lunch",
+            "Escort guide",
+            "Assistance card"
+          ],
+          "opera": "Every day",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Arví Park",
+          "destino": "Medellín, Antioquia",
+          "precio_desde": "140,000 - USD 36",
+          "duracion": "Day trip",
+          "incluye": [
+            "Transport",
+            "Metrocable",
+            "Ecological tour",
+            "Local guide",
+            "Assistance card"
+          ],
+          "opera": "Every day",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Jardín Antioquia Tour",
+          "destino": "Jardín, Antioquia",
+          "precio_desde": "220,000 - USD 56",
+          "duracion": "Day trip",
+          "incluye": [
+            "Transport",
+            "Tour of the municipality",
+            "Viewpoints",
+            "Lunch",
+            "Escort guide",
+            "Assistance card"
+          ],
+          "opera": "Every day",
+          "operador": "On Tour Travel Agency"
+        }
+      ]
+    },
+    "bogota-tu-casa-pasadia": {
+      "name": "Bogotá, your Home",
+      "location": "Bogotá D.C.",
+      "description": "Discover Colombia's capital: Monserrate, the Gold Museum, La Candelaria, and Bogotá's vibrant cultural scene in a single day.",
+      "duration": "1 day",
+      "highlights": [
+        "Private transportation",
+        "Specialized driver-guide",
+        "Assistance card",
+        "Biosecurity measures"
+      ],
+      "activities": [
+        {
+          "nombre": "Salt Cathedral of Zipaquirá and Nemocón Mine Tour",
+          "destino": "Zipaquirá and Nemocón, Cundinamarca",
+          "precio_desde": "938,000 - USD 240",
+          "incluye": [
+            "Snack",
+            "Lunch",
+            "Miner's route",
+            "Private guide",
+            "Private transportation",
+            "Travel insurance"
+          ],
+          "opera": "Every day",
+          "duracion": "Day trip",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothes",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Guatavita Lake and Salt Cathedral Tour",
+          "destino": "Guatavita and Zipaquirá, Cundinamarca",
+          "precio_desde": "978,000 - USD 250",
+          "incluye": [
+            "Private transportation",
+            "Private guide",
+            "Entrance fees",
+            "Assistance card",
+            "Snack",
+            "Security measures",
+            "Lunch",
+            "Spa or workshop (1 hour)"
+          ],
+          "opera": "Every day",
+          "duracion": "Day trip",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothes",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Villa de Leyva Tour",
+          "destino": "Villa de Leyva, Boyacá",
+          "precio_desde": "1,050,000 - USD 270",
+          "incluye": [
+            "Private transportation",
+            "Private guide",
+            "Entrance fees",
+            "Security measures",
+            "Lunch",
+            "Artisanal experience",
+            "Assistance card"
+          ],
+          "opera": "Every day",
+          "duracion": "Day trip",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothes",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Gastronomic Tour",
+          "destino": "Bogotá",
+          "precio_desde": "429,000 - USD 110",
+          "incluye": [
+            "Market tour",
+            "Street food in La Candelaria",
+            "Coffee, cocoa and arepa experience",
+            "San Felipe visit",
+            "Visit to 3 restaurants",
+            "Private transportation",
+            "Guide",
+            "Travel insurance"
+          ],
+          "opera": "Every day",
+          "duracion": "Day trip",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothes",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Panoramic Bogotá City Tour",
+          "destino": "Bogotá",
+          "precio_desde": "429,000 - USD 110",
+          "incluye": [
+            "La Candelaria visit",
+            "International Center",
+            "Zona G",
+            "Zona T",
+            "Park 93",
+            "Monserrate",
+            "Monserrate ticket (funicular or cable car)",
+            "Premium coffee tasting",
+            "Bilingual coordinator",
+            "Round trip transportation",
+            "Local driver",
+            "Assistance card"
+          ],
+          "opera": "Every day",
+          "duracion": "Day trip",
+          "outfit": "Comfortable clothes",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        }
+      ]
+    },
+    "Cali-es-donde-debe-estar": {
+      "name": "Cali is where you should be",
+      "location": "Cali, Valle del Cauca",
+      "description": "Feel the rhythm of Cali: the world capital of salsa. Explore its neighborhoods, flavors, and culture in a unique experience.",
+      "duration": "1 day",
+      "highlights": [
+        "Private transportation",
+        "Specialized driver-guide",
+        "Assistance card",
+        "Biosecurity measures"
+      ],
+      "activities": [
+        {
+          "nombre": "Salsa Route in Cali",
+          "destino": "Cali, Valle del Cauca",
+          "precio_desde": "250,000 - USD 64",
+          "duracion": "4 hours 30 minutes",
+          "incluye": [
+            "Spanish-speaking guide",
+            "1 drink",
+            "Dance class and music class",
+            "Entry to 2 or 3 salsa venues"
+          ],
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Comuna 20 Tour",
+          "destino": "Cali, Valle del Cauca",
+          "precio_desde": "125,000 - USD 32",
+          "duracion": "3 hours 30 minutes",
+          "incluye": [
+            "Spanish-speaking guide",
+            "MIO transit ticket",
+            "Cali Cable Car",
+            "Food and drink depending on option"
+          ],
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Private Cali City Tour",
+          "destino": "Cali, Valle del Cauca",
+          "precio_desde": "390,000 - USD 100",
+          "duracion": "3 hours",
+          "incluye": [
+            "Hotel pickup and drop-off",
+            "Car or minibus transport depending on option",
+            "Spanish-speaking guide",
+            "Private and exclusive tour"
+          ],
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Buga",
+          "destino": "Buga, Valle del Cauca",
+          "precio_desde": "420,000 - USD 107",
+          "duracion": "5 hours",
+          "incluye": [
+            "Hotel pickup and drop-off",
+            "Minibus transport",
+            "Spanish-speaking guide",
+            "Soft drink",
+            "Meal depending on option",
+            "Visit to Hacienda El Paraíso depending on option"
+          ],
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Lake Calima Excursion",
+          "destino": "Lake Calima, Valle del Cauca",
+          "precio_desde": "495,000 - USD 126",
+          "duracion": "10 hours",
+          "incluye": [
+            "Hotel pickup and drop-off",
+            "Minibus transport",
+            "Calima Archaeological Museum entrance",
+            "Spanish-speaking guide",
+            "Meal depending on option",
+            "Visit to Buga depending on option"
+          ],
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "San Cipriano Nature Reserve",
+          "destino": "San Cipriano, Valle del Cauca",
+          "precio_desde": "550,000 - USD 141",
+          "duracion": "10 hours",
+          "incluye": [
+            "Minibus or bus transport",
+            "Spanish-speaking guide",
+            "Brujita rail cart ride",
+            "Breakfast and lunch",
+            "Nature reserve entrance",
+            "Life jacket",
+            "Inner tube"
+          ],
+          "operador": "On Tour Travel Agency"
+        }
+      ]
+    },
+    "Cartagena-Mas-Heroica": {
+      "name": "Cartagena, More Heroic",
+      "location": "Cartagena de Indias, Bolívar",
+      "description": "Explore the Caribbean walled city: San Felipe Castle, the Rosario Islands, and the most beautiful sunsets in Colombia.",
+      "duration": "1 day",
+      "highlights": [
+        "Private transportation",
+        "Specialized driver-guide",
+        "Assistance card",
+        "Biosecurity measures"
+      ],
+      "activities": [
+        {
+          "nombre": "Panoramic Tour of the Rosario Islands",
+          "destino": "Rosario Islands, Cartagena",
+          "precio_desde": "250,000 - USD 64",
+          "incluye": [
+            "Pickup from Bocagrande hotels",
+            "La Bodeguita Pier",
+            "Speedboat",
+            "Visit to Isla Grande",
+            "Stop at Playa Blanca Barú",
+            "Glass-bottom boat",
+            "Travel insurance",
+            "Assistance service"
+          ],
+          "hora_recogida": "07:00 a.m.",
+          "hora_regreso": "03:00 p.m.",
+          "no_incluye": [
+            "Pier tax",
+            "Unspecified expenses"
+          ],
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Playa Blanca Barú Overland",
+          "destino": "Playa Blanca, Barú",
+          "precio_desde": "150,000 - USD 38",
+          "incluye": [
+            "Pickup from Bocagrande hotels",
+            "Overland transport",
+            "Typical lunch",
+            "Chairs and parasol",
+            "Travel insurance",
+            "Assistance service"
+          ],
+          "hora_recogida": "07:30 a.m.",
+          "hora_regreso": "03:00 p.m.",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Tierra Bomba Tour",
+          "destino": "Tierra Bomba Island, Cartagena",
+          "precio_desde": "110,000 - USD 28",
+          "incluye": [
+            "Pickup in tourist area",
+            "Speedboat transport",
+            "Spa entry",
+            "Use of facilities",
+            "Drinks according to plan",
+            "Return to hotel"
+          ],
+          "hora_recogida": "09:30 a.m.",
+          "hora_regreso": "04:00 p.m.",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Totumo Volcano Tour",
+          "destino": "Totumo Volcano, Bolívar",
+          "precio_desde": "300,000 - USD 77",
+          "incluye": [
+            "Pickup in tourist area",
+            "Round-trip transport",
+            "Volcano entry",
+            "Massage",
+            "Lagoon bath",
+            "Typical lunch",
+            "Escort guide"
+          ],
+          "hora_recogida": "08:45 a.m.",
+          "hora_regreso": "04:00 p.m.",
+          "no_incluye": [
+            "Unspecified consumptions"
+          ],
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Panoramic City Tour with Entry to San Felipe Castle",
+          "destino": "Cartagena",
+          "precio_desde": "130,000 - USD 34",
+          "incluye": [
+            "Cartagena bay tour",
+            "Historic center",
+            "Convention center",
+            "Entry to San Felipe Castle",
+            "Guide",
+            "Tourist transport"
+          ],
+          "hora_recogida": "09:00 a.m.",
+          "hora_regreso": "02:30 p.m.",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Playa Tranquila Overland + Raccoon Watching",
+          "destino": "Barú, Cartagena",
+          "precio_desde": "340,000 - USD 87",
+          "incluye": [
+            "Pickup in tourist area",
+            "Round-trip overland transport",
+            "Lunch",
+            "Raccoon watching",
+            "Snorkeling activity",
+            "Tour of Playa Tranquila",
+            "Travel insurance"
+          ],
+          "hora_recogida": "07:30 a.m.",
+          "hora_regreso": "03:00 p.m.",
+          "operador": "On Tour Travel Agency"
+        }
+      ]
+    },
+    "Santa-Marta-Naturalmente-Magica": {
+      "name": "Santa Marta, Naturally Magical",
+      "location": "Santa Marta, Magdalena",
+      "description": "Discover Santa Marta: Caribbean beaches, the Sierra Nevada, and Colombia's oldest natural park in a pure nature experience.",
+      "duration": "1 day",
+      "highlights": [
+        "Private transportation",
+        "Specialized driver-guide",
+        "Assistance card",
+        "Biosecurity measures"
+      ],
+      "activities": []
+    },
+    "San-Andres-Islas-Vas-A-mar": {
+      "name": "San Andrés Islands, You will Love it!",
+      "location": "San Andrés Islands",
+      "description": "Experience the Colombian Caribbean paradise: crystal clear waters, corals, the sea of seven colors, and Raizal culture in a unique getaway.",
+      "duration": "1 day",
+      "highlights": [
+        "Private transportation",
+        "Specialized driver-guide",
+        "Assistance card",
+        "Biosecurity measures"
+      ],
+      "activities": []
+    }
   }
 }

@@ -2,7 +2,7 @@
    Leaflet Map – OnTour Custom Styles
    ═══════════════════════════════════════════════════════════ */
 
-/* ── Custom marker pin ────────────────────────────────────── */
+/* -- Custom marker pin -------------------------------------- */
 .ontour-marker {
   position: relative;
   width: 18px !important;
@@ -56,7 +56,7 @@
   }
 }
 
-/* ── Dark glass popup ─────────────────────────────────────── */
+/* -- Dark glass popup --------------------------------------- */
 .leaflet-popup-content-wrapper {
   background: rgba(13, 33, 55, 0.92) !important;
   backdrop-filter: blur(14px);
@@ -93,7 +93,7 @@
   color: #fff !important;
 }
 
-/* ── Popup inner card ─────────────────────────────────────── */
+/* -- Popup inner card --------------------------------------- */
 .ontour-popup {
   display: flex;
   align-items: stretch;
@@ -129,7 +129,7 @@
   color: #fff;
 }
 
-/* ── Animated route polyline ──────────────────────────────── */
+/* -- Animated route polyline -------------------------------- */
 .ontour-route-line {
   stroke-dasharray: 12, 8;
   animation: ontour-dash 25s linear infinite;
@@ -141,7 +141,7 @@
   }
 }
 
-/* ── Zoom controls ────────────────────────────────────────── */
+/* -- Zoom controls ------------------------------------------ */
 .leaflet-control-zoom {
   border: 1px solid rgba(77, 216, 224, 0.25) !important;
   border-radius: 10px !important;
@@ -169,7 +169,7 @@
   border-bottom: none !important;
 }
 
-/* ── Attribution (make subtle) ────────────────────────────── */
+/* -- Attribution (make subtle) ------------------------------ */
 .leaflet-control-attribution {
   background: rgba(0, 0, 0, 0.45) !important;
   color: rgba(255, 255, 255, 0.35) !important;
@@ -182,7 +182,7 @@
   color: rgba(77, 216, 224, 0.5) !important;
 }
 
-/* ── Map container ────────────────────────────────────────── */
+/* -- Map container ------------------------------------------ */
 .ontour-map-container {
   border-radius: 16px;
   overflow: hidden;
@@ -195,7 +195,7 @@
   border-radius: 16px;
 }
 
-/* ── Circuit name overlay ─────────────────────────────────── */
+/* -- Circuit name overlay ----------------------------------- */
 .ontour-map-overlay {
   position: absolute;
   bottom: 0;

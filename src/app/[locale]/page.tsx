@@ -1,13 +1,17 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import { DESIGN_FLAGS } from "@/lib/flags";
 import { Hero } from "@/components/Hero";
 import { SectionTitle } from "@/components/SectionTitle";
 import { CardDestino } from "@/components/CardDestino";
 import { destinos } from "@/data/destinos";
 import { circuitos } from "@/data/circuitos";
-import { ShieldCheck, Map, HeartHandshake, Headphones } from "lucide-react";
+
 import dynamic from "next/dynamic";
 import { Link } from "@/i18n/navigation";
+import { HomeEditorial } from "./HomeEditorial";
+import { JsonLd } from "@/components/JsonLd";
+import { buildOrgSchema } from "@/lib/schema";
 
 const Testimonials = dynamic(
   () => import("@/components/Testimonials").then((mod) => mod.Testimonials),
@@ -23,38 +27,75 @@ export default async function Home({
   setRequestLocale(locale);
 
   const t = await getTranslations("home");
+  const tHero = await getTranslations("hero");
   const tDestinos = await getTranslations("destinosData");
   const tCircuitos = await getTranslations("circuitosData");
 
   const topPasadias = destinos.slice(0, 3);
   const topCircuitos = circuitos.slice(0, 3);
 
-  const features = [
-    {
-      icon: <ShieldCheck className="w-8 h-8 text-accent" />,
-      title: t("features.safe.title"),
-      description: t("features.safe.desc"),
-    },
-    {
-      icon: <Map className="w-8 h-8 text-accent" />,
-      title: t("features.routes.title"),
-      description: t("features.routes.desc"),
-    },
-    {
-      icon: <HeartHandshake className="w-8 h-8 text-accent" />,
-      title: t("features.human.title"),
-      description: t("features.human.desc"),
-    },
-    {
-      icon: <Headphones className="w-8 h-8 text-accent" />,
-      title: t("features.support.title"),
-      description: t("features.support.desc"),
-    },
-  ];
+  // All items for editorial carousel/rotation
+  const allPasadias = destinos;
+  const allCircuitos = circuitos;
+
+  // -- Editorial Layout ----------------------------------------
+  if (DESIGN_FLAGS.home) {
+    const translations: Record<string, string> = {
+      _locale: locale,
+      "hero.tagline": tHero("tagline"),
+      "hero.title1": tHero("title1"),
+      "hero.title2": tHero("title2"),
+      "hero.subtitle": tHero("subtitle"),
+      "hero.ctaDayTrips": tHero("ctaDayTrips"),
+      "hero.ctaCircuits": tHero("ctaCircuits"),
+      popularDayTrips: t("popularDayTrips"),
+      popularDayTripsSubtitle: t("popularDayTripsSubtitle"),
+      viewAllDayTrips: t("viewAllDayTrips"),
+      memorableCircuits: t("memorableCircuits"),
+      memorableCircuitsSubtitle: t("memorableCircuitsSubtitle"),
+      viewAllCircuits: t("viewAllCircuits"),
+
+      ctaTitle: t("ctaTitle"),
+      ctaSubtitle: t("ctaSubtitle"),
+      ctaButton: t("ctaButton"),
+    };
+
+    const orgSchema = buildOrgSchema(locale);
+    return (
+      <>
+        <JsonLd data={orgSchema} />
+        <HomeEditorial
+          pasadias={allPasadias.map((d) => ({
+            id: d.id,
+            image: d.image,
+            name: tDestinos(`${d.id}.name`),
+            description: tDestinos(`${d.id}.description`),
+            duration: tDestinos(`${d.id}.duration`),
+          }))}
+          circuitos={allCircuitos.map((c) => ({
+            id: c.id,
+            image: c.image,
+            days: c.days,
+            nights: c.nights,
+            name: tCircuitos(`${c.id}.name`),
+            description: tCircuitos(`${c.id}.description`),
+          }))}
+          t={translations}
+        />
+      </>
+    );
+  }
+
+  // -- Legacy Layout -------------------------------------------
+
+  const orgSchema = buildOrgSchema(locale);
+
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Hero />
+    <>
+      <JsonLd data={orgSchema} />
+      <div className="flex flex-col min-h-screen">
+        <Hero />
 
       {/* Featured Pasadias */}
       <section className="py-16 md:py-24 bg-white">
@@ -119,66 +160,7 @@ export default async function Home({
         </div>
       </section>
 
-      {/* Features Section — Why travel with us */}
-      <section className="py-20 md:py-28 relative overflow-hidden">
-        {/* Dark blue background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#061b35] via-primary to-[#061b35]" />
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "32px 32px" }} />
 
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          {/* Title */}
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4">
-              {t("whyUs")}
-            </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              {t("whyUsSubtitle")}
-            </p>
-          </div>
-
-          {/* Stats row */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-14">
-            {[
-              { value: "500+", label: t("stats.travelers") },
-              { value: "12+", label: t("stats.destinations") },
-              { value: "100%", label: t("stats.tailored") },
-              { value: "4 min", label: t("stats.responseTime") },
-            ].map((stat, idx) => (
-              <div
-                key={idx}
-                className="text-center py-6 px-4 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm"
-              >
-                <p className="text-3xl md:text-4xl font-bold text-accent font-heading">{stat.value}</p>
-                <p className="text-white/50 text-sm mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Feature cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {features.map((feature, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center text-center p-7 rounded-2xl bg-white/[0.05] border border-white/[0.08] backdrop-blur-sm hover:bg-white/[0.09] hover:border-accent/30 transition-all duration-300 group"
-              >
-                <div className="w-14 h-14 rounded-xl bg-accent/15 flex items-center justify-center mb-5 group-hover:bg-accent/25 transition-colors">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-bold text-white font-heading mb-2">{feature.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Scroll hint */}
-          <div className="flex justify-center mt-12">
-            <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/30 animate-bounce">
-              ↓
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials — Google Reviews */}
       <Testimonials />
@@ -203,6 +185,8 @@ export default async function Home({
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
+

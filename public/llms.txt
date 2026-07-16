@@ -1,0 +1,35 @@
+﻿# OnTour DMC Colombia — llms.txt
+# https://llmstxt.org
+
+> OnTour is a Colombian destination management company (DMC) specializing in day trips (pasadias) and multi-day circuits across Colombia for international tourists. We operate in Medellín, Bogotá, Cartagena, Santa Marta, Cali, San Andrés, and the Tolima region.
+
+## About
+- Company: OnTour Agencia de Viaje Operadora
+- Location: Colombia
+- Languages: Spanish, English, German, French
+- Services: Day trips, multi-day circuits, private guided tours, airport transfers
+
+## Key Pages
+- Homepage: https://www.agenciaontour.com
+- Day Trips (Pasadías): https://www.agenciaontour.com/en/day-trips
+- Circuits: https://www.agenciaontour.com/en/circuits
+- About Us: https://www.agenciaontour.com/en/about
+- Contact: https://www.agenciaontour.com/en/contact
+
+## Day Trips Available
+- Medellín Mágica (Medellín day trip): https://www.agenciaontour.com/en/day-trips/Medellin-Magica
+- Bogotá Tu Casa (Bogotá day trip): https://www.agenciaontour.com/en/day-trips/bogota-tu-casa-pasadia
+- Pasadías por el Tolima: https://www.agenciaontour.com/en/day-trips/cascada-la-plata-pasadia
+- Cali Es Donde Debe Estar: https://www.agenciaontour.com/en/day-trips/Cali-es-donde-debe-estar
+- Cartagena Más Heroica: https://www.agenciaontour.com/en/day-trips/Cartagena-Mas-Heroica
+- Santa Marta Naturalmente Mágica: https://www.agenciaontour.com/en/day-trips/Santa-Marta-Naturalmente-Magica
+- San Andrés: https://www.agenciaontour.com/en/day-trips/San-Andres-Islas-Vas-A-mar
+
+## Multi-day Circuits
+- Pre-Columbian South Colombia (9 days): https://www.agenciaontour.com/en/circuits/epoca-precolombina-sur-colombia
+- Heart of the Andes (13 days): https://www.agenciaontour.com/en/circuits/tour-colombia-corazon-andes
+- Boyacá Colonial (8 days): https://www.agenciaontour.com/en/circuits/tour-colombia-boyaca-colonial
+
+## Contact
+- Website: https://www.agenciaontour.com/en/contact
+- WhatsApp available for booking inquiries
