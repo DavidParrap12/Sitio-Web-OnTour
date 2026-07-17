@@ -37,8 +37,10 @@ export default async function CircuitoPage({
 
   const name = tData(`${id}.name`);
   const description = tData(`${id}.description`);
-  const highlights = tData.raw(`${id}.highlights`) as string[];
-  const itinerary = tData.raw(`${id}.itinerary`) as string[];
+  let highlights: string[] = [];
+  try { highlights = tData.raw(`${id}.highlights`) as string[]; } catch { highlights = []; }
+  let itinerary: string[] = [];
+  try { itinerary = tData.raw(`${id}.itinerary`) as string[]; } catch { itinerary = []; }
   const price = tData(`${id}.price`);
   const departureDates = await fetchDepartureDates();
   const whatsappMessage = t("whatsappMessage", { name });

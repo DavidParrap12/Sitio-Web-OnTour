@@ -36,8 +36,10 @@ export default async function PasadiaPage({
   const name = tData(`${id}.name`);
   const description = tData(`${id}.description`);
   const duration = tData(`${id}.duration`);
-  const highlights = tData.raw(`${id}.highlights`) as string[];
-  const activitiesRaw = tData.raw(`${id}.activities`);
+  let highlights: string[] = [];
+  try { highlights = tData.raw(`${id}.highlights`) as string[]; } catch { highlights = []; }
+  let activitiesRaw: unknown;
+  try { activitiesRaw = tData.raw(`${id}.activities`); } catch { activitiesRaw = []; }
   const activities = Array.isArray(activitiesRaw) ? activitiesRaw : [];
   const gallery = pasadia.gallery ?? [];
 
