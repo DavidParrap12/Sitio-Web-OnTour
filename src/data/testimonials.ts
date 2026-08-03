@@ -59,4 +59,22 @@ export const testimonials: Testimonial[] = [
     tripKey: "sandra",
     date: "2025-04-01",
   },
+  {
+    id: "review-david-parra",
+    name: "David Fernando Parra Pardo",
+    location: "Colombia",
+    rating: 5,
+    reviewKey: "davidParra",
+    tripKey: "davidParra",
+    date: "2026-07-30",
+  },
+  {
+    id: "review-jenny-hernandez",
+    name: "Jenny Hernandez",
+    location: "Colombia",
+    rating: 4,
+    reviewKey: "jennyHernandez",
+    tripKey: "jennyHernandez",
+    date: "2026-06-01",
+  },
 ];
