@@ -57,6 +57,8 @@
     "memorableCircuits": "Circuits inoubliables",
     "memorableCircuitsSubtitle": "Aventures de plusieurs jours pour les explorateurs",
     "viewAllCircuits": "Voir tous les circuits →",
+    "discoverColombia": "Découvrir la Colombie",
+    "multiDayRoutes": "Itinéraires de plusieurs jours",
     "ctaTitle": "Prêt pour votre prochaine aventure ?",
     "ctaSubtitle": "Contactez-nous dès aujourd'hui et recevez des conseils personnalisés pour planifier vos vacances de rêve ou votre excursion.",
     "ctaButton": "Demander un devis"
@@ -812,7 +814,16 @@
     "noPhotos": "Aucune photo dans cette catégorie.",
     "close": "Fermer",
     "prev": "Précédent",
-    "next": "Suivant"
+    "next": "Suivant",
+    "experienciasLabel": "Expériences",
+    "experienciasTagline": "Photos de nos voyageurs",
+    "experienciasDesc": "Moments réels vécus par ceux qui ont fait confiance à OnTour pour découvrir la Colombie.",
+    "experienciasEmptyTitle": "Soyez le premier à partager!",
+    "experienciasEmptyDesc": "Avez-vous voyagé avec nous? Envoyez-nous votre photo préférée et nous la publierons ici.",
+    "experienciasEmptyBtn": "Partager via WhatsApp",
+    "experienciasCtaTitle": "Avez-vous voyagé avec OnTour?",
+    "experienciasCtaDesc": "Partagez votre photo et rejoignez notre communauté de voyageurs.",
+    "experienciasCtaBtn": "Envoyer ma photo"
   },
   "destinosData": {
     "cascada-la-plata-pasadia": {
@@ -1235,7 +1246,129 @@
         "Carte d'assistance",
         "Mesures de biosécurité"
       ],
-      "activities": []
+      "activities": [
+        {
+          "nombre": "Tour Bahía Concha",
+          "destino": "Bahía Concha, Santa Marta",
+          "precio_desde": "$190.000 - USD 49",
+          "incluye": [
+            "Transport",
+            "Déjeuner",
+            "Guide accompagnateur",
+            "Entrée au parc",
+            "Assurance voyage"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Journée complète",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables et maillot de bain",
+          "salida": "Hôtel",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Tour Buritaca",
+          "destino": "Buritaca, Santa Marta",
+          "precio_desde": "220.000 - USD 57",
+          "incluye": [
+            "Transport",
+            "Déjeuner",
+            "Guide accompagnateur",
+            "Frais d'entrée",
+            "Assurance voyage"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Journée complète",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables et maillot de bain",
+          "salida": "Hôtel",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Tour Playa Grande",
+          "destino": "Playa Grande, Santa Marta",
+          "precio_desde": "200.000 - USD 52",
+          "incluye": [
+            "Transport",
+            "Déjeuner",
+            "Trajet en bateau aller-retour de Taganga à Playa Grande",
+            "Guide accompagnateur",
+            "Assurance voyage"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Journée complète",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables et maillot de bain",
+          "salida": "Hôtel",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Tour Parc Tayrona - Cabo San Juan",
+          "destino": "Parc Tayrona",
+          "precio_desde": "Sur demande",
+          "incluye": [
+            "Transport",
+            "Guide accompagnateur",
+            "Assurance voyage"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Journée complète",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables et maillot de bain",
+          "salida": "Hôtel",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Tour Playa Blanca",
+          "destino": "Playa Blanca, Santa Marta",
+          "precio_desde": "$200.000",
+          "incluye": [
+            "Transport en bateau",
+            "Déjeuner",
+            "Guide accompagnateur",
+            "Assurance voyage"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Journée complète",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables et maillot de bain",
+          "salida": "Hôtel",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "City Tour Nocturne",
+          "destino": "Santa Marta",
+          "precio_desde": "$60.000 - USD 16",
+          "incluye": [
+            "Bus Chiva Rumbera",
+            "Visite panoramique",
+            "Assurance voyage"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Demi-journée",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables",
+          "salida": "Hôtel",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Tour Palomino",
+          "destino": "Palomino, La Guajira",
+          "precio_desde": "$240.000 - USD 61",
+          "incluye": [
+            "Transport",
+            "Petit-déjeuner",
+            "Déjeuner",
+            "Guide accompagnateur",
+            "Assurance voyage"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "Journée complète",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Vêtements confortables et maillot de bain",
+          "salida": "Hôtel",
+          "operador": "Agence de Voyage On Tour"
+        }
+      ]
     },
     "San-Andres-Islas-Vas-A-mar": {
       "name": "Îles San Andrés, Vous allez adorer !",
@@ -1248,7 +1381,195 @@
         "Carte d'assistance",
         "Mesures de biosécurité"
       ],
-      "activities": []
+      "activities": [
+        {
+          "nombre": "Tour Johnny Cay",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - 18 USD",
+          "incluye": [
+            "Visite de l'îlot Johnny Cay"
+          ],
+          "opera": "Sur réservation préalable",
+          "duracion": "Non spécifiée",
+          "reserva": "Obligatoire",
+          "outfit": "Maillot de bain",
+          "salida": "San Andrés",
+          "restricciones": [
+            "Adultes de plus de 65 ans",
+            "Femmes enceintes",
+            "Personnes handicapées (en fauteuil roulant ou nécessitant une aide spéciale pour embarquer/débarquer)",
+            "Nourrissons (moins de 1 an)"
+          ],
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Tour Aquarium, Haynes Cay & Récif de Corail",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - USD 18",
+          "incluye": [
+            "Promenade en bateau",
+            "Visite de l'Aquarium",
+            "Haynes Cay",
+            "Mer aux 7 couleurs",
+            "Observation du récif corallien et du navire échoué"
+          ],
+          "opera": "Tous les jours (sous réserve des conditions météo)",
+          "duracion": "Demi-journée",
+          "reserva": "Jusqu'à 24 heures à l'avance",
+          "outfit": "Maillot de bain et sandales",
+          "salida": "09:00 et 14:00 - Quai",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Promenade en Bateau dans la Baie",
+          "destino": "Baie de San Andrés",
+          "precio_desde": "$120.000 - USD 18",
+          "incluye": [
+            "Croisière dans la baie",
+            "Musique en direct",
+            "Spectacle de danse à bord",
+            "Bateau à deux ponts",
+            "Meilleures vues du coucher de soleil"
+          ],
+          "opera": "Lundi, mercredi et vendredi",
+          "duracion": "2 heures",
+          "reserva": "Selon disponibilité",
+          "outfit": "Vêtements confortables",
+          "salida": "15:00",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Tour Aquarium & Haynes Cay",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - 18 USD",
+          "incluye": [
+            "Bateau aller-retour vers les îlots Aquarium et Haynes Cay",
+            "Vue sur la mer aux 7 couleurs",
+            "Observation du navire échoué"
+          ],
+          "opera": "08:30 / 09:00 / 14:00",
+          "duracion": "4 heures",
+          "reserva": "Réservation préalable requise",
+          "outfit": "Maillot de bain",
+          "salida": "San Andrés",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Kayak EcoFiwi",
+          "destino": "San Andrés",
+          "precio_desde": "$420.000 - USD 107",
+          "incluye": [
+            "Kayak",
+            "Guide",
+            "Circuit écologique",
+            "Baie et Mangroves"
+          ],
+          "no_incluye": [
+            "Taxe d'entrée (15.000 COP par personne, non incluse dans le prix ; à payer sur place)",
+            "Transfert terrestre"
+          ],
+          "opera": "Sur réservation préalable",
+          "duracion": "2 heures",
+          "reserva": "Obligatoire",
+          "outfit": "Maillot de bain",
+          "salida": "Punta Sur",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Parasail",
+          "destino": "San Andrés",
+          "precio_desde": "$460.000 - 118 USD",
+          "incluye": [
+            "Vol en parachute ascensionnel tracté par un bateau rapide",
+            "Suspendu à 100 mètres au-dessus de la mer (20 minutes)"
+          ],
+          "no_incluye": [
+            "Transfert terrestre"
+          ],
+          "opera": "09:00 / 11:00 / 14:00 / 16:00 tous les jours",
+          "duracion": "1 heure au total (20 minutes suspendu au-dessus de la mer)",
+          "reserva": "Réservation préalable requise (arriver 15 minutes à l'avance)",
+          "outfit": "Vêtements confortables",
+          "salida": "Marina de Toninos",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Yacht Rumba",
+          "destino": "Baie de San Andrés",
+          "precio_desde": "$260.000 - USD 67",
+          "incluye": [
+            "Bar ouvert",
+            "DJ",
+            "Animation",
+            "Divertissement",
+            "Piste de danse"
+          ],
+          "opera": "Lundi, mercredi, jeudi, vendredi et samedi",
+          "duracion": "3 heures",
+          "reserva": "Selon disponibilité",
+          "outfit": "Décontracté",
+          "salida": "19:30",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Snuba",
+          "destino": "San Andrés",
+          "precio_desde": "$210.000 - USD 26",
+          "incluye": [
+            "Équipement Snuba",
+            "Instructeur"
+          ],
+          "opera": "Lundi, mercredi, jeudi, vendredi et samedi",
+          "duracion": "3 heures",
+          "reserva": "Réservation préalable requise",
+          "outfit": "Maillot de bain",
+          "salida": "19:30",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Tour de l'Île en Bus Chiva",
+          "destino": "San Andrés",
+          "precio_desde": "$100.000 - USD 26",
+          "incluye": [
+            "Tour de l'île",
+            "Animation",
+            "Musique"
+          ],
+          "opera": "Tous les jours",
+          "duracion": "3 heures",
+          "reserva": "Selon disponibilité",
+          "outfit": "Vêtements confortables",
+          "salida": "08:30 et 13:50",
+          "operador": "Agence de Voyage On Tour"
+        },
+        {
+          "nombre": "Marche Sous-Marine Sea Quest",
+          "destino": "San Andrés",
+          "precio_desde": "$370.000 - 94 USD",
+          "incluye": [
+            "Marche sous-marine à 6 mètres de profondeur avec casque de plongée",
+            "Observation des statues sous-marines"
+          ],
+          "opera": "Tous les jours sur réservation préalable",
+          "duracion": "Non spécifiée",
+          "reserva": "Obligatoire",
+          "outfit": "Maillot de bain",
+          "salida": "West View",
+          "restricciones": [
+            "Femmes enceintes",
+            "Enfants de moins de 12 ans (enfants à partir de 12 ans et taille minimale de 1m40)",
+            "Problèmes cardiaques",
+            "Hypertension",
+            "Problèmes d'oreilles",
+            "Rhumes",
+            "Sinusite",
+            "Claustrophobie",
+            "Épilepsie",
+            "Problèmes de colonne vertébrale"
+          ],
+          "operador": "Agence de Voyage On Tour"
+        }
+      ]
     }
   }
 }

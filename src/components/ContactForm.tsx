@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 export function ContactForm() {
   const t = useTranslations("contactForm");
-  const [state, handleSubmit] = useForm("xqeyoyjn");
+  const [state, handleSubmit] = useForm("mojgzoqw");
 
   if (state.succeeded) {
     return (

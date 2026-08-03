@@ -3,7 +3,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionReveal } from "@/components/editorial/SectionReveal";
+import { MarqueeLogos, type LogoItem } from "@/components/editorial/MarqueeLogos";
 import { ReconocimientosGallery } from "@/components/ReconocimientosGallery";
+
+const ALIADOS: LogoItem[] = [
+  { src: "/image/logo-aliados/booking-ar21.svg",           alt: "Booking.com",                      width: 140 },
+  { src: "/image/logo-aliados/tripadvisor-seeklogo.svg",    alt: "TripAdvisor",                       width: 130 },
+  { src: "/image/logo-aliados/civitatis.svg",               alt: "Civitatis",                         width: 130 },
+  { src: "/image/logo-aliados/Logo_Tolima_Principal.png",   alt: "Explora Tolima Corazón de los Andes", width: 160, bgColor: "#1b4d2e" },
+  { src: "/image/logo-aliados/procolombia-seeklogo.png",    alt: "ProColombia",                       width: 140 },
+  { src: "/image/logo-aliados/assist-card-seeklogo.svg",    alt: "Assist Card",                       width: 120 },
+];
 
 
 interface NosotrosEditorialProps {
@@ -111,6 +121,14 @@ export function NosotrosEditorial({
         </div>
       </section>
 
+
+      {/* -- Aliados / Partners ---------------------------------- */}
+      <SectionReveal>
+        <div className="py-4">
+          <p className="label text-editorial-muted text-center pt-10 pb-2">Aliados y plataformas</p>
+          <MarqueeLogos logos={ALIADOS} speed={40} />
+        </div>
+      </SectionReveal>
 
       {/* -- Reconocimientos ------------------------------------- */}
       <section className="py-20 md:py-28 bg-white">

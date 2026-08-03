@@ -10,6 +10,7 @@ export interface GalleryImage {
   src: string;
   alt: string;
   category: string;
+  author?: string;
 }
 
 interface GalleryGridProps {

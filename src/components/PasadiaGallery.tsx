@@ -45,13 +45,13 @@ export function PasadiaGallery({ images, altPrefix }: PasadiaGalleryProps) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => openLightbox(idx)}
-            className="relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer group shadow-sm border border-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="relative aspect-[3/4] rounded-xl overflow-hidden cursor-pointer group shadow-sm border border-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/50"
           >
             <Image
               src={src}
               alt={`${altPrefix} - ${idx + 1}`}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-contain transition-transform duration-500 group-hover:scale-105 bg-gray-50"
               sizes="(max-width: 768px) 50vw, 33vw"
             />
             {/* Hover overlay */}

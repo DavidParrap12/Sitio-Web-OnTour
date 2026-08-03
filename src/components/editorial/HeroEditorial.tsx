@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import { IMAGE_SIZES } from "@/lib/design-config";
 
 interface HeroSlide {
@@ -156,9 +157,9 @@ export function HeroEditorial({
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             {actions.map((action) => (
-              <a
+              <Link
                 key={action.href}
-                href={action.href}
+                href={action.href as any}
                 className={`
                   w-full sm:w-auto flex items-center justify-center gap-2
                   px-8 py-4 rounded-full font-semibold text-lg
@@ -172,7 +173,7 @@ export function HeroEditorial({
                 `}
               >
                 {action.label}
-              </a>
+              </Link>
             ))}
           </motion.div>
         )}

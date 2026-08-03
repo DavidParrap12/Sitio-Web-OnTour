@@ -48,9 +48,14 @@ const galleryImages: (GalleryImage & GalleryImageData)[] = [
   { src: "/image/makalu-colombia-3631740.jpg", alt: "Paisaje Cafetero", category: "Eje Cafetero" },
   // Boyacá
   { src: "/image/villa de leyva.jpg", alt: "Villa de Leyva", category: "Boyacá" },
+  // Experiencias de clientes (fotos de viajeros)
+  { src: "/image/Canotaje_Rio_Fonce_10_8337700f9c.jpg", alt: "Canotaje en el Río Fonce", category: "Experiencias", author: "Familia Martínez" },
+  { src: "/image/cascade-juan-curi-colombie.jpg", alt: "Cascada Juan Curí, San Gil", category: "Experiencias", author: "Andrea R." },
+  { src: "/image/Nuquí entre ballenas – 1.jpg", alt: "Ballenas jorobadas en Nukuí", category: "Experiencias", author: "Carlos y María" },
+  { src: "/image/parque-el-gallineral-san-gil-4.jpg", alt: "Parque El Gallineral, San Gil", category: "Experiencias", author: "Grupo Bogotá 2024" },
 ];
 
-const categories = ["Tolima", "Bogotá", "Caribe", "Eje Cafetero", "Boyacá"];
+const categories = ["Tolima", "Bogotá", "Caribe", "Eje Cafetero", "Boyacá", "Experiencias"];
 
 export default async function GaleriaPage({
   params,

@@ -9,7 +9,7 @@ export interface Destino {
 export const destinos: Destino[] = [
   {
     id: "Medellin-Magica",
-    image: "/image/imagenes-pasadias/medellin.jpg",
+    image: "/image/comuna 13.jpg",
     gallery: [
       "/image/pasadias/Pasadias_por_medellin_2026/Captura-de-pantalla-2025-12-27-115519-720x1024.png",
       "/image/pasadias/Pasadias_por_medellin_2026/Captura-de-pantalla-2025-12-27-115509-717x1024.png",
@@ -22,7 +22,7 @@ export const destinos: Destino[] = [
   },
   {
     id: "bogota-tu-casa-pasadia",
-    image: "/image/imagenes-pasadias/Bogota-city.jpg",
+    image: "/image/la-candelaria.jpg",
     gallery: [
       "/image/pasadias/Pasadias_por_bogota_2026/Captura-de-pantalla-2025-12-27-121529-721x1024.png",
       "/image/pasadias/Pasadias_por_bogota_2026/Captura-de-pantalla-2025-12-27-121627-717x1024.png",
@@ -33,7 +33,7 @@ export const destinos: Destino[] = [
   },
   {
     id: "cascada-la-plata-pasadia",
-    image: "/image/Tolima-fotos/panoramica-ibague.jpeg",
+    image: "/image/rivera.jpg",
     gallery: [
       "/image/pasadias/Pasadias_por_tolima_2026/PASADIAS POR EL TOLIMA 2026_page-0001.jpg",
       "/image/pasadias/Pasadias_por_tolima_2026/PASADIAS POR EL TOLIMA 2026_page-0002.jpg",
@@ -52,7 +52,7 @@ export const destinos: Destino[] = [
   },
   {
     id: "Cali-es-donde-debe-estar",
-    image: "/image/imagenes-pasadias/Cali.jpg",
+    image: "/image/Lago-Calima-aventura.jpg",
     gallery:[
       "/image/pasadias/Pasadias_por_cali_2026/Captura-de-pantalla-2026-03-18-094216-717x1024.png", 
       "/image/pasadias/Pasadias_por_cali_2026/Captura-de-pantalla-2026-03-18-094436-721x1024.png",
@@ -64,7 +64,7 @@ export const destinos: Destino[] = [
   },
   {
     id: "Cartagena-Mas-Heroica",
-    image: "/image/imagenes-pasadias/cartagena.jpg",
+    image: "/image/amurallada-cuidad (1).jpg",
     gallery: [
       "/image/pasadias/Pasadias_por_cartagena_2026/Captura2-1-722x1024.png",
       "/image/pasadias/Pasadias_por_cartagena_2026/Captura3-1-721x1024.png",
@@ -76,7 +76,7 @@ export const destinos: Destino[] = [
   },
   {
     id: "Santa-Marta-Naturalmente-Magica",
-    image: "/image/imagenes-pasadias/santa-marta.jpg",
+    image: "/image/parque-nacional-natural.jpg",
     gallery: [
       "/image/pasadias/Pasadias_Santa_Marta_2026/Captura-de-pantalla-2025-12-29-101449-724x1024.png", 
       "/image/pasadias/Pasadias_Santa_Marta_2026/Captura-de-pantalla-2025-12-29-101503-721x1024.png", 
@@ -89,7 +89,7 @@ export const destinos: Destino[] = [
   },
   {
     id: "San-Andres-Islas-Vas-A-mar",
-    image: "/image/imagenes-pasadias/san-andres-islas.jpg",
+    image: "/image/Parque-regional-johnny-cay_0.jpg",
     gallery: [
       "/image/pasadias/Pasadias_san_andres_2026/Captura-718x1024.png",
       "/image/pasadias/Pasadias_san_andres_2026/Captura2-725x1024.png",

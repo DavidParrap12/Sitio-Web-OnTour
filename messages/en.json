@@ -57,6 +57,8 @@
     "memorableCircuits": "Unforgettable Circuits",
     "memorableCircuitsSubtitle": "Multi-day adventures for explorers",
     "viewAllCircuits": "See all circuits →",
+    "discoverColombia": "Discover Colombia",
+    "multiDayRoutes": "Multi-day routes",
     "ctaTitle": "Ready for your next adventure?",
     "ctaSubtitle": "Contact us today and receive personalized advice to plan your dream vacation or day trip.",
     "ctaButton": "Get a Quote"
@@ -812,7 +814,16 @@
     "noPhotos": "No photos in this category.",
     "close": "Close",
     "prev": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "experienciasLabel": "Experiences",
+    "experienciasTagline": "Photos from our travelers",
+    "experienciasDesc": "Real moments lived by those who trusted OnTour to discover Colombia.",
+    "experienciasEmptyTitle": "Be the first to share!",
+    "experienciasEmptyDesc": "Did you travel with us? Send us your favorite photo and we'll publish it here.",
+    "experienciasEmptyBtn": "Share via WhatsApp",
+    "experienciasCtaTitle": "Did you travel with OnTour?",
+    "experienciasCtaDesc": "Share your photo and become part of our traveler community.",
+    "experienciasCtaBtn": "Send my photo"
   },
   "destinosData": {
     "cascada-la-plata-pasadia": {
@@ -1547,7 +1558,129 @@
         "Assistance card",
         "Biosecurity measures"
       ],
-      "activities": []
+      "activities": [
+        {
+          "nombre": "Bahía Concha Tour",
+          "destino": "Bahía Concha, Santa Marta",
+          "precio_desde": "$190.000 - USD 49",
+          "incluye": [
+            "Transportation",
+            "Lunch",
+            "Tour guide",
+            "Park entrance",
+            "Travel insurance"
+          ],
+          "opera": "Every day",
+          "duracion": "Full day",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothing and swimwear",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Buritaca Tour",
+          "destino": "Buritaca, Santa Marta",
+          "precio_desde": "220.000 - USD 57",
+          "incluye": [
+            "Transportation",
+            "Lunch",
+            "Tour guide",
+            "Entrance fees",
+            "Travel insurance"
+          ],
+          "opera": "Every day",
+          "duracion": "Full day",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothing and swimwear",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Playa Grande Tour",
+          "destino": "Playa Grande, Santa Marta",
+          "precio_desde": "200.000 - USD 52",
+          "incluye": [
+            "Transportation",
+            "Lunch",
+            "Round-trip boat from Taganga to Playa Grande",
+            "Tour guide",
+            "Travel insurance"
+          ],
+          "opera": "Every day",
+          "duracion": "Full day",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothing and swimwear",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Tayrona Park - Cabo San Juan Tour",
+          "destino": "Tayrona Park",
+          "precio_desde": "Inquire",
+          "incluye": [
+            "Transportation",
+            "Tour guide",
+            "Travel insurance"
+          ],
+          "opera": "Every day",
+          "duracion": "Full day",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothing and swimwear",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Playa Blanca Tour",
+          "destino": "Playa Blanca, Santa Marta",
+          "precio_desde": "$200.000",
+          "incluye": [
+            "Boat transportation",
+            "Lunch",
+            "Tour guide",
+            "Travel insurance"
+          ],
+          "opera": "Every day",
+          "duracion": "Full day",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothing and swimwear",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Night City Tour",
+          "destino": "Santa Marta",
+          "precio_desde": "$60.000 - USD 16",
+          "incluye": [
+            "Chiva rumbera bus",
+            "Panoramic tour",
+            "Travel insurance"
+          ],
+          "opera": "Every day",
+          "duracion": "Half day",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothing",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Palomino Tour",
+          "destino": "Palomino, La Guajira",
+          "precio_desde": "$240.000 - USD 61",
+          "incluye": [
+            "Transportation",
+            "Breakfast",
+            "Lunch",
+            "Tour guide",
+            "Travel insurance"
+          ],
+          "opera": "Every day",
+          "duracion": "Full day",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Comfortable clothing and swimwear",
+          "salida": "Hotel",
+          "operador": "On Tour Travel Agency"
+        }
+      ]
     },
     "San-Andres-Islas-Vas-A-mar": {
       "name": "San Andrés Islands, You will Love it!",
@@ -1560,7 +1693,195 @@
         "Assistance card",
         "Biosecurity measures"
       ],
-      "activities": []
+      "activities": [
+        {
+          "nombre": "Johnny Cay Tour",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - 18 USD",
+          "incluye": [
+            "Visit to Johnny Cay"
+          ],
+          "opera": "By prior reservation",
+          "duracion": "Not specified",
+          "reserva": "Mandatory",
+          "outfit": "Swimwear",
+          "salida": "San Andrés",
+          "restricciones": [
+            "Adults over 65 years old",
+            "Pregnant women",
+            "People with disabilities (wheelchair users or those requiring special assistance to board/disembark)",
+            "Infants (under 1 year old)"
+          ],
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Aquarium, Haynes Cay & Coral Reef Tour",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - USD 18",
+          "incluye": [
+            "Boat tour",
+            "Aquarium visit",
+            "Haynes Cay",
+            "Sea of 7 colors",
+            "Coral reef and sunken ship sighting"
+          ],
+          "opera": "Every day (subject to weather conditions)",
+          "duracion": "Half day",
+          "reserva": "Up to 24 hours in advance",
+          "outfit": "Swimwear and sandals",
+          "salida": "9:00 AM and 2:00 PM - Dock",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Bay Boat Tour",
+          "destino": "San Andrés Bay",
+          "precio_desde": "$120.000 - USD 18",
+          "incluye": [
+            "Bay cruise",
+            "Live music",
+            "Dance show on board",
+            "Double-decker boat",
+            "Best sunset views"
+          ],
+          "opera": "Monday, Wednesday and Friday",
+          "duracion": "2 hours",
+          "reserva": "Subject to availability",
+          "outfit": "Casual clothing",
+          "salida": "3:00 PM",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Aquarium & Haynes Cay Tour",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - 18 USD",
+          "incluye": [
+            "Round-trip boat to Aquarium and Haynes Cay",
+            "View of the sea of 7 colors",
+            "Sunken ship sighting"
+          ],
+          "opera": "8:30 AM / 9:00 AM / 2:00 PM",
+          "duracion": "4 hours",
+          "reserva": "Prior reservation required",
+          "outfit": "Swimwear",
+          "salida": "San Andrés",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "EcoFiwi Kayaks",
+          "destino": "San Andrés",
+          "precio_desde": "$420.000 - USD 107",
+          "incluye": [
+            "Kayak",
+            "Guide",
+            "Ecological tour",
+            "Bay and Mangroves"
+          ],
+          "no_incluye": [
+            "Entry tax ($15.000 COP per person, not included in the price; paid on site)",
+            "Ground transfer"
+          ],
+          "opera": "By prior reservation",
+          "duracion": "2 hours",
+          "reserva": "Mandatory",
+          "outfit": "Swimwear",
+          "salida": "Punta Sur",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Parasail",
+          "destino": "San Andrés",
+          "precio_desde": "$460.000 - 118 USD",
+          "incluye": [
+            "Parasail flight towed by a speedboat",
+            "Suspended 100 meters above the sea (20 minutes)"
+          ],
+          "no_incluye": [
+            "Ground transfer"
+          ],
+          "opera": "9:00 AM / 11:00 AM / 2:00 PM / 4:00 PM every day",
+          "duracion": "1 hour total (20 minutes suspended over the sea)",
+          "reserva": "Prior reservation required (arrive 15 minutes early)",
+          "outfit": "Casual clothing",
+          "salida": "Marina de Toninos",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Rumba Yacht",
+          "destino": "San Andrés Bay",
+          "precio_desde": "$260.000 - USD 67",
+          "incluye": [
+            "Open bar",
+            "DJ",
+            "Entertainment",
+            "Recreation",
+            "Dance floor"
+          ],
+          "opera": "Monday, Wednesday, Thursday, Friday and Saturday",
+          "duracion": "3 hours",
+          "reserva": "Subject to availability",
+          "outfit": "Casual",
+          "salida": "7:30 PM",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Snuba",
+          "destino": "San Andrés",
+          "precio_desde": "$210.000 - USD 26",
+          "incluye": [
+            "Snuba equipment",
+            "Instructor"
+          ],
+          "opera": "Monday, Wednesday, Thursday, Friday and Saturday",
+          "duracion": "3 hours",
+          "reserva": "Prior reservation required",
+          "outfit": "Swimwear",
+          "salida": "7:30 PM",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Island Tour by Chiva Bus",
+          "destino": "San Andrés",
+          "precio_desde": "$100.000 - USD 26",
+          "incluye": [
+            "Island tour",
+            "Entertainment",
+            "Music"
+          ],
+          "opera": "Every day",
+          "duracion": "3 hours",
+          "reserva": "Subject to availability",
+          "outfit": "Casual clothing",
+          "salida": "8:30 AM and 1:50 PM",
+          "operador": "On Tour Travel Agency"
+        },
+        {
+          "nombre": "Sea Quest Underwater Walk",
+          "destino": "San Andrés",
+          "precio_desde": "$370.000 - 94 USD",
+          "incluye": [
+            "Underwater walk at 6 meters depth with diving helmet",
+            "Observation of underwater statues"
+          ],
+          "opera": "Every day with prior reservation",
+          "duracion": "Not specified",
+          "reserva": "Mandatory",
+          "outfit": "Swimwear",
+          "salida": "West View",
+          "restricciones": [
+            "Pregnant women",
+            "Children under 12 years old (children from 12 years and minimum height of 1.40 m)",
+            "Heart conditions",
+            "High blood pressure",
+            "Ear problems",
+            "Colds",
+            "Sinusitis",
+            "Claustrophobia",
+            "Epilepsy",
+            "Spinal problems"
+          ],
+          "operador": "On Tour Travel Agency"
+        }
+      ]
     }
   }
 }

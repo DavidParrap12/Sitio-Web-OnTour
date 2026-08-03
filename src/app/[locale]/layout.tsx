@@ -53,13 +53,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = metadataByLocale[locale] ?? metadataByLocale.es;
 
   return {
-    metadataBase: new URL("https://www.agenciaontour.com"),
+    metadataBase: new URL("https://www.ontourdmc.com"),
     title: t.title,
     description: t.description,
     openGraph: {
       title: t.ogTitle,
       description: t.ogDesc,
-      url: "https://www.agenciaontour.com",
+      url: "https://www.ontourdmc.com",
       siteName: "Ontour DMC Colombia",
       images: [{ url: "/image/logo-ON-TOUR-Nuevo.png" }],
       locale: t.ogLocale,

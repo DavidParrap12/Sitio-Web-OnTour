@@ -57,6 +57,8 @@
     "memorableCircuits": "Circuitos Inolvidables",
     "memorableCircuitsSubtitle": "Aventuras de varios días para exploradores",
     "viewAllCircuits": "Ver todos los circuitos →",
+    "discoverColombia": "Descubre Colombia",
+    "multiDayRoutes": "Rutas de varios días",
     "ctaTitle": "¿Listo para tu próxima aventura?",
     "ctaSubtitle": "Contáctanos hoy mismo y recibe una asesoría personalizada para planear tus vacaciones o pasadía soñado.",
     "ctaButton": "Cotiza con Nosotros"
@@ -812,7 +814,16 @@
     "noPhotos": "No hay fotos en esta categoría.",
     "close": "Cerrar",
     "prev": "Anterior",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "experienciasLabel": "Experiencias",
+    "experienciasTagline": "Fotos de nuestros viajeros",
+    "experienciasDesc": "Momentos reales vividos por quienes confiaron en OnTour para descubrir Colombia.",
+    "experienciasEmptyTitle": "¡Sé el primero en compartir!",
+    "experienciasEmptyDesc": "¿Viajaste con nosotros? Envíanos tu foto favorita y la publicamos aquí.",
+    "experienciasEmptyBtn": "Compartir por WhatsApp",
+    "experienciasCtaTitle": "¿Viajaste con OnTour?",
+    "experienciasCtaDesc": "Comparte tu foto y forma parte de nuestra comunidad de viajeros.",
+    "experienciasCtaBtn": "Enviar mi foto"
   },
   "destinosData": {
     "cascada-la-plata-pasadia": {
@@ -1547,7 +1558,113 @@
         "Tarjeta de asistencia",
         "Medidas de bioseguridad"
       ],
-      "activities": []
+      "activities": [
+        {
+          "nombre": "Tour Bahía Concha",
+          "destino": "Bahía Concha, Santa Marta",
+          "precio_desde": "$190.000 - USD 49",
+          "incluye": [
+            "Transporte",
+            "Almuerzo",
+            "Guía acompañante",
+            "Entradas al parque",
+            "Seguro de viaje"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "outfit": "Ropa cómoda y ropa de baño",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Buritaca",
+          "destino": "Buritaca, Santa Marta",
+          "precio_desde": "220.000 - USD 57",
+          "incluye": [
+            "Transporte",
+            "Almuerzo",
+            "Guía acompañante",
+            "Entradas",
+            "Seguro de viaje"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "outfit": "Ropa cómoda y ropa de baño",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Playa Grande",
+          "destino": "Playa Grande, Santa Marta",
+          "precio_desde": "200.000 - USD 52",
+          "incluye": [
+            "Transporte",
+            "Almuerzo",
+            "Transporte en lancha desde Taganga a Playa Grande ida y vuelta",
+            "Guía acompañante",
+            "Seguro de viaje"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "outfit": "Ropa cómoda y ropa de baño",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Playa Blanca",
+          "destino": "Playa Blanca, Santa Marta",
+          "precio_desde": "$200.000",
+          "incluye": [
+            "Transporte en lancha",
+            "Almuerzo",
+            "Guía acompañante",
+            "Seguro de viaje"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "outfit": "Ropa cómoda y ropa de baño",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "City Tour Nocturno",
+          "destino": "Santa Marta",
+          "precio_desde": "$60.000 - USD 16",
+          "incluye": [
+            "Transporte en chiva rumbera",
+            "Recorrido panorámico",
+            "Seguro de viaje"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "outfit": "Ropa cómoda",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Palomino",
+          "destino": "Palomino, La Guajira",
+          "precio_desde": "$240.000 - USD 61",
+          "incluye": [
+            "Transporte",
+            "Desayuno",
+            "Almuerzo",
+            "Guía acompañante",
+            "Seguro de viaje"
+          ],
+          "opera": "Todos los días",
+          "duracion": "Pasadía",
+          "reserva": "Hasta 24 horas de antelación",
+          "outfit": "Ropa cómoda y ropa de baño",
+          "salida": "Hotel",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        }
+      ]
     },
     "San-Andres-Islas-Vas-A-mar": {
       "name": "San Andrés Islas, ¡Vas a Mar!",
@@ -1560,7 +1677,195 @@
         "Tarjeta de asistencia",
         "Medidas de bioseguridad"
       ],
-      "activities": []
+      "activities": [
+        {
+          "nombre": "Tour Johnny Cay",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - 18 USD",
+          "incluye": [
+            "Visita al cayo de Johnny Cay"
+          ],
+          "opera": "Con reserva previa",
+          "duracion": "No especificada",
+          "reserva": "Obligatoria",
+          "outfit": "Ropa de baño",
+          "salida": "San Andrés",
+          "restricciones": [
+            "Adultos mayores de 65 años",
+            "Mujeres en estado de embarazo",
+            "Personas con discapacidad (sillas de rueda o que requieran ayuda especial para subir o bajar de embarcación)",
+            "Niños de brazos (menores de 1 año)"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Acuario, Haynes Cay y Avistamiento de Barrera Coralina",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - USD 18",
+          "incluye": [
+            "Recorrido en lancha",
+            "Visita al Acuario",
+            "Haynes Cay",
+            "Isla del mar de 7 colores",
+            "Barrera coralina y el barco encallado"
+          ],
+          "opera": "Todos los días (según condiciones climáticas)",
+          "duracion": "Medio día",
+          "reserva": "Hasta 24 horas antes",
+          "outfit": "Ropa de baño y sandalias",
+          "salida": "9:00 AM y 2:00 PM - Muelle",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Bahía en Barco",
+          "destino": "Bahía de San Andrés",
+          "precio_desde": "$120.000 - USD 18",
+          "incluye": [
+            "Recorrido por la bahía",
+            "Música en vivo",
+            "Show de bailes a bordo",
+            "Barco de doble piso",
+            "Mejores vistas del atardecer"
+          ],
+          "opera": "Lunes, miércoles y viernes",
+          "duracion": "2 horas",
+          "reserva": "Según disponibilidad",
+          "outfit": "Ropa cómoda",
+          "salida": "3:00 PM",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Tour Acuario & Hayness Cay",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - 18 USD",
+          "incluye": [
+            "Recorrida ida y vuelta hacia los cayos Acuario y Hayness Cay",
+            "Paisaje del mar de los 7 Colores",
+            "Avistamiento de barco encallado"
+          ],
+          "opera": "8:30 am / 9:00 am / 2:00 pm",
+          "duracion": "4 horas",
+          "reserva": "Con reserva previa",
+          "outfit": "Ropa de baño",
+          "salida": "San Andrés",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Kayaks EcoFiwi",
+          "destino": "San Andrés",
+          "precio_desde": "$420.000 - USD 107",
+          "incluye": [
+            "Kayak",
+            "Guía",
+            "Recorrido ecológico",
+            "Bahía y Manglares"
+          ],
+          "no_incluye": [
+            "Impuesto de entrada ($15.000 COP por persona, no incluido en el precio; se paga en el lugar)",
+            "Traslado terrestre"
+          ],
+          "opera": "Con reserva previa",
+          "duracion": "2 horas",
+          "reserva": "Obligatoria",
+          "outfit": "Ropa de baño",
+          "salida": "Punta Sur",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Parasai",
+          "destino": "San Andrés",
+          "precio_desde": "$460.000 - 118 USD",
+          "incluye": [
+            "Vuelo en Paracidas halado por una lancha rápida",
+            "Suspendido 100 metros sobre el mar (20 minutos)"
+          ],
+          "no_incluye": [
+            "Traslado terrestre"
+          ],
+          "opera": "9:00 AM. / 11:00 AM. / 2:00 PM. / 4:00 PM. todos los días",
+          "duracion": "1 hora de recorrido total (20 minutos suspendido sobre el mar)",
+          "reserva": "Con previa reserva (presentarse con 15 minutos de anticipación)",
+          "outfit": "Ropa cómoda",
+          "salida": "Marina de Toninos",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Yate Rumba",
+          "destino": "Bahía de San Andrés",
+          "precio_desde": "$260.000 - USD 67",
+          "incluye": [
+            "Barra libre",
+            "DJ",
+            "Animación",
+            "Recreación",
+            "Pista de baile"
+          ],
+          "opera": "Lunes, miércoles, jueves, viernes y sábados",
+          "duracion": "3 horas",
+          "reserva": "Según disponibilidad",
+          "outfit": "Casual",
+          "salida": "7:30 PM",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Snuba",
+          "destino": "San Andrés",
+          "precio_desde": "$210.000 - USD 26",
+          "incluye": [
+            "Equipo Snuba",
+            "Instructor"
+          ],
+          "opera": "Lunes, miércoles, jueves, viernes y sábados",
+          "duracion": "3 horas",
+          "reserva": "Con anticipación",
+          "outfit": "Ropa de baño",
+          "salida": "7:30 PM",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Vuelta a la Isla en Chiva",
+          "destino": "San Andrés",
+          "precio_desde": "$100.000 - USD 26",
+          "incluye": [
+            "Recorrido por la isla",
+            "Animación",
+            "Música"
+          ],
+          "opera": "Todos los días",
+          "duracion": "3 horas",
+          "reserva": "Según disponibilidad",
+          "outfit": "Ropa cómoda",
+          "salida": "8:30 AM y 1:50 PM",
+          "operador": "On Tour Agencia de Viaje Operadora"
+        },
+        {
+          "nombre": "Caminata Submarina Sea Quest",
+          "destino": "San Andrés",
+          "precio_desde": "$370.000 - 94 USD",
+          "incluye": [
+            "Caminata acuática en el fondo del mar a 6 metros de profundidad con escafandra",
+            "Observación de estatuas en el fondo del mar"
+          ],
+          "opera": "Todos los días con reserva previa",
+          "duracion": "No especificada",
+          "reserva": "Obligatoria",
+          "outfit": "Ropa de baño",
+          "salida": "West View",
+          "restricciones": [
+            "Mujeres embarazadas",
+            "Niños menores de 12 años (niños a partir de 12 años y estatura mínima de 1:40 metros)",
+            "Problemas cardíacos",
+            "Hipertensos",
+            "Problemas de oídos",
+            "Gripas",
+            "Sinusitis",
+            "Claustrofobia",
+            "Epilepsia",
+            "Problemas de columna"
+          ],
+          "operador": "On Tour Agencia de Viaje Operadora"
+        }
+      ]
     }
   }
 }

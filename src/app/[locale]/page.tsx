@@ -55,6 +55,9 @@ export default async function Home({
       memorableCircuitsSubtitle: t("memorableCircuitsSubtitle"),
       viewAllCircuits: t("viewAllCircuits"),
 
+      discoverColombia: t("discoverColombia"),
+      multiDayRoutes: t("multiDayRoutes"),
+
       ctaTitle: t("ctaTitle"),
       ctaSubtitle: t("ctaSubtitle"),
       ctaButton: t("ctaButton"),

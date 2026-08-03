@@ -57,6 +57,8 @@
     "memorableCircuits": "Unvergessliche Rundreisen",
     "memorableCircuitsSubtitle": "Mehrtägige Abenteuer für Entdecker",
     "viewAllCircuits": "Alle Rundreisen ansehen →",
+    "discoverColombia": "Kolumbien entdecken",
+    "multiDayRoutes": "Mehrtägige Routen",
     "ctaTitle": "Bereit für Ihr nächstes Abenteuer?",
     "ctaSubtitle": "Kontaktieren Sie uns noch heute und erhalten Sie eine persönliche Beratung für Ihren Traumurlaub oder Tagesausflug.",
     "ctaButton": "Angebot anfordern"
@@ -1261,7 +1263,129 @@
         "Typische karibische Küche",
         "Unfallversicherung"
       ],
-      "activities": []
+      "activities": [
+        {
+          "nombre": "Bahía Concha Tour",
+          "destino": "Bahía Concha, Santa Marta",
+          "precio_desde": "$190.000 - USD 49",
+          "incluye": [
+            "Transport",
+            "Mittagessen",
+            "Reiseleiter",
+            "Eintritt in den Nationalpark",
+            "Reiseversicherung"
+          ],
+          "opera": "Täglich",
+          "duracion": "Ganztag",
+          "reserva": "Bis zu 24 Stunden im Voraus",
+          "outfit": "Bequeme Kleidung und Badebekleidung",
+          "salida": "Hotel",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Buritaca Tour",
+          "destino": "Buritaca, Santa Marta",
+          "precio_desde": "220.000 - USD 57",
+          "incluye": [
+            "Transport",
+            "Mittagessen",
+            "Reiseleiter",
+            "Eintrittsgelder",
+            "Reiseversicherung"
+          ],
+          "opera": "Täglich",
+          "duracion": "Ganztag",
+          "reserva": "Bis zu 24 Stunden im Voraus",
+          "outfit": "Bequeme Kleidung und Badebekleidung",
+          "salida": "Hotel",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Playa Grande Tour",
+          "destino": "Playa Grande, Santa Marta",
+          "precio_desde": "200.000 - USD 52",
+          "incluye": [
+            "Transport",
+            "Mittagessen",
+            "Bootsfahrt hin und zurück von Taganga nach Playa Grande",
+            "Reiseleiter",
+            "Reiseversicherung"
+          ],
+          "opera": "Täglich",
+          "duracion": "Ganztag",
+          "reserva": "Bis zu 24 Stunden im Voraus",
+          "outfit": "Bequeme Kleidung und Badebekleidung",
+          "salida": "Hotel",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Tayrona Park - Cabo San Juan Tour",
+          "destino": "Tayrona Nationalpark",
+          "precio_desde": "Auf Anfrage",
+          "incluye": [
+            "Transport",
+            "Reiseleiter",
+            "Reiseversicherung"
+          ],
+          "opera": "Täglich",
+          "duracion": "Ganztag",
+          "reserva": "Bis zu 24 Stunden im Voraus",
+          "outfit": "Bequeme Kleidung und Badebekleidung",
+          "salida": "Hotel",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Playa Blanca Tour",
+          "destino": "Playa Blanca, Santa Marta",
+          "precio_desde": "$200.000",
+          "incluye": [
+            "Bootstransport",
+            "Mittagessen",
+            "Reiseleiter",
+            "Reiseversicherung"
+          ],
+          "opera": "Täglich",
+          "duracion": "Ganztag",
+          "reserva": "Bis zu 24 Stunden im Voraus",
+          "outfit": "Bequeme Kleidung und Badebekleidung",
+          "salida": "Hotel",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Nacht-Stadtrundfahrt",
+          "destino": "Santa Marta",
+          "precio_desde": "$60.000 - USD 16",
+          "incluye": [
+            "Chiva Rumbera Bus",
+            "Panoramatour",
+            "Reiseversicherung"
+          ],
+          "opera": "Täglich",
+          "duracion": "Halbtag",
+          "reserva": "Bis zu 24 Stunden im Voraus",
+          "outfit": "Bequeme Kleidung",
+          "salida": "Hotel",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Palomino Tour",
+          "destino": "Palomino, La Guajira",
+          "precio_desde": "$240.000 - USD 61",
+          "incluye": [
+            "Transport",
+            "Frühstück",
+            "Mittagessen",
+            "Reiseleiter",
+            "Reiseversicherung"
+          ],
+          "opera": "Täglich",
+          "duracion": "Ganztag",
+          "reserva": "Bis zu 24 Stunden im Voraus",
+          "outfit": "Bequeme Kleidung und Badebekleidung",
+          "salida": "Hotel",
+          "operador": "On Tour Reiseagentur"
+        }
+      ]
     },
     "San-Andres-Islas-Vas-A-mar": {
       "name": "San Andrés Inseln, Meer erleben",
@@ -1274,7 +1398,195 @@
         "Typische Raizal-Küche",
         "Unfallversicherung"
       ],
-      "activities": []
+      "activities": [
+        {
+          "nombre": "Johnny Cay Tour",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - 18 USD",
+          "incluye": [
+            "Besuch der Insel Johnny Cay"
+          ],
+          "opera": "Mit Vorreservierung",
+          "duracion": "Nicht angegeben",
+          "reserva": "Erforderlich",
+          "outfit": "Badebekleidung",
+          "salida": "San Andrés",
+          "restricciones": [
+            "Erwachsene über 65 Jahre",
+            "Schwangere Frauen",
+            "Personen mit Behinderungen (Rollstuhlfahrer oder Personen, die besondere Hilfe beim Ein-/Aussteigen benötigen)",
+            "Kleinkinder (unter 1 Jahr)"
+          ],
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Aquarium, Haynes Cay & Korallenriff Tour",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - USD 18",
+          "incluye": [
+            "Bootsfahrt",
+            "Besuch des Aquariums",
+            "Haynes Cay",
+            "Meer der 7 Farben",
+            "Sichtung des Korallenriffs und des gestrandeten Schiffes"
+          ],
+          "opera": "Täglich (wetterabhängig)",
+          "duracion": "Halbtag",
+          "reserva": "Bis zu 24 Stunden im Voraus",
+          "outfit": "Badebekleidung und Sandalen",
+          "salida": "09:00 Uhr und 14:00 Uhr - Pier",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Bucht-Bootsfahrt",
+          "destino": "Bucht von San Andrés",
+          "precio_desde": "$120.000 - USD 18",
+          "incluye": [
+            "Bootsfahrt durch die Bucht",
+            "Live-Musik",
+            "Tanzshow an Bord",
+            "Doppeldeckerboot",
+            "Beste Aussicht auf den Sonnenuntergang"
+          ],
+          "opera": "Montag, Mittwoch und Freitag",
+          "duracion": "2 Stunden",
+          "reserva": "Nach Verfügbarkeit",
+          "outfit": "Bequeme Kleidung",
+          "salida": "15:00 Uhr",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Aquarium & Haynes Cay Tour",
+          "destino": "San Andrés",
+          "precio_desde": "$70.000 - 18 USD",
+          "incluye": [
+            "Hin- und Rückfahrt mit dem Boot zu den Inseln Aquarium und Haynes Cay",
+            "Aussicht auf das Meer der 7 Farben",
+            "Sichtung des gestrandeten Schiffes"
+          ],
+          "opera": "08:30 Uhr / 09:00 Uhr / 14:00 Uhr",
+          "duracion": "4 Stunden",
+          "reserva": "Vorreservierung erforderlich",
+          "outfit": "Badebekleidung",
+          "salida": "San Andrés",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "EcoFiwi Kajaktour",
+          "destino": "San Andrés",
+          "precio_desde": "$420.000 - USD 107",
+          "incluye": [
+            "Kajak",
+            "Guide",
+            "Öko-Tour",
+            "Bucht und Mangroven"
+          ],
+          "no_incluye": [
+            "Eintrittssteuer ($15.000 COP pro Person, nicht im Preis inbegriffen; vor Ort zu zahlen)",
+            "Landtransfer"
+          ],
+          "opera": "Mit Vorreservierung",
+          "duracion": "2 Stunden",
+          "reserva": "Erforderlich",
+          "outfit": "Badebekleidung",
+          "salida": "Punta Sur",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Parasailing",
+          "destino": "San Andrés",
+          "precio_desde": "$460.000 - 118 USD",
+          "incluye": [
+            "Parasailing-Flug, gezogen von einem Schnellboot",
+            "100 Meter über dem Meer schwebend (20 Minuten)"
+          ],
+          "no_incluye": [
+            "Landtransfer"
+          ],
+          "opera": "Täglich 09:00 / 11:00 / 14:00 / 16:00 Uhr",
+          "duracion": "1 Stunde Gesamtdauer (20 Minuten über dem Meer)",
+          "reserva": "Vorreservierung erforderlich (15 Minuten vorher erscheinen)",
+          "outfit": "Bequeme Kleidung",
+          "salida": "Marina de Toninos",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Rumba-Yacht",
+          "destino": "Bucht von San Andrés",
+          "precio_desde": "$260.000 - USD 67",
+          "incluye": [
+            "Open Bar",
+            "DJ",
+            "Unterhaltung",
+            "Animation",
+            "Tanzfläche"
+          ],
+          "opera": "Montag, Mittwoch, Donnerstag, Freitag und Samstag",
+          "duracion": "3 Stunden",
+          "reserva": "Nach Verfügbarkeit",
+          "outfit": "Leger",
+          "salida": "19:30 Uhr",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Snuba",
+          "destino": "San Andrés",
+          "precio_desde": "$210.000 - USD 26",
+          "incluye": [
+            "Snuba-Ausrüstung",
+            "Instructor"
+          ],
+          "opera": "Montag, Mittwoch, Donnerstag, Freitag und Samstag",
+          "duracion": "3 Stunden",
+          "reserva": "Vorreservierung erforderlich",
+          "outfit": "Badebekleidung",
+          "salida": "19:30 Uhr",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Inselrundfahrt mit dem Chiva-Bus",
+          "destino": "San Andrés",
+          "precio_desde": "$100.000 - USD 26",
+          "incluye": [
+            "Inselrundfahrt",
+            "Unterhaltung",
+            "Musik"
+          ],
+          "opera": "Täglich",
+          "duracion": "3 Stunden",
+          "reserva": "Nach Verfügbarkeit",
+          "outfit": "Bequeme Kleidung",
+          "salida": "08:30 Uhr und 13:50 Uhr",
+          "operador": "On Tour Reiseagentur"
+        },
+        {
+          "nombre": "Sea Quest Unterwasser-Spaziergang",
+          "destino": "San Andrés",
+          "precio_desde": "$370.000 - 94 USD",
+          "incluye": [
+            "Unterwasser-Spaziergang in 6 Metern Tiefe mit Taucherhelm",
+            "Beobachtung von Unterwasserstatuen"
+          ],
+          "opera": "Täglich mit Vorreservierung",
+          "duracion": "Nicht angegeben",
+          "reserva": "Erforderlich",
+          "outfit": "Badebekleidung",
+          "salida": "West View",
+          "restricciones": [
+            "Schwangere Frauen",
+            "Kinder unter 12 Jahren (Kinder ab 12 Jahren und Mindestgröße 1,40 m)",
+            "Herzerkrankungen",
+            "Bluthochdruck",
+            "Ohrenprobleme",
+            "Erkältungen",
+            "Sinusitis",
+            "Klaustrophobie",
+            "Epilepsie",
+            "Wirbelsäulenprobleme"
+          ],
+          "operador": "On Tour Reiseagentur"
+        }
+      ]
     }
   },
   "testimonials": {
@@ -1473,6 +1785,15 @@
     "noPhotos": "Keine Fotos in dieser Kategorie.",
     "close": "Schließen",
     "prev": "Zurück",
-    "next": "Weiter"
+    "next": "Weiter",
+    "experienciasLabel": "Erlebnisse",
+    "experienciasTagline": "Fotos unserer Reisenden",
+    "experienciasDesc": "Echte Momente, erlebt von Menschen, die OnTour vertrauten, um Kolumbien zu entdecken.",
+    "experienciasEmptyTitle": "Seien Sie der Erste!",
+    "experienciasEmptyDesc": "Haben Sie mit uns gereist? Schicken Sie uns Ihr Lieblingsfoto und wir veröffentlichen es hier.",
+    "experienciasEmptyBtn": "Per WhatsApp teilen",
+    "experienciasCtaTitle": "Haben Sie mit OnTour gereist?",
+    "experienciasCtaDesc": "Teilen Sie Ihr Foto und werden Sie Teil unserer Reisenden-Community.",
+    "experienciasCtaBtn": "Mein Foto senden"
   }
 }

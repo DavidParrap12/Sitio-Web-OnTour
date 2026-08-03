@@ -74,7 +74,19 @@ export function Testimonials() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-editorial-warm relative overflow-hidden">
+    <section className="pb-32 pt-16 md:pb-40 md:pt-24 bg-editorial-warm relative overflow-hidden">
+      {/* Gradiente entrada: white → editorial-warm */}
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-0 right-0 h-20 pointer-events-none z-10"
+        style={{ background: "linear-gradient(to bottom, #ffffff, transparent)" }}
+      />
+      {/* Gradiente salida: editorial-warm → dark */}
+      <div
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none z-10"
+        style={{ background: "linear-gradient(to bottom, transparent, #0a1628)" }}
+      />
       {/* Subtle pattern background */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,6 +10,8 @@ interface Activity {
   destino: string;
   precio_desde: number | string | null;
   incluye: string[];
+  no_incluye?: string[];
+  restricciones?: string[];
   reserva?: string;
   opera?: string;
   tipo?: string;
@@ -130,6 +132,32 @@ export function ActivityStrips({ activities, coverImage, t }: ActivityStripsProp
                             </li>
                           ))}
                         </ul>
+                        {act.no_incluye && act.no_incluye.length > 0 && (
+                          <div className="mt-4">
+                            <h4 className="label text-amber-700 mb-2">{t.notIncludes || "No incluye / Adicionales"}</h4>
+                            <ul className="space-y-1.5">
+                              {act.no_incluye.map((item, j) => (
+                                <li key={j} className="flex items-start gap-2.5 text-xs md:text-sm text-editorial-muted">
+                                  <span className="mt-[5px] shrink-0 w-3.5 h-3.5 rounded-full bg-amber-100 border border-amber-300 text-amber-800 flex items-center justify-center font-bold text-[10px]">!</span>
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                        {act.restricciones && act.restricciones.length > 0 && (
+                          <div className="mt-4">
+                            <h4 className="label text-rose-700 mb-2">{t.restrictions || "Restricciones / No apto para"}</h4>
+                            <ul className="space-y-1.5">
+                              {act.restricciones.map((item, j) => (
+                                <li key={j} className="flex items-start gap-2.5 text-xs md:text-sm text-rose-800">
+                                  <span className="mt-[5px] shrink-0 w-3.5 h-3.5 rounded-full bg-rose-100 border border-rose-300 text-rose-700 flex items-center justify-center font-bold text-[10px]">✕</span>
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                         {(act.reserva || act.salida || act.outfit || act.opera) && (
                           <div className="flex flex-wrap gap-2 mt-5">
                             {act.reserva && (

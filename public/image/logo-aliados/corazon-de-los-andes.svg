@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" fill="none">
+  <!-- Heart/mountain icon -->
+  <path d="M14 28 C14 22 18 18 23 20 C25 21 27 23 28 25 C29 23 31 21 33 20 C38 18 42 22 42 28 C42 34 28 44 28 44 C28 44 14 34 14 28Z" fill="#c0392b"/>
+  <!-- Wordmark -->
+  <text x="52" y="30" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1a1a2e" letter-spacing="0.5">CORAZÓN DE LOS</text>
+  <text x="52" y="50" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#c0392b" letter-spacing="1">ANDES</text>
+</svg>
