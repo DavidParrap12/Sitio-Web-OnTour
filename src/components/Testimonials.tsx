@@ -8,7 +8,7 @@ import { testimonials } from "@/data/testimonials";
 
 const AUTOPLAY_MS = 6000;
 const GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/place/On+Tour+Agencia+de+Viajes+y+Turismo/@4.4453522,-75.2412314,19z/";
+  "https://www.google.com/maps/place/On+Tour+Agencia+de+Viajes+Colombia/@4.4453535,-75.2418751,19z/data=!4m18!1m9!3m8!1s0x8e38c5dc9b21e75d:0xdfe89bd87d6ae4a2!2sOn+Tour+Agencia+de+Viajes+Colombia!8m2!3d4.4453522!4d-75.2412314!9m1!1b1!16s%2Fg%2F11ryf7f3t2!3m7!1s0x8e38c5dc9b21e75d:0xdfe89bd87d6ae4a2!8m2!3d4.4453522!4d-75.2412314!9m1!1b1!16s%2Fg%2F11ryf7f3t2?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D";
 
 function StarRating({ rating }: { rating: number }) {
   return (
