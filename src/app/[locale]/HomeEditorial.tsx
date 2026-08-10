@@ -4,7 +4,6 @@ import { Link } from "@/i18n/navigation";
 
 import { SectionReveal } from "@/components/editorial/SectionReveal";
 import { HeroEditorial } from "@/components/editorial/HeroEditorial";
-import { RotatingPasadias } from "@/components/editorial/RotatingPasadias";
 import { CircuitosCarousel } from "@/components/editorial/CircuitosCarousel";
 import { MarqueeLogos, type LogoItem } from "@/components/editorial/MarqueeLogos";
 import { Testimonials } from "@/components/Testimonials";
@@ -18,14 +17,6 @@ const ALIADOS: LogoItem[] = [
   { src: "/image/logo-aliados/assist-card-seeklogo.svg",    alt: "Assist Card",                       width: 120 },
 ];
 
-interface PasadiaData {
-  id: string;
-  image: string;
-  name: string;
-  description: string;
-  duration: string;
-}
-
 interface CircuitoData {
   id: string;
   image: string;
@@ -36,7 +27,6 @@ interface CircuitoData {
 }
 
 interface HomeEditorialProps {
-  pasadias: PasadiaData[];
   circuitos: CircuitoData[];
   t: Record<string, string>;
 }
@@ -48,7 +38,7 @@ const heroSlides = [
   { src: "/image/guatape.jpg", alt: "Guatapé" },
 ];
 
-export function HomeEditorial({ pasadias, circuitos, t }: HomeEditorialProps) {
+export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
   return (
     <div className="min-h-screen">
       {/* -- Hero ------------------------------------------------ */}
@@ -59,47 +49,17 @@ export function HomeEditorial({ pasadias, circuitos, t }: HomeEditorialProps) {
         subtitle={t["hero.subtitle"]}
         badge={t["hero.tagline"]}
         actions={[
-          { label: t["hero.ctaDayTrips"], href: "/pasadias", variant: "primary" },
-          { label: t["hero.ctaCircuits"], href: "/circuitos", variant: "secondary" },
+          { label: t["hero.ctaCircuits"], href: "/circuitos", variant: "primary" },
+          { label: t["hero.ctaContact"], href: "/contacto", variant: "secondary" },
         ]}
       />
 
-      {/* -- Gradiente Hero → Pasadías --------------------------- */}
+      {/* -- Gradiente Hero → Circuitos --------------------------- */}
       <div
         aria-hidden="true"
         className="h-24 -mt-24 relative z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent, #f0f6fc)" }}
+        style={{ background: "linear-gradient(to bottom, transparent, #ffffff)" }}
       />
-
-      {/* -- Pasadías Destacados (rotating) ---------------------- */}
-      <section className="relative pt-4 pb-20 md:pb-28 bg-editorial-warm">
-        <div className="container mx-auto px-4 md:px-6">
-          <SectionReveal>
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-4">
-              <div>
-                <span className="label text-editorial-accent mb-3 block">{t["discoverColombia"]}</span>
-                <h2 className="display-2 text-editorial-dark">{t["popularDayTrips"]}</h2>
-                <p className="body text-editorial-muted mt-2">{t["popularDayTripsSubtitle"]}</p>
-              </div>
-              <Link
-                href={"/pasadias" as any}
-                className="text-editorial-accent font-semibold hover:underline underline-offset-4 transition-all flex items-center gap-1 whitespace-nowrap"
-              >
-                {t["viewAllDayTrips"]}
-              </Link>
-            </div>
-
-            <RotatingPasadias items={pasadias} interval={5000} />
-          </SectionReveal>
-        </div>
-
-        {/* Gradiente Pasadías → Circuitos (warm → white) */}
-        <div
-          aria-hidden="true"
-          className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom, transparent, #ffffff)" }}
-        />
-      </section>
 
       {/* -- Circuitos Destacados (carousel) --------------------- */}
       <section className="relative pt-8 pb-20 md:pb-28 bg-white">

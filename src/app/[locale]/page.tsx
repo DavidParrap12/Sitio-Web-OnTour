@@ -35,7 +35,6 @@ export default async function Home({
   const topCircuitos = circuitos.slice(0, 3);
 
   // All items for editorial carousel/rotation
-  const allPasadias = destinos;
   const allCircuitos = circuitos;
 
   // -- Editorial Layout ----------------------------------------
@@ -46,16 +45,12 @@ export default async function Home({
       "hero.title1": tHero("title1"),
       "hero.title2": tHero("title2"),
       "hero.subtitle": tHero("subtitle"),
-      "hero.ctaDayTrips": tHero("ctaDayTrips"),
       "hero.ctaCircuits": tHero("ctaCircuits"),
-      popularDayTrips: t("popularDayTrips"),
-      popularDayTripsSubtitle: t("popularDayTripsSubtitle"),
-      viewAllDayTrips: t("viewAllDayTrips"),
+      "hero.ctaContact": tHero("ctaContact"),
       memorableCircuits: t("memorableCircuits"),
       memorableCircuitsSubtitle: t("memorableCircuitsSubtitle"),
       viewAllCircuits: t("viewAllCircuits"),
 
-      discoverColombia: t("discoverColombia"),
       multiDayRoutes: t("multiDayRoutes"),
 
       ctaTitle: t("ctaTitle"),
@@ -68,13 +63,6 @@ export default async function Home({
       <>
         <JsonLd data={orgSchema} />
         <HomeEditorial
-          pasadias={allPasadias.map((d) => ({
-            id: d.id,
-            image: d.image,
-            name: tDestinos(`${d.id}.name`),
-            description: tDestinos(`${d.id}.description`),
-            duration: tDestinos(`${d.id}.duration`),
-          }))}
           circuitos={allCircuitos.map((c) => ({
             id: c.id,
             image: c.image,

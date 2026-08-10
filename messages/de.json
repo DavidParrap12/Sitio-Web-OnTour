@@ -21,7 +21,8 @@
     "title2": "Außergewöhnliche Reiseziele",
     "subtitle": "Wir bieten die besten Tagesausflüge und Rundreisen an. Ihr nächstes großes Abenteuer beginnt hier.",
     "ctaDayTrips": "Tagesausflüge ansehen",
-    "ctaCircuits": "Rundreisen ansehen",
+    "ctaCircuits": "Rundreisen entdecken",
+    "ctaContact": "Kontakt aufnehmen",
     "goToImage": "Zum Bild {n}"
   },
   "home": {
@@ -189,6 +190,14 @@
     "downloadProgram": "Programm herunterladen",
     "generating": "Wird generiert...",
     "downloaded": "Heruntergeladen!"
+  },
+  "circuitExtensions": {
+    "sectionLabel": "Optionale Extras",
+    "sectionTitle": "Erweitern Sie Ihr Erlebnis",
+    "addToQuote": "Zum Angebot hinzufügen",
+    "from": "Ab",
+    "perPerson": "/ Person",
+    "whatsappTemplate": "Hallo, ich interessiere mich für Folgendes:\n\nRundreise: __CIRCUIT__\nErweiterung: + __EXTENSION__\n\nGruppe: ___ Erwachsene / ___ Kinder\nGeschätztes Datum: ___________\n\nBitte senden Sie mir ein detailliertes Angebot."
   },
   "pasadiaDetail": {
     "badge": "Tagesausflüge",

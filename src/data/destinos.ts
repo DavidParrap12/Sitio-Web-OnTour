@@ -1,15 +1,38 @@
 
+export interface AsExtension {
+  /** IDs of circuits that offer this pasadía as an optional add-on */
+  linkedCircuits: string[];
+  /** Base price in USD shown in the extension card */
+  extensionPrice?: number;
+  /** Human-readable duration shown in the card, e.g. "1 day" */
+  extensionDuration?: string;
+  /** Context label for the extension, e.g. "Arrival day", "Add-on" */
+  extensionLabel?: string;
+}
+
 export interface Destino {
   id: string;
   image: string;
   brochureUrl?: string;
   gallery?: string[];
+  /** When present, this pasadía can be offered as an optional add-on for the linked circuits */
+  asExtension?: AsExtension;
 }
 
 export const destinos: Destino[] = [
   {
     id: "Medellin-Magica",
     image: "/image/comuna 13.jpg",
+    asExtension: {
+      linkedCircuits: [
+        "tour-colombia-eje-cafetero",
+        "tour-colombia-tres-ciudades",
+        "tour-colombia-corazon-andes",
+      ],
+      extensionPrice: 85,
+      extensionDuration: "1 day",
+      extensionLabel: "Arrival or departure day",
+    },
     gallery: [
       "/image/pasadias/Pasadias_por_medellin_2026/Captura-de-pantalla-2025-12-27-115519-720x1024.png",
       "/image/pasadias/Pasadias_por_medellin_2026/Captura-de-pantalla-2025-12-27-115509-717x1024.png",
@@ -23,6 +46,17 @@ export const destinos: Destino[] = [
   {
     id: "bogota-tu-casa-pasadia",
     image: "/image/la-candelaria.jpg",
+    asExtension: {
+      linkedCircuits: [
+        "epoca-precolombina-sur-colombia",
+        "tour-colombia-boyaca-colonial",
+        "tour-colombia-colonial-aventurera",
+        "tour-santander-expedicion-aventurera",
+      ],
+      extensionPrice: 75,
+      extensionDuration: "1 day",
+      extensionLabel: "Start your journey with a full day in Bogotá",
+    },
     gallery: [
       "/image/pasadias/Pasadias_por_bogota_2026/Captura-de-pantalla-2025-12-27-121529-721x1024.png",
       "/image/pasadias/Pasadias_por_bogota_2026/Captura-de-pantalla-2025-12-27-121627-717x1024.png",
@@ -34,6 +68,17 @@ export const destinos: Destino[] = [
   {
     id: "cascada-la-plata-pasadia",
     image: "/image/rivera.jpg",
+    asExtension: {
+      linkedCircuits: [
+        "tour-camino-real",
+        "tour-colombia-corazon-andes",
+        "tour-colombia-capitales-cafeteras",
+        "tour-tras-leyenda-dorado",
+      ],
+      extensionPrice: 70,
+      extensionDuration: "1 day",
+      extensionLabel: "Nature day from Ibagué",
+    },
     gallery: [
       "/image/pasadias/Pasadias_por_tolima_2026/PASADIAS POR EL TOLIMA 2026_page-0001.jpg",
       "/image/pasadias/Pasadias_por_tolima_2026/PASADIAS POR EL TOLIMA 2026_page-0002.jpg",

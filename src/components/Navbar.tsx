@@ -31,13 +31,13 @@ export function Navbar() {
   const navLinks = [
     { name: t("home"), href: "/" as const },
     { name: t("about"), href: "/nosotros" as const },
-    { name: t("dayTrips"), href: "/pasadias" as const },
     { name: t("circuits"), href: "/circuitos" as const },
     { name: t("services"), href: "/servicios" as const },
     { name: t("gallery"), href: "/galeria" as const },
     { name: t("tickets"), href: "https://reservas.ontourdmc.com", external: true },
     { name: t("contact"), href: "/contacto" as const },
   ];
+
 
   // Handle scroll effect
   useEffect(() => {

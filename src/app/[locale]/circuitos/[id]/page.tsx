@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { DESIGN_FLAGS } from "@/lib/flags";
 import { circuitos } from "@/data/circuitos";
+import { destinos } from "@/data/destinos";
 import { routing } from "@/i18n/routing";
 import { CheckCircle2, Clock, MapPin, Map } from "lucide-react";
 import ItineraryTimeline from "@/components/ItineraryTimeline";
@@ -44,7 +45,22 @@ export default async function CircuitoPage({
   const price = tData(`${id}.price`);
   const departureDates = await fetchDepartureDates();
   const whatsappMessage = t("whatsappMessage", { name });
-  const whatsappUrl = `https://wa.me/573223070106?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/573143415177?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // -- Resolve optional extensions --------------------------------
+  const tDestinos = await getTranslations("destinosData");
+  const tExt = await getTranslations("circuitExtensions");
+  const extensions = destinos
+    .filter((d) => d.asExtension?.linkedCircuits.includes(id))
+    .map((d) => ({
+      id: d.id,
+      name: tDestinos(`${d.id}.name`),
+      description: tDestinos(`${d.id}.description`),
+      image: d.image,
+      extensionLabel: d.asExtension?.extensionLabel,
+      extensionPrice: d.asExtension?.extensionPrice,
+      extensionDuration: d.asExtension?.extensionDuration,
+    }));
 
   // -- Editorial Layout ----------------------------------------
   const schema = buildCircuitoSchema({ id, name, description, days: circuito.days, nights: circuito.nights, image: circuito.image, locale });
@@ -67,6 +83,7 @@ export default async function CircuitoPage({
         id={id} locale={locale} dayImages={circuito.dayImages}
         brochureUrl={circuito.brochureUrl} brochurePdfUrl={circuito.brochurePdfUrl}
         departureDates={departureDates} whatsappUrl={whatsappUrl}
+        extensions={extensions}
         t={{
           badge: t("badge"), colombia: t("colombia"),
           daysNights: t("daysNights", { days: circuito.days, nights: circuito.nights }),
@@ -80,6 +97,12 @@ export default async function CircuitoPage({
           downloadPdf: t("downloadPdf"), downloadWord: t("downloadWord"),
           downloadProgram: t("downloadProgram"), generating: t("generating"),
           downloaded: t("downloaded"),
+          extensionsSectionLabel: tExt("sectionLabel"),
+          extensionsSectionTitle: tExt("sectionTitle"),
+          extensionsAddToQuote: tExt("addToQuote"),
+          extensionsFrom: tExt("from"),
+          extensionsPerPerson: tExt("perPerson"),
+          extensionsWhatsappTemplate: tExt("whatsappTemplate"),
         }}
       />
       </>

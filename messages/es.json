@@ -21,7 +21,8 @@
     "title2": "Destinos Extraordinarios",
     "subtitle": "Ofrecemos los mejores pasadías y circuitos turísticos. Tu próxima gran aventura comienza aquí.",
     "ctaDayTrips": "Ver Pasadías",
-    "ctaCircuits": "Ver Circuitos",
+    "ctaCircuits": "Explorar Circuitos",
+    "ctaContact": "Contáctenos",
     "goToImage": "Ir a imagen {n}"
   },
   "home": {
@@ -189,6 +190,14 @@
     "downloadProgram": "Descargar Programa",
     "generating": "Generando...",
     "downloaded": "¡Descargado!"
+  },
+  "circuitExtensions": {
+    "sectionLabel": "Extras Opcionales",
+    "sectionTitle": "Extiende tu experiencia",
+    "addToQuote": "Agregar a mi cotización",
+    "from": "Desde",
+    "perPerson": "/ persona",
+    "whatsappTemplate": "Hola, estoy interesado en lo siguiente:\n\nCircuito: __CIRCUIT__\nExtensión: + __EXTENSION__\n\nGrupo: ___ adultos / ___ niños\nFechas estimadas: ___________\n\nPor favor envíame una cotización detallada."
   },
   "pasadiaDetail": {
     "badge": "Pasadías",

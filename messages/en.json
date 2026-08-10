@@ -21,7 +21,8 @@
     "title2": "Extraordinary Destinations",
     "subtitle": "We offer the best day trips and tourist circuits. Your next great adventure starts here.",
     "ctaDayTrips": "See Day Trips",
-    "ctaCircuits": "See Circuits",
+    "ctaCircuits": "Explore Circuits",
+    "ctaContact": "Contact Us",
     "goToImage": "Go to image {n}"
   },
   "home": {
@@ -189,6 +190,14 @@
     "downloadProgram": "Download Program",
     "generating": "Generating...",
     "downloaded": "Downloaded!"
+  },
+  "circuitExtensions": {
+    "sectionLabel": "Optional Add-ons",
+    "sectionTitle": "Extend your experience",
+    "addToQuote": "Add to my quote",
+    "from": "From",
+    "perPerson": "/ person",
+    "whatsappTemplate": "Hello, I'm interested in the following:\n\nCircuit: __CIRCUIT__\nExtension: + __EXTENSION__\n\nGroup: ___ adults / ___ children\nEstimated dates: ___________\n\nPlease send me a detailed quote."
   },
   "pasadiaDetail": {
     "badge": "Day Trips",

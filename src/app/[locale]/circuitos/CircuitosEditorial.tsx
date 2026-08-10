@@ -22,15 +22,16 @@ interface CircuitosEditorialProps {
   slides: CircuitSlide[];
   title: string;
   subtitle: string;
+  heroImage?: string;
 }
 
-export function CircuitosEditorial({ slides, title, subtitle }: CircuitosEditorialProps) {
+export function CircuitosEditorial({ slides, title, subtitle, heroImage }: CircuitosEditorialProps) {
   return (
     <div className="min-h-screen bg-editorial-warm">
       {/* -- Hero ------------------------------------------------ */}
       <div className="relative h-[55vh] md:h-[60vh] flex items-end overflow-hidden">
         <Image
-          src={slides[0]?.image || "/image/makalu-colombia-3631740.jpg"}
+          src={heroImage || "/image/Nuquí-entre-ballenas–1.jpg"}
           alt="Circuitos Colombia"
           fill
           sizes="100vw"

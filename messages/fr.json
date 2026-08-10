@@ -21,7 +21,8 @@
     "title2": "Destinations extraordinaires",
     "subtitle": "Nous proposons les meilleures excursions et circuits touristiques. Votre prochaine grande aventure commence ici.",
     "ctaDayTrips": "Voir les excursions",
-    "ctaCircuits": "Voir les circuits",
+    "ctaCircuits": "Explorer les circuits",
+    "ctaContact": "Nous contacter",
     "goToImage": "Aller à l'image {n}"
   },
   "home": {
@@ -189,6 +190,14 @@
     "downloadProgram": "Télécharger le programme",
     "generating": "Génération...",
     "downloaded": "Téléchargé !"
+  },
+  "circuitExtensions": {
+    "sectionLabel": "Options supplémentaires",
+    "sectionTitle": "Enrichissez votre expérience",
+    "addToQuote": "Ajouter à mon devis",
+    "from": "Dès",
+    "perPerson": "/ personne",
+    "whatsappTemplate": "Bonjour, je suis intéressé(e) par les éléments suivants :\n\nCircuit : __CIRCUIT__\nExtension : + __EXTENSION__\n\nGroupe : ___ adultes / ___ enfants\nDates estimées : ___________\n\nMerci de m’envoyer un devis détaillé."
   },
   "pasadiaDetail": {
     "badge": "Excursions d'une journée",

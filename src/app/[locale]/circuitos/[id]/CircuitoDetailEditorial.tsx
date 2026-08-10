@@ -8,6 +8,7 @@ import ItineraryTimeline from "@/components/ItineraryTimeline";
 import CircuitRouteMap from "@/components/CircuitRouteMap";
 import { BookingForm } from "@/components/BookingForm";
 import { CircuitProgramDownloadDynamic } from "@/components/CircuitProgramDownloadDynamic";
+import { CircuitExtensions, type ExtensionItem } from "@/components/CircuitExtensions";
 
 interface CircuitoDetailEditorialProps {
   name: string;
@@ -25,13 +26,16 @@ interface CircuitoDetailEditorialProps {
   brochurePdfUrl?: string;
   departureDates: Record<string, number>;
   whatsappUrl: string;
+  extensions?: ExtensionItem[];
   t: Record<string, string>;
 }
 
 export function CircuitoDetailEditorial({
   name, description, highlights, itinerary, image,
   days, nights, price, id, locale, dayImages,
-  brochureUrl, brochurePdfUrl, departureDates, whatsappUrl, t,
+  brochureUrl, brochurePdfUrl, departureDates, whatsappUrl,
+  extensions = [],
+  t,
 }: CircuitoDetailEditorialProps) {
   return (
     <div className="min-h-screen bg-white">
@@ -118,6 +122,23 @@ export function CircuitoDetailEditorial({
                 />
               </section>
             </SectionReveal>
+
+            {/* Optional extensions — only renders when linked pasadías exist */}
+            {extensions.length > 0 && (
+              <CircuitExtensions
+                extensions={extensions}
+                circuitName={name}
+                whatsappNumber="573143415177"
+                t={{
+                  sectionLabel: t.extensionsSectionLabel,
+                  sectionTitle: t.extensionsSectionTitle,
+                  addToQuote: t.extensionsAddToQuote,
+                  from: t.extensionsFrom,
+                  perPerson: t.extensionsPerPerson,
+                  whatsappTemplate: t.extensionsWhatsappTemplate,
+                }}
+              />
+            )}
           </div>
 
           {/* Sidebar */}
