@@ -20,6 +20,16 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  async redirects() {
+    return [
+      {
+        source: "/:locale/flights",
+        destination: "/:locale/circuitos",
+        permanent: true, // 301 — tells Google the page moved permanently
+      },
+    ];
+  },
+
   async headers() {
     return [
       {

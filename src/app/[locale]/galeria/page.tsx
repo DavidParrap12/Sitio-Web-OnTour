@@ -15,7 +15,6 @@ const galleryImages: (GalleryImage & GalleryImageData)[] = [
   { src: "/image/Tolima-fotos/tolima_paramo-frailejones-paisaje.jpeg", alt: "Páramo con frailejones", category: "Tolima" },
   { src: "/image/Tolima-fotos/tolima_sendero-piedra-vegetacion-tropical.jpeg", alt: "Sendero con piedras y vegetación tropical", category: "Tolima" },
   { src: "/image/Tolima-fotos/ibague_catedral-nocturna-luna-llena.jpeg", alt: "Catedral de Ibagué nocturna con luna llena", category: "Tolima" },
-  { src: "/image/Tolima-fotos/ibague_skyline-nocturno-luces-neon.jpeg", alt: "Skyline de Ibagué nocturno", category: "Tolima" },
   { src: "/image/Tolima-fotos/tolima_edificio-colonial-arcos-patio.jpeg", alt: "Edificio colonial con arcos y patio", category: "Tolima" },
   { src: "/image/Tolima-fotos/tolima_hibisco-rojo-palmera-tropical.jpeg", alt: "Hibisco rojo con Palmera tropical", category: "Tolima" },
   { src: "/image/Tolima-fotos/tolima_escultura-musico-guitarrista-plaza.jpeg", alt: "Escultura de músico guitarrrista en plaza", category: "Tolima" },
@@ -37,7 +36,7 @@ const galleryImages: (GalleryImage & GalleryImageData)[] = [
   { src: "/image/Tolima-fotos/tolima_palmas-cera-ladera-verde-cielo-azul.jpeg", alt: "Palmas de cera en ladera verde con cielo azul", category: "Tolima" },
   { src: "/image/Tolima-fotos/tolima_palmas-cera-vista-inferior-contrapicado.jpeg", alt: "Palmas de cera - vista inferior contrapicado", category: "Tolima" },
   // Bogotá
-  { src: "/image/bogota-zipaquira.jpg", alt: "Bogotá y Zipaquirá", category: "Bogotá" },
+  { src: "/image/imagenes-pasadias/bogota-zipaquira.jpg", alt: "Bogotá y Zipaquirá", category: "Bogotá" },
   { src: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", alt: "Aeropuerto El Dorado", category: "Bogotá" },
   { src: "/image/legado-ancestral/iglesia-monserrate-1.jpg", alt: "Monserrate", category: "Bogotá" },
   { src: "/image/legado-ancestral/catedral-1.jpg", alt: "Catedral de Sal, Zipaquirá", category: "Bogotá" },
@@ -51,7 +50,7 @@ const galleryImages: (GalleryImage & GalleryImageData)[] = [
   // Experiencias de clientes (fotos de viajeros)
   { src: "/image/Canotaje_Rio_Fonce_10_8337700f9c.jpg", alt: "Canotaje en el Río Fonce", category: "Experiencias", author: "Familia Martínez" },
   { src: "/image/cascade-juan-curi-colombie.jpg", alt: "Cascada Juan Curí, San Gil", category: "Experiencias", author: "Andrea R." },
-  { src: "/image/Nuquí entre ballenas – 1.jpg", alt: "Ballenas jorobadas en Nukuí", category: "Experiencias", author: "Carlos y María" },
+  { src: "/image/Nuquí-entre-ballenas–1.jpg", alt: "Ballenas jorobadas en Nukuí", category: "Experiencias", author: "Carlos y María" },
   { src: "/image/parque-el-gallineral-san-gil-4.jpg", alt: "Parque El Gallineral, San Gil", category: "Experiencias", author: "Grupo Bogotá 2024" },
 ];
 

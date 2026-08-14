@@ -13,7 +13,7 @@ const ALIADOS: LogoItem[] = [
   { src: "/image/logo-aliados/tripadvisor-seeklogo.svg",    alt: "TripAdvisor",                       width: 130 },
   { src: "/image/logo-aliados/civitatis.svg",               alt: "Civitatis",                         width: 130 },
   { src: "/image/logo-aliados/Logo_Tolima_Principal.png",   alt: "Explora Tolima Corazón de los Andes", width: 160, bgColor: "#1b4d2e" },
-  { src: "/image/logo-aliados/procolombia-seeklogo.png",    alt: "ProColombia",                       width: 140 },
+  { src: "/image/logo-aliados/marca-pa-s-colombia-logo-1.svg",    alt: "Marca País Colombia",                       width: 80 },
   { src: "/image/logo-aliados/assist-card-seeklogo.svg",    alt: "Assist Card",                       width: 120 },
 ];
 

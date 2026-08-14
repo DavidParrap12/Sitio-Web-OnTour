@@ -3,8 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Bus, Hotel, Users, ShieldCheck, Utensils, CalendarCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-
-const serviceIcons = [Bus, Hotel, Users, ShieldCheck, Utensils, CalendarCheck];
+import { ServiciosHero } from "./ServiciosHero";
 
 export default async function ServiciosPage({
   params,
@@ -16,61 +15,61 @@ export default async function ServiciosPage({
   const t = await getTranslations("services");
 
   const services = [
-    { key: "transport", icon: Bus },
-    { key: "accommodation", icon: Hotel },
-    { key: "guides", icon: Users },
-    { key: "insurance", icon: ShieldCheck },
-    { key: "food", icon: Utensils },
-    { key: "events", icon: CalendarCheck },
+    { key: "transport", icon: Bus, image: "/image/servicios/transport.jpeg" },
+    { key: "accommodation", icon: Hotel, image: "/image/servicios/accommodation.jpeg" },
+    { key: "guides", icon: Users, image: "/image/servicios/guides.jpeg" },
+    { key: "insurance", icon: ShieldCheck, image: "/image/servicios/insurance.jpeg" },
+    { key: "food", icon: Utensils, image: "/image/servicios/food.jpg" },
+    { key: "events", icon: CalendarCheck, image: "/image/servicios/events.jpeg" },
   ];
 
   return (
-    <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
-      {/* Hero */}
-      <div className="bg-primary text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80" />
-        <Image
-          src="/image/nevado-tolima.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="opacity-10 object-cover object-center"
-        />
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">
-            {t("title")}
-          </h1>
-          <p className="text-xl max-w-3xl mx-auto text-white/85 leading-relaxed">
-            {t("subtitle")}
-          </p>
-        </div>
-      </div>
+    <div className="min-h-screen bg-editorial-warm">
+      {/* Hero — editorial style (same as Circuitos) */}
+      <ServiciosHero title={t("title")} subtitle={t("subtitle")} />
 
       {/* Services Grid */}
       <div className="container mx-auto px-4 md:px-6 mt-16 md:mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map(({ key, icon: Icon }) => (
+          {services.map(({ key, icon: Icon, image }) => (
             <div
               key={key}
-              className="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-white rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex flex-col"
             >
-              <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                <Icon className="w-7 h-7" />
+              {/* Image area */}
+              <div className="relative h-52 w-full overflow-hidden bg-primary/10 shrink-0">
+                <Image
+                  src={image}
+                  alt={t(`${key}.title`)}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                {/* Icon badge */}
+                <div className="absolute bottom-4 left-4 w-11 h-11 rounded-xl bg-white/90 backdrop-blur-sm text-primary flex items-center justify-center shadow-md group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <Icon className="w-5 h-5" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold font-heading text-foreground mb-3">
-                {t(`${key}.title`)}
-              </h3>
-              <p className="text-foreground/70 leading-relaxed mb-4">
-                {t(`${key}.description`)}
-              </p>
-              <ul className="space-y-2">
-                {[1, 2, 3].map((i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-foreground/60">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
-                    {t(`${key}.feature${i}`)}
-                  </li>
-                ))}
-              </ul>
+
+              {/* Content */}
+              <div className="p-7 flex flex-col flex-1">
+                <h3 className="text-xl font-bold font-heading text-foreground mb-3">
+                  {t(`${key}.title`)}
+                </h3>
+                <p className="text-foreground/70 leading-relaxed mb-4 text-sm">
+                  {t(`${key}.description`)}
+                </p>
+                <ul className="space-y-2 mt-auto">
+                  {[1, 2, 3].map((i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-foreground/60">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
+                      {t(`${key}.feature${i}`)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
