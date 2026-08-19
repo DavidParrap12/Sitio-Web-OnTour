@@ -6,6 +6,8 @@ import { SectionReveal } from "@/components/editorial/SectionReveal";
 import { MarqueeLogos, type LogoItem } from "@/components/editorial/MarqueeLogos";
 import { ReconocimientosGallery } from "@/components/ReconocimientosGallery";
 
+const BLUR_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
+
 const ALIADOS: LogoItem[] = [
   { src: "/image/logo-aliados/booking-ar21.svg",           alt: "Booking.com",                      width: 140 },
   { src: "/image/logo-aliados/tripadvisor-seeklogo.svg",    alt: "TripAdvisor",                       width: 130 },
@@ -45,16 +47,18 @@ export function NosotrosEditorial({
   return (
     <div className="min-h-screen bg-editorial-warm">
       {/* -- Hero: SplitScroll style ---------------------------- */}
-      <div className="flex flex-col lg:flex-row min-h-[80vh]">
+      <section className="flex flex-col lg:flex-row min-h-[80vh] editorial-section--bleed relative">
         {/* Image Side */}
         <div className="relative w-full lg:w-1/2 h-[50vh] lg:h-auto">
           <Image
-            src="/image/on-tour-ofc-centro-2025-scaled.jpg"
-            alt="Equipo OnTour"
+            src="/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.21%20PM.jpeg"
+            alt="Viajeros disfrutando Colombia con OnTour"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
             priority
+            placeholder="blur"
+            blurDataURL={BLUR_PLACEHOLDER}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-editorial-dark/60 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-editorial-warm/20" />
         </div>
@@ -92,53 +96,56 @@ export function NosotrosEditorial({
             </motion.p>
           </div>
         </div>
-      </div>
 
-      {/* -- Mission & Vision ----------------------------------- */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <SectionReveal>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 max-w-6xl mx-auto">
-              {/* Mission */}
-              <div className="relative p-10 md:p-14 rounded-3xl bg-editorial-warm border border-editorial-border">
-                <div className="w-14 h-14 rounded-2xl bg-destino-natural/10 flex items-center justify-center mb-6">
-                  <span className="display-2 text-destino-natural leading-none" style={{ fontSize: '1.5rem' }}>M</span>
-                </div>
-                <h2 className="heading-1 text-editorial-dark mb-4">{missionTitle}</h2>
-                <p className="body text-editorial-muted leading-relaxed">{missionText}</p>
-              </div>
-
-              {/* Vision */}
-              <div className="relative p-10 md:p-14 rounded-3xl bg-editorial-warm border border-editorial-border">
-                <div className="w-14 h-14 rounded-2xl bg-editorial-accent/10 flex items-center justify-center mb-6">
-                  <span className="display-2 text-editorial-accent leading-none" style={{ fontSize: '1.5rem' }}>E</span>
-                </div>
-                <h2 className="heading-1 text-editorial-dark mb-4">{visionTitle}</h2>
-                <p className="body text-editorial-muted leading-relaxed">{visionText}</p>
-              </div>
-            </div>
-          </SectionReveal>
+        {/* Wave transition: hero (warm) → Mission/Vision (white) */}
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block">
+            <path d="M0,60 C360,0 1080,80 1440,20 L1440,80 L0,80 Z" fill="#ffffff" />
+          </svg>
         </div>
       </section>
 
+      {/* -- Mission & Vision ----------------------------------- */}
+      <section className="py-20 md:py-28 bg-white editorial-section--bleed relative">
+        <SectionReveal className="editorial-stagger-variance">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 max-w-6xl mx-auto">
+            {/* Mission */}
+            <div className="relative p-10 md:p-14 rounded-3xl bg-editorial-warm border border-editorial-border">
+              <div className="w-14 h-14 rounded-2xl bg-destino-natural/10 flex items-center justify-center mb-6">
+                <span className="display-2 text-destino-natural leading-none" style={{ fontSize: '1.5rem' }}>M</span>
+              </div>
+              <h2 className="heading-1 text-editorial-dark mb-4">{missionTitle}</h2>
+              <p className="body text-editorial-muted leading-relaxed">{missionText}</p>
+            </div>
+
+            {/* Vision */}
+            <div className="relative p-10 md:p-14 rounded-3xl bg-editorial-warm border border-editorial-border">
+              <div className="w-14 h-14 rounded-2xl bg-editorial-accent/10 flex items-center justify-center mb-6">
+                <span className="display-2 text-editorial-accent leading-none" style={{ fontSize: '1.5rem' }}>E</span>
+              </div>
+              <h2 className="heading-1 text-editorial-dark mb-4">{visionTitle}</h2>
+              <p className="body text-editorial-muted leading-relaxed">{visionText}</p>
+            </div>
+          </div>
+        </SectionReveal>
+      </section>
 
       {/* -- Aliados / Partners ---------------------------------- */}
-      <SectionReveal>
-        <div className="py-4">
-          <p className="label text-editorial-muted text-center pt-10 pb-2">Aliados y plataformas</p>
-          <MarqueeLogos logos={ALIADOS} speed={40} />
-        </div>
-      </SectionReveal>
+      <div className="relative bg-white">
+        <MarqueeLogos logos={ALIADOS} speed={40} label="Aliados y plataformas" />
+      </div>
 
       {/* -- Reconocimientos ------------------------------------- */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <SectionReveal>
+      <section className="py-20 md:py-28 bg-white editorial-section--bleed relative">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <SectionReveal className="editorial-stagger-variance">
             <div className="text-center mb-16">
               <h2 className="display-2 text-editorial-dark mb-4">{recognitionsTitle}</h2>
               <p className="body-lg text-editorial-muted mx-auto">{recognitionsSubtitle}</p>
             </div>
-            <ReconocimientosGallery closeLabel={recognitionsClose} />
+            <div>
+              <ReconocimientosGallery closeLabel={recognitionsClose} />
+            </div>
           </SectionReveal>
         </div>
       </section>

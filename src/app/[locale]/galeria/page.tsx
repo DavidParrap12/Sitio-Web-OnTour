@@ -52,6 +52,18 @@ const galleryImages: (GalleryImage & GalleryImageData)[] = [
   { src: "/image/cascade-juan-curi-colombie.jpg", alt: "Cascada Juan Curí, San Gil", category: "Experiencias", author: "Andrea R." },
   { src: "/image/Nuquí-entre-ballenas–1.jpg", alt: "Ballenas jorobadas en Nukuí", category: "Experiencias", author: "Carlos y María" },
   { src: "/image/parque-el-gallineral-san-gil-4.jpg", alt: "Parque El Gallineral, San Gil", category: "Experiencias", author: "Grupo Bogotá 2024" },
+  // Fotos de turistas — agosto 2026
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.21%20PM.jpeg", alt: "Turistas disfrutando Colombia con OnTour", category: "Experiencias", author: "OnTour Viajeros" },
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.29%20PM.jpeg", alt: "Momentos únicos en Colombia", category: "Experiencias", author: "OnTour Viajeros" },
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.30%20PM.jpeg", alt: "Explorando Colombia con OnTour", category: "Experiencias", author: "OnTour Viajeros" },
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.31%20PM%20(1).jpeg", alt: "Aventura en tierras colombianas", category: "Experiencias", author: "OnTour Viajeros" },
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.31%20PM.jpeg", alt: "Paisajes y recuerdos de Colombia", category: "Experiencias", author: "OnTour Viajeros" },
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.32%20PM%20(1).jpeg", alt: "Viajeros felices en Colombia", category: "Experiencias", author: "OnTour Viajeros" },
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.32%20PM%20(2).jpeg", alt: "Recuerdos del viaje a Colombia", category: "Experiencias", author: "OnTour Viajeros" },
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.32%20PM%20(3).jpeg", alt: "Experiencia OnTour en Colombia", category: "Experiencias", author: "OnTour Viajeros" },
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.32%20PM.jpeg", alt: "Turistas explorando destinos colombianos", category: "Experiencias", author: "OnTour Viajeros" },
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.33%20PM%20(1).jpeg", alt: "Momentos inolvidables en Colombia", category: "Experiencias", author: "OnTour Viajeros" },
+  { src: "/image/fotos-turistas/WhatsApp%20Image%202026-08-18%20at%201.15.33%20PM.jpeg", alt: "Colombia a través de los ojos del viajero", category: "Experiencias", author: "OnTour Viajeros" },
 ];
 
 const categories = ["Tolima", "Bogotá", "Caribe", "Eje Cafetero", "Boyacá", "Experiencias"];
