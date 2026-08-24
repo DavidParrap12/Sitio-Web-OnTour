@@ -6,7 +6,6 @@ import { EditorialSection } from "./EditorialSection";
 import { EditorialCarousel } from "./EditorialCarousel";
 import { HeroEditorial } from "./HeroEditorial";
 import { SectionReveal } from "./SectionReveal";
-import { RECOGNITIONS } from "@/app/[locale]/nosotros/NosotrosEditorial";
 
 // ============================================================
 // DisplayHeading
