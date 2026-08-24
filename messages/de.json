@@ -175,7 +175,7 @@
     "duration": "Dauer",
     "location": "Standort",
     "nationalDest": "Nationale Reiseziele",
-    "pricePerPerson": "Empfohlener Preis pro Person",
+    "pricePerPerson": "Preis pro Person ab",
     "priceLabel": "Auf Anfrage",
     "priceNote": "Änderungen und Verfügbarkeit vorbehalten",
     "requestQuote": "Jetzt Angebot anfordern",
@@ -266,7 +266,7 @@
         "Tatacoa-Wüste",
         "Archäologischer Park San Agustín"
       ],
-      "price": "2780 USD",
+      "price": "4000 USD",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel. Freizeit. Übernachtung.",
         "TAG 2: BOGOTÁ CITY TOUR & MONSERRATE. Panorama-Stadtrundfahrt durch das historische Zentrum von Bogotá, kulinarisches Erlebnis in La Candelaria und Auffahrt zum Monserrate mit der Seilbahn inkl. Abendessen bei Sonnenuntergang.",
@@ -385,7 +385,7 @@
         "Honda, Kulturerbe-Stadt, und Magdalena-Flusskreuzfahrt",
         "Guaduas, Geburtsort von Policarpa Salavarrieta"
       ],
-      "price": "3470 USD",
+      "price": "3970 USD",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel Ihrer Wahl. Freizeit. Übernachtung.",
         "TAG 2: BOGOTÁ CITY TOUR & ABENDESSEN AUF DEM MONSERRATE. Panorama-Stadtrundfahrt durch Bogotá: historisches Zentrum, La Candelaria, historische Plätze und Straßenkunst. Auffahrt zum Monserrate (3.152 m) mit Standseilbahn und/oder Seilbahn. Abendessen mit dem besten Blick über Bogotá. Übernachtung.",
@@ -523,7 +523,7 @@
         "Juan-Curí-Wasserfälle und Rafting Stufe I & II auf dem Río Fonce",
         "Floridablanca: Obleas (Waffeln) mit Naturprodukten"
       ],
-      "price": "2990 USD",
+      "price": "4190 USD",
       "itinerary": [
         "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel Ihrer Wahl. Freizeit. Übernachtung.",
         "TAG 2: BOGOTÁ CITY TOUR & ABENDESSEN AUF DEM MONSERRATE. Frühstück im Hotel. Panorama-Stadtrundfahrt durch Bogotá: historisches Zentrum, La Candelaria, historische Plätze, gastronomische Erlebnisse und Graffiti-Straßenkunst. Auffahrt zum Monserrate (3.152 m) mit Standseilbahn und/oder Seilbahn. Abendessen mit dem besten Blick über Bogotá. Rückkehr zum Hotel. Übernachtung.",
@@ -1790,7 +1790,8 @@
     },
     "ctaTitle": "Benötigen Sie einen maßgeschneiderten Service?",
     "ctaSubtitle": "Kontaktieren Sie uns und wir entwickeln die perfekte Lösung für Ihre Gruppe, Agentur oder Firma.",
-    "ctaButton": "Angebot anfordern"
+    "ctaButton": "Angebot anfordern",
+    "aviaturButton": "Aviatur Kanal"
   },
   "gallery": {
     "title": "Fotogalerie",

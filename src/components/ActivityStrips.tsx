@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Clock, MapPin } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 
 interface Activity {
   nombre: string;
@@ -30,6 +31,7 @@ interface ActivityStripsProps {
 export function ActivityStrips({ activities, coverImage, t }: ActivityStripsProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const toggle = (i: number) => setOpenIndex(prev => (prev === i ? null : i));
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <div className="divide-y divide-editorial-border border-y border-editorial-border">
@@ -52,7 +54,7 @@ export function ActivityStrips({ activities, coverImage, t }: ActivityStripsProp
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 opacity: isOpen ? 0.07 : 0,
-                transition: "opacity 0.5s ease",
+                transition: prefersReducedMotion ? "none" : "opacity 0.5s ease",
               }}
             />
             {/* Accent left border */}
@@ -60,8 +62,8 @@ export function ActivityStrips({ activities, coverImage, t }: ActivityStripsProp
               aria-hidden="true"
               className="absolute left-0 top-0 bottom-0 w-[3px] bg-editorial-accent origin-top"
               initial={false}
-              animate={{ scaleY: isOpen ? 1 : 0 }}
-              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              animate={prefersReducedMotion ? { scaleY: isOpen ? 1 : 0 } : { scaleY: isOpen ? 1 : 0 }}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             />
 
             {/* Strip header */}
@@ -98,8 +100,8 @@ export function ActivityStrips({ activities, coverImage, t }: ActivityStripsProp
               </div>
               <motion.span
                 className="ml-2 shrink-0 text-editorial-accent"
-                animate={{ rotate: isOpen ? 45 : 0 }}
-                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                animate={prefersReducedMotion ? { rotate: isOpen ? 45 : 0 } : { rotate: isOpen ? 45 : 0 }}
+                transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               >
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                   <path d="M10 4v12M4 10h12" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
@@ -112,10 +114,10 @@ export function ActivityStrips({ activities, coverImage, t }: ActivityStripsProp
               {isOpen && (
                 <motion.div
                   key="detail"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
+                  initial={prefersReducedMotion ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+                  animate={prefersReducedMotion ? { height: "auto", opacity: 1 } : { height: "auto", opacity: 1 }}
+                  exit={prefersReducedMotion ? { height: 0, opacity: 0 } : { height: 0, opacity: 0 }}
+                  transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
                   <div className="relative px-6 md:px-10 pb-8 pt-1">

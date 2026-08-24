@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Heart, Camera } from "lucide-react";
 import { SectionReveal } from "@/components/editorial/SectionReveal";
+import { ParallaxFloat } from "@/components/editorial/ParallaxFloat";
 import { IMAGE_SIZES } from "@/lib/design-config";
 import { useTranslations } from "next-intl";
+import { useFocusTrap } from "@/lib/hooks/useFocusTrap";
 
 export interface GalleryImageData {
   src: string;
@@ -52,6 +54,9 @@ export function GaleriaEditorial({
 
   const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("¡Hola! Quiero compartir una foto de mi experiencia con OnTour 📸")}`;
 
+  // Focus trap for lightbox
+  const lightboxRef = useFocusTrap(lightbox !== null);
+
   function openLightbox(i: number) {
     setLightbox(i);
     document.body.style.overflow = "hidden";
@@ -61,6 +66,24 @@ export function GaleriaEditorial({
     setLightbox(null);
     document.body.style.overflow = "";
   }
+
+  function handleFocusTrapEscape() {
+    closeLightbox();
+  }
+
+  useEffect(() => {
+    if (lightbox !== null) {
+      const container = lightboxRef.current;
+      if (container) {
+        container.addEventListener("focusTrapEscape", handleFocusTrapEscape);
+      }
+      return () => {
+        if (container) {
+          container.removeEventListener("focusTrapEscape", handleFocusTrapEscape);
+        }
+      };
+    }
+  }, [lightbox]);
 
   function navigate(dir: -1 | 1) {
     if (lightbox === null) return;
@@ -75,17 +98,40 @@ export function GaleriaEditorial({
 
   return (
     <div className="min-h-screen bg-editorial-warm">
-      {/* -- Hero ------------------------------------------------ */}
-      <div className="relative h-[60vh] md:h-[70vh] flex items-end overflow-hidden">
-        <Image
-          src="/image/makalu-colombia-3631740.jpg"
-          alt="Colombia paisaje"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-editorial-dark/90 via-editorial-dark/40 to-transparent" />
+      {/* -- Masonry Collage Hero --------------------------------- */}
+      <section className="relative h-[60vh] md:h-[70vh] flex items-end overflow-hidden">
+        <ParallaxFloat speed={0.08} className="absolute inset-0">
+          {/* Desktop collage: 1 large + 4 supporting */}
+          <div className="hidden md:grid grid-cols-4 grid-rows-2 gap-1 h-full w-full">
+            {images.slice(0, 5).map((img, i) => (
+              <div key={img.src} className={`relative ${i === 0 ? "col-span-2 row-span-2" : ""}`}>
+                <Image
+                  src={img.src}
+                  alt=""
+                  fill
+                  sizes={i === 0 ? "50vw" : "25vw"}
+                  className="object-cover"
+                  priority={i === 0}
+                />
+              </div>
+            ))}
+          </div>
+          {/* Mobile collage: simple 2x2 */}
+          <div className="md:hidden grid grid-cols-2 grid-rows-2 gap-1 h-full w-full">
+            {images.slice(0, 4).map((img) => (
+              <div key={img.src} className="relative">
+                <Image
+                  src={img.src}
+                  alt=""
+                  fill
+                  sizes="50vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </ParallaxFloat>
+        <div className="absolute inset-0 bg-gradient-to-t from-editorial-dark/95 via-editorial-dark/55 to-editorial-dark/20" />
         <div className="absolute inset-0 editorial-overlay-vignette" />
 
         <div className="relative z-10 container mx-auto px-4 md:px-6 pb-16 md:pb-20">
@@ -106,10 +152,10 @@ export function GaleriaEditorial({
             {subtitle}
           </motion.p>
         </div>
-      </div>
+      </section>
 
       {/* -- Filter Bar ----------------------------------------- */}
-      <div className="sticky top-0 z-20 bg-editorial-warm/95 backdrop-blur-md border-b border-editorial-border">
+      <div className="sticky top-0 z-20 bg-editorial-warm/95 backdrop-blur-md border-b border-editorial-border relative">
         <div className="container mx-auto px-4 md:px-6 py-4">
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -205,93 +251,21 @@ export function GaleriaEditorial({
       </AnimatePresence>
 
       {/* -- Grid / Empty State ---------------------------------- */}
-      <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
-
-        {/* Empty state para Experiencias */}
-        {isExperienciasMode && !hasExperiencias ? (
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-center justify-center text-center py-24 md:py-32"
-          >
-            <div className="w-24 h-24 rounded-3xl bg-rose-100 flex items-center justify-center mb-8">
-              <Camera className="w-12 h-12 text-rose-400" />
-            </div>
-            <h2 className="heading-1 text-editorial-dark mb-4">{t("experienciasEmptyTitle")}</h2>
-            <p className="body text-editorial-muted mb-10 max-w-md">{t("experienciasEmptyDesc")}</p>
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:-translate-y-0.5 shadow-editorial-lg hover:shadow-editorial-xl"
+      <section className="bg-editorial-warm editorial-section--bleed relative">
+        <div className="container mx-auto px-4 md:px-6 py-12 md:py-16 relative z-10">
+          {/* Empty state para Experiencias */}
+          {isExperienciasMode && !hasExperiencias ? (
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col items-center justify-center text-center py-24 md:py-32"
             >
-              <Heart className="w-5 h-5" />
-              {t("experienciasEmptyBtn")}
-            </a>
-          </motion.div>
-        ) : (
-          <SectionReveal>
-            <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
-              <AnimatePresence mode="popLayout">
-                {filtered.map((img, i) => (
-                  <motion.div
-                    key={img.src}
-                    layout
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.35, delay: Math.min(i * 0.04, 0.3) }}
-                    className="break-inside-avoid cursor-pointer group relative rounded-xl overflow-hidden editorial-hover-scale"
-                    onClick={() => openLightbox(i)}
-                  >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={600}
-                      height={400}
-                      sizes={IMAGE_SIZES.gallery}
-                      className="w-full h-auto object-cover editorial-scale-target transition-transform duration-700"
-                    />
-
-                    {/* Badge especial para fotos de viajeros */}
-                    {img.category === EXPERIENCIAS_KEY && (
-                      <div className="absolute top-3 left-3 flex items-center gap-1 bg-rose-500/90 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full">
-                        <Heart className="w-3 h-3" />
-                        {img.author ?? "Viajero OnTour"}
-                      </div>
-                    )}
-
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 editorial-overlay-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-
-                    {/* Caption on hover */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <p className="text-white text-sm font-medium leading-snug">{img.alt}</p>
-                      <span className="label text-white/60 mt-1 block">{img.category}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-          </SectionReveal>
-        )}
-
-        {filtered.length === 0 && !isExperienciasMode && (
-          <div className="text-center py-24">
-            <p className="body-lg text-editorial-muted">No hay fotos en esta categoría.</p>
-          </div>
-        )}
-
-        {/* CTA compartir foto — solo en modo Experiencias con fotos */}
-        {isExperienciasMode && hasExperiencias && (
-          <SectionReveal>
-            <div className="mt-16 text-center p-10 md:p-14 rounded-3xl bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-100">
-              <div className="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center mx-auto mb-6">
-                <Heart className="w-7 h-7 text-rose-500" />
+              <div className="w-24 h-24 rounded-3xl bg-rose-100 flex items-center justify-center mb-8">
+                <Camera className="w-12 h-12 text-rose-400" />
               </div>
-              <h3 className="heading-1 text-editorial-dark mb-3">{t("experienciasCtaTitle")}</h3>
-              <p className="body text-editorial-muted mb-8 mx-auto">{t("experienciasCtaDesc")}</p>
+              <h2 className="heading-1 text-editorial-dark mb-4">{t("experienciasEmptyTitle")}</h2>
+              <p className="body text-editorial-muted mb-10 max-w-md">{t("experienciasEmptyDesc")}</p>
               <a
                 href={waLink}
                 target="_blank"
@@ -299,17 +273,93 @@ export function GaleriaEditorial({
                 className="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:-translate-y-0.5 shadow-editorial-lg hover:shadow-editorial-xl"
               >
                 <Heart className="w-5 h-5" />
-                {t("experienciasCtaBtn")}
+                {t("experienciasEmptyBtn")}
               </a>
+            </motion.div>
+          ) : (
+            <>
+              <SectionReveal className="editorial-stagger-variance">
+                <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+                  <AnimatePresence mode="popLayout">
+                    {filtered.map((img, i) => (
+                      <motion.div
+                        key={img.src}
+                        layout
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.35, delay: Math.min(i * 0.04, 0.3) }}
+                        className="break-inside-avoid cursor-pointer group relative rounded-xl overflow-hidden editorial-hover-scale"
+                        onClick={() => openLightbox(i)}
+                      >
+                        <Image
+                          src={img.src}
+                          alt={img.alt}
+                          width={600}
+                          height={400}
+                          sizes={IMAGE_SIZES.gallery}
+                          className="w-full h-auto object-cover editorial-scale-target transition-transform duration-700"
+                        />
+
+                        {/* Badge especial para fotos de viajeros */}
+                        {img.category === EXPERIENCIAS_KEY && (
+                          <div className="absolute top-3 left-3 flex items-center gap-1 bg-rose-500/90 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                            <Heart className="w-3 h-3" />
+                            {img.author ?? "Viajero OnTour"}
+                          </div>
+                        )}
+
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 editorial-overlay-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+
+                        {/* Caption on hover */}
+                        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                          <p className="text-white text-sm font-medium leading-snug">{img.alt}</p>
+                          <span className="label text-white/60 mt-1 block">{img.category}</span>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
+                </div>
+              </SectionReveal>
+            </>
+          )}
+
+          {filtered.length === 0 && !isExperienciasMode && (
+            <div className="text-center py-24">
+              <p className="body-lg text-editorial-muted">No hay fotos en esta categoría.</p>
             </div>
-          </SectionReveal>
-        )}
-      </div>
+          )}
+
+          {/* CTA compartir foto — solo en modo Experiencias con fotos */}
+          {isExperienciasMode && hasExperiencias && (
+            <SectionReveal>
+              <div className="mt-16 text-center p-10 md:p-14 rounded-3xl bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-100">
+                <div className="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center mx-auto mb-6">
+                  <Heart className="w-7 h-7 text-rose-500" />
+                </div>
+                <h3 className="heading-1 text-editorial-dark mb-3">{t("experienciasCtaTitle")}</h3>
+                <p className="body text-editorial-muted mb-8 mx-auto">{t("experienciasCtaDesc")}</p>
+                <a
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:-translate-y-0.5 shadow-editorial-lg hover:shadow-editorial-xl"
+                >
+                  <Heart className="w-5 h-5" />
+                  {t("experienciasCtaBtn")}
+                </a>
+              </div>
+            </SectionReveal>
+          )}
+        </div>
+      </section>
 
       {/* -- Lightbox -------------------------------------------- */}
       <AnimatePresence>
         {lightbox !== null && (
           <motion.div
+            ref={lightboxRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

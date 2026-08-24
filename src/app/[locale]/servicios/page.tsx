@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { Bus, Hotel, Users, ShieldCheck, Utensils, CalendarCheck } from "lucide-react";
+import { Bus, Hotel, Users, ShieldCheck, Utensils, CalendarCheck, ExternalLink } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { ServiciosHero } from "./ServiciosHero";
@@ -82,12 +82,23 @@ export default async function ServiciosPage({
           <p className="text-foreground/70 max-w-2xl mx-auto mb-8 text-lg">
             {t("ctaSubtitle")}
           </p>
-          <Link
-            href="/contacto"
-            className="inline-block bg-accent hover:brightness-90 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
-          >
-            {t("ctaButton")}
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/contacto"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-accent hover:brightness-90 text-white px-8 py-3.5 rounded-full font-bold text-base shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              {t("ctaButton")}
+            </Link>
+            <a
+              href="https://reservas.ontourdmc.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-gray-200 hover:border-gray-300 bg-gray-50/80 hover:bg-gray-100/90 text-foreground/75 hover:text-foreground text-sm font-medium transition-all"
+            >
+              <span>{t("aviaturButton")}</span>
+              <ExternalLink className="w-4 h-4 text-foreground/45" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

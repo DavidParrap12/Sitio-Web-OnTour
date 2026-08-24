@@ -74,19 +74,7 @@ export function Testimonials() {
   };
 
   return (
-    <section className="pb-32 pt-16 md:pb-40 md:pt-24 bg-editorial-warm relative overflow-hidden">
-      {/* Gradiente entrada: white → editorial-warm */}
-      <div
-        aria-hidden="true"
-        className="absolute top-0 left-0 right-0 h-20 pointer-events-none z-10"
-        style={{ background: "linear-gradient(to bottom, #ffffff, transparent)" }}
-      />
-      {/* Gradiente salida: editorial-warm → dark */}
-      <div
-        aria-hidden="true"
-        className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none z-10"
-        style={{ background: "linear-gradient(to bottom, transparent, #0a1628)" }}
-      />
+    <section className="pb-32 pt-16 md:pb-40 md:pt-24 bg-[#faf8f4] relative overflow-hidden">
       {/* Subtle pattern background */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div
@@ -195,7 +183,7 @@ export function Testimonials() {
                     <div className="flex items-center gap-4">
                       <Initials name={review.name} />
                       <div className="flex-1">
-                        <p className="heading-3 text-editorial-dark">{review.name}</p>
+                        <p className="heading-2 text-editorial-dark">{review.name}</p>
                         <p className="caption text-editorial-muted flex items-center">
                           <svg className="w-3.5 h-3.5 inline-block mr-1" viewBox="0 0 24 24" fill="none">
                             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>

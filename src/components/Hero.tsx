@@ -16,26 +16,6 @@ const slides = [
 
 const INTERVAL = 5000;
 
-/* Ken Burns CSS keyframes — each variant pans in a different direction while zooming */
-const kenBurnsStyles = `
-  @keyframes kb-zoom-right {
-    from { transform: scale(1) translate(0, 0); }
-    to   { transform: scale(1.15) translate(-2%, -1%); }
-  }
-  @keyframes kb-zoom-left {
-    from { transform: scale(1) translate(0, 0); }
-    to   { transform: scale(1.15) translate(2%, 1%); }
-  }
-  @keyframes kb-zoom-up {
-    from { transform: scale(1) translate(0, 0); }
-    to   { transform: scale(1.12) translate(-1%, 2%); }
-  }
-  @keyframes kb-zoom-down {
-    from { transform: scale(1) translate(0, 0); }
-    to   { transform: scale(1.12) translate(1%, -2%); }
-  }
-`;
-
 export function Hero() {
   const t = useTranslations("hero");
   const [current, setCurrent] = useState(0);
@@ -49,9 +29,6 @@ export function Hero() {
 
   return (
     <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-
-      {/* Ken Burns keyframes */}
-      <style dangerouslySetInnerHTML={{ __html: kenBurnsStyles }} />
 
       {/* Background slider with Ken Burns zoom/pan effect */}
       {slides.map((slide, i) => (
@@ -83,11 +60,11 @@ export function Hero() {
         </motion.div>
       ))}
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+      {/* Overlay — vignette lateral, imagen respira por la derecha */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-6 text-center max-w-5xl pt-20">
+      {/* Content — tercio izquierdo, alineación editorial */}
+      <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 text-left max-w-[52%] pt-20">
         <motion.span
           initial={{ opacity: 0, y: 20, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -108,7 +85,7 @@ export function Hero() {
           className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 leading-tight"
         >
           {t("title1")}<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-400">
+          <span className="text-white">
             {t("title2")}
           </span>
         </motion.h1>
@@ -117,7 +94,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+          className="text-lg md:text-2xl text-white/90 mb-10 font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
         >
           {t("subtitle")}
         </motion.p>
@@ -126,7 +103,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-start justify-start gap-4"
         >
           <Link
             href={"/pasadias" as any}
@@ -145,24 +122,23 @@ export function Hero() {
         </motion.div>
 
         {/* Slide indicators */}
-        <div className="flex items-center justify-center gap-2 mt-12">
+        <div className="flex items-center justify-start gap-2 mt-12">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
               aria-label={t("goToImage", { n: i + 1 })}
-              className={`transition-all duration-300 rounded-full ${
-                i === current
+              className={`transition-all duration-300 rounded-full ${i === current
                   ? "bg-white w-8 h-2"
                   : "bg-white/40 hover:bg-white/70 w-2 h-2"
-              }`}
+                }`}
             />
           ))}
         </div>
       </div>
 
-      {/* Bottom gradient */}
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* Bottom gradient — imagen a sangre, sin color de fondo */}
+      <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-black/40 to-transparent" />
     </div>
   );
 }

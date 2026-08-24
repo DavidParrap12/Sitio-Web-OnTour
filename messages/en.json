@@ -175,7 +175,7 @@
     "duration": "Duration",
     "location": "Location",
     "nationalDest": "National Destinations",
-    "pricePerPerson": "Suggested price per person",
+    "pricePerPerson": "PRICE PER PERSON FROM",
     "priceLabel": "To Be Quoted",
     "priceNote": "Subject to change and availability",
     "requestQuote": "Request a Quote Now",
@@ -266,7 +266,7 @@
         "Tatacoa Desert",
         "San Agustín Archaeological Park"
       ],
-      "price": "2780 USD",
+      "price": "4000 USD",
       "itinerary": [
         "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to hotel. Free time. Accommodation.",
         "DAY 2: BOGOTÁ CITY TOUR & MONSERRATE. Panoramic tour of Bogotá's historic center, gastronomic experience in La Candelaria, and ascent to Monserrate by cable car with sunset dinner.",
@@ -385,7 +385,7 @@
         "Honda Heritage Town and Magdalena River cruise",
         "Guaduas, birthplace of Policarpa Salavarrieta"
       ],
-      "price": "3470 USD",
+      "price": "3970 USD",
       "itinerary": [
         "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to chosen hotel. Free time. Accommodation.",
         "DAY 2: BOGOTÁ CITY TOUR & DINNER AT MONSERRATE. Panoramic tour of Bogotá: historic center, La Candelaria, historic squares and urban art. Ascent to Monserrate (3,152 m) by funicular and/or cable car. Dinner with the best Bogotá view. Accommodation.",
@@ -523,7 +523,7 @@
         "Juan Curí Waterfalls and Level I & II rafting on the Fonce River",
         "Floridablanca: obleas (wafers) with natural products"
       ],
-      "price": "2990 USD",
+      "price": "4190 USD",
       "itinerary": [
         "DAY 1: BOGOTÁ – EL DORADO AIRPORT. Reception at El Dorado International Airport, transfer to chosen hotel. Free time. Accommodation.",
         "DAY 2: BOGOTÁ CITY TOUR & DINNER AT MONSERRATE. Breakfast at the hotel. Panoramic tour of Bogotá: historic center, La Candelaria, historic squares, gastronomic experiences and urban graffiti art. Ascent to Monserrate (3,152 m) by funicular and/or cable car. Dinner with the best view of Bogotá. Return to hotel. Accommodation.",
@@ -819,7 +819,8 @@
     },
     "ctaTitle": "Need a customized service?",
     "ctaSubtitle": "Contact us and we'll design the perfect solution for your group, agency, or company.",
-    "ctaButton": "Request a quote"
+    "ctaButton": "Request a quote",
+    "aviaturButton": "Aviatur Channel"
   },
   "gallery": {
     "title": "Photo Gallery",

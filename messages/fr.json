@@ -175,7 +175,7 @@
     "duration": "Durée",
     "location": "Lieu",
     "nationalDest": "Destinations nationales",
-    "pricePerPerson": "Prix suggéré par personne",
+    "pricePerPerson": "PRIX PAR PERSONNE DÈS",
     "priceLabel": "Sur devis",
     "priceNote": "Sous réserve de modifications et de disponibilité",
     "requestQuote": "Demander un devis maintenant",
@@ -266,7 +266,7 @@
         "Désert de Tatacoa",
         "Parc archéologique de San Agustín"
       ],
-      "price": "2780 USD",
+      "price": "4000 USD",
       "itinerary": [
         "JOUR 1 : BOGOTÁ – AÉROPORT EL DORADO. Accueil à l'aéroport international El Dorado, transfert à l'hôtel. Temps libre. Hébergement.",
         "JOUR 2 : BOGOTÁ CITY TOUR & MONSERRATE. Visite panoramique du centre historique de Bogotá, expérience gastronomique à La Candelaria et montée au Monserrate en téléphérique avec dîner au coucher du soleil.",
@@ -385,7 +385,7 @@
         "Honda, ville patrimoine, et croisière sur le fleuve Magdalena",
         "Guaduas, lieu de naissance de Policarpa Salavarrieta"
       ],
-      "price": "3470 USD",
+      "price": "3970 USD",
       "itinerary": [
         "JOUR 1 : BOGOTÁ – AÉROPORT EL DORADO. Accueil à l'aéroport international El Dorado, transfert à l'hôtel de votre choix. Temps libre. Hébergement.",
         "JOUR 2 : BOGOTÁ CITY TOUR & DÎNER AU MONSERRATE. Visite panoramique de Bogotá : centre historique, La Candelaria, places historiques et art urbain. Montée au Monserrate (3 152 m) en funiculaire et/ou téléphérique. Dîner avec la plus belle vue de Bogotá. Hébergement.",
@@ -523,7 +523,7 @@
         "Cascades Juan Curí et rafting niveau I et II sur le Río Fonce",
         "Floridablanca : obleas (gaufrettes) aux produits naturels"
       ],
-      "price": "2990 USD",
+      "price": "4190 USD",
       "itinerary": [
         "JOUR 1 : BOGOTÁ – AÉROPORT EL DORADO. Accueil à l'aéroport international El Dorado, transfert à l'hôtel de votre choix. Temps libre. Hébergement.",
         "JOUR 2 : BOGOTÁ CITY TOUR & DÎNER AU MONSERRATE. Petit-déjeuner à l'hôtel. Visite panoramique de Bogotá : centre historique, La Candelaria, places historiques, expériences gastronomiques et art urbain de graffitis. Montée au Monserrate (3 152 m) en funiculaire et/ou téléphérique. Dîner avec la plus belle vue de Bogotá. Retour à l'hôtel. Hébergement.",
@@ -819,7 +819,8 @@
     },
     "ctaTitle": "Besoin d'un service personnalisé ?",
     "ctaSubtitle": "Contactez-nous et nous concevrons la solution parfaite pour votre groupe, agence ou entreprise.",
-    "ctaButton": "Demander un devis"
+    "ctaButton": "Demander un devis",
+    "aviaturButton": "Canal Aviatur"
   },
   "gallery": {
     "title": "Galerie Photos",

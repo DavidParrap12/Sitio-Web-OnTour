@@ -29,13 +29,6 @@ export function WhatsappButton() {
       <span className="absolute inset-0 rounded-full bg-green-400 animate-[wa-pulse_3s_ease-out_infinite]" />
       <span className="absolute inset-0 rounded-full bg-green-400 animate-[wa-pulse_3s_ease-out_1.5s_infinite]" />
       <MessageCircle className="w-7 h-7 relative z-10" />
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes wa-pulse {
-          0% { transform: scale(1); opacity: 0.5; }
-          100% { transform: scale(2); opacity: 0; }
-        }
-      `}} />
     </motion.a>
   );
 }

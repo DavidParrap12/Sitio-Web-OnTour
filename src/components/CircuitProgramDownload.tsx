@@ -92,8 +92,8 @@ export function CircuitProgramDownload({
       const { saveAs } = await import("file-saver");
 
       /* --- If a real PDF brochure file exists, download it directly --- */
-      if (brochurePdfUrl) {
-        const response = await fetch(brochurePdfUrl);
+      if (brochurePdfUrl && brochurePdfUrl.trim() !== "") {
+        const response = await fetch(encodeURI(brochurePdfUrl.trim()));
         if (!response.ok) throw new Error(`Failed to fetch PDF brochure: ${response.status}`);
         const blob = await response.blob();
         saveAs(blob, `OnTour-Programa-${slug}.pdf`);
@@ -282,8 +282,8 @@ export function CircuitProgramDownload({
       const { saveAs } = await import("file-saver");
 
       /* --- If a real brochure file exists, download it directly --- */
-      if (brochureUrl) {
-        const response = await fetch(brochureUrl);
+      if (brochureUrl && brochureUrl.trim() !== "") {
+        const response = await fetch(encodeURI(brochureUrl.trim()));
         if (!response.ok) throw new Error(`Failed to fetch brochure: ${response.status}`);
         const blob = await response.blob();
         saveAs(blob, `OnTour-Programa-${slug}.docx`);

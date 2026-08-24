@@ -1,13 +1,11 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { DESIGN_FLAGS } from "@/lib/flags";
 import { Camera } from "lucide-react";
-import { GalleryGrid, type GalleryImage } from "@/components/GalleryGrid";
 import { GaleriaEditorial, type GalleryImageData } from "./GaleriaEditorial";
 import Image from "next/image";
 
-// Gallery data — shared between legacy and editorial layouts.
-const galleryImages: (GalleryImage & GalleryImageData)[] = [
+// Gallery data — used by the editorial gallery layout.
+const galleryImages: GalleryImageData[] = [
   // Tolima
   { src: "/image/Tolima-fotos/tolima_nevado-ruiz-emision-ceniza-vista-aerea.jpeg", alt: "Nevado del Ruiz - Emisión de ceniza", category: "Tolima" },
   { src: "/image/Tolima-fotos/ibague_cañon-combeima-senalizacion-turistica.jpeg", alt: "Cañón de Combeima - Señalización Turística", category: "Tolima" },
@@ -77,49 +75,13 @@ export default async function GaleriaPage({
   setRequestLocale(locale);
   const t = await getTranslations("gallery");
 
-  // -- Editorial Layout ----------------------------------------
-  if (DESIGN_FLAGS.galeria) {
-    return (
-      <GaleriaEditorial
-        images={galleryImages}
-        categories={categories}
-        title={t("title")}
-        subtitle={t("subtitle")}
-        filterAllLabel={t("all")}
-      />
-    );
-  }
-
-  // -- Legacy Layout -------------------------------------------
   return (
-    <div className="pt-24 pb-16 min-h-screen bg-secondary/50">
-      {/* Hero */}
-      <div className="bg-primary text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80" />
-        <Image
-          src="/image/makalu-colombia-3631740.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="opacity-15 object-cover object-center"
-        />
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-          <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Camera className="w-8 h-8" />
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">
-            {t("title")}
-          </h1>
-          <p className="text-xl max-w-3xl mx-auto text-white/85 leading-relaxed">
-            {t("subtitle")}
-          </p>
-        </div>
-      </div>
-
-      {/* Gallery */}
-      <div className="container mx-auto px-4 md:px-6 mt-12 md:mt-16">
-        <GalleryGrid images={galleryImages} categories={categories} />
-      </div>
-    </div>
+    <GaleriaEditorial
+      images={galleryImages}
+      categories={categories}
+      title={t("title")}
+      subtitle={t("subtitle")}
+      filterAllLabel={t("all")}
+    />
   );
 }

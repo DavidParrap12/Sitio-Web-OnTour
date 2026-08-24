@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 
 export interface LogoItem {
   src: string;
@@ -17,17 +18,20 @@ interface MarqueeLogosProps {
   speed?: number;
   /** Título opcional sobre el marquee */
   label?: string;
+  /** Color de fondo del strip (default '#ffffff') */
+  bgColor?: string;
 }
 
-export function MarqueeLogos({ logos, speed = 35, label }: MarqueeLogosProps) {
+export function MarqueeLogos({ logos, speed = 35, label, bgColor = "#ffffff" }: MarqueeLogosProps) {
+  const prefersReducedMotion = useReducedMotion();
   // Triplicar para que el loop sea siempre continuo sin saltos
   const track = [...logos, ...logos, ...logos];
 
   return (
-    <div className="w-full py-10 md:py-14 bg-white border-y border-editorial-border overflow-hidden relative">
+    <div className="w-full py-10 md:py-14 overflow-hidden relative" style={{ backgroundColor: bgColor }}>
       {/* Gradient fade en bordes */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-32 z-10 bg-gradient-to-r from-white to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 z-10 bg-gradient-to-l from-white to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-32 z-10" style={{ background: `linear-gradient(to right, ${bgColor}, transparent)` }} />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 z-10" style={{ background: `linear-gradient(to left, ${bgColor}, transparent)` }} />
 
       {label && (
         <p className="text-base md:text-lg font-bold uppercase tracking-widest text-editorial-dark text-center mb-8 relative z-10">{label}</p>
@@ -37,7 +41,7 @@ export function MarqueeLogos({ logos, speed = 35, label }: MarqueeLogosProps) {
       <div
         className="flex items-center gap-20 w-max"
         style={{
-          animation: `marquee-slide ${speed}s linear infinite`,
+          animation: prefersReducedMotion ? "none" : `marquee-slide ${speed}s linear infinite`,
           willChange: "transform",
         }}
       >
@@ -60,17 +64,6 @@ export function MarqueeLogos({ logos, speed = 35, label }: MarqueeLogosProps) {
           </div>
         ))}
       </div>
-
-      {/* Keyframe inline — no depende de globals.css */}
-      <style>{`
-        @keyframes marquee-slide {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-33.333%); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .marquee-slide { animation: none !important; }
-        }
-      `}</style>
     </div>
   );
 }

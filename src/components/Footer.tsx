@@ -52,7 +52,6 @@ export async function Footer() {
             <ul className="flex flex-col gap-3 text-sm">
               <li><Link href={"/" as any} className="hover:text-accent transition-colors">{t("home")}</Link></li>
               <li><Link href={"/nosotros" as any} className="hover:text-accent transition-colors">{t("about")}</Link></li>
-              <li><Link href={"/pasadias" as any} className="hover:text-accent transition-colors">{t("dayTrips")}</Link></li>
               <li><Link href={"/circuitos" as any} className="hover:text-accent transition-colors">{t("circuits")}</Link></li>
               <li><Link href={"/servicios" as any} className="hover:text-accent transition-colors">{t("services")}</Link></li>
               <li><Link href={"/galeria" as any} className="hover:text-accent transition-colors">{t("gallery")}</Link></li>

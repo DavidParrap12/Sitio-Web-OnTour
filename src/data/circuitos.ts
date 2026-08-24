@@ -1,3 +1,5 @@
+import { type DestinationTheme } from "@/lib/design-config";
+
 export interface CircuitoDayImage {
   image: string;
   location: string;
@@ -11,6 +13,8 @@ export interface Circuito {
   dayImages: CircuitoDayImage[];
   brochureUrl?: string;
   brochurePdfUrl?: string;
+  /** Visual thematic category for color grading & UI accents */
+  colorTheme?: DestinationTheme;
 }
 
 export const circuitos: Circuito[] = [
@@ -19,8 +23,9 @@ export const circuitos: Circuito[] = [
     days: 9,
     nights: 8,
     image: "/image/estatuas-san-agustin-antiguedad-portada.jpg",
-    brochureUrl: "/downloads/circuitos/Epoca-Precolombina-Sur-de-Colombia.docx",
-    brochurePdfUrl: "/downloads/circuitos/Epoca-Precolombina-Sur-de-Colombia.pdf",
+    colorTheme: "cultura",
+    brochureUrl: "",
+    brochurePdfUrl: "",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
@@ -30,7 +35,7 @@ export const circuitos: Circuito[] = [
       { image: "/image/legado-ancestral/Desierto-de-la-tatacoa.png", location: "HUILA" },
       { image: "/image/legado-ancestral/rio-magdalena.jpg", location: "SAN AGUSTÍN" },
       { image: "/image/legado-ancestral/puente-de-cristal.jpg", location: "HUILA" },
-      { image: "/image/legado-ancestral/cordillera-de-los-andes.jpg", location: "BOGOTÁ" },
+      { image: "/image/bogota-aire.jpg", location: "BOGOTÁ" },
     ],
   },
   {
@@ -38,13 +43,16 @@ export const circuitos: Circuito[] = [
     days: 13,
     nights: 12,
     image: "/image/makalu-colombia-3631740.jpg",
+    colorTheme: "naturaleza",
+    brochureUrl: "/programas-circuitos/Época Precolombina 9 días.docx",
+    brochurePdfUrl: "/programas-circuitos/Época Precolombina 9 días.pdf",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
       { image: "/image/legado-ancestral/catedral-1.jpg", location: "ZIPAQUIRÁ" },
       { image: "/image/Tolima-fotos/ibague_vista-aerea-guayacanes-en-flor.jpeg", location: "IBAGUÉ" },
-      { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.12 PM.jpeg", location: "IBAGUÉ" },
-      { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.14 PM (3).jpeg", location: "QUINDÍO" },
+      { image: "/image/Tolima-fotos/ingreso-ibagué.jpeg", location: "IBAGUÉ" },
+      { image: "/image/Tolima-fotos/tolima_palmas-cera-valle-cielo-nublado.jpeg ", location: "QUINDÍO" },
       { image: "/image/jardin-botanico-quindio.jpg", location: "ARMENIA" },
       { image: "/image/kinenriquez-valle-de-cocora-4959051_1920.jpg", location: "SALENTO" },
       { image: "/image/murillo-tolima.jpg", location: "MANIZALES" },
@@ -59,6 +67,9 @@ export const circuitos: Circuito[] = [
     days: 8,
     nights: 7,
     image: "/image/villa de leyva.jpg",
+    colorTheme: "cultura",
+    brochureUrl: "",
+    brochurePdfUrl: "",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
@@ -75,14 +86,17 @@ export const circuitos: Circuito[] = [
     days: 14,
     nights: 13,
     image: "/image/cuidad-amurallada.jpg",
+    colorTheme: "urbano",
+    brochureUrl: "",
+    brochurePdfUrl: "",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
       { image: "/image/legado-ancestral/catedral-1.jpg", location: "ZIPAQUIRÁ" },
       { image: "/image/medellin.jpg", location: "MEDELLÍN" },
-      { image: "/image/comuna-13-historia-turismo-portada.jpg", location: "MEDELLÍN" },
+      { image: "/image/comunA-13.jpg", location: "MEDELLÍN" },
       { image: "/image/guatape.jpg", location: "GUATAPÉ" },
-      { image: "/image/julianza-medellin-182353.jpg", location: "MEDELLÍN" },
+      { image: "/image/Silletero.jpg", location: "MEDELLÍN" },
       { image: "/image/Orchidiarium_-_Medellin_Botanical_Gardens.jpg", location: "MEDELLÍN" },
       { image: "/image/cartagena.jfif", location: "CARTAGENA" },
       { image: "/image/castillo-san-felipe.jpg", location: "CARTAGENA" },
@@ -97,14 +111,15 @@ export const circuitos: Circuito[] = [
     days: 12,
     nights: 11,
     image: "/image/nevado-tolima.jpg",
-    brochureUrl: "/downloads/circuitos/Capitales-Cafeteras-de-Colombia-12-dias.docx",
-    brochurePdfUrl: "/downloads/circuitos/Capitales-Cafeteras-de-Colombia-12-dias.pdf",
+    colorTheme: "naturaleza",
+    brochureUrl: "/programas-circuitos/Capitales Cafeteras de Colombia 12 dias (1).docx",
+    brochurePdfUrl: "/programas-circuitos/Capitales Cafeteras de Colombia 12 dias (1).pdf",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "BOGOTÁ" },
-      { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.10 PM (3).jpeg", location: "IBAGUÉ" },
-      { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.12 PM.jpeg", location: "IBAGUÉ" },
-      { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.14 PM (3).jpeg", location: "QUINDÍO" },
+      { image: "/image/Tolima-fotos/ibague_vista-aerea-guayacanes-en-flor.jpeg", location: "IBAGUÉ" },
+      { image: "/image/Tolima-fotos/ingreso-ibagué.jpeg", location: "IBAGUÉ" },
+      { image: "/image/Tolima-fotos/tolima_palmas-cera-valle-cielo-nublado.jpeg ", location: "QUINDÍO" },
       { image: "/image/jardin-botanico-quindio.jpg", location: "ARMENIA" },
       { image: "/image/kinenriquez-valle-de-cocora-4959051_1920.jpg", location: "SALENTO" },
       { image: "/image/murillo-tolima.jpg", location: "MANIZALES" },
@@ -119,10 +134,13 @@ export const circuitos: Circuito[] = [
     days: 7,
     nights: 6,
     image: "/image/nevado-frailejones.jpeg",
+    colorTheme: "aventura",
+    brochureUrl: "",
+    brochurePdfUrl: "",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
-      { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.10 PM (3).jpeg", location: "IBAGUÉ" },
-      { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.12 PM.jpeg", location: "IBAGUÉ" },
+      { image: "/image/Tolima-fotos/ibague_vista-aerea-guayacanes-en-flor.jpeg", location: "IBAGUÉ" },
+      { image: "/image/Tolima-fotos/ingreso-ibagué.jpeg", location: "IBAGUÉ" },
       { image: "/image/cerroMachin.png", location: "IBAGUÉ" },
       { image: "/image/honda-tolima.jpg", location: "HONDA" },
       { image: "/image/guadas.jpg", location: "GUADUAS" },
@@ -134,6 +152,9 @@ export const circuitos: Circuito[] = [
     days: 7,
     nights: 6,
     image: "/image/villa de leyva.jpg",
+    colorTheme: "aventura",
+    brochureUrl: "",
+    brochurePdfUrl: "",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/catedral-1.jpg", location: "ZIPAQUIRÁ" },
@@ -149,12 +170,15 @@ export const circuitos: Circuito[] = [
     days: 7,
     nights: 6,
     image: "/image/kinenriquez-valle-de-cocora-4959051_1920.jpg",
+    colorTheme: "naturaleza",
+    brochureUrl: "",
+    brochurePdfUrl: "",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
-      { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.10 PM (3).jpeg", location: "IBAGUÉ" },
+      { image: "/image/Tolima-fotos/ingreso-ibagué.jpeg", location: "IBAGUÉ" },
       { image: "/image/kinenriquez-valle-de-cocora-4959051_1920.jpg", location: "SALENTO" },
       { image: "/image/jardin-botanico-quindio.jpg", location: "QUINDÍO" },
-      { image: "/image/Tolima-fotos/WhatsApp Image 2026-04-17 at 7.52.14 PM (3).jpeg", location: "PEREIRA" },
+      { image: "/image/termales-san-vicente.jpg", location: "PEREIRA" },
       { image: "/image/murillo-tolima.jpg", location: "MANIZALES" },
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "PEREIRA" },
     ],
@@ -164,6 +188,9 @@ export const circuitos: Circuito[] = [
     days: 10,
     nights: 9,
     image: "/image/guadas.jpg",
+    colorTheme: "cultura",
+    brochureUrl: "",
+    brochurePdfUrl: "",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/guadas.jpg", location: "GUADUAS" },
@@ -181,8 +208,9 @@ export const circuitos: Circuito[] = [
     id: "tour-santander-expedicion-aventurera",
     days: 10,
     nights: 9,
-    brochureUrl: "/downloads/circuitos/Santander-Expedicion-Aventurera.docx",
-    brochurePdfUrl: "/downloads/circuitos/Santander-Expedicion-Aventurera.pdf",
+    colorTheme: "aventura",
+    brochureUrl: "/programas-circuitos/Santander Expedición Aventurera 10 días.docx",
+    brochurePdfUrl: "/programas-circuitos/Santander Expedición Aventurera 10 días.pdf",
     image: "/image/Bucaramanga.jpg",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },

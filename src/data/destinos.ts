@@ -1,3 +1,4 @@
+import { type DestinationTheme } from "@/lib/design-config";
 
 export interface AsExtension {
   /** IDs of circuits that offer this pasadía as an optional add-on */
@@ -15,6 +16,8 @@ export interface Destino {
   image: string;
   brochureUrl?: string;
   gallery?: string[];
+  /** Visual thematic category for color grading & UI accents */
+  colorTheme?: DestinationTheme;
   /** When present, this pasadía can be offered as an optional add-on for the linked circuits */
   asExtension?: AsExtension;
 }
@@ -23,6 +26,7 @@ export const destinos: Destino[] = [
   {
     id: "Medellin-Magica",
     image: "/image/comuna 13.jpg",
+    colorTheme: "urbano",
     asExtension: {
       linkedCircuits: [
         "tour-colombia-eje-cafetero",
@@ -46,6 +50,7 @@ export const destinos: Destino[] = [
   {
     id: "bogota-tu-casa-pasadia",
     image: "/image/la-candelaria.jpg",
+    colorTheme: "cultura",
     asExtension: {
       linkedCircuits: [
         "epoca-precolombina-sur-colombia",
@@ -68,6 +73,7 @@ export const destinos: Destino[] = [
   {
     id: "cascada-la-plata-pasadia",
     image: "/image/rivera.jpg",
+    colorTheme: "naturaleza",
     asExtension: {
       linkedCircuits: [
         "tour-camino-real",
@@ -98,6 +104,7 @@ export const destinos: Destino[] = [
   {
     id: "Cali-es-donde-debe-estar",
     image: "/image/Lago-Calima-aventura.jpg",
+    colorTheme: "cultura",
     gallery:[
       "/image/pasadias/Pasadias_por_cali_2026/Captura-de-pantalla-2026-03-18-094216-717x1024.png", 
       "/image/pasadias/Pasadias_por_cali_2026/Captura-de-pantalla-2026-03-18-094436-721x1024.png",
@@ -110,6 +117,7 @@ export const destinos: Destino[] = [
   {
     id: "Cartagena-Mas-Heroica",
     image: "/image/amurallada-cuidad (1).jpg",
+    colorTheme: "playa",
     gallery: [
       "/image/pasadias/Pasadias_por_cartagena_2026/Captura2-1-722x1024.png",
       "/image/pasadias/Pasadias_por_cartagena_2026/Captura3-1-721x1024.png",
@@ -122,6 +130,7 @@ export const destinos: Destino[] = [
   {
     id: "Santa-Marta-Naturalmente-Magica",
     image: "/image/parque-nacional-natural.jpg",
+    colorTheme: "naturaleza",
     gallery: [
       "/image/pasadias/Pasadias_Santa_Marta_2026/Captura-de-pantalla-2025-12-29-101449-724x1024.png", 
       "/image/pasadias/Pasadias_Santa_Marta_2026/Captura-de-pantalla-2025-12-29-101503-721x1024.png", 
@@ -135,6 +144,7 @@ export const destinos: Destino[] = [
   {
     id: "San-Andres-Islas-Vas-A-mar",
     image: "/image/Parque-regional-johnny-cay_0.jpg",
+    colorTheme: "playa",
     gallery: [
       "/image/pasadias/Pasadias_san_andres_2026/Captura-718x1024.png",
       "/image/pasadias/Pasadias_san_andres_2026/Captura2-725x1024.png",

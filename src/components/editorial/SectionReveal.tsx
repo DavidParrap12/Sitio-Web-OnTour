@@ -2,6 +2,7 @@
 
 import { type ReactNode, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 
 interface SectionRevealProps {
   /** Content to animate in */
@@ -19,7 +20,7 @@ interface SectionRevealProps {
 /**
  * Scroll-triggered reveal wrapper using Framer Motion.
  * Fades in + slides up when the element enters the viewport.
- * Respects prefers-reduced-motion via Framer's built-in support.
+ * Respects prefers-reduced-motion via useReducedMotion hook.
  */
 export function SectionReveal({
   children,
@@ -30,6 +31,15 @@ export function SectionReveal({
 }: SectionRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion) {
+    return (
+      <Tag ref={ref as React.RefObject<HTMLDivElement>} className={className}>
+        <div style={{ opacity: 1, transform: "none" }}>{children}</div>
+      </Tag>
+    );
+  }
 
   return (
     <Tag ref={ref as React.RefObject<HTMLDivElement>} className={className}>
@@ -55,6 +65,12 @@ interface RevealItemProps {
 }
 
 export function RevealItem({ children, className = "" }: RevealItemProps) {
+  const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion) {
+    return <div className={className} style={{ opacity: 1, transform: "none" }}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}

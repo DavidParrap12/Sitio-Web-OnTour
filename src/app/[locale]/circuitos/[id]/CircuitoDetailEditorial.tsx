@@ -1,14 +1,25 @@
 "use client";
 
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { CheckCircle2, Clock, MapPin, Map, Calendar } from "lucide-react";
 import { SectionReveal } from "@/components/editorial/SectionReveal";
-import ItineraryTimeline from "@/components/ItineraryTimeline";
-import CircuitRouteMap from "@/components/CircuitRouteMap";
+import { HeroEditorial } from "@/components/editorial/HeroEditorial";
+import { MagneticButton } from "@/components/editorial/MagneticButton";
 import { BookingForm } from "@/components/BookingForm";
 import { CircuitProgramDownloadDynamic } from "@/components/CircuitProgramDownloadDynamic";
-import { CircuitExtensions, type ExtensionItem } from "@/components/CircuitExtensions";
+import { type ExtensionItem } from "@/components/CircuitExtensions";
+import { type DestinationTheme } from "@/lib/design-config";
+import { useDestinationTheme } from "@/lib/hooks/useDestinationTheme";
+
+// Below-the-fold: code-split
+const ItineraryTimeline = dynamic(() => import("@/components/ItineraryTimeline"));
+const CircuitExtensions = dynamic(
+  () => import("@/components/CircuitExtensions").then((m) => ({ default: m.CircuitExtensions }))
+);
+const CircuitRouteMap = dynamic(
+  () => import("@/components/CircuitRouteMap").then((m) => ({ default: m.default }))
+);
 
 interface CircuitoDetailEditorialProps {
   name: string;
@@ -27,6 +38,7 @@ interface CircuitoDetailEditorialProps {
   departureDates: Record<string, number>;
   whatsappUrl: string;
   extensions?: ExtensionItem[];
+  colorTheme?: DestinationTheme;
   t: Record<string, string>;
 }
 
@@ -34,25 +46,35 @@ export function CircuitoDetailEditorial({
   name, description, highlights, itinerary, image,
   days, nights, price, id, locale, dayImages,
   brochureUrl, brochurePdfUrl, departureDates, whatsappUrl,
-  extensions = [],
+  extensions = [], colorTheme,
   t,
 }: CircuitoDetailEditorialProps) {
+  const theme = useDestinationTheme(colorTheme);
+
   return (
     <div className="min-h-screen bg-white">
       {/* -- Hero ------------------------------------------------ */}
-      <div className="relative h-[65vh] md:h-[70vh] flex items-end overflow-hidden">
-        <Image src={image} alt={name} fill sizes="100vw" className="object-cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-t from-editorial-dark/90 via-editorial-dark/40 to-transparent" />
-        <div className="absolute inset-0 editorial-overlay-vignette" />
-
-        <div className="relative z-10 container mx-auto px-4 md:px-6 pb-14 md:pb-20">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="label inline-block py-2 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/90 mb-5"
-          >
-            {t.badge}
-          </motion.span>
+      <HeroEditorial
+        variant="static"
+        slides={[{ src: image, alt: name }]}
+        gradeClass={theme.gradeClass}
+        overlay="bottom"
+        minHeight="65vh"
+        align="end"
+      >
+        <div className="container mx-auto px-4 md:px-6 pb-14 md:pb-20">
+          {colorTheme && (
+            <div className="flex flex-wrap items-center gap-3 mb-5">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+                className="label inline-block py-2 px-4 rounded-full text-white font-semibold backdrop-blur-md shadow-sm"
+                style={theme.badgeStyle}
+              >
+                {theme.label}
+              </motion.span>
+            </div>
+          )}
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -69,7 +91,7 @@ export function CircuitoDetailEditorial({
             <span className="flex items-center gap-2"><Calendar className="w-5 h-5" /> {t.daysNights}</span>
           </motion.div>
         </div>
-      </div>
+      </HeroEditorial>
 
       {/* -- Booking Form (overlapping hero) --------------------- */}
       <div className="container mx-auto px-4 md:px-6 -mt-20 relative z-10 max-w-6xl">
@@ -190,12 +212,14 @@ export function CircuitoDetailEditorial({
                 <p className="text-xs text-editorial-muted-light">{t.priceNote}</p>
               </div>
 
-              <a
-                href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-                className="w-full flex justify-center items-center gap-2 bg-editorial-accent hover:bg-editorial-accent-hover text-white px-6 py-4 rounded-xl font-bold transition-all shadow-editorial-md hover:shadow-editorial-lg"
-              >
-                {t.requestQuote}
-              </a>
+              <MagneticButton className="w-full block">
+                <a
+                  href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                  className="w-full flex justify-center items-center gap-2 bg-editorial-accent text-white px-6 py-4 rounded-xl font-bold text-center shadow-editorial-md editorial-hover-rich editorial-hover-shift-dark"
+                >
+                  {t.requestQuote}
+                </a>
+              </MagneticButton>
             </div>
           </div>
         </div>

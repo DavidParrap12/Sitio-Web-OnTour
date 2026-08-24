@@ -1,10 +1,18 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
-import { ContactForm } from "@/components/ContactForm";
 import { SectionReveal } from "@/components/editorial/SectionReveal";
+import { ParallaxFloat } from "@/components/editorial/ParallaxFloat";
+
+// Below-the-fold: code-split
+const ContactForm = dynamic(
+  () => import("@/components/ContactForm").then((m) => ({ default: m.ContactForm }))
+);
+
+const BLUR_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
 
 interface ContactoEditorialProps {
   title: string;
@@ -30,15 +38,19 @@ export function ContactoEditorial({
   return (
     <div className="min-h-screen bg-editorial-warm">
       {/* -- Hero ----------------------------------------------- */}
-      <div className="relative h-[45vh] md:h-[50vh] flex items-end overflow-hidden">
-        <Image
-          src="/image/on-tour-ofc-centro-2025-scaled.jpg"
-          alt="Oficina OnTour"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
+      <section className="relative h-[45vh] md:h-[50vh] flex items-end overflow-hidden">
+        <ParallaxFloat speed={0.1} className="absolute inset-0">
+          <Image
+            src="/image/servicios/ibagué.jpeg"
+            alt="ibague"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+            placeholder="blur"
+            blurDataURL={BLUR_PLACEHOLDER}
+          />
+        </ParallaxFloat>
         <div className="absolute inset-0 bg-gradient-to-t from-editorial-dark/90 via-editorial-dark/50 to-editorial-dark/20" />
         <div className="absolute inset-0 editorial-overlay-vignette" />
 
@@ -61,12 +73,15 @@ export function ContactoEditorial({
             {subtitle}
           </motion.p>
         </div>
-      </div>
+      </section>
 
       {/* -- Contact Split -------------------------------------- */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <SectionReveal>
+      <section
+        className="py-16 md:py-24 bg-editorial-warm editorial-section--bleed editorial-gradient-bleed relative"
+        style={{ "--bleed-color": "#0a1628" } as React.CSSProperties}
+      >
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <SectionReveal className="editorial-stagger-variance">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
               {/* Info Panel */}
               <div className="lg:col-span-2 bg-editorial-dark text-white p-10 md:p-14 rounded-3xl flex flex-col justify-between">
@@ -128,8 +143,8 @@ export function ContactoEditorial({
       </section>
 
       {/* -- Map ------------------------------------------------ */}
-      <section className="pb-16 md:pb-24">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="pb-16 md:pb-24 editorial-section--bleed relative">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <SectionReveal>
             <div className="max-w-6xl mx-auto rounded-3xl overflow-hidden border border-editorial-border bg-white">
               <div className="px-8 pt-8 pb-4 flex items-center gap-3">

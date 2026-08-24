@@ -1,6 +1,6 @@
 // Root layout — must include <html> and <body> per Next.js requirement.
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display, Sora } from "next/font/google";
+import { DM_Sans, Playfair_Display, Fraunces } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -15,10 +15,10 @@ const playfairDisplay = Playfair_Display({
   display: "swap",
 });
 
-const sora = Sora({
-  variable: "--font-sora",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${dmSans.variable} ${playfairDisplay.variable} ${sora.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${playfairDisplay.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="font-sans min-h-full flex flex-col bg-background text-foreground">
         {children}

@@ -6,19 +6,27 @@
  * (Framer Motion, dynamic styles, computed layouts).
  */
 
+// -- Brand Colors -----------------------------------------------------------
+export const BRAND_COLORS = {
+  // Primary accent — verde selva profundo (Colombia identity)
+  editorialAccent: '#1a4a2e',
+  editorialAccentHover: '#143822',
+  editorialAccentLight: '#226b3a',
+} as const;
+
 // -- Destination Color Themes ---------------------------------------------
 export const DESTINATION_THEMES = {
   naturaleza: {
     color: '#1b4332',
     colorLight: '#2d6a4f',
     label: 'Naturaleza',
-    grade: 'editorial-grade-natural',
+    grade: 'editorial-grade-naturaleza',
   },
   cultura: {
     color: '#9c4221',
     colorLight: '#c76f45',
     label: 'Cultura',
-    grade: 'editorial-grade-cultural',
+    grade: 'editorial-grade-cultura',
   },
   aventura: {
     color: '#1864ab',
@@ -98,7 +106,40 @@ export const MOTION = {
     viewport: { once: true, margin: '-80px' },
     transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
   },
+  /** Magnetic button spring config (MagneticButton component) */
+  magneticSpring: { stiffness: 150, damping: 15, mass: 0.1 },
+  /** Rich card hover — scale + lift combined (use with .editorial-hover-rich) */
+  hoverRich: {
+    whileHover: {
+      scale: 1.02,
+      y: -2,
+      transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
+    },
+  },
+  /** Clip-path wipe reveal for images on scroll (ImageRevealClip component) */
+  clipRevealWipe: {
+    initial: { clipPath: 'polygon(0 0, 0% 0, 0% 100%, 0 100%)' },
+    whileInView: { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' },
+    viewport: { once: true, margin: '-80px' },
+    transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] },
+  },
 } as const;
+
+/**
+ * Randomized stagger delays (seconds) for organic motion variance.
+ * Returns an array of delays where entry i is the delay (in seconds)
+ * assigned to child i — order is shuffled so entrances feel non-linear.
+ * Pair with dynamic variants via Framer Motion's `custom` prop.
+ */
+export function varianceStagger(count: number, stepMs = 80): number[] {
+  const order = Array.from({ length: count }, (_, i) => i);
+  // Fisher-Yates shuffle
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  return order.map((rank) => rank * (stepMs / 1000));
+}
 
 // -- Regions --------------------------------------------------------------
 export const REGIONS = [

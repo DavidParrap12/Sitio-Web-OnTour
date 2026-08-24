@@ -1,17 +1,11 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { DESIGN_FLAGS } from "@/lib/flags";
 import { circuitos } from "@/data/circuitos";
 import { destinos } from "@/data/destinos";
 import { routing } from "@/i18n/routing";
-import { CheckCircle2, Clock, MapPin, Map } from "lucide-react";
-import ItineraryTimeline from "@/components/ItineraryTimeline";
-import CircuitRouteMap from "@/components/CircuitRouteMap";
-import { BookingForm } from "@/components/BookingForm";
-import { CircuitProgramDownloadDynamic } from "@/components/CircuitProgramDownloadDynamic";
 import { fetchDepartureDates } from "@/lib/googleSheets";
+import { CheckCircle2, Clock, MapPin, Map } from "lucide-react";
 import { CircuitoDetailEditorial } from "./CircuitoDetailEditorial";
 import { JsonLd } from "@/components/JsonLd";
 import { buildCircuitoSchema, buildBreadcrumbs, buildDepartureDateEvents } from "@/lib/schema";
@@ -70,12 +64,12 @@ export default async function CircuitoPage({
     { name: locale === "es" ? "Circuitos" : "Circuits", url: `https://www.agenciaontour.com/${locale === "es" ? "circuitos" : locale + "/circuits"}` },
     { name, url: `https://www.agenciaontour.com/${locale === "es" ? "circuitos" : locale + "/circuits"}/${id}` },
   ]);
-  if (DESIGN_FLAGS.circuitoDetail) {
-    return (
-      <>
-        <JsonLd data={schema} />
-        <JsonLd data={breadcrumb} />
-        {eventSchemas.map((e, i) => <JsonLd key={i} data={e} />)}
+
+  return (
+    <>
+      <JsonLd data={schema} />
+      <JsonLd data={breadcrumb} />
+      {eventSchemas.map((e, i) => <JsonLd key={i} data={e} />)}
       <CircuitoDetailEditorial
         name={name} description={description} highlights={highlights}
         itinerary={itinerary} image={circuito.image}
@@ -83,7 +77,7 @@ export default async function CircuitoPage({
         id={id} locale={locale} dayImages={circuito.dayImages}
         brochureUrl={circuito.brochureUrl} brochurePdfUrl={circuito.brochurePdfUrl}
         departureDates={departureDates} whatsappUrl={whatsappUrl}
-        extensions={extensions}
+        extensions={extensions} colorTheme={circuito.colorTheme}
         t={{
           badge: t("badge"), colombia: t("colombia"),
           daysNights: t("daysNights", { days: circuito.days, nights: circuito.nights }),
@@ -105,123 +99,6 @@ export default async function CircuitoPage({
           extensionsWhatsappTemplate: tExt("whatsappTemplate"),
         }}
       />
-      </>
-    );
-  }
-
-  // -- Legacy Layout -------------------------------------------
-  return (
-    <>
-      <JsonLd data={schema} />
-      <JsonLd data={breadcrumb} />
-      {eventSchemas.map((e, i) => <JsonLd key={i} data={e} />)}
-      <div className="pt-20 bg-secondary/50 min-h-screen pb-20">
-      <div className="relative w-full h-[50vh] min-h-[400px]">
-        <Image src={circuito.image} alt={name} fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-4 md:px-6 text-white text-center">
-            <span className="inline-block py-1.5 px-4 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-medium tracking-wide mb-4">
-              {t("badge")}
-            </span>
-            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4 drop-shadow-md">{name}</h1>
-            <div className="flex items-center justify-center gap-6 text-white/90 font-medium">
-              <span className="flex items-center gap-2"><MapPin className="w-5 h-5" /> {t("colombia")}</span>
-              <span className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                {t("daysNights", { days: circuito.days, nights: circuito.nights })}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 md:px-6 -mt-20 relative z-10 max-w-6xl">
-        <BookingForm locale={locale} departureDates={departureDates} />
-      </div>
-
-      <div className="container mx-auto px-4 md:px-6 mt-16 md:mt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2 space-y-12">
-            <section>
-              <h2 className="text-3xl font-heading font-bold mb-6 text-primary border-b pb-4">{t("tripDescription")}</h2>
-              <p className="text-lg text-foreground/80 leading-relaxed">{description}</p>
-            </section>
-
-            <section>
-              <h2 className="text-3xl font-heading font-bold mb-6 text-primary border-b pb-4">{t("youWillEnjoy")}</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {highlights.map((highlight, idx) => (
-                  <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                    <CheckCircle2 className="w-6 h-6 text-accent shrink-0" />
-                    <span className="text-foreground/80 font-medium">{highlight}</span>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-3xl font-heading font-bold mb-6 text-primary border-b pb-4">{t("itinerary")}</h2>
-              <ItineraryTimeline
-                itinerary={itinerary} dayImages={circuito.dayImages}
-                t={{ close: t("galleryClose"), photoOf: t("galleryPhotoOf"), clickToEnlarge: t("galleryClickToEnlarge") }}
-              />
-            </section>
-          </div>
-
-          <div className="lg:col-span-1 space-y-8">
-            <CircuitRouteMap dayImages={circuito.dayImages} circuitName={name} />
-            <div className="sticky top-28 bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-              <h3 className="text-2xl font-heading font-bold mb-6 text-primary">{t("tripSummary")}</h3>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary text-primary flex items-center justify-center"><Clock className="w-6 h-6" /></div>
-                  <div>
-                    <p className="text-sm text-foreground/60">{t("duration")}</p>
-                    <p className="font-semibold">{t("daysNights", { days: circuito.days, nights: circuito.nights })}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary text-primary flex items-center justify-center"><Map className="w-6 h-6" /></div>
-                  <div>
-                    <p className="text-sm text-foreground/60">{t("location")}</p>
-                    <p className="font-semibold">{t("nationalDest")}</p>
-                  </div>
-                </div>
-              </div>
-
-              <CircuitProgramDownloadDynamic
-                name={name} slug={circuito.id} description={description}
-                highlights={highlights} itinerary={itinerary}
-                days={circuito.days} nights={circuito.nights} price={price}
-                brochureUrl={circuito.brochureUrl} brochurePdfUrl={circuito.brochurePdfUrl}
-                labels={{
-                  downloadPdf: t("downloadPdf"), downloadWord: t("downloadWord"),
-                  downloadProgram: t("downloadProgram"), generating: t("generating"), downloaded: t("downloaded"),
-                  tripDescription: t("tripDescription"), youWillEnjoy: t("youWillEnjoy"),
-                  itineraryLabel: t("itinerary"), duration: t("duration"),
-                  daysNights: t("daysNights", { days: circuito.days, nights: circuito.nights }),
-                  priceLabel: t("pricePerPerson"),
-                }}
-              />
-
-              <div className="border-t pt-6 mb-8 text-center">
-                <p className="text-sm text-foreground/60 mb-2">{t("pricePerPerson")}</p>
-                <div className="text-4xl font-black text-primary mb-2">{price}</div>
-                <p className="text-xs text-foreground/50">{t("priceNote")}</p>
-              </div>
-
-              <a
-                href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-                className="w-full flex justify-center items-center gap-2 bg-accent hover:brightness-90 text-white px-6 py-4 rounded-xl font-bold transition-all shadow-md"
-              >
-                {t("requestQuote")}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
     </>
   );
 }
