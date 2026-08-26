@@ -48,12 +48,14 @@ const CITIES: Record<string, [number, number]> = {
 };
 
 /* ----------------------------------------------------------------
-   Tile layers (free, no API key needed)
+   Tile layers — Esri World Dark Gray (free, no API key)
+   CARTO now requires API key (cartocdn.com/dark_all → 403),
+   so we use Esri's free dark base map. No key, no billing.
    ---------------------------------------------------------------- */
 const TILE_URL =
-  "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const TILE_ATTRIBUTION =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>';
+  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 /* ----------------------------------------------------------------
    Custom marker icon builder
@@ -154,8 +156,7 @@ export default function CircuitRouteMapInner({ dayImages, circuitName }: Circuit
     /* Add dark tile layer */
     L.tileLayer(TILE_URL, {
       attribution: TILE_ATTRIBUTION,
-      maxZoom: 18,
-      subdomains: "abcd",
+      maxZoom: 19,
     }).addTo(map);
 
     /* Fit bounds to route with padding */
