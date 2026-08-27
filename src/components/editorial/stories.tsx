@@ -1,226 +1,205 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import { DisplayHeading } from "./DisplayHeading";
 import { CaptionLabel } from "./CaptionLabel";
 import { EditorialBody } from "./EditorialBody";
 import { EditorialSection } from "./EditorialSection";
-import { EditorialCarousel } from "./EditorialCarousel";
-import { HeroEditorial } from "./HeroEditorial";
+import { EditorialCarousel, type CarouselItem } from "./EditorialCarousel";
+import { HeroEditorial, type HeroSlide } from "./HeroEditorial";
 import { SectionReveal } from "./SectionReveal";
 
 // ============================================================
-// DisplayHeading
+// Main Meta (Single default export for CSF compliance)
 // ============================================================
 
-const meta: Meta<typeof DisplayHeading> = {
-  title: "Components/DisplayHeading",
-  component: DisplayHeading,
+const meta: Meta = {
+  title: "Editorial Design System/Overview",
+  parameters: {
+    layout: "padded",
+  },
   tags: ["autodocs"],
 };
 
 export default meta;
-type Story = StoryObj<typeof DisplayHeading>;
 
-// @ts-ignore — Storybook adds 'args' dynamically
-export const H1Display: Story = {
-  name: "H1 (display-1)",
-  args: { as: "h1", variant: "display-1", children: "Título principal H1" },
+// ============================================================
+// DisplayHeading Stories
+// ============================================================
+
+export const HeadingH1: StoryObj<typeof DisplayHeading> = {
+  name: "DisplayHeading - H1 (display-1)",
+  render: () => (
+    <DisplayHeading as="h1" variant="display-1">
+      Título principal H1
+    </DisplayHeading>
+  ),
 };
 
-export const H2Display: Story = {
-  name: "H2 (display-2)",
-  args: { as: "h2", variant: "display-2", children: "Subtítulo H2" },
+export const HeadingH2: StoryObj<typeof DisplayHeading> = {
+  name: "DisplayHeading - H2 (display-2)",
+  render: () => (
+    <DisplayHeading as="h2" variant="display-2">
+      Subtítulo H2
+    </DisplayHeading>
+  ),
 };
 
-export const H3Display: Story = {
-  name: "H3 (heading-1)",
-  args: { as: "h3", variant: "heading-1", children: "Tertiary heading" },
+export const HeadingH3: StoryObj<typeof DisplayHeading> = {
+  name: "DisplayHeading - H3 (heading-1)",
+  render: () => (
+    <DisplayHeading as="h3" variant="heading-1">
+      Tertiary heading
+    </DisplayHeading>
+  ),
 };
 
-export const H4Display: Story = {
-  name: "H4 (heading-2)",
-  args: { as: "h4", variant: "heading-2", children: "Secondary heading" },
+export const HeadingH4: StoryObj<typeof DisplayHeading> = {
+  name: "DisplayHeading - H4 (heading-2)",
+  render: () => (
+    <DisplayHeading as="h4" variant="heading-2">
+      Secondary heading
+    </DisplayHeading>
+  ),
 };
 
-export const WithTheme: Story = {
-  name: "Con tema destino",
-  args: {
-    as: "h2",
-    theme: "naturaleza",
-    children: "Experiencias en la naturaleza",
-  },
+export const HeadingWithTheme: StoryObj<typeof DisplayHeading> = {
+  name: "DisplayHeading - Con tema destino",
+  render: () => (
+    <DisplayHeading as="h2" theme="naturaleza">
+      Experiencias en la naturaleza
+    </DisplayHeading>
+  ),
 };
 
 // ============================================================
-// CaptionLabel
+// CaptionLabel Stories
 // ============================================================
 
-const captionMeta: Meta<typeof CaptionLabel> = {
-  title: "Components/CaptionLabel",
-  component: CaptionLabel,
-  tags: ["autodocs"],
+export const CaptionLocation: StoryObj<typeof CaptionLabel> = {
+  name: "CaptionLabel - Ubicación",
+  render: () => <CaptionLabel icon="location">Bogotá, Colombia</CaptionLabel>,
 };
 
-export default captionMeta;
-type CaptionStory = StoryObj<typeof CaptionLabel>;
-
-// @ts-ignore
-export const LocationCaption: CaptionStory = {
-  name: "Ubicación",
-  args: {
-    children: "Bogotá, Colombia",
-    icon: "location",
-  },
+export const CaptionDuration: StoryObj<typeof CaptionLabel> = {
+  name: "CaptionLabel - Duración",
+  render: () => <CaptionLabel icon="duration">3 días / 4 noches</CaptionLabel>,
 };
 
-export const DurationCaption: CaptionStory = {
-  name: "Duración",
-  args: {
-    children: "3 días / 4 noches",
-    icon: "duration",
-  },
+export const CaptionPrice: StoryObj<typeof CaptionLabel> = {
+  name: "CaptionLabel - Precio",
+  render: () => <CaptionLabel icon="price">$2.500.000 COP</CaptionLabel>,
 };
 
-export const PriceCaption: CaptionStory = {
-  name: "Precio",
-  args: {
-    children: "$2.500.000 COP",
-    icon: "price",
-  },
+export const CaptionGroup: StoryObj<typeof CaptionLabel> = {
+  name: "CaptionLabel - Grupo",
+  render: () => <CaptionLabel icon="group">Hasta 10 personas</CaptionLabel>,
 };
 
-export const GroupCaption: CaptionStory = {
-  name: "Grupo",
-  args: {
-    children: "Hasta 10 personas",
-    icon: "group",
-  },
-};
-
-export const CaptionVariantLabel: CaptionStory = {
-  name: "Variante label",
-  args: {
-    children: "2.500.000 COP",
-    variant: "label",
-    icon: "price",
-  },
+export const CaptionVariantPill: StoryObj<typeof CaptionLabel> = {
+  name: "CaptionLabel - Variante label",
+  render: () => (
+    <CaptionLabel icon="price" variant="label">
+      2.500.000 COP
+    </CaptionLabel>
+  ),
 };
 
 // ============================================================
-// EditorialBody
+// EditorialBody Stories
 // ============================================================
 
-const bodyMeta: Meta<typeof EditorialBody> = {
-  title: "Components/EditorialBody",
-  component: EditorialBody,
-  tags: ["autodocs"],
+export const BodyDefault: StoryObj<typeof EditorialBody> = {
+  name: "EditorialBody - Por defecto",
+  render: () => (
+    <EditorialBody>
+      Este es un párrafo de cuerpo con altura de línea óptima para lectura prolongada.
+    </EditorialBody>
+  ),
 };
 
-export default bodyMeta;
-type BodyStory = StoryObj<typeof EditorialBody>;
-
-export const BodyDefault: BodyStory = {
-  name: "Cuerpo por defecto",
-  args: { children: "Este es un párrafo de cuerpo con altura de línea óptima para lectura prolongada." },
+export const BodyLarge: StoryObj<typeof EditorialBody> = {
+  name: "EditorialBody - body-lg",
+  render: () => (
+    <EditorialBody variant="body-lg">
+      Este texto usa la variante body-lg con mayor altura de línea.
+    </EditorialBody>
+  ),
 };
 
-export const BodyBodyLg: BodyStory = {
-  name: "Cuerpo body-lg",
-  args: { variant: "body-lg", children: "Este texto usa la variante body-lg con mayor altura de línea." },
-};
-
-export const BodyCentered: BodyStory = {
-  name: "Cuerpo centrado",
-  args: { centered: true, children: "Texto centrado en la pantalla." },
-};
-
-// ============================================================
-// EditorialSection
-// ============================================================
-
-const sectionMeta: Meta<typeof EditorialSection> = {
-  title: "Components/EditorialSection",
-  component: EditorialSection,
-  tags: ["autodocs"],
-};
-
-export default sectionMeta;
-type SectionStory = StoryObj<typeof EditorialSection>;
-
-export const SectionDefault: SectionStory = {
-  name: "Sección estándar",
-  args: {
-    children: <p>Contenido de la sección con padding medio y fondo cálido.</p>,
-  },
-};
-
-export const SectionWithBleedTop: SectionStory = {
-  name: "Bleed en la parte superior",
-  args: {
-    bleed: "top",
-    bleedColor: "#1e3a5f",
-    children: <p>Contenido con bleed superior.</p>,
-  },
-};
-
-export const SectionWithBleedBottom: SectionStory = {
-  name: "Bleed en la parte inferior",
-  args: {
-    bleed: "bottom",
-    bleedColor: "#1e3a5f",
-    children: <p>Contenido con bleed inferior.</p>,
-  },
-};
-
-export const SectionNoReveal: SectionStory = {
-  name: "Sin reveal (fade)",
-  args: {
-    reveal: "none",
-    children: <p>Contenido sin animación de reveal.</p>,
-  },
-};
-
-export const SectionStaggerReveal: SectionStory = {
-  name: "Reveal con stagger",
-  args: {
-    reveal: "stagger",
-    staggerMs: 150,
-    children: [
-      <p key="1">Primer elemento</p>,
-      <p key="2">Segundo elemento</p>,
-      <p key="3">Tercer elemento</p>,
-    ],
-  },
-};
-
-export const SectionWarmBg: SectionStory = {
-  name: "Fondo cálido",
-  args: { bg: "warm", children: <p>Fondo cálido OnTour.</p> },
-};
-
-export const SectionWhiteBg: SectionStory = {
-  name: "Fondo blanco",
-  args: { bg: "white", padding: "lg", children: <p>Fondo blanco.</p> },
-};
-
-export const SectionDarkBg: SectionStory = {
-  name: "Fondo oscuro",
-  args: { bg: "dark", children: <p>Fondo oscuro.</p> },
+export const BodyCentered: StoryObj<typeof EditorialBody> = {
+  name: "EditorialBody - Centrado",
+  render: () => (
+    <EditorialBody centered>
+      Texto centrado en la pantalla.
+    </EditorialBody>
+  ),
 };
 
 // ============================================================
-// EditorialCarousel
+// EditorialSection Stories
 // ============================================================
 
-const carouselMeta: Meta<typeof EditorialCarousel> = {
-  title: "Components/EditorialCarousel",
-  component: EditorialCarousel,
-  tags: ["autodocs"],
+export const SectionDefault: StoryObj<typeof EditorialSection> = {
+  name: "EditorialSection - Estándar",
+  render: () => (
+    <EditorialSection>
+      <p>Contenido de la sección con padding medio y fondo cálido.</p>
+    </EditorialSection>
+  ),
 };
 
-export default carouselMeta;
-type CarouselStory = StoryObj<typeof EditorialCarousel>;
+export const SectionWithBleedTop: StoryObj<typeof EditorialSection> = {
+  name: "EditorialSection - Bleed superior",
+  render: () => (
+    <EditorialSection bleed="top" bleedColor="#1e3a5f">
+      <p>Contenido con bleed superior.</p>
+    </EditorialSection>
+  ),
+};
 
-const sampleItems = [
+export const SectionWithBleedBottom: StoryObj<typeof EditorialSection> = {
+  name: "EditorialSection - Bleed inferior",
+  render: () => (
+    <EditorialSection bleed="bottom" bleedColor="#1e3a5f">
+      <p>Contenido con bleed inferior.</p>
+    </EditorialSection>
+  ),
+};
+
+export const SectionStaggerReveal: StoryObj<typeof EditorialSection> = {
+  name: "EditorialSection - Reveal con stagger",
+  render: () => (
+    <EditorialSection reveal="stagger">
+      <p>Primer elemento</p>
+      <p>Segundo elemento</p>
+      <p>Tercer elemento</p>
+    </EditorialSection>
+  ),
+};
+
+export const SectionWhiteBg: StoryObj<typeof EditorialSection> = {
+  name: "EditorialSection - Fondo blanco",
+  render: () => (
+    <EditorialSection bg="white" padding="lg">
+      <p>Fondo blanco.</p>
+    </EditorialSection>
+  ),
+};
+
+export const SectionDarkBg: StoryObj<typeof EditorialSection> = {
+  name: "EditorialSection - Fondo oscuro",
+  render: () => (
+    <EditorialSection bg="dark">
+      <p className="text-white">Fondo oscuro.</p>
+    </EditorialSection>
+  ),
+};
+
+// ============================================================
+// EditorialCarousel Stories
+// ============================================================
+
+const sampleItems: CarouselItem[] = [
   {
     id: "1",
     href: "/pasadias/epoca-precolombina-sur-colombia",
@@ -228,7 +207,7 @@ const sampleItems = [
     title: "Epoca Precolombina",
     description: "Recorrido arqueológico por Colombia",
     meta: ["Tolima", "Cultura"],
-    colorTheme: { grade: "naturaleza", label: "naturaleza", color: "#3b82f6", badgeStyle: { color: "#e2e8f0" } },
+    colorTheme: "naturaleza",
   },
   {
     id: "2",
@@ -237,7 +216,7 @@ const sampleItems = [
     title: "Corazón de los Andes",
     description: "Tour cultural por el Eje Cafetero",
     meta: ["Andes", "Cultura"],
-    colorTheme: { grade: "cultura", label: "cultura", color: "#f97316", badgeStyle: { color: "#fffaf0" } },
+    colorTheme: "cultura",
   },
   {
     id: "3",
@@ -246,205 +225,139 @@ const sampleItems = [
     title: "Colonial Boyacá",
     description: "Pueblos coloniales de Boyacá",
     meta: ["Boyacá", "Historia"],
-    colorTheme: { grade: "naturaleza", label: "naturaleza", color: "#3b82f6", badgeStyle: { color: "#e2e8f0" } },
+    colorTheme: "aventura",
   },
 ];
 
-export const CarouselPasadia: CarouselStory = {
-  name: "Variante pasadia",
-  args: {
-    items: sampleItems.slice(0, 3),
-    config: {
-      aspectRatio: "4:5",
-      contentPosition: "bottom",
-      showProgress: true,
-      autoplay: true,
-      variant: "pasadia",
-    },
-  },
+export const CarouselPasadia: StoryObj<typeof EditorialCarousel> = {
+  name: "EditorialCarousel - Variante pasadia",
+  render: () => (
+    <EditorialCarousel
+      items={sampleItems}
+      config={{
+        aspectRatio: "4:5",
+        contentPosition: "bottom",
+        showProgress: true,
+        autoplay: true,
+        variant: "pasadia",
+      }}
+    />
+  ),
 };
 
-export const CarouselCircuito: CarouselStory = {
-  name: "Variante circuito",
-  args: {
-    items: sampleItems.slice(0, 3),
-    config: {
-      aspectRatio: "16:9",
-      contentPosition: "center",
-      showProgress: false,
-      autoplay: false,
-      variant: "circuito",
-    },
-  },
+export const CarouselCircuito: StoryObj<typeof EditorialCarousel> = {
+  name: "EditorialCarousel - Variante circuito",
+  render: () => (
+    <EditorialCarousel
+      items={sampleItems}
+      config={{
+        aspectRatio: "16:9",
+        contentPosition: "center",
+        showProgress: false,
+        autoplay: false,
+        variant: "circuito",
+      }}
+    />
+  ),
 };
 
-export const CarouselEditorial: CarouselStory = {
-  name: "Variante editorial",
-  args: {
-    items: sampleItems.slice(0, 3),
-    config: {
-      aspectRatio: "16:9",
-      contentPosition: "split",
-      showProgress: true,
-      autoplay: true,
-      variant: "editorial",
-    },
-  },
-};
-
-export const CarouselWithCustomSlide: CarouselStory = {
-  name: "Slide personalizado",
-  args: {
-    items: sampleItems.slice(0, 2),
-    config: {
-      aspectRatio: "16:9",
-      contentPosition: "bottom",
-      showProgress: false,
-      autoplay: false,
-      variant: "editorial",
-    },
-    renderSlide: (item) => (
-      <div
-        className="p-4 border rounded-lg bg-white shadow-sm"
-        style={{ borderColor: "#e2e8f0" }}
-      >
-        <h3 className="font-medium">{item.title}</h3>
-        <p className="text-sm text-gray-600">{item.description}</p>
-      </div>
-    ),
-  },
+export const CarouselEditorialPreset: StoryObj<typeof EditorialCarousel> = {
+  name: "EditorialCarousel - Variante editorial",
+  render: () => (
+    <EditorialCarousel
+      items={sampleItems}
+      config={{
+        aspectRatio: "16:9",
+        contentPosition: "split",
+        showProgress: true,
+        autoplay: true,
+        variant: "editorial",
+      }}
+    />
+  ),
 };
 
 // ============================================================
-// HeroEditorial
+// HeroEditorial Stories
 // ============================================================
 
-const heroMeta: Meta<typeof HeroEditorial> = {
-  title: "Components/HeroEditorial",
-  component: HeroEditorial,
-  tags: ["autodocs"],
-};
-
-export default heroMeta;
-type HeroStory = StoryObj<typeof HeroEditorial>;
-
-const heroSlides = [
+const heroSlides: HeroSlide[] = [
   { src: "/image/makalu-colombia-3631740.jpg", alt: "Makalu Colorado" },
   { src: "/image/ibague_torre-iglesia-guayacan-rosado.jpeg", alt: "Torre de Iglesia" },
 ];
 
-export const KenBurnsDefault: HeroStory = {
-  name: "Ken Burns (por defecto)",
-  args: {
-    variant: "ken-burns",
-    slides: heroSlides,
-    title: "Descubre Colombia",
-    subtitle: "Circuitos turísticos y experiencias inolvidables",
-    badge: "OnTour DMC",
-    actions: [
-      { label: "Cotar viaje", href: "/cotizar", variant: "primary" },
-      { label: "Conocé más", href: "/nosotros", variant: "secondary" },
-    ],
-  },
+export const HeroKenBurns: StoryObj<typeof HeroEditorial> = {
+  name: "HeroEditorial - Ken Burns",
+  render: () => (
+    <HeroEditorial
+      variant="ken-burns"
+      slides={heroSlides}
+      title="Descubre Colombia"
+      subtitle="Circuitos turísticos y experiencias inolvidables"
+      badge="OnTour DMC"
+      actions={[
+        { label: "Cotizar viaje", href: "/contacto", variant: "primary" },
+        { label: "Conoce más", href: "/nosotros", variant: "secondary" },
+      ]}
+    />
+  ),
 };
 
-export const KenBurnsReducedMotion: HeroStory = {
-  name: "Ken Burns motion-reduced",
-  args: {
-    variant: "ken-burns",
-    slides: heroSlides,
-    title: "Descubre Colombia",
-    subtitle: "Circuitos turísticos y experiencias inolvidables",
-    intervalMs: 0,
-  },
+export const HeroStaticDetail: StoryObj<typeof HeroEditorial> = {
+  name: "HeroEditorial - Static (detalle)",
+  render: () => (
+    <HeroEditorial
+      variant="static"
+      slides={[{ src: "/image/makalu-colombia-3631740.jpg", alt: "Makalu Colorado" }]}
+      title="Época Precolombina"
+      subtitle="Sur de Colombia"
+      gradeClass="editorial-grade-cultura"
+      overlay="bottom"
+      actions={[{ label: "Reservar", href: "/contacto", variant: "primary" }]}
+    />
+  ),
 };
 
-export const StaticDetail: HeroStory = {
-  name: "Static (página de detalle)",
-  args: {
-    variant: "static",
-    slides: [{ src: "/image/makalu-colombia-3631740.jpg", alt: "Makalu Colorado" }],
-    title: "Epoca Precolombina",
-    subtitle: "Sur de Colombia",
-    gradeClass: "grade-naturaleza",
-    overlay: "bottom",
-    actions: [
-      { label: "Reservar", href: "/contacto", variant: "primary" },
-    ],
-  },
-};
+// ============================================================
+// SectionReveal Stories
+// ============================================================
 
-export const StaticWithChildren: HeroStory = {
-  name: "Static con children",
-  args: {
-    variant: "static",
-    slides: [{ src: "/image/makalu-colombia-3631740.jpg", alt: "Makalu Colorado" }],
-    title: "Personalizado",
-    subtitle: "Hero a medida",
-    children: (
-      <div className="space-y-6">
-        <p>Texto introductorio personalizado</p>
-        <ul>
-          <li>Característica 1</li>
-          <li>Característica 2</li>
-        </ul>
+export const RevealFade: StoryObj<typeof SectionReveal> = {
+  name: "SectionReveal - Fade predeterminado",
+  render: () => (
+    <SectionReveal>
+      <div className="p-8 bg-editorial-warm rounded-2xl border border-editorial-border">
+        <p>Texto que hace fade in al hacer scroll.</p>
       </div>
-    ),
-  },
+    </SectionReveal>
+  ),
+};
+
+export const RevealStaggerList: StoryObj<typeof SectionReveal> = {
+  name: "SectionReveal - Staggered list",
+  render: () => (
+    <SectionReveal className="space-y-4">
+      <div key="1" className="p-4 bg-white rounded-xl border border-editorial-border">Primer bloque</div>
+      <div key="2" className="p-4 bg-white rounded-xl border border-editorial-border">Segundo bloque</div>
+      <div key="3" className="p-4 bg-white rounded-xl border border-editorial-border">Tercer bloque</div>
+    </SectionReveal>
+  ),
+};
+
+export const RevealSectionTag: StoryObj<typeof SectionReveal> = {
+  name: "SectionReveal - Etiqueta section",
+  render: () => (
+    <SectionReveal as="section">
+      <p>Contenido renderizado en elemento HTML &lt;section&gt;.</p>
+    </SectionReveal>
+  ),
 };
 
 // ============================================================
-// SectionReveal
+// Exports for external type testing
 // ============================================================
 
-const revealMeta: Meta<typeof SectionReveal> = {
-  title: "Components/SectionReveal",
-  component: SectionReveal,
-  tags: ["autodocs"],
-};
-
-export default revealMeta;
-type RevealStory = StoryObj<typeof SectionReveal>;
-
-export const RevealDefault: RevealStory = {
-  name: "Reveal fade (predeterminado)",
-  args: {
-    children: <p>Texto que se fade in al hacer scroll.</p>,
-  },
-};
-
-export const RevealStagger: RevealStory = {
-  name: "Reveal staggered",
-  args: {
-    children: [
-      <p key="1">Primer bloque</p>,
-      <p key="segundo">Segundo bloque</p>,
-      <p key="tercero">Tercer bloque</p>,
-    ],
-    staggerMs: 100,
-  },
-};
-
-export const RevealReducedMotion: RevealStory = {
-  name: "Reveal motion-reduced",
-  args: {
-    children: <p>Texto sin animación en modo reduced-motion.</p>,
-  },
-};
-
-export const RevealAsSection: RevealStory = {
-  name: "Usar etiqueta section",
-  args: {
-    as: "section",
-    children: <p>Contenido en etiqueta section.</p>,
-  },
-};
-
-// ============================================================
-// Export type utils for testing
-// ============================================================
-
-export type { HeroVariant } from "./HeroEditorial";
+export type { HeroVariant, HeroSlide } from "./HeroEditorial";
 export type { CarouselConfig, CarouselItem } from "./EditorialCarousel";
 export type { EditorialSectionProps } from "./EditorialSection";
 export type { DisplayHeadingProps } from "./DisplayHeading";

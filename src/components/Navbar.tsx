@@ -80,18 +80,14 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <Image
-              src="/image/logo-ON-TOUR-Nuevo.png"
+              src="/image/logo-ON-TOUR-Nuevo2.png"
               alt="Ontour Logo"
-              width={120}
-              height={40}
-              className="h-10 object-contain transition-all duration-300"
-              style={{ width: 'auto', height: 'auto' }}
+              width={160}
+              height={50}
+              className="h-10 sm:h-11 object-contain transition-all duration-300"
+              style={{ width: 'auto' }}
               priority
             />
-            <span className="hidden sm:inline-flex flex-col text-[10px] font-bold tracking-widest uppercase leading-tight text-primary">
-              <span>DMC</span>
-              <span className="text-[9px] font-medium tracking-wider opacity-70">Colombia</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}

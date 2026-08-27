@@ -117,7 +117,7 @@ export function CircuitProgramDownload({
       // Load logo
       let logoBase64: string | null = null;
       try {
-        const logoImg = await loadImage("/image/logo-ON-TOUR-Nuevo.png");
+        const logoImg = await loadImage("/image/logo-ON-TOUR-Nuevo2.png");
         logoBase64 = imageToBase64(logoImg, "PNG");
       } catch { /* logo optional */ }
 
@@ -301,7 +301,7 @@ export function CircuitProgramDownload({
       // Load logo
       let logoData: { buffer: ArrayBuffer; width: number; height: number } | null = null;
       try {
-        logoData = await imageToArrayBuffer("/image/logo-ON-TOUR-Nuevo.png");
+        logoData = await imageToArrayBuffer("/image/logo-ON-TOUR-Nuevo2.png");
       } catch { /* logo optional */ }
 
       const children: InstanceType<typeof Paragraph>[] = [];

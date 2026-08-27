@@ -41,7 +41,7 @@ function imageToBase64(img: HTMLImageElement, format: "JPEG" | "PNG" = "JPEG"): 
 
 /* ---------- helper: load logo as base64 ---------- */
 async function loadLogoBase64(): Promise<string> {
-  const img = await loadImage("/image/logo-ON-TOUR-Nuevo.png");
+  const img = await loadImage("/image/logo-ON-TOUR-Nuevo2.png");
   return imageToBase64(img, "PNG");
 }
 
@@ -203,7 +203,7 @@ export function BrochureDownload({ images, title, slug, labels }: BrochureDownlo
       // Load logo for Word
       let logoData: { buffer: ArrayBuffer; width: number; height: number } | null = null;
       try {
-        logoData = await imageToArrayBuffer("/image/logo-ON-TOUR-Nuevo.png");
+        logoData = await imageToArrayBuffer("/image/logo-ON-TOUR-Nuevo2.png");
       } catch {
         /* logo optional */
       }

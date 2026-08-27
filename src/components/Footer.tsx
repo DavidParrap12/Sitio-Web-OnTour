@@ -17,19 +17,15 @@ export async function Footer() {
             <Link href="/" className="inline-block mb-4">
               <div className="bg-white rounded-xl p-3 inline-block shadow-sm">
                 <Image
-                  src="/image/logo-ON-TOUR-Nuevo.png"
+                  src="/image/logo-ON-TOUR-Nuevo2.png"
                   alt="Ontour"
-                  width={160}
+                  width={180}
                   height={60}
                   style={{ width: 'auto', height: 'auto' }}
                   className="object-contain"
                 />
               </div>
             </Link>
-            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.2em] uppercase text-accent/90 mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent/80" />
-              DMC Colombia
-            </span>
             <p className="text-gray-400 text-sm leading-relaxed">
               {t("tagline")}
             </p>

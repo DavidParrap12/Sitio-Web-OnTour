@@ -3,9 +3,9 @@
  * Used with <JsonLd data={...} /> in Server Components
  */
 
-const BASE = "https://www.agenciaontour.com";
+const BASE = "https://www.ontourdmc.com";
 const ORG_NAME = "OnTour DMC Colombia";
-const ORG_LOGO = `${BASE}/image/logo-ON-TOUR-Nuevo.png`;
+const ORG_LOGO = `${BASE}/image/logo-ON-TOUR-Nuevo2.png`;
 
 // ── Locale helpers ──────────────────────────────────────────────────────────
 

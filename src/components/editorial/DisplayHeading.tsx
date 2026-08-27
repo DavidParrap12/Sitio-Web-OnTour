@@ -5,7 +5,7 @@ import { type DestinationTheme, DESTINATION_THEMES } from "@/lib/design-config";
 
 type Level = "h1" | "h2" | "h3" | "h4";
 
-interface DisplayHeadingProps {
+export interface DisplayHeadingProps {
   /** Semantic HTML level (defaults to h2) */
   as?: Level;
   /** Typography class: display-1, display-2, heading-1, heading-2 */

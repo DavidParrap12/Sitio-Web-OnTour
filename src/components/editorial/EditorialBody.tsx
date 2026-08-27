@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 
-interface EditorialBodyProps {
+export interface EditorialBodyProps {
   /** Typography class: body-lg or body (default) */
   variant?: "body-lg" | "body";
   /** Whether to center the text block */

@@ -10,7 +10,7 @@ const iconMap: Record<CaptionIcon, typeof MapPin> = {
   group: Users,
 };
 
-interface CaptionLabelProps {
+export interface CaptionLabelProps {
   /** Text content */
   children: ReactNode;
   /** Icon to show before text */

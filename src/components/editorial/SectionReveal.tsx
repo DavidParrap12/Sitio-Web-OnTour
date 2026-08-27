@@ -4,7 +4,7 @@ import { type ReactNode, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 
-interface SectionRevealProps {
+export interface SectionRevealProps {
   /** Content to animate in */
   children: ReactNode;
   /** Stagger delay between children in ms (default 100) */

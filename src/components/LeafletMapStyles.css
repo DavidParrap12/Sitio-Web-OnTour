@@ -182,6 +182,11 @@
   color: rgba(77, 216, 224, 0.5) !important;
 }
 
+/* -- Dark-mode tile filter (inverts standard OSM tiles) ----- */
+.ontour-map-container .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(1.1) saturate(0.3);
+}
+
 /* -- Map container ------------------------------------------ */
 .ontour-map-container {
   border-radius: 16px;

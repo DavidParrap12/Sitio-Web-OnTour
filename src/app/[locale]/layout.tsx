@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: t.ogDesc,
       url: "https://www.ontourdmc.com",
       siteName: "Ontour DMC Colombia",
-      images: [{ url: "/image/logo-ON-TOUR-Nuevo.png" }],
+      images: [{ url: "/image/logo-ON-TOUR-Nuevo2.png" }],
       locale: t.ogLocale,
       type: "website",
     },

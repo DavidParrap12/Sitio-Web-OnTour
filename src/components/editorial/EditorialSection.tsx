@@ -5,7 +5,7 @@ import { SectionReveal } from "./SectionReveal";
 
 type BleedEdge = "top" | "bottom";
 
-interface EditorialSectionProps {
+export interface EditorialSectionProps {
   children: ReactNode;
   /** Background: editorial token or any CSS color */
   bg?: "warm" | "white" | "dark" | (string & {});

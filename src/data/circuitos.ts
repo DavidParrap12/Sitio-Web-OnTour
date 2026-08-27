@@ -87,8 +87,8 @@ export const circuitos: Circuito[] = [
     nights: 13,
     image: "/image/cuidad-amurallada.jpg",
     colorTheme: "urbano",
-    brochureUrl: "",
-    brochurePdfUrl: "",
+    brochureUrl: "/programas-circuitos/Colombia Diversamente Cultural 14 días.docx",
+    brochurePdfUrl: "/programas-circuitos/Colombia Diversamente Cultural 14 días.pdf",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
