@@ -72,5 +72,11 @@ export const routing = defineRouting({
       fr: "/legal/registre-tourisme",
     },
     "/legal/faq": "/legal/faq",
+    "/bienestar": {
+      es: "/bienestar",
+      en: "/wellness",
+      de: "/wohlbefinden",
+      fr: "/bien-etre",
+    },
   },
 });

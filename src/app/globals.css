@@ -40,6 +40,26 @@
   --color-editorial-border: #d6e4d6;
   --color-editorial-border-light: #eaf1ea;
 
+  /* -- Wellness / Dental Premium Palette -------------------------------- */
+  --color-wellness-primary: #0A2540;
+  --color-wellness-primary-mid: #0f3460;
+  --color-wellness-primary-fg: #ffffff;
+  --color-wellness-bg: #FAFAF7;
+  --color-wellness-accent: #8FB39C;
+  --color-wellness-accent-hover: #7a9282;
+  --color-wellness-accent-light: #a7c5b1;
+  --color-wellness-accent-bg: rgba(143, 179, 156, 0.12);
+  --color-wellness-gold: #C9A961;
+  --color-wellness-gold-hover: #b5944e;
+  --color-wellness-gold-light: #e0c98a;
+  --color-wellness-gold-bg: rgba(201, 169, 97, 0.1);
+  --color-wellness-border: rgba(143, 179, 156, 0.2);
+  --color-wellness-border-gold: rgba(201, 169, 97, 0.4);
+  --shadow-wellness-sm: 0 1px 3px rgba(10, 37, 64, 0.08);
+  --shadow-wellness-md: 0 4px 12px rgba(10, 37, 64, 0.12);
+  --shadow-wellness-lg: 0 12px 32px rgba(10, 37, 64, 0.16);
+  --shadow-wellness-glow-gold: 0 0 24px rgba(201, 169, 97, 0.25);
+
   /* -- Shadows ---------------------------------------------------------- */
   --shadow-editorial-sm: 0 1px 2px rgba(26, 74, 46, 0.06);
   --shadow-editorial-md: 0 4px 6px -1px rgba(26, 74, 46, 0.08), 0 2px 4px -2px rgba(26, 74, 46, 0.04);
@@ -334,18 +354,6 @@ body {
   position: relative;
   z-index: 10;
   margin-top: -80px;
-}
-
-/* Section wrapper with built-in transitions */
-.editorial-section {
-  position: relative;
-  isolation: isolate;
-  /* Pull up 2px to cover any sub-pixel gap left by the previous section */
-  margin-top: -2px;
-  padding-top: 2px;
-}
-.editorial-section--bleed {
-  overflow: visible;
 }
 
 /* Stagger variance utility — organic entrance timing */

@@ -7,6 +7,7 @@
     "services": "Servicios",
     "gallery": "Galería",
     "contact": "Contacto",
+    "wellness": "Bienestar",
     "quote": "Cotizar viaje",
     "contactAdvisor": "Contactar Asesor"
   },
@@ -241,6 +242,136 @@
     "partners": "Nuestros Aliados",
     "designed": "Diseñado para inspirar viajeros.",
     "legalDisclaimer": "En el desarrollo de lo dispuesto en el artículo 17 Ley 679 de 2001 y la ley 1336 de 2009, On Tour DMC, rechaza la explotación, la pornografía, el turismo sexual y demás formas de abuso de menores de edad, advierte al turista que el abuso sexual es castigado penalmente y administrativamente conforme a las disposiciones legales vigentes y se compromete a denunciar cualquier caso relacionado con el ESCNNA. On Tour DMC Rechaza la comercialización y tráfico de especies de fauna y flora silvestre. Ley 17 de 1981, Resolución Ministerial No. 1367 de 2000, Decreto 1608 de 1978. Y denuncia el tráfico ilegal de especies exóticas de flora y fauna. Ley 599 del 2000, Código Penal Colombiano. Ley 165 de 1994, Convenio de las Naciones Unidas sobre diversidad biológica. Además rechaza y denuncia el tráfico de bienes culturales previniendo y protegiendo el patrimonio nacional. Ley 397 de 1997, Decreto 833 de 2002, Ley 1185 de 2008, Ley 63 de 1986, Ley 1675 de julio de 2013. On Tour DMC Rechaza los actos de racismo, discriminación u orientación sexual Ley 1482 de 2011. Sentencia T-282/11, Convenio No. 169 sobre pueblos indígenas y tribales, 1989. Auto 004/09 y protege los derechos fundamentales de personas e indígenas desplazados por el conflicto armado. Declarado en Sentencia T-025/04."
+  },
+  "wellness": {
+    "metaTitle": "Bienestar Dental | OnTour DMC Colombia",
+    "metaDesc": "Atención dental de clase mundial en el corazón de Colombia. Especialistas certificados, hasta 70% de ahorro vs. EE.UU. Recuperación en el paraíso.",
+    "hero": {
+      "title": "Tu Sonrisa, Transformada.",
+      "titleHighlight": "Claridad Antes de Volar.",
+      "subtitle": "Vive una atención dental de clase mundial con hasta 70% de ahorro frente a EE.UU., respaldada por especialistas certificados en el corazón de los Andes colombianos.",
+      "ctaPrimary": "Solicitar Consulta",
+      "ctaSecondary": "Ver Cómo Funciona el Proceso",
+      "imagePatientAlt": "[CLIENTE: Foto de paciente sonriente — retrato profesional, fondo blanco preferido]",
+      "imageTolimaAlt": "[CLIENTE: Foto del paisaje del Tolima — región cafetera, montañas, verde exuberante]"
+    },
+    "trust": {
+      "certified": "Especialistas Certificados",
+      "materials": "Materiales FDA / CE Certificados",
+      "quote": "Cotización Fija por Escrito Antes del Viaje",
+      "bilingual": "Coordinación Bilingüe de Pacientes",
+      "telehealth": "Tele-Odontología Post-Tratamiento"
+    },
+    "care": {
+      "title": "Tu salud, nuestra prioridad.",
+      "titleHighlight": "Colombia te cuida.",
+      "subtitle": "Accede a procedimientos médicos y estéticos de clase mundial en el Tolima, respaldados por especialistas certificados y acompañamiento completo antes, durante y después de tu procedimiento.",
+      "requestInfo": "Solicitar información",
+      "helpTitle": "¿No sabes qué paquete es para ti?",
+      "helpSubtitle": "Nuestro equipo te orienta de forma personalizada y sin ningún compromiso.",
+      "helpButton": "Consulta"
+    },
+    "treatments": {
+      "title": "Nuestros Tratamientos y Especialidades",
+      "subtitle": "Procedimientos médicos y estéticos de alta complejidad con especialistas certificados.",
+      "learnMore": "Más Información",
+      "items": {
+        "cirugiaPlastica": {
+          "name": "Cirugía Plástica y Estética",
+          "desc": "Procedimientos quirúrgicos faciales y corporales de alta precisión con especialistas certificados.",
+          "procedures": ["Blefaroplastia", "Liposucción", "Mamoplastia"]
+        },
+        "chequeosPreventivos": {
+          "name": "Chequeos Preventivos",
+          "desc": "Evaluaciones médicas integrales diseñadas para la salud preventiva de hombres y mujeres.",
+          "procedures": ["Elite Hombres", "Esencial Mujeres", "Laboratorios"]
+        },
+        "cardiologia": {
+          "name": "Cardiología",
+          "desc": "Diagnóstico y seguimiento cardiovascular no invasivo con tecnología de última generación.",
+          "procedures": ["Ecocardiograma", "Holter", "Consulta Especializada"]
+        },
+        "urologia": {
+          "name": "Urología",
+          "desc": "Atención especializada en salud urológica, litiasis renal e hiperplasia prostática.",
+          "procedures": ["Diagnóstico Integral", "Litiasis", "Salud Prostática"]
+        },
+        "nutricion": {
+          "name": "Nutrición Clínica",
+          "desc": "Planes nutricionales terapéuticos, oncológicos y de soporte hospitalario personalizado.",
+          "procedures": ["Nutrición Oncológica", "Soporte Hospitalario", "Planes a Medida"]
+        },
+        "psicologia": {
+          "name": "Psicología Clínica",
+          "desc": "Acompañamiento emocional y psicooncológico integral pre y post quirúrgico.",
+          "procedures": ["Psicooncología", "Acompañamiento Pre/Post", "Salud Mental"]
+        }
+      }
+    },
+    "process": {
+      "title": "Tu Recorrido en 5 Pasos",
+      "subtitle": "Una experiencia sin fricciones desde tu país de origen hasta tu nueva sonrisa.",
+      "steps": {
+        "s1": { "title": "Consulta Virtual Gratuita", "desc": "Comparte tus radiografías y fotos. Nuestro especialista revisa tu caso en 24h." },
+        "s2": { "title": "Plan de Tratamiento Escrito", "desc": "Recibe un plan detallado con cotización fija. Sin sorpresas." },
+        "s3": { "title": "Coordinación del Viaje", "desc": "Nos encargamos del alojamiento, traslados y tu agenda dental completa." },
+        "s4": { "title": "Tratamiento & Recuperación", "desc": "Relájate en el paraíso mientras tu nueva sonrisa toma forma." },
+        "s5": { "title": "Seguimiento en Casa", "desc": "Tele-odontología post-tratamiento para tu tranquilidad." }
+      }
+    },
+    "tolima": {
+      "title": "Sanación en la Naturaleza.",
+      "subtitle": "Descubre el turismo consciente, la hospitalidad cálida y los impresionantes paisajes de la región cafetera de Colombia mientras te recuperas.",
+      "cta": "Explorar Circuitos de Recuperación",
+      "imageAlt": "[CLIENTE: Foto de la región Tolima/Cafetera — plano amplio, montañas, palmas]"
+    },
+    "testimonials": {
+      "title": "Resultados Reales, Pacientes Reales",
+      "subtitle": "Pacientes de EE.UU., Canadá y Europa comparten su experiencia.",
+      "items": {
+        "t1": {
+          "name": "[CLIENTE: Nombre del paciente]",
+          "origin": "🇺🇸 EE.UU.",
+          "treatment": "Implantes All-on-4",
+          "quote": "[CLIENTE: Testimonio real del paciente, máximo 2-3 oraciones]",
+          "avatarAlt": "[CLIENTE: Foto del paciente — debe estar autorizada]"
+        },
+        "t2": {
+          "name": "[CLIENTE: Nombre del paciente]",
+          "origin": "🇨🇦 Canadá",
+          "treatment": "Diseño de Sonrisa",
+          "quote": "[CLIENTE: Testimonio real del paciente, máximo 2-3 oraciones]",
+          "avatarAlt": "[CLIENTE: Foto del paciente]"
+        },
+        "t3": {
+          "name": "[CLIENTE: Nombre del paciente]",
+          "origin": "🇩🇪 Alemania",
+          "treatment": "Carillas de Porcelana",
+          "quote": "[CLIENTE: Testimonio real del paciente, máximo 2-3 oraciones]",
+          "avatarAlt": "[CLIENTE: Foto del paciente]"
+        }
+      }
+    },
+    "specialists": {
+      "title": "Conoce a Nuestros Especialistas",
+      "subtitle": "Más de 20 profesionales certificados con formación internacional, organizados por especialidad para brindarte atención médica de primer nivel."
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "items": {
+        "q1": { "q": "¿Qué pasa si hay complicaciones después del viaje?", "a": "Contamos con un protocolo de tele-odontología dedicado para seguimientos post-tratamiento. Nuestros especialistas están disponibles por videollamada en 24 horas. Todos los tratamientos incluyen garantía escrita sobre materiales y mano de obra." },
+        "q2": { "q": "¿Qué materiales se utilizan?", "a": "Usamos exclusivamente materiales certificados FDA/CE: implantes Nobel Biocare y Straumann, cerámicas E-max y Zirconia, y agentes blanqueadores de eficacia clínica probada. Todas las certificaciones disponibles bajo solicitud." },
+        "q3": { "q": "¿Cuánto tiempo dura la recuperación?", "a": "La recuperación varía según el tratamiento. Implantes: 5-7 días de reposo. Carillas y coronas: el mismo día, sin tiempo de inactividad. Diseños de sonrisa: 3-5 días según los procedimientos. Planificamos tu viaje alrededor de tu recuperación." },
+        "q4": { "q": "¿Cuáles son los métodos de pago?", "a": "Aceptamos transferencia bancaria internacional, tarjeta de crédito (Visa, Mastercard), y Wise/PayPal para pacientes internacionales. Un depósito del 30% asegura tu cita; el saldo se paga antes del primer procedimiento." },
+        "q5": { "q": "¿Es seguro viajar a Colombia para atención dental?", "a": "Colombia ha mejorado significativamente en indicadores de seguridad. Ibagué es una de las ciudades medianas más seguras del país. Nuestro equipo gestiona la logística de extremo a extremo, desde el traslado del aeropuerto hasta la coordinación del hotel." }
+      }
+    },
+    "cta": {
+      "title": "Una decisión médica tan importante merece claridad — no presión.",
+      "subtitle": "Nuestros especialistas revisarán tu caso gratis. Sin compromiso.",
+      "button": "Inicia tu Consulta",
+      "secondaryButton": "Descargar Guía del Paciente"
+    }
   },
   "metadata": {
     "home": {

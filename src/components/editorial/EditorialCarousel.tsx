@@ -77,9 +77,16 @@ export function EditorialCarousel({
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "start", slidesToScroll: 1 },
+    {
+      loop: true,
+      align: "start",
+      slidesToScroll: 1,
+      dragFree: false,
+      containScroll: "trimSnaps",
+      watchDrag: true,
+    },
     config.autoplay
-      ? [Autoplay({ delay: intervalMs, stopOnInteraction: false, stopOnMouseEnter: true })]
+      ? [Autoplay({ delay: intervalMs, stopOnInteraction: false, stopOnMouseEnter: true, stopOnFocusIn: true })]
       : []
   );
 
@@ -110,8 +117,8 @@ export function EditorialCarousel({
   }
 
   const slideClass = fullBleed
-    ? "flex-[0_0_100%] min-w-0"
-    : "flex-[0_0_85%] min-w-0 sm:flex-[0_0_45%] lg:flex-[0_0_32%]";
+    ? "flex-[0_0_100%] min-w-0 select-none"
+    : "flex-[0_0_85%] min-w-0 sm:flex-[0_0_45%] lg:flex-[0_0_32%] select-none";
 
   return (
     <div
@@ -125,7 +132,9 @@ export function EditorialCarousel({
       {/* Viewport */}
       <div
         ref={emblaRef}
-        className={`overflow-hidden ${fullBleed ? "rounded-2xl md:rounded-3xl shadow-2xl" : "rounded-2xl"}`}
+        className={`overflow-hidden touch-pan-y cursor-grab active:cursor-grabbing ${
+          fullBleed ? "rounded-2xl md:rounded-3xl shadow-2xl" : "rounded-2xl"
+        }`}
       >
         <div className={`flex ${fullBleed ? "" : "gap-5"}`}>
           {items.map((item, i) => (
@@ -133,9 +142,9 @@ export function EditorialCarousel({
               {renderSlide ? (
                 renderSlide(item, i)
               ) : fullBleed ? (
-                <FullBleedSlide item={item} config={config} priority={i === 0} />
+                <FullBleedSlide item={item} config={config} priority={i === 0} emblaApi={emblaApi} />
               ) : (
-                <CardSlide item={item} aspectRatio={config.aspectRatio} />
+                <CardSlide item={item} aspectRatio={config.aspectRatio} emblaApi={emblaApi} />
               )}
             </div>
           ))}
@@ -218,10 +227,12 @@ function FullBleedSlide({
   item,
   config,
   priority,
+  emblaApi,
 }: {
   item: CarouselItem;
   config: CarouselConfig;
   priority: boolean;
+  emblaApi?: any;
 }) {
   const theme = resolveDestinationTheme(item.colorTheme);
   const position =
@@ -232,26 +243,32 @@ function FullBleedSlide({
   return (
     <Link
       href={item.href as never}
-      className="group relative block w-full aspect-[16/7] max-h-[80vh] min-h-[320px] overflow-hidden"
+      onClickCapture={(e) => {
+        if (emblaApi && !emblaApi.clickAllowed()) {
+          e.preventDefault();
+        }
+      }}
+      className="group relative block w-full aspect-[16/7] max-h-[80vh] min-h-[320px] overflow-hidden select-none"
     >
       <Image
         src={item.image}
         alt={item.title}
         fill
         sizes="100vw"
-        className={`object-cover editorial-scale-target transition-transform duration-700 group-hover:scale-[1.04] ${theme.gradeClass}`}
+        draggable={false}
+        className={`object-cover editorial-scale-target transition-transform duration-700 group-hover:scale-[1.04] pointer-events-none select-none ${theme.gradeClass}`}
         placeholder="blur"
         blurDataURL={BLUR_PLACEHOLDER}
         priority={priority}
       />
-      <div className="absolute inset-0 editorial-overlay-gradient opacity-90" />
+      <div className="absolute inset-0 editorial-overlay-gradient opacity-90 pointer-events-none" />
 
       <div className={`absolute inset-0 flex flex-col p-6 sm:p-8 md:p-12 ${position}`}>
         <motion.div
           initial={{ y: 24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.15, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl"
+          className="max-w-2xl pointer-events-none"
         >
           {(item.meta?.length || item.colorTheme) && (
             <div className="flex flex-wrap items-center gap-2 mb-3">
@@ -289,16 +306,23 @@ function FullBleedSlide({
 function CardSlide({
   item,
   aspectRatio,
+  emblaApi,
 }: {
   item: CarouselItem;
   aspectRatio: CarouselConfig["aspectRatio"];
+  emblaApi?: any;
 }) {
   const theme = resolveDestinationTheme(item.colorTheme);
 
   return (
     <Link
       href={item.href as never}
-      className="group block bg-editorial-warm rounded-2xl overflow-hidden border border-editorial-border editorial-hover-lift"
+      onClickCapture={(e) => {
+        if (emblaApi && !emblaApi.clickAllowed()) {
+          e.preventDefault();
+        }
+      }}
+      className="group block bg-editorial-warm rounded-2xl overflow-hidden border border-editorial-border editorial-hover-lift select-none"
       style={theme.style}
     >
       {/* Theme accent hairline */}
@@ -311,8 +335,9 @@ function CardSlide({
           src={item.image}
           alt={item.title}
           fill
+          draggable={false}
           sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 32vw"
-          className={`object-cover editorial-scale-target transition-transform duration-700 ${theme.gradeClass}`}
+          className={`object-cover editorial-scale-target transition-transform duration-700 pointer-events-none select-none ${theme.gradeClass}`}
           placeholder="blur"
           blurDataURL={BLUR_PLACEHOLDER}
         />

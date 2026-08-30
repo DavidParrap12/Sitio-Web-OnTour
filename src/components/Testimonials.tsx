@@ -149,8 +149,8 @@ export function Testimonials() {
               <ChevronRight className="w-5 h-5" />
             </button>
 
-            {/* Animated card */}
-            <div className="relative min-h-[220px] md:min-h-[200px]">
+            {/* Animated card container */}
+            <div className="relative overflow-hidden py-2">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={current}
@@ -160,38 +160,50 @@ export function Testimonials() {
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.35, ease: "easeInOut" }}
-                  className="absolute inset-0"
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.2}
+                  onDragEnd={(_, info) => {
+                    if (info.offset.x < -40) {
+                      next();
+                    } else if (info.offset.x > 40) {
+                      prev();
+                    }
+                  }}
+                  className="w-full cursor-grab active:cursor-grabbing touch-pan-y"
                 >
-                  <div className="bg-white rounded-3xl p-8 md:p-10 border border-editorial-border shadow-lg shadow-editorial-dark/5 relative">
+                  <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-editorial-border shadow-lg shadow-editorial-dark/5 relative">
                     {/* Quote icon */}
-                    <Quote className="absolute top-6 right-8 w-10 h-10 text-editorial-accent/10" />
+                    <Quote className="absolute top-5 right-6 sm:top-6 sm:right-8 w-8 h-8 sm:w-10 sm:h-10 text-editorial-accent/10 pointer-events-none" />
 
                     {/* Stars + verified */}
-                    <div className="flex items-center justify-between mb-5">
+                    <div className="flex items-center justify-between gap-2 mb-4 sm:mb-5">
                       <StarRating rating={review.rating} />
-                      <span className="caption text-editorial-muted font-medium">
+                      <span className="caption text-xs sm:text-sm text-editorial-muted font-medium">
                         {t("verifiedReview")}
                       </span>
                     </div>
 
                     {/* Review text */}
-                    <p className="body-lg text-editorial-dark/90 mb-6 italic">
+                    <p className="text-base sm:text-lg md:text-xl text-editorial-dark/90 leading-relaxed mb-6 italic">
                       &ldquo;{t(`reviews.${review.reviewKey}.text`)}&rdquo;
                     </p>
 
                     {/* Reviewer info */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4 pt-4 border-t border-editorial-border/60">
                       <Initials name={review.name} />
-                      <div className="flex-1">
-                        <p className="heading-2 text-editorial-dark">{review.name}</p>
-                        <p className="caption text-editorial-muted flex items-center">
-                          <svg className="w-3.5 h-3.5 inline-block mr-1" viewBox="0 0 24 24" fill="none">
+                      <div className="flex-1 min-w-0">
+                        <p className="font-heading font-bold text-base sm:text-lg text-editorial-dark truncate">
+                          {review.name}
+                        </p>
+                        <p className="caption text-xs sm:text-sm text-editorial-muted flex items-center mt-0.5">
+                          <svg className="w-3.5 h-3.5 inline-block mr-1 shrink-0" viewBox="0 0 24 24" fill="none">
                             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
                             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
                             <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
                             <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                           </svg>
-                          {t("googleUser")}
+                          <span className="truncate">{t("googleUser")}</span>
                         </p>
                       </div>
                     </div>
@@ -201,26 +213,26 @@ export function Testimonials() {
             </div>
           </div>
 
-          {/* Dots + mobile arrows */}
-          <div className="flex items-center justify-center gap-4 mt-8">
+          {/* Dots + mobile arrows (Guaranteed spacing & high z-index) */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6 mt-6 sm:mt-8 relative z-20">
             {/* Mobile arrow left */}
             <button
               onClick={prev}
-              className="md:hidden w-10 h-10 rounded-full border-2 border-editorial-border flex items-center justify-center text-editorial-muted hover:border-editorial-accent hover:text-editorial-accent transition-colors"
+              className="md:hidden w-11 h-11 rounded-full border-2 border-editorial-border bg-white shadow-sm flex items-center justify-center text-editorial-muted active:scale-95 hover:border-editorial-accent hover:text-editorial-accent transition-all touch-manipulation"
               aria-label={t("prevReview")}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
 
             {/* Dots */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 px-2 py-1">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => goTo(i, i > current ? 1 : -1)}
-                  className={`transition-all duration-300 rounded-full ${
+                  className={`transition-all duration-300 rounded-full touch-manipulation ${
                     i === current
-                      ? "bg-editorial-accent w-8 h-2.5"
+                      ? "bg-editorial-accent w-7 h-2.5"
                       : "bg-editorial-border hover:bg-editorial-border/80 w-2.5 h-2.5"
                   }`}
                   aria-label={`${t("goToReview")} ${i + 1}`}
@@ -231,7 +243,7 @@ export function Testimonials() {
             {/* Mobile arrow right */}
             <button
               onClick={next}
-              className="md:hidden w-10 h-10 rounded-full border-2 border-editorial-border flex items-center justify-center text-editorial-muted hover:border-editorial-accent hover:text-editorial-accent transition-colors"
+              className="md:hidden w-11 h-11 rounded-full border-2 border-editorial-border bg-white shadow-sm flex items-center justify-center text-editorial-muted active:scale-95 hover:border-editorial-accent hover:text-editorial-accent transition-all touch-manipulation"
               aria-label={t("nextReview")}
             >
               <ChevronRight className="w-5 h-5" />
@@ -244,9 +256,9 @@ export function Testimonials() {
               href={GOOGLE_MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 caption font-semibold text-editorial-accent hover:text-editorial-accent-hover transition-colors group"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-editorial-accent hover:text-editorial-accent-hover transition-colors group px-4 py-2 rounded-full hover:bg-editorial-accent/5"
             >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+              <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
                 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
                 <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>

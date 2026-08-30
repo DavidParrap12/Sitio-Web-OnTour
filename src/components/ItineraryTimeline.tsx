@@ -216,31 +216,43 @@ export default function ItineraryTimeline({
 
             {/* Content */}
             <motion.div
+              key={lightboxIndex}
               initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 w-[92vw] h-[80vh] max-w-6xl"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(_, info) => {
+                if (info.offset.x < -40) {
+                  goNext();
+                } else if (info.offset.x > 40) {
+                  goPrev();
+                }
+              }}
+              className="relative z-10 w-[92vw] h-[80vh] max-w-6xl cursor-grab active:cursor-grabbing touch-pan-y"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
                 src={dayImages[lightboxIndex].image}
                 alt={dayImages[lightboxIndex].location}
                 fill
-                className="object-contain rounded-lg"
+                draggable={false}
+                className="object-contain rounded-lg pointer-events-none select-none"
                 sizes="92vw"
                 priority
               />
 
               {/* Location label */}
-              <div className="absolute bottom-6 left-6 px-5 py-2 bg-white/15 backdrop-blur-xl border border-white/20 rounded-xl">
+              <div className="absolute bottom-6 left-6 px-5 py-2 bg-white/15 backdrop-blur-xl border border-white/20 rounded-xl pointer-events-none select-none">
                 <span className="text-white font-bold tracking-[0.15em] text-sm">
                   {dayImages[lightboxIndex].location}
                 </span>
               </div>
 
               {/* Photo counter */}
-              <div className="absolute bottom-6 right-6 px-4 py-2 bg-white/15 backdrop-blur-xl border border-white/20 rounded-xl">
+              <div className="absolute bottom-6 right-6 px-4 py-2 bg-white/15 backdrop-blur-xl border border-white/20 rounded-xl pointer-events-none select-none">
                 <span className="text-white/90 text-sm font-medium">
                   {t.photoOf
                     .replace("__n__", String(lightboxIndex + 1))

@@ -7,6 +7,7 @@
     "services": "Services",
     "gallery": "Gallery",
     "contact": "Contact",
+    "wellness": "Wellness",
     "quote": "Get a Quote",
     "contactAdvisor": "Contact Advisor"
   },
@@ -241,6 +242,136 @@
     "partners": "Our Partners",
     "designed": "Designed to inspire travelers.",
     "legalDisclaimer": "In compliance with Article 17 of Law 679 of 2001 and Law 1336 of 2009, On Tour DMC rejects the exploitation, pornography, sexual tourism and all forms of abuse of minors. We warn that sexual abuse is punishable under criminal and administrative law in accordance with current legal provisions and we are committed to reporting any cases related to ESCNNA. On Tour DMC rejects the commercialization and trafficking of wild fauna and flora species. Law 17 of 1981, Ministerial Resolution No. 1367 of 2000, Decree 1608 of 1978. And denounces the illegal trafficking of exotic flora and fauna species. Law 599 of 2000, Colombian Penal Code. Law 165 of 1994, United Nations Convention on Biological Diversity. It also rejects and denounces the trafficking of cultural goods, preventing and protecting the national heritage. Law 397 of 1997, Decree 833 of 2002, Law 1185 of 2008, Law 63 of 1986, Law 1675 of July 2013. On Tour DMC rejects acts of racism, discrimination or sexual orientation. Law 1482 of 2011. Judgment T-282/11, Convention No. 169 concerning Indigenous and Tribal Peoples, 1989. Auto 004/09 and protects the fundamental rights of displaced persons and indigenous peoples due to armed conflict. Declared in Judgment T-025/04."
+  },
+  "wellness": {
+    "metaTitle": "Dental Wellness | OnTour DMC Colombia",
+    "metaDesc": "World-class dental care in the heart of Colombia. Board-certified specialists, up to 70% savings vs. the US. Recovery in paradise.",
+    "hero": {
+      "title": "Your Smile, Transformed.",
+      "titleHighlight": "Clarity Before You Fly.",
+      "subtitle": "Experience world-class dental care with up to 70% savings compared to the US, backed by board-certified specialists in the heart of the Colombian Andes.",
+      "ctaPrimary": "Request Free Consultation",
+      "ctaSecondary": "See How the Process Works",
+      "imagePatientAlt": "[CLIENT: Photo of a smiling patient — professional portrait, white background preferred]",
+      "imageTolimaAlt": "[CLIENT: Photo of the Tolima landscape — coffee region, mountains, lush green]"
+    },
+    "trust": {
+      "certified": "Board-Certified Specialists",
+      "materials": "FDA / CE-Cleared Materials",
+      "quote": "Written Fixed Quote Before Travel",
+      "bilingual": "Bilingual Patient Coordination",
+      "telehealth": "Post-Treatment Tele-Dentistry"
+    },
+    "care": {
+      "title": "Your Health, Our Priority.",
+      "titleHighlight": "Colombia Cares For You.",
+      "subtitle": "Access world-class medical and aesthetic procedures in Tolima, backed by board-certified specialists and comprehensive support before, during, and after your procedure.",
+      "requestInfo": "Request Information",
+      "helpTitle": "Not sure which package is right for you?",
+      "helpSubtitle": "Our team provides personalized guidance with zero commitment.",
+      "helpButton": "Consultation"
+    },
+    "treatments": {
+      "title": "Our Treatments & Specialties",
+      "subtitle": "High-complexity medical and aesthetic procedures with board-certified specialists.",
+      "learnMore": "Learn More",
+      "items": {
+        "cirugiaPlastica": {
+          "name": "Plastic & Aesthetic Surgery",
+          "desc": "High-precision facial and body surgical procedures with certified specialists.",
+          "procedures": ["Blepharoplasty", "Liposuction", "Breast Augmentation"]
+        },
+        "chequeosPreventivos": {
+          "name": "Preventive Checkups",
+          "desc": "Comprehensive medical evaluations tailored for men's and women's preventive health.",
+          "procedures": ["Elite Men", "Essential Women", "Lab Testing"]
+        },
+        "cardiologia": {
+          "name": "Cardiology",
+          "desc": "Non-invasive cardiovascular diagnosis and monitoring with state-of-the-art technology.",
+          "procedures": ["Echocardiogram", "Holter Monitor", "Specialist Consultation"]
+        },
+        "urologia": {
+          "name": "Urology",
+          "desc": "Specialized urological care, kidney stone management, and prostate health.",
+          "procedures": ["Comprehensive Diagnosis", "Lithiasis", "Prostate Care"]
+        },
+        "nutricion": {
+          "name": "Clinical Nutrition",
+          "desc": "Therapeutic, oncological, and personalized inpatient nutritional support plans.",
+          "procedures": ["Oncology Nutrition", "Hospital Support", "Customized Plans"]
+        },
+        "psicologia": {
+          "name": "Clinical Psychology",
+          "desc": "Comprehensive psycho-oncology and pre- and post-surgical emotional support.",
+          "procedures": ["Psycho-oncology", "Pre/Post Support", "Mental Health"]
+        }
+      }
+    },
+    "process": {
+      "title": "Your Journey in 5 Steps",
+      "subtitle": "A seamless experience from your home country to your new smile.",
+      "steps": {
+        "s1": { "title": "Free Virtual Consultation", "desc": "Share your X-rays and photos. Our specialist reviews your case within 24h." },
+        "s2": { "title": "Written Treatment Plan", "desc": "Receive a detailed plan with a fixed quote. No surprises, ever." },
+        "s3": { "title": "Travel Coordination", "desc": "We handle accommodation, transfers, and your full dental schedule." },
+        "s4": { "title": "Treatment & Recovery", "desc": "Relax in paradise while your new smile takes shape." },
+        "s5": { "title": "Follow-Up at Home", "desc": "Post-treatment tele-dentistry for peace of mind." }
+      }
+    },
+    "tolima": {
+      "title": "Healing in Nature.",
+      "subtitle": "Discover conscious tourism, warm hospitality, and the breathtaking landscapes of Colombia's coffee region while you recover.",
+      "cta": "Explore Recovery Circuits",
+      "imageAlt": "[CLIENT: Photo of the Tolima/Coffee Region — wide shot, mountains, palms]"
+    },
+    "testimonials": {
+      "title": "Real Results, Real Patients",
+      "subtitle": "Patients from the US, Canada and Europe share their experience.",
+      "items": {
+        "t1": {
+          "name": "[CLIENT: Patient name]",
+          "origin": "🇺🇸 USA",
+          "treatment": "All-on-4 Implants",
+          "quote": "[CLIENT: Real patient testimonial, 2-3 sentences max]",
+          "avatarAlt": "[CLIENT: Photo of the patient — must be authorized]"
+        },
+        "t2": {
+          "name": "[CLIENT: Patient name]",
+          "origin": "🇨🇦 Canada",
+          "treatment": "Smile Makeover",
+          "quote": "[CLIENT: Real patient testimonial, 2-3 sentences max]",
+          "avatarAlt": "[CLIENT: Photo of the patient]"
+        },
+        "t3": {
+          "name": "[CLIENT: Patient name]",
+          "origin": "🇩🇪 Germany",
+          "treatment": "Porcelain Veneers",
+          "quote": "[CLIENT: Real patient testimonial, 2-3 sentences max]",
+          "avatarAlt": "[CLIENT: Photo of the patient]"
+        }
+      }
+    },
+    "specialists": {
+      "title": "Meet Our Specialists",
+      "subtitle": "Over 20 board-certified professionals with international training, organized by specialty to provide you with world-class medical care."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "q1": { "q": "What happens if there are post-trip complications?", "a": "We have a dedicated tele-dentistry protocol for post-treatment follow-ups. Our specialists are available by video call within 24 hours. All treatments include a written warranty covering materials and labor." },
+        "q2": { "q": "What materials are used?", "a": "We exclusively use FDA/CE-cleared materials: Nobel Biocare and Straumann implants, E-max and Zirconia ceramics, and clinically-proven whitening agents. All certifications available on request." },
+        "q3": { "q": "How long is the recovery time?", "a": "Recovery varies by treatment. Implants: 5–7 days rest. Veneers & crowns: same-day, no downtime. Makeovers: 3–5 days depending on procedures. We plan your trip around your recovery." },
+        "q4": { "q": "What are the payment methods?", "a": "We accept international wire transfer, credit card (Visa, Mastercard), and Wise/PayPal for international patients. A 30% deposit secures your appointment; the balance is due before your first procedure." },
+        "q5": { "q": "Is it safe to travel to Colombia for dental care?", "a": "Colombia has significantly improved in safety indicators. Ibagué is one of the safest mid-size cities in the country. Our team handles logistics end-to-end, from airport pickup to hotel coordination." }
+      }
+    },
+    "cta": {
+      "title": "A medical decision this important deserves clarity — not pressure.",
+      "subtitle": "Our specialists will review your case for free. No commitment required.",
+      "button": "Start Your Free Consultation",
+      "secondaryButton": "Download Patient Guide"
+    }
   },
   "metadata": {
     "home": {

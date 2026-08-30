@@ -151,3 +151,31 @@ export const REGIONS = [
 ] as const;
 
 export type Region = (typeof REGIONS)[number];
+
+// -- Wellness / Dental Premium Color Palette ---------------------------------
+export const WELLNESS_COLORS = {
+  // Azul marino profundo — credibilidad médica
+  primary: '#0A2540',
+  primaryForeground: '#ffffff',
+  primaryMid: '#0f3460',
+
+  // Blanco hueso — limpieza profesional
+  background: '#FAFAF7',
+  foreground: '#171717',
+
+  // Verde sage — conexión con naturaleza del Tolima
+  accent: '#8FB39C',
+  accentHover: '#7a9282',
+  accentLight: '#a7c5b1',
+  accentBg: 'rgba(143, 179, 156, 0.12)',
+
+  // Dorado suave — detalles premium
+  gold: '#C9A961',
+  goldHover: '#b5944e',
+  goldLight: '#e0c98a',
+  goldBg: 'rgba(201, 169, 97, 0.1)',
+
+  // Separadores y bordes
+  border: 'rgba(143, 179, 156, 0.2)',
+  borderGold: 'rgba(201, 169, 97, 0.4)',
+} as const;
