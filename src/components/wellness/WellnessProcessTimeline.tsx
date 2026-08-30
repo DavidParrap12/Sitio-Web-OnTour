@@ -26,10 +26,10 @@ const STEPS = ["s1", "s2", "s3", "s4", "s5"] as const;
 // Fallback high-res pictures from the project if custom step image is pending
 const FALLBACK_STEP_IMAGES: Record<string, string> = {
   s1: "/image/bienestar/Consulta_Virtual_Gratuita.jpeg",
-  s2: "/image/bienestar/tratamientos/chequeos-preventivos.jpg",
-  s3: "/image/bienestar/paisaje_tolima.jpeg",
+  s2: "/image/bienestar/Dentist_reviewing_treatment_plan_2K_202608281756.jpeg",
+  s3: "/image/bienestar/Woman_preparing_dental_travel_it…_202608282016.jpeg",
   s4: "/image/bienestar/Woman_relaxing_on_hotel_terrace_202608282028.jpeg",
-  s5: "/image/bienestar/Consulta_Virtual_Gratuita.jpeg",
+  s5: "/image/bienestar/Woman_having_dental_video_consul…_202608282040.jpeg",
 };
 
 export function WellnessProcessTimeline({ strings: s }: { strings: ProcessStrings }) {
