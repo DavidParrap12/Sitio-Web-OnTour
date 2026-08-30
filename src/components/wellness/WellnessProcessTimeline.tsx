@@ -25,8 +25,8 @@ const STEPS = ["s1", "s2", "s3", "s4", "s5"] as const;
 
 // Fallback high-res pictures from the project if custom step image is pending
 const FALLBACK_STEP_IMAGES: Record<string, string> = {
-  s1: "/image/bienestar/Consulta_Virtual_Gratuita.jpeg",
-  s2: "/image/bienestar/Dentist_reviewing_treatment_plan_2K_202608281756.jpeg",
+  s1: "/image/bienestar/Specialist_conducting_virtual_me…_2K_202608292100.jpeg",
+  s2: "/image/bienestar/Specialist_reviewing_medical_tre…_2K_202608292104.jpeg",
   s3: "/image/bienestar/Woman_preparing_dental_travel_it…_202608282016.jpeg",
   s4: "/image/bienestar/Woman_relaxing_on_hotel_terrace_202608282028.jpeg",
   s5: "/image/bienestar/Woman_having_dental_video_consul…_202608282040.jpeg",

@@ -90,7 +90,6 @@ export default async function BienestarPage({
   };
 
   const processStrings = {
-    sectionLabel: t("process.sectionLabel"),
     title: t("process.title"),
     subtitle: t("process.subtitle"),
     s1: { title: t("process.steps.s1.title"), desc: t("process.steps.s1.desc") },
@@ -101,7 +100,6 @@ export default async function BienestarPage({
   };
 
   const tolimaStrings = {
-    sectionLabel: t("tolima.sectionLabel"),
     title: t("tolima.title"),
     subtitle: t("tolima.subtitle"),
     cta: t("tolima.cta"),
@@ -109,7 +107,6 @@ export default async function BienestarPage({
   };
 
   const testimonialsStrings = {
-    sectionLabel: t("testimonials.sectionLabel"),
     title: t("testimonials.title"),
     subtitle: t("testimonials.subtitle"),
     t1: { name: t("testimonials.items.t1.name"), origin: t("testimonials.items.t1.origin"), treatment: t("testimonials.items.t1.treatment"), quote: t("testimonials.items.t1.quote"), avatarAlt: t("testimonials.items.t1.avatarAlt") },
@@ -124,7 +121,6 @@ export default async function BienestarPage({
   };
 
   const faqStrings = {
-    sectionLabel: t("faq.sectionLabel"),
     title: t("faq.title"),
     q1: { q: t("faq.items.q1.q"), a: t("faq.items.q1.a") },
     q2: { q: t("faq.items.q2.q"), a: t("faq.items.q2.a") },
