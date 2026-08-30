@@ -254,6 +254,65 @@ const SPECIALTY_LABELS: Record<string, Record<string, string>> = {
   },
 };
 
+// ─── Localized Doctor Roles (credentials stay in ES as proper nouns) ──────────
+
+const SPECIALIST_ROLES: Record<string, Record<string, string>> = {
+  en: {
+    "dr-luis-oliveros": "Plastic & Aesthetic Surgeon",
+    "dr-nicolas-prada": "Aesthetic & Reconstructive Plastic Surgeon",
+    "dra-clara-alcazar": "Specialist in Blepharoplasty and Facial Rejuvenation",
+    "dr-cesar-rojas": "Urologist",
+    "dr-luis-zapata": "Urologist — Head of Department",
+    "dra-daisy-roa": "Urologist",
+    "dr-diego-diaz": "Internist — Head of Internal Medicine",
+    "dra-eliana-rodriguez": "Internist",
+    "dra-jennifer-cifuentes": "Cardiologist — Tolima Section President",
+    "dr-luigi-polifrony": "Cardiologist",
+    "dra-alma-ramirez": "Radiologist — Breast Imaging Specialist",
+    "dra-maira-rojas": "Clinical Nutritionist",
+    "dra-maria-criales": "Clinical Nutritionist — Bilingual",
+    "dra-marcela-cardona": "Clinical Psychologist — Psycho-oncologist",
+    "dra-valentina-gomez": "Clinical Psychologist",
+    "dr-juan-rodriguez": "Gynecologist — Maternal-Fetal Medicine",
+  },
+  fr: {
+    "dr-luis-oliveros": "Chirurgien Plastique et Esthétique",
+    "dr-nicolas-prada": "Chirurgien Plastique Esthétique et Reconstructeur",
+    "dra-clara-alcazar": "Spécialiste en Blépharoplastie et Rajeunissement du Visage",
+    "dr-cesar-rojas": "Urologue",
+    "dr-luis-zapata": "Urologue — Chef de Service",
+    "dra-daisy-roa": "Urologue",
+    "dr-diego-diaz": "Interniste — Chef de la Médecine Interne",
+    "dra-eliana-rodriguez": "Interniste",
+    "dra-jennifer-cifuentes": "Cardiologue — Présidente Section Tolima",
+    "dr-luigi-polifrony": "Cardiologue",
+    "dra-alma-ramirez": "Radiologue — Spécialiste en Imagerie Mammaire",
+    "dra-maira-rojas": "Nutritionniste Clinique",
+    "dra-maria-criales": "Nutritionniste Clinique — Bilingue",
+    "dra-marcela-cardona": "Psychologue Clinique — Psycho-oncologue",
+    "dra-valentina-gomez": "Psychologue Clinique",
+    "dr-juan-rodriguez": "Gynécologue — Médecine Materno-Fœtale",
+  },
+  de: {
+    "dr-luis-oliveros": "Plastischer & Ästhetischer Chirurg",
+    "dr-nicolas-prada": "Ästhetischer und Rekonstruktiver Plastischer Chirurg",
+    "dra-clara-alcazar": "Spezialistin für Blepharoplastik und Gesichtsverjüngung",
+    "dr-cesar-rojas": "Urologe",
+    "dr-luis-zapata": "Urologe — Abteilungsleiter",
+    "dra-daisy-roa": "Urologin",
+    "dr-diego-diaz": "Internist — Leiter der Inneren Medizin",
+    "dra-eliana-rodriguez": "Internistin",
+    "dra-jennifer-cifuentes": "Kardiologin — Sektionspräsidentin Tolima",
+    "dr-luigi-polifrony": "Kardiologe",
+    "dra-alma-ramirez": "Radiologin — Spezialistin für Brustbildgebung",
+    "dra-maira-rojas": "Klinische Ernährungsberaterin",
+    "dra-maria-criales": "Klinische Ernährungsberaterin — Zweisprachig",
+    "dra-marcela-cardona": "Klinische Psychologin — Psycho-Onkologin",
+    "dra-valentina-gomez": "Klinische Psychologin",
+    "dr-juan-rodriguez": "Gynäkologe — Maternofetale Medizin",
+  },
+};
+
 // ─── Component ───────────────────────────────────────────────────────────────
 
 export function WellnessSpecialists({
@@ -381,7 +440,7 @@ export function WellnessSpecialists({
 
                     {/* Role */}
                     <p className="text-sm font-semibold text-[var(--color-wellness-gold)] leading-snug">
-                      {doctor.role}
+                      {SPECIALIST_ROLES[currentLang]?.[doctor.id] ?? doctor.role}
                     </p>
 
                     {/* Credentials */}

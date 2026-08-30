@@ -67,10 +67,12 @@ export function WellnessFinalCTA({ strings: s }: { strings: CtaStrings }) {
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
 
+          {false && (
           <button className="group inline-flex items-center gap-2 px-7 py-4 rounded-full border border-white/20 text-white/75 hover:text-white hover:border-white/40 text-sm font-medium transition-all duration-300">
             <Download className="w-4 h-4" />
             {s.secondaryButton}
           </button>
+          )}
         </motion.div>
       </div>
     </section>
