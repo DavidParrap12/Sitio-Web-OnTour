@@ -244,12 +244,12 @@
     "legalDisclaimer": "Dans le cadre des dispositions de l'article 17 de la loi 679 de 2001 et de la loi 1336 de 2009, On Tour DMC rejette l'exploitation, la pornographie, le tourisme sexuel et toutes les formes d'abus de mineurs. Nous prévenons que les abus sexuels sont punissables par la loi pénale et administrative conformément aux dispositions légales en vigueur et nous nous engageons à signaler tout cas lié à l'ESCNNA. On Tour DMC rejette la commercialisation et le trafic d'espèces de faune et flore sauvages. Loi 17 de 1981, Résolution ministérielle n°1367 de 2000, Décret 1608 de 1978. Et dénonce le trafic illegal d'espèces exotiques de flore et faune. Loi 599 de 2000, Code pénal colombien. Loi 165 de 1994, Convention des Nations Unies sur la diversité biologique. De plus, elle rejette et dénoncent le trafic de biens culturels en prévenant et protégeant le patrimoine national. Loi 397 de 1997, Décret 833 de 2002, Loi 1185 de 2008, Loi 63 de 1986, Loi 1675 de juillet 2013. On Tour DMC rejette les actes de racisme, de discrimination ou d'orientation sexuelle. Loi 1482 de 2011. Arrêt T-282/11, Convention n°169 relative aux peuples indigènes et tribaux, 1989. Auto 004/09 et protège les droits fondamentaux des personnes et des peuples autochtones déplacés par le conflit armé. Déclaré dans l'Arrêt T-025/04."
   },
   "wellness": {
-    "metaTitle": "Bien-être Dentaire | OnTour DMC Colombie",
-    "metaDesc": "Soins dentaires de classe mondiale au cœur de la Colombie. Spécialistes certifiés, jusqu'à 70 % d'économies par rapport aux États-Unis. Récupération au paradis.",
+    "metaTitle": "Santé et Bien-être | OnTour DMC Colombie",
+    "metaDesc": "Soins médicaux et esthétiques de classe mondiale au cœur de la Colombie. Spécialistes certifiés, jusqu'à 70 % d'économies par rapport aux États-Unis. Récupération au paradis.",
     "hero": {
-      "title": "Votre Sourire, Transformé.",
-      "titleHighlight": "Clarté Avant de Voyager.",
-      "subtitle": "Découvrez des soins dentaires de classe mondiale avec jusqu'à 70 % d'économies par rapport aux États-Unis, soutenus par des spécialistes certifiés au cœur des Andes colombiennes.",
+      "title": "Soins Médicaux de Classe Mondiale",
+      "titleHighlight": "en Colombie",
+      "subtitle": "Accédez à des procédures médicales et esthétiques de classe mondiale avec jusqu'à 70 % d'économies par rapport aux États-Unis, soutenues par des spécialistes certifiés au cœur des Andes colombiennes.",
       "ctaPrimary": "Demander une Consultation",
       "ctaSecondary": "Voir Comment Ça Fonctionne",
       "imagePatientAlt": "[CLIENT : Photo d'un patient souriant — portrait professionnel, fond blanc de préférence]",
@@ -260,7 +260,7 @@
       "materials": "Matériaux FDA / CE Certifiés",
       "quote": "Devis Fixe Écrit Avant le Voyage",
       "bilingual": "Coordination Bilingue des Patients",
-      "telehealth": "Télé-Dentisterie Post-Traitement"
+      "telehealth": "Télémédecine Post-Traitement"
     },
     "care": {
       "title": "Votre santé, notre priorité.",
@@ -311,13 +311,13 @@
     "process": {
       "sectionLabel": "Processus",
       "title": "Votre Parcours en 5 Étapes",
-      "subtitle": "Une expérience fluide depuis votre pays d'origine jusqu'à votre nouveau sourire.",
+      "subtitle": "Une expérience fluide depuis votre pays d'origine jusqu'à votre récupération en Colombie.",
       "steps": {
-        "s1": { "title": "Consultation Virtuelle Gratuite", "desc": "Partagez vos radiographies et photos. Notre spécialiste évalue votre cas en 24h." },
+        "s1": { "title": "Consultation Virtuelle Gratuite", "desc": "Partagez vos antécédents médicaux et photos. Notre spécialiste évalue votre cas en 24h." },
         "s2": { "title": "Plan de Traitement Écrit", "desc": "Recevez un plan détaillé avec un devis fixe. Sans surprises." },
-        "s3": { "title": "Coordination du Voyage", "desc": "Nous organisons l'hébergement, les transferts et votre agenda dentaire complet." },
-        "s4": { "title": "Traitement & Récupération", "desc": "Détendez-vous au paradis pendant que votre nouveau sourire prend forme." },
-        "s5": { "title": "Suivi à Domicile", "desc": "Télé-dentisterie post-traitement pour votre tranquillité d'esprit." }
+        "s3": { "title": "Coordination du Voyage", "desc": "Nous organisons l'hébergement, les transferts et votre agenda médical complet." },
+        "s4": { "title": "Traitement & Récupération", "desc": "Détendez-vous au paradis pendant votre récupération." },
+        "s5": { "title": "Suivi à Domicile", "desc": "Télémédecine post-traitement pour votre tranquillité d'esprit." }
       }
     },
     "tolima": {
@@ -362,11 +362,11 @@
     "faq": {
       "title": "Questions Fréquentes",
       "items": {
-        "q1": { "q": "Que se passe-t-il en cas de complications après le voyage ?", "a": "Nous disposons d'un protocole de télé-dentisterie dédié pour les suivis post-traitement. Nos spécialistes sont disponibles par appel vidéo dans les 24 heures. Tous les traitements incluent une garantie écrite sur les matériaux et la main-d'œuvre." },
-        "q2": { "q": "Quels matériaux sont utilisés ?", "a": "Nous utilisons exclusivement des matériaux certifiés FDA/CE : implants Nobel Biocare et Straumann, céramiques E-max et Zircone, et agents de blanchiment cliniquement prouvés. Toutes les certifications sont disponibles sur demande." },
-        "q3": { "q": "Quelle est la durée de récupération ?", "a": "La récupération varie selon le traitement. Implants : 5-7 jours de repos. Facettes et couronnes : le jour même, sans temps d'arrêt. Relooking : 3-5 jours selon les procédures. Nous planifions votre voyage autour de votre récupération." },
+        "q1": { "q": "Que se passe-t-il en cas de complications après le voyage ?", "a": "Nous disposons d'un protocole de télémédecine dédié pour les suivis post-traitement. Nos spécialistes sont disponibles par appel vidéo dans les 24 heures. Tous les traitements incluent une garantie écrite." },
+        "q2": { "q": "Quels matériaux sont utilisés ?", "a": "Nous utilisons exclusivement des matériaux et fournitures certifiés FDA/CE : implants, prothèses et dispositifs de pointe, toutes certifications disponibles sur demande." },
+        "q3": { "q": "Quelle est la durée de récupération ?", "a": "La récupération varie selon le traitement. Chirurgies : 5-7 jours de repos. Actes ambulatoires : le jour même, sans temps d'arrêt. Nous planifions votre voyage autour de votre récupération." },
         "q4": { "q": "Quels sont les modes de paiement ?", "a": "Nous acceptons les virements bancaires internationaux, les cartes de crédit (Visa, Mastercard), et Wise/PayPal pour les patients internationaux. Un acompte de 30 % garantit votre rendez-vous ; le solde est dû avant la première procédure." },
-        "q5": { "q": "Est-il sûr de voyager en Colombie pour des soins dentaires ?", "a": "La Colombie a considérablement amélioré ses indicateurs de sécurité. Ibagué est l'une des villes moyennes les plus sûres du pays. Notre équipe gère la logistique de bout en bout, de la prise en charge à l'aéroport à la coordination hôtelière." }
+        "q5": { "q": "Est-il sûr de voyager en Colombie pour des soins médicaux ?", "a": "La Colombie a considérablement amélioré ses indicateurs de sécurité. Ibagué est l'une des villes moyennes les plus sûres du pays. Notre équipe gère la logistique de bout en bout, de la prise en charge à l'aéroport à la coordination hôtelière." }
       }
     },
     "cta": {

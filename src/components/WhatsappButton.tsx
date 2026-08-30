@@ -2,9 +2,18 @@
 
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLocale } from "next-intl";
+
+const WHATSAPP_MESSAGES: Record<string, string> = {
+  es: "Hola Ontour, me gustaría recibir más información sobre sus paquetes turísticos.",
+  en: "Hello Ontour, I'd like more information about your tourism packages.",
+  fr: "Bonjour Ontour, je souhaiterais recevoir plus d'informations sur vos forfaits touristiques.",
+  de: "Hallo Ontour, ich würde gerne mehr Informationen zu Ihren Reisepaketen erhalten.",
+};
 
 export function WhatsappButton() {
-  const message = "Hola Ontour, me gustaría recibir más información sobre sus paquetes turísticos.";
+  const locale = useLocale();
+  const message = WHATSAPP_MESSAGES[locale] ?? WHATSAPP_MESSAGES.es;
   const url = `https://wa.me/573143415177?text=${encodeURIComponent(message)}`;
 
   return (

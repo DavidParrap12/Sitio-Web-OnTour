@@ -244,12 +244,12 @@
     "legalDisclaimer": "In compliance with Article 17 of Law 679 of 2001 and Law 1336 of 2009, On Tour DMC rejects the exploitation, pornography, sexual tourism and all forms of abuse of minors. We warn that sexual abuse is punishable under criminal and administrative law in accordance with current legal provisions and we are committed to reporting any cases related to ESCNNA. On Tour DMC rejects the commercialization and trafficking of wild fauna and flora species. Law 17 of 1981, Ministerial Resolution No. 1367 of 2000, Decree 1608 of 1978. And denounces the illegal trafficking of exotic flora and fauna species. Law 599 of 2000, Colombian Penal Code. Law 165 of 1994, United Nations Convention on Biological Diversity. It also rejects and denounces the trafficking of cultural goods, preventing and protecting the national heritage. Law 397 of 1997, Decree 833 of 2002, Law 1185 of 2008, Law 63 of 1986, Law 1675 of July 2013. On Tour DMC rejects acts of racism, discrimination or sexual orientation. Law 1482 of 2011. Judgment T-282/11, Convention No. 169 concerning Indigenous and Tribal Peoples, 1989. Auto 004/09 and protects the fundamental rights of displaced persons and indigenous peoples due to armed conflict. Declared in Judgment T-025/04."
   },
   "wellness": {
-    "metaTitle": "Dental Wellness | OnTour DMC Colombia",
-    "metaDesc": "World-class dental care in the heart of Colombia. Board-certified specialists, up to 70% savings vs. the US. Recovery in paradise.",
+    "metaTitle": "Health & Wellness | OnTour DMC Colombia",
+    "metaDesc": "World-class medical and aesthetic care in the heart of Colombia. Board-certified specialists, up to 70% savings vs. the US. Recovery in paradise.",
     "hero": {
-      "title": "Your Smile, Transformed.",
-      "titleHighlight": "Clarity Before You Fly.",
-      "subtitle": "Experience world-class dental care with up to 70% savings compared to the US, backed by board-certified specialists in the heart of the Colombian Andes.",
+      "title": "World-Class Healthcare",
+      "titleHighlight": "in Colombia",
+      "subtitle": "Access world-class medical and aesthetic procedures with up to 70% savings compared to the US, backed by board-certified specialists in the heart of the Colombian Andes.",
       "ctaPrimary": "Request Free Consultation",
       "ctaSecondary": "See How the Process Works",
       "imagePatientAlt": "[CLIENT: Photo of a smiling patient — professional portrait, white background preferred]",
@@ -260,7 +260,7 @@
       "materials": "FDA / CE-Cleared Materials",
       "quote": "Written Fixed Quote Before Travel",
       "bilingual": "Bilingual Patient Coordination",
-      "telehealth": "Post-Treatment Tele-Dentistry"
+      "telehealth": "Post-Treatment Telehealth"
     },
     "care": {
       "title": "Your Health, Our Priority.",
@@ -310,13 +310,13 @@
     },
     "process": {
       "title": "Your Journey in 5 Steps",
-      "subtitle": "A seamless experience from your home country to your new smile.",
+      "subtitle": "A seamless experience from your home country to your recovery in Colombia.",
       "steps": {
-        "s1": { "title": "Free Virtual Consultation", "desc": "Share your X-rays and photos. Our specialist reviews your case within 24h." },
+        "s1": { "title": "Free Virtual Consultation", "desc": "Share your medical history and photos. Our specialist reviews your case within 24h." },
         "s2": { "title": "Written Treatment Plan", "desc": "Receive a detailed plan with a fixed quote. No surprises, ever." },
-        "s3": { "title": "Travel Coordination", "desc": "We handle accommodation, transfers, and your full dental schedule." },
-        "s4": { "title": "Treatment & Recovery", "desc": "Relax in paradise while your new smile takes shape." },
-        "s5": { "title": "Follow-Up at Home", "desc": "Post-treatment tele-dentistry for peace of mind." }
+        "s3": { "title": "Travel Coordination", "desc": "We handle accommodation, transfers, and your full medical schedule." },
+        "s4": { "title": "Treatment & Recovery", "desc": "Relax in paradise while you recover." },
+        "s5": { "title": "Follow-Up at Home", "desc": "Post-treatment telehealth for peace of mind." }
       }
     },
     "tolima": {
@@ -359,11 +359,11 @@
     "faq": {
       "title": "Frequently Asked Questions",
       "items": {
-        "q1": { "q": "What happens if there are post-trip complications?", "a": "We have a dedicated tele-dentistry protocol for post-treatment follow-ups. Our specialists are available by video call within 24 hours. All treatments include a written warranty covering materials and labor." },
-        "q2": { "q": "What materials are used?", "a": "We exclusively use FDA/CE-cleared materials: Nobel Biocare and Straumann implants, E-max and Zirconia ceramics, and clinically-proven whitening agents. All certifications available on request." },
-        "q3": { "q": "How long is the recovery time?", "a": "Recovery varies by treatment. Implants: 5–7 days rest. Veneers & crowns: same-day, no downtime. Makeovers: 3–5 days depending on procedures. We plan your trip around your recovery." },
+        "q1": { "q": "What happens if there are post-trip complications?", "a": "We have a dedicated telehealth protocol for post-treatment follow-ups. Our specialists are available by video call within 24 hours. All treatments include a written warranty." },
+        "q2": { "q": "What materials are used?", "a": "We exclusively use FDA/CE-cleared materials and supplies: implants, prosthetics, and state-of-the-art devices, with all certifications available on request." },
+        "q3": { "q": "How long is the recovery time?", "a": "Recovery varies by procedure. Surgeries: 5–7 days rest. Outpatient procedures: same-day, no downtime. We plan your trip around your recovery." },
         "q4": { "q": "What are the payment methods?", "a": "We accept international wire transfer, credit card (Visa, Mastercard), and Wise/PayPal for international patients. A 30% deposit secures your appointment; the balance is due before your first procedure." },
-        "q5": { "q": "Is it safe to travel to Colombia for dental care?", "a": "Colombia has significantly improved in safety indicators. Ibagué is one of the safest mid-size cities in the country. Our team handles logistics end-to-end, from airport pickup to hotel coordination." }
+        "q5": { "q": "Is it safe to travel to Colombia for medical care?", "a": "Colombia has significantly improved in safety indicators. Ibagué is one of the safest mid-size cities in the country. Our team handles logistics end-to-end, from airport pickup to hotel coordination." }
       }
     },
     "cta": {

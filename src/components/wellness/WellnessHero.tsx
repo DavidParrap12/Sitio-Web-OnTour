@@ -22,7 +22,7 @@ export function WellnessHero({ strings: s }: { strings: HeroStrings }) {
         <div className="relative overflow-hidden min-h-[400px]">
           <Image
             src="/image/bienestar/mujer_sonriendo.jpeg"
-            alt={s.title || "Paciente bienestar dental"}
+            alt={s.title || "Paciente de bienestar"}
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 50vw"

@@ -267,13 +267,6 @@ export function WellnessSpecialists({
   const currentLang = locale in SPECIALTY_LABELS ? locale : "es";
   const labels = SPECIALTY_LABELS[currentLang];
 
-  const getSpecialistCountLabel = (count: number) => {
-    if (currentLang === "en") return count === 1 ? "specialist" : "specialists";
-    if (currentLang === "fr") return count === 1 ? "spécialiste" : "spécialistes";
-    if (currentLang === "de") return count === 1 ? "Spezialist" : "Spezialisten";
-    return count === 1 ? "especialista" : "especialistas";
-  };
-
   return (
     <section className="py-16 md:py-24 bg-[var(--color-wellness-bg)] editorial-section">
       <div className="container mx-auto px-4 md:px-6">
@@ -332,18 +325,6 @@ export function WellnessSpecialists({
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Specialty title accent */}
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-1 rounded-full bg-[var(--color-wellness-gold)]" />
-              <h3 className="font-heading font-bold text-lg text-[var(--color-wellness-primary)]">
-                {labels[SPECIALTIES[activeTab].id] || SPECIALTIES[activeTab].label}
-              </h3>
-              <span className="text-xs text-[#171717]/40 font-medium">
-                {SPECIALTIES[activeTab].doctors.length}{" "}
-                {getSpecialistCountLabel(SPECIALTIES[activeTab].doctors.length)}
-              </span>
-            </div>
-
             {/* Cards */}
             <div
               className={`grid gap-6 ${
