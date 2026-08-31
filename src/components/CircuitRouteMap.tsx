@@ -1,49 +1,47 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import React from "react";
+import { MapPin, Navigation } from "lucide-react";
 
-/* ----------------------------------------------------------------
-   Dynamic import wrapper – SSR disabled.
-   Leaflet requires `window` and `document`, so we must prevent
-   the inner component from loading during server-side rendering.
-   ---------------------------------------------------------------- */
-
-interface CircuitRouteMapProps {
-  dayImages: { image: string; location: string }[];
+export interface CircuitRouteMapProps {
+  mapEmbedUrl?: string;
   circuitName: string;
 }
 
-const CircuitRouteMap = dynamic<CircuitRouteMapProps>(
-  () => import("./CircuitRouteMapInner"),
-  {
-    ssr: false,
-    loading: () => (
-      <div
-        style={{
-          height: 420,
-          width: "100%",
-          borderRadius: 16,
-          background: "#0d2137",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          border: "1px solid rgba(255,255,255,0.08)",
-        }}
-      >
-        <div
-          style={{
-            width: 32,
-            height: 32,
-            border: "3px solid rgba(77,216,224,0.2)",
-            borderTopColor: "#4dd8e0",
-            borderRadius: "50%",
-            animation: "spin 0.8s linear infinite",
-          }}
-        />
-        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-      </div>
-    ),
+export default function CircuitRouteMap({ mapEmbedUrl, circuitName }: CircuitRouteMapProps) {
+  if (!mapEmbedUrl) {
+    return null;
   }
-);
 
-export default CircuitRouteMap;
+  return (
+    <div className="bg-editorial-warm p-6 rounded-3xl border border-editorial-border shadow-sm">
+      <div className="flex items-center justify-between gap-3 mb-4">
+        <div className="flex items-center gap-2.5">
+          <div className="w-9 h-9 rounded-xl bg-editorial-accent/10 text-editorial-accent flex items-center justify-center">
+            <Navigation className="w-5 h-5" />
+          </div>
+          <div>
+            <h4 className="font-semibold text-editorial-dark text-base leading-tight">
+              Ruta del Circuito
+            </h4>
+            <p className="text-xs text-editorial-subtle">
+              Mapa interactivo del recorrido
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative w-full h-[420px] sm:h-[480px] rounded-2xl overflow-hidden border border-editorial-border bg-white shadow-inner">
+        <iframe
+          src={mapEmbedUrl}
+          className="absolute -top-[70px] left-0 w-full border-0"
+          style={{ height: "calc(100% + 70px)" }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title={`Mapa interactivo - ${circuitName}`}
+        />
+      </div>
+    </div>
+  );
+}

@@ -39,6 +39,7 @@ interface CircuitoDetailEditorialProps {
   whatsappUrl: string;
   extensions?: ExtensionItem[];
   colorTheme?: DestinationTheme;
+  mapEmbedUrl?: string;
   t: Record<string, string>;
 }
 
@@ -46,7 +47,7 @@ export function CircuitoDetailEditorial({
   name, description, highlights, itinerary, image,
   days, nights, price, id, locale, dayImages,
   brochureUrl, brochurePdfUrl, departureDates, whatsappUrl,
-  extensions = [], colorTheme,
+  extensions = [], colorTheme, mapEmbedUrl,
   t,
 }: CircuitoDetailEditorialProps) {
   const theme = useDestinationTheme(colorTheme);
@@ -165,7 +166,7 @@ export function CircuitoDetailEditorial({
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-8">
-            <CircuitRouteMap dayImages={dayImages || []} circuitName={name} />
+            <CircuitRouteMap mapEmbedUrl={mapEmbedUrl} circuitName={name} />
 
             <div className="sticky top-28 bg-editorial-warm p-8 rounded-3xl border border-editorial-border">
               <h3 className="heading-1 text-editorial-dark mb-6">{t.tripSummary}</h3>

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { SectionReveal } from "@/components/editorial/SectionReveal";
 import { MarqueeLogos, type LogoItem } from "@/components/editorial/MarqueeLogos";
 import { ReconocimientosGallery } from "@/components/ReconocimientosGallery";
+import { MacrorregionesColombia } from "@/components/MacrorregionesColombia";
 
 const BLUR_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
 
@@ -116,6 +117,9 @@ export function NosotrosEditorial({
       <div className="relative bg-white">
         <MarqueeLogos logos={ALIADOS} speed={40} label="Aliados y plataformas" />
       </div>
+
+      {/* -- Macrorregiones Turísticas de Colombia ----------------- */}
+      <MacrorregionesColombia />
 
       {/* -- Reconocimientos ------------------------------------- */}
       <section className="py-20 md:py-28 bg-white editorial-section--bleed relative">

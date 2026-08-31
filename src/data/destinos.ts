@@ -55,7 +55,6 @@ export const destinos: Destino[] = [
       linkedCircuits: [
         "epoca-precolombina-sur-colombia",
         "tour-colombia-boyaca-colonial",
-        "tour-colombia-colonial-aventurera",
         "tour-santander-expedicion-aventurera",
       ],
       extensionPrice: 75,
@@ -105,6 +104,18 @@ export const destinos: Destino[] = [
     id: "Cali-es-donde-debe-estar",
     image: "/image/Lago-Calima-aventura.jpg",
     colorTheme: "cultura",
+    asExtension: {
+      linkedCircuits: [
+        "epoca-precolombina-sur-colombia",
+        "tour-colombia-eje-cafetero",
+        "tour-colombia-capitales-cafeteras",
+        "tour-colombia-corazon-andes",
+        "tour-tras-leyenda-dorado",
+      ],
+      extensionPrice: 80,
+      extensionDuration: "1 day",
+      extensionLabel: "Salsa, culture & gastronomy in Cali",
+    },
     gallery:[
       "/image/pasadias/Pasadias_por_cali_2026/Captura-de-pantalla-2026-03-18-094216-717x1024.png", 
       "/image/pasadias/Pasadias_por_cali_2026/Captura-de-pantalla-2026-03-18-094436-721x1024.png",
@@ -118,6 +129,16 @@ export const destinos: Destino[] = [
     id: "Cartagena-Mas-Heroica",
     image: "/image/amurallada-cuidad (1).jpg",
     colorTheme: "playa",
+    asExtension: {
+      linkedCircuits: [
+        "tour-colombia-tres-ciudades",
+        "tour-santander-expedicion-aventurera",
+        "tour-colombia-boyaca-colonial",
+      ],
+      extensionPrice: 95,
+      extensionDuration: "1 day",
+      extensionLabel: "Colonial charm & Caribbean sea in Cartagena",
+    },
     gallery: [
       "/image/pasadias/Pasadias_por_cartagena_2026/Captura2-1-722x1024.png",
       "/image/pasadias/Pasadias_por_cartagena_2026/Captura3-1-721x1024.png",
@@ -131,6 +152,15 @@ export const destinos: Destino[] = [
     id: "Santa-Marta-Naturalmente-Magica",
     image: "/image/parque-nacional-natural.jpg",
     colorTheme: "naturaleza",
+    asExtension: {
+      linkedCircuits: [
+        "tour-colombia-tres-ciudades",
+        "tour-santander-expedicion-aventurera",
+      ],
+      extensionPrice: 90,
+      extensionDuration: "1 day",
+      extensionLabel: "Tayrona nature & Caribbean beaches",
+    },
     gallery: [
       "/image/pasadias/Pasadias_Santa_Marta_2026/Captura-de-pantalla-2025-12-29-101449-724x1024.png", 
       "/image/pasadias/Pasadias_Santa_Marta_2026/Captura-de-pantalla-2025-12-29-101503-721x1024.png", 
@@ -145,6 +175,17 @@ export const destinos: Destino[] = [
     id: "San-Andres-Islas-Vas-A-mar",
     image: "/image/Parque-regional-johnny-cay_0.jpg",
     colorTheme: "playa",
+    asExtension: {
+      linkedCircuits: [
+        "tour-colombia-tres-ciudades",
+        "tour-colombia-eje-cafetero",
+        "tour-colombia-corazon-andes",
+        "epoca-precolombina-sur-colombia",
+      ],
+      extensionPrice: 110,
+      extensionDuration: "1 day",
+      extensionLabel: "Paradise island & sea of 7 colors",
+    },
     gallery: [
       "/image/pasadias/Pasadias_san_andres_2026/Captura-718x1024.png",
       "/image/pasadias/Pasadias_san_andres_2026/Captura2-725x1024.png",

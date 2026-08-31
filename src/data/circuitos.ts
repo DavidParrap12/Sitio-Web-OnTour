@@ -15,6 +15,8 @@ export interface Circuito {
   brochurePdfUrl?: string;
   /** Visual thematic category for color grading & UI accents */
   colorTheme?: DestinationTheme;
+  /** Google Maps / My Maps embed iframe URL */
+  mapEmbedUrl?: string;
 }
 
 export const circuitos: Circuito[] = [
@@ -26,6 +28,7 @@ export const circuitos: Circuito[] = [
     colorTheme: "cultura",
     brochureUrl: "",
     brochurePdfUrl: "",
+    mapEmbedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1kqg8coSR4PUSChBnjytf_IT3BxQu0Ls&ehbc=2E312F",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
@@ -46,6 +49,7 @@ export const circuitos: Circuito[] = [
     colorTheme: "naturaleza",
     brochureUrl: "/programas-circuitos/Época Precolombina 9 días.docx",
     brochurePdfUrl: "/programas-circuitos/Época Precolombina 9 días.pdf",
+    mapEmbedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1R__Lz953YBpL8tbyYIabgYuvbL5FUF4&ehbc=2E312F",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
@@ -70,6 +74,7 @@ export const circuitos: Circuito[] = [
     colorTheme: "cultura",
     brochureUrl: "",
     brochurePdfUrl: "",
+    mapEmbedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1dg-orAddYtZXhAHqY8cSFHEMzVC7of4&ehbc=2E312F",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
@@ -89,6 +94,7 @@ export const circuitos: Circuito[] = [
     colorTheme: "urbano",
     brochureUrl: "/programas-circuitos/Colombia Diversamente Cultural 14 días.docx",
     brochurePdfUrl: "/programas-circuitos/Colombia Diversamente Cultural 14 días.pdf",
+    mapEmbedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1CWeFCX_V3jqQEqgvrxubATwRtAO_ngI&ehbc=2E312F",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },
@@ -114,6 +120,7 @@ export const circuitos: Circuito[] = [
     colorTheme: "naturaleza",
     brochureUrl: "/programas-circuitos/Capitales Cafeteras de Colombia 12 dias (1).docx",
     brochurePdfUrl: "/programas-circuitos/Capitales Cafeteras de Colombia 12 dias (1).pdf",
+    mapEmbedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1mSSD3WvWAOkJhIw1sFAL7AcYMIMVoGA&ehbc=2E312F",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "BOGOTÁ" },
@@ -137,6 +144,7 @@ export const circuitos: Circuito[] = [
     colorTheme: "aventura",
     brochureUrl: "",
     brochurePdfUrl: "",
+    mapEmbedUrl: "https://www.google.com/maps/d/u/0/embed?mid=13aJQpNsfh_UhT-dnhoQFm6pS5KrpjpQ&ehbc=2E312F",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/Tolima-fotos/ibague_vista-aerea-guayacanes-en-flor.jpeg", location: "IBAGUÉ" },
@@ -148,24 +156,6 @@ export const circuitos: Circuito[] = [
     ],
   },
   {
-    id: "tour-colombia-colonial-aventurera",
-    days: 7,
-    nights: 6,
-    image: "/image/villa de leyva.jpg",
-    colorTheme: "aventura",
-    brochureUrl: "",
-    brochurePdfUrl: "",
-    dayImages: [
-      { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
-      { image: "/image/legado-ancestral/catedral-1.jpg", location: "ZIPAQUIRÁ" },
-      { image: "/image/villa de leyva.jpg", location: "VILLA DE LEYVA" },
-      { image: "/image/termales-paipa.jpg", location: "TUNJA" },
-      { image: "/image/lago-de-tota.jfif", location: "LAGO DE TOTA" },
-      { image: "/image/puente-de-boyaca-tfyx640.jpg", location: "NOBSA" },
-      { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
-    ],
-  },
-  {
     id: "tour-colombia-eje-cafetero",
     days: 7,
     nights: 6,
@@ -173,6 +163,7 @@ export const circuitos: Circuito[] = [
     colorTheme: "naturaleza",
     brochureUrl: "",
     brochurePdfUrl: "",
+    mapEmbedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1MyGz_CcVwfeL129dNyjlPOBSPGzGtzU&ehbc=2E312F",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/Tolima-fotos/ingreso-ibagué.jpeg", location: "IBAGUÉ" },
@@ -191,6 +182,7 @@ export const circuitos: Circuito[] = [
     colorTheme: "cultura",
     brochureUrl: "",
     brochurePdfUrl: "",
+    mapEmbedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1pI2ZeqCgfbgNrAkzQWeDkAE2OxBpSkg&ehbc=2E312F",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/guadas.jpg", location: "GUADUAS" },
@@ -212,6 +204,7 @@ export const circuitos: Circuito[] = [
     brochureUrl: "/programas-circuitos/Santander Expedición Aventurera 10 días.docx",
     brochurePdfUrl: "/programas-circuitos/Santander Expedición Aventurera 10 días.pdf",
     image: "/image/Bucaramanga.jpg",
+    mapEmbedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1keAuPepulJDdAryYH238mW6-K0ItIEY&ehbc=2E312F",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },
       { image: "/image/legado-ancestral/iglesia-monserrate-1.jpg", location: "MONSERRATE" },

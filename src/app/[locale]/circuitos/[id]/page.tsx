@@ -78,6 +78,7 @@ export default async function CircuitoPage({
         brochureUrl={circuito.brochureUrl} brochurePdfUrl={circuito.brochurePdfUrl}
         departureDates={departureDates} whatsappUrl={whatsappUrl}
         extensions={extensions} colorTheme={circuito.colorTheme}
+        mapEmbedUrl={circuito.mapEmbedUrl}
         t={{
           badge: t("badge"), colombia: t("colombia"),
           daysNights: t("daysNights", { days: circuito.days, nights: circuito.nights }),
