@@ -23,6 +23,9 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   icons: { icon: "/image/Fav-Ontour.ico" },
+  verification: {
+    google: "google8443da66933dc835",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
