@@ -15,14 +15,14 @@ export async function Footer() {
           {/* Brand Col */}
           <div className="flex flex-col">
             <Link href="/" className="inline-block mb-4">
-              <div className="bg-white rounded-xl p-3 inline-block shadow-sm">
+              <div className="footer-logo-container mb-4">
                 <Image
                   src="/image/logo-ON-TOUR-Nuevo2.png"
-                  alt="Ontour"
+                  alt="OnTour DMC - Tour Operador Colombia"
                   width={180}
                   height={60}
-                  style={{ width: 'auto', height: 'auto' }}
-                  className="object-contain"
+                  style={{ width: 'auto', height: 'auto', maxWidth: '180px' }}
+                  className="object-contain drop-shadow-lg"
                 />
               </div>
             </Link>

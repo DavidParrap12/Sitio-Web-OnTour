@@ -33,8 +33,11 @@ export function MagneticButton({
   function handleMove(e: ReactMouseEvent<HTMLDivElement>) {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
-    x.set((e.clientX - rect.left - rect.width / 2) * strength);
-    y.set((e.clientY - rect.top - rect.height / 2) * strength);
+    const rawX = (e.clientX - rect.left - rect.width / 2) * strength;
+    const rawY = (e.clientY - rect.top - rect.height / 2) * strength;
+    const maxOffset = 8;
+    x.set(Math.max(-maxOffset, Math.min(maxOffset, rawX)));
+    y.set(Math.max(-maxOffset, Math.min(maxOffset, rawY)));
   }
 
   function reset() {

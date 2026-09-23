@@ -365,7 +365,7 @@ export function WellnessSpecialists({
                   className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 touch-manipulation shrink-0 ${
                     isActive
                       ? "bg-[var(--color-wellness-primary)] text-white shadow-md"
-                      : "bg-white border border-[var(--color-wellness-border)] text-[#171717]/65 hover:border-[var(--color-wellness-gold)] hover:text-[var(--color-wellness-primary)]"
+                      : "bg-white border border-[var(--color-wellness-border)] text-[#171717]/80 hover:border-[var(--color-wellness-gold)] hover:text-[var(--color-wellness-primary)]"
                   }`}
                 >
                   {displayLabel}
@@ -407,7 +407,9 @@ export function WellnessSpecialists({
                   className="group flex flex-col rounded-3xl border border-[var(--color-wellness-border)] bg-white overflow-hidden hover:border-[var(--color-wellness-gold)] hover:shadow-[var(--shadow-wellness-lg)] transition-all duration-300 hover:-translate-y-1"
                 >
                   {/* Photo Container */}
-                  <div className="relative w-full h-72 sm:h-80 bg-[#ffffff] border-b border-[var(--color-wellness-border)] overflow-hidden flex items-center justify-center">
+                  <div className="relative w-full h-72 sm:h-80 bg-gradient-to-b from-[#f8faf9] to-[#edf3ef] border-b border-[var(--color-wellness-border)] overflow-hidden flex items-center justify-center">
+                    {/* Subtle studio glow */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,_rgba(255,255,255,0.9)_0%,_rgba(143,179,156,0.12)_70%,_transparent_100%)] pointer-events-none" />
                     {doctor.image ? (
                       <Image
                         src={doctor.image}
@@ -420,12 +422,12 @@ export function WellnessSpecialists({
                         }`}
                       />
                     ) : (
-                      <div className="flex flex-col items-center justify-center gap-3 text-[var(--color-wellness-primary)]/40">
-                        <div className="w-20 h-20 rounded-full border border-[var(--color-wellness-border)] bg-white flex items-center justify-center shadow-sm">
-                          <User className="w-10 h-10 text-[var(--color-wellness-primary)]/45" />
+                      <div className="relative z-10 flex flex-col items-center justify-center gap-3 text-[var(--color-wellness-primary)]/50">
+                        <div className="w-20 h-20 rounded-full border border-[var(--color-wellness-gold)]/40 bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md group-hover:border-[var(--color-wellness-gold)] transition-colors">
+                          <User className="w-10 h-10 text-[var(--color-wellness-accent)]" />
                         </div>
-                        <span className="text-xs tracking-wider uppercase font-mono text-[var(--color-wellness-primary)]/50 font-medium">
-                          Foto Profesional
+                        <span className="text-xs tracking-wider uppercase font-mono text-[var(--color-wellness-primary)]/70 font-medium">
+                          Especialista Certificado
                         </span>
                       </div>
                     )}
@@ -449,7 +451,7 @@ export function WellnessSpecialists({
                         className="w-4 h-4 text-[var(--color-wellness-accent)] shrink-0 mt-0.5"
                         strokeWidth={1.5}
                       />
-                      <p className="text-xs sm:text-sm text-[#171717]/65 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#171717]/80 leading-relaxed font-medium">
                         {doctor.credentials}
                       </p>
                     </div>

@@ -81,7 +81,7 @@ export function WellnessFaqAccordion({ strings: s }: { strings: FaqStrings }) {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <div className="px-6 pb-6 text-sm text-[#171717]/75 leading-relaxed border-t border-[var(--color-wellness-border)] pt-4">
+                      <div className="px-6 pb-6 text-sm text-[#171717]/85 leading-relaxed border-t border-[var(--color-wellness-border)] pt-4">
                         {item.a}
                       </div>
                     </motion.div>

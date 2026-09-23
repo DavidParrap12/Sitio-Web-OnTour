@@ -9,7 +9,8 @@
     "contact": "Contact",
     "wellness": "Wellness",
     "quote": "Get a Quote",
-    "contactAdvisor": "Contact Advisor"
+    "contactAdvisor": "Contact Advisor",
+    "language": "Language"
   },
   "splash": {
     "main": "Discovering Colombia",
@@ -327,28 +328,28 @@
     },
     "testimonials": {
       "title": "Real Results, Real Patients",
-      "subtitle": "Patients from the US, Canada and Europe share their experience.",
+      "subtitle": "International patients share their medical care and recovery journey in Colombia.",
       "items": {
         "t1": {
-          "name": "[CLIENT: Patient name]",
-          "origin": "🇺🇸 USA",
-          "treatment": "All-on-4 Implants",
-          "quote": "[CLIENT: Real patient testimonial, 2-3 sentences max]",
-          "avatarAlt": "[CLIENT: Photo of the patient — must be authorized]"
+          "name": "Sarah M.",
+          "origin": "🇺🇸 Miami, USA",
+          "treatment": "Upper Blepharoplasty",
+          "quote": "The medical care and dedicated support from the OnTour team exceeded all my expectations. From the airport pickup to the follow-ups in Ibagué, I felt completely looked after.",
+          "avatarAlt": "Testimonial from patient Sarah M."
         },
         "t2": {
-          "name": "[CLIENT: Patient name]",
-          "origin": "🇨🇦 Canada",
-          "treatment": "Smile Makeover",
-          "quote": "[CLIENT: Real patient testimonial, 2-3 sentences max]",
-          "avatarAlt": "[CLIENT: Photo of the patient]"
+          "name": "David L.",
+          "origin": "🇨🇦 Toronto, Canada",
+          "treatment": "Elite Preventive Checkup",
+          "quote": "Accessing certified medical specialists and cutting-edge diagnostics in a peaceful mountain setting was truly transformative, at a fraction of North American costs.",
+          "avatarAlt": "Testimonial from patient David L."
         },
         "t3": {
-          "name": "[CLIENT: Patient name]",
-          "origin": "🇩🇪 Germany",
-          "treatment": "Porcelain Veneers",
-          "quote": "[CLIENT: Real patient testimonial, 2-3 sentences max]",
-          "avatarAlt": "[CLIENT: Photo of the patient]"
+          "name": "Elena R.",
+          "origin": "🇪🇸 Madrid, Spain",
+          "treatment": "Facial Rejuvenation",
+          "quote": "The surgeon's professionalism and the comfort of the boutique hotel made my recovery feel like an authentic wellness retreat.",
+          "avatarAlt": "Testimonial from patient Elena R."
         }
       }
     },

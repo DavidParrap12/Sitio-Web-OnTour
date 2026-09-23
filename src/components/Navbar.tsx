@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useTransition } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -46,6 +46,7 @@ export function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const params = useParams();
+  const [, startTransition] = useTransition();
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -106,6 +107,25 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Restore scroll position after language change so user stays in place
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem("ontour_locale_scroll");
+      if (saved !== null) {
+        sessionStorage.removeItem("ontour_locale_scroll");
+        const y = parseInt(saved, 10);
+        if (!isNaN(y) && y > 0) {
+          window.scrollTo({ top: y, behavior: "instant" });
+          requestAnimationFrame(() => {
+            window.scrollTo({ top: y, behavior: "instant" });
+          });
+        }
+      }
+    } catch {
+      // Ignore sessionStorage issues
+    }
+  }, [locale]);
+
   const navClass = scrolled
     ? "bg-white/95 backdrop-blur-md shadow-sm py-4 text-foreground"
     : "bg-white py-6 text-foreground";
@@ -113,11 +133,26 @@ export function Navbar() {
   const currentLocale = LOCALES.find((l) => l.code === locale) ?? LOCALES[0];
 
   function switchLocale(newLocale: string) {
-    router.replace(
-      // @ts-expect-error – dynamic params typed loosely
-      { pathname: pathname as any, params },
-      { locale: newLocale as any }
-    );
+    if (newLocale === locale) {
+      setLangOpen(false);
+      setIsOpen(false);
+      return;
+    }
+
+    try {
+      sessionStorage.setItem("ontour_locale_scroll", window.scrollY.toString());
+    } catch {
+      // Ignore sessionStorage issues
+    }
+
+    startTransition(() => {
+      router.replace(
+        // @ts-expect-error – dynamic params typed loosely
+        { pathname: pathname as any, params },
+        { locale: newLocale as any, scroll: false }
+      );
+    });
+
     setLangOpen(false);
     setIsOpen(false);
   }

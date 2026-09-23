@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle, Check } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, MessageCircle, Check, ChevronDown } from "lucide-react";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -360,89 +361,176 @@ const PACKAGES_BY_LOCALE: Record<string, CarePackage[]> = {
 
 // ─── Subcomponents ─────────────────────────────────────────────────────────────
 
-function PaqueteCard({
+function PaqueteAccordionItem({
   paquete,
   phoneNumber,
   requestInfoLabel,
+  isOpen,
+  onToggle,
+  locale = "es",
 }: {
   paquete: CarePackage;
   phoneNumber: string;
   requestInfoLabel?: string;
+  isOpen: boolean;
+  onToggle: () => void;
+  locale?: string;
 }) {
   const isEstetica = paquete.tipo === "estetica";
 
-  const accentGradient = isEstetica
-    ? "from-[var(--color-wellness-primary)] to-[var(--color-wellness-accent)]"
-    : "from-[var(--color-wellness-accent)] to-[var(--color-wellness-gold)]";
-  const catColor = isEstetica
-    ? "text-[var(--color-wellness-accent)]"
-    : "text-[var(--color-wellness-gold)]";
+  const catBadgeClass = isEstetica
+    ? "text-[var(--color-wellness-accent)] bg-[var(--color-wellness-accent-bg)] border-[var(--color-wellness-accent)]/20"
+    : "text-[var(--color-wellness-gold)] bg-[var(--color-wellness-gold-bg)] border-[var(--color-wellness-gold)]/20";
+
+  const accentColor = isEstetica
+    ? "bg-[var(--color-wellness-accent)]"
+    : "bg-[var(--color-wellness-gold)]";
 
   const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     paquete.waMessage
   )}`;
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative flex flex-col rounded-3xl border border-[var(--color-wellness-border)] bg-white overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--color-wellness-gold)] hover:shadow-[var(--shadow-wellness-lg)]"
-    >
-      {/* Top accent gradient bar */}
-      <div className={`h-1.5 w-full bg-gradient-to-r ${accentGradient}`} />
+  const benefitsCountText =
+    locale === "en"
+      ? `${paquete.caracteristicas.length} benefits included`
+      : locale === "fr"
+      ? `${paquete.caracteristicas.length} prestations incluses`
+      : locale === "de"
+      ? `${paquete.caracteristicas.length} Leistungen inklusive`
+      : `${paquete.caracteristicas.length} beneficios incluidos`;
 
-      <div className="flex flex-col flex-1 p-6 sm:p-7">
-        {/* Category Label */}
-        <div className="mb-5">
+  const detailsTitle =
+    locale === "en"
+      ? "What is included in this package:"
+      : locale === "fr"
+      ? "Ce que comprend ce forfait :"
+      : locale === "de"
+      ? "Im Paket enthaltene Leistungen:"
+      : "Lo que incluye este paquete:";
+
+  const descLabel =
+    locale === "en"
+      ? "Procedure overview"
+      : locale === "fr"
+      ? "Aperçu de la procédure"
+      : locale === "de"
+      ? "Überblick über den Eingriff"
+      : "Descripción del procedimiento";
+
+  return (
+    <div
+      className={`relative rounded-2xl md:rounded-3xl border transition-all duration-300 bg-white overflow-hidden ${
+        isOpen
+          ? "border-[var(--color-wellness-gold)] shadow-[var(--shadow-wellness-md)] ring-1 ring-[var(--color-wellness-gold)]/30"
+          : "border-[var(--color-wellness-border)] hover:border-[var(--color-wellness-accent)] hover:shadow-sm"
+      }`}
+    >
+      {/* Left accent hairline */}
+      <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${accentColor}`} />
+
+      {/* Row Header (Full-width Clickable) */}
+      <div
+        onClick={onToggle}
+        className="w-full flex flex-col md:flex-row md:items-center justify-between p-5 md:py-6 md:px-8 cursor-pointer gap-4 select-none group pl-6 md:pl-9"
+        role="button"
+        tabIndex={0}
+        aria-expanded={isOpen}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onToggle();
+          }
+        }}
+      >
+        {/* Left: Category & Title */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 flex-1">
           <span
-            className={`text-xs font-bold uppercase tracking-wider ${catColor}`}
+            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border shrink-0 w-fit ${catBadgeClass}`}
           >
             {paquete.categoria}
           </span>
+          <h3 className="heading-3 text-lg md:text-xl font-bold text-[var(--color-wellness-primary)] group-hover:text-[var(--color-wellness-gold)] transition-colors duration-200">
+            {paquete.titulo}
+          </h3>
         </div>
 
-        {/* Title */}
-        <h3 className="heading-3 text-[var(--color-wellness-primary)] mb-3 text-lg md:text-xl font-bold">
-          {paquete.titulo}
-        </h3>
+        {/* Right: Benefit pill count, Solid High-Contrast Action button & Chevron */}
+        <div className="flex items-center justify-between md:justify-end gap-3 sm:gap-4 shrink-0">
+          <span className="text-xs text-[#171717]/65 font-medium hidden lg:inline-block bg-[var(--color-wellness-bg)] px-3 py-1.5 rounded-full border border-[var(--color-wellness-border)]">
+            {benefitsCountText}
+          </span>
 
-        {/* Description */}
-        <p className="body text-sm text-[#171717]/65 leading-relaxed mb-6 flex-grow">
-          {paquete.descripcion}
-        </p>
+          {/* Solid High-Contrast Gold Button */}
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center gap-1.5 py-2.5 px-4 sm:px-5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 bg-gradient-to-r from-[#C9A961] to-[#b5944e] text-[#0A2540] shadow-sm hover:shadow-md hover:scale-105 active:scale-95 shrink-0"
+          >
+            {requestInfoLabel || "Solicitar información"}
+            <ArrowRight className="h-3.5 w-3.5" />
+          </a>
 
-        {/* Divider */}
-        <div className="w-full h-px bg-[var(--color-wellness-border)] mb-5" />
-
-        {/* Features */}
-        <ul className="mb-6 space-y-2.5">
-          {paquete.caracteristicas.map((c) => (
-            <li
-              key={c}
-              className="flex items-start gap-2.5 text-xs sm:text-sm text-[#171717]/80 leading-snug"
-            >
-              <div className="mt-0.5 w-4 h-4 rounded-full bg-[var(--color-wellness-accent-bg)] flex items-center justify-center shrink-0">
-                <Check className="h-2.5 w-2.5 text-[var(--color-wellness-accent)] stroke-[3]" />
-              </div>
-              <span>{c}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* CTA */}
-        <a
-          href={waUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-full font-semibold text-sm transition-all duration-300 bg-[var(--color-wellness-accent-bg)] text-[var(--color-wellness-primary)] border border-[var(--color-wellness-accent)]/30 hover:bg-[var(--color-wellness-accent)] hover:text-white hover:shadow-md"
-        >
-          {requestInfoLabel || "Solicitar información"}
-          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-        </a>
+          {/* Chevron Indicator */}
+          <div
+            className={`w-9 h-9 rounded-full flex items-center justify-center text-[var(--color-wellness-primary)] transition-all duration-300 shrink-0 ${
+              isOpen
+                ? "rotate-180 bg-[var(--color-wellness-gold-bg)] text-[var(--color-wellness-gold-hover)]"
+                : "bg-slate-100 group-hover:bg-slate-200"
+            }`}
+          >
+            <ChevronDown className="w-4 h-4" />
+          </div>
+        </div>
       </div>
-    </motion.div>
+
+      {/* Expandable Accordion Split Content */}
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            key="content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden border-t border-[var(--color-wellness-border)] bg-[#fcfbf9]"
+          >
+            <div className="p-6 md:p-8 pl-7 md:pl-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+              {/* Left Column: Description */}
+              <div className="md:col-span-5">
+                <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-wellness-primary)]/65 block mb-2 font-mono">
+                  {descLabel}
+                </span>
+                <p className="text-sm md:text-base text-[#171717]/85 leading-relaxed">
+                  {paquete.descripcion}
+                </p>
+              </div>
+
+              {/* Right Column: Included Benefits Grid */}
+              <div className="md:col-span-7">
+                <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-wellness-primary)]/65 block mb-3 font-mono">
+                  {detailsTitle}
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                  {paquete.caracteristicas.map((c) => (
+                    <div
+                      key={c}
+                      className="flex items-start gap-2.5 p-3 rounded-2xl bg-white border border-[var(--color-wellness-border)] text-xs sm:text-sm text-[#171717]/85 leading-snug shadow-2xs"
+                    >
+                      <div className="mt-0.5 w-4 h-4 rounded-full bg-[var(--color-wellness-accent-bg)] flex items-center justify-center shrink-0">
+                        <Check className="h-2.5 w-2.5 text-[var(--color-wellness-accent)] stroke-[3]" />
+                      </div>
+                      <span className="font-medium">{c}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 
@@ -466,6 +554,10 @@ export default function BeneficiosSalud({
   const currentLang = locale in PACKAGES_BY_LOCALE ? locale : "es";
   const paquetes = PACKAGES_BY_LOCALE[currentLang];
 
+  const [openAccordionId, setOpenAccordionId] = useState<string | null>(
+    paquetes[0]?.id ?? null
+  );
+
   const defaultTitle = "Tu salud, nuestra prioridad.";
   const defaultHighlight = "Colombia te cuida.";
   const defaultSubtitle =
@@ -485,32 +577,38 @@ export default function BeneficiosSalud({
     <section className="py-16 md:py-24 bg-[var(--color-wellness-bg)] editorial-section">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-12 max-w-3xl"
-        >
-          <h2 className="display-2 text-[var(--color-wellness-primary)] mb-4">
-            {s.title || defaultTitle}{" "}
-            <span className="text-[var(--color-wellness-accent)]">
-              {s.titleHighlight || defaultHighlight}
-            </span>
-          </h2>
-          <p className="body-lg text-[#171717]/65 leading-relaxed">
-            {s.subtitle || defaultSubtitle}
-          </p>
-        </motion.div>
+        <div className="mb-10 md:mb-14 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <h2 className="display-2 text-[var(--color-wellness-primary)] mb-4">
+              {s.title || defaultTitle}{" "}
+              <span className="text-[var(--color-wellness-accent)]">
+                {s.titleHighlight || defaultHighlight}
+              </span>
+            </h2>
+            <p className="body-lg text-[#171717]/80 leading-relaxed">
+              {s.subtitle || defaultSubtitle}
+            </p>
+          </motion.div>
+        </div>
 
-        {/* Grid de paquetes */}
-        <div className="mb-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Accordion Split List */}
+        <div className="mb-12 flex flex-col gap-3.5">
           {paquetes.map((p) => (
-            <PaqueteCard
+            <PaqueteAccordionItem
               key={p.id}
               paquete={p}
               phoneNumber={phoneNumber}
               requestInfoLabel={s.requestInfo}
+              isOpen={openAccordionId === p.id}
+              onToggle={() =>
+                setOpenAccordionId(openAccordionId === p.id ? null : p.id)
+              }
+              locale={currentLang}
             />
           ))}
         </div>
@@ -527,7 +625,7 @@ export default function BeneficiosSalud({
             <h3 className="heading-3 text-[var(--color-wellness-primary)] text-lg md:text-xl font-bold mb-1">
               {s.helpTitle || "¿No sabes qué paquete es para ti?"}
             </h3>
-            <p className="text-sm md:text-base text-[#171717]/65 leading-relaxed">
+            <p className="text-sm md:text-base text-[#171717]/80 leading-relaxed">
               {s.helpSubtitle ||
                 "Nuestro equipo te orienta de forma personalizada y sin ningún compromiso."}
             </p>

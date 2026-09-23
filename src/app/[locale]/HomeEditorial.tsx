@@ -101,7 +101,7 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
             <EditorialCarousel
               items={carouselItems}
               config={{
-                aspectRatio: "4:5",
+                aspectRatio: "16:9",
                 contentPosition: "bottom",
                 showProgress: false,
                 autoplay: true,

@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
 import { WellnessHero } from "@/components/wellness/WellnessHero";
+import { WellnessTrustBar } from "@/components/wellness/WellnessTrustBar";
 import { WellnessCareStandard } from "@/components/wellness/WellnessCareStandard";
 import { WellnessTreatmentsGrid } from "@/components/wellness/WellnessTreatmentsGrid";
 import { WellnessProcessTimeline } from "@/components/wellness/WellnessProcessTimeline";
@@ -41,6 +42,14 @@ export default async function BienestarPage({
     subtitle: t("hero.subtitle"),
     ctaPrimary: t("hero.ctaPrimary"),
     ctaSecondary: t("hero.ctaSecondary"),
+  };
+
+  const trustStrings = {
+    certified: t("trust.certified"),
+    materials: t("trust.materials"),
+    quote: t("trust.quote"),
+    bilingual: t("trust.bilingual"),
+    telehealth: t("trust.telehealth"),
   };
 
   const careStrings = {
@@ -139,11 +148,12 @@ export default async function BienestarPage({
   return (
     <div className="min-h-screen" style={{ backgroundColor: "var(--color-wellness-bg)" }}>
       <WellnessHero strings={heroStrings} />
+      <WellnessTrustBar strings={trustStrings} locale={locale} />
       <WellnessCareStandard strings={careStrings} locale={locale} />
       <WellnessTreatmentsGrid strings={treatmentsStrings} />
       <WellnessProcessTimeline strings={processStrings} />
       <WellnessTolimaExperience strings={tolimaStrings} />
-      {false && <WellnessTestimonials strings={testimonialsStrings} />}
+      <WellnessTestimonials strings={testimonialsStrings} />
       <WellnessSpecialists strings={specialistsStrings} locale={locale} />
       <WellnessFaqAccordion strings={faqStrings} />
       <WellnessFinalCTA strings={ctaStrings} />

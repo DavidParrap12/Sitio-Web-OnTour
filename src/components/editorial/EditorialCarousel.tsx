@@ -10,8 +10,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { type DestinationTheme } from "@/lib/design-config";
 import { resolveDestinationTheme } from "@/lib/hooks/useDestinationTheme";
 
-const BLUR_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
-
 // -- Public API -------------------------------------------------------------
 
 export interface CarouselConfig {
@@ -255,10 +253,9 @@ function FullBleedSlide({
         alt={item.title}
         fill
         sizes="100vw"
+        quality={90}
         draggable={false}
         className={`object-cover editorial-scale-target transition-transform duration-700 group-hover:scale-[1.04] pointer-events-none select-none ${theme.gradeClass}`}
-        placeholder="blur"
-        blurDataURL={BLUR_PLACEHOLDER}
         priority={priority}
       />
       <div className="absolute inset-0 editorial-overlay-gradient opacity-90 pointer-events-none" />
@@ -336,10 +333,9 @@ function CardSlide({
           alt={item.title}
           fill
           draggable={false}
-          sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 32vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          quality={90}
           className={`object-cover editorial-scale-target transition-transform duration-700 pointer-events-none select-none ${theme.gradeClass}`}
-          placeholder="blur"
-          blurDataURL={BLUR_PLACEHOLDER}
         />
         {item.meta?.[0] && (
           <div className="absolute top-4 left-4 bg-editorial-dark/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm font-semibold">

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import { MagneticButton } from "@/components/editorial/MagneticButton";
 
 interface HeroStrings {
   title: string;
@@ -85,31 +84,31 @@ export function WellnessHero({ strings: s }: { strings: HeroStrings }) {
           {s.subtitle}
         </motion.p>
 
-        {/* Actions / Buttons (Home Style) */}
+        {/* Actions / Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row items-start justify-start gap-4"
+          className="flex flex-col sm:flex-row items-start justify-start gap-4 sm:gap-6"
         >
-          <MagneticButton className="w-full sm:w-auto">
+          <div className="w-full sm:w-auto">
             <Link
               href="/contacto"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-lg editorial-hover-rich shadow-lg bg-editorial-accent text-white hover:bg-editorial-accent-hover transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg bg-editorial-accent text-white hover:bg-editorial-accent-hover hover:scale-[1.02] active:scale-95 transition-all duration-300"
             >
               {s.ctaPrimary}
             </Link>
-          </MagneticButton>
+          </div>
 
           {s.ctaSecondary && (
-            <MagneticButton className="w-full sm:w-auto">
+            <div className="w-full sm:w-auto">
               <Link
                 href={"#proceso" as any}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-lg editorial-hover-rich shadow-lg editorial-hover-shift-accent bg-white/95 text-editorial-dark hover:bg-white transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg bg-white/95 text-editorial-dark hover:bg-white hover:text-[var(--color-wellness-accent)] hover:scale-[1.02] active:scale-95 border border-white/20 transition-all duration-300"
               >
                 {s.ctaSecondary}
               </Link>
-            </MagneticButton>
+            </div>
           )}
         </motion.div>
       </div>

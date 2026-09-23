@@ -60,7 +60,7 @@ export function WellnessTreatmentsGrid({
           <h2 className="display-2 text-[var(--color-wellness-primary)] mb-4">
             {s.title}
           </h2>
-          <p className="body-lg text-[#171717]/55 max-w-2xl mx-auto leading-relaxed">
+          <p className="body-lg text-[#171717]/80 max-w-2xl mx-auto leading-relaxed">
             {s.subtitle}
           </p>
         </motion.div>
@@ -108,7 +108,7 @@ export function WellnessTreatmentsGrid({
                 {/* Content */}
                 <div className="flex flex-col flex-1 p-6 sm:p-7 gap-4">
                   {/* Description */}
-                  <p className="body text-sm text-[#171717]/70 leading-relaxed">
+                  <p className="body text-sm text-[#171717]/80 leading-relaxed">
                     {item.desc}
                   </p>
 

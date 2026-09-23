@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, User } from "lucide-react";
 
 export interface TestimonialItem {
   name: string;
@@ -41,7 +41,7 @@ export function WellnessTestimonials({ strings: s }: { strings: TestimonialsStri
           <h2 className="display-2 text-[var(--color-wellness-primary)] mb-4">
             {s.title}
           </h2>
-          <p className="body-lg text-[#171717]/55 max-w-xl mx-auto">
+          <p className="body-lg text-[#171717]/80 max-w-xl mx-auto leading-relaxed">
             {s.subtitle}
           </p>
         </motion.div>
@@ -63,8 +63,8 @@ export function WellnessTestimonials({ strings: s }: { strings: TestimonialsStri
                 <Quote className="w-8 h-8 text-[var(--color-wellness-gold)]/30 mb-4 shrink-0" fill="currentColor" />
 
                 {/* Quote text */}
-                <p className="text-sm text-[#171717]/70 leading-relaxed flex-1 italic mb-6">
-                  {item.quote}
+                <p className="text-sm text-[#171717]/85 leading-relaxed flex-1 italic mb-6">
+                  &ldquo;{item.quote}&rdquo;
                 </p>
 
                 {/* Stars */}
@@ -76,15 +76,15 @@ export function WellnessTestimonials({ strings: s }: { strings: TestimonialsStri
 
                 {/* Patient info */}
                 <div className="flex items-center gap-3 pt-5 border-t border-[var(--color-wellness-border)]">
-                  {/* Avatar placeholder */}
-                  <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${AVATAR_GRADIENTS[i]} flex items-center justify-center shrink-0 text-white text-lg`}>
-                    👤
+                  {/* Avatar icon */}
+                  <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${AVATAR_GRADIENTS[i]} flex items-center justify-center shrink-0 text-white shadow-sm`}>
+                    <User className="w-5 h-5 text-white/90" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-[var(--color-wellness-primary)]">
                       {item.name}
                     </p>
-                    <p className="text-xs text-[#171717]/45">
+                    <p className="text-xs text-[#171717]/65 font-medium">
                       {item.origin} · {item.treatment}
                     </p>
                   </div>

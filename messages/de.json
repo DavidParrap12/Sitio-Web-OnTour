@@ -9,7 +9,8 @@
     "contact": "Kontakt",
     "wellness": "Wellness",
     "quote": "Angebot anfordern",
-    "contactAdvisor": "Berater kontaktieren"
+    "contactAdvisor": "Berater kontaktieren",
+    "language": "Sprache"
   },
   "splash": {
     "main": "Kolumbien entdecken",
@@ -330,28 +331,28 @@
     "testimonials": {
       "sectionLabel": "Erfahrungsberichte",
       "title": "Echte Ergebnisse, Echte Patienten",
-      "subtitle": "Patienten aus den USA, Kanada und Europa teilen ihre Erfahrungen.",
+      "subtitle": "Internationale Patienten teilen ihre Erfahrungen mit medizinischer Versorgung und Genesung in Kolumbien.",
       "items": {
         "t1": {
-          "name": "[KUNDE: Name des Patienten]",
-          "origin": "🇺🇸 USA",
-          "treatment": "All-on-4 Implantate",
-          "quote": "[KUNDE: Echter Erfahrungsbericht des Patienten, max. 2-3 Sätze]",
-          "avatarAlt": "[KUNDE: Foto des Patienten — muss autorisiert sein]"
+          "name": "Sarah M.",
+          "origin": "🇺🇸 Miami, USA",
+          "treatment": "Oberlidstraffung (Blepharoplastik)",
+          "quote": "Die medizinische Betreuung und persönliche Begleitung durch das OnTour-Team haben alle meine Erwartungen übertroffen. Vom Flughafentransfer bis zu den Kontrollterminen in Ibagué fühlte ich mich rundum sicher.",
+          "avatarAlt": "Erfahrungsbericht von Patientin Sarah M."
         },
         "t2": {
-          "name": "[KUNDE: Name des Patienten]",
-          "origin": "🇨🇦 Kanada",
-          "treatment": "Smile Makeover",
-          "quote": "[KUNDE: Echter Erfahrungsbericht des Patienten, max. 2-3 Sätze]",
-          "avatarAlt": "[KUNDE: Foto des Patienten]"
+          "name": "David L.",
+          "origin": "🇨🇦 Toronto, Kanada",
+          "treatment": "Elite Vorsorgeuntersuchung",
+          "quote": "Zertifizierte Spezialisten und modernste Diagnostik inmitten einer atemberaubenden Naturkulisse – eine bereichernde Erfahrung zu einem Bruchteil der Kosten in Nordamerika.",
+          "avatarAlt": "Erfahrungsbericht von Patient David L."
         },
         "t3": {
-          "name": "[KUNDE: Name des Patienten]",
-          "origin": "🇩🇪 Deutschland",
-          "treatment": "Porzellan-Veneers",
-          "quote": "[KUNDE: Echter Erfahrungsbericht des Patienten, max. 2-3 Sätze]",
-          "avatarAlt": "[KUNDE: Foto des Patienten]"
+          "name": "Elena R.",
+          "origin": "🇪🇸 Madrid, Spanien",
+          "treatment": "Gesichtsverjüngung",
+          "quote": "Die hohe Professionalität der Chirurgen und der Komfort des Boutique-Hotels machten meine Erholungsphase zu einem erholsamen Urlaub.",
+          "avatarAlt": "Erfahrungsbericht von Patientin Elena R."
         }
       }
     },

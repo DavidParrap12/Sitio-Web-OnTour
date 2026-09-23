@@ -82,7 +82,7 @@ export function WellnessProcessTimeline({ strings: s }: { strings: ProcessString
           <h2 className="display-2 text-white mb-4">
             {s.title}
           </h2>
-          <p className="body-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
+          <p className="body-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
             {s.subtitle}
           </p>
         </motion.div>
@@ -217,7 +217,7 @@ export function WellnessProcessTimeline({ strings: s }: { strings: ProcessString
                   <h3 className="font-heading font-bold text-white text-base mb-2 leading-snug group-hover:text-[var(--color-wellness-gold)] transition-colors duration-300">
                     {step?.title}
                   </h3>
-                  <p className="text-white/65 text-xs sm:text-sm leading-relaxed flex-1">
+                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed flex-1">
                     {step?.desc}
                   </p>
                 </div>

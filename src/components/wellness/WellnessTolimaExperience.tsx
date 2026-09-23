@@ -28,7 +28,7 @@ export function WellnessTolimaExperience({ strings: s }: { strings: TolimaString
             <h2 className="display-2 text-[var(--color-wellness-primary)] mb-6">
               {s.title}
             </h2>
-            <p className="body-lg text-[#171717]/60 mb-8">
+            <p className="body-lg text-[#171717]/80 mb-8">
               {s.subtitle}
             </p>
             <Link

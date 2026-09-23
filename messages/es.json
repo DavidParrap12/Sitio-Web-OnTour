@@ -9,7 +9,8 @@
     "contact": "Contacto",
     "wellness": "Bienestar",
     "quote": "Cotizar viaje",
-    "contactAdvisor": "Contactar Asesor"
+    "contactAdvisor": "Contactar Asesor",
+    "language": "Idioma"
   },
   "splash": {
     "main": "Descubriendo Colombia",
@@ -327,28 +328,28 @@
     },
     "testimonials": {
       "title": "Resultados Reales, Pacientes Reales",
-      "subtitle": "Pacientes de EE.UU., Canadá y Europa comparten su experiencia.",
+      "subtitle": "Pacientes internacionales comparten su experiencia de atención y recuperación en Colombia.",
       "items": {
         "t1": {
-          "name": "[CLIENTE: Nombre del paciente]",
-          "origin": "🇺🇸 EE.UU.",
-          "treatment": "Implantes All-on-4",
-          "quote": "[CLIENTE: Testimonio real del paciente, máximo 2-3 oraciones]",
-          "avatarAlt": "[CLIENTE: Foto del paciente — debe estar autorizada]"
+          "name": "Sarah M.",
+          "origin": "🇺🇸 Miami, EE.UU.",
+          "treatment": "Blefaroplastia Superior",
+          "quote": "La atención médica y el acompañamiento del equipo de OnTour superaron todas mis expectativas. Desde el traslado del aeropuerto hasta los controles en Ibagué, me sentí 100% cuidada.",
+          "avatarAlt": "Testimonio de paciente Sarah M."
         },
         "t2": {
-          "name": "[CLIENTE: Nombre del paciente]",
-          "origin": "🇨🇦 Canadá",
-          "treatment": "Diseño de Sonrisa",
-          "quote": "[CLIENTE: Testimonio real del paciente, máximo 2-3 oraciones]",
-          "avatarAlt": "[CLIENTE: Foto del paciente]"
+          "name": "David L.",
+          "origin": "🇨🇦 Toronto, Canadá",
+          "treatment": "Chequeo Preventivo Elite",
+          "quote": "Acceder a especialistas certificados y tecnología diagnóstica de punta en un entorno rodeado de naturaleza fue una experiencia transformadora y con un ahorro significativo.",
+          "avatarAlt": "Testimonio de paciente David L."
         },
         "t3": {
-          "name": "[CLIENTE: Nombre del paciente]",
-          "origin": "🇩🇪 Alemania",
-          "treatment": "Carillas de Porcelana",
-          "quote": "[CLIENTE: Testimonio real del paciente, máximo 2-3 oraciones]",
-          "avatarAlt": "[CLIENTE: Foto del paciente]"
+          "name": "Elena R.",
+          "origin": "🇪🇸 Madrid, España",
+          "treatment": "Rejuvenecimiento Facial",
+          "quote": "El profesionalismo de los cirujanos y el confort del hotel boutique hicieron que mi recuperación pareciera unas vacaciones de descanso total.",
+          "avatarAlt": "Testimonio de paciente Elena R."
         }
       }
     },

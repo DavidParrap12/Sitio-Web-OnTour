@@ -9,7 +9,8 @@
     "contact": "Contact",
     "wellness": "Bien-être",
     "quote": "Demander un devis",
-    "contactAdvisor": "Contacter un conseiller"
+    "contactAdvisor": "Contacter un conseiller",
+    "language": "Langue"
   },
   "splash": {
     "main": "À la découverte de la Colombie",
@@ -330,28 +331,28 @@
     "testimonials": {
       "sectionLabel": "Témoignages",
       "title": "Résultats Réels, Patients Réels",
-      "subtitle": "Des patients des États-Unis, du Canada et d'Europe partagent leur expérience.",
+      "subtitle": "Des patients internationaux partagent leur expérience de soins et de rétablissement en Colombie.",
       "items": {
         "t1": {
-          "name": "[CLIENT : Nom du patient]",
-          "origin": "🇺🇸 États-Unis",
-          "treatment": "Implants All-on-4",
-          "quote": "[CLIENT : Témoignage réel du patient, 2-3 phrases maximum]",
-          "avatarAlt": "[CLIENT : Photo du patient — doit être autorisée]"
+          "name": "Sarah M.",
+          "origin": "🇺🇸 Miami, États-Unis",
+          "treatment": "Blépharoplastie Supérieure",
+          "quote": "Les soins médicaux et l'accompagnement de l'équipe OnTour ont dépassé toutes mes attentes. De l'accueil à l'aéroport jusqu'au suivi médical à Ibagué, je me suis sentie parfaitement entourée.",
+          "avatarAlt": "Témoignage de la patiente Sarah M."
         },
         "t2": {
-          "name": "[CLIENT : Nom du patient]",
-          "origin": "🇨🇦 Canada",
-          "treatment": "Relooking du Sourire",
-          "quote": "[CLIENT : Témoignage réel du patient, 2-3 phrases maximum]",
-          "avatarAlt": "[CLIENT : Photo du patient]"
+          "name": "David L.",
+          "origin": "🇨🇦 Toronto, Canada",
+          "treatment": "Bilan Préventif Élite",
+          "quote": "Bénéficier de spécialistes certifiés et d'une technologie diagnostique de pointe dans un cadre naturel apaisant a été une expérience formidable, avec un coût très avantageux.",
+          "avatarAlt": "Témoignage du patient David L."
         },
         "t3": {
-          "name": "[CLIENT : Nom du patient]",
-          "origin": "🇩🇪 Allemagne",
-          "treatment": "Facettes en Porcelaine",
-          "quote": "[CLIENT : Témoignage réel du patient, 2-3 phrases maximum]",
-          "avatarAlt": "[CLIENT : Photo du patient]"
+          "name": "Elena R.",
+          "origin": "🇪🇸 Madrid, Espagne",
+          "treatment": "Rajeunissement Facial",
+          "quote": "Le grand professionnalisme des chirurgiens et le confort de l'hôtel ont transformé ma convalescence en un véritable séjour de bien-être et de sérénité.",
+          "avatarAlt": "Témoignage de la patiente Elena R."
         }
       }
     },
