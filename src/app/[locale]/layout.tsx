@@ -61,7 +61,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: t.ogDesc,
       url: "https://www.ontourdmc.com",
       siteName: "Ontour DMC Colombia",
-      images: [{ url: "/image/logo-ON-TOUR-Nuevo2.png" }],
+      images: [
+        {
+          url: "https://www.ontourdmc.com/image/portadas/Statues_at_San_Agust%C3%ADn_park_202608141341.jpeg",
+          width: 1200,
+          height: 630,
+          alt: "OnTour DMC Colombia — Tour Operador & DMC",
+        },
+      ],
       locale: t.ogLocale,
       type: "website",
     },
@@ -69,6 +76,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: "summary_large_image",
       title: t.twTitle,
       description: t.twDesc,
+      images: ["https://www.ontourdmc.com/image/portadas/Statues_at_San_Agust%C3%ADn_park_202608141341.jpeg"],
     },
   };
 }

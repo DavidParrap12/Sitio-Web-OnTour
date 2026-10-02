@@ -65,7 +65,7 @@ export function WellnessHero({ strings: s }: { strings: HeroStrings }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="display-1 text-white mb-6"
+          className="display-1 text-white mb-6 font-normal tracking-tight"
         >
           {s.title}
           <br />
@@ -79,7 +79,7 @@ export function WellnessHero({ strings: s }: { strings: HeroStrings }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="body-lg text-white/90 mb-10 max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] leading-relaxed"
+          className="body-lg text-white/90 mb-10 max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] leading-relaxed font-light"
         >
           {s.subtitle}
         </motion.p>
@@ -94,7 +94,7 @@ export function WellnessHero({ strings: s }: { strings: HeroStrings }) {
           <div className="w-full sm:w-auto">
             <Link
               href="/contacto"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg bg-editorial-accent text-white hover:bg-editorial-accent-hover hover:scale-[1.02] active:scale-95 transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-medium tracking-wide text-sm sm:text-base shadow-lg bg-editorial-accent text-white hover:bg-editorial-accent-hover hover:scale-[1.02] active:scale-95 transition-all duration-300 min-h-[48px]"
             >
               {s.ctaPrimary}
             </Link>
@@ -104,7 +104,7 @@ export function WellnessHero({ strings: s }: { strings: HeroStrings }) {
             <div className="w-full sm:w-auto">
               <Link
                 href={"#proceso" as any}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg bg-white/95 text-editorial-dark hover:bg-white hover:text-[var(--color-wellness-accent)] hover:scale-[1.02] active:scale-95 border border-white/20 transition-all duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-medium tracking-wide text-sm sm:text-base shadow-lg bg-white/95 text-editorial-dark hover:bg-white hover:text-[var(--color-wellness-accent)] hover:scale-[1.02] active:scale-95 border border-white/20 transition-all duration-300 min-h-[48px]"
               >
                 {s.ctaSecondary}
               </Link>

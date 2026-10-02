@@ -1,19 +1,25 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
-import { CheckCircle2, Clock, MapPin, Map, Calendar } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle2, Clock, MapPin, Map, Calendar, MessageCircle, Send, ArrowRight } from "lucide-react";
 import { SectionReveal } from "@/components/editorial/SectionReveal";
 import { HeroEditorial } from "@/components/editorial/HeroEditorial";
 import { MagneticButton } from "@/components/editorial/MagneticButton";
 import { BookingForm } from "@/components/BookingForm";
 import { CircuitProgramDownloadDynamic } from "@/components/CircuitProgramDownloadDynamic";
+import { RequestQuoteModal } from "@/components/RequestQuoteModal";
 import { type ExtensionItem } from "@/components/CircuitExtensions";
 import { type DestinationTheme } from "@/lib/design-config";
 import { useDestinationTheme } from "@/lib/hooks/useDestinationTheme";
+import { trackStickyBarInteraction, trackRequestQuoteClick, trackWhatsAppClick } from "@/lib/analytics";
 
 // Below-the-fold: code-split
-const ItineraryTimeline = dynamic(() => import("@/components/ItineraryTimeline"));
+const ItineraryTabs = dynamic(
+  () => import("@/components/editorial/ItineraryTabs").then((m) => ({ default: m.ItineraryTabs }))
+);
 const CircuitExtensions = dynamic(
   () => import("@/components/CircuitExtensions").then((m) => ({ default: m.CircuitExtensions }))
 );
@@ -51,6 +57,27 @@ export function CircuitoDetailEditorial({
   t,
 }: CircuitoDetailEditorialProps) {
   const theme = useDestinationTheme(colorTheme);
+
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [showStickyBar, setShowStickyBar] = useState(false);
+
+  useEffect(() => {
+    let trackedImpression = false;
+    const handleScroll = () => {
+      if (window.scrollY > 450) {
+        setShowStickyBar(true);
+        if (!trackedImpression) {
+          trackedImpression = true;
+          trackStickyBarInteraction("impression", name);
+        }
+      } else {
+        setShowStickyBar(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [name]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -114,30 +141,14 @@ export function CircuitoDetailEditorial({
 
             <SectionReveal>
               <section>
-                <h2 className="display-2 text-editorial-dark mb-8 pb-4 border-b border-editorial-border">{t.youWillEnjoy}</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {highlights.map((h, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }}
-                      className="flex items-start gap-3 bg-editorial-warm p-5 rounded-xl border border-editorial-border"
-                    >
-                      <CheckCircle2 className="w-6 h-6 text-editorial-accent shrink-0 mt-0.5" />
-                      <span className="body text-editorial-dark font-medium">{h}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </section>
-            </SectionReveal>
-
-            <SectionReveal>
-              <section>
                 <h2 className="display-2 text-editorial-dark mb-8 pb-4 border-b border-editorial-border">{t.itinerary}</h2>
-                <ItineraryTimeline
+                <ItineraryTabs
                   itinerary={itinerary}
+                  highlights={highlights}
                   dayImages={dayImages || []}
                   t={{
+                    tabItinerary: t.itinerary,
+                    tabHighlights: t.youWillEnjoy,
                     close: t.galleryClose,
                     photoOf: t.galleryPhotoOf,
                     clickToEnlarge: t.galleryClickToEnlarge,
@@ -213,18 +224,111 @@ export function CircuitoDetailEditorial({
                 <p className="text-xs text-editorial-muted-light">{t.priceNote}</p>
               </div>
 
-              <MagneticButton className="w-full block">
-                <a
-                  href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-                  className="w-full flex justify-center items-center gap-2 bg-editorial-accent text-white px-6 py-4 rounded-xl font-bold text-center shadow-editorial-md editorial-hover-rich editorial-hover-shift-dark"
+              <div className="space-y-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    trackRequestQuoteClick("circuit_detail_sidebar");
+                    setIsQuoteModalOpen(true);
+                  }}
+                  className="group/btn w-full flex justify-center items-center gap-2 bg-deep-forest text-warm-ivory hover:bg-muted-gold hover:text-charcoal px-6 py-4 rounded-xl font-medium tracking-wide text-center shadow-md transition-all cursor-pointer min-h-[48px]"
                 >
-                  {t.requestQuote}
+                  <span>{t.requestQuote}</span>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                </button>
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick("circuit_detail_sidebar", name)}
+                  className="w-full flex justify-center items-center gap-2 border border-stone-300 text-stone-700 hover:bg-stone-50 px-6 py-3.5 rounded-xl font-semibold text-center text-sm transition-colors min-h-[44px]"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                  <span>WhatsApp (SLA 24h)</span>
                 </a>
-              </MagneticButton>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* -- Sticky Bottom Quote Bar ---------------------------- */}
+      <AnimatePresence>
+        {showStickyBar && (
+          <motion.aside
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            aria-label="Barra de cotización rápida"
+            className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200/90 shadow-2xl py-3 px-4 sm:px-6"
+          >
+            <div className="container mx-auto max-w-6xl flex items-center justify-between gap-4">
+              {/* Tour thumbnail & title */}
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-lg overflow-hidden shrink-0 hidden sm:block border border-stone-200">
+                  <Image
+                    src={image}
+                    alt={name}
+                    fill
+                    className="object-cover"
+                    sizes="48px"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <h4 className="font-serif text-sm sm:text-base font-semibold text-charcoal truncate">
+                    {name}
+                  </h4>
+                  <div className="flex items-center gap-2 text-xs text-stone-500">
+                    <span className="font-medium text-deep-forest">{days}D / {nights}N</span>
+                    <span>•</span>
+                    <span className="font-semibold text-stone-900">{price}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action CTAs */}
+              <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    trackStickyBarInteraction("whatsapp_click", name);
+                    trackWhatsAppClick("circuit_detail_sticky", name);
+                  }}
+                  className="hidden md:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-stone-300 text-charcoal text-xs font-semibold hover:bg-stone-50 transition-colors min-h-[44px]"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                  <span>WhatsApp (24h)</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    trackStickyBarInteraction("quote_click", name);
+                    trackRequestQuoteClick("circuit_detail_sticky");
+                    setIsQuoteModalOpen(true);
+                  }}
+                  className="group/btn inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-deep-forest text-warm-ivory text-xs sm:text-sm font-medium tracking-wide hover:bg-muted-gold hover:text-charcoal transition-all shadow-md min-h-[44px] cursor-pointer"
+                >
+                  <span>{t.requestQuote || "Solicitar Cotización"}</span>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                </button>
+              </div>
+            </div>
+          </motion.aside>
+        )}
+      </AnimatePresence>
+
+      {/* Preloaded 3-Click Request Quote Modal */}
+      <RequestQuoteModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+        preselectedExperience="circuits"
+        preselectedItem={name}
+      />
     </div>
   );
 }

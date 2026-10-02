@@ -2,11 +2,11 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight, Quote, ExternalLink } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Quote, ExternalLink, CheckCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { testimonials } from "@/data/testimonials";
 
-const AUTOPLAY_MS = 6000;
+const AUTOPLAY_MS = 7000;
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/place/On+Tour+Agencia+de+Viajes+Colombia/@4.4453535,-75.2418751,19z/data=!4m18!1m9!3m8!1s0x8e38c5dc9b21e75d:0xdfe89bd87d6ae4a2!2sOn+Tour+Agencia+de+Viajes+Colombia!8m2!3d4.4453522!4d-75.2412314!9m1!1b1!16s%2Fg%2F11ryf7f3t2!3m7!1s0x8e38c5dc9b21e75d:0xdfe89bd87d6ae4a2!8m2!3d4.4453522!4d-75.2412314!9m1!1b1!16s%2Fg%2F11ryf7f3t2?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D";
 
@@ -27,7 +27,7 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
-function Initials({ name }: { name: string }) {
+function ReviewAvatar({ name }: { name: string }) {
   const initials = name
     .split(" ")
     .map((w) => w[0])
@@ -37,7 +37,7 @@ function Initials({ name }: { name: string }) {
     .toUpperCase();
 
   return (
-    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg shadow-lg ring-2 ring-white">
+    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-editorial-accent to-editorial-accent-hover flex items-center justify-center text-white font-bold text-lg shadow-md ring-3 ring-editorial-accent/20 shrink-0">
       {initials}
     </div>
   );
@@ -68,9 +68,32 @@ export function Testimonials() {
   const review = testimonials[current];
 
   const variants = {
-    enter: (d: number) => ({ x: d > 0 ? 60 : -60, opacity: 0 }),
-    center: { x: 0, opacity: 1 },
-    exit: (d: number) => ({ x: d > 0 ? -60 : 60, opacity: 0 }),
+    enter: (d: number) => ({
+      x: d > 0 ? 70 : -70,
+      opacity: 0,
+      scale: 0.96,
+      rotate: d > 0 ? 1.2 : -1.2,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: {
+        duration: 0.45,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+    exit: (d: number) => ({
+      x: d > 0 ? -70 : 70,
+      opacity: 0,
+      scale: 0.96,
+      rotate: d > 0 ? -1.2 : 1.2,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut" as const,
+      },
+    }),
   };
 
   return (
@@ -159,7 +182,6 @@ export function Testimonials() {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  transition={{ duration: 0.35, ease: "easeInOut" }}
                   drag="x"
                   dragConstraints={{ left: 0, right: 0 }}
                   dragElastic={0.2}
@@ -191,7 +213,7 @@ export function Testimonials() {
 
                     {/* Reviewer info */}
                     <div className="flex items-center gap-3 sm:gap-4 pt-4 border-t border-editorial-border/60">
-                      <Initials name={review.name} />
+                      <ReviewAvatar name={review.name} />
                       <div className="flex-1 min-w-0">
                         <p className="font-heading font-bold text-base sm:text-lg text-editorial-dark truncate">
                           {review.name}
@@ -213,8 +235,36 @@ export function Testimonials() {
             </div>
           </div>
 
+          {/* Traveler Avatars preview row */}
+          <div className="flex items-center justify-center gap-2.5 sm:gap-3 mt-6 sm:mt-8">
+            {testimonials.map((item, idx) => {
+              const isSelected = idx === current;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => goTo(idx, idx > current ? 1 : -1)}
+                  className={`relative rounded-full transition-all duration-300 p-0.5 ${
+                    isSelected
+                      ? "ring-2 ring-editorial-accent ring-offset-2 scale-110 shadow-sm"
+                      : "opacity-40 hover:opacity-100 hover:scale-105"
+                  }`}
+                  aria-label={`${t("goToReview")} ${idx + 1}`}
+                >
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-gradient-to-br from-editorial-accent to-editorial-accent-hover flex items-center justify-center text-[10px] sm:text-xs font-bold text-white border border-editorial-accent/20">
+                    {item.name
+                      .split(" ")
+                      .map((w) => w[0])
+                      .filter(Boolean)
+                      .slice(0, 2)
+                      .join("")}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
           {/* Dots + mobile arrows (Guaranteed spacing & high z-index) */}
-          <div className="flex items-center justify-center gap-4 sm:gap-6 mt-6 sm:mt-8 relative z-20">
+          <div className="flex items-center justify-center gap-4 sm:gap-6 mt-4 sm:mt-5 relative z-20">
             {/* Mobile arrow left */}
             <button
               onClick={prev}

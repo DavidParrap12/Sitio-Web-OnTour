@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { destinos } from "@/data/destinos";
 import { circuitos } from "@/data/circuitos";
 
-const BASE = "https://www.agenciaontour.com";
+const BASE = "https://www.ontourdmc.com";
 
 // Localized path maps matching routing.ts
 const localePasadiasPath: Record<string, string> = {

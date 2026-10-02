@@ -253,8 +253,8 @@
       "subtitle": "Erhalten Sie Zugang zu medizinischen und ästhetischen Eingriffen von Weltklasse mit bis zu 70 % Ersparnis im Vergleich zu den USA, unterstützt von zertifizierten Spezialisten im Herzen der kolumbianischen Anden.",
       "ctaPrimary": "Beratung Anfordern",
       "ctaSecondary": "So Funktioniert der Ablauf",
-      "imagePatientAlt": "[KUNDE: Foto eines lächelnden Patienten — professionelles Porträt, weißer Hintergrund bevorzugt]",
-      "imageTolimaAlt": "[KUNDE: Foto der Tolima-Landschaft — Kaffeeregion, Berge, üppiges Grün]"
+      "imagePatientAlt": "Lächelnder Patient bei medizinischer und Wellness-Betreuung in Kolumbien",
+      "imageTolimaAlt": "Malerische Berglandschaft von Tolima und der kolumbianischen Kaffeeregion"
     },
     "trust": {
       "certified": "Zertifizierte Spezialisten",
@@ -326,7 +326,7 @@
       "title": "Heilung in der Natur.",
       "subtitle": "Entdecken Sie achtsamen Tourismus, herzliche Gastfreundschaft und die atemberaubenden Landschaften der kolumbianischen Kaffeeregion während Ihrer Genesung.",
       "cta": "Erholungs-Routen Erkunden",
-      "imageAlt": "[KUNDE: Foto der Region Tolima/Kaffeeregion — Weitwinkel, Berge, Palmen]"
+      "imageAlt": "Panoramablick auf die Anden und die Kaffeeregion Tolima"
     },
     "testimonials": {
       "sectionLabel": "Erfahrungsberichte",
@@ -1760,6 +1760,15 @@
       },
       "jennyHernandez": {
         "text": "Guter Service, sehr gute Pläne und Tarife."
+      },
+      "micilene": {
+        "text": "Ausgezeichneter Service und Betreuung, das Essen, die Bar und in allem sehr pünktlich. Sehr zu empfehlen."
+      },
+      "ruthAhumada": {
+        "text": "Ausgezeichnet, ich hatte eine tolle Zeit, alles mit Ontour Vereinbarte wurde voll und ganz erfüllt."
+      },
+      "mariaAntonia": {
+        "text": "Ausgezeichneter Service. Großes Engagement und Hingabe des Geschäftsführers und seines Teams. Das Hotel war ausgezeichnet. Die besuchten Orte waren wunderschön, herzlichen Glückwunsch."
       }
     }
   },
@@ -1813,7 +1822,7 @@
     },
     "rights": {
       "title": "5. Ihre Rechte",
-      "text": "Gemäß Gesetz 1581 von 2012 (Datenschutz in Kolumbien) haben Sie das Recht, Ihre persönlichen Daten einzusehen, zu aktualisieren, zu berichtigen und zu löschen. Schreiben Sie uns dazu an gerencia@agenciaontour.com."
+      "text": "Gemäß Gesetz 1581 von 2012 (Datenschutz in Kolumbien) haben Sie das Recht, Ihre persönlichen Daten einzusehen, zu aktualisieren, zu berichtigen und zu löschen. Schreiben Sie uns dazu an info@ontourdmc.com."
     },
     "cookies": {
       "title": "6. Cookies",
@@ -1847,7 +1856,7 @@
     "subtitle": "Antworten auf die häufigsten Fragen unserer Reisenden.",
     "q1": {
       "question": "Wie kann ich eine Reise bei Ontour buchen?",
-      "answer": "Sie können uns per WhatsApp unter +57 316 538 6892, per E-Mail an gerencia@agenciaontour.com oder über das Kontaktformular auf unserer Website erreichen. Ein Berater wird Ihnen mit einem personalisierten Angebot antworten."
+      "answer": "Sie können uns per WhatsApp unter +57 316 538 6892, per E-Mail an info@ontourdmc.com oder über das Kontaktformular auf unserer Website erreichen. Ein Berater wird Ihnen mit einem personalisierten Angebot antworten."
     },
     "q2": {
       "question": "Was ist in den Rundreisen enthalten?",
@@ -1945,5 +1954,49 @@
     "experienciasCtaTitle": "Haben Sie mit OnTour gereist?",
     "experienciasCtaDesc": "Teilen Sie Ihr Foto und werden Sie Teil unserer Reisenden-Community.",
     "experienciasCtaBtn": "Mein Foto senden"
+  },
+  "macrorregiones": {
+    "tagline": "ProColombia • Das Land der Schönheit",
+    "title": "Touristische Makroregionen Kolumbiens",
+    "subtitle": "Wir verbinden Reisende mit dem immensen biokulturellen Reichtum der sechs offiziellen touristischen Großregionen Kolumbiens und gestalten authentische Reiserouten in jedem Winkel des Landes.",
+    "mapBadge": "Offizielle Karte der Reiseziele und Regionen",
+    "exploreZoom": "Mit Zoom erkunden",
+    "clickToZoom": "Klicken zum Öffnen und Zoomen",
+    "mapAlt": "Karte der 6 touristischen Makroregionen Kolumbiens - ProColombia",
+    "mapDetailAlt": "Detaillierte Karte der 6 touristischen Makroregionen Kolumbiens",
+    "modalInstructions": "Doppelklicken oder Steuerelemente nutzen zum Vergrößern/Verkleinern und Ziehen zum Erkunden",
+    "closeLabel": "Betrachter schließen",
+    "closeTitle": "Schließen (Esc)",
+    "zoomIn": "Vergrößern (+)",
+    "zoomOut": "Verkleinern (-)",
+    "reset": "Reset",
+    "resetTitle": "Größe zurücksetzen (0)",
+    "dragToMove": "Ziehen zum Bewegen",
+    "regions": {
+      "caribe": {
+        "name": "Große kolumbianische Karibik",
+        "slogan": "Viel mehr als Karibik"
+      },
+      "pacifico": {
+        "name": "Kolumbianischer Pazifik",
+        "slogan": "Geschmack von Dschungel und Meer"
+      },
+      "andesOccidentales": {
+        "name": "Westanden",
+        "slogan": "Berge aus Kaffee und Blumen"
+      },
+      "andesOrientales": {
+        "name": "Ostanden",
+        "slogan": "Legendäre Páramos und Täler"
+      },
+      "macizo": {
+        "name": "Kolumbianisches Massiv",
+        "slogan": "Uralte Ursprünge"
+      },
+      "amazoniaOrinoquia": {
+        "name": "Amazonien-Orinokien",
+        "slogan": "Heilige Urwälder und Ebenen"
+      }
+    }
   }
 }

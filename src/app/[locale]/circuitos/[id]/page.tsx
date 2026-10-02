@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { circuitos } from "@/data/circuitos";
 import { destinos } from "@/data/destinos";
 import { routing } from "@/i18n/routing";
@@ -14,6 +15,49 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     circuitos.map((c) => ({ locale, id: c.id }))
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; id: string }>;
+}): Promise<Metadata> {
+  const { locale, id } = await params;
+  const tData = await getTranslations({ locale, namespace: "circuitosData" });
+  const circuito = circuitos.find((c) => c.id === id);
+  if (!circuito) return {};
+
+  const name = tData(`${id}.name`);
+  const description = tData(`${id}.description`);
+  const ogImageUrl = circuito.image.startsWith("http")
+    ? circuito.image
+    : `https://www.ontourdmc.com${circuito.image}`;
+
+  return {
+    title: `${name} | OnTour DMC Colombia`,
+    description,
+    openGraph: {
+      title: `${name} | OnTour DMC Colombia`,
+      description,
+      url: `https://www.ontourdmc.com/${locale}/circuits/${id}`,
+      siteName: "Ontour DMC Colombia",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: name,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${name} | OnTour DMC Colombia`,
+      description,
+      images: [ogImageUrl],
+    },
+  };
 }
 
 export default async function CircuitoPage({
@@ -60,9 +104,9 @@ export default async function CircuitoPage({
   const schema = buildCircuitoSchema({ id, name, description, days: circuito.days, nights: circuito.nights, image: circuito.image, locale });
   const eventSchemas = buildDepartureDateEvents({ circuitId: id, circuitName: name, image: circuito.image, departureDates, locale });
   const breadcrumb = buildBreadcrumbs([
-    { name: "Home", url: "https://www.agenciaontour.com" },
-    { name: locale === "es" ? "Circuitos" : "Circuits", url: `https://www.agenciaontour.com/${locale === "es" ? "circuitos" : locale + "/circuits"}` },
-    { name, url: `https://www.agenciaontour.com/${locale === "es" ? "circuitos" : locale + "/circuits"}/${id}` },
+    { name: "Home", url: "https://www.ontourdmc.com" },
+    { name: locale === "es" ? "Circuitos" : "Circuits", url: `https://www.ontourdmc.com/${locale === "es" ? "circuitos" : locale + "/circuits"}` },
+    { name, url: `https://www.ontourdmc.com/${locale === "es" ? "circuitos" : locale + "/circuits"}/${id}` },
   ]);
 
   return (

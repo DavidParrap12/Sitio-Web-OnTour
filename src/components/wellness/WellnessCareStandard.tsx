@@ -445,11 +445,11 @@ function PaqueteAccordionItem({
         {/* Left: Category & Title */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 flex-1">
           <span
-            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border shrink-0 w-fit ${catBadgeClass}`}
+            className={`inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full border shrink-0 w-fit ${catBadgeClass}`}
           >
             {paquete.categoria}
           </span>
-          <h3 className="heading-3 text-lg md:text-xl font-bold text-[var(--color-wellness-primary)] group-hover:text-[var(--color-wellness-gold)] transition-colors duration-200">
+          <h3 className="font-serif text-xl sm:text-2xl font-normal text-[var(--color-wellness-primary)] group-hover:text-[var(--color-wellness-gold)] transition-colors duration-200">
             {paquete.titulo}
           </h3>
         </div>
@@ -466,7 +466,7 @@ function PaqueteAccordionItem({
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="inline-flex items-center gap-1.5 py-2.5 px-4 sm:px-5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 bg-gradient-to-r from-[#C9A961] to-[#b5944e] text-[#0A2540] shadow-sm hover:shadow-md hover:scale-105 active:scale-95 shrink-0"
+            className="inline-flex items-center gap-1.5 py-2.5 px-4 sm:px-5 rounded-full font-medium tracking-wide text-xs sm:text-sm transition-all duration-300 bg-gradient-to-r from-[#C9A961] to-[#b5944e] text-[#0A2540] shadow-sm hover:shadow-md hover:scale-105 active:scale-95 shrink-0 min-h-[44px]"
           >
             {requestInfoLabel || "Solicitar información"}
             <ArrowRight className="h-3.5 w-3.5" />
@@ -499,17 +499,17 @@ function PaqueteAccordionItem({
             <div className="p-6 md:p-8 pl-7 md:pl-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
               {/* Left Column: Description */}
               <div className="md:col-span-5">
-                <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-wellness-primary)]/65 block mb-2 font-mono">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--color-wellness-primary)]/75 block mb-2 font-sans">
                   {descLabel}
                 </span>
-                <p className="text-sm md:text-base text-[#171717]/85 leading-relaxed">
+                <p className="text-sm md:text-base text-[#171717]/85 leading-relaxed font-light">
                   {paquete.descripcion}
                 </p>
               </div>
 
               {/* Right Column: Included Benefits Grid */}
               <div className="md:col-span-7">
-                <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-wellness-primary)]/65 block mb-3 font-mono">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--color-wellness-primary)]/75 block mb-3 font-sans">
                   {detailsTitle}
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">

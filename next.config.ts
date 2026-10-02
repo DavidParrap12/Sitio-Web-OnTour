@@ -27,6 +27,16 @@ const nextConfig: NextConfig = {
         destination: "/:locale/circuitos",
         permanent: true, // 301 — tells Google the page moved permanently
       },
+      {
+        source: "/en/circuitos",
+        destination: "/en/circuits",
+        permanent: true,
+      },
+      {
+        source: "/en/circuitos/:path*",
+        destination: "/en/circuits/:path*",
+        permanent: true,
+      },
     ];
   },
 

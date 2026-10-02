@@ -62,7 +62,7 @@ export function WellnessFaqAccordion({ strings: s }: { strings: FaqStrings }) {
                   className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base font-semibold text-[var(--color-wellness-primary)] font-heading leading-snug">
+                  <span className="text-base font-semibold text-[var(--color-wellness-primary)] font-sans leading-snug">
                     {item.q}
                   </span>
                   <ChevronDown

@@ -1,8 +1,6 @@
 export interface Testimonial {
   id: string;
   name: string;
-  /** Optional avatar URL — shows initials if missing */
-  avatar?: string;
   /** Location or country of the reviewer */
   location: string;
   /** Rating out of 5 */
@@ -76,5 +74,32 @@ export const testimonials: Testimonial[] = [
     reviewKey: "jennyHernandez",
     tripKey: "jennyHernandez",
     date: "2026-06-01",
+  },
+  {
+    id: "review-micilene",
+    name: "Micilene Larrañaga Candido",
+    location: "Colombia",
+    rating: 5,
+    reviewKey: "micilene",
+    tripKey: "micilene",
+    date: "2026-09-20",
+  },
+  {
+    id: "review-ruth-ahumada",
+    name: "Ruth Ahumada",
+    location: "Colombia",
+    rating: 5,
+    reviewKey: "ruthAhumada",
+    tripKey: "ruthAhumada",
+    date: "2026-09-22",
+  },
+  {
+    id: "review-maria-antonia",
+    name: "María Antonia Arteaga Acero",
+    location: "Colombia",
+    rating: 5,
+    reviewKey: "mariaAntonia",
+    tripKey: "mariaAntonia",
+    date: "2026-09-25",
   },
 ];

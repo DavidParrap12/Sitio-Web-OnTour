@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display, Fraunces } from "next/font/google";
+import { DM_Sans, Playfair_Display, Fraunces, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -21,6 +21,13 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   icons: { icon: "/image/Fav-Ontour.ico" },
   verification: {
@@ -33,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${dmSans.variable} ${playfairDisplay.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${playfairDisplay.variable} ${fraunces.variable} ${cormorant.variable} h-full antialiased`}
     >
       <head>
         <script

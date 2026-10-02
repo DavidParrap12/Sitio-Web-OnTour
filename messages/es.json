@@ -253,8 +253,8 @@
       "subtitle": "Accede a procedimientos médicos y estéticos de clase mundial con hasta 70% de ahorro frente a EE.UU., respaldados por especialistas certificados en el corazón de los Andes colombianos.",
       "ctaPrimary": "Solicitar Consulta",
       "ctaSecondary": "Ver Cómo Funciona el Proceso",
-      "imagePatientAlt": "[CLIENTE: Foto de paciente sonriente — retrato profesional, fondo blanco preferido]",
-      "imageTolimaAlt": "[CLIENTE: Foto del paisaje del Tolima — región cafetera, montañas, verde exuberante]"
+      "imagePatientAlt": "Paciente sonriente recibiendo atención médica y de bienestar en Colombia",
+      "imageTolimaAlt": "Hermoso paisaje montañoso del Tolima y la región cafetera de Colombia"
     },
     "trust": {
       "certified": "Especialistas Certificados",
@@ -324,7 +324,7 @@
       "title": "Sanación en la Naturaleza.",
       "subtitle": "Descubre el turismo consciente, la hospitalidad cálida y los impresionantes paisajes de la región cafetera de Colombia mientras te recuperas.",
       "cta": "Explorar Circuitos de Recuperación",
-      "imageAlt": "[CLIENTE: Foto de la región Tolima/Cafetera — plano amplio, montañas, palmas]"
+      "imageAlt": "Panorámica de los Andes y la región cafetera del Tolima"
     },
     "testimonials": {
       "title": "Resultados Reales, Pacientes Reales",
@@ -786,6 +786,15 @@
       },
       "jennyHernandez": {
         "text": "Bueno servicio, planes y tarifas muy buenas."
+      },
+      "micilene": {
+        "text": "Excelente servicios de atenciones, la alimentación, bar y muy puntuales en todo. Lo recomiendo."
+      },
+      "ruthAhumada": {
+        "text": "Excelente, la pasé super, todo lo acordado con la empresa Ontour se cumplió."
+      },
+      "mariaAntonia": {
+        "text": "Excelente servicio. Mucha dedicación y compromiso del gerente y sus colaboradores. El hotel excelente. Los lugares que se visitaron muy bonitos, felicitaciones."
       }
     }
   },
@@ -839,7 +848,7 @@
     },
     "rights": {
       "title": "5. Tus Derechos",
-      "text": "De acuerdo con la Ley 1581 de 2012 (Protección de Datos Personales en Colombia), tienes derecho a conocer, actualizar, rectificar y suprimir tus datos personales. Para ejercer estos derechos, escríbenos a gerencia@agenciaontour.com."
+      "text": "De acuerdo con la Ley 1581 de 2012 (Protección de Datos Personales en Colombia), tienes derecho a conocer, actualizar, rectificar y suprimir tus datos personales. Para ejercer estos derechos, escríbenos a info@ontourdmc.com."
     },
     "cookies": {
       "title": "6. Cookies",
@@ -873,7 +882,7 @@
     "subtitle": "Respuestas a las dudas más comunes de nuestros viajeros.",
     "q1": {
       "question": "¿Cómo puedo reservar un viaje con Ontour?",
-      "answer": "Puedes contactarnos por WhatsApp al +57 316 538 6892, por correo a gerencia@agenciaontour.com, o a través del formulario de contacto en nuestra web. Un asesor te responderá con una cotización personalizada."
+      "answer": "Puedes contactarnos por WhatsApp al +57 316 538 6892, por correo a info@ontourdmc.com, o a través del formulario de contacto en nuestra web. Un asesor te responderá con una cotización personalizada."
     },
     "q2": {
       "question": "¿Qué incluyen los circuitos turísticos?",
@@ -971,6 +980,50 @@
     "experienciasCtaTitle": "¿Viajaste con OnTour?",
     "experienciasCtaDesc": "Comparte tu foto y forma parte de nuestra comunidad de viajeros.",
     "experienciasCtaBtn": "Enviar mi foto"
+  },
+  "macrorregiones": {
+    "tagline": "ProColombia • El País de la Belleza",
+    "title": "Macrorregiones Turísticas de Colombia",
+    "subtitle": "Conectamos a los viajeros con la inmensa riqueza biocultural de los seis grandes territorios turísticos oficiales de Colombia, diseñando itinerarios auténticos en cada rincón del país.",
+    "mapBadge": "Mapa Oficial de Destinos y Regiones",
+    "exploreZoom": "Explorar con Zoom",
+    "clickToZoom": "Clic para abrir y hacer zoom",
+    "mapAlt": "Mapa de las 6 Macrorregiones Turísticas de Colombia - ProColombia",
+    "mapDetailAlt": "Mapa detallado de las 6 Macrorregiones Turísticas de Colombia",
+    "modalInstructions": "Doble clic o usa los controles para acercar/alejar y arrastra para explorar",
+    "closeLabel": "Cerrar visor",
+    "closeTitle": "Cerrar (Esc)",
+    "zoomIn": "Acercar (+)",
+    "zoomOut": "Alejar (-)",
+    "reset": "Reset",
+    "resetTitle": "Restablecer tamaño (0)",
+    "dragToMove": "Arrastra para mover",
+    "regions": {
+      "caribe": {
+        "name": "Gran Caribe Colombiano",
+        "slogan": "Mucho más que Caribe"
+      },
+      "pacifico": {
+        "name": "Pacífico Colombiano",
+        "slogan": "Sabor a selva y mar"
+      },
+      "andesOccidentales": {
+        "name": "Andes Occidentales",
+        "slogan": "Montañas de café y flores"
+      },
+      "andesOrientales": {
+        "name": "Andes Orientales",
+        "slogan": "Páramos y valles legendarios"
+      },
+      "macizo": {
+        "name": "Macizo Colombiano",
+        "slogan": "Orígenes ancestrales"
+      },
+      "amazoniaOrinoquia": {
+        "name": "Amazonía-Orinoquía",
+        "slogan": "Selvas y llanos sagrados"
+      }
+    }
   },
   "destinosData": {
     "cascada-la-plata-pasadia": {

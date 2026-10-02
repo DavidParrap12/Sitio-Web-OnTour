@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import {
   ZoomIn,
   ZoomOut,
@@ -9,58 +10,50 @@ import {
   X,
   Compass,
   MapPin,
-  Sparkles,
   Move,
 } from "lucide-react";
 import { SectionReveal } from "@/components/editorial/SectionReveal";
 
-interface RegionItem {
-  name: string;
-  slogan: string;
+interface RegionStyle {
+  key: "caribe" | "pacifico" | "andesOccidentales" | "andesOrientales" | "macizo" | "amazoniaOrinoquia";
   badgeColor: string;
   textColor: string;
   borderColor: string;
 }
 
-const REGIONES: RegionItem[] = [
+const REGION_STYLES: RegionStyle[] = [
   {
-    name: "Gran Caribe Colombiano",
-    slogan: "Mucho más que Caribe",
+    key: "caribe",
     badgeColor: "bg-sky-50",
     textColor: "text-sky-700",
     borderColor: "border-sky-200",
   },
   {
-    name: "Pacífico Colombiano",
-    slogan: "Sabor a selva y mar",
+    key: "pacifico",
     badgeColor: "bg-blue-50",
     textColor: "text-blue-800",
     borderColor: "border-blue-200",
   },
   {
-    name: "Andes Occidentales",
-    slogan: "Montañas de café y flores",
+    key: "andesOccidentales",
     badgeColor: "bg-rose-50",
     textColor: "text-rose-700",
     borderColor: "border-rose-200",
   },
   {
-    name: "Andes Orientales",
-    slogan: "Páramos y valles legendarios",
+    key: "andesOrientales",
     badgeColor: "bg-amber-50",
     textColor: "text-amber-800",
     borderColor: "border-amber-200",
   },
   {
-    name: "Macizo Colombiano",
-    slogan: "Orígenes ancestrales",
+    key: "macizo",
     badgeColor: "bg-orange-50",
     textColor: "text-orange-800",
     borderColor: "border-orange-200",
   },
   {
-    name: "Amazonía-Orinoquía",
-    slogan: "Selvas y llanos sagrados",
+    key: "amazoniaOrinoquia",
     badgeColor: "bg-emerald-50",
     textColor: "text-emerald-800",
     borderColor: "border-emerald-200",
@@ -72,6 +65,7 @@ const MAX_SCALE = 4;
 const SCALE_STEP = 0.5;
 
 export function MacrorregionesColombia() {
+  const t = useTranslations("macrorregiones");
   const [isOpen, setIsOpen] = useState(false);
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -193,13 +187,13 @@ export function MacrorregionesColombia() {
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-editorial-border shadow-xs text-xs font-semibold uppercase tracking-wider text-editorial-accent mb-4">
               <Compass className="w-3.5 h-3.5" />
-              <span>ProColombia • El País de la Belleza</span>
+              <span>{t("tagline")}</span>
             </div>
             <h2 className="display-2 text-editorial-dark mb-4">
-              Macrorregiones Turísticas de Colombia
+              {t("title")}
             </h2>
             <p className="body-lg text-editorial-muted">
-              Conectamos a los viajeros con la inmensa riqueza biocultural de los seis grandes territorios turísticos oficiales de Colombia, diseñando itinerarios auténticos en cada rincón del país.
+              {t("subtitle")}
             </p>
           </div>
 
@@ -213,17 +207,17 @@ export function MacrorregionesColombia() {
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") setIsOpen(true);
               }}
-              aria-label="Ver mapa de macrorregiones turísticas en alta resolución"
+              aria-label={t("clickToZoom")}
             >
               {/* Top Hint Bar */}
               <div className="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-editorial-border/60 text-xs text-editorial-subtle">
                 <span className="flex items-center gap-1.5 font-medium text-editorial-dark">
                   <MapPin className="w-3.5 h-3.5 text-editorial-accent" />
-                  Mapa Oficial de Destinos y Regiones
+                  {t("mapBadge")}
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-editorial-warm font-medium text-editorial-accent group-hover:bg-editorial-accent group-hover:text-white transition-colors">
                   <ZoomIn className="w-3.5 h-3.5" />
-                  Explorar con Zoom
+                  {t("exploreZoom")}
                 </span>
               </div>
 
@@ -231,7 +225,7 @@ export function MacrorregionesColombia() {
               <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] md:aspect-[16/10] max-h-[640px] flex items-center justify-center">
                 <Image
                   src="/image/procolombia-macrorregionesjpg.jpg.jpeg"
-                  alt="Mapa de las 6 Macrorregiones Turísticas de Colombia - ProColombia"
+                  alt={t("mapAlt")}
                   width={1400}
                   height={1400}
                   className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
@@ -244,23 +238,23 @@ export function MacrorregionesColombia() {
               <div className="absolute inset-0 bg-editorial-dark/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none rounded-3xl">
                 <div className="bg-white/95 backdrop-blur-md px-5 py-3 rounded-full shadow-xl flex items-center gap-2 text-editorial-dark text-sm font-semibold transform translate-y-2 group-hover:translate-y-0 transition-transform">
                   <ZoomIn className="w-4 h-4 text-editorial-accent" />
-                  Clic para abrir y hacer zoom
+                  {t("clickToZoom")}
                 </div>
               </div>
             </div>
 
             {/* 6 Macro-regions summary cards */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mt-8">
-              {REGIONES.map((r, i) => (
+              {REGION_STYLES.map((r) => (
                 <div
-                  key={i}
+                  key={r.key}
                   className={`p-3.5 rounded-2xl ${r.badgeColor} border ${r.borderColor} transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xs`}
                 >
                   <p className={`text-xs font-bold ${r.textColor} leading-tight mb-1`}>
-                    {r.name}
+                    {t(`regions.${r.key}.name`)}
                   </p>
                   <p className="text-[11px] text-editorial-subtle leading-tight">
-                    {r.slogan}
+                    {t(`regions.${r.key}.slogan`)}
                   </p>
                 </div>
               ))}
@@ -284,14 +278,14 @@ export function MacrorregionesColombia() {
           >
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center">
-                <Sparkles className="w-4 h-4" />
+                <Compass className="w-4 h-4 stroke-[1.5]" />
               </div>
               <div>
                 <h3 className="text-sm sm:text-base font-semibold text-white">
-                  Macrorregiones Turísticas de Colombia
+                  {t("title")}
                 </h3>
                 <p className="text-xs text-white/60 hidden sm:block">
-                  Doble clic o usa los controles para acercar/alejar y arrastra para explorar
+                  {t("modalInstructions")}
                 </p>
               </div>
             </div>
@@ -303,8 +297,8 @@ export function MacrorregionesColombia() {
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-2 sm:p-2.5 rounded-full bg-white/15 hover:bg-white/25 text-white transition-colors cursor-pointer focus:outline-none"
-                aria-label="Cerrar visor"
-                title="Cerrar (Esc)"
+                aria-label={t("closeLabel")}
+                title={t("closeTitle")}
               >
                 <X className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
@@ -341,7 +335,7 @@ export function MacrorregionesColombia() {
             >
               <Image
                 src="/image/procolombia-macrorregionesjpg.jpg.jpeg"
-                alt="Mapa detallado de las 6 Macrorregiones Turísticas de Colombia"
+                alt={t("mapDetailAlt")}
                 width={2400}
                 height={2400}
                 className="max-w-[92vw] max-h-[75vh] sm:max-h-[80vh] w-auto h-auto object-contain rounded-2xl shadow-2xl bg-white p-2.5 pointer-events-none"
@@ -361,8 +355,8 @@ export function MacrorregionesColombia() {
                 onClick={handleZoomOut}
                 disabled={scale <= MIN_SCALE}
                 className="p-2 rounded-full hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
-                title="Alejar (-)"
-                aria-label="Alejar mapa"
+                title={t("zoomOut")}
+                aria-label={t("zoomOut")}
               >
                 <ZoomOut className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
@@ -370,19 +364,19 @@ export function MacrorregionesColombia() {
               <button
                 onClick={resetZoom}
                 className="px-3 py-1.5 text-xs font-semibold rounded-full hover:bg-white/20 transition-colors flex items-center gap-1.5 cursor-pointer"
-                title="Restablecer tamaño (0)"
-                aria-label="Restablecer tamaño"
+                title={t("resetTitle")}
+                aria-label={t("reset")}
               >
                 <RotateCcw className="w-3.5 h-3.5" />
-                <span>Reset</span>
+                <span>{t("reset")}</span>
               </button>
 
               <button
                 onClick={handleZoomIn}
                 disabled={scale >= MAX_SCALE}
                 className="p-2 rounded-full hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
-                title="Acercar (+)"
-                aria-label="Acercar mapa"
+                title={t("zoomIn")}
+                aria-label={t("zoomIn")}
               >
                 <ZoomIn className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
@@ -390,7 +384,7 @@ export function MacrorregionesColombia() {
               {scale > 1 && (
                 <div className="hidden sm:flex items-center gap-1 text-[11px] text-white/70 pl-2 border-l border-white/20">
                   <Move className="w-3 h-3" />
-                  <span>Arrastra para mover</span>
+                  <span>{t("dragToMove")}</span>
                 </div>
               )}
             </div>

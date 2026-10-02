@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLocale } from "next-intl";
 
 export interface StepItem {
   title: string;
@@ -23,16 +24,25 @@ export interface ProcessStrings {
 
 const STEPS = ["s1", "s2", "s3", "s4", "s5"] as const;
 
-// Fallback high-res pictures from the project if custom step image is pending
+// Authentic high-res images for every step of medical & wellness travel
 const FALLBACK_STEP_IMAGES: Record<string, string> = {
   s1: "/image/bienestar/Specialist_conducting_virtual_me…_2K_202608292100.jpeg",
   s2: "/image/bienestar/Specialist_reviewing_medical_tre…_2K_202608292104.jpeg",
-  s3: "/image/bienestar/Woman_preparing_dental_travel_it…_202608282016.jpeg",
+  s3: "/image/bienestar/paisaje_tolima.jpeg",
   s4: "/image/bienestar/Woman_relaxing_on_hotel_terrace_202608282028.jpeg",
-  s5: "/image/bienestar/Woman_having_dental_video_consul…_202608282040.jpeg",
+  s5: "/image/bienestar/mujer_sonriendo.jpeg",
+};
+
+const NAV_LABELS: Record<string, { prev: string; next: string; prevAria: string; nextAria: string }> = {
+  es: { prev: "Anterior", next: "Siguiente", prevAria: "Paso anterior", nextAria: "Siguiente paso" },
+  en: { prev: "Previous", next: "Next", prevAria: "Previous step", nextAria: "Next step" },
+  fr: { prev: "Précédent", next: "Suivant", prevAria: "Étape précédente", nextAria: "Étape suivante" },
+  de: { prev: "Zurück", next: "Weiter", prevAria: "Vorheriger Schritt", nextAria: "Nächster Schritt" },
 };
 
 export function WellnessProcessTimeline({ strings: s }: { strings: ProcessStrings }) {
+  const locale = useLocale();
+  const navText = NAV_LABELS[locale] ?? NAV_LABELS.es;
   const [activeStep, setActiveStep] = useState(0);
   const [direction, setDirection] = useState(0);
 
@@ -148,10 +158,10 @@ export function WellnessProcessTimeline({ strings: s }: { strings: ProcessString
 
                   {/* Step Content */}
                   <div className="p-6 text-center">
-                    <h3 className="font-heading font-bold text-white text-xl mb-2.5 leading-snug">
+                    <h3 className="font-sans font-semibold text-white text-lg mb-2 leading-snug">
                       {s[STEPS[activeStep]]?.title}
                     </h3>
-                    <p className="text-white/75 text-sm leading-relaxed max-w-sm mx-auto">
+                    <p className="text-white/80 text-sm leading-relaxed max-w-sm mx-auto font-light">
                       {s[STEPS[activeStep]]?.desc}
                     </p>
                   </div>
@@ -166,19 +176,19 @@ export function WellnessProcessTimeline({ strings: s }: { strings: ProcessString
               onClick={prevStep}
               disabled={activeStep === 0}
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-white/20 text-white text-sm font-medium transition-all active:scale-95 disabled:opacity-30 disabled:pointer-events-none hover:bg-white/10 touch-manipulation"
-              aria-label="Paso anterior"
+              aria-label={navText.prevAria}
             >
               <ChevronLeft className="w-4 h-4" />
-              <span>Anterior</span>
+              <span>{navText.prev}</span>
             </button>
 
             <button
               onClick={nextStep}
               disabled={activeStep === STEPS.length - 1}
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-white/20 bg-white/10 text-white text-sm font-medium transition-all active:scale-95 disabled:opacity-30 disabled:pointer-events-none hover:bg-white/20 touch-manipulation"
-              aria-label="Siguiente paso"
+              aria-label={navText.nextAria}
             >
-              <span>Siguiente</span>
+              <span>{navText.next}</span>
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
@@ -214,10 +224,10 @@ export function WellnessProcessTimeline({ strings: s }: { strings: ProcessString
 
                 {/* Step Text Info */}
                 <div className="p-5 flex flex-col flex-1 text-left">
-                  <h3 className="font-heading font-bold text-white text-base mb-2 leading-snug group-hover:text-[var(--color-wellness-gold)] transition-colors duration-300">
+                  <h3 className="font-sans font-semibold text-white text-base mb-2 leading-snug group-hover:text-[var(--color-wellness-gold)] transition-colors duration-300">
                     {step?.title}
                   </h3>
-                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed flex-1">
+                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed flex-1 font-light">
                     {step?.desc}
                   </p>
                 </div>

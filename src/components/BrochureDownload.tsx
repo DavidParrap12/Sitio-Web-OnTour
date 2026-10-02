@@ -157,7 +157,7 @@ export function BrochureDownload({ images, title, slug, labels }: BrochureDownlo
         pdf.setFontSize(8);
         pdf.setFont("helvetica", "normal");
         pdf.text(
-          "www.agenciaontour.com  |  gerencia@agenciaontour.com  |  +57 316 538 6892",
+          "www.ontourdmc.com  |  info@ontourdmc.com  |  +57 314 341 5177",
           pageW / 2,
           pageH - footerH / 2 + 1,
           { align: "center" }
@@ -322,7 +322,7 @@ export function BrochureDownload({ images, title, slug, labels }: BrochureDownlo
                     alignment: AlignmentType.CENTER,
                     children: [
                       new TextRun({
-                        text: "www.agenciaontour.com  |  gerencia@agenciaontour.com  |  +57 316 538 6892",
+                        text: "www.ontourdmc.com  |  info@ontourdmc.com  |  +57 314 341 5177",
                         size: 16,
                         color: "0B3A60",
                         font: "Calibri",

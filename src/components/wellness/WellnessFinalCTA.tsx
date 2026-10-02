@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import { RequestQuoteModal } from "@/components/RequestQuoteModal";
+import { trackRequestQuoteClick, trackWhatsAppClick } from "@/lib/analytics";
 
 export interface CtaStrings {
   title: string;
@@ -12,6 +14,8 @@ export interface CtaStrings {
 }
 
 export function WellnessFinalCTA({ strings: s }: { strings: CtaStrings }) {
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+
   return (
     <section className="py-16 md:py-24 bg-[var(--color-wellness-primary)] editorial-section overflow-hidden relative">
       {/* Decorative blobs */}
@@ -34,8 +38,7 @@ export function WellnessFinalCTA({ strings: s }: { strings: CtaStrings }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="font-heading text-white mb-5"
-          style={{ fontSize: "clamp(1.75rem, 3vw + 0.5rem, 2.75rem)", lineHeight: 1.2, letterSpacing: "-0.02em" }}
+          className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-white mb-5 tracking-tight"
         >
           {s.title}
         </motion.h2>
@@ -45,7 +48,7 @@ export function WellnessFinalCTA({ strings: s }: { strings: CtaStrings }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="text-white/80 text-lg mb-10"
+          className="text-white/80 text-base sm:text-lg mb-10 font-light leading-relaxed"
         >
           {s.subtitle}
         </motion.p>
@@ -58,23 +61,37 @@ export function WellnessFinalCTA({ strings: s }: { strings: CtaStrings }) {
           transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link
-            href="/contacto"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-wellness-glow-gold)]"
+          <button
+            type="button"
+            onClick={() => {
+              trackRequestQuoteClick("wellness_final_cta");
+              setIsQuoteOpen(true);
+            }}
+            className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 shadow-lg min-h-[48px] cursor-pointer"
             style={{ background: "linear-gradient(135deg, #C9A961, #b5944e)", color: "#0A2540" }}
           >
-            {s.button}
+            <span>{s.button}</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-
-          {false && (
-          <button className="group inline-flex items-center gap-2 px-7 py-4 rounded-full border border-white/20 text-white/75 hover:text-white hover:border-white/40 text-sm font-medium transition-all duration-300">
-            <Download className="w-4 h-4" />
-            {s.secondaryButton}
           </button>
-          )}
+
+          <a
+            href="https://wa.me/573143415177?text=Hola%20OnTour%20Health%2C%20quisiera%20solicitar%20asesor%C3%ADa%20para%20turismo%20m%C3%A9dico."
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick("wellness_final_cta", "Hola OnTour Health, quisiera solicitar asesoría para turismo médico.")}
+            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white/90 hover:text-white hover:border-white/40 text-sm font-medium transition-all duration-200 min-h-[48px]"
+          >
+            <MessageCircle className="w-4 h-4 text-[#25D366]" />
+            <span>WhatsApp Directo (SLA 24h)</span>
+          </a>
         </motion.div>
       </div>
+
+      <RequestQuoteModal
+        isOpen={isQuoteOpen}
+        onClose={() => setIsQuoteOpen(false)}
+        preselectedExperience="wellness"
+      />
     </section>
   );
 }

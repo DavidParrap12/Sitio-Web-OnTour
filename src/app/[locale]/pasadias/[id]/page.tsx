@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { destinos } from "@/data/destinos";
 import { routing } from "@/i18n/routing";
 import { CheckCircle2, Clock, MapPin, Send } from "lucide-react";
@@ -15,6 +16,49 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     destinos.map((d) => ({ locale, id: d.id }))
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; id: string }>;
+}): Promise<Metadata> {
+  const { locale, id } = await params;
+  const tData = await getTranslations({ locale, namespace: "destinosData" });
+  const pasadia = destinos.find((d) => d.id === id);
+  if (!pasadia) return {};
+
+  const name = tData(`${id}.name`);
+  const description = tData(`${id}.description`);
+  const ogImageUrl = pasadia.image.startsWith("http")
+    ? pasadia.image
+    : `https://www.ontourdmc.com${pasadia.image}`;
+
+  return {
+    title: `${name} | OnTour DMC Colombia`,
+    description,
+    openGraph: {
+      title: `${name} | OnTour DMC Colombia`,
+      description,
+      url: `https://www.ontourdmc.com/${locale}/day-trips/${id}`,
+      siteName: "Ontour DMC Colombia",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: name,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${name} | OnTour DMC Colombia`,
+      description,
+      images: [ogImageUrl],
+    },
+  };
 }
 
 export default async function PasadiaPage({
@@ -43,9 +87,9 @@ export default async function PasadiaPage({
 
   const schema = buildPasadiaSchema({ id, name, description, duration, image: pasadia.image, locale });
   const breadcrumb = buildBreadcrumbs([
-    { name: "Home", url: "https://www.agenciaontour.com" },
-    { name: locale === "es" ? "Pasadías" : "Day Trips", url: `https://www.agenciaontour.com/${locale === "es" ? "pasadias" : locale + "/day-trips"}` },
-    { name, url: `https://www.agenciaontour.com/${locale === "es" ? "pasadias" : locale + "/day-trips"}/${id}` },
+    { name: "Home", url: "https://www.ontourdmc.com" },
+    { name: locale === "es" ? "Pasadías" : "Day Trips", url: `https://www.ontourdmc.com/${locale === "es" ? "pasadias" : locale + "/day-trips"}` },
+    { name, url: `https://www.ontourdmc.com/${locale === "es" ? "pasadias" : locale + "/day-trips"}/${id}` },
   ]);
 
   return (

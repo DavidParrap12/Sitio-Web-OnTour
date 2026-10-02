@@ -14,6 +14,7 @@ export interface GalleryImageData {
   src: string;
   alt: string;
   category: string;
+  categoryKey?: string;
   author?: string; // Nombre del viajero, solo para categoría Experiencias
 }
 
@@ -40,17 +41,28 @@ export function GaleriaEditorial({
   const [filter, setFilter] = useState("all");
   const [lightbox, setLightbox] = useState<number | null>(null);
 
-  const filtered = useMemo(
-    () => (filter === "all" ? images : images.filter((img) => img.category === filter)),
-    [filter, images]
-  );
+  const experienciasLabel = t("experienciasLabel");
+  const isExp = (cat?: string, catKey?: string) =>
+    catKey === "experiencias" || cat === EXPERIENCIAS_KEY || cat === experienciasLabel;
 
-  const isExperienciasMode = filter === EXPERIENCIAS_KEY;
+  const isExperienciasMode =
+    filter === EXPERIENCIAS_KEY || filter === experienciasLabel || filter === "experiencias";
+
   const experienciasImages = useMemo(
-    () => images.filter((img) => img.category === EXPERIENCIAS_KEY),
-    [images]
+    () => images.filter((img) => isExp(img.category, img.categoryKey)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [images, experienciasLabel]
   );
   const hasExperiencias = experienciasImages.length > 0;
+
+  const filtered = useMemo(() => {
+    if (filter === "all") return images;
+    if (isExperienciasMode) {
+      return images.filter((img) => isExp(img.category, img.categoryKey));
+    }
+    return images.filter((img) => img.category === filter || img.categoryKey === filter);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter, images, isExperienciasMode, experienciasLabel]);
 
   const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("¡Hola! Quiero compartir una foto de mi experiencia con OnTour 📸")}`;
 
@@ -171,7 +183,7 @@ export function GaleriaEditorial({
 
             {/* Categorías regulares */}
             {categories
-              .filter((cat) => cat !== EXPERIENCIAS_KEY)
+              .filter((cat) => !isExp(cat))
               .map((cat) => (
                 <button
                   key={cat}
@@ -187,19 +199,19 @@ export function GaleriaEditorial({
               ))}
 
             {/* Experiencias — tab especial con icono corazón */}
-            {categories.includes(EXPERIENCIAS_KEY) && (
+            {categories.some((cat) => isExp(cat)) && (
               <button
-                onClick={() => setFilter(EXPERIENCIAS_KEY)}
+                onClick={() => setFilter(isExperienciasMode ? "all" : experienciasLabel)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-1.5 ${
-                  filter === EXPERIENCIAS_KEY
+                  isExperienciasMode
                     ? "bg-rose-500 text-white shadow-editorial-md"
                     : "bg-rose-50 text-rose-600 hover:bg-rose-100 border border-rose-200"
                 }`}
               >
                 <Heart className="w-3.5 h-3.5" />
-                {t("experienciasLabel")}
+                {experienciasLabel}
                 {experienciasImages.length > 0 && (
-                  <span className={`text-xs rounded-full px-1.5 py-0.5 font-bold ${filter === EXPERIENCIAS_KEY ? "bg-white/20" : "bg-rose-100"}`}>
+                  <span className={`text-xs rounded-full px-1.5 py-0.5 font-bold ${isExperienciasMode ? "bg-white/20" : "bg-rose-100"}`}>
                     {experienciasImages.length}
                   </span>
                 )}
@@ -302,7 +314,7 @@ export function GaleriaEditorial({
                         />
 
                         {/* Badge especial para fotos de viajeros */}
-                        {img.category === EXPERIENCIAS_KEY && (
+                        {isExp(img.category, img.categoryKey) && (
                           <div className="absolute top-3 left-3 flex items-center gap-1 bg-rose-500/90 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full">
                             <Heart className="w-3 h-3" />
                             {img.author ?? "Viajero OnTour"}
@@ -387,7 +399,7 @@ export function GaleriaEditorial({
             </div>
 
             {/* Experiencias badge en lightbox */}
-            {filtered[lightbox]?.category === EXPERIENCIAS_KEY && (
+            {isExp(filtered[lightbox]?.category, filtered[lightbox]?.categoryKey) && (
               <div className="absolute top-6 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-rose-500/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
                 <Heart className="w-3 h-3" />
                 {filtered[lightbox].author ?? "Viajero OnTour"}

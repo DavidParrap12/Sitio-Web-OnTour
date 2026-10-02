@@ -79,17 +79,32 @@ export async function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
-                <a href="mailto:gerencia@agenciaontour.com" className="hover:text-accent transition-colors">gerencia@agenciaontour.com</a>
+                <a href="mailto:info@ontourdmc.com" className="hover:text-accent transition-colors">info@ontourdmc.com</a>
               </li>
             </ul>
           </div>
 
         </div>
 
+        {/* Legal Compliance Collapsible Accordion */}
         <div className="pt-6 pb-6 border-t border-gray-800">
-          <p className="text-[10px] text-gray-400 text-justify leading-relaxed">
-            {t("legalDisclaimer")}
-          </p>
+          <details className="group cursor-pointer">
+            <summary className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-gray-400 hover:text-white transition-colors py-1.5 list-none select-none">
+              <span className="flex items-center gap-2 font-medium text-gray-300">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                <span>Cumplimiento Legal, Protección de Menores (ESCNNA) y Patrimonio Nacional</span>
+              </span>
+              <span className="text-[11px] text-accent underline self-start sm:self-auto font-medium group-open:hidden">
+                Ver detalle de leyes y normatividad ↓
+              </span>
+              <span className="text-[11px] text-gray-400 underline self-start sm:self-auto font-medium hidden group-open:inline">
+                Ocultar detalle ↑
+              </span>
+            </summary>
+            <div className="mt-3 p-4 rounded-xl bg-white/5 border border-white/10 text-[11px] text-gray-400 text-justify leading-relaxed">
+              {t("legalDisclaimer")}
+            </div>
+          </details>
         </div>
 
         <div className="pt-6 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4">

@@ -253,8 +253,8 @@
       "subtitle": "Access world-class medical and aesthetic procedures with up to 70% savings compared to the US, backed by board-certified specialists in the heart of the Colombian Andes.",
       "ctaPrimary": "Request Free Consultation",
       "ctaSecondary": "See How the Process Works",
-      "imagePatientAlt": "[CLIENT: Photo of a smiling patient — professional portrait, white background preferred]",
-      "imageTolimaAlt": "[CLIENT: Photo of the Tolima landscape — coffee region, mountains, lush green]"
+      "imagePatientAlt": "Smiling patient experiencing premium medical and wellness care in Colombia",
+      "imageTolimaAlt": "Scenic mountain landscape of Tolima and the Colombian coffee region"
     },
     "trust": {
       "certified": "Board-Certified Specialists",
@@ -324,7 +324,7 @@
       "title": "Healing in Nature.",
       "subtitle": "Discover conscious tourism, warm hospitality, and the breathtaking landscapes of Colombia's coffee region while you recover.",
       "cta": "Explore Recovery Circuits",
-      "imageAlt": "[CLIENT: Photo of the Tolima/Coffee Region — wide shot, mountains, palms]"
+      "imageAlt": "Panoramic view of the Andes and Tolima coffee region"
     },
     "testimonials": {
       "title": "Real Results, Real Patients",
@@ -786,6 +786,15 @@
       },
       "jennyHernandez": {
         "text": "Good service, very good plans and rates."
+      },
+      "micilene": {
+        "text": "Excellent service and attention, the food, bar, and very punctual in everything. I recommend it."
+      },
+      "ruthAhumada": {
+        "text": "Excellent, I had a great time, everything agreed upon with Ontour was fully delivered."
+      },
+      "mariaAntonia": {
+        "text": "Excellent service. Great dedication and commitment from the manager and team. The hotel was excellent. The places visited were very beautiful, congratulations."
       }
     }
   },
@@ -839,7 +848,7 @@
     },
     "rights": {
       "title": "5. Your Rights",
-      "text": "In accordance with Law 1581 of 2012 (Personal Data Protection in Colombia), you have the right to access, update, rectify, and delete your personal data. To exercise these rights, email us at gerencia@agenciaontour.com."
+      "text": "In accordance with Law 1581 of 2012 (Personal Data Protection in Colombia), you have the right to access, update, rectify, and delete your personal data. To exercise these rights, email us at info@ontourdmc.com."
     },
     "cookies": {
       "title": "6. Cookies",
@@ -873,7 +882,7 @@
     "subtitle": "Answers to the most common questions from our travelers.",
     "q1": {
       "question": "How can I book a trip with Ontour?",
-      "answer": "You can contact us via WhatsApp at +57 316 538 6892, by email at gerencia@agenciaontour.com, or through the contact form on our website. An advisor will respond with a personalized quote."
+      "answer": "You can contact us via WhatsApp at +57 316 538 6892, by email at info@ontourdmc.com, or through the contact form on our website. An advisor will respond with a personalized quote."
     },
     "q2": {
       "question": "What is included in the tourist circuits?",
@@ -971,6 +980,50 @@
     "experienciasCtaTitle": "Did you travel with OnTour?",
     "experienciasCtaDesc": "Share your photo and become part of our traveler community.",
     "experienciasCtaBtn": "Send my photo"
+  },
+  "macrorregiones": {
+    "tagline": "ProColombia • The Country of Beauty",
+    "title": "Tourist Macro-regions of Colombia",
+    "subtitle": "We connect travelers with the immense biocultural richness of Colombia's six official tourist territories, designing authentic itineraries in every corner of the country.",
+    "mapBadge": "Official Map of Destinations & Regions",
+    "exploreZoom": "Explore with Zoom",
+    "clickToZoom": "Click to open and zoom",
+    "mapAlt": "Map of the 6 Tourist Macro-regions of Colombia - ProColombia",
+    "mapDetailAlt": "Detailed map of the 6 Tourist Macro-regions of Colombia",
+    "modalInstructions": "Double-click or use controls to zoom in/out and drag to explore",
+    "closeLabel": "Close viewer",
+    "closeTitle": "Close (Esc)",
+    "zoomIn": "Zoom in (+)",
+    "zoomOut": "Zoom out (-)",
+    "reset": "Reset",
+    "resetTitle": "Reset size (0)",
+    "dragToMove": "Drag to move",
+    "regions": {
+      "caribe": {
+        "name": "Greater Colombian Caribbean",
+        "slogan": "Much more than Caribbean"
+      },
+      "pacifico": {
+        "name": "Colombian Pacific",
+        "slogan": "Taste of jungle and ocean"
+      },
+      "andesOccidentales": {
+        "name": "Western Andes",
+        "slogan": "Mountains of coffee and flowers"
+      },
+      "andesOrientales": {
+        "name": "Eastern Andes",
+        "slogan": "Legendary paramos and valleys"
+      },
+      "macizo": {
+        "name": "Colombian Massif",
+        "slogan": "Ancestral origins"
+      },
+      "amazoniaOrinoquia": {
+        "name": "Amazonia-Orinoquia",
+        "slogan": "Sacred rainforests and plains"
+      }
+    }
   },
   "destinosData": {
     "cascada-la-plata-pasadia": {

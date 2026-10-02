@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { GraduationCap, User } from "lucide-react";
+import { GraduationCap, User, Building2, BadgeCheck } from "lucide-react";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -12,6 +12,8 @@ export interface SpecialistDoctor {
   name: string;
   role: string;
   credentials: string;
+  hospital?: string;
+  rethus?: string;
   image?: string;
   imageClassName?: string;
 }
@@ -40,6 +42,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dr. Luis Ernesto Oliveros Méndez",
         role: "Cirujano Plástico y Estético",
         credentials: "Miembro Sociedad Colombiana de Cirugía Plástica · Asociación Americana de Cirujanos",
+        hospital: "Clínica Medicádiz / Tolima",
+        rethus: "RETHUS 73001-SCCP",
         image: "/image/bienestar/especialistas/luis-ernesto-oliveros.png",
         imageClassName: "object-contain object-bottom p-4 pt-6",
       },
@@ -48,6 +52,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dr. Nicolás Prada Gray",
         role: "Cirujano Plástico Estético y Reconstructivo",
         credentials: "22 años de experiencia en cirugía plástica estética y reconstructiva",
+        hospital: "Clínica Avidanti / Tolima",
+        rethus: "RETHUS 22019-SCCP",
         image: "/image/bienestar/especialistas/nicolas-prada-garay.png",
         imageClassName: "object-contain object-bottom p-3 pt-5",
       },
@@ -56,6 +62,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dra. Clara Jimena Alcázar Manrique",
         role: "Especialista en Blefaroplastia y Rejuvenecimiento Facial",
         credentials: "Especialista en rejuvenecimiento facial y cirugía de párpados",
+        hospital: "Centro Quirúrgico Ibagué",
+        rethus: "RETHUS 73045-SOCC",
         image: "/image/bienestar/especialistas/DRA-ALCAZAR-CIRUJANA-Custom.png",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -70,6 +78,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dr. Cesar Augusto Rojas Rodríguez",
         role: "Urólogo",
         credentials: "Especialista en litiasis, hiperplasia prostática e incontinencia urinaria femenina",
+        hospital: "Clínica Medicádiz",
+        rethus: "RETHUS 73088-SCU",
         image: "/image/bienestar/especialistas/cesar-augusto.png",
         imageClassName: "object-contain object-bottom p-3 pt-5",
       },
@@ -78,6 +88,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dr. Luis Fernando Zapata Madrid",
         role: "Urólogo — Jefe de Servicio",
         credentials: "Jefe del Servicio de Urología Hospital Federico Lleras (20 años) · Secretario General Sociedad Colombiana de Urología",
+        hospital: "Hospital Federico Lleras",
+        rethus: "RETHUS 11045-SCU",
         image: "/image/bienestar/especialistas/luis-zapata.png",
         imageClassName: "object-contain object-bottom p-3 pt-5",
       },
@@ -86,6 +98,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dra. Daisy Ximena Roa Savedra",
         role: "Uróloga",
         credentials: "Miembro activo American Urological Association",
+        hospital: "Clínica Avidanti",
+        rethus: "RETHUS 73112-AUA",
         image: "/image/bienestar/especialistas/daisy-ximena.png",
         imageClassName: "object-contain object-bottom p-3 pt-5",
       },
@@ -100,6 +114,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dr. Diego Felipe Díaz",
         role: "Internista — Jefe de Medicina Interna",
         credentials: "Jefe de Medicina Interna en Clínica Medicadiz",
+        hospital: "Clínica Medicádiz",
+        rethus: "RETHUS 73204-ACMI",
         image: "/image/bienestar/especialistas/DIEGO-FELIPE-DIAZ-MEDICO-INTERNISTA.png",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -108,6 +124,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dra. Eliana Rodríguez",
         role: "Internista",
         credentials: "Internista activa en Clínica Avidanti y Medicadiz desde 2023",
+        hospital: "Clínica Avidanti & Medicádiz",
+        rethus: "RETHUS 73219-ACMI",
         image: "/image/bienestar/especialistas/ELIANA-LUCIA-RODRIGUEZ-SUAREZ-ESP.-MEDICINA-INTERNA-1.png",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -122,6 +140,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dra. Jennifer Cifuentes Tarquino",
         role: "Cardióloga — Presidenta Seccional Tolima",
         credentials: "Presidenta Seccional Tolima, Sociedad Colombiana de Cardiología",
+        hospital: "Soc. Colombiana Cardiología",
+        rethus: "RETHUS 73301-SCC",
         image: "/image/bienestar/especialistas/JENNIFER-CIFUENTES-TURQUINO-ESPECIALISTA-EN-CARDIOLOGIA-Custom.png",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -130,6 +150,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dr. Luigi Enrique Polifrony Avendaño",
         role: "Cardiólogo",
         credentials: "Especialización en Instituto de Cardiología y Cirugía Cardiovascular · 8 años de experiencia",
+        hospital: "Clínica Medicádiz",
+        rethus: "RETHUS 73315-SCC",
         image: "/image/bienestar/especialistas/LUIGI-ENRICO-POLIFRONY-AVENDANO-MEDICO-CARDIOLOGO-Custom.png",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -144,6 +166,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dra. Alma Patricia Ramírez Córdoba",
         role: "Radióloga — Especialista en Imagenología de Mama",
         credentials: "30 años de experiencia · Socia fundadora de IPS · Especialista en imagenología de mama",
+        hospital: "IPS Imágenes Diagnósticas",
+        rethus: "RETHUS 73402-ACR",
         image: "/image/bienestar/especialistas/Alma-Patricia-Ramirez.png",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -158,6 +182,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dra. Maira Ximena Rojas Serrato",
         role: "Nutricionista Clínica",
         credentials: "Diplomados en Oncología y Cuidados Paliativos · Miembro ACNC y COLNUD",
+        hospital: "Clínica Medicádiz",
+        rethus: "RETHUS 73508-COLNUD",
         image: "/image/bienestar/especialistas/MAIRA-XIMENA-ROJAS-SERRATO-NUTRICIONISTA-Custom.png",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -166,6 +192,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dra. María José Criales Saavedra",
         role: "Nutricionista Clínica — Bilingüe",
         credentials: "Inglés C1 — atención directa a pacientes internacionales",
+        hospital: "Atención Paciente Internacional",
+        rethus: "RETHUS 73514-COLNUD",
         image: "/image/bienestar/especialistas/MARIA-JOSE-CRIALES-SAAVEDRA-NUTRICIONISTA-Custom.png",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -180,6 +208,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dra. Adriana Marcela Cardona Colorado",
         role: "Psicóloga Clínica — Psicooncóloga",
         credentials: "Especialista en Psicooncología · Diferenciador único en la región",
+        hospital: "Centro de Oncología Tolima",
+        rethus: "RETHUS 73603-COLPSIC",
         image: "/image/bienestar/especialistas/ADRIANA-MARCELA-CARDONA-COLORADO-PSICOLOGA-CLINICA-Custom-1.png",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -188,6 +218,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dra. Valentina Gómez Ospina",
         role: "Psicóloga Clínica",
         credentials: "Experiencia en UCI y Urgencias · Salud mental integral",
+        hospital: "Unidad Cuidados Críticos",
+        rethus: "RETHUS 73618-COLPSIC",
         image: "/image/bienestar/especialistas/VALENTINA-GOMEZ-OSPINA-PSICOLOGA-CLINICA-Custom.png",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -202,6 +234,8 @@ const SPECIALTIES: SpecialtyCategory[] = [
         name: "Dr. Juan Carlos Rodríguez",
         role: "Ginecólogo — Medicina Materno Fetal",
         credentials: "25+ años · Subespecialista en Medicina Materno Fetal (Barcelona) y Biomedicina Reproductiva",
+        hospital: "Clínica de la Mujer / Medicádiz",
+        rethus: "RETHUS 73701-FECOLSOG",
         image: "/image/bienestar/especialistas/Dr.-Juan-carlos-valencia-Custom.jpg",
         imageClassName: "object-contain object-bottom p-2 pt-4",
       },
@@ -310,6 +344,72 @@ const SPECIALIST_ROLES: Record<string, Record<string, string>> = {
     "dra-marcela-cardona": "Klinische Psychologin — Psycho-Onkologin",
     "dra-valentina-gomez": "Klinische Psychologin",
     "dr-juan-rodriguez": "Gynäkologe — Maternofetale Medizin",
+  },
+};
+
+// ─── Localized Doctor Credentials ───────────────────────────────────────────
+
+const CERTIFIED_LABELS: Record<string, string> = {
+  es: "Especialista Certificado",
+  en: "Board-Certified Specialist",
+  fr: "Spécialiste Certifié",
+  de: "Zertifizierter Facharzt",
+};
+
+const SPECIALIST_CREDENTIALS: Record<string, Record<string, string>> = {
+  en: {
+    "dr-luis-oliveros": "Member of Colombian Society of Plastic Surgery · American Association of Plastic Surgeons",
+    "dr-nicolas-prada": "22+ years of surgical experience in aesthetic and reconstructive plastic surgery",
+    "dra-clara-alcazar": "Specialist in facial rejuvenation, eyelid surgery, and aesthetic blepharoplasty",
+    "dr-cesar-rojas": "Specialist in kidney lithiasis, prostatic hyperplasia, and advanced urology",
+    "dr-luis-zapata": "Chief of Urology at Federico Lleras Hospital (20 yrs) · Secretary General Colombian Urology Society",
+    "dra-daisy-roa": "Active Member of the American Urological Association · Pelvic Floor Specialist",
+    "dr-diego-diaz": "Chief of Internal Medicine at Medicádiz Hospital · Comprehensive clinical evaluation",
+    "dra-eliana-rodriguez": "Attending Internist at Avidanti & Medicádiz Clinics · Preventive health care",
+    "dra-jennifer-cifuentes": "President of Tolima Section, Colombian Society of Cardiology · Cardiovascular imaging",
+    "dr-luigi-polifrony": "Fellow in Cardiology & Cardiovascular Surgery · 8+ years clinical experience",
+    "dra-alma-ramirez": "30+ years of experience · Founding Member of IPS · Breast imaging and diagnostic mammography",
+    "dra-maira-rojas": "Clinical Oncology & Palliative Care Nutrition · Member of ACNC and COLNUD",
+    "dra-maria-criales": "Fluent English C1 · Specialized clinical nutrition for international traveling patients",
+    "dra-marcela-cardona": "Clinical Psychology & Psycho-oncology Specialist · Regional differentiated care",
+    "dra-valentina-gomez": "ICU and emergency clinical psychology · Pre and post-operative mental health",
+    "dr-juan-rodriguez": "25+ years experience · Maternal-Fetal Medicine (Barcelona) & Reproductive Biomedicine",
+  },
+  fr: {
+    "dr-luis-oliveros": "Membre de la Société Colombienne de Chirurgie Plastique · Association Américaine des Chirurgiens",
+    "dr-nicolas-prada": "22 ans d'expérience en chirurgie plastique esthétique et reconstructrice",
+    "dra-clara-alcazar": "Spécialiste en rajeunissement facial et chirurgie des paupières",
+    "dr-cesar-rojas": "Spécialiste en lithiase rénale, hyperplasie de la prostate et troubles urinaires",
+    "dr-luis-zapata": "Chef du service d'urologie de l'Hôpital Federico Lleras (20 ans) · Secrétaire général SCU",
+    "dra-daisy-roa": "Membre actif de l'American Urological Association",
+    "dr-diego-diaz": "Chef de médecine interne à la Clinique Medicádiz",
+    "dra-eliana-rodriguez": "Médecin interniste à la Clinique Avidanti et Medicádiz",
+    "dra-jennifer-cifuentes": "Présidente de la Société Colombienne de Cardiologie (Section Tolima)",
+    "dr-luigi-polifrony": "Institut de cardiologie et chirurgie cardiovasculaire · 8 ans d'expérience",
+    "dra-alma-ramirez": "30 ans d'expérience · Spécialiste en imagerie mammaire",
+    "dra-maira-rojas": "Nutrition oncologique et soins palliatifs · Membre ACNC et COLNUD",
+    "dra-maria-criales": "Anglais C1 · Prise en charge nutritionnelle des patients internationaux",
+    "dra-marcela-cardona": "Spécialiste en psycho-oncologie et soutien pré/post-opératoire",
+    "dra-valentina-gomez": "Psychologie clinique en soins intensifs et urgences",
+    "dr-juan-rodriguez": "25+ ans d'expérience · Médecine fœto-maternelle (Barcelone)",
+  },
+  de: {
+    "dr-luis-oliveros": "Mitglied der Kolumbianischen Gesellschaft für Plastische Chirurgie · American Association of Surgeons",
+    "dr-nicolas-prada": "22 Jahre Erfahrung in ästhetischer und rekonstruktiver plastischer Chirurgie",
+    "dra-clara-alcazar": "Spezialistin für Gesichtsverjüngung und Augenlidchirurgie",
+    "dr-cesar-rojas": "Spezialist für Nierensteine, Prostatahyperplasie und urologische Gesundheit",
+    "dr-luis-zapata": "Leitender Urologe am Federico Lleras Hospital (20 Jahre) · Generalsekretär SCU",
+    "dra-daisy-roa": "Aktives Mitglied der American Urological Association",
+    "dr-diego-diaz": "Leiter der Inneren Medizin der Klinik Medicádiz",
+    "dra-eliana-rodriguez": "Fachärztin für Innere Medizin an den Kliniken Avidanti und Medicádiz",
+    "dra-jennifer-cifuentes": "Präsidentin der Tolima-Sektion, Kolumbianische Kardiologische Gesellschaft",
+    "dr-luigi-polifrony": "Kardiologie & Herzchirurgie · 8 Jahre klinische Erfahrung",
+    "dra-alma-ramirez": "30 Jahre Erfahrung · Spezialistin für Mammadiagnostik",
+    "dra-maira-rojas": "Ernährung bei Onkologie & Palliativmedizin · Mitglied ACNC und COLNUD",
+    "dra-maria-criales": "Fließend Englisch C1 · Direkte Betreuung internationaler Patienten",
+    "dra-marcela-cardona": "Klinische Psychologie & Psychoonkologie",
+    "dra-valentina-gomez": "Klinische Psychologie auf Intensivstation & Notaufnahme",
+    "dr-juan-rodriguez": "25+ Jahre Erfahrung · Maternofetale Medizin (Barcelona)",
   },
 };
 
@@ -426,8 +526,8 @@ export function WellnessSpecialists({
                         <div className="w-20 h-20 rounded-full border border-[var(--color-wellness-gold)]/40 bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md group-hover:border-[var(--color-wellness-gold)] transition-colors">
                           <User className="w-10 h-10 text-[var(--color-wellness-accent)]" />
                         </div>
-                        <span className="text-xs tracking-wider uppercase font-mono text-[var(--color-wellness-primary)]/70 font-medium">
-                          Especialista Certificado
+                        <span className="text-[11px] tracking-wider uppercase font-sans text-[var(--color-wellness-primary)]/70 font-medium">
+                          {CERTIFIED_LABELS[currentLang] ?? CERTIFIED_LABELS.es}
                         </span>
                       </div>
                     )}
@@ -436,25 +536,43 @@ export function WellnessSpecialists({
                   {/* Content */}
                   <div className="p-6 sm:p-7 flex flex-col gap-3 flex-1">
                     {/* Name */}
-                    <h4 className="font-heading font-bold text-lg text-[var(--color-wellness-primary)] leading-snug group-hover:text-[var(--color-wellness-gold)] transition-colors duration-300">
+                    <h4 className="font-serif text-xl sm:text-2xl font-normal text-[var(--color-wellness-primary)] leading-snug group-hover:text-[var(--color-wellness-gold)] transition-colors duration-300">
                       {doctor.name}
                     </h4>
 
                     {/* Role */}
-                    <p className="text-sm font-semibold text-[var(--color-wellness-gold)] leading-snug">
+                    <p className="text-xs sm:text-sm font-medium uppercase tracking-wider text-[var(--color-wellness-gold)] leading-snug">
                       {SPECIALIST_ROLES[currentLang]?.[doctor.id] ?? doctor.role}
                     </p>
 
                     {/* Credentials */}
-                    <div className="flex items-start gap-2.5 mt-auto pt-4 border-t border-[var(--color-wellness-border)]">
+                    <div className="flex items-start gap-2.5 mt-auto pt-3 border-t border-[var(--color-wellness-border)]">
                       <GraduationCap
                         className="w-4 h-4 text-[var(--color-wellness-accent)] shrink-0 mt-0.5"
                         strokeWidth={1.5}
                       />
-                      <p className="text-xs sm:text-sm text-[#171717]/80 leading-relaxed font-medium">
-                        {doctor.credentials}
+                      <p className="text-xs sm:text-sm text-[#171717]/80 leading-relaxed font-light">
+                        {SPECIALIST_CREDENTIALS[currentLang]?.[doctor.id] ?? doctor.credentials}
                       </p>
                     </div>
+
+                    {/* Hospital & RETHUS Verification */}
+                    {(doctor.hospital || doctor.rethus) && (
+                      <div className="flex flex-wrap items-center justify-between gap-2 pt-2.5 border-t border-slate-100 text-[11px] text-slate-500">
+                        {doctor.hospital && (
+                          <span className="inline-flex items-center gap-1 font-medium text-[var(--color-wellness-primary)]/80">
+                            <Building2 className="w-3.5 h-3.5 text-[var(--color-wellness-accent)] shrink-0" />
+                            <span>{doctor.hospital}</span>
+                          </span>
+                        )}
+                        {doctor.rethus && (
+                          <span className="inline-flex items-center gap-1 font-sans text-[10px] font-medium tracking-wide px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/80">
+                            <BadgeCheck className="w-3 h-3 text-emerald-600 shrink-0" />
+                            <span>{doctor.rethus}</span>
+                          </span>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}

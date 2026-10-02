@@ -253,8 +253,8 @@
       "subtitle": "Accédez à des procédures médicales et esthétiques de classe mondiale avec jusqu'à 70 % d'économies par rapport aux États-Unis, soutenues par des spécialistes certifiés au cœur des Andes colombiennes.",
       "ctaPrimary": "Demander une Consultation",
       "ctaSecondary": "Voir Comment Ça Fonctionne",
-      "imagePatientAlt": "[CLIENT : Photo d'un patient souriant — portrait professionnel, fond blanc de préférence]",
-      "imageTolimaAlt": "[CLIENT : Photo du paysage du Tolima — région caféière, montagnes, verdure luxuriante]"
+      "imagePatientAlt": "Patient souriant bénéficiant de soins médicaux et de bien-être en Colombie",
+      "imageTolimaAlt": "Paysage montagneux du Tolima et région caféière de Colombie"
     },
     "trust": {
       "certified": "Spécialistes Certifiés",
@@ -326,7 +326,7 @@
       "title": "Guérison dans la Nature.",
       "subtitle": "Découvrez le tourisme responsable, l'hospitalité chaleureuse et les paysages époustouflants de la région caféière de Colombie pendant votre récupération.",
       "cta": "Explorer les Circuits de Récupération",
-      "imageAlt": "[CLIENT : Photo de la région Tolima/Caféière — plan large, montagnes, palmiers]"
+      "imageAlt": "Vue panoramique des Andes et de la région caféière du Tolima"
     },
     "testimonials": {
       "sectionLabel": "Témoignages",
@@ -789,6 +789,15 @@
       },
       "jennyHernandez": {
         "text": "Bon service, très bons circuits et tarifs."
+      },
+      "micilene": {
+        "text": "Excellent service et attention, la nourriture, le bar et très ponctuels en tout. Je le recommande."
+      },
+      "ruthAhumada": {
+        "text": "Excellent, j'ai passé un super moment, tout ce qui avait été convenu avec l'agence Ontour a été respecté."
+      },
+      "mariaAntonia": {
+        "text": "Excellent service. Beaucoup de dévouement et d'engagement de la part du gérant et de ses collaborateurs. L'hôtel excellent. Les lieux visités étaient magnifiques, félicitations."
       }
     }
   },
@@ -842,7 +851,7 @@
     },
     "rights": {
       "title": "5. Vos droits",
-      "text": "Conformément à la loi 1581 de 2012 (Protection des données personnelles en Colombie), vous avez le droit d'accéder, mettre à jour, rectifier et supprimer vos données personnelles. Pour exercer ces droits, écrivez-nous à gerencia@agenciaontour.com."
+      "text": "Conformément à la loi 1581 de 2012 (Protection des données personnelles en Colombie), vous avez le droit d'accéder, mettre à jour, rectifier et supprimer vos données personnelles. Pour exercer ces droits, écrivez-nous à info@ontourdmc.com."
     },
     "cookies": {
       "title": "6. Cookies",
@@ -876,7 +885,7 @@
     "subtitle": "Réponses aux questions les plus courantes de nos voyageurs.",
     "q1": {
       "question": "Comment puis-je réserver un voyage avec Ontour ?",
-      "answer": "Vous pouvez nous contacter via WhatsApp au +57 316 538 6892, par e-mail à gerencia@agenciaontour.com, ou via le formulaire de contact sur notre site web. Un conseiller vous répondra avec un devis personnalisé."
+      "answer": "Vous pouvez nous contacter via WhatsApp au +57 316 538 6892, par e-mail à info@ontourdmc.com, ou via le formulaire de contact sur notre site web. Un conseiller vous répondra avec un devis personnalisé."
     },
     "q2": {
       "question": "Que comprennent les circuits touristiques ?",
@@ -974,6 +983,50 @@
     "experienciasCtaTitle": "Avez-vous voyagé avec OnTour?",
     "experienciasCtaDesc": "Partagez votre photo et rejoignez notre communauté de voyageurs.",
     "experienciasCtaBtn": "Envoyer ma photo"
+  },
+  "macrorregiones": {
+    "tagline": "ProColombia • Le Pays de la Beauté",
+    "title": "Macrorégions Touristiques de la Colombie",
+    "subtitle": "Nous connectons les voyageurs à l'immense richesse bioculturelle des six grands territoires touristiques officiels de la Colombie, en concevant des itinéraires authentiques aux quatre coins du pays.",
+    "mapBadge": "Carte Officielle des Destinations et Régions",
+    "exploreZoom": "Explorer avec le Zoom",
+    "clickToZoom": "Cliquer pour ouvrir et zoomer",
+    "mapAlt": "Carte des 6 Macrorégions Touristiques de la Colombie - ProColombia",
+    "mapDetailAlt": "Carte détaillée des 6 Macrorégions Touristiques de la Colombie",
+    "modalInstructions": "Double-cliquez ou utilisez les commandes pour zoomer/dézoomer et faites glisser pour explorer",
+    "closeLabel": "Fermer le visualiseur",
+    "closeTitle": "Fermer (Échap)",
+    "zoomIn": "Zoom avant (+)",
+    "zoomOut": "Zoom arrière (-)",
+    "reset": "Réinitialiser",
+    "resetTitle": "Réinitialiser la taille (0)",
+    "dragToMove": "Glisser pour déplacer",
+    "regions": {
+      "caribe": {
+        "name": "Grandes Caraïbes Colombiennes",
+        "slogan": "Bien plus que les Caraïbes"
+      },
+      "pacifico": {
+        "name": "Pacifique Colombien",
+        "slogan": "Saveur de jungle et d'océan"
+      },
+      "andesOccidentales": {
+        "name": "Andes Occidentales",
+        "slogan": "Montagnes de café et de fleurs"
+      },
+      "andesOrientales": {
+        "name": "Andes Orientales",
+        "slogan": "Paramos et vallées légendaires"
+      },
+      "macizo": {
+        "name": "Massif Colombien",
+        "slogan": "Origines ancestrales"
+      },
+      "amazoniaOrinoquia": {
+        "name": "Amazonie-Orénoquie",
+        "slogan": "Forêts et plaines sacrées"
+      }
+    }
   },
   "destinosData": {
     "cascada-la-plata-pasadia": {

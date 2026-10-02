@@ -257,7 +257,7 @@ export function BookingForm({ locale, departureDates }: BookingFormProps) {
               transition={{ delay: 0.2 }}
               className="text-white/50 text-sm font-medium"
             >
-              📅 {t("fixedDateHint")}
+              {t("fixedDateHint")}
             </motion.p>
           )}
         </div>
@@ -281,7 +281,7 @@ export function BookingForm({ locale, departureDates }: BookingFormProps) {
       >
       {isFlexible && (
         <p className="text-secondary text-sm font-medium text-center mb-4">
-          ✨ {t("flexibleDates")}
+          {t("flexibleDates")}
         </p>
       )}
       <div className="px-4 md:px-8 pb-8">
@@ -411,8 +411,8 @@ export function BookingForm({ locale, departureDates }: BookingFormProps) {
                   )}
                 </p>
                 <p className="text-white/60 text-sm mt-1">
-                  👥 {rooms.reduce((s, r) => s + r.adults, 0)} {t("adults")} · 👶{" "}
-                  {rooms.reduce((s, r) => s + r.children, 0)} {t("children")} · 🏨{" "}
+                  {rooms.reduce((s, r) => s + r.adults, 0)} {t("adults")} ·{" "}
+                  {rooms.reduce((s, r) => s + r.children, 0)} {t("children")} ·{" "}
                   {rooms.length} {t("rooms")}
                 </p>
               </motion.div>

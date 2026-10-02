@@ -29,4 +29,5 @@ export { type TimelineItemProps } from "./CircuitTimeline";
 export { GalleryMasonry } from "./GalleryMasonry";
 export { MarqueeLogos } from "./MarqueeLogos";
 export { WaveDivider } from "./WaveDivider";
+export { ItineraryTabs } from "./ItineraryTabs";
 
