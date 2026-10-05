@@ -333,7 +333,7 @@ function CardSlide({
           alt={item.title}
           fill
           draggable={false}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1280px) 48vw, 560px"
           quality={90}
           className={`object-cover editorial-scale-target transition-transform duration-700 pointer-events-none select-none ${theme.gradeClass}`}
         />

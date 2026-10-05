@@ -275,18 +275,23 @@ export function Testimonials() {
             </button>
 
             {/* Dots */}
-            <div className="flex items-center gap-2 px-2 py-1">
+            <div className="flex items-center gap-0 px-2 py-1">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => goTo(i, i > current ? 1 : -1)}
-                  className={`transition-all duration-300 rounded-full touch-manipulation ${
+                  className={`transition-all duration-300 rounded-full touch-manipulation p-2.5 ${
                     i === current
-                      ? "bg-editorial-accent w-7 h-2.5"
-                      : "bg-editorial-border hover:bg-editorial-border/80 w-2.5 h-2.5"
+                      ? "" : ""
                   }`}
                   aria-label={`${t("goToReview")} ${i + 1}`}
-                />
+                >
+                  <span className={`block rounded-full transition-all duration-300 ${
+                    i === current
+                      ? "bg-editorial-accent w-6 h-2"
+                      : "bg-editorial-border hover:bg-editorial-border/80 w-2 h-2"
+                  }`} />
+                </button>
               ))}
             </div>
 

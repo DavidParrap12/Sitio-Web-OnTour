@@ -24,9 +24,9 @@ interface EditorialParallaxProps {
   objectFit?: "cover" | "contain" | "fill";
   /** Priority loading for hero images */
   priority?: boolean;
-  /** Blur placeholder data URL */
+  /** @deprecated — unused, kept for API compat */
   blurDataURL?: string;
-  /** Whether to apply color grading filter */
+  /** CSS filter string applied to the image (e.g. "saturate(1.1)") */
   colorGrade?: string;
   /** Vertical alignment of content: 'start' | 'center' | 'end' */
   contentAlign?: "start" | "center" | "end";
@@ -36,6 +36,13 @@ interface EditorialParallaxProps {
  * Scroll-driven parallax background using Framer Motion's useScroll/useTransform.
  * Creates depth by moving background slower than foreground content.
  * Respects prefers-reduced-motion.
+ *
+ * WHY NO scale():
+ *   Combining CSS `filter` (colorGrade) with a `scale` transform forces the
+ *   browser to rasterize the compositing layer at a reduced resolution, producing
+ *   visible blur. Instead, the image container extends beyond its parent by the
+ *   parallax travel distance (speed × 100%) so translateY never exposes edges —
+ *   no pixel-stretching, full native sharpness.
  */
 export function EditorialParallax({
   src,
@@ -46,7 +53,6 @@ export function EditorialParallax({
   className = "",
   objectPosition = "center",
   priority = false,
-  blurDataURL,
   colorGrade,
   contentAlign = "center",
 }: EditorialParallaxProps) {
@@ -56,10 +62,12 @@ export function EditorialParallax({
     offset: ["start end", "end start"],
   });
 
+  const travel = speed * 100; // percentage the image travels over the scroll range
+
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    [`${speed * 100}%`, `${-speed * 100}%`]
+    [`${travel}%`, `${-travel}%`]
   );
 
   const prefersReducedMotion = useReducedMotion();
@@ -70,28 +78,42 @@ export function EditorialParallax({
       className={`relative overflow-hidden ${className}`}
       style={{ minHeight }}
     >
-      {/* Parallax background image via Next.js Image */}
+      {/*
+        Image wrapper: bleeds `travel%` above and below the visible container.
+        This is the "room" the translateY consumes, so edges are never exposed
+        even without scaling pixels.
+      */}
       <motion.div
-        className="absolute inset-0"
+        aria-hidden="true"
         style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          top: `-${travel}%`,
+          bottom: `-${travel}%`,
           y: prefersReducedMotion ? 0 : y,
-          filter: colorGrade ?? "none",
-          // Scale up slightly so parallax never shows edges (+buffer vs subpixel gaps)
-          scale: 1 + speed * 2 + 0.04,
+          willChange: "transform",
         }}
       >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="100vw"
-          className="object-cover"
-          style={{ objectPosition }}
-          priority={priority}
-          {...(blurDataURL
-            ? { placeholder: "blur" as const, blurDataURL }
-            : {})}
-        />
+        {/* filter lives on its own div so it never combines with the transform layer */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            filter: colorGrade ?? "none",
+          }}
+        >
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition }}
+            priority={priority}
+            quality={90}
+          />
+        </div>
       </motion.div>
 
       {/* Overlay gradient for text readability */}
@@ -130,10 +152,12 @@ export function SectionParallax({
     offset: ["start end", "end start"],
   });
 
+  const travel = speed * 100;
+
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    [`${speed * 100}%`, `${-speed * 100}%`]
+    [`${travel}%`, `${-travel}%`]
   );
 
   const prefersReducedMotion = useReducedMotion();
@@ -145,20 +169,32 @@ export function SectionParallax({
       style={{ minHeight: "50vh" }}
     >
       <motion.div
-        className="absolute inset-0"
         style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          top: `-${travel}%`,
+          bottom: `-${travel}%`,
           y: prefersReducedMotion ? 0 : y,
-          filter: colorGrade ?? "none",
-          scale: 1 + speed * 2 + 0.04,
+          willChange: "transform",
         }}
       >
-        <Image
-          src={src}
-          alt={alt ?? ""}
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            filter: colorGrade ?? "none",
+          }}
+        >
+          <Image
+            src={src}
+            alt={alt ?? ""}
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+            quality={90}
+          />
+        </div>
       </motion.div>
 
       <div className="relative z-10">{children}</div>

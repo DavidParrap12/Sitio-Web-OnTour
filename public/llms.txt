@@ -1,35 +1,33 @@
-﻿# OnTour DMC Colombia — llms.txt
-# https://llmstxt.org
+# OnTour DMC Colombia
 
-> OnTour is a Colombian destination management company (DMC) specializing in day trips (pasadias) and multi-day circuits across Colombia for international tourists. We operate in Medellín, Bogotá, Cartagena, Santa Marta, Cali, San Andrés, and the Tolima region.
+> OnTour is a Colombian destination management company (DMC) specializing in day trips (pasadías) and multi-day circuits across Colombia for international and domestic tourists. We operate in Medellín, Bogotá, Cartagena, Santa Marta, Cali, San Andrés, and the Tolima region.
 
 ## About
+
 - Company: OnTour Agencia de Viaje Operadora
-- Location: Colombia
+- Location: Ibagué, Tolima, Colombia
 - Languages: Spanish, English, German, French
 - Services: Day trips, multi-day circuits, private guided tours, airport transfers
+- WhatsApp: +57 314 341 5177
+- Email: info@ontourdmc.com
 
 ## Key Pages
-- Homepage: https://www.agenciaontour.com
-- Day Trips (Pasadías): https://www.agenciaontour.com/en/day-trips
-- Circuits: https://www.agenciaontour.com/en/circuits
-- About Us: https://www.agenciaontour.com/en/about
-- Contact: https://www.agenciaontour.com/en/contact
 
-## Day Trips Available
-- Medellín Mágica (Medellín day trip): https://www.agenciaontour.com/en/day-trips/Medellin-Magica
-- Bogotá Tu Casa (Bogotá day trip): https://www.agenciaontour.com/en/day-trips/bogota-tu-casa-pasadia
-- Pasadías por el Tolima: https://www.agenciaontour.com/en/day-trips/cascada-la-plata-pasadia
-- Cali Es Donde Debe Estar: https://www.agenciaontour.com/en/day-trips/Cali-es-donde-debe-estar
-- Cartagena Más Heroica: https://www.agenciaontour.com/en/day-trips/Cartagena-Mas-Heroica
-- Santa Marta Naturalmente Mágica: https://www.agenciaontour.com/en/day-trips/Santa-Marta-Naturalmente-Magica
-- San Andrés: https://www.agenciaontour.com/en/day-trips/San-Andres-Islas-Vas-A-mar
+- [Homepage](https://www.ontourdmc.com/es): Página principal
+- [Circuitos (ES)](https://www.ontourdmc.com/es/circuitos): Todos los circuitos turísticos
+- [Circuits (EN)](https://www.ontourdmc.com/en/circuits): All multi-day circuits
+- [Nosotros](https://www.ontourdmc.com/es/nosotros): Quiénes somos / About Us
+- [Contacto](https://www.ontourdmc.com/es/contacto): Cotiza tu viaje / Contact & Quote
+- [Servicios](https://www.ontourdmc.com/es/servicios): Servicios turísticos
+- [Galería](https://www.ontourdmc.com/es/galeria): Galería de destinos
 
 ## Multi-day Circuits
-- Pre-Columbian South Colombia (9 days): https://www.agenciaontour.com/en/circuits/epoca-precolombina-sur-colombia
-- Heart of the Andes (13 days): https://www.agenciaontour.com/en/circuits/tour-colombia-corazon-andes
-- Boyacá Colonial (8 days): https://www.agenciaontour.com/en/circuits/tour-colombia-boyaca-colonial
+
+- [Sur Precolombino — Sur de Colombia (9 días)](https://www.ontourdmc.com/es/circuitos/epoca-precolombina-sur-colombia): San Agustín, Desierto de la Tatacoa, Valle del Cauca
+- [Corazón de los Andes — Colombia Completa (13 días)](https://www.ontourdmc.com/es/circuitos/tour-colombia-corazon-andes): Bogotá, Eje Cafetero, Medellín, Cartagena
+- [Boyacá Colonial — Historia, Cultura y Naturaleza (8 días)](https://www.ontourdmc.com/es/circuitos/tour-colombia-boyaca-colonial): Villa de Leyva, Tunja, Laguna de Tota
 
 ## Contact
-- Website: https://www.agenciaontour.com/en/contact
-- WhatsApp available for booking inquiries
+
+- [Cotiza tu viaje](https://www.ontourdmc.com/es/contacto)
+- WhatsApp available for booking inquiries: https://api.whatsapp.com/send/?phone=573143415177

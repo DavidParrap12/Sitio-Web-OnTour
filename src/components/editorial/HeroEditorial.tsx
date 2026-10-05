@@ -118,6 +118,8 @@ export function HeroEditorial({
                 className={`object-cover object-center ${gradeClass}`}
                 quality={80}
                 priority={current === 0}
+                // @ts-ignore — fetchPriority is valid HTML but TS types lag
+                fetchPriority={current === 0 ? "high" : "auto"}
               />
             </ParallaxFloat>
           </motion.div>
@@ -167,13 +169,10 @@ export function HeroEditorial({
             Descubre Colombia con OnTour DMC — Circuitos turísticos y experiencias inolvidables
           </span>
 
-          {/* Title */}
-          <motion.h1
-            initial={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            animate={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-            transition={{ ...contentTransition, delay: 0.2 }}
-            className="display-1 text-white mb-6"
-          >
+          {/* Title — rendered as plain HTML, no motion wrapper.
+              LCP elements must be visible on first frame; opacity:0 delays
+              them until JS hydrates (+2500ms on slow connections). */}
+          <h1 className="display-1 text-white mb-6">
             {title}
             {titleAccent && (
               <>
@@ -183,18 +182,13 @@ export function HeroEditorial({
                 </span>
               </>
             )}
-          </motion.h1>
+          </h1>
 
-          {/* Subtitle */}
+          {/* Subtitle — also a potential LCP element, must paint immediately */}
           {subtitle && (
-            <motion.p
-              initial={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              animate={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-              transition={{ ...contentTransition, delay: 0.35 }}
-              className="body-lg text-white/90 mb-10 max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
-            >
+            <p className="body-lg text-white/90 mb-10 max-w-3xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
               {subtitle}
-            </motion.p>
+            </p>
           )}
 
           {/* Actions */}

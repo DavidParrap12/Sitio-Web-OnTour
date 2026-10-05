@@ -1,0 +1,11 @@
+# Target modern browsers only — eliminates unnecessary polyfills
+# (Array.at, flat, flatMap, Object.fromEntries, Object.hasOwn, trimStart, trimEnd)
+# All supported natively since 2021-2022.
+# See: https://browsersl.ist/#q=%3E+0.5%25%2C+last+2+versions%2C+Firefox+ESR%2C+not+dead%2C+not+IE+11
+
+> 0.5%
+last 2 versions
+Firefox ESR
+not dead
+not IE 11
+not IE_Mob 11

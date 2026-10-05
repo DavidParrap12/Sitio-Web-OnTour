@@ -72,7 +72,8 @@ export const BREAKPOINTS = {
 
 // -- Image Sizes (for next/image `sizes` prop) ----------------------------
 export const IMAGE_SIZES = {
-  hero: '100vw',
+  // Full-bleed hero: matches actual screen sizes (avoids 1920px on mobile)
+  hero: '(max-width: 640px) 640w, (max-width: 1024px) 1024px, (max-width: 1536px) 1536px, 100vw',
   cardFull: '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw',
   cardHalf: '(max-width: 768px) 100vw, 50vw',
   gallery: '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw',

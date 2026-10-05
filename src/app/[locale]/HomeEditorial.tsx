@@ -19,7 +19,7 @@ const MarqueeLogos = dynamic(
   () => import("@/components/editorial/MarqueeLogos").then((m) => ({ default: m.MarqueeLogos }))
 );
 
-const BLUR_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
+
 
 const ALIADOS: LogoItem[] = [
   { src: "/image/logo-aliados/booking-ar21.svg",           alt: "Booking.com",                      width: 140 },
@@ -128,12 +128,11 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
         style={{ "--bleed-color": "#faf8f4" } as React.CSSProperties}
       >
       <EditorialParallax
-        src="/image/islas-corales-del-rosario.jpeg"
-        alt="Islas corales del rosario, Colombia"
+        src="/image/Tolima-fotos/tolima_palmas-cera-ladera-verde-cielo-azul.jpg"
+        alt="Palmas de cera en Tolima, Colombia"
         speed={0.25}
         minHeight="60vh"
         priority
-        blurDataURL={BLUR_PLACEHOLDER}
         colorGrade="saturate(1.1) contrast(1.05) hue-rotate(-5deg)"
         contentAlign="center"
       >
