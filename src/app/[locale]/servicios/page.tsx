@@ -1,9 +1,33 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { ServiciosHero } from "./ServiciosHero";
 import { ServiciosInteractiveGrid } from "./ServiciosInteractiveGrid";
+
+const SERVICES_PATH: Record<string, string> = {
+  es: "servicios", en: "services", de: "dienstleistungen", fr: "services",
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "services" });
+  const path = SERVICES_PATH[locale] ?? "servicios";
+  const url = locale === "es"
+    ? `https://www.ontourdmc.com/${path}`
+    : `https://www.ontourdmc.com/${locale}/${path}`;
+  return {
+    title: `${t("title")} | OnTour DMC Colombia`,
+    description: t("subtitle"),
+    alternates: { canonical: url },
+    openGraph: { url },
+  };
+}
 
 const INTRO_HEADERS: Record<string, { tag: string; sub: string }> = {
   es: {

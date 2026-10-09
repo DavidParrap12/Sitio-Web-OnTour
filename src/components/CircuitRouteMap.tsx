@@ -6,9 +6,16 @@ import { MapPin, Navigation } from "lucide-react";
 export interface CircuitRouteMapProps {
   mapEmbedUrl?: string;
   circuitName: string;
+  title?: string;
+  subtitle?: string;
 }
 
-export default function CircuitRouteMap({ mapEmbedUrl, circuitName }: CircuitRouteMapProps) {
+export default function CircuitRouteMap({
+  mapEmbedUrl,
+  circuitName,
+  title = "Journey Route",
+  subtitle = "Interactive route overview",
+}: CircuitRouteMapProps) {
   if (!mapEmbedUrl) {
     return null;
   }
@@ -22,10 +29,10 @@ export default function CircuitRouteMap({ mapEmbedUrl, circuitName }: CircuitRou
           </div>
           <div>
             <h4 className="font-semibold text-editorial-dark text-base leading-tight">
-              Ruta del Circuito
+              {title}
             </h4>
             <p className="text-xs text-editorial-subtle">
-              Mapa interactivo del recorrido
+              {subtitle}
             </p>
           </div>
         </div>

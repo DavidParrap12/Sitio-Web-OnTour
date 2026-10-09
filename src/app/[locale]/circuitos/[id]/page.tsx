@@ -11,6 +11,14 @@ import { CircuitoDetailEditorial } from "./CircuitoDetailEditorial";
 import { JsonLd } from "@/components/JsonLd";
 import { buildCircuitoSchema, buildBreadcrumbs, buildDepartureDateEvents } from "@/lib/schema";
 
+// Mirrors routing.ts pathnames for /circuitos
+const JOURNEYS_PATH: Record<string, string> = {
+  es: "circuitos",
+  en: "journeys",
+  de: "rundreisen",
+  fr: "circuits",
+};
+
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     circuitos.map((c) => ({ locale, id: c.id }))
@@ -33,13 +41,19 @@ export async function generateMetadata({
     ? circuito.image
     : `https://www.ontourdmc.com${circuito.image}`;
 
+  const path = JOURNEYS_PATH[locale] ?? "circuitos";
+  const baseUrl = locale === "es"
+    ? `https://www.ontourdmc.com/${path}/${id}`
+    : `https://www.ontourdmc.com/${locale}/${path}/${id}`;
+
   return {
     title: `${name} | OnTour DMC Colombia`,
     description,
+    alternates: { canonical: baseUrl },
     openGraph: {
       title: `${name} | OnTour DMC Colombia`,
       description,
-      url: `https://www.ontourdmc.com/${locale}/circuits/${id}`,
+      url: baseUrl,
       siteName: "Ontour DMC Colombia",
       images: [
         {
@@ -103,10 +117,16 @@ export default async function CircuitoPage({
   // -- Editorial Layout ----------------------------------------
   const schema = buildCircuitoSchema({ id, name, description, days: circuito.days, nights: circuito.nights, image: circuito.image, locale });
   const eventSchemas = buildDepartureDateEvents({ circuitId: id, circuitName: name, image: circuito.image, departureDates, locale });
+  const path = JOURNEYS_PATH[locale] ?? "circuitos";
+  const listUrl = locale === "es"
+    ? `https://www.ontourdmc.com/${path}`
+    : `https://www.ontourdmc.com/${locale}/${path}`;
+  const detailUrl = `${listUrl}/${id}`;
+
   const breadcrumb = buildBreadcrumbs([
     { name: "Home", url: "https://www.ontourdmc.com" },
-    { name: locale === "es" ? "Circuitos" : "Circuits", url: `https://www.ontourdmc.com/${locale === "es" ? "circuitos" : locale + "/circuits"}` },
-    { name, url: `https://www.ontourdmc.com/${locale === "es" ? "circuitos" : locale + "/circuits"}/${id}` },
+    { name: locale === "es" ? "Circuitos" : "Journeys", url: listUrl },
+    { name, url: detailUrl },
   ]);
 
   return (
@@ -136,6 +156,8 @@ export default async function CircuitoPage({
           downloadPdf: t("downloadPdf"), downloadWord: t("downloadWord"),
           downloadProgram: t("downloadProgram"), generating: t("generating"),
           downloaded: t("downloaded"),
+          routeMapTitle: t("routeMap"),
+          routeMapSubtitle: t("routeMapSubtitle"),
           extensionsSectionLabel: tExt("sectionLabel"),
           extensionsSectionTitle: tExt("sectionTitle"),
           extensionsAddToQuote: tExt("addToQuote"),

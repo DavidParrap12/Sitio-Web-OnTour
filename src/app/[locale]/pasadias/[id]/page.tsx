@@ -18,6 +18,13 @@ export function generateStaticParams() {
   );
 }
 
+const DAY_TRIPS_PATH: Record<string, string> = {
+  es: "pasadias",
+  en: "day-trips",
+  de: "tagesausfluege",
+  fr: "excursions",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -34,13 +41,21 @@ export async function generateMetadata({
     ? pasadia.image
     : `https://www.ontourdmc.com${pasadia.image}`;
 
+  const path = DAY_TRIPS_PATH[locale] ?? "day-trips";
+  const canonicalUrl = locale === "es"
+    ? `https://www.ontourdmc.com/${path}/${id}`
+    : `https://www.ontourdmc.com/${locale}/${path}/${id}`;
+
   return {
     title: `${name} | OnTour DMC Colombia`,
     description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: `${name} | OnTour DMC Colombia`,
       description,
-      url: `https://www.ontourdmc.com/${locale}/day-trips/${id}`,
+      url: canonicalUrl,
       siteName: "Ontour DMC Colombia",
       images: [
         {

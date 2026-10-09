@@ -19,31 +19,56 @@ export const DESTINATION_THEMES = {
   naturaleza: {
     color: '#1b4332',
     colorLight: '#2d6a4f',
-    label: 'Naturaleza',
+    label: {
+      es: 'Naturaleza',
+      en: 'Nature',
+      de: 'Natur',
+      fr: 'Nature',
+    },
     grade: 'editorial-grade-naturaleza',
   },
   cultura: {
     color: '#9c4221',
     colorLight: '#c76f45',
-    label: 'Cultura',
+    label: {
+      es: 'Cultura',
+      en: 'Culture',
+      de: 'Kultur',
+      fr: 'Culture',
+    },
     grade: 'editorial-grade-cultura',
   },
   aventura: {
     color: '#1864ab',
     colorLight: '#2b8fd9',
-    label: 'Aventura',
+    label: {
+      es: 'Aventura',
+      en: 'Adventure',
+      de: 'Abenteuer',
+      fr: 'Aventure',
+    },
     grade: 'editorial-grade-aventura',
   },
   playa: {
     color: '#0c8577',
     colorLight: '#12b5a0',
-    label: 'Playa',
+    label: {
+      es: 'Playa',
+      en: 'Beach',
+      de: 'Strand',
+      fr: 'Plage',
+    },
     grade: 'editorial-grade-playa',
   },
   urbano: {
     color: '#495057',
     colorLight: '#6c757d',
-    label: 'Urbano',
+    label: {
+      es: 'Urbano',
+      en: 'Urban',
+      de: 'Urban',
+      fr: 'Urbain',
+    },
     grade: 'editorial-grade-urbano',
   },
 } as const;

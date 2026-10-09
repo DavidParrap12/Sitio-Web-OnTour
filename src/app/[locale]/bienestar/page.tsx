@@ -20,15 +20,23 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "wellness" });
+  const wellnessPath: Record<string, string> = {
+    es: "bienestar", en: "wellness", de: "wohlbefinden", fr: "bien-etre",
+  };
+  const path = wellnessPath[locale] ?? "bienestar";
+  const baseUrl = locale === "es"
+    ? `https://www.ontourdmc.com/${path}`
+    : `https://www.ontourdmc.com/${locale}/${path}`;
   const ogImageUrl = "https://www.ontourdmc.com/image/bienestar/paisaje_montanoso_tolima.jpeg";
 
   return {
     title: t("metaTitle"),
     description: t("metaDesc"),
+    alternates: { canonical: baseUrl },
     openGraph: {
       title: t("metaTitle"),
       description: t("metaDesc"),
-      url: `https://www.ontourdmc.com/${locale}/bienestar`,
+      url: baseUrl,
       siteName: "Ontour DMC Colombia",
       images: [
         {

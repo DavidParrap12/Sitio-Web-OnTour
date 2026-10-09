@@ -228,11 +228,15 @@ export function CircuitosEditorial({ slides, title, subtitle, heroImage }: Circu
   // Helper for price formatting
   const formatPriceDisplay = (rawPrice: string) => {
     if (!rawPrice) return "";
-    const cleanNumber = rawPrice.replace(/[^\d.,]/g, "").trim();
+    const cleanNumber = rawPrice.replace(/[^\d]/g, "").trim();
     if (cleanNumber) {
-      return `${t.fromUsd} $${cleanNumber}`;
+      const num = parseInt(cleanNumber, 10);
+      if (!isNaN(num)) {
+        return `$${num.toLocaleString("en-US")}`;
+      }
+      return `$${cleanNumber}`;
     }
-    return `${t.fromUsd} ${rawPrice}`;
+    return rawPrice;
   };
 
   // Truncate summary to max 140 chars
@@ -422,7 +426,7 @@ export function CircuitosEditorial({ slides, title, subtitle, heroImage }: Circu
                 </motion.div>
               ) : (
                 filteredSlides.map((slide, i) => {
-                  const theme = resolveDestinationTheme(slide.colorTheme);
+                  const theme = resolveDestinationTheme(slide.colorTheme, locale);
                   return (
                     <motion.div
                       key={slide.id}

@@ -21,18 +21,22 @@ const WELLNESS_CONTENT = {
       "Concierge médico bilingüe, traslados privados y recuperación en clima templado",
     ],
     cta: "Conocer Programa Médico & Bienestar",
+    imageBadge: "Tolima · Andes Colombianos",
+    imageCaption: "Clima templado todo el año y haciendas boutique rodeadas de naturaleza.",
   },
   en: {
     badge: "MEDICAL & WELLNESS",
     title: "Certified medical care. Seamless recovery.",
-    subtitle: "Competitive international pricing with comprehensive medical coordination. We connect international travelers with board-certified RETHUS specialists and accredited surgical clinics, combined with private recovery retreats in the Andean mountains.",
+    subtitle: "Competitive international pricing with comprehensive medical coordination. We connect international travelers with Colombia-licensed specialists registered with RETHUS and accredited surgical clinics, combined with private recovery retreats in the Andean mountains.",
     highlights: [
-      "Board-certified surgeons and specialists with verified RETHUS credentials",
-      "Joint Commission-level accredited clinical infrastructure",
+      "Colombia-licensed specialists registered with official RETHUS credentials",
+      "Accredited surgical clinics and high-complexity hospital infrastructure",
       "Competitive international pricing with full care coordination",
       "Dedicated bilingual medical concierge & serene private recovery retreats",
     ],
     cta: "Explore Medical & Wellness",
+    imageBadge: "Tolima · Colombian Andes",
+    imageCaption: "Mild year-round climate and boutique haciendas surrounded by nature.",
   },
   de: {
     badge: "MEDIZIN & WELLNESS",
@@ -45,6 +49,8 @@ const WELLNESS_CONTENT = {
       "Mehrsprachige persönliche Betreuung und ruhige Erholungs-Haciendas",
     ],
     cta: "Medizin- & Wellnessprogramm Entdecken",
+    imageBadge: "Tolima · Kolumbianische Anden",
+    imageCaption: "Ganzjährig mildes Klima und Boutique-Haziendas inmitten der Natur.",
   },
   fr: {
     badge: "SANTÉ & BIEN-ÊTRE",
@@ -57,6 +63,8 @@ const WELLNESS_CONTENT = {
       "Conciergerie médicale bilingue et convalescence en haciendas de charme",
     ],
     cta: "Découvrir le Programme Médical & Bien-être",
+    imageBadge: "Tolima · Andes Colombiennes",
+    imageCaption: "Climat doux toute l'année et haciendas de charme en pleine nature.",
   },
 };
 
@@ -117,10 +125,10 @@ export function WellnessTeaser({ locale }: WellnessTeaserProps) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
               <div className="absolute bottom-6 left-6 right-6 text-white lg:hidden">
                 <span className="text-xs font-semibold uppercase tracking-wider text-amber-300 block mb-1">
-                  Tolima · Andes Colombianos
+                  {content.imageBadge}
                 </span>
                 <p className="text-sm font-medium text-white/90">
-                  Clima templado todo el año y haciendas boutique rodeadas de naturaleza.
+                  {content.imageCaption}
                 </p>
               </div>
             </div>

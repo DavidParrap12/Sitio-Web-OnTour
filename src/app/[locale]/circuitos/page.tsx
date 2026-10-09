@@ -4,6 +4,14 @@ import type { Metadata } from "next";
 import { CircuitosEditorial } from "./CircuitosEditorial";
 import { circuitos } from "@/data/circuitos";
 
+// Localized path for the journeys listing (mirrors routing.ts)
+const JOURNEYS_PATH: Record<string, string> = {
+  es: "circuitos",
+  en: "journeys",
+  de: "rundreisen",
+  fr: "circuits",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -13,13 +21,19 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "circuits" });
   const ogImageUrl = "https://www.ontourdmc.com/image/portadas/Statues_at_San_Agust%C3%ADn_park_202608141341.jpeg";
 
+  const path = JOURNEYS_PATH[locale] ?? "circuitos";
+  const baseUrl = locale === "es"
+    ? `https://www.ontourdmc.com/${path}`
+    : `https://www.ontourdmc.com/${locale}/${path}`;
+
   return {
     title: `${t("title")} | OnTour DMC Colombia`,
     description: t("subtitle"),
+    alternates: { canonical: baseUrl },
     openGraph: {
       title: `${t("title")} | OnTour DMC Colombia`,
       description: t("subtitle"),
-      url: `https://www.ontourdmc.com/${locale}/circuits`,
+      url: baseUrl,
       siteName: "Ontour DMC Colombia",
       images: [
         {

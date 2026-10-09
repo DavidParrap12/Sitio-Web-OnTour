@@ -58,9 +58,9 @@ const PILLARS_CONTENT = {
       },
       {
         icon: UserCheck,
-        title: "Certified Private Guides",
-        highlight: "Bilingual · Native Storytellers",
-        desc: "Certified historians, naturalists, and local hosts who unlock authentic encounters beyond traditional tourist trails.",
+        title: "Licensed Private Guides",
+        highlight: "FONTUR-registered · Bilingual",
+        desc: "Licensed guides (FONTUR-registered), historians, naturalists, and local hosts who unlock authentic encounters beyond traditional tourist trails.",
       },
       {
         icon: Sliders,

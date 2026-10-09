@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
   const [open, setOpen] = useState(false);
@@ -55,6 +56,7 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
 
 export default function FaqPage() {
   const t = useTranslations("legalFaq");
+  const locale = useLocale();
 
   const faqs = [
     { q: t("q1.question"), a: t("q1.answer") },
@@ -66,6 +68,42 @@ export default function FaqPage() {
     { q: t("q7.question"), a: t("q7.answer") },
     { q: t("q8.question"), a: t("q8.answer") },
   ];
+
+  const badgeText =
+    locale === "es"
+      ? "Centro de Ayuda"
+      : locale === "de"
+      ? "Hilfezentrum"
+      : locale === "fr"
+      ? "Centre d'Aide"
+      : "Help Center";
+
+  const ctaTitle =
+    locale === "es"
+      ? "¿No encontraste tu respuesta?"
+      : locale === "de"
+      ? "Haben Sie keine passende Antwort gefunden?"
+      : locale === "fr"
+      ? "Vous n'avez pas trouvé votre réponse ?"
+      : "Didn't find your answer?";
+
+  const ctaDesc =
+    locale === "es"
+      ? "Escríbenos directamente y te respondemos en menos de 24 horas."
+      : locale === "de"
+      ? "Schreiben Sie uns direkt — wir antworten innerhalb von 24 Stunden."
+      : locale === "fr"
+      ? "Écrivez-nous directement et nous vous répondrons sous 24 heures."
+      : "Write to us directly and we'll respond within 24 hours.";
+
+  const ctaBtn =
+    locale === "es"
+      ? "Contactar ahora"
+      : locale === "de"
+      ? "Jetzt kontaktieren"
+      : locale === "fr"
+      ? "Nous contacter"
+      : "Contact Us Now";
 
   return (
     <div className="min-h-screen bg-editorial-warm">
@@ -79,7 +117,7 @@ export default function FaqPage() {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="label text-editorial-accent mb-4 block"
           >
-            Centro de Ayuda
+            {badgeText}
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -116,14 +154,14 @@ export default function FaqPage() {
           transition={{ duration: 0.5 }}
           className="mt-16 text-center p-10 md:p-14 rounded-3xl bg-editorial-dark border border-editorial-border-light/10"
         >
-          <p className="heading-2 text-white mb-2">¿No encontraste tu respuesta?</p>
-          <p className="body text-white/50 mb-8">Escríbenos directamente y te respondemos en menos de 24h.</p>
-          <a
-            href="/contacto"
+          <p className="heading-2 text-white mb-2">{ctaTitle}</p>
+          <p className="body text-white/50 mb-8">{ctaDesc}</p>
+          <Link
+            href={"/contacto" as any}
             className="inline-block bg-editorial-accent hover:bg-editorial-accent-hover text-white px-8 py-3.5 rounded-full font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-editorial-lg hover:shadow-editorial-xl"
           >
-            Contactar ahora
-          </a>
+            {ctaBtn}
+          </Link>
         </motion.div>
       </div>
     </div>

@@ -190,7 +190,9 @@
     "downloadWord": "Descargar Word",
     "downloadProgram": "Descargar Programa",
     "generating": "Generando...",
-    "downloaded": "¡Descargado!"
+    "downloaded": "¡Descargado!",
+    "routeMap": "Ruta del Circuito",
+    "routeMapSubtitle": "Mapa interactivo del recorrido"
   },
   "circuitExtensions": {
     "sectionLabel": "Extras Opcionales",

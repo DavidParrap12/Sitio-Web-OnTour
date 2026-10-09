@@ -2,9 +2,21 @@
 
 import { useState } from "react";
 import { Star, CheckCircle, ExternalLink, Quote, ChevronLeft, ChevronRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { testimonials } from "@/data/testimonials";
 import { SectionReveal } from "@/components/editorial/SectionReveal";
+
+function formatReviewDate(isoDate: string, locale: string): string {
+  if (!isoDate) return "";
+  try {
+    const [year, month] = isoDate.split("-");
+    const d = new Date(parseInt(year, 10), parseInt(month, 10) - 1, 1);
+    const loc = locale === "es" ? "es-CO" : locale === "de" ? "de-DE" : locale === "fr" ? "fr-FR" : "en-US";
+    return d.toLocaleDateString(loc, { month: "short", year: "numeric" });
+  } catch {
+    return isoDate.slice(0, 7);
+  }
+}
 
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/place/On+Tour+Agencia+de+Viajes+Colombia/@4.4453535,-75.2418751,19z/data=!4m18!1m9!3m8!1s0x8e38c5dc9b21e75d:0xdfe89bd87d6ae4a2!2sOn+Tour+Agencia+de+Viajes+Colombia!8m2!3d4.4453522!4d-75.2412314!9m1!1b1!16s%2Fg%2F11ryf7f3t2!3m7!1s0x8e38c5dc9b21e75d:0xdfe89bd87d6ae4a2!8m2!3d4.4453522!4d-75.2412314!9m1!1b1!16s%2Fg%2F11ryf7f3t2?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D";
@@ -21,6 +33,7 @@ const FEATURED_REVIEWS = [
 
 export function Testimonials() {
   const t = useTranslations("testimonials");
+  const locale = useLocale();
   const [page, setPage] = useState(0);
 
   const reviewsPerPage = 3;
@@ -143,7 +156,7 @@ export function Testimonials() {
                     </div>
                   </div>
                   <span className="text-[11px] text-stone-400 font-medium">
-                    {review.date ? review.date.slice(0, 7) : ""}
+                    {review.date ? formatReviewDate(review.date, locale) : ""}
                   </span>
                 </div>
               </div>

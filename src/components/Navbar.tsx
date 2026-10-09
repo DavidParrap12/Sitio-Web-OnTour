@@ -138,8 +138,8 @@ const NAV_PILLARS: NavPillar[] = [
         href: "/bienestar#tratamientos",
       },
       {
-        name: { es: "Cuerpo Médico & Especialistas", en: "Specialists & Board Profiles", fr: "Corps Médical & Spécialistes", de: "Fachärzte & Spezialisten" },
-        desc: { es: "Doctores certificados con registro RETHUS y clínica aliada", en: "Board-certified doctors with hospital affiliations", fr: "Médecins agréés et cliniques partenaires", de: "Zertifizierte Fachärzte mit Klinikanbindung" },
+        name: { es: "Cuerpo Médico & Especialistas", en: "Specialists & Medical Profiles", fr: "Corps Médical & Spécialistes", de: "Fachärzte & Spezialisten" },
+        desc: { es: "Doctores certificados con registro RETHUS y clínica aliada", en: "Colombia-licensed specialists registered with RETHUS and hospital clinics", fr: "Médecins agréés et cliniques partenaires", de: "Zertifizierte Fachärzte mit Klinikanbindung" },
         href: "/bienestar#especialistas",
       },
       {
@@ -158,7 +158,7 @@ const NAV_PILLARS: NavPillar[] = [
     id: "professionals",
     label: {
       es: "Agencias & B2B",
-      en: "For Professionals",
+      en: "Travel Trade",
       fr: "Pour Professionnels",
       de: "Für Reisebüros",
     },
@@ -400,7 +400,7 @@ export function Navbar() {
               <button
                 onClick={() => setLangOpen(!langOpen)}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-900 hover:bg-stone-50 font-medium text-xs transition-colors min-h-[44px]"
-                aria-label="Seleccionar idioma"
+                aria-label={langKey === "es" ? "Seleccionar idioma" : "Select language"}
               >
                 <Globe className="w-4 h-4 text-stone-500" />
                 <span className="uppercase font-bold">{locale}</span>
@@ -474,7 +474,7 @@ export function Navbar() {
             <button
               className="p-2.5 rounded-xl text-stone-800 hover:bg-stone-100 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
               onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-label={isOpen ? (langKey === "es" ? "Cerrar menú" : "Close menu") : (langKey === "es" ? "Abrir menú" : "Open menu")}
               aria-expanded={isOpen}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -513,7 +513,7 @@ export function Navbar() {
                 <button
                   onClick={() => setIsOpen(false)}
                   className="w-10 h-10 rounded-full bg-stone-100 text-stone-600 flex items-center justify-center min-h-[44px] min-w-[44px]"
-                  aria-label="Cerrar menú"
+                  aria-label={langKey === "es" ? "Cerrar menú" : "Close menu"}
                 >
                   <X className="w-5 h-5" />
                 </button>

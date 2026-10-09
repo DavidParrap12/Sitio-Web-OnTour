@@ -21,19 +21,23 @@ export interface DestinationThemeResult {
  * Falls back to 'naturaleza' if not specified or invalid.
  */
 export function resolveDestinationTheme(
-  theme?: DestinationTheme | string
+  theme?: DestinationTheme | string,
+  locale?: string
 ): DestinationThemeResult {
   const validKey: DestinationTheme = (theme && theme in DESTINATION_THEMES)
     ? (theme as DestinationTheme)
     : "naturaleza";
 
   const config = DESTINATION_THEMES[validKey];
+  const lang = locale || (typeof document !== "undefined" ? document.documentElement.lang : "es") || "es";
+  const labelRecord = config.label as Record<string, string>;
+  const resolvedLabel = labelRecord[lang] || labelRecord.en || labelRecord.es || "Nature";
 
   return {
     themeKey: validKey,
     color: config.color,
     colorLight: config.colorLight,
-    label: config.label,
+    label: resolvedLabel,
     gradeClass: config.grade,
     borderColor: `${config.color}55`,
     badgeStyle: {
@@ -54,6 +58,9 @@ export function resolveDestinationTheme(
  * Hook wrapper for resolveDestinationTheme.
  * Prefer resolveDestinationTheme in non-component or callback contexts.
  */
-export function useDestinationTheme(theme?: DestinationTheme | string): DestinationThemeResult {
-  return resolveDestinationTheme(theme);
+export function useDestinationTheme(
+  theme?: DestinationTheme | string,
+  locale?: string
+): DestinationThemeResult {
+  return resolveDestinationTheme(theme, locale);
 }

@@ -9,6 +9,7 @@ import { ParallaxFloat } from "@/components/editorial/ParallaxFloat";
 import { CaptionLabel } from "@/components/editorial/CaptionLabel";
 import { RotatingPasadias } from "@/components/editorial/RotatingPasadias";
 import { IMAGE_SIZES, type DestinationTheme } from "@/lib/design-config";
+import { useLocale } from "next-intl";
 import { resolveDestinationTheme } from "@/lib/hooks/useDestinationTheme";
 
 const BLUR_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
@@ -30,6 +31,7 @@ interface PasadiasEditorialProps {
 }
 
 export function PasadiasEditorial({ slides, title, subtitle }: PasadiasEditorialProps) {
+  const locale = useLocale();
   return (
     <div className="min-h-screen bg-editorial-warm">
       {/* -- Split Hero: copy left, rotating cards right --------- */}
@@ -37,7 +39,7 @@ export function PasadiasEditorial({ slides, title, subtitle }: PasadiasEditorial
         <ParallaxFloat speed={0.08} className="absolute inset-0">
           <Image
             src={slides[0]?.image || "/image/makalu-colombia-3631740.jpg"}
-            alt="Pasadías Colombia"
+            alt={title || "Colombia Day Trips & Excursions"}
             fill
             sizes="100vw"
             className="object-cover opacity-25"
@@ -92,7 +94,7 @@ export function PasadiasEditorial({ slides, title, subtitle }: PasadiasEditorial
       <EditorialSection bg="warm" bleed="bottom" bleedColor="#faf8f4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 editorial-stagger-variance">
               {slides.map((slide, i) => {
-                const theme = resolveDestinationTheme(slide.colorTheme);
+                const theme = resolveDestinationTheme(slide.colorTheme, locale);
                 // Asymmetric pattern: alternating large/small spans
                 const isLarge = i % 3 === 0;
                 const colSpan = isLarge ? "md:col-span-8" : "md:col-span-4";

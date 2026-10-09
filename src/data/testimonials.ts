@@ -33,7 +33,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     reviewKey: "yamel",
     tripKey: "yamel",
-    tripName: "Pasadía Termales del Rancho",
+    tripName: "Coffee Region & Tolima Journey",
     date: "2025-04-01",
   },
   {
@@ -44,7 +44,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     reviewKey: "angie",
     tripKey: "angie",
-    tripName: "Circuito Boyacá Colonial",
+    tripName: "Colonial Boyacá Journey",
     date: "2025-04-01",
   },
   {
@@ -55,7 +55,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     reviewKey: "samsung",
     tripKey: "samsung",
-    tripName: "Servicio Corporativo",
+    tripName: "Corporate Travel Services",
     date: "2025-04-01",
   },
   {
@@ -66,7 +66,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     reviewKey: "sandra",
     tripKey: "sandra",
-    tripName: "Pasadía Valle del Cocora",
+    tripName: "Cocora Valley Day Trip",
     date: "2025-04-01",
   },
   {
@@ -77,7 +77,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     reviewKey: "davidParra",
     tripKey: "davidParra",
-    tripName: "Circuito Corazón de los Andes",
+    tripName: "Heart of the Andes Journey",
     date: "2026-07-30",
   },
   {
@@ -88,18 +88,18 @@ export const testimonials: Testimonial[] = [
     rating: 4,
     reviewKey: "jennyHernandez",
     tripKey: "jennyHernandez",
-    tripName: "Pasadía Ibagué City Tour",
+    tripName: "Ibagué City Tour",
     date: "2026-06-01",
   },
   {
     id: "review-micilene",
     name: "Micilene Larrañaga Candido",
-    location: "Brasil",
-    country: "Brasil",
+    location: "Brazil",
+    country: "Brazil",
     rating: 5,
     reviewKey: "micilene",
     tripKey: "micilene",
-    tripName: "Época Precolombina Sur de Colombia",
+    tripName: "Pre-Columbian Era, Southern Colombia",
     date: "2026-09-20",
   },
   {
@@ -110,7 +110,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     reviewKey: "ruthAhumada",
     tripKey: "ruthAhumada",
-    tripName: "Pasadía Desierto de la Tatacoa",
+    tripName: "Tatacoa Desert Day Trip",
     date: "2026-09-22",
   },
   {
@@ -121,7 +121,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     reviewKey: "mariaAntonia",
     tripKey: "mariaAntonia",
-    tripName: "Circuito San Agustín Arqueológico",
+    tripName: "San Agustín Archaeological Journey",
     date: "2026-09-25",
   },
 ];

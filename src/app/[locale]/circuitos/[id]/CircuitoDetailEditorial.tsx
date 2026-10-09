@@ -177,7 +177,12 @@ export function CircuitoDetailEditorial({
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-8">
-            <CircuitRouteMap mapEmbedUrl={mapEmbedUrl} circuitName={name} />
+            <CircuitRouteMap
+              mapEmbedUrl={mapEmbedUrl}
+              circuitName={name}
+              title={t.routeMapTitle}
+              subtitle={t.routeMapSubtitle}
+            />
 
             <div className="sticky top-28 bg-editorial-warm p-8 rounded-3xl border border-editorial-border">
               <h3 className="heading-1 text-editorial-dark mb-6">{t.tripSummary}</h3>

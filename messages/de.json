@@ -190,7 +190,9 @@
     "downloadWord": "Word herunterladen",
     "downloadProgram": "Programm herunterladen",
     "generating": "Wird generiert...",
-    "downloaded": "Heruntergeladen!"
+    "downloaded": "Heruntergeladen!",
+    "routeMap": "Reiseroute",
+    "routeMapSubtitle": "Interaktive Routenübersicht"
   },
   "circuitExtensions": {
     "sectionLabel": "Optionale Extras",

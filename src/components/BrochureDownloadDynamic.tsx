@@ -13,9 +13,8 @@ const BrochureDownload = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex items-center justify-center gap-2 py-4 text-foreground/40">
-        <Loader2 className="w-4 h-4 animate-spin" />
-        <span className="text-sm">Cargando...</span>
+      <div className="flex items-center justify-center gap-2 py-4 text-stone-400">
+        <Loader2 className="w-5 h-5 animate-spin" />
       </div>
     ),
   }

@@ -165,7 +165,7 @@
     "whatsappCircuit": "Hello, I'm interested in the circuit: {title}"
   },
   "circuitDetail": {
-    "badge": "Tourist Circuit",
+    "badge": "Signature Journey",
     "colombia": "Colombia",
     "investmentFrom": "Investment From",
     "toQuote": "To Be Quoted",
@@ -190,7 +190,9 @@
     "downloadWord": "Download Word",
     "downloadProgram": "Download Program",
     "generating": "Generating...",
-    "downloaded": "Downloaded!"
+    "downloaded": "Downloaded!",
+    "routeMap": "Journey Route",
+    "routeMapSubtitle": "Interactive route overview"
   },
   "circuitExtensions": {
     "sectionLabel": "Optional Add-ons",
@@ -231,8 +233,8 @@
     "about": "About & Trust",
     "dayTrips": "Day Trips",
     "circuits": "Journeys",
-    "services": "Travel Trade / B2B",
-    "wellness": "Wellness & Medical",
+    "services": "Travel Trade",
+    "wellness": "Medical & Wellness",
     "gallery": "Gallery",
     "legal": "Legal",
     "terms": "Terms & Conditions",
@@ -250,18 +252,18 @@
   },
   "wellness": {
     "metaTitle": "Health & Wellness | OnTour DMC Colombia",
-    "metaDesc": "World-class medical and aesthetic care in the heart of Colombia. Board-certified specialists, up to 70% savings vs. the US. Recovery in paradise.",
+    "metaDesc": "World-class medical and aesthetic care in the heart of Colombia. Colombia-licensed specialists registered with RETHUS, up to 70% savings vs. the US. Recovery in paradise.",
     "hero": {
       "title": "World-Class Healthcare",
       "titleHighlight": "in Colombia",
-      "subtitle": "Access world-class medical and aesthetic procedures with up to 70% savings compared to the US, backed by board-certified specialists in the heart of the Colombian Andes.",
+      "subtitle": "Access world-class medical and aesthetic procedures with up to 70% savings compared to the US, backed by Colombia-licensed specialists registered with RETHUS in the heart of the Colombian Andes.",
       "ctaPrimary": "Request Free Consultation",
       "ctaSecondary": "See How the Process Works",
       "imagePatientAlt": "Smiling patient experiencing premium medical and wellness care in Colombia",
       "imageTolimaAlt": "Scenic mountain landscape of Tolima and the Colombian coffee region"
     },
     "trust": {
-      "certified": "Board-Certified Specialists",
+      "certified": "RETHUS-Licensed Specialists",
       "materials": "FDA / CE-Cleared Materials",
       "quote": "Written Fixed Quote Before Travel",
       "bilingual": "Bilingual Patient Coordination",
@@ -270,7 +272,7 @@
     "care": {
       "title": "Your Health, Our Priority.",
       "titleHighlight": "Colombia Cares For You.",
-      "subtitle": "Access world-class medical and aesthetic procedures in Tolima, backed by board-certified specialists and comprehensive support before, during, and after your procedure.",
+      "subtitle": "Access world-class medical and aesthetic procedures in Tolima, backed by licensed specialists registered with RETHUS and comprehensive support before, during, and after your procedure.",
       "requestInfo": "Request Information",
       "helpTitle": "Not sure which package is right for you?",
       "helpSubtitle": "Our team provides personalized guidance with zero commitment.",
@@ -278,7 +280,7 @@
     },
     "treatments": {
       "title": "Our Treatments & Specialties",
-      "subtitle": "High-complexity medical and aesthetic procedures with board-certified specialists.",
+      "subtitle": "High-complexity medical and aesthetic procedures with licensed specialists registered with RETHUS.",
       "learnMore": "Learn More",
       "items": {
         "cirugiaPlastica": {
@@ -359,7 +361,7 @@
     },
     "specialists": {
       "title": "Meet Our Specialists",
-      "subtitle": "Over 20 board-certified professionals with international training, organized by specialty to provide you with world-class medical care."
+      "subtitle": "Over 20 Colombia-licensed specialists registered with RETHUS and international training, organized by specialty to provide you with world-class medical care."
     },
     "faq": {
       "title": "Frequently Asked Questions",
@@ -764,7 +766,7 @@
   },
   "testimonials": {
     "googleBadge": "Google Reviews",
-    "ratingSubtitle": "Based on 40+ verified reviews",
+    "ratingSubtitle": "Based on 40+ Google reviews",
     "title": "What our travelers say",
     "subtitle": "Real experiences from those who trusted us to discover Colombia.",
     "verifiedReview": "Verified review",

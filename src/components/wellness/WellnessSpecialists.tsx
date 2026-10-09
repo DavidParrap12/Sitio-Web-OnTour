@@ -351,7 +351,7 @@ const SPECIALIST_ROLES: Record<string, Record<string, string>> = {
 
 const CERTIFIED_LABELS: Record<string, string> = {
   es: "Especialista Certificado",
-  en: "Board-Certified Specialist",
+  en: "RETHUS-Licensed Specialist",
   fr: "Spécialiste Certifié",
   de: "Zertifizierter Facharzt",
 };

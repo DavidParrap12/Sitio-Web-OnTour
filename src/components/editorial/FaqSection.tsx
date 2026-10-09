@@ -18,7 +18,7 @@ const FAQS_CONTENT = {
     items: [
       {
         q: "¿Cómo comienza mi viaje con OnTour?",
-        a: "Todo inicia compartiéndonos tus fechas tentativas, número de viajeros y preferencias. En menos de 24 horas, nuestro equipo local diseña una propuesta inicial completa con itinerario diario, traslados privados, hoteles sugeridos y presupuesto transparente.",
+        a: "Todo inicia compartiéndonos tus fechas tentativas, número de viajeros y preferencias. En menos de 24 horas recibirás respuesta de nuestro equipo local para afinar detalles, y en 3 a 5 días hábiles tu propuesta completa personalizada con itinerario diario, traslados privados, hoteles sugeridos y presupuesto transparente.",
       },
       {
         q: "¿Qué incluye un viaje privado?",
@@ -46,7 +46,7 @@ const FAQS_CONTENT = {
     items: [
       {
         q: "How does my journey begin?",
-        a: "Your journey starts with a conversation. Share your travel dates, party size, and personal preferences. Within 24 hours, our local team crafts a custom proposal complete with day-by-day pacing, private logistics, boutique stays, and clear pricing.",
+        a: "Your journey starts with a conversation. Share your travel dates, party size, and personal preferences. You'll receive an initial response within 24 hours to fine-tune your vision, followed by a comprehensive tailor-made proposal within 3 to 5 business days — complete with day-by-day pacing, private logistics, boutique stays, and transparent pricing.",
       },
       {
         q: "What's included in a journey?",
@@ -74,7 +74,7 @@ const FAQS_CONTENT = {
     items: [
       {
         q: "Wie beginnt meine Reise mit OnTour?",
-        a: "Sie teilen uns Ihre Reisetermine, Wünsche und Gruppengröße mit. Innerhalb von 24 Stunden erstellen unsere lokalen Reiseplaner einen maßgeschneiderten Reisevorschlag mit privaten Transfers, handverlesenen Unterkünften und transparenter Kostenaufstellung.",
+        a: "Sie teilen uns Ihre Reisetermine, Wünsche und Gruppengröße mit. Innerhalb von 24 Stunden erhalten Sie eine erste Rückmeldung zur Abstimmung, und innerhalb von 3 bis 5 Werktagen Ihren maßgeschneiderten Reisevorschlag mit privaten Transfers, handverlesenen Unterkünften und transparenter Kostenaufstellung.",
       },
       {
         q: "Was ist in einer Rundreise enthalten?",
@@ -102,7 +102,7 @@ const FAQS_CONTENT = {
     items: [
       {
         q: "Comment commence mon voyage avec OnTour ?",
-        a: "Tout commence par un échange. Partagez-nous vos dates souhaitées, le nombre de voyageurs et vos envies. En moins de 24 heures, notre équipe locale conçoit une proposition sur mesure détaillée avec hébergements de charme et budget transparent.",
+        a: "Partagez avec nous vos dates souhaitées, le nombre de voyageurs et vos envies. Notre équipe locale vous répond sous 24 heures pour échanger sur vos attentes, puis vous remet sous 3 à 5 jours ouvrés une proposition complète sur mesure avec itinéraire jour par jour, transports privés, hébergements de charme et tarification transparente.",
       },
       {
         q: "Que comprend un voyage avec OnTour DMC ?",

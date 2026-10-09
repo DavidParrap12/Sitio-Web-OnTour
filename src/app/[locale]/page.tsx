@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { SectionTitle } from "@/components/SectionTitle";
 import { CardDestino } from "@/components/CardDestino";
@@ -16,6 +17,27 @@ const Testimonials = dynamic(
   () => import("@/components/Testimonials").then((mod) => mod.Testimonials),
   { loading: () => <div className="py-16 md:py-24 bg-white" /> }
 );
+
+// Locale → canonical home URL (es has no prefix)
+const HOME_URL: Record<string, string> = {
+  es: "https://www.ontourdmc.com",
+  en: "https://www.ontourdmc.com/en",
+  de: "https://www.ontourdmc.com/de",
+  fr: "https://www.ontourdmc.com/fr",
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const url = HOME_URL[locale] ?? HOME_URL.es;
+  return {
+    alternates: { canonical: url },
+    openGraph: { url },
+  };
+}
 
 export default async function Home({
   params,

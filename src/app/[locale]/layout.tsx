@@ -51,9 +51,6 @@ const metadataByLocale: Record<string, { title: string; description: string; ogT
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = metadataByLocale[locale] ?? metadataByLocale.es;
-  // Build locale-specific canonical URL so each hreflang variation is indexed correctly
-  const localePrefix = locale === "es" ? "" : `/${locale}`;
-  const canonicalUrl = `https://www.ontourdmc.com${localePrefix}`;
 
   const ogImageAltByLocale: Record<string, string> = {
     es: "OnTour DMC Colombia — Tour Operador y Destinos a Medida",
@@ -66,8 +63,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     metadataBase: new URL("https://www.ontourdmc.com"),
     title: t.title,
     description: t.description,
+    // hreflang alternates are valid at layout level; canonical is set per page
     alternates: {
-      canonical: canonicalUrl,
       languages: {
         es: "https://www.ontourdmc.com",
         en: "https://www.ontourdmc.com/en",
@@ -78,7 +75,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: t.ogTitle,
       description: t.ogDesc,
-      url: canonicalUrl,
       siteName: "Ontour DMC Colombia",
       images: [
         {
@@ -99,6 +95,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
   };
 }
+
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
