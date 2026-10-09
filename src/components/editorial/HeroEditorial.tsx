@@ -34,8 +34,9 @@ interface HeroEditorialProps {
   /** CTA buttons */
   actions?: Array<{
     label: string;
-    href: string;
-    variant?: "primary" | "secondary";
+    href?: string;
+    variant?: "primary" | "secondary" | "link";
+    onClick?: () => void;
   }>;
   /** Minimum height (default "90vh") */
   minHeight?: string;
@@ -164,10 +165,11 @@ export function HeroEditorial({
         <div className="relative z-10 w-full">{children}</div>
       ) : (
         <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 text-left max-w-full md:max-w-[52%] pt-24 pb-16">
-          {/* Badge — solo SEO, invisible al usuario */}
-          <span className="sr-only">
-            Descubre Colombia con OnTour DMC — Circuitos turísticos y experiencias inolvidables
-          </span>
+          {badge && (
+            <span className="sr-only">
+              {badge}
+            </span>
+          )}
 
           {/* Title — rendered as plain HTML, no motion wrapper.
               LCP elements must be visible on first frame; opacity:0 delays
@@ -199,25 +201,61 @@ export function HeroEditorial({
               transition={{ ...contentTransition, delay: 0.5 }}
               className="flex flex-col sm:flex-row items-start justify-start gap-4"
             >
-              {actions.map((action) => (
-                <MagneticButton key={action.href} className="w-full sm:w-auto">
-                  <Link
-                    href={action.href as any}
-                    className={`
-                      w-full sm:w-auto flex items-center justify-center gap-2
-                      px-8 py-4 rounded-full font-semibold text-lg
-                      editorial-hover-rich shadow-lg
-                      ${
-                        action.variant === "secondary"
-                          ? "editorial-hover-shift-accent bg-white/95 text-editorial-dark"
-                          : "bg-editorial-accent text-white hover:bg-editorial-accent-hover"
-                      }
-                    `}
-                  >
-                    {action.label}
-                  </Link>
-                </MagneticButton>
-              ))}
+              {actions.map((action, i) => {
+                if (action.variant === "link") {
+                  return (
+                    <a
+                      key={action.href || i}
+                      href={action.href || "#circuitos-destacados"}
+                      className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors py-3 group cursor-pointer"
+                    >
+                      <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-white">
+                        {action.label.replace(/↓/g, "").trim()}
+                      </span>
+                      <span className="text-base group-hover:translate-y-1 transition-transform">↓</span>
+                    </a>
+                  );
+                }
+
+                return (
+                  <MagneticButton key={action.href || i} className="w-full sm:w-auto">
+                    {action.onClick ? (
+                      <button
+                        type="button"
+                        onClick={action.onClick}
+                        className={`
+                          w-full sm:w-auto flex items-center justify-center gap-2
+                          px-8 py-4 rounded-full font-semibold text-base sm:text-lg
+                          editorial-hover-rich shadow-lg cursor-pointer
+                          ${
+                            action.variant === "secondary"
+                              ? "editorial-hover-shift-accent bg-white/95 text-editorial-dark"
+                              : "bg-editorial-accent text-white hover:bg-editorial-accent-hover"
+                          }
+                        `}
+                      >
+                        {action.label}
+                      </button>
+                    ) : (
+                      <Link
+                        href={(action.href || "#") as any}
+                        className={`
+                          w-full sm:w-auto flex items-center justify-center gap-2
+                          px-8 py-4 rounded-full font-semibold text-base sm:text-lg
+                          editorial-hover-rich shadow-lg
+                          ${
+                            action.variant === "secondary"
+                              ? "editorial-hover-shift-accent bg-white/95 text-editorial-dark"
+                              : "bg-editorial-accent text-white hover:bg-editorial-accent-hover"
+                          }
+                        `}
+                      >
+                        {action.label}
+                      </Link>
+                    )}
+                  </MagneticButton>
+                );
+              })}
             </motion.div>
           )}
 

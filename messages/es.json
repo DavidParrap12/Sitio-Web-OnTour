@@ -8,7 +8,7 @@
     "gallery": "Galería",
     "contact": "Contacto",
     "wellness": "Bienestar",
-    "quote": "Cotizar viaje",
+    "quote": "Planea tu Viaje",
     "contactAdvisor": "Contactar Asesor",
     "language": "Idioma"
   },
@@ -17,13 +17,13 @@
     "sub": "Experiencias diseñadas a medida para cada viajero"
   },
   "hero": {
-    "tagline": "Descubre Colombia con Ontour",
-    "title1": "Experiencias Inolvidables,",
-    "title2": "Destinos Extraordinarios",
-    "subtitle": "Ofrecemos los mejores pasadías y circuitos turísticos. Tu próxima gran aventura comienza aquí.",
+    "tagline": "",
+    "title1": "Colombia,",
+    "title2": "Diseñada Para Ti.",
+    "subtitle": "Viajes privados · Experiencia local · Servicio impecable",
     "ctaDayTrips": "Ver Pasadías",
-    "ctaCircuits": "Explorar Circuitos",
-    "ctaContact": "Contáctenos",
+    "ctaCircuits": "Explora nuestras rutas ↓",
+    "ctaContact": "Planea tu Viaje",
     "goToImage": "Ir a imagen {n}"
   },
   "home": {
@@ -225,13 +225,14 @@
     "departure": "Salida"
   },
   "footer": {
-    "tagline": "Creamos experiencias inolvidables.",
+    "tagline": "Operador DMC local en los Andes colombianos. Habilitados, asegurados y dedicados a crear viajes privados desde el primer día.",
     "explore": "Explorar",
     "home": "Inicio",
-    "about": "Quiénes Somos",
+    "about": "Nosotros",
     "dayTrips": "Pasadías",
     "circuits": "Circuitos",
-    "services": "Servicios",
+    "services": "Agencias / B2B",
+    "wellness": "Turismo Médico",
     "gallery": "Galería",
     "legal": "Legal",
     "terms": "Términos y Condiciones",
@@ -241,6 +242,9 @@
     "contact": "Contáctanos",
     "rights": "Todos los derechos reservados.",
     "partners": "Nuestros Aliados",
+    "alsoFindUs": "También nos encuentras en",
+    "legalToggleShow": "Aviso Legal y Cumplimiento Normativo ↓",
+    "legalToggleHide": "Ocultar ↑",
     "designed": "Diseñado para inspirar viajeros.",
     "legalDisclaimer": "En el desarrollo de lo dispuesto en el artículo 17 Ley 679 de 2001 y la ley 1336 de 2009, On Tour DMC, rechaza la explotación, la pornografía, el turismo sexual y demás formas de abuso de menores de edad, advierte al turista que el abuso sexual es castigado penalmente y administrativamente conforme a las disposiciones legales vigentes y se compromete a denunciar cualquier caso relacionado con el ESCNNA. On Tour DMC Rechaza la comercialización y tráfico de especies de fauna y flora silvestre. Ley 17 de 1981, Resolución Ministerial No. 1367 de 2000, Decreto 1608 de 1978. Y denuncia el tráfico ilegal de especies exóticas de flora y fauna. Ley 599 del 2000, Código Penal Colombiano. Ley 165 de 1994, Convenio de las Naciones Unidas sobre diversidad biológica. Además rechaza y denuncia el tráfico de bienes culturales previniendo y protegiendo el patrimonio nacional. Ley 397 de 1997, Decreto 833 de 2002, Ley 1185 de 2008, Ley 63 de 1986, Ley 1675 de julio de 2013. On Tour DMC Rechaza los actos de racismo, discriminación u orientación sexual Ley 1482 de 2011. Sentencia T-282/11, Convenio No. 169 sobre pueblos indígenas y tribales, 1989. Auto 004/09 y protege los derechos fundamentales de personas e indígenas desplazados por el conflicto armado. Declarado en Sentencia T-025/04."
   },
@@ -759,7 +763,8 @@
     }
   },
   "testimonials": {
-    "googleBadge": "Reseñas en Google",
+    "googleBadge": "Google Reviews",
+    "ratingSubtitle": "Basado en 40+ reseñas verificadas",
     "title": "Lo que dicen nuestros viajeros",
     "subtitle": "Experiencias reales de quienes confiaron en nosotros para descubrir Colombia.",
     "verifiedReview": "Reseña verificada",
@@ -910,7 +915,7 @@
     },
     "q8": {
       "question": "¿Están legalmente constituidos?",
-      "answer": "Sí. Ontour S.A.S. está inscrita en el Registro Nacional de Turismo (RNT 145702), administrado por el Patrimonio Autónomo Fondo Nacional del Turismo (FONTUR), y cumple con toda la normatividad del sector turismo en Colombia."
+      "answer": "Sí. Ontour S.A.S. está inscrita en el Registro Nacional de Turismo (RNT 62212), administrado por el Patrimonio Autónomo Fondo Nacional del Turismo (FONTUR), y cumple con toda la normatividad del sector turismo en Colombia."
     }
   },
   "services": {

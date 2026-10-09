@@ -3,12 +3,16 @@ export interface Testimonial {
   name: string;
   /** Location or country of the reviewer */
   location: string;
+  /** Flag emoji + country name, e.g. "🇨🇴 Colombia" */
+  country: string;
   /** Rating out of 5 */
   rating: number;
   /** Maps to an i18n key under testimonials.reviews.{reviewKey} */
   reviewKey: string;
   /** Maps to i18n key for the trip name */
   tripKey: string;
+  /** Readable trip name — shown on the review card */
+  tripName?: string;
   /** ISO date string (approximate — based on "hace X" from Google) */
   date: string;
 }
@@ -25,81 +29,99 @@ export const testimonials: Testimonial[] = [
     id: "review-yamel",
     name: "Yamel Pardo Rico",
     location: "Colombia",
+    country: "Colombia",
     rating: 5,
     reviewKey: "yamel",
     tripKey: "yamel",
+    tripName: "Pasadía Termales del Rancho",
     date: "2025-04-01",
   },
   {
     id: "review-angie",
     name: "Angie Catalina Camargo",
     location: "Colombia",
+    country: "Colombia",
     rating: 5,
     reviewKey: "angie",
     tripKey: "angie",
+    tripName: "Circuito Boyacá Colonial",
     date: "2025-04-01",
   },
   {
     id: "review-samsung",
     name: "Samsung Éxito",
     location: "Colombia",
+    country: "Colombia",
     rating: 5,
     reviewKey: "samsung",
     tripKey: "samsung",
+    tripName: "Servicio Corporativo",
     date: "2025-04-01",
   },
   {
     id: "review-sandra",
     name: "Sandra Perdomo",
     location: "Colombia",
+    country: "Colombia",
     rating: 5,
     reviewKey: "sandra",
     tripKey: "sandra",
+    tripName: "Pasadía Valle del Cocora",
     date: "2025-04-01",
   },
   {
     id: "review-david-parra",
     name: "David Fernando Parra Pardo",
     location: "Colombia",
+    country: "Colombia",
     rating: 5,
     reviewKey: "davidParra",
     tripKey: "davidParra",
+    tripName: "Circuito Corazón de los Andes",
     date: "2026-07-30",
   },
   {
     id: "review-jenny-hernandez",
     name: "Jenny Hernandez",
     location: "Colombia",
+    country: "Colombia",
     rating: 4,
     reviewKey: "jennyHernandez",
     tripKey: "jennyHernandez",
+    tripName: "Pasadía Ibagué City Tour",
     date: "2026-06-01",
   },
   {
     id: "review-micilene",
     name: "Micilene Larrañaga Candido",
-    location: "Colombia",
+    location: "Brasil",
+    country: "Brasil",
     rating: 5,
     reviewKey: "micilene",
     tripKey: "micilene",
+    tripName: "Época Precolombina Sur de Colombia",
     date: "2026-09-20",
   },
   {
     id: "review-ruth-ahumada",
     name: "Ruth Ahumada",
     location: "Colombia",
+    country: "Colombia",
     rating: 5,
     reviewKey: "ruthAhumada",
     tripKey: "ruthAhumada",
+    tripName: "Pasadía Desierto de la Tatacoa",
     date: "2026-09-22",
   },
   {
     id: "review-maria-antonia",
     name: "María Antonia Arteaga Acero",
     location: "Colombia",
+    country: "Colombia",
     rating: 5,
     reviewKey: "mariaAntonia",
     tripKey: "mariaAntonia",
+    tripName: "Circuito San Agustín Arqueológico",
     date: "2026-09-25",
   },
 ];

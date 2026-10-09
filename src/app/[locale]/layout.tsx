@@ -11,22 +11,22 @@ import { WhatsappButton } from "@/components/WhatsappButton";
 
 const metadataByLocale: Record<string, { title: string; description: string; ogTitle: string; ogDesc: string; ogLocale: string; twTitle: string; twDesc: string }> = {
   es: {
-    title: "OnTour DMC Colombia | Pasadías y Circuitos Turísticos",
-    description: "Explora los mejores destinos, pasadías y circuitos con Ontour. Turismo en Colombia.",
-    ogTitle: "OnTour DMC Colombia | Pasadías y Circuitos Turísticos",
-    ogDesc: "Explora los mejores destinos, pasadías y circuitos con Ontour. Turismo en Colombia.",
+    title: "OnTour DMC Colombia | Viajes Privados y Rutas a Medida",
+    description: "Operador local DMC en los Andes colombianos. Pasadías privados, circuitos a medida y turismo médico. Habilitados RNT 62212.",
+    ogTitle: "OnTour DMC Colombia | Viajes Privados y Rutas a Medida",
+    ogDesc: "Operador DMC local en Colombia. Pasadías privados, rutas a medida y turismo médico. RNT 62212.",
     ogLocale: "es_CO",
-    twTitle: "OnTour DMC Colombia | Turismo en Colombia",
-    twDesc: "Pasadías y circuitos turísticos en Colombia.",
+    twTitle: "OnTour DMC Colombia | Viajes Privados a Medida",
+    twDesc: "Pasadías y rutas privadas en Colombia. Operador local RNT 62212.",
   },
   en: {
-    title: "OnTour DMC Colombia | Day Trips & Tourist Circuits",
-    description: "Explore the best destinations, day trips and circuits with OnTour. Tourism in Colombia.",
-    ogTitle: "OnTour DMC Colombia | Day Trips & Tourist Circuits",
-    ogDesc: "Explore the best destinations, day trips and tourist circuits with OnTour. Tourism in Colombia.",
+    title: "Private Tours & Tailor-Made Journeys in Colombia | OnTour DMC",
+    description: "Private journeys through the Colombian Andes — Tatacoa Desert, Bogotá, Coffee Region & beyond. Local DMC operator, licensed and insured. RNT 62212.",
+    ogTitle: "Private Tours & Tailor-Made Journeys in Colombia | OnTour DMC",
+    ogDesc: "Private journeys through the Colombian Andes. Local DMC operator, licensed and insured. RNT 62212.",
     ogLocale: "en_US",
-    twTitle: "OnTour DMC Colombia | Tourism in Colombia",
-    twDesc: "Day trips and tourist circuits in Colombia.",
+    twTitle: "OnTour DMC Colombia | Private & Tailor-Made Journeys",
+    twDesc: "Private tours & custom itineraries in Colombia. Local operator, RNT 62212.",
   },
   de: {
     title: "OnTour DMC Kolumbien | Tagesausflüge & Rundreisen",
@@ -51,22 +51,41 @@ const metadataByLocale: Record<string, { title: string; description: string; ogT
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = metadataByLocale[locale] ?? metadataByLocale.es;
+  // Build locale-specific canonical URL so each hreflang variation is indexed correctly
+  const localePrefix = locale === "es" ? "" : `/${locale}`;
+  const canonicalUrl = `https://www.ontourdmc.com${localePrefix}`;
+
+  const ogImageAltByLocale: Record<string, string> = {
+    es: "OnTour DMC Colombia — Tour Operador y Destinos a Medida",
+    en: "OnTour DMC Colombia — Private Tours & Tailor-Made Journeys",
+    de: "OnTour DMC Kolumbien — Private Rundreisen und Individualreisen",
+    fr: "OnTour DMC Colombie — Voyages Privés et Circuits Sur Mesure",
+  };
 
   return {
     metadataBase: new URL("https://www.ontourdmc.com"),
     title: t.title,
     description: t.description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        es: "https://www.ontourdmc.com",
+        en: "https://www.ontourdmc.com/en",
+        de: "https://www.ontourdmc.com/de",
+        fr: "https://www.ontourdmc.com/fr",
+      },
+    },
     openGraph: {
       title: t.ogTitle,
       description: t.ogDesc,
-      url: "https://www.ontourdmc.com",
+      url: canonicalUrl,
       siteName: "Ontour DMC Colombia",
       images: [
         {
           url: "https://www.ontourdmc.com/image/portadas/Statues_at_San_Agust%C3%ADn_park_202608141341.jpeg",
           width: 1200,
           height: 630,
-          alt: "OnTour DMC Colombia — Tour Operador & DMC",
+          alt: ogImageAltByLocale[locale] || ogImageAltByLocale.es,
         },
       ],
       locale: t.ogLocale,

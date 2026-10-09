@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { Clock, MapPin, MessageCircle, Mail, ChevronDown, Eye, ArrowRight } from "lucide-react";
+import { MapPin, MessageCircle, Mail, ChevronDown, Eye, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 
@@ -154,11 +154,7 @@ export function CardDestino({
           </motion.div>
         </div>
 
-        {/* Duration badge */}
-        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-primary shadow-sm flex items-center gap-1 z-10">
-          <Clock className="w-4 h-4" />
-          {duration}
-        </div>
+
       </div>
 
       {/* Text content */}

@@ -306,8 +306,8 @@ export function Navbar() {
   }
 
   const navClass = scrolled
-    ? "bg-white/95 backdrop-blur-md shadow-sm py-3.5 text-stone-900 border-b border-stone-200/60"
-    : "bg-white/90 backdrop-blur-sm py-5 text-stone-900";
+    ? "bg-white/98 backdrop-blur-lg shadow-sm py-3 sm:py-3.5 text-stone-900 border-b border-stone-200/80"
+    : "bg-white/85 backdrop-blur-md py-4 sm:py-5 text-stone-900 border-b border-stone-200/40";
 
   return (
     <>
@@ -394,7 +394,7 @@ export function Navbar() {
           </div>
 
           {/* Right Action Bar (Language + Persistent Quote CTA) */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             {/* Language Selector */}
             <div className="relative" ref={langRef}>
               <button
@@ -435,17 +435,17 @@ export function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* Persistent CTA Button: Request a Quote */}
+            {/* Persistent CTA Button: Plan Your Journey */}
             <button
               onClick={() => {
                 trackRequestQuoteClick("navbar_desktop");
                 setQuoteModalOpen(true);
               }}
-              className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium tracking-wide text-xs sm:text-sm text-white bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] shadow-sm hover:shadow-md transition-all duration-300 min-h-[44px] cursor-pointer"
+              className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium tracking-wide text-xs sm:text-sm text-white bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] shadow-sm hover:shadow-md transition-all duration-300 min-h-[44px] cursor-pointer shrink-0"
             >
               <span>
                 {langKey === "es" && "Cotizar Viaje"}
-                {langKey === "en" && "Request a Quote"}
+                {langKey === "en" && "Plan Your Journey"}
                 {langKey === "fr" && "Demander un Devis"}
                 {langKey === "de" && "Angebot Anfordern"}
               </span>
@@ -454,17 +454,17 @@ export function Navbar() {
           </div>
 
           {/* Mobile Right Controls: Fast Quote + Hamburger */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2 shrink-0">
             <button
               onClick={() => {
                 trackRequestQuoteClick("navbar_mobile_header");
                 setQuoteModalOpen(true);
               }}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full font-medium tracking-wide text-xs text-white bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] shadow-sm min-h-[44px] touch-manipulation transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full font-medium tracking-wide text-xs text-white bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] shadow-sm min-h-[44px] touch-manipulation transition-colors shrink-0"
             >
               <span>
                 {langKey === "es" && "Cotizar"}
-                {langKey === "en" && "Quote"}
+                {langKey === "en" && "Plan Trip"}
                 {langKey === "fr" && "Devis"}
                 {langKey === "de" && "Angebot"}
               </span>

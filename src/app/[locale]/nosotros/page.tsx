@@ -24,6 +24,7 @@ export default async function Nosotros({
       recognitionsTitle={t("recognitionsTitle")}
       recognitionsSubtitle={t("recognitionsSubtitle")}
       recognitionsClose={t("recognitionsClose")}
+      locale={locale}
     />
   );
 }

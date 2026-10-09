@@ -328,7 +328,7 @@ export default async function ServiciosPage({
       <ServiciosHero title={t("title")} subtitle={t("subtitle")} />
 
       {/* Services Grid with Interactive Hover/Tap Expansion */}
-      <div className="container mx-auto px-4 md:px-6 mt-16 md:mt-20">
+      <div className="container mx-auto px-4 md:px-6 mt-16 md:mt-20 pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto mb-8 text-center sm:text-left">
           <p className="text-xs uppercase font-bold tracking-widest text-[#B49A68]">
             {headerTexts.tag}
@@ -342,18 +342,18 @@ export default async function ServiciosPage({
           <ServiciosInteractiveGrid services={servicesData} />
         </div>
 
-        {/* CTA B2B / Direct Booking */}
-        <div className="max-w-6xl mx-auto mt-20 text-center bg-white rounded-3xl p-10 md:p-14 shadow-sm border border-stone-200">
-          <h2 className="font-serif text-3xl md:text-4xl font-light text-[#16352D] mb-4">
+        {/* CTA B2B / Direct Booking with generous bottom margin */}
+        <div className="max-w-6xl mx-auto mt-20 mb-20 md:mb-28 text-center bg-white rounded-3xl p-10 sm:p-14 md:p-16 shadow-sm border border-stone-200">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#16352D] mb-5">
             {t("ctaTitle")}
           </h2>
-          <p className="text-stone-600 max-w-2xl mx-auto mb-8 text-base font-light leading-relaxed">
+          <p className="text-stone-600 max-w-3xl mx-auto mb-10 text-lg md:text-xl font-normal leading-relaxed">
             {t("ctaSubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contacto"
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-8 py-3.5 rounded-full font-bold text-sm shadow-md hover:shadow-lg transition-all min-h-[44px]"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-10 py-4.5 rounded-full font-bold text-base sm:text-lg shadow-md hover:shadow-lg transition-all min-h-[48px]"
             >
               {t("ctaButton")}
             </Link>
@@ -361,10 +361,10 @@ export default async function ServiciosPage({
               href="https://reservas.ontourdmc.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-stone-300 hover:border-stone-400 bg-stone-50 hover:bg-stone-100 text-stone-700 text-sm font-medium transition-all min-h-[44px]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4.5 rounded-full border border-stone-300 hover:border-stone-400 bg-stone-50 hover:bg-stone-100 text-stone-700 text-base sm:text-lg font-medium transition-all min-h-[48px]"
             >
               <span>{t("aviaturButton")}</span>
-              <ExternalLink className="w-4 h-4 text-stone-400" />
+              <ExternalLink className="w-5 h-5 text-stone-400" />
             </a>
           </div>
         </div>

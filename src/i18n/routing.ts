@@ -25,13 +25,13 @@ export const routing = defineRouting({
     },
     "/circuitos": {
       es: "/circuitos",
-      en: "/circuits",
+      en: "/journeys",
       de: "/rundreisen",
       fr: "/circuits",
     },
     "/circuitos/[id]": {
       es: "/circuitos/[id]",
-      en: "/circuits/[id]",
+      en: "/journeys/[id]",
       de: "/rundreisen/[id]",
       fr: "/circuits/[id]",
     },

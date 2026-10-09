@@ -1,331 +1,169 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight, Quote, ExternalLink, CheckCircle } from "lucide-react";
+import { useState } from "react";
+import { Star, CheckCircle, ExternalLink, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { testimonials } from "@/data/testimonials";
+import { SectionReveal } from "@/components/editorial/SectionReveal";
 
-const AUTOPLAY_MS = 7000;
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/place/On+Tour+Agencia+de+Viajes+Colombia/@4.4453535,-75.2418751,19z/data=!4m18!1m9!3m8!1s0x8e38c5dc9b21e75d:0xdfe89bd87d6ae4a2!2sOn+Tour+Agencia+de+Viajes+Colombia!8m2!3d4.4453522!4d-75.2412314!9m1!1b1!16s%2Fg%2F11ryf7f3t2!3m7!1s0x8e38c5dc9b21e75d:0xdfe89bd87d6ae4a2!8m2!3d4.4453522!4d-75.2412314!9m1!1b1!16s%2Fg%2F11ryf7f3t2?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D";
 
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex items-center gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          className={`w-4 h-4 ${
-            i < rating
-              ? "fill-yellow-400 text-yellow-400"
-              : "fill-gray-200 text-gray-200"
-          }`}
-        />
-      ))}
-    </div>
-  );
-}
-
-function ReviewAvatar({ name }: { name: string }) {
-  const initials = name
-    .split(" ")
-    .map((w) => w[0])
-    .filter(Boolean)
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-
-  return (
-    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-editorial-accent to-editorial-accent-hover flex items-center justify-center text-white font-bold text-lg shadow-md ring-3 ring-editorial-accent/20 shrink-0">
-      {initials}
-    </div>
-  );
-}
+// Curate the most detailed reviews (filtering out corporate usernames like Samsung)
+const FEATURED_REVIEWS = [
+  testimonials.find((t) => t.id === "review-micilene") || testimonials[0],
+  testimonials.find((t) => t.id === "review-yamel") || testimonials[1],
+  testimonials.find((t) => t.id === "review-maria-antonia") || testimonials[2],
+  testimonials.find((t) => t.id === "review-angie") || testimonials[3],
+  testimonials.find((t) => t.id === "review-sandra") || testimonials[4],
+  testimonials.find((t) => t.id === "review-david-parra") || testimonials[5],
+];
 
 export function Testimonials() {
   const t = useTranslations("testimonials");
-  const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1);
+  const [page, setPage] = useState(0);
 
-  const goTo = useCallback(
-    (next: number, dir: number) => {
-      setDirection(dir);
-      setCurrent(((next % testimonials.length) + testimonials.length) % testimonials.length);
-    },
-    []
-  );
-
-  const next = useCallback(() => goTo(current + 1, 1), [current, goTo]);
-  const prev = useCallback(() => goTo(current - 1, -1), [current, goTo]);
-
-  // Autoplay
-  useEffect(() => {
-    const timer = setInterval(next, AUTOPLAY_MS);
-    return () => clearInterval(timer);
-  }, [next]);
-
-  const review = testimonials[current];
-
-  const variants = {
-    enter: (d: number) => ({
-      x: d > 0 ? 70 : -70,
-      opacity: 0,
-      scale: 0.96,
-      rotate: d > 0 ? 1.2 : -1.2,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      rotate: 0,
-      transition: {
-        duration: 0.45,
-        ease: [0.16, 1, 0.3, 1] as const,
-      },
-    },
-    exit: (d: number) => ({
-      x: d > 0 ? -70 : 70,
-      opacity: 0,
-      scale: 0.96,
-      rotate: d > 0 ? -1.2 : 1.2,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut" as const,
-      },
-    }),
-  };
+  const reviewsPerPage = 3;
+  const maxPages = Math.ceil(FEATURED_REVIEWS.length / reviewsPerPage);
+  const currentReviews = FEATURED_REVIEWS.slice(page * reviewsPerPage, (page + 1) * reviewsPerPage);
 
   return (
-    <section className="pb-32 pt-16 md:pb-40 md:pt-24 bg-[#faf8f4] relative overflow-hidden">
-      {/* Subtle pattern background */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-      </div>
+    <section className="py-20 md:py-28 bg-[#faf8f4] border-t border-stone-200/60 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-8">
+        <SectionReveal>
+          {/* Header & Google Rating Badge */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+            <div className="max-w-2xl">
+              {/* Aggregated Google Reviews Badge */}
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 bg-white border border-stone-200/80 rounded-full px-4 py-2 shadow-sm mb-4 hover:shadow-md hover:border-editorial-accent/40 transition-all text-xs sm:text-sm font-semibold text-stone-800 group"
+              >
+                <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <div className="flex items-center gap-0.5" aria-label="Calificación 5 estrellas">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <span className="font-bold text-stone-900">5.0 / 5</span>
+                <span className="text-stone-500 font-medium">· {t("ratingSubtitle")}</span>
+                <ExternalLink className="w-3.5 h-3.5 text-stone-400 group-hover:text-editorial-accent transition-colors ml-0.5" />
+              </a>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Section header */}
-        <div className="text-center mb-14">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* Google badge */}
-            <a
-              href={GOOGLE_MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 shadow-sm mb-6 hover:shadow-md transition-shadow"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-              <span className="text-sm font-semibold text-foreground/80">
-                {t("googleBadge")}
-              </span>
-              <div className="flex items-center gap-0.5 ml-1">
-                {[1,2,3,4,5].map(i => (
-                  <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-            </a>
+              <h2 className="display-2 text-editorial-dark font-heading font-medium tracking-tight mb-3">
+                {t("title")}
+              </h2>
+              <p className="body text-editorial-muted">
+                {t("subtitle")}
+              </p>
+            </div>
 
-            <h2 className="display-2 text-editorial-dark mb-4">
-              {t("title")}
-            </h2>
-            <p className="body-lg text-editorial-muted max-w-2xl mx-auto">
-              {t("subtitle")}
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Testimonial card with flanking arrows */}
-        <div className="max-w-3xl mx-auto">
-          <div className="relative">
-            {/* Arrow LEFT — desktop only, positioned outside card */}
-            <button
-              onClick={prev}
-              className="hidden md:flex absolute -left-16 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border-2 border-editorial-border items-center justify-center text-editorial-muted hover:border-editorial-accent hover:text-editorial-accent hover:bg-editorial-accent/5 transition-all z-20"
-              aria-label={t("prevReview")}
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            {/* Arrow RIGHT — desktop only, positioned outside card */}
-            <button
-              onClick={next}
-              className="hidden md:flex absolute -right-16 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border-2 border-editorial-border items-center justify-center text-editorial-muted hover:border-editorial-accent hover:text-editorial-accent hover:bg-editorial-accent/5 transition-all z-20"
-              aria-label={t("nextReview")}
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-
-            {/* Animated card container */}
-            <div className="relative overflow-hidden py-2">
-              <AnimatePresence mode="wait" custom={direction}>
-                <motion.div
-                  key={current}
-                  custom={direction}
-                  variants={variants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.2}
-                  onDragEnd={(_, info) => {
-                    if (info.offset.x < -40) {
-                      next();
-                    } else if (info.offset.x > 40) {
-                      prev();
-                    }
-                  }}
-                  className="w-full cursor-grab active:cursor-grabbing touch-pan-y"
+            {/* Pagination Controls */}
+            {maxPages > 1 && (
+              <div className="flex items-center gap-2 self-start md:self-end">
+                <button
+                  onClick={() => setPage((p) => Math.max(0, p - 1))}
+                  disabled={page === 0}
+                  className="w-10 h-10 rounded-full border border-stone-300 bg-white flex items-center justify-center text-stone-700 hover:bg-stone-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-sm cursor-pointer"
+                  aria-label={t("prevReview")}
                 >
-                  <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-editorial-border shadow-lg shadow-editorial-dark/5 relative">
-                    {/* Quote icon */}
-                    <Quote className="absolute top-5 right-6 sm:top-6 sm:right-8 w-8 h-8 sm:w-10 sm:h-10 text-editorial-accent/10 pointer-events-none" />
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <span className="text-xs text-stone-500 font-medium px-2">
+                  {page + 1} / {maxPages}
+                </span>
+                <button
+                  onClick={() => setPage((p) => Math.min(maxPages - 1, p + 1))}
+                  disabled={page === maxPages - 1}
+                  className="w-10 h-10 rounded-full border border-stone-300 bg-white flex items-center justify-center text-stone-700 hover:bg-stone-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-sm cursor-pointer"
+                  aria-label={t("nextReview")}
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            )}
+          </div>
 
-                    {/* Stars + verified */}
-                    <div className="flex items-center justify-between gap-2 mb-4 sm:mb-5">
-                      <StarRating rating={review.rating} />
-                      <span className="caption text-xs sm:text-sm text-editorial-muted font-medium">
+          {/* 3-Card Grid of Visible Reviews */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10">
+            {currentReviews.map((review) => (
+              <div
+                key={review.id}
+                className="bg-white rounded-2xl p-6 sm:p-7 border border-stone-200/80 shadow-sm hover:shadow-xl hover:border-editorial-accent/30 transition-all duration-300 flex flex-col justify-between relative group"
+              >
+                {/* Quote watermark */}
+                <Quote className="absolute top-5 right-6 w-8 h-8 text-stone-100 group-hover:text-amber-100 transition-colors pointer-events-none" />
+
+                <div>
+                  {/* Top Bar: Stars + Country Flag & Name */}
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <div className="flex items-center gap-0.5">
+                      {Array.from({ length: review.rating }).map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-stone-100 text-stone-700 text-xs font-semibold">
+                      {review.country}
+                    </span>
+                  </div>
+
+                  {/* Trip Badge */}
+                  {review.tripName && (
+                    <div className="mb-4">
+                      <span className="text-[11px] font-bold text-editorial-accent uppercase tracking-wider block">
+                        {review.tripName}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Review Quote Text */}
+                  <p className="text-sm text-stone-700 leading-relaxed italic mb-6">
+                    &ldquo;{t(`reviews.${review.reviewKey}.text`)}&rdquo;
+                  </p>
+                </div>
+
+                {/* Reviewer Details */}
+                <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
+                  <div>
+                    <h3 className="font-heading font-bold text-sm text-editorial-dark">
+                      {review.name}
+                    </h3>
+                    <div className="flex items-center gap-1.5 mt-0.5">
+                      <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
+                      <span className="text-[11px] text-stone-500 font-medium">
                         {t("verifiedReview")}
                       </span>
                     </div>
-
-                    {/* Review text */}
-                    <p className="text-base sm:text-lg md:text-xl text-editorial-dark/90 leading-relaxed mb-6 italic">
-                      &ldquo;{t(`reviews.${review.reviewKey}.text`)}&rdquo;
-                    </p>
-
-                    {/* Reviewer info */}
-                    <div className="flex items-center gap-3 sm:gap-4 pt-4 border-t border-editorial-border/60">
-                      <ReviewAvatar name={review.name} />
-                      <div className="flex-1 min-w-0">
-                        <p className="font-heading font-bold text-base sm:text-lg text-editorial-dark truncate">
-                          {review.name}
-                        </p>
-                        <p className="caption text-xs sm:text-sm text-editorial-muted flex items-center mt-0.5">
-                          <svg className="w-3.5 h-3.5 inline-block mr-1 shrink-0" viewBox="0 0 24 24" fill="none">
-                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
-                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                          </svg>
-                          <span className="truncate">{t("googleUser")}</span>
-                        </p>
-                      </div>
-                    </div>
                   </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+                  <span className="text-[11px] text-stone-400 font-medium">
+                    {review.date ? review.date.slice(0, 7) : ""}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Traveler Avatars preview row */}
-          <div className="flex items-center justify-center gap-2.5 sm:gap-3 mt-6 sm:mt-8">
-            {testimonials.map((item, idx) => {
-              const isSelected = idx === current;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => goTo(idx, idx > current ? 1 : -1)}
-                  className={`relative rounded-full transition-all duration-300 p-0.5 ${
-                    isSelected
-                      ? "ring-2 ring-editorial-accent ring-offset-2 scale-110 shadow-sm"
-                      : "opacity-40 hover:opacity-100 hover:scale-105"
-                  }`}
-                  aria-label={`${t("goToReview")} ${idx + 1}`}
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-gradient-to-br from-editorial-accent to-editorial-accent-hover flex items-center justify-center text-[10px] sm:text-xs font-bold text-white border border-editorial-accent/20">
-                    {item.name
-                      .split(" ")
-                      .map((w) => w[0])
-                      .filter(Boolean)
-                      .slice(0, 2)
-                      .join("")}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Dots + mobile arrows (Guaranteed spacing & high z-index) */}
-          <div className="flex items-center justify-center gap-4 sm:gap-6 mt-4 sm:mt-5 relative z-20">
-            {/* Mobile arrow left */}
-            <button
-              onClick={prev}
-              className="md:hidden w-11 h-11 rounded-full border-2 border-editorial-border bg-white shadow-sm flex items-center justify-center text-editorial-muted active:scale-95 hover:border-editorial-accent hover:text-editorial-accent transition-all touch-manipulation"
-              aria-label={t("prevReview")}
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            {/* Dots */}
-            <div className="flex items-center gap-0 px-2 py-1">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => goTo(i, i > current ? 1 : -1)}
-                  className={`transition-all duration-300 rounded-full touch-manipulation p-2.5 ${
-                    i === current
-                      ? "" : ""
-                  }`}
-                  aria-label={`${t("goToReview")} ${i + 1}`}
-                >
-                  <span className={`block rounded-full transition-all duration-300 ${
-                    i === current
-                      ? "bg-editorial-accent w-6 h-2"
-                      : "bg-editorial-border hover:bg-editorial-border/80 w-2 h-2"
-                  }`} />
-                </button>
-              ))}
-            </div>
-
-            {/* Mobile arrow right */}
-            <button
-              onClick={next}
-              className="md:hidden w-11 h-11 rounded-full border-2 border-editorial-border bg-white shadow-sm flex items-center justify-center text-editorial-muted active:scale-95 hover:border-editorial-accent hover:text-editorial-accent transition-all touch-manipulation"
-              aria-label={t("nextReview")}
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* CTA to Google */}
-          <div className="text-center mt-6">
+          {/* Bottom Link to Google Reviews */}
+          <div className="text-center">
             <a
               href={GOOGLE_MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-editorial-accent hover:text-editorial-accent-hover transition-colors group px-4 py-2 rounded-full hover:bg-editorial-accent/5"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-editorial-accent hover:underline underline-offset-4 group"
             >
-              <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-              {t("seeAllOnGoogle")}
-              <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              <span>{t("seeAllOnGoogle")}</span>
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
-        </div>
+        </SectionReveal>
       </div>
     </section>
   );
 }
-

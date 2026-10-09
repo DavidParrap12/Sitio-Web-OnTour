@@ -8,7 +8,7 @@
     "gallery": "Gallery",
     "contact": "Contact",
     "wellness": "Wellness",
-    "quote": "Get a Quote",
+    "quote": "Plan Your Journey",
     "contactAdvisor": "Contact Advisor",
     "language": "Language"
   },
@@ -17,13 +17,13 @@
     "sub": "Tailor-made experiences for every traveler"
   },
   "hero": {
-    "tagline": "Discover Colombia with Ontour",
-    "title1": "Unforgettable Experiences,",
-    "title2": "Extraordinary Destinations",
-    "subtitle": "We offer the best day trips and tourist circuits. Your next great adventure starts here.",
-    "ctaDayTrips": "See Day Trips",
-    "ctaCircuits": "Explore Circuits",
-    "ctaContact": "Contact Us",
+    "tagline": "",
+    "title1": "Colombia,",
+    "title2": "Designed Around You.",
+    "subtitle": "Private journeys · Local expertise · Seamless service",
+    "ctaDayTrips": "Explore Day Trips",
+    "ctaCircuits": "Explore our journeys ↓",
+    "ctaContact": "Plan Your Journey",
     "goToImage": "Go to image {n}"
   },
   "home": {
@@ -53,17 +53,17 @@
       "tailored": "tailored trips",
       "responseTime": "avg. response time"
     },
-    "popularDayTrips": "Popular Day Trips",
-    "popularDayTripsSubtitle": "One-day escapes to recharge your energy",
+    "popularDayTrips": "Day Trips & Excursions",
+    "popularDayTripsSubtitle": "Private one-day escapes to Colombia's natural and cultural gems",
     "viewAllDayTrips": "See all day trips →",
-    "memorableCircuits": "Unforgettable Circuits",
-    "memorableCircuitsSubtitle": "Multi-day adventures for explorers",
-    "viewAllCircuits": "See all circuits →",
+    "memorableCircuits": "Signature Journeys",
+    "memorableCircuitsSubtitle": "Private multi-day itineraries crafted by local experts",
+    "viewAllCircuits": "View all journeys →",
     "discoverColombia": "Discover Colombia",
-    "multiDayRoutes": "Multi-day routes",
-    "ctaTitle": "Ready for your next adventure?",
-    "ctaSubtitle": "Contact us today and receive personalized advice to plan your dream vacation or day trip.",
-    "ctaButton": "Get a Quote"
+    "multiDayRoutes": "Tailor-made journeys",
+    "ctaTitle": "Your Colombia story starts here.",
+    "ctaSubtitle": "Tell us your travel dates and we\u2019ll craft a private itinerary designed around you. Response guaranteed within 24 hours.",
+    "ctaButton": "Plan Your Journey"
   },
   "about": {
     "metaTitle": "About Us | Ontour",
@@ -225,13 +225,14 @@
     "departure": "Departure"
   },
   "footer": {
-    "tagline": "We create unforgettable experiences.",
+    "tagline": "Local DMC operator in the Colombian Andes. Licensed, insured, and dedicated to crafting private journeys since day one.",
     "explore": "Explore",
     "home": "Home",
-    "about": "About Us",
+    "about": "About & Trust",
     "dayTrips": "Day Trips",
-    "circuits": "Circuits",
-    "services": "Services",
+    "circuits": "Journeys",
+    "services": "Travel Trade / B2B",
+    "wellness": "Wellness & Medical",
     "gallery": "Gallery",
     "legal": "Legal",
     "terms": "Terms & Conditions",
@@ -241,6 +242,9 @@
     "contact": "Contact Us",
     "rights": "All rights reserved.",
     "partners": "Our Partners",
+    "alsoFindUs": "Also find us on",
+    "legalToggleShow": "Legal Notice & Compliance ↓",
+    "legalToggleHide": "Hide ↑",
     "designed": "Designed to inspire travelers.",
     "legalDisclaimer": "In compliance with Article 17 of Law 679 of 2001 and Law 1336 of 2009, On Tour DMC rejects the exploitation, pornography, sexual tourism and all forms of abuse of minors. We warn that sexual abuse is punishable under criminal and administrative law in accordance with current legal provisions and we are committed to reporting any cases related to ESCNNA. On Tour DMC rejects the commercialization and trafficking of wild fauna and flora species. Law 17 of 1981, Ministerial Resolution No. 1367 of 2000, Decree 1608 of 1978. And denounces the illegal trafficking of exotic flora and fauna species. Law 599 of 2000, Colombian Penal Code. Law 165 of 1994, United Nations Convention on Biological Diversity. It also rejects and denounces the trafficking of cultural goods, preventing and protecting the national heritage. Law 397 of 1997, Decree 833 of 2002, Law 1185 of 2008, Law 63 of 1986, Law 1675 of July 2013. On Tour DMC rejects acts of racism, discrimination or sexual orientation. Law 1482 of 2011. Judgment T-282/11, Convention No. 169 concerning Indigenous and Tribal Peoples, 1989. Auto 004/09 and protects the fundamental rights of displaced persons and indigenous peoples due to armed conflict. Declared in Judgment T-025/04."
   },
@@ -760,6 +764,7 @@
   },
   "testimonials": {
     "googleBadge": "Google Reviews",
+    "ratingSubtitle": "Based on 40+ verified reviews",
     "title": "What our travelers say",
     "subtitle": "Real experiences from those who trusted us to discover Colombia.",
     "verifiedReview": "Verified review",
@@ -910,7 +915,7 @@
     },
     "q8": {
       "question": "Are you legally established?",
-      "answer": "Yes. Ontour S.A.S. is registered in the National Tourism Registry (RNT 145702), administered by the Autonomous Heritage National Tourism Fund (FONTUR), and complies with all tourism sector regulations in Colombia."
+      "answer": "Yes. Ontour S.A.S. is registered in the National Tourism Registry (RNT 62212), administered by the Autonomous Heritage National Tourism Fund (FONTUR), and complies with all tourism sector regulations in Colombia."
     }
   },
   "services": {

@@ -34,6 +34,8 @@ export interface CarouselItem {
   /** Badge lines, e.g. duration or location */
   meta?: string[];
   colorTheme?: DestinationTheme;
+  price?: string;
+  ctaLabel?: string;
 }
 
 interface EditorialCarouselProps {
@@ -319,7 +321,7 @@ function CardSlide({
           e.preventDefault();
         }
       }}
-      className="group block bg-editorial-warm rounded-2xl overflow-hidden border border-editorial-border editorial-hover-lift select-none"
+      className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-editorial-border hover:border-editorial-accent/50 shadow-sm hover:shadow-xl transition-all duration-300 editorial-hover-lift select-none"
       style={theme.style}
     >
       {/* Theme accent hairline */}
@@ -327,29 +329,51 @@ function CardSlide({
         className="h-1 w-full opacity-80 group-hover:opacity-100 transition-opacity"
         style={{ backgroundColor: theme.color }}
       />
-      <div className={`relative overflow-hidden editorial-hover-scale ${ASPECT_CLASS[aspectRatio]}`}>
+      <div className={`relative overflow-hidden ${ASPECT_CLASS[aspectRatio]}`}>
         <Image
           src={item.image}
           alt={item.title}
           fill
           draggable={false}
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1280px) 48vw, 560px"
-          quality={90}
-          className={`object-cover editorial-scale-target transition-transform duration-700 pointer-events-none select-none ${theme.gradeClass}`}
+          quality={85}
+          className={`object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] pointer-events-none select-none ${theme.gradeClass}`}
         />
+        {/* Duration badge chip */}
         {item.meta?.[0] && (
-          <div className="absolute top-4 left-4 bg-editorial-dark/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm font-semibold">
+          <div className="absolute top-3.5 left-3.5 bg-stone-900/85 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wide shadow-md border border-white/10">
             {item.meta[0]}
           </div>
         )}
       </div>
-      <div className="p-6">
-        <h3 className="heading-2 text-editorial-dark mb-2 group-hover:text-[var(--theme-accent)] transition-colors">
-          {item.title}
-        </h3>
-        {item.description && (
-          <p className="caption text-editorial-muted line-clamp-2">{item.description}</p>
-        )}
+      <div className="p-5 sm:p-6 flex flex-col flex-1 justify-between">
+        <div>
+          <h3 className="heading-2 text-editorial-dark mb-2 group-hover:text-editorial-accent transition-colors line-clamp-1">
+            {item.title}
+          </h3>
+          {item.description && (
+            <p className="caption text-editorial-muted line-clamp-2 leading-relaxed mb-4">
+              {item.description}
+            </p>
+          )}
+        </div>
+        <div className="pt-3.5 border-t border-editorial-border/60 flex items-center justify-between gap-2 mt-auto">
+          <div>
+            {item.price ? (
+              <span className="text-xs sm:text-sm font-bold text-stone-900">
+                {item.price}
+              </span>
+            ) : (
+              <span className="text-xs text-stone-500 font-medium">
+                Tailor-made
+              </span>
+            )}
+          </div>
+          <span className="inline-flex items-center gap-1 text-xs font-bold text-editorial-accent group-hover:translate-x-1 transition-transform">
+            {item.ctaLabel || "View Journey"}
+            <span aria-hidden>→</span>
+          </span>
+        </div>
       </div>
     </Link>
   );

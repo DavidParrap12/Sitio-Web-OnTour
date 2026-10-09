@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 export async function Footer() {
@@ -26,10 +26,15 @@ export async function Footer() {
                 />
               </div>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
               {t("tagline")}
             </p>
-            <div className="flex items-center gap-4 mt-3">
+            {/* RNT Trust Badge — visible, near first scroll */}
+            <div className="flex items-center gap-2 mb-4 px-3 py-2 rounded-lg bg-white/5 border border-white/10 w-fit">
+              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span className="text-xs text-gray-300 font-medium">RNT <span className="text-white font-bold">62212</span></span>
+            </div>
+            <div className="flex items-center gap-4 mt-1">
               <a href="https://www.facebook.com/p/Ontour-100071506294624/?locale=es_LA" aria-label="Síguenos en Facebook" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" aria-hidden="true" />
               </a>
@@ -42,14 +47,15 @@ export async function Footer() {
             </div>
           </div>
 
-          {/* Explore Col */}
+          {/* Explore Col — mirroring header taxonomy */}
           <div>
             <h3 className="text-white font-semibold font-heading mb-6 text-lg">{t("explore")}</h3>
             <ul className="flex flex-col gap-3 text-sm">
-              <li><Link href={"/" as any} className="hover:text-accent transition-colors">{t("home")}</Link></li>
-              <li><Link href={"/nosotros" as any} className="hover:text-accent transition-colors">{t("about")}</Link></li>
               <li><Link href={"/circuitos" as any} className="hover:text-accent transition-colors">{t("circuits")}</Link></li>
+              <li><Link href={"/pasadias" as any} className="hover:text-accent transition-colors">{t("dayTrips")}</Link></li>
+              <li><Link href={"/bienestar" as any} className="hover:text-accent transition-colors">{t("wellness")}</Link></li>
               <li><Link href={"/servicios" as any} className="hover:text-accent transition-colors">{t("services")}</Link></li>
+              <li><Link href={"/nosotros" as any} className="hover:text-accent transition-colors">{t("about")}</Link></li>
               <li><Link href={"/galeria" as any} className="hover:text-accent transition-colors">{t("gallery")}</Link></li>
             </ul>
           </div>
@@ -86,19 +92,16 @@ export async function Footer() {
 
         </div>
 
-        {/* Legal Compliance Collapsible Accordion */}
+        {/* Legal Compliance Collapsible Accordion — fully translated */}
         <div className="pt-6 pb-6 border-t border-gray-800">
           <details className="group cursor-pointer">
             <summary className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-gray-400 hover:text-white transition-colors py-1.5 list-none select-none">
               <span className="flex items-center gap-2 font-medium text-gray-300">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                <span>Cumplimiento Legal, Protección de Menores (ESCNNA) y Patrimonio Nacional</span>
-              </span>
-              <span className="text-[11px] text-accent underline self-start sm:self-auto font-medium group-open:hidden">
-                Ver detalle de leyes y normatividad ↓
+                <span>{t("legalToggleShow")}</span>
               </span>
               <span className="text-[11px] text-gray-400 underline self-start sm:self-auto font-medium hidden group-open:inline">
-                Ocultar detalle ↑
+                {t("legalToggleHide")}
               </span>
             </summary>
             <div className="mt-3 p-4 rounded-xl bg-white/5 border border-white/10 text-[11px] text-gray-400 text-justify leading-relaxed">

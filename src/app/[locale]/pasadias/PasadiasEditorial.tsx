@@ -136,9 +136,7 @@ export function PasadiasEditorial({ slides, title, subtitle }: PasadiasEditorial
 
                       {/* Content */}
                       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        <CaptionLabel icon="duration" className="text-white/70 mb-2">
-                          {slide.duration}
-                        </CaptionLabel>
+
                         <h3 className={`${isLarge ? "heading-1" : "heading-2"} text-white mb-2 group-hover:text-[var(--theme-accent-light)] transition-colors duration-300`}>
                           {slide.name}
                         </h3>
