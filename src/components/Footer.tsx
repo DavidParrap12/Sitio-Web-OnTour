@@ -81,11 +81,11 @@ export async function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
-                <a href="tel:+573143415177" className="hover:text-accent transition-colors">+57 314 341 5177</a>
+                <a href="tel:+573165386892" className="hover:text-accent transition-colors">+57 316 538 6892</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
-                <a href="mailto:info@ontourdmc.com" className="hover:text-accent transition-colors">info@ontourdmc.com</a>
+                <a href="mailto:[EMAIL_ADDRESS]" className="hover:text-accent transition-colors">gerencia@agenciaontour.com</a>
               </li>
             </ul>
           </div>

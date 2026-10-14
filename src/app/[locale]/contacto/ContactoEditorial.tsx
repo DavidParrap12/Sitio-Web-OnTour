@@ -106,7 +106,7 @@ export function ContactoEditorial({
                         <Mail className="w-5 h-5 text-editorial-accent" />
                       </div>
                       <div>
-                        <p className="text-white font-semibold">info@ontourdmc.com</p>
+                        <p className="text-white font-semibold">gerencia@agenciaontour.com</p>
                         <p className="caption text-white/40 mt-1">{support}</p>
                       </div>
                     </div>
@@ -116,7 +116,7 @@ export function ContactoEditorial({
                         <MapPin className="w-5 h-5 text-editorial-accent" />
                       </div>
                       <div>
-                        <p className="text-white font-semibold">Ibagué, Colombia</p>
+                        <p className="text-white font-semibold">Eje Cafetero-Colombia</p>
                         <p className="caption text-white/40 mt-1">{mainOffice}</p>
                       </div>
                     </div>

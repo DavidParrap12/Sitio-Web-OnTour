@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Forward to Formspree configured for OnTour DMC (delivering to info@ontourdmc.com)
+    // Forward to Formspree configured for OnTour DMC (delivering to gerencia@agenciaontour.com)
     const formspreeEndpoint = "https://formspree.io/f/mojgzoqw";
 
     const destinationSummary = destination || option || experience || "Colombia Custom Journey";
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
 
     const payload = {
       _subject: `Nueva Solicitud: ${destinationSummary} — ${name} (${travelers || "2"} pax)`,
-      to: "info@ontourdmc.com",
+      to: "gerencia@agenciaontour.com",
       name,
       email,
       phone: phone || "No proporcionado",
@@ -67,12 +67,12 @@ export async function POST(request: Request) {
 
     // Always log the request for auditability
     console.log(
-      `[Quote API] Processed quote for info@ontourdmc.com: ${payload._subject} | Dispatched: ${dispatched}`
+      `[Quote API] Processed quote for gerencia@agenciaontour.com: ${payload._subject} | Dispatched: ${dispatched}`
     );
 
     return NextResponse.json({
       success: true,
-      deliveredTo: "info@ontourdmc.com",
+      deliveredTo: "gerencia@agenciaontour.com",
       dispatched,
       data: payload,
     });

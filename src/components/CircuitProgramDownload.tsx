@@ -145,7 +145,7 @@ export function CircuitProgramDownload({
         pdf.setFontSize(7);
         pdf.setFont("helvetica", "normal");
         pdf.text(
-          "www.ontourdmc.com  |  info@ontourdmc.com  |  +57 314 341 5177",
+          "www.ontourdmc.com  |  gerencia@agenciaontour.com  |  +57 316 538 6892",
           pageW / 2, pageH - 4, { align: "center" }
         );
       };
@@ -519,7 +519,7 @@ export function CircuitProgramDownload({
                     alignment: AlignmentType.CENTER,
                     children: [
                       new TextRun({
-                        text: "www.ontourdmc.com  |  info@ontourdmc.com  |  +57 314 341 5177",
+                        text: "www.ontourdmc.com  |  gerencia@agenciaontour.com  |  +57 316 538 6892",
                         size: 16,
                         color: "0B3A60",
                         font: "Calibri",
