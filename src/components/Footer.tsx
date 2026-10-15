@@ -77,11 +77,11 @@ export async function Footer() {
             <ul className="flex flex-col gap-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent shrink-0" />
-                <span>Ibagué, Tolima, Colombia</span>
+                <span>Eje Cafetero-Colombia</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
-                <a href="tel:+573165386892" className="hover:text-accent transition-colors">+57 316 538 6892</a>
+                <a href="tel:+573165386892" className="hover:text-accent transition-colors">+57 316 538 6892 / +57 314 341 5177</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
