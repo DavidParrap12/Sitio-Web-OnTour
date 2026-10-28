@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, HelpCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SectionReveal } from "./SectionReveal";
 
 interface FaqSectionProps {
@@ -197,7 +197,7 @@ export function FaqSection({ locale }: FaqSectionProps) {
           {/* Link to full FAQ */}
           <div className="pt-2">
             <Link
-              href={"/legal/faq" as any}
+              href="/legal/faq"
               className="inline-flex items-center gap-2 text-sm font-semibold text-editorial-accent hover:underline underline-offset-4 group"
             >
               <span>{content.ctaFullFaq}</span>

@@ -153,6 +153,7 @@
   },
   "card": {
     "colombia": "Colombie",
+    "viewMore": "En savoir plus",
     "from": "À partir de",
     "quotePrice": "Demander un devis",
     "book": "Réserver",
@@ -229,6 +230,7 @@
   "footer": {
     "tagline": "Nous créons des expériences inoubliables.",
     "explore": "Explorer",
+    "address": "Ibagué, Tolima, Colombie",
     "home": "Accueil",
     "about": "À propos",
     "dayTrips": "Excursions",
@@ -316,7 +318,6 @@
       }
     },
     "process": {
-      "sectionLabel": "Processus",
       "title": "Votre Parcours en 5 Étapes",
       "subtitle": "Une expérience fluide depuis votre pays d'origine jusqu'à votre récupération en Colombie.",
       "steps": {
@@ -328,14 +329,12 @@
       }
     },
     "tolima": {
-      "sectionLabel": "Expérience",
       "title": "Guérison dans la Nature.",
       "subtitle": "Découvrez le tourisme responsable, l'hospitalité chaleureuse et les paysages époustouflants de la région caféière de Colombie pendant votre récupération.",
       "cta": "Explorer les Circuits de Récupération",
       "imageAlt": "Vue panoramique des Andes et de la région caféière du Tolima"
     },
     "testimonials": {
-      "sectionLabel": "Témoignages",
       "title": "Résultats Réels, Patients Réels",
       "subtitle": "Des patients internationaux partagent leur expérience de soins et de rétablissement en Colombie.",
       "items": {
@@ -1781,5 +1780,17 @@
         }
       ]
     }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous cherchez n'existe pas ou a été déplacée. Découvrez nos excursions, circuits et voyages sur mesure en Colombie.",
+    "homeCta": "Retour à l'accueil",
+    "journeysCta": "Voir les circuits"
+  },
+  "error": {
+    "title": "Une erreur est survenue",
+    "description": "Impossible de charger cette section. Réessayez dans quelques instants ou écrivez-nous sur WhatsApp.",
+    "retry": "Réessayer",
+    "homeCta": "Retour à l'accueil"
   }
 }

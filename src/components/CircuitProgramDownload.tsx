@@ -76,7 +76,7 @@ async function imageToArrayBuffer(src: string): Promise<{ buffer: ArrayBuffer; w
 }
 
 export function CircuitProgramDownload({
-  name, slug, description, highlights, itinerary, days, nights, price, labels, brochureUrl, brochurePdfUrl,
+  name, slug, description, highlights, itinerary, price, labels, brochureUrl, brochurePdfUrl,
 }: CircuitProgramDownloadProps) {
   const [pdfState, setPdfState] = useState<DownloadState>("idle");
   const [wordState, setWordState] = useState<DownloadState>("idle");
@@ -269,7 +269,7 @@ export function CircuitProgramDownload({
       console.error("PDF generation failed:", err);
       setPdfState("idle");
     }
-  }, [name, slug, description, highlights, itinerary, days, nights, price, labels, pdfState, brochurePdfUrl]);
+  }, [name, slug, description, highlights, itinerary, price, labels, pdfState, brochurePdfUrl]);
 
   /* ============================================================
    *  WORD Download / Generation — real file or dynamic generation
@@ -543,7 +543,7 @@ export function CircuitProgramDownload({
       console.error("Word generation failed:", err);
       setWordState("idle");
     }
-  }, [name, slug, description, highlights, itinerary, days, nights, price, labels, wordState, brochureUrl]);
+  }, [name, slug, description, highlights, itinerary, price, labels, wordState, brochureUrl]);
 
   /* ============================================================
    *  Button rendering

@@ -15,9 +15,11 @@
  * 4. Copy the Sheet ID from the URL:
  *    https://docs.google.com/spreadsheets/d/{THIS_IS_THE_ID}/edit
  *
- * 5. Set the GOOGLE_SHEETS_ID env variable in .env.local (local)
+ * 5. Set the SHEETS_ID env variable in .env.local (local)
  *    or in Vercel Dashboard > Settings > Environment Variables:
- *    GOOGLE_SHEETS_ID=your_sheet_id_here
+ *    SHEETS_ID=your_sheet_id_here
+ *    (GOOGLE_SHEETS_ID and NEXT_PUBLIC_SHEETS_ID are also accepted so older
+ *    deployments keep working.)
  *
  * Example sheet layout:
  * | mes       | dia |
@@ -27,44 +29,47 @@
  * | 2026-06   | 12  |
  */
 
-// Fallback dates in case Google Sheets is unavailable
-const FALLBACK_DATES: Record<string, number> = {
-  "2025-05": 16,
-  "2025-06": 13,
-  "2025-07": 11,
-  "2025-08": 8,
-  "2025-09": 12,
-  "2025-10": 10,
-  "2025-11": 14,
-  "2025-12": 12,
-  "2026-01": 9,
-  "2026-02": 13,
-  "2026-03": 13,
-  "2026-04": 17,
-  "2026-05": 15,
-  "2026-06": 12,
-  "2026-07": 10,
-  "2026-08": 14,
-  "2026-09": 11,
-  "2026-10": 9,
-  "2026-11": 13,
-  "2026-12": 11,
-};
+/**
+ * Rolling fallback schedule used only when the sheet is unreachable.
+ * Days follow the historical monthly pattern so the calendar stays in the
+ * future instead of silently expiring at a fixed date.
+ */
+const FALLBACK_DAYS_BY_MONTH = [9, 13, 13, 17, 15, 12, 10, 14, 11, 9, 13, 11];
+
+function buildFallbackDates(now: Date = new Date()): Record<string, number> {
+  const dates: Record<string, number> = {};
+  const cursor = new Date(now.getFullYear(), now.getMonth(), 1);
+
+  for (let i = 0; i < 18; i += 1) {
+    const year = cursor.getFullYear();
+    const monthIndex = cursor.getMonth();
+    const key = `${year}-${String(monthIndex + 1).padStart(2, "0")}`;
+    dates[key] = FALLBACK_DAYS_BY_MONTH[monthIndex];
+    cursor.setMonth(cursor.getMonth() + 1);
+  }
+
+  return dates;
+}
 
 export type DepartureDates = Record<string, number>;
 
 /**
  * Fetches departure dates from a public Google Sheet.
- * Falls back to hardcoded dates if the fetch fails.
+ * Falls back to a rolling schedule if the fetch fails.
  * Supports both regular Sheet IDs and published (2PACX-) IDs.
  */
 export async function fetchDepartureDates(): Promise<DepartureDates> {
-  const sheetId = process.env.GOOGLE_SHEETS_ID?.trim();
+  const sheetId =
+    process.env.SHEETS_ID?.trim() ||
+    process.env.GOOGLE_SHEETS_ID?.trim() ||
+    process.env.NEXT_PUBLIC_SHEETS_ID?.trim();
+  const fallback = buildFallbackDates();
 
   if (!sheetId) {
-    console.warn("[DepartureDates] No GOOGLE_SHEETS_ID set, using fallback dates.");
-    return FALLBACK_DATES;
+    console.warn("[DepartureDates] No SHEETS_ID set, using fallback dates.");
+    return fallback;
   }
+
 
   try {
     // Published sheets (2PACX-...) use a different URL format
@@ -81,19 +86,23 @@ export async function fetchDepartureDates(): Promise<DepartureDates> {
     }
 
     const csv = await res.text();
-    console.log("[DepartureDates] Raw CSV from Google Sheets (first 500 chars):", csv.substring(0, 500));
     const dates = parseCSV(csv);
 
     if (Object.keys(dates).length === 0) {
       console.warn("[DepartureDates] Sheet returned empty data, using fallback.");
-      return FALLBACK_DATES;
+      return fallback;
     }
 
-    console.log("[DepartureDates] ✅ Loaded dates from Google Sheets:", dates);
+    console.log(
+      `[DepartureDates] Loaded ${Object.keys(dates).length} departure months from Google Sheets.`
+    );
     return dates;
   } catch (error) {
-    console.error("[DepartureDates] Failed to fetch from Google Sheets:", error);
-    return FALLBACK_DATES;
+    console.error(
+      "[DepartureDates] Failed to fetch from Google Sheets:",
+      error instanceof Error ? error.message : "unknown error"
+    );
+    return fallback;
   }
 }
 

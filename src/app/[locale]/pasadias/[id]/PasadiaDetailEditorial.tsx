@@ -47,7 +47,7 @@ interface PasadiaDetailEditorialProps {
 export function PasadiaDetailEditorial({
   name, description, duration, highlights, activities = [], image, gallery, locale, id, colorTheme, t,
 }: PasadiaDetailEditorialProps) {
-  const theme = useDestinationTheme(colorTheme);
+  const theme = useDestinationTheme(colorTheme, locale);
 
   return (
     <div className="min-h-screen bg-white">
@@ -159,7 +159,7 @@ export function PasadiaDetailEditorial({
               <p className="body text-editorial-muted mb-8">{t.ctaSubtitle}</p>
               <MagneticButton>
                 <Link
-                  href={"/contacto" as any}
+                  href="/contacto"
                   className="inline-flex items-center gap-2 bg-editorial-accent text-white px-8 py-4 rounded-full font-bold text-lg shadow-editorial-lg editorial-hover-rich editorial-hover-shift-dark"
                 >
                   <Send className="w-5 h-5" />

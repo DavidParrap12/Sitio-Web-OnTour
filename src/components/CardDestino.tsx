@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { MapPin, MessageCircle, Mail, ChevronDown, Eye, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
+import type { AppHref } from "@/lib/routes";
 
 interface CardDestinoProps {
   title: string;
@@ -21,11 +22,9 @@ interface CardDestinoProps {
 export function CardDestino({
   title,
   description,
-  duration,
   image,
   href,
   type = "pasadia",
-  brochureUrl,
   index = 0,
 }: CardDestinoProps) {
   const t = useTranslations("card");
@@ -120,7 +119,7 @@ export function CardDestino({
                   </a>
                   <div className="border-t border-gray-100" />
                   <Link
-                    href={"/contacto" as any}
+                    href="/contacto"
                     className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors text-sm font-medium text-foreground/80 group/opt"
                     onClick={(e) => { e.stopPropagation(); setShowOptions(false); }}
                   >
@@ -144,7 +143,7 @@ export function CardDestino({
             transition={{ duration: 0.3, delay: 0.2 }}
           >
             <Link
-              href={href as any}
+              href={href as AppHref}
               className="flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium transition-colors hover:underline underline-offset-4"
             >
               <Eye className="w-4 h-4" />
@@ -158,7 +157,7 @@ export function CardDestino({
       </div>
 
       {/* Text content */}
-      <Link href={href as any} className="flex flex-col flex-grow p-6">
+      <Link href={href as AppHref} className="flex flex-col flex-grow p-6">
         <div className="flex items-center gap-1.5 text-secondary text-sm font-medium mb-2">
           <MapPin className="w-4 h-4" />
           <span>{t("colombia")}</span>

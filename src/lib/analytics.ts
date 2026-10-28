@@ -2,14 +2,17 @@
 
 declare global {
   interface Window {
-    dataLayer: Record<string, any>[];
+    dataLayer: Record<string, unknown>[];
   }
 }
 
 /**
  * Pushes a custom conversion event to GTM dataLayer
  */
-export function trackEvent(eventName: string, params: Record<string, any> = {}) {
+export function trackEvent(
+  eventName: string,
+  params: Record<string, unknown> = {}
+) {
   if (typeof window !== "undefined") {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
@@ -54,11 +57,14 @@ export function trackQuoteFormSubmit(data: {
 
 /**
  * 3. Event: Outbound click to WhatsApp
+ *
+ * Only non-personal context is forwarded (never the pre-filled message, which
+ * can contain names, phone numbers, emails or trip notes).
  */
-export function trackWhatsAppClick(source: string, preloadedMessage?: string) {
+export function trackWhatsAppClick(source: string, tourName?: string) {
   trackEvent("click_whatsapp", {
     cta_source: source,
-    preloaded_message_snippet: preloadedMessage ? preloadedMessage.slice(0, 100) : "",
+    ...(tourName ? { tour_name: tourName.slice(0, 80) } : {}),
   });
 }
 

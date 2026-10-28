@@ -5,10 +5,7 @@ import { ExternalLink } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { ServiciosHero } from "./ServiciosHero";
 import { ServiciosInteractiveGrid } from "./ServiciosInteractiveGrid";
-
-const SERVICES_PATH: Record<string, string> = {
-  es: "servicios", en: "services", de: "dienstleistungen", fr: "services",
-};
+import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -17,15 +14,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "services" });
-  const path = SERVICES_PATH[locale] ?? "servicios";
-  const url = locale === "es"
-    ? `https://www.ontourdmc.com/${path}`
-    : `https://www.ontourdmc.com/${locale}/${path}`;
+  const title = `${t("title")} | OnTour DMC Colombia`;
+  const description = t("subtitle");
+
   return {
-    title: `${t("title")} | OnTour DMC Colombia`,
-    description: t("subtitle"),
-    alternates: { canonical: url },
-    openGraph: { url },
+    title,
+    description,
+    alternates: buildAlternates(locale, "/servicios"),
+    openGraph: buildOpenGraph({
+      locale,
+      title,
+      description,
+      url: canonicalFor(locale, "/servicios"),
+    }),
+    twitter: buildTwitter({ title, description }),
   };
 }
 

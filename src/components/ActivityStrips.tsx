@@ -195,7 +195,7 @@ export function ActivityStrips({ activities, coverImage, t }: ActivityStripsProp
                           </span>
                         </div>
                         <Link
-                          href={"/contacto" as any}
+                          href="/contacto"
                           className="inline-flex items-center gap-2 bg-editorial-accent hover:bg-editorial-accent-hover text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors duration-200 whitespace-nowrap"
                         >
                           {t.quote || "Cotizar"}

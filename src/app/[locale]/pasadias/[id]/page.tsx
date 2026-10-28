@@ -1,29 +1,19 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { destinos } from "@/data/destinos";
 import { routing } from "@/i18n/routing";
-import { CheckCircle2, Clock, MapPin, Send } from "lucide-react";
-import { BrochureDownloadDynamic as BrochureDownload } from "@/components/BrochureDownloadDynamic";
-import { Link } from "@/i18n/navigation";
 import { PasadiaDetailEditorial } from "./PasadiaDetailEditorial";
 import { JsonLd } from "@/components/JsonLd";
 import { buildPasadiaSchema, buildBreadcrumbs } from "@/lib/schema";
+import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     destinos.map((d) => ({ locale, id: d.id }))
   );
 }
-
-const DAY_TRIPS_PATH: Record<string, string> = {
-  es: "pasadias",
-  en: "day-trips",
-  de: "tagesausfluege",
-  fr: "excursions",
-};
 
 export async function generateMetadata({
   params,
@@ -40,39 +30,22 @@ export async function generateMetadata({
   const ogImageUrl = pasadia.image.startsWith("http")
     ? pasadia.image
     : `https://www.ontourdmc.com${pasadia.image}`;
-
-  const path = DAY_TRIPS_PATH[locale] ?? "day-trips";
-  const canonicalUrl = locale === "es"
-    ? `https://www.ontourdmc.com/${path}/${id}`
-    : `https://www.ontourdmc.com/${locale}/${path}/${id}`;
+  const title = `${name} | OnTour DMC Colombia`;
+  const href = { pathname: "/pasadias/[id]", params: { id } } as const;
 
   return {
-    title: `${name} | OnTour DMC Colombia`,
+    title,
     description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-    openGraph: {
-      title: `${name} | OnTour DMC Colombia`,
+    alternates: buildAlternates(locale, href),
+    openGraph: buildOpenGraph({
+      locale,
+      title,
       description,
-      url: canonicalUrl,
-      siteName: "Ontour DMC Colombia",
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: name,
-        },
-      ],
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${name} | OnTour DMC Colombia`,
-      description,
-      images: [ogImageUrl],
-    },
+      url: canonicalFor(locale, href),
+      image: ogImageUrl,
+      imageAlt: name,
+    }),
+    twitter: buildTwitter({ title, description, image: ogImageUrl }),
   };
 }
 

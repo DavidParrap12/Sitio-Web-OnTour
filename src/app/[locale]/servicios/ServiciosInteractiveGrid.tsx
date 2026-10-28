@@ -12,15 +12,14 @@ import {
   CalendarCheck,
   ArrowRight,
   CheckCircle2,
-  ChevronDown,
-  Globe,
   Award,
+  type LucideIcon,
 } from "lucide-react";
 import { useLocale } from "next-intl";
 import { RequestQuoteModal } from "@/components/RequestQuoteModal";
 import { trackRequestQuoteClick } from "@/lib/analytics";
 
-const ICON_MAP: Record<string, any> = {
+const ICON_MAP: Record<string, LucideIcon> = {
   transport: Bus,
   accommodation: Hotel,
   guides: Users,

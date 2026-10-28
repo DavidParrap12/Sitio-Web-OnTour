@@ -106,14 +106,14 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-start justify-start gap-4"
         >
           <Link
-            href={"/pasadias" as any}
+            href="/pasadias"
             className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:brightness-90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
           >
             <Compass className="w-5 h-5" />
             {t("ctaDayTrips")}
           </Link>
           <Link
-            href={"/circuitos" as any}
+            href="/circuitos"
             className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-primary px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
           >
             <Calendar className="w-5 h-5" />

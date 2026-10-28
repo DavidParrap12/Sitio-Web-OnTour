@@ -17,7 +17,7 @@ interface CorridorData {
   tagline: string;
   image: string;
   duration: string;
-  circuitHref: string;
+  circuitId: string;
   circuitName: string;
   priceFrom: string;
   highlights: string[];
@@ -32,7 +32,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "El Corazón de los Andes",
       image: "/image/Tolima-fotos/tolima_palmas-cera-ladera-verde-cielo-azul.jpg",
       duration: "13 Días / 12 Noches",
-      circuitHref: "/circuitos/tour-colombia-corazon-andes",
+      circuitId: "tour-colombia-corazon-andes",
       circuitName: "Tour Corazón de los Andes",
       priceFrom: "Desde $1.980 USD pp",
       highlights: [
@@ -49,7 +49,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Cultura, Historia & Cordillera",
       image: "/image/villa de leyva.jpg",
       duration: "8 Días / 7 Noches",
-      circuitHref: "/circuitos/tour-colombia-boyaca-colonial",
+      circuitId: "tour-colombia-boyaca-colonial",
       circuitName: "Tour Boyacá Colonial",
       priceFrom: "Desde $1.320 USD pp",
       highlights: [
@@ -66,7 +66,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Desierto & Huella Precolombina",
       image: "/image/desierto-tatacoa.jpg",
       duration: "9 Días / 8 Noches",
-      circuitHref: "/circuitos/epoca-precolombina-sur-colombia",
+      circuitId: "epoca-precolombina-sur-colombia",
       circuitName: "Época Precolombina Sur de Colombia",
       priceFrom: "Desde $1.490 USD pp",
       highlights: [
@@ -83,7 +83,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Murallas Coloniales & Islas del Rosario",
       image: "/image/cuidad-amurallada.jpg",
       duration: "14 Días / 13 Noches",
-      circuitHref: "/circuitos/tour-colombia-tres-ciudades",
+      circuitId: "tour-colombia-tres-ciudades",
       circuitName: "Colombia Diversamente Cultural",
       priceFrom: "Desde $2.150 USD pp",
       highlights: [
@@ -102,7 +102,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "The Andean Heartland",
       image: "/image/Tolima-fotos/tolima_palmas-cera-ladera-verde-cielo-azul.jpg",
       duration: "13 Days / 12 Nights",
-      circuitHref: "/circuitos/tour-colombia-corazon-andes",
+      circuitId: "tour-colombia-corazon-andes",
       circuitName: "Heart of the Andes Journey",
       priceFrom: "From $1,980 USD pp",
       highlights: [
@@ -119,7 +119,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Heritage, High Altitudes & Culture",
       image: "/image/villa de leyva.jpg",
       duration: "8 Days / 7 Nights",
-      circuitHref: "/circuitos/tour-colombia-boyaca-colonial",
+      circuitId: "tour-colombia-boyaca-colonial",
       circuitName: "Colonial Boyacá Journey",
       priceFrom: "From $1,320 USD pp",
       highlights: [
@@ -136,7 +136,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Desert Stars & Ancient Megaliths",
       image: "/image/desierto-tatacoa.jpg",
       duration: "9 Days / 8 Nights",
-      circuitHref: "/circuitos/epoca-precolombina-sur-colombia",
+      circuitId: "epoca-precolombina-sur-colombia",
       circuitName: "Pre-Columbian South & Tatacoa",
       priceFrom: "From $1,490 USD pp",
       highlights: [
@@ -153,7 +153,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Walled Splendor & Coral Islands",
       image: "/image/cuidad-amurallada.jpg",
       duration: "14 Days / 13 Nights",
-      circuitHref: "/circuitos/tour-colombia-tres-ciudades",
+      circuitId: "tour-colombia-tres-ciudades",
       circuitName: "Diverse Colombia Grand Tour",
       priceFrom: "From $2,150 USD pp",
       highlights: [
@@ -172,7 +172,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Das Herz der Anden",
       image: "/image/Tolima-fotos/tolima_palmas-cera-ladera-verde-cielo-azul.jpg",
       duration: "13 Tage / 12 Nächte",
-      circuitHref: "/circuitos/tour-colombia-corazon-andes",
+      circuitId: "tour-colombia-corazon-andes",
       circuitName: "Reise Herz der Anden",
       priceFrom: "Ab $1.980 USD pp",
       highlights: [
@@ -189,7 +189,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Kultur & Geschichte",
       image: "/image/villa de leyva.jpg",
       duration: "8 Tage / 7 Nächte",
-      circuitHref: "/circuitos/tour-colombia-boyaca-colonial",
+      circuitId: "tour-colombia-boyaca-colonial",
       circuitName: "Koloniales Boyacá Tour",
       priceFrom: "Ab $1.320 USD pp",
       highlights: [
@@ -206,7 +206,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Wüste & Archäologie",
       image: "/image/desierto-tatacoa.jpg",
       duration: "9 Tage / 8 Nächte",
-      circuitHref: "/circuitos/epoca-precolombina-sur-colombia",
+      circuitId: "epoca-precolombina-sur-colombia",
       circuitName: "Präkolumbischer Süden",
       priceFrom: "Ab $1.490 USD pp",
       highlights: [
@@ -223,7 +223,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Kolonialromantik & Koralleninseln",
       image: "/image/cuidad-amurallada.jpg",
       duration: "14 Tage / 13 Nächte",
-      circuitHref: "/circuitos/tour-colombia-tres-ciudades",
+      circuitId: "tour-colombia-tres-ciudades",
       circuitName: "Kulturelle Vielfalt Kolumbiens",
       priceFrom: "Ab $2.150 USD pp",
       highlights: [
@@ -242,7 +242,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Le Cœur des Andes",
       image: "/image/Tolima-fotos/tolima_palmas-cera-ladera-verde-cielo-azul.jpg",
       duration: "13 Jours / 12 Nuits",
-      circuitHref: "/circuitos/tour-colombia-corazon-andes",
+      circuitId: "tour-colombia-corazon-andes",
       circuitName: "Voyage Cœur des Andes",
       priceFrom: "À partir de $1 980 USD pp",
       highlights: [
@@ -259,7 +259,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Histoire, Culture & Cordillère",
       image: "/image/villa de leyva.jpg",
       duration: "8 Jours / 7 Nuits",
-      circuitHref: "/circuitos/tour-colombia-boyaca-colonial",
+      circuitId: "tour-colombia-boyaca-colonial",
       circuitName: "Voyage Boyacá Colonial",
       priceFrom: "À partir de $1 320 USD pp",
       highlights: [
@@ -276,7 +276,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Désert & Vestiges Précolombiens",
       image: "/image/desierto-tatacoa.jpg",
       duration: "9 Jours / 8 Nuits",
-      circuitHref: "/circuitos/epoca-precolombina-sur-colombia",
+      circuitId: "epoca-precolombina-sur-colombia",
       circuitName: "Sud Précolombien & Tatacoa",
       priceFrom: "À partir de $1 490 USD pp",
       highlights: [
@@ -293,7 +293,7 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       tagline: "Remparts Historiques & Îles Coralliennes",
       image: "/image/cuidad-amurallada.jpg",
       duration: "14 Jours / 13 Nuits",
-      circuitHref: "/circuitos/tour-colombia-tres-ciudades",
+      circuitId: "tour-colombia-tres-ciudades",
       circuitName: "Grande Traversée de Colombie",
       priceFrom: "À partir de $2 150 USD pp",
       highlights: [
@@ -363,7 +363,7 @@ export function DestinationsShowcase({ locale }: DestinationsShowcaseProps) {
               </p>
             </div>
             <Link
-              href={"/circuitos" as any}
+              href="/circuitos"
               className="text-editorial-accent font-semibold hover:underline underline-offset-4 flex items-center gap-1.5 whitespace-nowrap self-start md:self-end group"
             >
               <span>{strings.viewAllDestinations}</span>
@@ -465,7 +465,7 @@ export function DestinationsShowcase({ locale }: DestinationsShowcaseProps) {
                     </span>
                   </div>
                   <Link
-                    href={active.circuitHref as any}
+                    href={{ pathname: "/circuitos/[id]", params: { id: active.circuitId } }}
                     className="inline-flex items-center gap-2 bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-6 py-3 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 shadow-md min-h-[44px]"
                   >
                     <span>{strings.ctaViewCircuit}</span>

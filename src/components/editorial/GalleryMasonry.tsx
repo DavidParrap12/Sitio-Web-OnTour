@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -17,14 +17,22 @@ interface GalleryMasonryProps {
 export function GalleryMasonry({ images }: GalleryMasonryProps) {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
+  // Lock page scroll while the lightbox is open.
+  useEffect(() => {
+    if (lightbox === null) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [lightbox]);
+
   const openLightbox = (i: number) => {
     setLightbox(i);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
     setLightbox(null);
-    document.body.style.overflow = "";
   };
 
   const navigate = (dir: number) => {

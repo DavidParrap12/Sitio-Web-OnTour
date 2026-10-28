@@ -6,7 +6,6 @@ import { Link } from "@/i18n/navigation";
 import { EditorialSection } from "@/components/editorial/EditorialSection";
 import { ImageRevealClip } from "@/components/editorial/ImageRevealClip";
 import { ParallaxFloat } from "@/components/editorial/ParallaxFloat";
-import { CaptionLabel } from "@/components/editorial/CaptionLabel";
 import { RotatingPasadias } from "@/components/editorial/RotatingPasadias";
 import { IMAGE_SIZES, type DestinationTheme } from "@/lib/design-config";
 import { useLocale } from "next-intl";
@@ -109,7 +108,7 @@ export function PasadiasEditorial({ slides, title, subtitle }: PasadiasEditorial
                     className={`${colSpan}`}
                   >
                     <Link
-                      href={`/pasadias/${slide.id}` as any}
+                      href={{ pathname: "/pasadias/[id]", params: { id: slide.id } }}
                       className={`group block relative overflow-hidden rounded-2xl ${height} editorial-hover-scale`}
                       style={theme.style}
                     >

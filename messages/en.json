@@ -153,6 +153,7 @@
   },
   "card": {
     "colombia": "Colombia",
+    "viewMore": "View more",
     "from": "From",
     "quotePrice": "Get a Quote",
     "book": "Book",
@@ -229,6 +230,7 @@
   "footer": {
     "tagline": "Local DMC operator in the Colombian Andes. Licensed, insured, and dedicated to crafting private journeys since day one.",
     "explore": "Explore",
+    "address": "Ibagué, Tolima, Colombia",
     "home": "Home",
     "about": "About & Trust",
     "dayTrips": "Day Trips",
@@ -2090,5 +2092,17 @@
         }
       ]
     }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has moved. Explore our day trips, journeys and tailor-made experiences in Colombia.",
+    "homeCta": "Back to home",
+    "journeysCta": "View journeys"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "We could not load this section. Please try again in a few seconds, or message us on WhatsApp and we will help you right away.",
+    "retry": "Try again",
+    "homeCta": "Back to home"
   }
 }

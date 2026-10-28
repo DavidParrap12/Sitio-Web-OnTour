@@ -153,6 +153,7 @@
   },
   "card": {
     "colombia": "Kolumbien",
+    "viewMore": "Mehr erfahren",
     "from": "Ab",
     "quotePrice": "Angebot anfordern",
     "book": "Buchen",
@@ -229,6 +230,7 @@
   "footer": {
     "tagline": "Wir schaffen unvergessliche Erlebnisse.",
     "explore": "Entdecken",
+    "address": "Ibagué, Tolima, Kolumbien",
     "home": "Startseite",
     "about": "Über uns",
     "dayTrips": "Tagesausflüge",
@@ -316,7 +318,6 @@
       }
     },
     "process": {
-      "sectionLabel": "Ablauf",
       "title": "Ihre Reise in 5 Schritten",
       "subtitle": "Ein reibungsloses Erlebnis von Ihrem Heimatland bis zu Ihrer Genesung in Kolumbien.",
       "steps": {
@@ -328,14 +329,12 @@
       }
     },
     "tolima": {
-      "sectionLabel": "Erlebnis",
       "title": "Heilung in der Natur.",
       "subtitle": "Entdecken Sie achtsamen Tourismus, herzliche Gastfreundschaft und die atemberaubenden Landschaften der kolumbianischen Kaffeeregion während Ihrer Genesung.",
       "cta": "Erholungs-Routen Erkunden",
       "imageAlt": "Panoramablick auf die Anden und die Kaffeeregion Tolima"
     },
     "testimonials": {
-      "sectionLabel": "Erfahrungsberichte",
       "title": "Echte Ergebnisse, Echte Patienten",
       "subtitle": "Internationale Patienten teilen ihre Erfahrungen mit medizinischer Versorgung und Genesung in Kolumbien.",
       "items": {
@@ -684,6 +683,7 @@
       "name": "Magisches Medellín",
       "description": "Entdecken Sie Medellín von innen: Erkunden Sie die lebendigsten Viertel, Gärten, typische antioquianische Küche und die spektakulärsten Aussichtspunkte der Stadt. Ein umfassendes Erlebnis, um die Hauptstadt von Antioquia an einem einzigen Tag kennenzulernen.",
       "duration": "Ganztag",
+      "location": "Medellín, Antioquia",
       "highlights": [
         "Transport inbegriffen",
         "Professionelle Guides",
@@ -815,6 +815,7 @@
       "name": "Bogotá, Ihr Zuhause",
       "description": "Entdecken Sie die Magie Bogotás an einem Tag voller Geschichte, Kultur und Gastronomie. Erkunden Sie die beeindruckende Salzkathedrale von Zipaquirá, die koloniale Kulturerbe-Stadt Villa de Leyva und die farbenfrohen Handwerksstraßen von Ráquira. Vervollständigen Sie das Erlebnis mit einer kulinarischen Tour zu den authentischsten Geschmäckern der Region und einem unvergleichlichen Panoramablick auf die kolumbianische Hauptstadt.",
       "duration": "Ganztag",
+      "location": "Bogotá D.C.",
       "highlights": [
         "Transport inbegriffen",
         "Salzkathedrale von Zipaquirá",
@@ -935,6 +936,7 @@
       "name": "Tolima, Herz der Anden – Wasserfall La Plata",
       "description": "Entdecken Sie einen der beeindruckendsten Naturschätze von Ibagué. Auf einer ökologischen Wanderung tauchen Sie ein in Dschungellandschaften, Flüsse und Berge bis zum majestätischen Wasserfall La Plata. Ein Naturerlebnis ideal für Wanderenthusiasten und Abenteuerliebhaber.",
       "duration": "Ganztag",
+      "location": "Tolima, Kolumbien",
       "highlights": [
         "Optionaler Transport",
         "Ökologischer Guide",
@@ -1184,6 +1186,7 @@
       "name": "Cali ist, wo Sie sein sollten",
       "description": "Entdecken und erleben Sie die Salsa und Kultur von Cali an einem Tag voller Geschmack und Freude. Erkunden Sie die ikonischsten Orte der Stadt, genießen Sie die typische Küche und lassen Sie sich von der Energie der Salsa-Hauptstadt mitreißen.",
       "duration": "Ganztag",
+      "location": "Cali, Valle del Cauca",
       "highlights": [
         "Transport inbegriffen",
         "Professionelle Guides",
@@ -1283,6 +1286,7 @@
       "name": "Cartagena, noch heldenhafter",
       "description": "Entdecken Sie die Magie von Cartagena und seiner Umgebung an einem Tag voller Geschichte, Kultur und Gastronomie. Schlendern Sie durch die ummauerte Stadt, erkunden Sie Kolonialfestungen, lebhafte Plätze und bunte Straßen. Vervollständigen Sie das Erlebnis mit einer kulinarischen Tour zu den authentischsten karibischen Aromen und einem unvergesslichen Panoramablick auf die heldenhafte Stadt.",
       "duration": "Ganztag",
+      "location": "Cartagena de Indias, Bolívar",
       "highlights": [
         "Transport inbegriffen",
         "Tour durch die ummauerte Stadt",
@@ -1405,6 +1409,7 @@
       "name": "Santa Marta, natürlich magisch",
       "description": "Entdecken Sie die natürliche und kulturelle Magie von Santa Marta an einem Tag voller Abenteuer und Entdeckungen. Erkunden Sie die ikonischsten Orte der Stadt, genießen Sie die karibische Küche und lassen Sie sich von der Energie der ältesten Stadt Kolumbiens mitreißen.",
       "duration": "Ganztag",
+      "location": "Santa Marta, Magdalena",
       "highlights": [
         "Transport inbegriffen",
         "Professionelle Guides",
@@ -1540,6 +1545,7 @@
       "name": "San Andrés Inseln, Meer erleben",
       "description": "Entdecken Sie das karibische Paradies von San Andrés, die Insel der sieben Farben. Tauchen Sie ein in kristallklares Wasser, erkunden Sie weiße Sandstrände, schlendern Sie durch das Freiluft-Einkaufsviertel und genießen Sie die lebendige Raizal-Kultur in einem einzigartigen Erlebnis in der kolumbianischen Karibik.",
       "duration": "Ganztag",
+      "location": "San Andrés Islas",
       "highlights": [
         "Transport inbegriffen",
         "Professionelle Guides",
@@ -2005,5 +2011,17 @@
         "slogan": "Heilige Urwälder und Ebenen"
       }
     }
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben. Entdecken Sie unsere Tagesausflüge, Rundreisen und individuellen Reisen in Kolumbien.",
+    "homeCta": "Zur Startseite",
+    "journeysCta": "Rundreisen ansehen"
+  },
+  "error": {
+    "title": "Etwas ist schiefgelaufen",
+    "description": "Dieser Bereich konnte nicht geladen werden. Bitte versuchen Sie es erneut oder schreiben Sie uns über WhatsApp.",
+    "retry": "Erneut versuchen",
+    "homeCta": "Zur Startseite"
   }
 }

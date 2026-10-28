@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MapPin, Navigation } from "lucide-react";
+import { Navigation } from "lucide-react";
 
 export interface CircuitRouteMapProps {
   mapEmbedUrl?: string;

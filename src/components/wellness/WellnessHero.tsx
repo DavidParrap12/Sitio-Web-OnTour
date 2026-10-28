@@ -102,12 +102,12 @@ export function WellnessHero({ strings: s }: { strings: HeroStrings }) {
 
           {s.ctaSecondary && (
             <div className="w-full sm:w-auto">
-              <Link
-                href={"#proceso" as any}
+              <a
+                href="#proceso"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-medium tracking-wide text-sm sm:text-base shadow-lg bg-white/95 text-editorial-dark hover:bg-white hover:text-[var(--color-wellness-accent)] hover:scale-[1.02] active:scale-95 border border-white/20 transition-all duration-300 min-h-[48px]"
               >
                 {s.ctaSecondary}
-              </Link>
+              </a>
             </div>
           )}
         </motion.div>

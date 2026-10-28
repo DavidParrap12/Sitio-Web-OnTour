@@ -6,10 +6,10 @@ import { circuitos } from "@/data/circuitos";
 import { destinos } from "@/data/destinos";
 import { routing } from "@/i18n/routing";
 import { fetchDepartureDates } from "@/lib/googleSheets";
-import { CheckCircle2, Clock, MapPin, Map } from "lucide-react";
 import { CircuitoDetailEditorial } from "./CircuitoDetailEditorial";
 import { JsonLd } from "@/components/JsonLd";
 import { buildCircuitoSchema, buildBreadcrumbs, buildDepartureDateEvents } from "@/lib/schema";
+import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
 
 // Mirrors routing.ts pathnames for /circuitos
 const JOURNEYS_PATH: Record<string, string> = {
@@ -41,36 +41,22 @@ export async function generateMetadata({
     ? circuito.image
     : `https://www.ontourdmc.com${circuito.image}`;
 
-  const path = JOURNEYS_PATH[locale] ?? "circuitos";
-  const baseUrl = locale === "es"
-    ? `https://www.ontourdmc.com/${path}/${id}`
-    : `https://www.ontourdmc.com/${locale}/${path}/${id}`;
+  const title = `${name} | OnTour DMC Colombia`;
+  const href = { pathname: "/circuitos/[id]", params: { id } } as const;
 
   return {
-    title: `${name} | OnTour DMC Colombia`,
+    title,
     description,
-    alternates: { canonical: baseUrl },
-    openGraph: {
-      title: `${name} | OnTour DMC Colombia`,
+    alternates: buildAlternates(locale, href),
+    openGraph: buildOpenGraph({
+      locale,
+      title,
       description,
-      url: baseUrl,
-      siteName: "Ontour DMC Colombia",
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: name,
-        },
-      ],
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${name} | OnTour DMC Colombia`,
-      description,
-      images: [ogImageUrl],
-    },
+      url: canonicalFor(locale, href),
+      image: ogImageUrl,
+      imageAlt: name,
+    }),
+    twitter: buildTwitter({ title, description, image: ogImageUrl }),
   };
 }
 

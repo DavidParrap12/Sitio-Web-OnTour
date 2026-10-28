@@ -4,10 +4,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Clock, MapPin, Map, Calendar, MessageCircle, Send, ArrowRight } from "lucide-react";
+import { Clock, MapPin, Map, Calendar, MessageCircle, ArrowRight } from "lucide-react";
 import { SectionReveal } from "@/components/editorial/SectionReveal";
 import { HeroEditorial } from "@/components/editorial/HeroEditorial";
-import { MagneticButton } from "@/components/editorial/MagneticButton";
 import { BookingForm } from "@/components/BookingForm";
 import { CircuitProgramDownloadDynamic } from "@/components/CircuitProgramDownloadDynamic";
 import { RequestQuoteModal } from "@/components/RequestQuoteModal";
@@ -56,7 +55,7 @@ export function CircuitoDetailEditorial({
   extensions = [], colorTheme, mapEmbedUrl,
   t,
 }: CircuitoDetailEditorialProps) {
-  const theme = useDestinationTheme(colorTheme);
+  const theme = useDestinationTheme(colorTheme, locale);
 
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [showStickyBar, setShowStickyBar] = useState(false);

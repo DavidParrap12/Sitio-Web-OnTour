@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X,
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  Clock,
   ShieldCheck,
   Send,
   MessageCircle,
@@ -124,12 +123,49 @@ const MODAL_CONTENT = {
       slaNote: "RNT 62212 · Operador DMC Oficial · Cotización 100% confidencial y gratuita",
     },
     success: {
-      headline: "Thank you. Your journey is now in the hands of our local team.",
-      subheadline: "Gracias. Tu viaje ya está en manos de nuestro equipo local.",
+      headline: "Gracias. Tu viaje ya está en manos de nuestro equipo local.",
+      subheadline: "Diseñadores locales · Respuesta en menos de 24 h",
       body: "Un diseñador de viajes de OnTour DMC Colombia está revisando tus preferencias. Te contactaremos en menos de 24 horas hábiles con una propuesta detallada y transparente.",
       recapTitle: "Resumen de tu viaje:",
       whatsappCta: "Chatear con un asesor en WhatsApp ahora",
       closeBtn: "Volver al sitio",
+    },
+    error: {
+      title: "No pudimos enviar tu solicitud",
+      body: "Revisa tu conexión e inténtalo de nuevo, o escríbenos directamente por WhatsApp y te atendemos al instante.",
+      retry: "Reintentar",
+    },
+    processing: "Enviando...",
+    recap: {
+      destination: "Destino:",
+      dates: "Fecha / Época:",
+      travelers: "Viajeros:",
+      style: "Estilo:",
+    },
+    closeAria: "Cerrar formulario",
+    preselection: {
+      medical: "Procedimiento / Interés médico:",
+      b2b: "Solicitud de tarifario y colaboración B2B Travel Trade.",
+      itinerary: "Interés en itinerario:",
+    },
+    defaults: {
+      destination: "Colombia a medida",
+      dates: "Fechas flexibles",
+      interests: "A medida / Integral",
+    },
+    whatsapp: {
+      intro: "Hola OnTour DMC Colombia, deseo solicitar una cotización personalizada:",
+      destination: "Destinos / Región",
+      dates: "Época / Mes",
+      travelers: "Viajeros",
+      style: "Estilo / Intereses",
+      notes: "Notas / Preferencias",
+      name: "Nombre",
+      email: "Email",
+      phone: "Teléfono",
+      country: "País",
+      people: "personas",
+      travelerFallback: "Viajero",
     },
   },
   en: {
@@ -223,6 +259,43 @@ const MODAL_CONTENT = {
       whatsappCta: "Chat with a travel designer on WhatsApp now",
       closeBtn: "Return to Site",
     },
+    error: {
+      title: "We couldn't send your request",
+      body: "Please check your connection and try again, or message us directly on WhatsApp and we'll help you right away.",
+      retry: "Try again",
+    },
+    processing: "Sending...",
+    recap: {
+      destination: "Destination:",
+      dates: "Dates:",
+      travelers: "Travelers:",
+      style: "Style:",
+    },
+    closeAria: "Close form",
+    preselection: {
+      medical: "Medical procedure / interest:",
+      b2b: "B2B rate sheet and travel-trade collaboration request.",
+      itinerary: "Itinerary interest:",
+    },
+    defaults: {
+      destination: "Tailor-made Colombia",
+      dates: "Flexible dates",
+      interests: "Tailor-made / Comprehensive",
+    },
+    whatsapp: {
+      intro: "Hello OnTour DMC Colombia, I'd like to request a tailored quote:",
+      destination: "Destinations / Region",
+      dates: "Timing / Month",
+      travelers: "Travelers",
+      style: "Style / Interests",
+      notes: "Notes / Preferences",
+      name: "Name",
+      email: "Email",
+      phone: "Phone",
+      country: "Country",
+      people: "people",
+      travelerFallback: "Traveler",
+    },
   },
   de: {
     headerBadge: "OnTour DMC · Lokaler Concierge",
@@ -308,12 +381,49 @@ const MODAL_CONTENT = {
       slaNote: "RNT 62212 · Lizensierter Incoming-DMC · 100% unverbindlich & vertraulich",
     },
     success: {
-      headline: "Thank you. Your journey is now in the hands of our local team.",
-      subheadline: "Vielen Dank. Ihre Reise ist in besten Händen.",
+      headline: "Vielen Dank. Ihre Reise ist jetzt in den Händen unseres lokalen Teams.",
+      subheadline: "Lokale Reiseexperten · Antwort in unter 24 Stunden",
       body: "Unser Team in Kolumbien prüft Ihre Wünsche und meldet sich innerhalb von 24 Stunden mit einem detaillierten Reisevorschlag.",
       recapTitle: "Ihre Reiseübersicht:",
       whatsappCta: "Jetzt direkt auf WhatsApp chatten",
       closeBtn: "Zurück zur Website",
+    },
+    error: {
+      title: "Ihre Anfrage konnte nicht gesendet werden",
+      body: "Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut, oder schreiben Sie uns direkt über WhatsApp.",
+      retry: "Erneut versuchen",
+    },
+    processing: "Wird gesendet...",
+    recap: {
+      destination: "Reiseziel:",
+      dates: "Reisezeit:",
+      travelers: "Reisende:",
+      style: "Stil:",
+    },
+    closeAria: "Formular schließen",
+    preselection: {
+      medical: "Medizinisches Verfahren / Interesse:",
+      b2b: "Anfrage zu Nettotarifen und B2B-Zusammenarbeit.",
+      itinerary: "Interesse an Reiseroute:",
+    },
+    defaults: {
+      destination: "Individuelles Kolumbien",
+      dates: "Flexible Termine",
+      interests: "Individuell / Umfassend",
+    },
+    whatsapp: {
+      intro: "Hallo OnTour DMC Kolumbien, ich möchte eine individuelle Reise anfragen:",
+      destination: "Reiseziele / Region",
+      dates: "Reisezeit / Monat",
+      travelers: "Reisende",
+      style: "Stil / Interessen",
+      notes: "Notizen / Wünsche",
+      name: "Name",
+      email: "E-Mail",
+      phone: "Telefon",
+      country: "Land",
+      people: "Personen",
+      travelerFallback: "Reisende(r)",
     },
   },
   fr: {
@@ -400,12 +510,49 @@ const MODAL_CONTENT = {
       slaNote: "RNT 62212 · Réceptif DMC Agréé · Devis 100% gratuit et sans engagement",
     },
     success: {
-      headline: "Thank you. Your journey is now in the hands of our local team.",
-      subheadline: "Merci. Votre voyage est entre de bonnes mains.",
+      headline: "Merci. Votre voyage est désormais entre les mains de notre équipe locale.",
+      subheadline: "Concepteurs locaux · Réponse en moins de 24 h",
       body: "Un concepteur de voyages OnTour DMC Colombie examine vos préférences. Nous vous contacterons sous 24 heures ouvrées avec une proposition détaillée et transparente.",
       recapTitle: "Récapitulatif de votre voyage :",
       whatsappCta: "Discuter avec un conseiller sur WhatsApp dès maintenant",
       closeBtn: "Fermer et retourner au site",
+    },
+    error: {
+      title: "Nous n'avons pas pu envoyer votre demande",
+      body: "Vérifiez votre connexion et réessayez, ou écrivez-nous directement sur WhatsApp.",
+      retry: "Réessayer",
+    },
+    processing: "Envoi...",
+    recap: {
+      destination: "Destination :",
+      dates: "Dates :",
+      travelers: "Voyageurs :",
+      style: "Style :",
+    },
+    closeAria: "Fermer le formulaire",
+    preselection: {
+      medical: "Procédure / intérêt médical :",
+      b2b: "Demande de tarifs nets et collaboration B2B.",
+      itinerary: "Intérêt pour l'itinéraire :",
+    },
+    defaults: {
+      destination: "Colombie sur mesure",
+      dates: "Dates flexibles",
+      interests: "Sur mesure / Complet",
+    },
+    whatsapp: {
+      intro: "Bonjour OnTour DMC Colombie, je souhaite demander un devis personnalisé :",
+      destination: "Destinations / Région",
+      dates: "Période / Mois",
+      travelers: "Voyageurs",
+      style: "Style / Intérêts",
+      notes: "Notes / Préférences",
+      name: "Nom",
+      email: "E-mail",
+      phone: "Téléphone",
+      country: "Pays",
+      people: "personnes",
+      travelerFallback: "Voyageur",
     },
   },
 };
@@ -479,23 +626,33 @@ export function RequestQuoteModal({
   // Status state
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+  const [company, setCompany] = useState("");
 
-  // Initialize or handle preselection
-  useEffect(() => {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+
+  // Reset transient form state whenever the dialog opens. Adjusting state
+  // during render (instead of in an effect) avoids an extra render pass that
+  // would briefly show the previous submission result.
+  const [wasOpen, setWasOpen] = useState(isOpen);
+  if (isOpen !== wasOpen) {
+    setWasOpen(isOpen);
     if (isOpen) {
       setIsSubmitted(false);
+      setSubmitError(false);
 
       if (preselectedExperience === "wellness") {
         setSelectedInterests(["wellness"]);
         if (preselectedItem) {
-          setNotes((prev) => (prev ? prev : `Procedimiento / Interés médico: ${preselectedItem}`));
+          setNotes((prev) => (prev ? prev : `${c.preselection.medical} ${preselectedItem}`));
         }
       } else if (preselectedExperience === "b2b") {
         setPartyType("b2b");
         setTravelerCount(10);
-        setNotes((prev) => (prev ? prev : "Solicitud de tarifario y colaboración B2B Travel Trade."));
+        setNotes((prev) => (prev ? prev : c.preselection.b2b));
       } else if (preselectedItem) {
-        setNotes((prev) => (prev ? prev : `Interés en itinerario: ${preselectedItem}`));
+        setNotes((prev) => (prev ? prev : `${c.preselection.itinerary} ${preselectedItem}`));
         if (preselectedItem.toLowerCase().includes("precolombina") || preselectedItem.toLowerCase().includes("tatacoa")) {
           setSelectedDestinations(["archaeological-south"]);
         } else if (preselectedItem.toLowerCase().includes("andes") || preselectedItem.toLowerCase().includes("cafetero")) {
@@ -503,7 +660,7 @@ export function RequestQuoteModal({
         }
       }
     }
-  }, [isOpen, preselectedExperience, preselectedItem]);
+  }
 
   // Lock body scroll
   useEffect(() => {
@@ -527,6 +684,48 @@ export function RequestQuoteModal({
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
+
+  // Focus trap + focus restoration for keyboard and screen-reader users
+  useEffect(() => {
+    if (!isOpen) return;
+
+    previousFocusRef.current = document.activeElement as HTMLElement | null;
+    const node = dialogRef.current;
+    if (!node) return;
+
+    const getFocusable = () =>
+      Array.from(
+        node.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((el) => el.offsetParent !== null);
+
+    getFocusable()[0]?.focus();
+
+    const handleTab = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+      const focusable = getFocusable();
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const active = document.activeElement;
+
+      if (event.shiftKey && active === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && active === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleTab);
+    return () => {
+      document.removeEventListener("keydown", handleTab);
+      previousFocusRef.current?.focus?.();
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -552,7 +751,7 @@ export function RequestQuoteModal({
 
   // Compile summary data
   const getDestinationLabel = () => {
-    if (selectedDestinations.length === 0) return "Colombia a medida";
+    if (selectedDestinations.length === 0) return c.defaults.destination;
     return selectedDestinations
       .map((id) => c.step1.destinations.find((d) => d.id === id)?.name || id)
       .join(", ");
@@ -566,11 +765,11 @@ export function RequestQuoteModal({
     if (selectedTimeframe) {
       return c.step2.timeframes.find((t) => t.id === selectedTimeframe)?.label || selectedTimeframe;
     }
-    return "Fechas flexibles";
+    return c.defaults.dates;
   };
 
   const getInterestsLabel = () => {
-    if (selectedInterests.length === 0) return "A medida / Integral";
+    if (selectedInterests.length === 0) return c.defaults.interests;
     return selectedInterests
       .map((id) => c.step4.interests.find((i) => i.id === id)?.label || id)
       .join(", ");
@@ -578,19 +777,20 @@ export function RequestQuoteModal({
 
   // Build WhatsApp text (strictly without emojis)
   const buildWhatsAppMessage = () => {
+    const w = c.whatsapp;
     const lines = [
-      `*Hola OnTour DMC Colombia, deseo solicitar una cotización personalizada:*`,
+      `*${w.intro}*`,
       ``,
-      `• Destinos / Región: ${getDestinationLabel()}`,
-      `• Época / Mes: ${getTimeLabel()}`,
-      `• Viajeros: ${travelerCount} personas (${partyType})`,
-      `• Estilo / Intereses: ${getInterestsLabel()}`,
-      notes ? `• Notas / Preferencias: ${notes}` : null,
+      `• ${w.destination}: ${getDestinationLabel()}`,
+      `• ${w.dates}: ${getTimeLabel()}`,
+      `• ${w.travelers}: ${travelerCount} ${w.people} (${partyType})`,
+      `• ${w.style}: ${getInterestsLabel()}`,
+      notes ? `• ${w.notes}: ${notes}` : null,
       ``,
-      `• Nombre: ${name || "Viajero"}`,
-      email ? `• Email: ${email}` : null,
-      phone ? `• Teléfono: ${phone}` : null,
-      country ? `• País: ${country}` : null,
+      `• ${w.name}: ${name || w.travelerFallback}`,
+      email ? `• ${w.email}: ${email}` : null,
+      phone ? `• ${w.phone}: ${phone}` : null,
+      country ? `• ${w.country}: ${country}` : null,
     ].filter(Boolean);
 
     return lines.join("\n");
@@ -598,7 +798,7 @@ export function RequestQuoteModal({
 
   const handleWhatsAppSend = () => {
     const text = buildWhatsAppMessage();
-    trackWhatsAppClick("request_quote_conversational_modal", text);
+    trackWhatsAppClick("request_quote_conversational_modal");
     trackQuoteFormSubmit({
       experience: getDestinationLabel(),
       item: getInterestsLabel(),
@@ -613,13 +813,14 @@ export function RequestQuoteModal({
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !email) return;
+    if (!name.trim() || !email.trim()) return;
 
     setIsSubmitting(true);
+    setSubmitError(false);
 
     const payload = {
-      name,
-      email,
+      name: name.trim(),
+      email: email.trim(),
       phone,
       country,
       destination: getDestinationLabel(),
@@ -627,27 +828,39 @@ export function RequestQuoteModal({
       travelers: travelerCount.toString(),
       interests: selectedInterests,
       notes,
+      company,
     };
 
-    trackQuoteFormSubmit({
-      experience: payload.destination,
-      item: getInterestsLabel(),
-      method: "email",
-      travelers: payload.travelers,
-      dates: payload.travelMonth,
-    });
-
     try {
-      await fetch("/api/quote", {
+      const response = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
+      const result = (await response.json().catch(() => null)) as
+        | { success?: boolean }
+        | null;
+
+      if (!response.ok || !result?.success) {
+        throw new Error(`Quote request failed with status ${response.status}`);
+      }
+
+      // Only count a conversion once the API confirms delivery.
+      trackQuoteFormSubmit({
+        experience: payload.destination,
+        item: getInterestsLabel(),
+        method: "email",
+        travelers: payload.travelers,
+        dates: payload.travelMonth,
+      });
+
+      setIsSubmitted(true);
     } catch (err) {
       console.error("[RequestQuoteModal] Submission error:", err);
+      setSubmitError(true);
     } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
     }
   };
 
@@ -664,6 +877,11 @@ export function RequestQuoteModal({
 
       {/* Modal Dialog */}
       <motion.div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label={c.headerBadge}
+        tabIndex={-1}
         initial={{ opacity: 0, scale: 0.95, y: 16 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 16 }}
@@ -676,7 +894,9 @@ export function RequestQuoteModal({
             {step > 1 && !isSubmitted && (
               <button
                 type="button"
-                onClick={() => setStep((s) => (s > 1 ? ((s - 1) as any) : s))}
+                onClick={() =>
+                  setStep((s) => (s > 1 ? ((s - 1) as 1 | 2 | 3 | 4 | 5 | 6) : s))
+                }
                 className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors min-h-[36px] min-w-[36px] cursor-pointer"
                 aria-label={c.back}
               >
@@ -700,7 +920,7 @@ export function RequestQuoteModal({
             <button
               onClick={onClose}
               className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors min-h-[36px] min-w-[36px] cursor-pointer"
-              aria-label="Cerrar modal"
+              aria-label={c.closeAria}
             >
               <X className="w-4 h-4" />
             </button>
@@ -745,19 +965,19 @@ export function RequestQuoteModal({
                 <div className="space-y-3 text-sm sm:text-base text-stone-700">
                   <div className="flex items-start gap-2.5">
                     <MapPin className="w-4 h-4 text-editorial-accent shrink-0 mt-1" />
-                    <span><strong>Destino:</strong> {getDestinationLabel()}</span>
+                    <span><strong>{c.recap.destination}</strong> {getDestinationLabel()}</span>
                   </div>
                   <div className="flex items-start gap-2.5">
                     <Calendar className="w-4 h-4 text-editorial-accent shrink-0 mt-1" />
-                    <span><strong>Fecha / Época:</strong> {getTimeLabel()}</span>
+                    <span><strong>{c.recap.dates}</strong> {getTimeLabel()}</span>
                   </div>
                   <div className="flex items-start gap-2.5">
                     <Users className="w-4 h-4 text-editorial-accent shrink-0 mt-1" />
-                    <span><strong>Viajeros:</strong> {travelerCount} pax</span>
+                    <span><strong>{c.recap.travelers}</strong> {travelerCount} pax</span>
                   </div>
                   <div className="flex items-start gap-2.5">
                     <Sparkles className="w-4 h-4 text-editorial-accent shrink-0 mt-1" />
-                    <span><strong>Estilo:</strong> {getInterestsLabel()}</span>
+                    <span><strong>{c.recap.style}</strong> {getInterestsLabel()}</span>
                   </div>
                 </div>
               </div>
@@ -1191,6 +1411,33 @@ export function RequestQuoteModal({
                   </div>
 
                   <form onSubmit={handleEmailSubmit} className="space-y-4.5">
+                    {/* Honeypot: hidden from humans and assistive tech */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
+                    >
+                      <label htmlFor="quote-company">Company</label>
+                      <input
+                        id="quote-company"
+                        name="company"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={company}
+                        onChange={(event) => setCompany(event.target.value)}
+                      />
+                    </div>
+
+                    {submitError && (
+                      <div
+                        role="alert"
+                        className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800"
+                      >
+                        <p className="font-bold">{c.error.title}</p>
+                        <p className="mt-1 leading-relaxed">{c.error.body}</p>
+                      </div>
+                    )}
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs sm:text-sm font-bold text-stone-800 mb-1.5">
@@ -1260,12 +1507,12 @@ export function RequestQuoteModal({
                         {isSubmitting ? (
                           <>
                             <Loader2 className="w-5 h-5 animate-spin text-amber-300" />
-                            <span>Procesando...</span>
+                            <span>{c.processing}</span>
                           </>
                         ) : (
                           <>
                             <Send className="w-5 h-5 text-amber-300" />
-                            <span>{c.step6.submitBtn}</span>
+                            <span>{submitError ? c.error.retry : c.step6.submitBtn}</span>
                           </>
                         )}
                       </button>

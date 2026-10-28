@@ -1,6 +1,32 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { Scale } from "lucide-react";
+import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legalTerms" });
+  const title = `${t("title")} | OnTour DMC Colombia`;
+  const description = t("subtitle");
+
+  return {
+    title,
+    description,
+    alternates: buildAlternates(locale, "/legal/terminos"),
+    openGraph: buildOpenGraph({
+      locale,
+      title,
+      description,
+      url: canonicalFor(locale, "/legal/terminos"),
+    }),
+    twitter: buildTwitter({ title, description }),
+  };
+}
 
 export default async function TerminosPage({
   params,

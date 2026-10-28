@@ -76,7 +76,7 @@ export function HeroCircuitPreview({ items }: HeroCircuitPreviewProps) {
             className="shrink-0"
           >
             <Link
-              href={`/circuitos/${item.id}` as any}
+              href={{ pathname: "/circuitos/[id]", params: { id: item.id } }}
               onClickCapture={(e) => {
                 if (draggedDistance > 5) {
                   e.preventDefault();

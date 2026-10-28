@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local throwaway scripts (already gitignored)
+    "scratch/**",
   ]),
   ...storybook.configs["flat/recommended"]
 ]);

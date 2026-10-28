@@ -98,13 +98,18 @@ export function MacrorregionesColombia() {
     }
   }, [scale, resetZoom]);
 
+  const closeModal = useCallback(() => {
+    setIsOpen(false);
+    resetZoom();
+  }, [resetZoom]);
+
   // Handle keyboard shortcuts
   useEffect(() => {
     if (!isOpen) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setIsOpen(false);
+        closeModal();
       } else if (e.key === "+" || e.key === "=") {
         handleZoomIn();
       } else if (e.key === "-") {
@@ -116,14 +121,7 @@ export function MacrorregionesColombia() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, handleZoomIn, handleZoomOut, resetZoom]);
-
-  // Reset zoom on modal open/close
-  useEffect(() => {
-    if (!isOpen) {
-      resetZoom();
-    }
-  }, [isOpen, resetZoom]);
+  }, [isOpen, closeModal, handleZoomIn, handleZoomOut, resetZoom]);
 
   // Mouse wheel zoom
   const handleWheel = (e: React.WheelEvent) => {
@@ -268,7 +266,7 @@ export function MacrorregionesColombia() {
         <div
           className="fixed inset-0 z-50 bg-black/92 backdrop-blur-lg flex flex-col justify-between select-none animate-in fade-in duration-200"
           onClick={() => {
-            if (!isDragging) setIsOpen(false);
+            if (!isDragging) closeModal();
           }}
         >
           {/* Top Bar */}
@@ -295,7 +293,7 @@ export function MacrorregionesColombia() {
                 {Math.round(scale * 100)}%
               </span>
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={closeModal}
                 className="p-2 sm:p-2.5 rounded-full bg-white/15 hover:bg-white/25 text-white transition-colors cursor-pointer focus:outline-none"
                 aria-label={t("closeLabel")}
                 title={t("closeTitle")}

@@ -51,12 +51,12 @@ export async function Footer() {
           <div>
             <h3 className="text-white font-semibold font-heading mb-6 text-lg">{t("explore")}</h3>
             <ul className="flex flex-col gap-3 text-sm">
-              <li><Link href={"/circuitos" as any} className="hover:text-accent transition-colors">{t("circuits")}</Link></li>
-              <li><Link href={"/pasadias" as any} className="hover:text-accent transition-colors">{t("dayTrips")}</Link></li>
-              <li><Link href={"/bienestar" as any} className="hover:text-accent transition-colors">{t("wellness")}</Link></li>
-              <li><Link href={"/servicios" as any} className="hover:text-accent transition-colors">{t("services")}</Link></li>
-              <li><Link href={"/nosotros" as any} className="hover:text-accent transition-colors">{t("about")}</Link></li>
-              <li><Link href={"/galeria" as any} className="hover:text-accent transition-colors">{t("gallery")}</Link></li>
+              <li><Link href="/circuitos" className="hover:text-accent transition-colors">{t("circuits")}</Link></li>
+              <li><Link href="/pasadias" className="hover:text-accent transition-colors">{t("dayTrips")}</Link></li>
+              <li><Link href="/bienestar" className="hover:text-accent transition-colors">{t("wellness")}</Link></li>
+              <li><Link href="/servicios" className="hover:text-accent transition-colors">{t("services")}</Link></li>
+              <li><Link href="/nosotros" className="hover:text-accent transition-colors">{t("about")}</Link></li>
+              <li><Link href="/galeria" className="hover:text-accent transition-colors">{t("gallery")}</Link></li>
             </ul>
           </div>
 
@@ -64,10 +64,10 @@ export async function Footer() {
           <div>
             <h3 className="text-white font-semibold font-heading mb-6 text-lg">{t("legal")}</h3>
             <ul className="flex flex-col gap-3 text-sm">
-              <li><Link href={"/legal/terminos" as any} className="hover:text-accent transition-colors">{t("terms")}</Link></li>
-              <li><Link href={"/legal/privacidad" as any} className="hover:text-accent transition-colors">{t("privacy")}</Link></li>
-              <li><Link href={"/legal/registro-turismo" as any} className="hover:text-accent transition-colors">{t("tourism")}</Link></li>
-              <li><Link href={"/legal/faq" as any} className="hover:text-accent transition-colors">{t("faq")}</Link></li>
+              <li><Link href="/legal/terminos" className="hover:text-accent transition-colors">{t("terms")}</Link></li>
+              <li><Link href="/legal/privacidad" className="hover:text-accent transition-colors">{t("privacy")}</Link></li>
+              <li><Link href="/legal/registro-turismo" className="hover:text-accent transition-colors">{t("tourism")}</Link></li>
+              <li><Link href="/legal/faq" className="hover:text-accent transition-colors">{t("faq")}</Link></li>
             </ul>
           </div>
 
@@ -77,7 +77,7 @@ export async function Footer() {
             <ul className="flex flex-col gap-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent shrink-0" />
-                <span>Eje Cafetero-Colombia</span>
+                <span>{t("address")}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
@@ -85,7 +85,7 @@ export async function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
-                <a href="mailto:[EMAIL_ADDRESS]" className="hover:text-accent transition-colors">gerencia@agenciaontour.com</a>
+                <a href="mailto:gerencia@agenciaontour.com" className="hover:text-accent transition-colors">gerencia@agenciaontour.com</a>
               </li>
             </ul>
           </div>

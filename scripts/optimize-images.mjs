@@ -6,7 +6,7 @@
  * Usage: node scripts/optimize-images.mjs
  */
 import sharp from "sharp";
-import { readdirSync, statSync, writeFileSync, copyFileSync } from "fs";
+import { readdirSync, statSync, writeFileSync } from "fs";
 import { join, extname } from "path";
 
 const ROOT = join(process.cwd(), "public", "image");

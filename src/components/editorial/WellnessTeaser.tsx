@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { HeartPulse, ShieldCheck, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
+import { HeartPulse, ArrowRight, CheckCircle2 } from "lucide-react";
 import { SectionReveal } from "./SectionReveal";
 
 interface WellnessTeaserProps {
@@ -104,7 +104,7 @@ export function WellnessTeaser({ locale }: WellnessTeaserProps) {
 
               <div>
                 <Link
-                  href={"/bienestar" as any}
+                  href="/bienestar"
                   className="inline-flex items-center gap-2 bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 shadow-md min-h-[44px]"
                 >
                   <span>{content.cta}</span>

@@ -3,11 +3,13 @@
 import { useState, useEffect, useRef, useTransition } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { Menu, X, Globe, ChevronDown, ChevronRight, Compass, HeartPulse, Briefcase, Info, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
+import type { AppHref } from "@/lib/routes";
 import { RequestQuoteModal } from "./RequestQuoteModal";
 import { trackRequestQuoteClick } from "@/lib/analytics";
 
@@ -17,30 +19,6 @@ const LOCALES = [
   { code: "de", flag: "🇩🇪", label: "Deutsch" },
   { code: "fr", flag: "🇫🇷", label: "Français" },
 ];
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.08,
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      staggerChildren: 0.03,
-      staggerDirection: -1,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.25, ease: "easeOut" } },
-  exit: { opacity: 0, y: 10, transition: { duration: 0.15 } },
-};
 
 export interface NavPillar {
   id: string;
@@ -213,7 +191,6 @@ const NAV_PILLARS: NavPillar[] = [
 ];
 
 export function Navbar() {
-  const t = useTranslations("nav");
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -231,7 +208,6 @@ export function Navbar() {
   const navRef = useRef<HTMLElement>(null);
 
   const langKey = (["es", "en", "fr", "de"].includes(locale) ? locale : "es") as "es" | "en" | "fr" | "de";
-  const currentLocale = LOCALES.find((l) => l.code === locale) ?? LOCALES[0];
 
   // Handle scroll effect
   useEffect(() => {
@@ -280,6 +256,19 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  /**
+   * Client request: when the visitor is already on the home page, clicking the
+   * OnTour logo should do a full page reload instead of a no-op client
+   * navigation to the same route.
+   */
+  function handleLogoClick(event: React.MouseEvent<HTMLAnchorElement>) {
+    setIsOpen(false);
+    if (pathname === "/") {
+      event.preventDefault();
+      window.location.reload();
+    }
+  }
+
   function switchLocale(newLocale: string) {
     if (newLocale === locale) {
       setLangOpen(false);
@@ -294,11 +283,13 @@ export function Navbar() {
     }
 
     startTransition(() => {
-      router.replace(
-        // @ts-expect-error – dynamic params typed loosely
-        { pathname: pathname as any, params },
-        { locale: newLocale as any, scroll: false }
-      );
+      const href = { pathname, params } as unknown as Parameters<
+        typeof router.replace
+      >[0];
+      router.replace(href, {
+        locale: newLocale as (typeof routing.locales)[number],
+        scroll: false,
+      });
     });
 
     setLangOpen(false);
@@ -314,7 +305,7 @@ export function Navbar() {
       <nav ref={navRef} className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-300 ${navClass}`}>
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group shrink-0">
+          <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2 group shrink-0">
             <Image
               src="/image/logo-ON-TOUR-Nuevo2.png"
               alt="Ontour DMC Logo"
@@ -369,7 +360,7 @@ export function Navbar() {
                           {pillar.items.map((item, idx) => (
                             <Link
                               key={idx}
-                              href={item.href as any}
+                              href={item.href as AppHref}
                               onClick={() => setActiveDropdown(null)}
                               className="group flex flex-col p-2.5 rounded-xl hover:bg-[#F7F5EF] transition-colors min-h-[44px]"
                             >
@@ -502,14 +493,16 @@ export function Navbar() {
             >
               {/* Drawer Top */}
               <div className="flex items-center justify-between pb-4 border-b border-stone-100">
-                <Image
-                  src="/image/logo-ON-TOUR-Nuevo2.png"
-                  alt="Ontour DMC"
-                  width={130}
-                  height={38}
-                  className="h-8 object-contain"
-                  style={{ width: "auto" }}
-                />
+                <Link href="/" onClick={handleLogoClick} className="inline-flex">
+                  <Image
+                    src="/image/logo-ON-TOUR-Nuevo2.png"
+                    alt="Ontour DMC"
+                    width={130}
+                    height={38}
+                    className="h-8 object-contain"
+                    style={{ width: "auto" }}
+                  />
+                </Link>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="w-10 h-10 rounded-full bg-stone-100 text-stone-600 flex items-center justify-center min-h-[44px] min-w-[44px]"
@@ -549,7 +542,7 @@ export function Navbar() {
                             {pillar.items.map((sub, sidx) => (
                               <Link
                                 key={sidx}
-                                href={sub.href as any}
+                                href={sub.href as AppHref}
                                 onClick={() => setIsOpen(false)}
                                 className="block py-2 px-3 rounded-xl bg-stone-50 hover:bg-[#F7F5EF] text-xs font-semibold text-stone-800 min-h-[44px] flex items-center justify-between"
                               >

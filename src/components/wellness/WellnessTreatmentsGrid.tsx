@@ -7,14 +7,11 @@ import {
   ArrowRight,
   X,
   ShieldCheck,
-  Clock,
   UserCheck,
   Building2,
   Calendar,
-  DollarSign,
   FileText,
   Lock,
-  MessageCircle,
 } from "lucide-react";
 import { useLocale } from "next-intl";
 import { RequestQuoteModal } from "@/components/RequestQuoteModal";

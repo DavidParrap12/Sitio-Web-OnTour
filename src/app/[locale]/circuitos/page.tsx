@@ -3,14 +3,7 @@ import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { CircuitosEditorial } from "./CircuitosEditorial";
 import { circuitos } from "@/data/circuitos";
-
-// Localized path for the journeys listing (mirrors routing.ts)
-const JOURNEYS_PATH: Record<string, string> = {
-  es: "circuitos",
-  en: "journeys",
-  de: "rundreisen",
-  fr: "circuits",
-};
+import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -19,38 +12,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "circuits" });
-  const ogImageUrl = "https://www.ontourdmc.com/image/portadas/Statues_at_San_Agust%C3%ADn_park_202608141341.jpeg";
-
-  const path = JOURNEYS_PATH[locale] ?? "circuitos";
-  const baseUrl = locale === "es"
-    ? `https://www.ontourdmc.com/${path}`
-    : `https://www.ontourdmc.com/${locale}/${path}`;
+  const title = `${t("title")} | OnTour DMC Colombia`;
+  const description = t("subtitle");
 
   return {
-    title: `${t("title")} | OnTour DMC Colombia`,
-    description: t("subtitle"),
-    alternates: { canonical: baseUrl },
-    openGraph: {
-      title: `${t("title")} | OnTour DMC Colombia`,
-      description: t("subtitle"),
-      url: baseUrl,
-      siteName: "Ontour DMC Colombia",
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-        },
-      ],
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${t("title")} | OnTour DMC Colombia`,
-      description: t("subtitle"),
-      images: [ogImageUrl],
-    },
+    title,
+    description,
+    alternates: buildAlternates(locale, "/circuitos"),
+    openGraph: buildOpenGraph({
+      locale,
+      title,
+      description,
+      url: canonicalFor(locale, "/circuitos"),
+    }),
+    twitter: buildTwitter({ title, description }),
   };
 }
 

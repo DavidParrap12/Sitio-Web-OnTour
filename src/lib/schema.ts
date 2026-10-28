@@ -25,7 +25,7 @@ const tripPath: Record<string, string> = {
 
 const circuitPath: Record<string, string> = {
   es: "circuitos",
-  en: "circuits",
+  en: "journeys",
   de: "rundreisen",
   fr: "circuits",
 };
@@ -54,9 +54,21 @@ export function buildOrgSchema(locale: string) {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",
+        telephone: "+57-316-538-6892",
+        email: "gerencia@agenciaontour.com",
         availableLanguage: ["Spanish", "English", "German", "French"],
+        areaServed: "CO",
       },
-      sameAs: [],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Ibagué",
+        addressRegion: "Tolima",
+        addressCountry: "CO",
+      },
+      sameAs: [
+        "https://www.facebook.com/p/Ontour-100071506294624/",
+        "https://www.instagram.com/ontouragenciadeviajes/",
+      ],
     },
     {
       "@context": "https://schema.org",
@@ -66,14 +78,6 @@ export function buildOrgSchema(locale: string) {
       name: ORG_NAME,
       publisher: { "@id": `${BASE}/#organization` },
       inLanguage: lang,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${BASE}/${locale === "es" ? "" : locale + "/"}?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
     },
   ];
 }
@@ -120,7 +124,6 @@ export function buildPasadiaSchema({
       { "@type": "Language", name: "German" },
       { "@type": "Language", name: "French" },
     ],
-    aggregateRating: buildAggregateRating({ ratingValue: 5.0, reviewCount: 4 }),
     location: {
       "@type": "Country",
       name: "Colombia",
@@ -178,7 +181,6 @@ export function buildCircuitoSchema({
       { "@type": "Language", name: "German" },
       { "@type": "Language", name: "French" },
     ],
-    aggregateRating: buildAggregateRating({ ratingValue: 5.0, reviewCount: 4 }),
     location: {
       "@type": "Country",
       name: "Colombia",
@@ -223,26 +225,6 @@ export function buildFaqSchema(faqs: { q: string; a: string }[]) {
       name: q,
       acceptedAnswer: { "@type": "Answer", text: a },
     })),
-  };
-}
-
-// ── AggregateRating — embedded inside TouristTrip schemas ───────────────────
-
-export function buildAggregateRating({
-  ratingValue,
-  reviewCount,
-  bestRating = 5,
-}: {
-  ratingValue: number;
-  reviewCount: number;
-  bestRating?: number;
-}) {
-  return {
-    "@type": "AggregateRating",
-    ratingValue: ratingValue.toFixed(1),
-    bestRating,
-    worstRating: 1,
-    reviewCount,
   };
 }
 

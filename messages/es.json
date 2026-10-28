@@ -153,6 +153,7 @@
   },
   "card": {
     "colombia": "Colombia",
+    "viewMore": "Ver más",
     "from": "Desde",
     "quotePrice": "A Cotizar",
     "book": "Reservar",
@@ -229,6 +230,7 @@
   "footer": {
     "tagline": "Operador DMC local en los Andes colombianos. Habilitados, asegurados y dedicados a crear viajes privados desde el primer día.",
     "explore": "Explorar",
+    "address": "Ibagué, Tolima, Colombia",
     "home": "Inicio",
     "about": "Nosotros",
     "dayTrips": "Pasadías",
@@ -2074,5 +2076,17 @@
         }
       ]
     }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o cambió de dirección. Explora nuestros pasadías, circuitos y experiencias a medida en Colombia.",
+    "homeCta": "Volver al inicio",
+    "journeysCta": "Ver circuitos"
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "description": "No pudimos cargar esta sección. Inténtalo de nuevo en unos segundos o escríbenos por WhatsApp y te ayudamos de inmediato.",
+    "retry": "Reintentar",
+    "homeCta": "Volver al inicio"
   }
 }

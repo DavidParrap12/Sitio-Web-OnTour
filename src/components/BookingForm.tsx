@@ -9,7 +9,6 @@ import {
   Users,
   Baby,
   BedDouble,
-  CalendarDays,
   MessageCircle,
 } from "lucide-react";
 import { useTranslations } from "next-intl";

@@ -3,13 +3,7 @@ import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { PasadiasEditorial } from "./PasadiasEditorial";
 import { destinos } from "@/data/destinos";
-
-const DAY_TRIPS_PATH: Record<string, string> = {
-  es: "pasadias",
-  en: "day-trips",
-  de: "tagesausfluege",
-  fr: "excursions",
-};
+import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -18,15 +12,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "dayTrips" });
-  const path = DAY_TRIPS_PATH[locale] ?? "pasadias";
-  const baseUrl = locale === "es"
-    ? `https://www.ontourdmc.com/${path}`
-    : `https://www.ontourdmc.com/${locale}/${path}`;
+  const title = `${t("title")} | OnTour DMC Colombia`;
+  const description = t("subtitle");
+
   return {
-    title: `${t("title")} | OnTour DMC Colombia`,
-    description: t("subtitle"),
-    alternates: { canonical: baseUrl },
-    openGraph: { url: baseUrl },
+    title,
+    description,
+    alternates: buildAlternates(locale, "/pasadias"),
+    openGraph: buildOpenGraph({
+      locale,
+      title,
+      description,
+      url: canonicalFor(locale, "/pasadias"),
+    }),
+    twitter: buildTwitter({ title, description }),
   };
 }
 

@@ -157,7 +157,7 @@ export default function FaqPage() {
           <p className="heading-2 text-white mb-2">{ctaTitle}</p>
           <p className="body text-white/50 mb-8">{ctaDesc}</p>
           <Link
-            href={"/contacto" as any}
+            href="/contacto"
             className="inline-block bg-editorial-accent hover:bg-editorial-accent-hover text-white px-8 py-3.5 rounded-full font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-editorial-lg hover:shadow-editorial-xl"
           >
             {ctaBtn}

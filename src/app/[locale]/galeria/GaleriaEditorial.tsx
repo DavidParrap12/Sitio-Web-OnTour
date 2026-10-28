@@ -69,33 +69,35 @@ export function GaleriaEditorial({
   // Focus trap for lightbox
   const lightboxRef = useFocusTrap(lightbox !== null);
 
+  // Lock page scroll while the lightbox is open
+  useEffect(() => {
+    if (lightbox === null) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [lightbox]);
+
   function openLightbox(i: number) {
     setLightbox(i);
-    document.body.style.overflow = "hidden";
   }
 
   function closeLightbox() {
     setLightbox(null);
-    document.body.style.overflow = "";
-  }
-
-  function handleFocusTrapEscape() {
-    closeLightbox();
   }
 
   useEffect(() => {
-    if (lightbox !== null) {
-      const container = lightboxRef.current;
-      if (container) {
-        container.addEventListener("focusTrapEscape", handleFocusTrapEscape);
-      }
-      return () => {
-        if (container) {
-          container.removeEventListener("focusTrapEscape", handleFocusTrapEscape);
-        }
-      };
-    }
-  }, [lightbox]);
+    if (lightbox === null) return;
+    const container = lightboxRef.current;
+    if (!container) return;
+
+    const handleFocusTrapEscape = () => setLightbox(null);
+    container.addEventListener("focusTrapEscape", handleFocusTrapEscape);
+    return () => {
+      container.removeEventListener("focusTrapEscape", handleFocusTrapEscape);
+    };
+  }, [lightbox, lightboxRef]);
 
   function navigate(dir: -1 | 1) {
     if (lightbox === null) return;

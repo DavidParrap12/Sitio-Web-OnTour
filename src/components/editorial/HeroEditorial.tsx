@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import type { AppHref } from "@/lib/routes";
 import { IMAGE_SIZES } from "@/lib/design-config";
 import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 import { MagneticButton } from "./MagneticButton";
@@ -15,6 +16,12 @@ export interface HeroSlide {
 }
 
 export type HeroVariant = "ken-burns" | "static";
+
+type HeroActionHref = AppHref | `#${string}`;
+
+function isAnchorHref(href: HeroActionHref | undefined): href is `#${string}` {
+  return typeof href === "string" && href.startsWith("#");
+}
 
 interface HeroEditorialProps {
   /** Visual preset: ken-burns rotates slides; static shows slides[0] */
@@ -34,7 +41,8 @@ interface HeroEditorialProps {
   /** CTA buttons */
   actions?: Array<{
     label: string;
-    href?: string;
+    /** Localized route, or an in-page anchor like "#section-id" */
+    href?: HeroActionHref;
     variant?: "primary" | "secondary" | "link";
     onClick?: () => void;
   }>;
@@ -119,7 +127,6 @@ export function HeroEditorial({
                 className={`object-cover object-center ${gradeClass}`}
                 quality={80}
                 priority={current === 0}
-                // @ts-ignore — fetchPriority is valid HTML but TS types lag
                 fetchPriority={current === 0 ? "high" : "auto"}
               />
             </ParallaxFloat>
@@ -205,8 +212,8 @@ export function HeroEditorial({
                 if (action.variant === "link") {
                   return (
                     <a
-                      key={action.href || i}
-                      href={action.href || "#circuitos-destacados"}
+                      key={typeof action.href === "string" ? action.href : i}
+                      href={typeof action.href === "string" ? action.href : "#circuitos-destacados"}
                       className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors py-3 group cursor-pointer"
                     >
                       <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-white">
@@ -218,7 +225,10 @@ export function HeroEditorial({
                 }
 
                 return (
-                  <MagneticButton key={action.href || i} className="w-full sm:w-auto">
+                  <MagneticButton
+                    key={typeof action.href === "string" ? action.href : i}
+                    className="w-full sm:w-auto"
+                  >
                     {action.onClick ? (
                       <button
                         type="button"
@@ -238,7 +248,7 @@ export function HeroEditorial({
                       </button>
                     ) : (
                       <Link
-                        href={(action.href || "#") as any}
+                        href={isAnchorHref(action.href) || action.href === undefined ? "/" : action.href}
                         className={`
                           w-full sm:w-auto flex items-center justify-center gap-2
                           px-8 py-4 rounded-full font-semibold text-base sm:text-lg

@@ -145,7 +145,7 @@ export const destinos: Destino[] = [
       "/image/pasadias/Pasadias_por_cartagena_2026/Captura4-1-721x1024.png",
       "/image/pasadias/Pasadias_por_cartagena_2026/Captura6-1-718x1024.png",
       "/image/pasadias/Pasadias_por_cartagena_2026/Captura7-1-720x1024.png",
-      "/image/pasadias/Pasadias_por_cartagena_2026/Captura8-1-721x1024.png  ",
+      "/image/pasadias/Pasadias_por_cartagena_2026/Captura8-1-721x1024.png",
     ]
   },
   {

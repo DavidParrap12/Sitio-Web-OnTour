@@ -1,25 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const QUERY = "(prefers-reduced-motion: reduce)";
+
+function subscribe(onStoreChange: () => void) {
+  const mediaQuery = window.matchMedia(QUERY);
+  mediaQuery.addEventListener("change", onStoreChange);
+  return () => mediaQuery.removeEventListener("change", onStoreChange);
+}
+
+function getSnapshot() {
+  return window.matchMedia(QUERY).matches;
+}
+
+function getServerSnapshot() {
+  return false;
+}
 
 /**
  * Hook to detect prefers-reduced-motion media query.
  * Returns true if user prefers reduced motion.
+ *
+ * Implemented with useSyncExternalStore so the value is read during render
+ * (no setState-in-effect cascading renders) while staying SSR-safe.
  */
 export function useReducedMotion(): boolean {
-  const [prefersReduced, setPrefersReduced] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReduced(mediaQuery.matches);
-
-    const handler = (event: MediaQueryListEvent) => {
-      setPrefersReduced(event.matches);
-    };
-
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
-
-  return prefersReduced;
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }

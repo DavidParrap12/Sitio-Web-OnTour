@@ -12,6 +12,7 @@ import { WellnessTestimonials } from "@/components/wellness/WellnessTestimonials
 import { WellnessSpecialists } from "@/components/wellness/WellnessSpecialists";
 import { WellnessFaqAccordion } from "@/components/wellness/WellnessFaqAccordion";
 import { WellnessFinalCTA } from "@/components/wellness/WellnessFinalCTA";
+import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -20,40 +21,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "wellness" });
-  const wellnessPath: Record<string, string> = {
-    es: "bienestar", en: "wellness", de: "wohlbefinden", fr: "bien-etre",
-  };
-  const path = wellnessPath[locale] ?? "bienestar";
-  const baseUrl = locale === "es"
-    ? `https://www.ontourdmc.com/${path}`
-    : `https://www.ontourdmc.com/${locale}/${path}`;
-  const ogImageUrl = "https://www.ontourdmc.com/image/bienestar/paisaje_montanoso_tolima.jpeg";
+  const title = t("metaTitle");
+  const description = t("metaDesc");
 
   return {
-    title: t("metaTitle"),
-    description: t("metaDesc"),
-    alternates: { canonical: baseUrl },
-    openGraph: {
-      title: t("metaTitle"),
-      description: t("metaDesc"),
-      url: baseUrl,
-      siteName: "Ontour DMC Colombia",
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: t("metaTitle"),
-        },
-      ],
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("metaTitle"),
-      description: t("metaDesc"),
-      images: [ogImageUrl],
-    },
+    title,
+    description,
+    alternates: buildAlternates(locale, "/bienestar"),
+    openGraph: buildOpenGraph({
+      locale,
+      title,
+      description,
+      url: canonicalFor(locale, "/bienestar"),
+    }),
+    twitter: buildTwitter({ title, description }),
   };
 }
 

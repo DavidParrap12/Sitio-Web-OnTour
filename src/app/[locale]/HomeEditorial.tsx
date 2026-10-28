@@ -11,7 +11,7 @@ import { EditorialParallax } from "@/components/editorial/EditorialParallax";
 import { MagneticButton } from "@/components/editorial/MagneticButton";
 import { type LogoItem } from "@/components/editorial/MarqueeLogos";
 import { type DestinationTheme } from "@/lib/design-config";
-import { ShieldCheck, Star, Clock } from "lucide-react";
+import { Star } from "lucide-react";
 
 import { WhyOnTour } from "@/components/editorial/WhyOnTour";
 import { DestinationsShowcase } from "@/components/editorial/DestinationsShowcase";
@@ -25,22 +25,12 @@ import { RequestQuoteModal } from "@/components/RequestQuoteModal";
 const Testimonials = dynamic(
   () => import("@/components/Testimonials").then((m) => ({ default: m.Testimonials }))
 );
-const MarqueeLogos = dynamic(
-  () => import("@/components/editorial/MarqueeLogos").then((m) => ({ default: m.MarqueeLogos }))
-);
 
 // Institutional trust logos — shown prominently in trust strip
 const TRUST_LOGOS: LogoItem[] = [
   { src: "/image/logo-aliados/marca-pa-s-colombia-logo-1.svg", alt: "Marca País Colombia",  width: 80 },
   { src: "/image/logo-aliados/assist-card-seeklogo.svg",        alt: "Assist Card",          width: 120 },
   { src: "/image/logo-aliados/Logo_Tolima_Principal.png",       alt: "Explora Tolima — Corazón de los Andes", width: 160, bgColor: "#1b4d2e" },
-];
-
-// Distribution platforms — shown in a secondary "Also find us on" strip
-const DISTRIBUTION_LOGOS: LogoItem[] = [
-  { src: "/image/logo-aliados/booking-ar21.svg",           alt: "Booking.com", width: 140 },
-  { src: "/image/logo-aliados/tripadvisor-seeklogo.svg",   alt: "TripAdvisor", width: 130 },
-  { src: "/image/logo-aliados/civitatis.svg",              alt: "Civitatis",   width: 130 },
 ];
 
 interface CircuitoData {
@@ -243,7 +233,7 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
                 <p className="body text-editorial-muted mt-2">{t["memorableCircuitsSubtitle"]}</p>
               </div>
               <Link
-                href={"/circuitos" as any}
+                href="/circuitos"
                 className="text-editorial-accent font-semibold hover:underline underline-offset-4 transition-all flex items-center gap-1 whitespace-nowrap"
               >
                 {t["viewAllCircuits"]}

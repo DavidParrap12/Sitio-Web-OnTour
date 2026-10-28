@@ -78,7 +78,7 @@ export function WellnessFinalCTA({ strings: s }: { strings: CtaStrings }) {
             href="https://wa.me/573143415177?text=Hola%20OnTour%20Health%2C%20quisiera%20solicitar%20asesor%C3%ADa%20para%20turismo%20m%C3%A9dico."
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackWhatsAppClick("wellness_final_cta", "Hola OnTour Health, quisiera solicitar asesoría para turismo médico.")}
+            onClick={() => trackWhatsAppClick("wellness_final_cta")}
             className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white/90 hover:text-white hover:border-white/40 text-sm font-medium transition-all duration-200 min-h-[48px]"
           >
             <MessageCircle className="w-4 h-4 text-[#25D366]" />

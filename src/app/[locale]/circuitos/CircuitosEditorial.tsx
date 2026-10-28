@@ -470,7 +470,10 @@ export function CircuitosEditorial({ slides, title, subtitle, heroImage }: Circu
                         <div className="flex-1 p-6 md:p-8 flex flex-col justify-between">
                           <div className="space-y-3">
                             <h3 className="font-serif text-2xl md:text-3xl text-charcoal font-medium leading-snug group-hover:text-deep-forest transition-colors">
-                              <Link href={`/circuitos/${slide.id}` as any} className="hover:underline">
+                              <Link
+                                href={{ pathname: "/circuitos/[id]", params: { id: slide.id } }}
+                                className="hover:underline"
+                              >
                                 {slide.name}
                               </Link>
                             </h3>
@@ -508,7 +511,7 @@ export function CircuitosEditorial({ slides, title, subtitle, heroImage }: Circu
                             </div>
 
                             <Link
-                              href={`/circuitos/${slide.id}` as any}
+                              href={{ pathname: "/circuitos/[id]", params: { id: slide.id } }}
                               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-deep-forest text-warm-ivory text-sm font-medium hover:bg-muted-gold hover:text-charcoal transition-all duration-200 shadow-sm min-h-[44px]"
                             >
                               <span>{t.viewJourney}</span>

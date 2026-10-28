@@ -88,7 +88,7 @@ export function TravelTradeB2B({ locale }: TravelTradeB2BProps) {
               </button>
 
               <Link
-                href={"/servicios" as any}
+                href="/servicios"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-medium px-8 py-4 rounded-full text-xs sm:text-sm border border-white/20 transition-all duration-300"
               >
                 <span>{content.ctaServices}</span>

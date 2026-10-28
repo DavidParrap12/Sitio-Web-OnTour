@@ -56,7 +56,7 @@ export function RotatingPasadias({ items, interval = 5000 }: RotatingPasadiasPro
             className="absolute inset-0"
           >
             <Link
-              href={`/pasadias/${current.id}` as any}
+              href={{ pathname: "/pasadias/[id]", params: { id: current.id } }}
               className="block relative w-full h-full group"
             >
               <Image

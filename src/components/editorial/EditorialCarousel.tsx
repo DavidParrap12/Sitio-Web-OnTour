@@ -1,6 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent as ReactMouseEvent,
+  type PointerEvent as ReactPointerEvent,
+  type ReactNode,
+} from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -9,6 +17,7 @@ import { Link } from "@/i18n/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { type DestinationTheme } from "@/lib/design-config";
 import { resolveDestinationTheme } from "@/lib/hooks/useDestinationTheme";
+import { useLocale, useTranslations } from "next-intl";
 
 // -- Public API -------------------------------------------------------------
 
@@ -60,6 +69,31 @@ function isFullBleed(variant: CarouselConfig["variant"]) {
   return variant === "pasadia" || variant === "circuito";
 }
 
+/** Pointer travel (px) above which a click is treated as a drag, not navigation */
+const DRAG_CLICK_THRESHOLD = 6;
+
+/**
+ * Embla v8 no longer exposes clickAllowed(), so we measure pointer travel
+ * ourselves and swallow the click that follows a drag.
+ */
+function useDragClickGuard() {
+  const pointerStartRef = useRef<{ x: number; y: number } | null>(null);
+
+  const onPointerDown = (e: ReactPointerEvent) => {
+    pointerStartRef.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const onClickCapture = (e: ReactMouseEvent) => {
+    const start = pointerStartRef.current;
+    pointerStartRef.current = null;
+    if (!start) return;
+    const distance = Math.hypot(e.clientX - start.x, e.clientY - start.y);
+    if (distance > DRAG_CLICK_THRESHOLD) e.preventDefault();
+  };
+
+  return { onPointerDown, onClickCapture };
+}
+
 /**
  * Unified editorial carousel — replaces PasadiaCarousel, CircuitCarousel
  * and CircuitosCarousel. Embla-powered (loop + drag + optional autoplay).
@@ -97,7 +131,8 @@ export function EditorialCarousel({
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
+    // Initial snap is 0, which matches the initial state; further changes are
+    // driven by the carousel events below.
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
     return () => {
@@ -142,9 +177,9 @@ export function EditorialCarousel({
               {renderSlide ? (
                 renderSlide(item, i)
               ) : fullBleed ? (
-                <FullBleedSlide item={item} config={config} priority={i === 0} emblaApi={emblaApi} />
+                <FullBleedSlide item={item} config={config} priority={i === 0} />
               ) : (
-                <CardSlide item={item} aspectRatio={config.aspectRatio} emblaApi={emblaApi} />
+                <CardSlide item={item} aspectRatio={config.aspectRatio} />
               )}
             </div>
           ))}
@@ -227,14 +262,15 @@ function FullBleedSlide({
   item,
   config,
   priority,
-  emblaApi,
 }: {
   item: CarouselItem;
   config: CarouselConfig;
   priority: boolean;
-  emblaApi?: any;
 }) {
-  const theme = resolveDestinationTheme(item.colorTheme);
+  const locale = useLocale();
+  const tCard = useTranslations("card");
+  const dragGuard = useDragClickGuard();
+  const theme = resolveDestinationTheme(item.colorTheme, locale);
   const position =
     config.contentPosition === "center"
       ? "justify-center items-center text-center"
@@ -243,11 +279,7 @@ function FullBleedSlide({
   return (
     <Link
       href={item.href as never}
-      onClickCapture={(e) => {
-        if (emblaApi && !emblaApi.clickAllowed()) {
-          e.preventDefault();
-        }
-      }}
+      {...dragGuard}
       className="group relative block w-full aspect-[16/7] max-h-[80vh] min-h-[320px] overflow-hidden select-none"
     >
       <Image
@@ -293,7 +325,7 @@ function FullBleedSlide({
             </p>
           )}
           <span className="inline-flex items-center gap-2 bg-white text-editorial-dark px-5 py-2.5 md:px-6 md:py-3 rounded-full font-semibold text-xs md:text-sm editorial-hover-rich w-fit">
-            Ver más
+            {tCard("viewMore")}
             <span aria-hidden>→</span>
           </span>
         </motion.div>
@@ -305,22 +337,18 @@ function FullBleedSlide({
 function CardSlide({
   item,
   aspectRatio,
-  emblaApi,
 }: {
   item: CarouselItem;
   aspectRatio: CarouselConfig["aspectRatio"];
-  emblaApi?: any;
 }) {
-  const theme = resolveDestinationTheme(item.colorTheme);
+  const locale = useLocale();
+  const dragGuard = useDragClickGuard();
+  const theme = resolveDestinationTheme(item.colorTheme, locale);
 
   return (
     <Link
       href={item.href as never}
-      onClickCapture={(e) => {
-        if (emblaApi && !emblaApi.clickAllowed()) {
-          e.preventDefault();
-        }
-      }}
+      {...dragGuard}
       className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-editorial-border hover:border-editorial-accent/50 shadow-sm hover:shadow-xl transition-all duration-300 editorial-hover-lift select-none"
       style={theme.style}
     >

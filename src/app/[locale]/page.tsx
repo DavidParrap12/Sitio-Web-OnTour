@@ -1,41 +1,36 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-import { Hero } from "@/components/Hero";
-import { SectionTitle } from "@/components/SectionTitle";
-import { CardDestino } from "@/components/CardDestino";
-import { destinos } from "@/data/destinos";
 import { circuitos } from "@/data/circuitos";
 
-import dynamic from "next/dynamic";
-import { Link } from "@/i18n/navigation";
 import { HomeEditorial } from "./HomeEditorial";
 import { JsonLd } from "@/components/JsonLd";
 import { buildOrgSchema } from "@/lib/schema";
-
-const Testimonials = dynamic(
-  () => import("@/components/Testimonials").then((mod) => mod.Testimonials),
-  { loading: () => <div className="py-16 md:py-24 bg-white" /> }
-);
+import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
+import { siteMetadataFor } from "@/lib/siteMeta";
 
 // Locale → canonical home URL (es has no prefix)
-const HOME_URL: Record<string, string> = {
-  es: "https://www.ontourdmc.com",
-  en: "https://www.ontourdmc.com/en",
-  de: "https://www.ontourdmc.com/de",
-  fr: "https://www.ontourdmc.com/fr",
-};
-
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const url = HOME_URL[locale] ?? HOME_URL.es;
+  const meta = siteMetadataFor(locale);
+  const url = canonicalFor(locale, "/");
+
   return {
-    alternates: { canonical: url },
-    openGraph: { url },
+    alternates: buildAlternates(locale, "/"),
+    openGraph: buildOpenGraph({
+      locale,
+      title: meta.ogTitle,
+      description: meta.ogDesc,
+      url,
+    }),
+    twitter: buildTwitter({
+      title: meta.twTitle,
+      description: meta.twDesc,
+    }),
   };
 }
 
@@ -49,11 +44,7 @@ export default async function Home({
 
   const t = await getTranslations("home");
   const tHero = await getTranslations("hero");
-  const tDestinos = await getTranslations("destinosData");
   const tCircuitos = await getTranslations("circuitosData");
-
-  const topPasadias = destinos.slice(0, 3);
-  const topCircuitos = circuitos.slice(0, 3);
 
   // All items for editorial carousel/rotation
   const allCircuitos = circuitos;

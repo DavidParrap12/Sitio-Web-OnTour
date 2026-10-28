@@ -21,6 +21,8 @@ export interface EditorialSectionProps {
   container?: boolean;
   /** Destination theme — applies --theme-accent CSS vars to the whole section */
   theme?: DestinationTheme;
+  /** Active locale, used to resolve the localized theme label server-side */
+  locale?: string;
   /** Extra classes for the <section> */
   className?: string;
   /** Extra classes for the inner container */
@@ -48,10 +50,11 @@ export function EditorialSection({
   reveal = "fade",
   container = true,
   theme,
+  locale,
   className = "",
   containerClassName = "",
 }: EditorialSectionProps) {
-  const themeStyle = theme ? resolveDestinationTheme(theme).style : undefined;
+  const themeStyle = theme ? resolveDestinationTheme(theme, locale).style : undefined;
 
   const style: CSSProperties = {
     ...(themeStyle ?? {}),
