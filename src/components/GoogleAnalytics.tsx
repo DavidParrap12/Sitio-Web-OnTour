@@ -4,7 +4,8 @@ import { Suspense, useEffect } from "react";
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const GA_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "G-NHTMFECR3B";
 
 declare global {
   interface Window {
@@ -33,16 +34,20 @@ function PageViewTracker() {
 }
 
 /**
- * Optional direct GA4 integration.
+ * Direct GA4 integration (gtag.js).
  *
- * The site already ships a GTM container, but that container currently has no
- * published tags. Setting NEXT_PUBLIC_GA_MEASUREMENT_ID (G-XXXXXXX) enables
- * GA4 immediately, including client-side route changes, without waiting for a
- * GTM tag to be configured. When the variable is absent this renders nothing.
+ * The measurement ID is hard-coded as the default so analytics works without
+ * touching hosting configuration, and NEXT_PUBLIC_GA_MEASUREMENT_ID can still
+ * override it per environment.
+ *
+ * `send_page_view: false` disables GA4's own automatic page_view so this
+ * component can send exactly one per navigation, including client-side route
+ * changes (App Router navigations never reload the page).
+ *
+ * Do NOT also create a GA4 tag inside the GTM container: that would send every
+ * hit twice.
  */
 export function GoogleAnalytics() {
-  if (!GA_ID) return null;
-
   return (
     <>
       <Script
@@ -53,7 +58,11 @@ export function GoogleAnalytics() {
         id="ga4-init"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}',{send_page_view:false});`,
+          // `window.gtag ||` matters: both scripts are afterInteractive, and
+          // if gtag.js loads first it installs the real implementation. A bare
+          // `function gtag(){dataLayer.push(arguments)}` would overwrite it and
+          // every later event would sit in dataLayer, never reaching GA4.
+          __html: `window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};window.gtag('js',new Date());window.gtag('config','${GA_ID}',{send_page_view:false});`,
         }}
       />
       <Suspense fallback={null}>

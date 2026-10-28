@@ -3,27 +3,35 @@
 declare global {
   interface Window {
     dataLayer: Record<string, unknown>[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
 /**
- * Pushes a custom conversion event to GTM dataLayer
+ * Pushes a custom conversion event to GTM dataLayer and, when gtag.js is
+ * loaded directly, forwards it to GA4 as well. Without the gtag forward the
+ * events would only reach GA4 through a GTM tag, and the GTM container ships
+ * empty — conversions would silently never arrive.
  */
 export function trackEvent(
   eventName: string,
   params: Record<string, unknown> = {}
 ) {
-  if (typeof window !== "undefined") {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: eventName,
-      ...params,
-      timestamp: new Date().toISOString(),
-    });
+  if (typeof window === "undefined") return;
 
-    if (process.env.NODE_ENV !== "production") {
-      console.log(`[GTM Event: ${eventName}]`, params);
-    }
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: eventName,
+    ...params,
+    timestamp: new Date().toISOString(),
+  });
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, params);
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    console.log(`[GTM Event: ${eventName}]`, params);
   }
 }
 

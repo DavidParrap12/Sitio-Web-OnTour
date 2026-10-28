@@ -34,12 +34,13 @@ const fraunces = Fraunces({
 });
 
 /**
- * Google Tag Manager container.
+ * Google Tag Manager container — disabled by default.
  *
- * Overridable per deployment with NEXT_PUBLIC_GTM_ID (useful for staging), but
- * the live container is the default so analytics works without extra config.
+ * Analytics runs on gtag.js directly (see components/GoogleAnalytics.tsx).
+ * Shipping a GTM container as well would load a second Google tag and invite
+ * double counting, so it only activates when NEXT_PUBLIC_GTM_ID is defined.
  */
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID?.trim() || "GTM-T99H56LX";
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID?.trim() || "";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -122,14 +123,16 @@ export default async function LocaleLayout({
       className={`${dmSans.variable} ${playfairDisplay.variable} ${fraunces.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="font-sans min-h-full flex flex-col bg-background text-foreground">
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
+        {GTM_ID && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        )}
         <NextIntlClientProvider locale={locale} messages={messages}>
           {/*
             Preload the first hero slide so the browser fetches it during HTML parse.
@@ -146,20 +149,25 @@ export default async function LocaleLayout({
           <Footer />
           <WhatsappButton />
         </NextIntlClientProvider>
-        {/* GTM: afterInteractive defers load until hydration — keeps GTM out
-            of the critical path (-114 KiB render-blocking, ~60ms main thread).
-            It still runs before any user interaction, so no events are lost. */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        {/* Google Tag Manager (optional).
+            afterInteractive defers load until hydration — keeps it out of the
+            critical path (-114 KiB render-blocking, ~60ms main thread), while
+            still running before any user interaction.
+            NOTE: a GTM container and the direct gtag.js tag fight over the
+            same dataLayer, so only one should be enabled at a time. */}
+        {GTM_ID && (
+          <Script
+            id="gtm-script"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');`,
-          }}
-        />
+            }}
+          />
+        )}
         <GoogleAnalytics />
       </body>
     </html>
