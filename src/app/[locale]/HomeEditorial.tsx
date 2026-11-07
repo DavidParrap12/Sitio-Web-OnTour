@@ -83,10 +83,10 @@ const heroSlides = (locale: string) => {
 
 const CIRCUIT_PRICES: Record<string, Record<string, string>> = {
   "epoca-precolombina-sur-colombia": {
-    es: "Desde $1.490 USD pp",
-    en: "From $1,490 USD pp",
-    de: "Ab $1.490 USD pp",
-    fr: "À partir de $1 490 USD pp",
+    es: "Desde $3.590 USD pp",
+    en: "From $3.590 USD pp",
+    de: "Ab $3.590 USD pp",
+    fr: "À partir de $3.590 USD pp",
   },
   "tour-colombia-corazon-andes": {
     es: "Desde $1.980 USD pp",
@@ -95,10 +95,10 @@ const CIRCUIT_PRICES: Record<string, Record<string, string>> = {
     fr: "À partir de $1 980 USD pp",
   },
   "tour-colombia-boyaca-colonial": {
-    es: "Desde $1.320 USD pp",
-    en: "From $1,320 USD pp",
-    de: "Ab $1.320 USD pp",
-    fr: "À partir de $1 320 USD pp",
+    es: "Desde $3.790 USD pp",
+    en: "From $3.790 USD pp",
+    de: "Ab $3.790 USD pp",
+    fr: "À partir de $3.790 USD pp",
   },
 };
 

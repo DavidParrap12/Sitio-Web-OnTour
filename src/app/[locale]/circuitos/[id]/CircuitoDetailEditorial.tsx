@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
@@ -59,6 +59,19 @@ export function CircuitoDetailEditorial({
 
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [showStickyBar, setShowStickyBar] = useState(false);
+
+  const formattedPrice = useMemo(() => {
+    if (!price || !price.trim()) return t.priceLabel || "A Cotizar";
+    const cleanNumber = price.replace(/[^\d]/g, "").trim();
+    if (cleanNumber) {
+      const num = parseInt(cleanNumber, 10);
+      if (!isNaN(num)) {
+        const separator = locale === "en" ? "en-US" : "es-CO";
+        return `$${num.toLocaleString(separator)} USD`;
+      }
+    }
+    return price;
+  }, [price, locale, t.priceLabel]);
 
   useEffect(() => {
     let trackedImpression = false;
@@ -223,9 +236,9 @@ export function CircuitoDetailEditorial({
               />
 
               <div className="border-t border-editorial-border pt-6 mb-8 text-center">
-                <p className="caption mb-2">{t.pricePerPerson}</p>
-                <div className="display-2 text-editorial-accent mb-2" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}>{price}</div>
-                <p className="text-xs text-editorial-muted-light">{t.priceNote}</p>
+                <p className="font-sans text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">{t.pricePerPerson}</p>
+                <div className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight text-deep-forest mb-1.5">{formattedPrice}</div>
+                <p className="font-sans text-xs text-stone-400 font-medium">{t.priceNote}</p>
               </div>
 
               <div className="space-y-3">
@@ -287,7 +300,7 @@ export function CircuitoDetailEditorial({
                   <div className="flex items-center gap-2 text-xs text-stone-500">
                     <span className="font-medium text-deep-forest">{days}D / {nights}N</span>
                     <span>•</span>
-                    <span className="font-semibold text-stone-900">{price}</span>
+                    <span className="font-sans font-bold text-stone-900">{formattedPrice}</span>
                   </div>
                 </div>
               </div>

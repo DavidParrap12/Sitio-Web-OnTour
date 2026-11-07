@@ -72,8 +72,8 @@ export const circuitos: Circuito[] = [
     nights: 7,
     image: "/image/villa de leyva.jpg",
     colorTheme: "cultura",
-    brochureUrl: "",
-    brochurePdfUrl: "",
+    brochureUrl: "/programas-circuitos/Época Prehispanica Boyaca 7 días.docx",
+    brochurePdfUrl: "/programas-circuitos/Época Prehispanica Boyaca 7 días.pdf",
     mapEmbedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1dg-orAddYtZXhAHqY8cSFHEMzVC7of4&ehbc=2E312F",
     dayImages: [
       { image: "/image/legado-ancestral/Aeropuerto-Internacional-El-Dorado-Bogota-Colombia-5.jpg", location: "BOGOTÁ" },

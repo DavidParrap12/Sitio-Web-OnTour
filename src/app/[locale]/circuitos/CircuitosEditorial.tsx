@@ -232,7 +232,8 @@ export function CircuitosEditorial({ slides, title, subtitle, heroImage }: Circu
     if (cleanNumber) {
       const num = parseInt(cleanNumber, 10);
       if (!isNaN(num)) {
-        return `$${num.toLocaleString("en-US")}`;
+        const separator = locale === "en" ? "en-US" : "es-CO";
+        return `$${num.toLocaleString(separator)}`;
       }
       return `$${cleanNumber}`;
     }
@@ -502,10 +503,10 @@ export function CircuitosEditorial({ slides, title, subtitle, heroImage }: Circu
                           {/* Footer with Price and View Journey Button */}
                           <div className="flex flex-wrap items-center justify-between gap-4 pt-5 mt-4 border-t border-stone-100">
                             <div>
-                              <span className="block text-xs uppercase tracking-wider text-stone-400 font-medium">
+                              <span className="block font-sans text-xs uppercase tracking-wider text-stone-500 font-semibold">
                                 {slide.price ? t.fromUsd : ""}
                               </span>
-                              <span className="text-lg md:text-xl font-serif font-bold text-deep-forest">
+                              <span className="font-sans text-xl md:text-2xl font-extrabold tracking-tight text-deep-forest">
                                 {slide.price ? formatPriceDisplay(slide.price) : ""}
                               </span>
                             </div>
