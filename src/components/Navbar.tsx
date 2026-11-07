@@ -20,6 +20,9 @@ const LOCALES = [
   { code: "fr", flag: "🇫🇷", label: "Français" },
 ];
 
+/** Plain paths plus the occasional object href (e.g. an in-page anchor). */
+type NavItemHref = string | { pathname: "/contacto"; hash: string };
+
 export interface NavPillar {
   id: string;
   label: Record<string, string>;
@@ -28,7 +31,7 @@ export interface NavPillar {
   items: {
     name: Record<string, string>;
     desc: Record<string, string>;
-    href: string;
+    href: NavItemHref;
   }[];
 }
 
@@ -156,7 +159,7 @@ const NAV_PILLARS: NavPillar[] = [
       {
         name: { es: "Alianzas y Tarifarios B2B", en: "B2B Rates & Partnerships", fr: "Tarifs B2B & Partenariats", de: "B2B-Tarife & Kooperation" },
         desc: { es: "Comisiones protegidas y respuesta garantizada en 24h", en: "Protected net rates & 24h response guarantee", fr: "Tarifs négociés et réponse sous 24 heures", de: "Netto-Tarife und 24h-Angebotsservice" },
-        href: "/contacto",
+        href: { pathname: "/contacto", hash: "agencias" },
       },
     ],
   },

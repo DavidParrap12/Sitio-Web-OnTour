@@ -77,7 +77,27 @@ export function trackWhatsAppClick(source: string, tourName?: string) {
 }
 
 /**
- * 4. Event: Sticky Bottom Bar Interactions
+ * 4. Event: Agency / travel-trade enquiry submitted from the contact page
+ */
+export function trackTradeFormSubmit(data: {
+  country: string;
+  agencyType: string;
+}) {
+  trackEvent("trade_form_submit", {
+    country: data.country.slice(0, 60) || "unspecified",
+    agency_type: data.agencyType || "unspecified",
+  });
+}
+
+/**
+ * 5. Event: Audience tab switch on the contact page (travellers vs. agencies)
+ */
+export function trackContactTab(tab: "travellers" | "agencies") {
+  trackEvent("contact_tab_switch", { contact_audience: tab });
+}
+
+/**
+ * 6. Event: Sticky Bottom Bar Interactions
  */
 export function trackStickyBarInteraction(
   action: "impression" | "quote_click" | "whatsapp_click",

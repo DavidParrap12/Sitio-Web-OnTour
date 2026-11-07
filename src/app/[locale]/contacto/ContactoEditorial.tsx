@@ -1,39 +1,37 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { SectionReveal } from "@/components/editorial/SectionReveal";
 import { ParallaxFloat } from "@/components/editorial/ParallaxFloat";
+import { ContactoTabs, type ContactPanelCopy } from "./ContactoTabs";
 
-// Below-the-fold: code-split
-const ContactForm = dynamic(
-  () => import("@/components/ContactForm").then((m) => ({ default: m.ContactForm }))
-);
-
-const BLUR_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
+const BLUR_PLACEHOLDER =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
 
 interface ContactoEditorialProps {
   title: string;
   subtitle: string;
-  infoTitle: string;
-  infoSubtitle: string;
   schedule: string;
   support: string;
   mainOffice: string;
   mapTitle: string;
+  tabs: { travellers: string; agencies: string };
+  travellerPanel: ContactPanelCopy;
+  agencyPanel: ContactPanelCopy & { badge: string };
 }
 
 export function ContactoEditorial({
   title,
   subtitle,
-  infoTitle,
-  infoSubtitle,
   schedule,
   support,
   mainOffice,
   mapTitle,
+  tabs,
+  travellerPanel,
+  agencyPanel,
 }: ContactoEditorialProps) {
   return (
     <div className="min-h-screen bg-editorial-warm">
@@ -42,7 +40,7 @@ export function ContactoEditorial({
         <ParallaxFloat speed={0.1} className="absolute inset-0">
           <Image
             src="/image/servicios/ibagué.jpeg"
-            alt="ibague"
+            alt="Ibagué, Tolima, Colombia"
             fill
             sizes="100vw"
             className="object-cover"
@@ -55,7 +53,6 @@ export function ContactoEditorial({
         <div className="absolute inset-0 editorial-overlay-vignette" />
 
         <div className="relative z-10 container mx-auto px-4 md:px-6 pb-12 md:pb-16">
-  
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,72 +72,15 @@ export function ContactoEditorial({
         </div>
       </section>
 
-      {/* -- Contact Split -------------------------------------- */}
-      <section
-        className="py-16 md:py-24 bg-editorial-warm editorial-section--bleed editorial-gradient-bleed relative"
-        style={{ "--bleed-color": "#0a1628" } as React.CSSProperties}
-      >
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <SectionReveal className="editorial-stagger-variance">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
-              {/* Info Panel */}
-              <div className="lg:col-span-2 bg-editorial-dark text-white p-10 md:p-14 rounded-3xl flex flex-col justify-between">
-                <div>
-                  <h3 className="heading-1 text-white mb-4">{infoTitle}</h3>
-                  <p className="body text-white/60 mb-10">{infoSubtitle}</p>
-
-                  <div className="space-y-8">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-editorial-accent/15 flex items-center justify-center flex-shrink-0">
-                        <Phone className="w-5 h-5 text-editorial-accent" />
-                      </div>
-                      <div>
-                        <p className="text-white font-semibold">+57 314 341 5177</p>
-                        <p className="text-white font-semibold">+57 316 538 6892</p>
-                        <p className="caption text-white/40 mt-1">{schedule}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-editorial-accent/15 flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-5 h-5 text-editorial-accent" />
-                      </div>
-                      <div>
-                        <p className="text-white font-semibold">gerencia@agenciaontour.com</p>
-                        <p className="caption text-white/40 mt-1">{support}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-editorial-accent/15 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-editorial-accent" />
-                      </div>
-                      <div>
-                        <p className="text-white font-semibold">Eje Cafetero-Colombia</p>
-                        <p className="caption text-white/40 mt-1">{mainOffice}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-editorial-accent/15 flex items-center justify-center flex-shrink-0">
-                        <Clock className="w-5 h-5 text-editorial-accent" />
-                      </div>
-                      <div>
-                        <p className="text-white font-semibold">{schedule}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Form Panel */}
-              <div className="lg:col-span-3 bg-white p-10 md:p-14 rounded-3xl border border-editorial-border">
-                <ContactForm />
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
+      {/* -- Audience switch + forms ---------------------------- */}
+      <ContactoTabs
+        schedule={schedule}
+        support={support}
+        mainOffice={mainOffice}
+        tabs={tabs}
+        travellerPanel={travellerPanel}
+        agencyPanel={agencyPanel}
+      />
 
       {/* -- Map ------------------------------------------------ */}
       <section className="pb-16 md:pb-24 editorial-section--bleed relative">

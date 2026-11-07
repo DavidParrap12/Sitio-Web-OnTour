@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe de estado del sitio web — OnTour DMC Colombia</title>
+<meta name="description" content="Informe de estado, verificación técnica y guion de reunión del sitio www.ontourdmc.com — 6 de noviembre de 2026.">
+<style>
+  :root{
+    --ink:#0a1628;
+    --ink-soft:#3b4a5e;
+    --accent:#1a4a2e;
+    --accent-soft:#226b3a;
+    --paper:#faf8f4;
+    --alt:#f0ebe3;
+    --line:#d6e4d6;
+    --line-soft:#eaf1ea;
+  }
+  *{box-sizing:border-box}
+  html{font-size:16px;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;
+  }
+  .doc{max-width:880px;margin:0 auto;padding:0 28px 90px}
+  .cover{
+    background:var(--accent);
+    color:#f7f4ee;
+    padding:58px 48px 44px;
+    margin:0 -28px 44px;
+  }
+  .cover .eyebrow{
+    margin:0 0 18px;
+    font-size:.72rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:#c9dcc9;
+  }
+  .cover h1{
+    margin:0 0 10px;
+    font-family:"Fraunces",Georgia,"Times New Roman",serif;
+    font-weight:600;
+    font-size:clamp(1.9rem,4vw,2.9rem);
+    line-height:1.12;
+    letter-spacing:-.01em;
+  }
+  .cover .site{
+    margin:0 0 30px;
+    font-size:1.05rem;
+    color:#dbe8db;
+  }
+  .meta{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px 40px;
+    border-top:1px solid rgba(255,255,255,.22);
+    padding-top:24px;
+  }
+  .meta dt{
+    font-size:.66rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:#b9d0b9;
+    margin:0 0 3px;
+    font-weight:600;
+  }
+  .meta dd{margin:0;font-size:.92rem;color:#f3f0e9}
+  .toc{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 30px;
+    margin:0 0 48px;
+  }
+  .toc h2{
+    margin:0 0 14px;
+    font-family:"DM Sans",sans-serif;
+    font-size:.7rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:700;
+  }
+  .toc ol{
+    margin:0;
+    padding:0;
+    list-style:none;
+    columns:2;
+    column-gap:36px;
+    font-size:.9rem;
+  }
+  .toc li{margin:0 0 8px;break-inside:avoid}
+  .toc a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+  .toc a:hover{border-bottom-color:var(--accent)}
+  .toc .n{display:inline-block;width:1.6em;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  section{margin:0 0 46px}
+  h2{
+    font-family:"Fraunces",Georgia,"Times New Roman",serif;
+    font-weight:600;
+    font-size:clamp(1.4rem,2.4vw,1.85rem);
+    line-height:1.25;
+    margin:0 0 18px;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+    break-after:avoid;
+  }
+  h2 .num{
+    display:inline-block;
+    font-family:"DM Sans",sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    vertical-align:middle;
+    color:#fff;
+    background:var(--accent);
+    border-radius:999px;
+    padding:4px 10px;
+    margin-right:12px;
+    transform:translateY(-2px);
+  }
+  h3{
+    font-family:"Fraunces",Georgia,"Times New Roman",serif;
+    font-weight:600;
+    font-size:1.12rem;
+    margin:30px 0 10px;
+    color:var(--accent);
+    break-after:avoid;
+  }
+  h4{
+    font-family:"DM Sans",sans-serif;
+    font-weight:700;
+    font-size:.78rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin:26px 0 10px;
+    color:var(--ink-soft);
+    break-after:avoid;
+  }
+  p{margin:0 0 14px}
+  .lead{font-size:1.06rem;color:var(--ink-soft)}
+  ul,ol{margin:0 0 16px;padding-left:1.25em}
+  li{margin:0 0 7px}
+  strong{font-weight:650}
+  em{font-style:italic}
+  a{color:var(--accent)}
+  .note{
+    background:#fff;
+    border-left:4px solid var(--accent);
+    border-radius:0 10px 10px 0;
+    padding:16px 20px;
+    margin:0 0 24px;
+    font-size:.95rem;
+    color:var(--ink-soft);
+  }
+  .note strong{color:var(--ink)}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:0 0 22px;
+    font-size:.9rem;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  thead th{
+    background:var(--alt);
+    text-align:left;
+    font-size:.72rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:700;
+    padding:11px 14px;
+    border-bottom:1px solid var(--line);
+  }
+  tbody td{
+    padding:11px 14px;
+    border-bottom:1px solid var(--line-soft);
+    vertical-align:top;
+  }
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even) td{background:#fcfbf8}
+  td:first-child{font-weight:550;color:var(--ink)}
+  #auditoria h4 + table td:first-child,
+  #auditoria h4 + table th:first-child{width:46%}
+  #auditoria h4 + table td:last-child,
+  #auditoria h4 + table th:last-child{width:96px;white-space:nowrap}
+  .status-ok{
+    display:inline-block;
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    background:var(--line-soft);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:3px 9px;
+    margin-left:8px;
+    vertical-align:middle;
+    white-space:nowrap;
+  }
+  .callout{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+    margin:0 0 24px;
+  }
+  .callout .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 20px;
+  }
+  .callout .card h4{
+    margin:0 0 6px;
+    font-size:.72rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .callout .card p{margin:0;font-size:.92rem;color:var(--ink-soft)}
+  pre{
+    background:#0f2240;
+    color:#e8f0e8;
+    border-radius:10px;
+    padding:16px 18px;
+    overflow-x:auto;
+    font-size:.8rem;
+    line-height:1.55;
+    margin:0 0 20px;
+  }
+  code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.86em;
+  }
+  :not(pre) > code{
+    background:var(--line-soft);
+    color:var(--accent);
+    padding:1px 5px;
+    border-radius:4px;
+  }
+  .qa{margin:0 0 18px}
+  .qa .q{font-weight:650;margin:0 0 4px}
+  .qa .a{margin:0;color:var(--ink-soft)}
+  .footer{
+    margin-top:60px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:.82rem;
+    color:var(--ink-soft);
+  }
+  .new-page{break-before:page}
+  @media (max-width:640px){
+    .doc{padding:0 18px 60px}
+    .cover{margin:0 -18px 36px;padding:40px 24px 32px}
+    .toc ol{columns:1}
+    .toc{padding:22px}
+    .meta{grid-template-columns:1fr;gap:14px}
+    table{display:block;overflow-x:auto;white-space:nowrap}
+  }
+  @media print{
+    @page{size:A4;margin:15mm 14mm}
+    html{font-size:10.5pt}
+    body{background:#fff}
+    .doc{max-width:none;padding:0}
+    .cover{
+      margin:0 0 12mm;
+      padding:0 0 8mm;
+      background:#fff;
+      color:var(--ink);
+      border-bottom:3px solid var(--accent);
+    }
+    .cover .eyebrow{color:var(--accent)}
+    .cover .site{color:var(--ink-soft)}
+    .meta{border-top:1px solid var(--line);padding-top:5mm}
+    .meta dt{color:var(--accent)}
+    .meta dd{color:var(--ink)}
+    .toc{display:none}
+    a{color:inherit;text-decoration:none}
+    table{font-size:8.8pt;border-radius:0}
+    #auditoria table{font-size:8pt}
+    #auditoria tbody td{padding:6px 10px}
+    #auditoria h4{margin-top:7mm}
+    #glosario li{margin-bottom:3px}
+    #glosario h2{margin-bottom:12px}
+    #glosario{margin-bottom:0}
+    thead th{background:#eef3ee}
+    tbody tr:nth-child(even) td{background:#fff}
+    tr,li,.qa,.callout .card{break-inside:avoid}
+    p{orphans:2;widows:2;break-inside:avoid}
+    h2,h3{break-after:avoid}
+    section{margin-bottom:8mm}
+    h2 .num{
+      background:transparent;
+      color:var(--accent);
+      border:1px solid var(--accent);
+      padding:2px 8px;
+    }
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    pre{background:#f2f4f2;color:#0a1628;border:1px solid var(--line);font-size:8pt}
+    .footer{margin-top:3mm}
+  }
+</style>
+</head>
+<body>
+<main class="doc">
+
+  <header class="cover">
+    <p class="eyebrow">Informe de estado · Documento de reunión</p>
+    <h1>El sitio web ya está listo para crecer</h1>
+    <p class="site">OnTour DMC Colombia · www.ontourdmc.com</p>
+    <dl class="meta">
+      <div><dt>Fecha</dt><dd>6 de noviembre de 2026</dd></div>
+      <div><dt>Preparado para</dt><dd>Dirección de OnTour DMC Colombia</dd></div>
+      <div><dt>Alcance</dt><dd>Auditoría, correcciones técnicas, analítica y captación de agencias</dd></div>
+      <div><dt>Estado</dt><dd>Versión verificada y lista para publicar</dd></div>
+    </dl>
+  </header>
+
+  <nav class="toc" aria-label="Contenido">
+    <h2>Contenido</h2>
+    <ol>
+      <li><a href="#resumen"><span class="n">1</span>Resumen ejecutivo</a></li>
+      <li><a href="#llano"><span class="n">2</span>Qué se ha hecho, sin tecnicismos</a></li>
+      <li><a href="#entregables"><span class="n">3</span>Entregables</a></li>
+      <li><a href="#verificacion"><span class="n">4</span>Verificación realizada</a></li>
+      <li><a href="#pendiente"><span class="n">5</span>Lo que depende de OnTour</a></li>
+      <li><a href="#noventa"><span class="n">6</span>Recomendación a 90 días</a></li>
+      <li><a href="#guion"><span class="n">7</span>Guion para la reunión</a></li>
+      <li><a href="#anexo"><span class="n">8</span>Anexo técnico</a></li>
+      <li><a href="#auditoria"><span class="n">9</span>Auditoría de mejoras futuras</a></li>
+      <li><a href="#glosario"><span class="n">10</span>Glosario breve</a></li>
+    </ol>
+  </nav>
+
+  <div class="note">
+    <strong>Cómo leer este documento.</strong> Las secciones 1 a 3 están escritas en lenguaje llano, para explicar el valor del trabajo sin tecnicismos. La sección 4 contiene la verificación con datos concretos. El anexo técnico (sección 8) es para quien mantenga el sitio. La sección 7 es un guion para la reunión y la sección 9 es la auditoría de mejoras futuras.
+  </div>
+
+  <section id="resumen">
+    <h2><span class="num">01</span>Resumen ejecutivo</h2>
+    <p class="lead">El sitio ya no tiene problemas técnicos que impidan crecer. Está en cuatro idiomas, es seguro, carga con imágenes optimizadas, se puede leer bien en móvil y <strong>mide las visitas y las solicitudes de cotización</strong>. La página de contacto ahora atiende a dos públicos en el mismo lugar: viajeros que quieren comprar un viaje y agencias que quieren vender Colombia con OnTour.</p>
+    <p>Lo que cambia para el negocio:</p>
+    <ul>
+      <li><strong>Ya se sabe qué pasa en la web.</strong> Antes no había forma de saber cuántas personas entraban ni qué pedían. Ahora hay una analítica profesional instalada y comprobada.</li>
+      <li><strong>Las agencias tienen una puerta de entrada.</strong> Antes un agente extranjero no encontraba dónde pedir tarifas netas. Ahora hay una pestaña B2B con formulario propio y respuesta prometida en 24 horas.</li>
+      <li><strong>La web transmite confianza.</strong> Página 404 propia, avisos legales, registro de turismo, datos estructurados para Google y formularios protegidos contra spam.</li>
+      <li><strong>La base está preparada para crecer.</strong> El sitio está en un repositorio con pruebas automáticas; cada cambio futuro se puede validar antes de publicarlo.</li>
+    </ul>
+    <div class="note">
+      <strong>Estado de publicación:</strong> los cambios están verificados en local y en el repositorio. La publicación en el hosting se hace en la próxima subida; hasta entonces, la versión pública puede no incluirlos todavía.
+    </div>
+  </section>
+
+  <section id="llano">
+    <h2><span class="num">02</span>Qué se ha hecho, explicado sin tecnicismos</h2>
+    <table>
+      <thead>
+        <tr><th>El problema, en simple</th><th>Lo que se hizo</th><th>Lo que gana OnTour</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>La web no decía a Google en qué idioma estaba cada página ni cuál era la versión oficial.</td>
+          <td>Se declaró el idioma de cada página, su versión canónica y sus equivalentes en español, inglés, alemán y francés.</td>
+          <td>Menos páginas duplicadas y más probabilidad de aparecer en el idioma correcto.</td>
+        </tr>
+        <tr>
+          <td>No existía un mapa del sitio para los buscadores.</td>
+          <td>Se generó un mapa con las <strong>112 páginas publicables</strong> y sus equivalencias en los cuatro idiomas.</td>
+          <td>Google puede descubrir y entender todo el catálogo.</td>
+        </tr>
+        <tr>
+          <td>Las imágenes pesaban demasiado y el sitio podía ir lento.</td>
+          <td>El servidor entrega las fotos en formatos modernos (AVIF/WebP), en el tamaño adecuado a cada pantalla y con carga diferida.</td>
+          <td>La web abre antes, sobre todo con datos móviles.</td>
+        </tr>
+        <tr>
+          <td>Los formularios podían recibir spam o envíos abusivos.</td>
+          <td>Se validan los datos, se limitan los envíos por persona y se añadió una trampa para bots.</td>
+          <td>Menos correos basura y menos riesgo de bloqueos del proveedor de correo.</td>
+        </tr>
+        <tr>
+          <td>No había medición real de visitas.</td>
+          <td>Se instaló Google Analytics 4, se comprobó que registra una visita por página y se añadieron eventos de conversión.</td>
+          <td>Se puede saber qué páginas funcionan y cuántas personas piden cotización.</td>
+        </tr>
+        <tr>
+          <td>Las agencias no tenían un lugar claro para pedir tarifas.</td>
+          <td>La página de contacto ahora separa «Viajeros» y «Agencias &amp; B2B», con formulario específico para agencias.</td>
+          <td>Un canal comercial nuevo, sin construir una web aparte.</td>
+        </tr>
+        <tr>
+          <td>La página 404 era genérica.</td>
+          <td>Hay una página de error con la identidad de la marca y salidas claras.</td>
+          <td>Menos fugas cuando alguien llega a un enlace roto.</td>
+        </tr>
+        <tr>
+          <td>Faltaban señales de confianza para Google.</td>
+          <td>Se añadieron datos estructurados de agencia de viajes, recorridos y migas de pan.</td>
+          <td>Google entiende mejor quién es OnTour y qué vende.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="entregables">
+    <h2><span class="num">03</span>Entregables</h2>
+
+    <h3>3.1 Base técnica y seguridad</h3>
+    <ul>
+      <li>Sitio construido con <strong>Next.js 16</strong> y <strong>React 19</strong>, servido como páginas estáticas siempre que es posible (rápido y barato de alojar).</li>
+      <li><strong>HTTPS obligatorio</strong> y cabeceras de seguridad activas: política de contenido (CSP), HSTS, protección contra incrustación en otras webs, política de referencia y permisos de cámara/micrófono/ubicación desactivados.</li>
+      <li><strong>Redirecciones permanentes</strong> de las direcciones antiguas (<code>/en/circuitos</code>, <code>/en/circuits</code>, <code>/flights</code>) hacia las nuevas, para no perder lo que Google ya conocía.</li>
+      <li><strong>404 propio</strong> y página de error global, con la identidad de la marca.</li>
+      <li>Formularios con <strong>validación en servidor</strong>, límite de tamaño, límite de frecuencia y campo trampa para bots.</li>
+    </ul>
+
+    <h3>3.2 Contenido y estructura</h3>
+    <ul>
+      <li><strong>4 idiomas completos:</strong> español, inglés, alemán y francés, con direcciones propias en cada uno (por ejemplo <code>/es/contacto</code> y <code>/de/kontakt</code>).</li>
+      <li><strong>9 circuitos</strong> de varios días y <strong>7 pasadías</strong>, además de servicios, bienestar, galería, nosotros y páginas legales.</li>
+      <li>Navegación con menús por perfil (destinos, experiencias, turismo médico, agencias, nosotros) y versión móvil.</li>
+      <li>Textos legales, registro de turismo (RNT 62212), preguntas frecuentes y política de privacidad.</li>
+    </ul>
+
+    <h3>3.3 Velocidad y experiencia</h3>
+    <ul>
+      <li>Imágenes responsive servidas por el optimizador de Next.js en AVIF/WebP.</li>
+      <li>Componentes pesados (mapas, formularios, generadores de folletos) cargados solo cuando se necesitan.</li>
+      <li>Fuentes con intercambio controlado para que el texto no desaparezca mientras carga.</li>
+      <li>Animaciones respetuosas con la preferencia de «reducir movimiento».</li>
+    </ul>
+
+    <h3>3.4 Visibilidad en Google</h3>
+    <ul>
+      <li>Título y descripción únicos por página e idioma.</li>
+      <li>Dirección canónica y etiquetas <code>hreflang</code> en las 112 URLs del mapa del sitio (560 equivalencias de idioma).</li>
+      <li>Datos estructurados: agencia de viajes y sitio web en la portada; recorrido turístico y migas de pan en cada circuito.</li>
+      <li>Imagen de vista previa (Open Graph) de 1200 × 630 para compartir en WhatsApp, LinkedIn o correo.</li>
+      <li>Redirecciones 301/308 para conservar el histórico.</li>
+    </ul>
+
+    <h3>3.5 Medición</h3>
+    <ul>
+      <li><strong>Google Analytics 4</strong> instalado directamente (sin contenedores intermedios vacíos) y verificado en un navegador real: una visita registrada por carga de página, una por cambio de página interno, sin duplicados.</li>
+      <li>Eventos de conversión:
+        <ul>
+          <li><code>click_request_quote</code> — clic en «Cotizar viaje».</li>
+          <li><code>quote_form_submit</code> — formulario de cotización enviado.</li>
+          <li><code>click_whatsapp</code> — clic en WhatsApp.</li>
+          <li><code>trade_form_submit</code> — solicitud de agencia enviada.</li>
+          <li><code>contact_tab_switch</code> — elección de la pestaña Viajeros o Agencias.</li>
+        </ul>
+      </li>
+      <li>Los eventos se envían también directamente a Google Analytics, no solo a una capa intermedia, para que no se pierdan.</li>
+    </ul>
+
+    <h3>3.6 Captación: la nueva página de contacto</h3>
+    <p>La página de contacto se reorganizó en dos pestañas:</p>
+    <p><strong>Viajeros.</strong> El formulario de siempre, con teléfono, correo, dirección y horario visibles y clicables.</p>
+    <p><strong>Agencias &amp; B2B.</strong> Un formulario pensado para agencias y tour operadores:</p>
+    <ul>
+      <li>Nombre de la agencia, persona de contacto, correo corporativo, teléfono, país y sitio web.</li>
+      <li>Tipo de empresa (tour operador, agencia de viajes, DMC, MICE/corporativo, otro).</li>
+      <li>Pasajeros anuales hacia Colombia y destinos o circuitos de interés.</li>
+      <li>Mensaje libre para describir el proyecto.</li>
+    </ul>
+    <p>El mensaje que recibe la agencia: tarifas netas, comisiones protegidas, flota propia, guías licenciados y one-pagers por circuito en 24 horas.</p>
+    <p>El enlace «Alianzas y Tarifarios B2B» del menú abre directamente la pestaña de agencias. Cada solicitud llega al correo de OnTour con asunto identificable (<code>Solicitud B2B: [agencia] — [persona]</code>), separada de las cotizaciones de viajeros.</p>
+  </section>
+
+  <section id="verificacion" class="new-page">
+    <h2><span class="num">04</span>Verificación realizada <span class="status-ok">Comprobado</span></h2>
+    <p>Todo lo siguiente se comprobó el <strong>6 de noviembre de 2026</strong> sobre la compilación de producción, no sobre el entorno de desarrollo.</p>
+    <table>
+      <thead>
+        <tr><th>Comprobación</th><th>Resultado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Revisión de estilo (lint)</td><td>0 errores, 0 avisos</td></tr>
+        <tr><td>Comprobación de tipos (TypeScript)</td><td>0 errores</td></tr>
+        <tr><td>Pruebas automáticas</td><td><strong>18 de 18</strong> correctas (9 nuevas para el formulario de agencias)</td></tr>
+        <tr><td>Compilación de producción</td><td>Correcta: <strong>116 páginas</strong> generadas</td></tr>
+        <tr><td>Mapa del sitio</td><td><strong>112 URLs</strong>, <strong>560 etiquetas hreflang</strong></td></tr>
+        <tr><td>Cabeceras de seguridad</td><td>CSP, HSTS, <code>X-Frame-Options: DENY</code>, <code>nosniff</code>, <code>Referrer-Policy</code>, <code>Permissions-Policy</code> presentes</td></tr>
+        <tr><td>Redirección antigua</td><td><code>/en/circuitos</code> → <strong>308</strong> → <code>/en/journeys</code></td></tr>
+        <tr><td>Página inexistente</td><td>Responde <strong>404</strong> con página de marca</td></tr>
+        <tr><td>Portada (datos estructurados)</td><td><code>TravelAgency</code>, <code>LocalBusiness</code>, <code>WebSite</code></td></tr>
+        <tr><td>Circuito (datos estructurados)</td><td><code>TouristTrip</code> + <code>BreadcrumbList</code></td></tr>
+        <tr><td>Analítica</td><td>Etiqueta de Google correcta; 1 <code>page_view</code> por carga y por navegación interna; respuesta <strong>204</strong> de Google Analytics</td></tr>
+        <tr><td>Página de contacto</td><td>Pestaña de viajeros por defecto; <code>#agencias</code> abre la de agencias; menú B2B enlaza correctamente</td></tr>
+        <tr><td>Formulario de agencias</td><td>Envío correcto; estado de éxito; campos y datos recibidos según lo previsto</td></tr>
+        <tr><td>API del formulario</td><td>415 (formato no permitido) · 400 (datos inválidos) · 200 (bot simulado) · 429 (límite) · 502 (fallo de entrega)</td></tr>
+        <tr><td>Idiomas</td><td>ES, EN, DE y FR cargan con sus textos y pestañas; 0 errores de consola</td></tr>
+        <tr><td>Auditoría Lighthouse (portada y contacto)</td><td>SEO <strong>100/100</strong>, buenas prácticas <strong>100/100</strong>, accesibilidad <strong>96/100</strong> y <strong>97/100</strong>; los 3 avisos concretos están en la sección 9</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <strong>Lo que no se puede verificar desde aquí:</strong> la entrega real del correo de una solicitud de agencia, porque las pruebas se hicieron con la API simulada para no llenar el buzón. Conviene hacer <strong>un envío real de prueba</strong> después de publicar.
+    </div>
+  </section>
+
+  <section id="pendiente">
+    <h2><span class="num">05</span>Lo que falta y depende de OnTour</h2>
+    <table>
+      <thead>
+        <tr><th>Tarea</th><th>Quién</th><th>Para qué</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Publicar la versión verificada</td><td>Equipo técnico</td><td>Que los cambios lleguen a los visitantes</td></tr>
+        <tr><td>Revisar Google Search Console</td><td>OnTour (o dar acceso)</td><td>La verificación ya está publicada; falta revisar cobertura, consultas y errores</td></tr>
+        <tr><td>Crear el perfil de Google Business de Ibagué</td><td>OnTour</td><td>Aparecer en búsquedas locales y en Maps con reseñas</td></tr>
+        <tr><td>Marcar las conversiones en Google Analytics</td><td>OnTour / equipo técnico</td><td>Que los informes distingan visitas de solicitudes</td></tr>
+        <tr><td>Decidir política de cookies para visitantes de la UE</td><td>OnTour</td><td>Cumplir el RGPD antes de captar tráfico europeo</td></tr>
+        <tr><td>Publicar en Civitatis, GetYourGuide, Viator o TourRadar</td><td>OnTour</td><td>Primeras reservas sin depender del SEO</td></tr>
+        <tr><td>Preparar la lista de agencias y los one-pagers</td><td>OnTour + equipo técnico</td><td>Abrir el canal B2B</td></tr>
+        <tr><td>Aportar fotos y textos nuevos</td><td>OnTour</td><td>Alimentar el contenido que posiciona</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="noventa">
+    <h2><span class="num">06</span>Recomendación para los próximos 90 días</h2>
+    <table>
+      <thead>
+        <tr><th>Plazo</th><th>Acción</th><th>Resultado esperado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Semana 1–2</td><td>Publicar, Search Console, Google Business, primeras reseñas</td><td>Datos reales y presencia local</td></tr>
+        <tr><td>Semana 2–4</td><td>Fichas en OTAs de los 7 pasadías</td><td>Primeras reservas con riesgo cero</td></tr>
+        <tr><td>Mes 1–2</td><td>Lista de 200–300 agencias + one-pagers + contacto directo</td><td>Primeras conversaciones B2B</td></tr>
+        <tr><td>Mes 1–3</td><td>20–25 guías de contenido, prioridad alemán y francés</td><td>Tráfico orgánico que empieza a componer</td></tr>
+        <tr><td>Mes 3</td><td>Captura de correo y guía descargable</td><td>Lista propia para reactivar</td></tr>
+        <tr><td>Mes 3+</td><td>Publicidad de pago con presupuesto pequeño</td><td>Coste por solicitud medido</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Expectativa honesta:</strong> el posicionamiento orgánico tarda entre 3 y 6 meses en dar señales claras. Las OTAs pueden dar reservas en semanas. La web ya no es el cuello de botella; ahora el trabajo es de distribución y constancia.</p>
+  </section>
+
+  <section id="guion">
+    <h2><span class="num">07</span>Guion para la reunión</h2>
+
+    <h3>Los tres mensajes que deben quedar</h3>
+    <ol>
+      <li><strong>«La casa ya está en orden.»</strong> El sitio es seguro, rápido, está en cuatro idiomas y Google puede entenderlo. Eso ya no hay que tocarlo.</li>
+      <li><strong>«Ahora hay que traer gente.»</strong> La web sola no genera visitas. Hay que publicar en las plataformas donde ya hay viajeros y hablar con agencias.</li>
+      <li><strong>«Vamos a medir para decidir.»</strong> Desde ahora sabemos cuántas personas entran y cuántas piden cotización. Las decisiones se toman con datos, no con intuición.</li>
+    </ol>
+
+    <h3>Preguntas previsibles y respuestas breves</h3>
+    <div class="qa">
+      <p class="q">¿Ya aparecemos primeros en Google?</p>
+      <p class="a">No, y no se promete. La base técnica está lista, pero posicionar lleva meses de contenido y enlaces. Lo que sí se puede medir es si vamos mejorando.</p>
+    </div>
+    <div class="qa">
+      <p class="q">¿Por qué no se puede reservar y pagar online?</p>
+      <p class="a">Porque es una fase distinta: hay que definir precios, política de cancelación y quién atiende incidencias. Se puede hacer con Stripe, pero es un proyecto aparte.</p>
+    </div>
+    <div class="qa">
+      <p class="q">¿Qué pasa con las agencias?</p>
+      <p class="a">Ya tienen su propia pestaña y su formulario. La siguiente pieza es la lista de agencias y los one-pagers por circuito.</p>
+    </div>
+    <div class="qa">
+      <p class="q">¿Es seguro para los datos de los clientes?</p>
+      <p class="a">Sí: el sitio va por HTTPS, los formularios validan y limitan los envíos, y no se guardan datos de tarjetas porque no hay pagos en la web. Los mensajes llegan al correo de OnTour.</p>
+    </div>
+    <div class="qa">
+      <p class="q">¿Cuánto cuesta mantenerlo?</p>
+      <p class="a">El coste es el alojamiento y el dominio. No hay licencias de CMS ni plugins de pago. El código está versionado, así que cualquier cambio se puede revisar antes de publicar.</p>
+    </div>
+    <div class="qa">
+      <p class="q">¿Y el RGPD si llegan europeos?</p>
+      <p class="a">Es el punto pendiente más importante. Google Analytics usa cookies; para tráfico de la UE hace falta un aviso de cookies con consentimiento previo. Está identificado y se puede implementar cuando se decida.</p>
+    </div>
+    <div class="qa">
+      <p class="q">¿Vamos a salir en ChatGPT o en los buscadores con IA?</p>
+      <p class="a">La estructura y los datos estructurados ayudan a que los sistemas entiendan la web, pero ningún proveedor garantiza aparecer. Es un canal emergente, no una certeza.</p>
+    </div>
+    <div class="qa">
+      <p class="q">¿Qué mejoraríais ahora?</p>
+      <p class="a">Tres cosas de bajo coste: accesibilidad al 100 %, datos de preguntas frecuentes para Google y conectar los formularios a un CRM con respuesta automática. Después, consentimiento de cookies y reserva online. El detalle y el orden están en la sección 9.</p>
+    </div>
+    <div class="qa">
+      <p class="q">¿Qué necesitáis de nosotros?</p>
+      <p class="a">Acceso para revisar Search Console, el perfil de Google, fotos y textos actualizados, y decisión sobre cookies y reservas online.</p>
+    </div>
+  </section>
+
+  <section id="anexo">
+    <h2><span class="num">08</span>Anexo técnico</h2>
+
+    <h3>Stack</h3>
+    <ul>
+      <li>Next.js 16.4.3 (App Router, Turbopack), React 19.2, TypeScript 5.</li>
+      <li>next-intl 4.14 con rutas localizadas y <code>hreflang</code>.</li>
+      <li>Tailwind CSS 4 + sistema editorial propio.</li>
+      <li>Framer Motion para animaciones, Embla para carruseles, Leaflet para mapas.</li>
+      <li>Formspree para entrega de formularios; Google Analytics 4 (gtag.js) para medición.</li>
+      <li><code>docx</code>, <code>jspdf</code> y <code>file-saver</code> para la generación de folletos y programas.</li>
+    </ul>
+
+    <h3>Puntos de entrada</h3>
+    <ul>
+      <li><code>src/app/[locale]</code> — páginas por idioma.</li>
+      <li><code>src/app/api/quote</code> — cotizaciones de viajeros (validación, límite, honeypot).</li>
+      <li><code>src/app/api/trade</code> — solicitudes de agencias (mismas protecciones, campos propios).</li>
+      <li><code>src/app/sitemap.ts</code> — mapa del sitio y <code>hreflang</code>.</li>
+      <li><code>src/lib/seo.ts</code> — canónicas, Open Graph y Twitter.</li>
+      <li><code>src/lib/schema.ts</code> — datos estructurados.</li>
+      <li><code>src/components/GoogleAnalytics.tsx</code> — carga de GA4 y visita por navegación.</li>
+      <li><code>src/lib/analytics.ts</code> — eventos de conversión.</li>
+      <li><code>messages/{es,en,de,fr}.json</code> — textos de los cuatro idiomas.</li>
+    </ul>
+
+    <h3>Cómo reproducir la verificación</h3>
+<pre><code>npm ci
+npm run lint
+npm run typecheck
+npm run test
+npm run build
+npx next start -p 3100</code></pre>
+    <p>Comprobaciones manuales:</p>
+<pre><code>curl -I http://localhost:3100/es                      # cabeceras de seguridad
+curl -I http://localhost:3100/en/circuitos            # 308 a /en/journeys
+curl -s http://localhost:3100/sitemap.xml | grep -c "&lt;url&gt;"   # 112
+curl -s -o /dev/null -w "%{http_code}" http://localhost:3100/es/no-existe  # 404
+curl -X POST -H "Content-Type: text/plain" --data x http://localhost:3100/api/trade  # 415</code></pre>
+
+    <h3>Riesgos conocidos y límites</h3>
+    <ul>
+      <li><strong>RGPD/cookies:</strong> GA4 se carga sin consentimiento previo. Aceptable para tráfico colombiano; a revisar antes de campañas en Europa.</li>
+      <li><strong>Límite de frecuencia en memoria:</strong> protege por instancia. En un despliegue con varias instancias conviene complementarlo con el cortafuegos del hosting.</li>
+      <li><strong>Formspree como dependencia externa:</strong> si el servicio falla, el formulario devuelve error 502 y el usuario ve un mensaje para reintentar o escribir por correo.</li>
+      <li><strong>Contenido:</strong> el sitio conserva los originales de imagen en el repositorio para campañas; los visitantes reciben versiones optimizadas, no los originales.</li>
+      <li><strong>Search Console sin revisar:</strong> la verificación ya está publicada (meta y archivo), pero sin revisar cobertura y consultas no se pueden corregir incidencias de indexación.</li>
+    </ul>
+
+    <h3>Variables de entorno</h3>
+    <table>
+      <thead>
+        <tr><th>Variable</th><th>Uso</th><th>Obligatoria</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>FORMSPREE_ENDPOINT</code></td><td>Destino de los formularios</td><td>No (hay valor por defecto)</td></tr>
+        <tr><td><code>NEXT_PUBLIC_GA_MEASUREMENT_ID</code></td><td>Sustituir la propiedad de GA4</td><td>No (hay valor por defecto)</td></tr>
+        <tr><td><code>NEXT_PUBLIC_GTM_ID</code></td><td>Activar Google Tag Manager</td><td>No (desactivado a propósito)</td></tr>
+        <tr><td><code>SHEETS_ID</code></td><td>Integración con hojas de cálculo</td><td>Solo si se usa</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="auditoria" class="new-page">
+    <h2><span class="num">09</span>Auditoría de mejoras futuras</h2>
+    <p><strong>Cómo se ha hecho.</strong> Revisión del repositorio y de la compilación de producción, más dos auditorías Lighthouse (portada y página de contacto) el <strong>6 de noviembre de 2026</strong>. No sustituye a una auditoría de negocio ni a pruebas con usuarios reales: sirve para ordenar el trabajo técnico con criterio.</p>
+
+    <h3>9.1 Punto de partida</h3>
+    <table>
+      <thead>
+        <tr><th>Área</th><th>Resultado</th><th>Lectura</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SEO técnico</td><td><strong>100/100</strong> en portada y contacto</td><td>Títulos, canónicas, <code>hreflang</code> y rastreo correctos</td></tr>
+        <tr><td>Buenas prácticas</td><td><strong>100/100</strong></td><td>Sin errores de seguridad ni de consola en la auditoría</td></tr>
+        <tr><td>Accesibilidad</td><td><strong>96/100</strong> portada · <strong>97/100</strong> contacto</td><td>3 avisos concretos, corregibles en horas</td></tr>
+        <tr><td>Rendimiento</td><td>No medido en esta pasada</td><td>El sitio ya optimiza imágenes; faltan datos reales de Core Web Vitals</td></tr>
+      </tbody>
+    </table>
+    <p>Una puntuación de 100 en SEO <strong>no significa salir primero en Google</strong>. Mide que la página sea rastreable y comprensible, no su autoridad ni su contenido.</p>
+
+    <h3>9.2 Mejoras priorizadas</h3>
+
+    <h4>Prioridad 1 — hacer ya (horas o 1–2 días)</h4>
+    <table>
+      <thead>
+        <tr><th>Mejora</th><th>Por qué importa</th><th>Esfuerzo</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Accesibilidad: 3 correcciones concretas.</strong> Contraste de «Avales y coberturas» en <code>HomeEditorial.tsx</code> (3,45:1), texto gris del pie en <code>Footer.tsx</code> (2,53:1) y nombre accesible del selector de idioma en <code>Navbar.tsx</code> (el botón muestra «ES» pero solo se anuncia «Seleccionar idioma»).</td>
+          <td>Debería eliminar los 3 avisos de Lighthouse y acercar la nota a 100. Mejora la lectura con poca visión y el uso con lector de pantalla.</td>
+          <td>2–4 h</td>
+        </tr>
+        <tr>
+          <td><strong>Activar FAQPage en <code>/legal/faq</code>.</strong> El generador <code>buildFaqSchema</code> ya existe y no se usa; hay 8 preguntas traducidas.</td>
+          <td>Permite que Google muestre las preguntas directamente en los resultados y ayuda a los buscadores con IA a citar respuestas.</td>
+          <td>2–4 h</td>
+        </tr>
+        <tr>
+          <td><strong>Marcar conversiones en GA4 y crear un informe de leads.</strong> Solicitudes por idioma, por circuito y B2B, además de los eventos ya enviados.</td>
+          <td>Hoy se recogen los eventos, pero sin marcarlos como clave ni agruparlos no se pueden comparar canales ni priorizar contenido.</td>
+          <td>2–3 h</td>
+        </tr>
+        <tr>
+          <td><strong>Revisar Search Console.</strong> La verificación ya está publicada (meta y archivo); falta revisar cobertura, consultas y errores.</td>
+          <td>Es la única fuente que dice qué búsquedas reales traen visitas y qué páginas no se indexan.</td>
+          <td>2 h</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Prioridad 2 — 1 a 3 meses</h4>
+    <table>
+      <thead>
+        <tr><th>Mejora</th><th>Por qué importa</th><th>Esfuerzo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Consentimiento de cookies + Consent Mode v2</strong> para visitantes de la UE.</td><td>Es el requisito legal más claro antes de captar tráfico europeo y de lanzar publicidad.</td><td>1–2 días</td></tr>
+        <tr><td><strong>CRM + autorespuesta.</strong> Conectar los formularios a HubSpot, Notion o Airtable, con acuse automático y aviso interno.</td><td>Ningún lead se queda sin respuesta; hoy todo depende de que alguien revise el correo.</td><td>2–4 días</td></tr>
+        <tr><td><strong>Rendimiento real y presupuesto en CI.</strong> Core Web Vitals de usuarios reales y Lighthouse CI que falle si empeora.</td><td>Evita que una foto o un componente nuevo degrade la velocidad sin que nadie lo note.</td><td>1–2 días</td></tr>
+        <tr><td><strong>Monitorización de errores y disponibilidad.</strong> Sentry (o equivalente) y comprobación externa cada minuto.</td><td>Hoy un fallo solo se detecta si un cliente avisa.</td><td>1 día</td></tr>
+        <tr><td><strong>Higiene de imágenes.</strong> 220 imágenes originales ocupan <strong>61,8 MB</strong> dentro de <code>public</code>; mover los originales fuera y dejar solo los derivados optimizados.</td><td>El visitante ya recibe AVIF/WebP, pero el repositorio y el despliegue cargan originales y quedan accesibles por URL directa.</td><td>1–2 días</td></tr>
+        <tr><td><strong>Identidad móvil completa.</strong> <code>manifest</code>, iconos de 192 y 512 px, <code>theme-color</code> y <code>apple-touch-icon</code>.</td><td>Mejora cómo se guarda la web en el móvil y cómo se ve al compartirla; hoy solo hay un <code>.ico</code>.</td><td>2–4 h</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Prioridad 3 — 3 a 6 meses o proyecto aparte</h4>
+    <table>
+      <thead>
+        <tr><th>Mejora</th><th>Por qué importa</th><th>Esfuerzo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Reserva y pago online</strong> (Stripe) con política de cancelación y atención de incidencias.</td><td>Convierte la web en canal de venta directa, no solo de captación.</td><td>3–6 semanas</td></tr>
+        <tr><td><strong>Hub de contenidos:</strong> 20–25 guías en español, inglés, alemán y francés, con enlazado interno.</td><td>Es lo que construye autoridad y tráfico orgánico sostenido; los circuitos solos no cubren las búsquedas informativas.</td><td>Continuo</td></tr>
+        <tr><td><strong>Reseñas reales y datos de precio.</strong> Integrar reseñas verificadas de Google o TripAdvisor y valorar <code>Offer</code> en circuitos con precios públicos y estables.</td><td>Aumenta la confianza en los resultados de búsqueda. Nunca se deben inventar reseñas ni precios: es motivo de penalización.</td><td>1–2 semanas</td></tr>
+        <tr><td><strong>Pruebas de extremo a extremo y límite distribuido.</strong> Playwright para navegación, formularios y accesibilidad; Redis/Upstash si hay varias instancias.</td><td>Protege cada cambio futuro y evita que el límite de formularios se pueda saltar entre servidores.</td><td>3–5 días</td></tr>
+      </tbody>
+    </table>
+
+    <h3>9.3 Qué no recomiendo ahora</h3>
+    <ul>
+      <li><strong>Rediseñar la web.</strong> No hay evidencia de que el diseño sea el cuello de botella; el problema es distribución.</li>
+      <li><strong>Añadir más idiomas.</strong> Los cuatro actuales cubren el mercado objetivo; primero hay que posicionarlos y medir.</li>
+      <li><strong>Lanzar publicidad antes de cookies, medición y fichas en OTAs.</strong> Se pagaría por tráfico sin saber qué convierte.</li>
+      <li><strong>Crear una app móvil.</strong> La web responsive ya cubre el uso real y una app añade mantenimiento y coste.</li>
+      <li><strong>Inventar reseñas, precios o valoraciones en los datos estructurados.</strong> El riesgo de penalización supera cualquier beneficio a corto plazo.</li>
+    </ul>
+
+    <h3>9.4 Cómo sabremos si funciona</h3>
+    <table>
+      <thead>
+        <tr><th>Indicador</th><th>Objetivo a 90 días</th><th>Dónde se mide</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Solicitudes de cotización</td><td>Primer dato real y +30 % sobre la línea base</td><td>GA4 (<code>quote_form_submit</code>)</td></tr>
+        <tr><td>Solicitudes B2B</td><td>10–15 contactos · 3–5 conversaciones</td><td>GA4 (<code>trade_form_submit</code>) y correo</td></tr>
+        <tr><td>Accesibilidad</td><td>100/100 en portada y contacto</td><td>Lighthouse</td></tr>
+        <tr><td>Velocidad móvil (LCP, p75)</td><td>Menos de 2,5 s</td><td>Core Web Vitals / Search Console</td></tr>
+        <tr><td>Páginas indexadas</td><td>Al menos el 90 % de las 112</td><td>Search Console</td></tr>
+        <tr><td>Respuesta a un lead</td><td>Menos de 24 h</td><td>CRM / correo</td></tr>
+      </tbody>
+    </table>
+
+    <h3>9.5 Orden recomendado</h3>
+    <ol>
+      <li>Publicar esta versión y hacer <strong>un envío real</strong> del formulario de agencias.</li>
+      <li>Ejecutar la <strong>prioridad 1</strong> completa (accesibilidad, FAQ, GA4 y Search Console).</li>
+      <li>Decidir <strong>cookies + CRM</strong>; son la base para captar y atender leads con garantías.</li>
+      <li>Alimentar <strong>contenido, OTAs y agencias</strong>; es lo que genera volumen.</li>
+      <li>Abordar <strong>reserva online</strong> cuando haya tráfico y solicitudes suficientes para justificarla.</li>
+    </ol>
+    <p><strong>Inversión:</strong> la prioridad 1 no requiere licencias, solo horas. La prioridad 2 puede empezar con planes gratuitos de CRM y monitorización. La prioridad 3 (pago online) sí requiere presupuesto de desarrollo y una decisión de negocio.</p>
+  </section>
+
+  <section id="glosario">
+    <h2><span class="num">10</span>Glosario breve</h2>
+    <ul>
+      <li><strong>Canónica:</strong> la dirección oficial de una página, para que Google no la cuente dos veces.</li>
+      <li><strong>hreflang:</strong> la etiqueta que dice «esta página también existe en estos idiomas».</li>
+      <li><strong>Sitemap:</strong> el índice de páginas que se entrega a los buscadores.</li>
+      <li><strong>Datos estructurados:</strong> información legible por máquinas (tipo de negocio, recorridos, precios) que Google puede mostrar enriquecida.</li>
+      <li><strong>CSP / HSTS:</strong> reglas de seguridad que limitan qué puede cargar la web y obligan a usar HTTPS.</li>
+      <li><strong>GA4:</strong> Google Analytics 4, la herramienta de medición de visitas y conversiones.</li>
+      <li><strong>DMC:</strong> Destination Management Company, el operador local que atiende a agencias internacionales.</li>
+      <li><strong>One-pager:</strong> ficha de una página por circuito, con recorrido, inclusiones y tarifas, para enviar a una agencia.</li>
+      <li><strong>OTA:</strong> plataforma de venta de experiencias (Civitatis, GetYourGuide, Viator, TourRadar).</li>
+    </ul>
+
+    <p class="footer">Documento preparado a partir de la verificación técnica del 6 de noviembre de 2026. Las cifras corresponden a esa compilación y deben revisarse tras cada publicación.</p>
+  </section>
+
+</main>
+</body>
+</html>

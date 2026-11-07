@@ -42,12 +42,33 @@ export default async function Contacto({
     <ContactoEditorial
       title={t("title")}
       subtitle={t("subtitle")}
-      infoTitle={t("infoTitle")}
-      infoSubtitle={t("infoSubtitle")}
       schedule={t("schedule")}
       support={t("support")}
       mainOffice={t("mainOffice")}
       mapTitle={t("mapTitle")}
+      tabs={{
+        travellers: t("tabs.travellers"),
+        agencies: t("tabs.agencies"),
+      }}
+      travellerPanel={{
+        title: t("travellerPanel.title"),
+        subtitle: t("travellerPanel.subtitle"),
+        points: [
+          t("travellerPanel.point1"),
+          t("travellerPanel.point2"),
+          t("travellerPanel.point3"),
+        ],
+      }}
+      agencyPanel={{
+        title: t("agencyPanel.title"),
+        subtitle: t("agencyPanel.subtitle"),
+        points: [
+          t("agencyPanel.point1"),
+          t("agencyPanel.point2"),
+          t("agencyPanel.point3"),
+        ],
+        badge: t("agencyPanel.badge"),
+      }}
     />
   );
 }
