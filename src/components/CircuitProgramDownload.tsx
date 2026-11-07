@@ -519,7 +519,7 @@ export function CircuitProgramDownload({
                     alignment: AlignmentType.CENTER,
                     children: [
                       new TextRun({
-                        text: "www.ontourdmc.com  |  gerencia@agenciaontour.com  |  +57 316 538 6892",
+                        text: "www.ontourdmc.com  |  gerencia@agenciaontour.com  |  +57 314 341 5177",
                         size: 16,
                         color: "0B3A60",
                         font: "Calibri",
