@@ -51,19 +51,24 @@ export function ImageRevealClip({
     );
   }
 
+  // The IntersectionObserver must watch an element that is never clipped.
+  // A zero-area clip-path makes Chromium report the element as not
+  // intersecting, so observing the clipped element itself would deadlock:
+  // it never animates because it is never "seen", and it is never "seen"
+  // because it is hidden. The clip animates on the inner wrapper instead.
   return (
-    <motion.div
-      ref={ref}
-      className={className}
-      initial={{ clipPath: CLIP_HIDDEN[direction] }}
-      animate={isInView ? { clipPath: CLIP_VISIBLE } : { clipPath: CLIP_HIDDEN[direction] }}
-      transition={{
-        duration: durationSec,
-        delay: delaySec,
-        ease: [0.16, 1, 0.3, 1],
-      }}
-    >
-      {children}
-    </motion.div>
+    <div ref={ref} className={className}>
+      <motion.div
+        initial={{ clipPath: CLIP_HIDDEN[direction] }}
+        animate={isInView ? { clipPath: CLIP_VISIBLE } : { clipPath: CLIP_HIDDEN[direction] }}
+        transition={{
+          duration: durationSec,
+          delay: delaySec,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 }

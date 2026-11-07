@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X,
@@ -632,6 +633,10 @@ export function RequestQuoteModal({
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
+  // Portals need the DOM, so only render after hydration.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   // Reset transient form state whenever the dialog opens. Adjusting state
   // during render (instead of in an effect) avoids an extra render pass that
   // would briefly show the previous submission result.
@@ -727,7 +732,7 @@ export function RequestQuoteModal({
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
   // Toggle helpers
   const toggleDestination = (id: string) => {
@@ -864,8 +869,8 @@ export function RequestQuoteModal({
     }
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
+  return createPortal(
+    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto overscroll-contain p-3 sm:p-5">
       {/* Dark luxury backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -886,7 +891,7 @@ export function RequestQuoteModal({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 16 }}
         transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-stone-200/90 overflow-hidden z-10 flex flex-col my-auto max-h-[92vh]"
+        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-stone-200/90 overflow-hidden z-10 flex flex-col my-auto max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-2.5rem)]"
       >
         {/* Header */}
         <div className="relative px-6 py-4.5 bg-[#16352D] text-white flex items-center justify-between shrink-0 border-b border-white/10">
@@ -1538,6 +1543,7 @@ export function RequestQuoteModal({
           )}
         </div>
       </motion.div>
-    </div>
+    </div>,
+    document.body
   );
 }
