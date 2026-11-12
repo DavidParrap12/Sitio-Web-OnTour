@@ -412,7 +412,7 @@ export default async function ServiciosPage({
       <ServiciosHero title={t("title")} subtitle={t("subtitle")} />
 
       {/* ── Trust / Stats Bar ── */}
-      <div className="bg-[#16352D] text-white py-10 md:py-12">
+      <div className="bg-[#0a3566] text-white py-10 md:py-12">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {trustStats.map((stat, i) => (
@@ -451,7 +451,7 @@ export default async function ServiciosPage({
           <p className="text-xs uppercase font-bold tracking-widest text-[#B49A68] mb-3">
             {headerTexts.tag}
           </p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#16352D] mb-3 tracking-tight">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#0a3566] mb-3 tracking-tight">
             {t("title")}
           </h2>
           <p className="text-stone-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
@@ -472,7 +472,7 @@ export default async function ServiciosPage({
         {/* ── CTA B2B — Premium Dark Card ── */}
         <div className="max-w-6xl mx-auto mt-20 mb-20 md:mb-28 overflow-hidden rounded-3xl shadow-2xl">
           {/* Top dark strip */}
-          <div className="bg-[#16352D] px-10 sm:px-14 md:px-16 pt-12 pb-10 relative overflow-hidden">
+          <div className="bg-[#0a3566] px-10 sm:px-14 md:px-16 pt-12 pb-10 relative overflow-hidden">
             {/* Subtle radial glow */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_0%,rgba(180,154,104,0.15),transparent_60%)] pointer-events-none" />
             <p className="text-xs uppercase tracking-widest text-[#B49A68] font-bold mb-4">
@@ -493,7 +493,7 @@ export default async function ServiciosPage({
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link
                 href="/contacto"
-                className="w-full sm:w-auto inline-flex items-center justify-center bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-10 py-4 rounded-full font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 min-h-[52px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white px-10 py-4 rounded-full font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 min-h-[52px]"
               >
                 {t("ctaButton")}
               </Link>
@@ -501,7 +501,7 @@ export default async function ServiciosPage({
                 href="https://reservas.ontourdmc.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full border border-stone-300 hover:border-[#16352D] bg-white hover:bg-stone-50 text-stone-700 hover:text-[#16352D] text-sm sm:text-base font-medium transition-all duration-300 min-h-[52px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full border border-stone-300 hover:border-[#0a3566] bg-white hover:bg-stone-50 text-stone-700 hover:text-[#0a3566] text-sm sm:text-base font-medium transition-all duration-300 min-h-[52px]"
               >
                 <span>{t("aviaturButton")}</span>
                 <ExternalLink className="w-4 h-4 text-stone-400" />

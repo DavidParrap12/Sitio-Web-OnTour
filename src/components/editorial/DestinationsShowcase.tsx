@@ -366,7 +366,7 @@ export function DestinationsShowcase({ locale, circuits }: DestinationsShowcaseP
                   onClick={() => setActiveId(c.id)}
                   className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 min-h-[44px] flex items-center gap-2 cursor-pointer ${
                     isActive
-                      ? "bg-[#16352D] text-white shadow-md"
+                      ? "bg-[#0a3566] text-white shadow-md"
                       : "bg-[#FAF8F4] text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 border border-stone-200/60"
                   }`}
                   aria-pressed={isActive}
@@ -445,13 +445,13 @@ export function DestinationsShowcase({ locale, circuits }: DestinationsShowcaseP
                     <span className="text-[11px] uppercase text-stone-500 block font-medium">
                       Tarifa base orientativa
                     </span>
-                    <span className="text-base sm:text-lg font-bold text-[#16352D]">
+                    <span className="text-base sm:text-lg font-bold text-[#0a3566]">
                       {circuits.find(c => c.id === active.circuitId)?.price || ""}
                     </span>
                   </div>
                   <Link
                     href={{ pathname: "/circuitos/[id]", params: { id: active.circuitId } }}
-                    className="inline-flex items-center gap-2 bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-6 py-3 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 shadow-md min-h-[44px]"
+                    className="inline-flex items-center gap-2 bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white px-6 py-3 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 shadow-md min-h-[44px]"
                   >
                     <span>{strings.ctaViewCircuit}</span>
                     <ArrowRight className="w-4 h-4" />

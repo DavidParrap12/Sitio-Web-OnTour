@@ -96,7 +96,7 @@ export default async function AdminDashboardPage({
         </div>
         <Link
           href="/admin/circuits/new"
-          className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#16352D] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#B49A68] hover:text-[#16352D]"
+          className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#0a3566] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#B49A68] hover:text-[#0a3566]"
         >
           <Plus className="h-4 w-4" />
           Crear circuito
@@ -157,7 +157,7 @@ export default async function AdminDashboardPage({
                     <div className="min-w-0">
                       <Link
                         href={`/admin/circuits/${row.id}`}
-                        className="block truncate font-semibold text-stone-900 hover:text-[#16352D]"
+                        className="block truncate font-semibold text-stone-900 hover:text-[#0a3566]"
                       >
                         {name}
                       </Link>
@@ -195,7 +195,7 @@ export default async function AdminDashboardPage({
                     <Link
                       href={`/admin/circuits/${row.id}`}
                       aria-label={`Editar ${name}`}
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 text-stone-500 transition hover:border-[#16352D] hover:text-[#16352D]"
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 text-stone-500 transition hover:border-[#0a3566] hover:text-[#0a3566]"
                     >
                       <Pencil className="h-4 w-4" />
                     </Link>

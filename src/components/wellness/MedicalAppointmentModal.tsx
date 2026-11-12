@@ -295,7 +295,7 @@ export function MedicalAppointmentModal({
         exit={{ opacity: 0, scale: 0.96, y: 16 }}
         className="relative z-10 my-auto flex max-h-[calc(100dvh-1.5rem)] w-full max-w-xl flex-col overflow-hidden rounded-3xl border border-stone-200/90 bg-white shadow-2xl"
       >
-        <div className="flex shrink-0 items-center justify-between border-b border-white/10 bg-[#16352D] px-6 py-4.5 text-white">
+        <div className="flex shrink-0 items-center justify-between border-b border-white/10 bg-[#0a3566] px-6 py-4.5 text-white">
           <div className="flex items-center gap-3">
             <Stethoscope className="h-5 w-5 text-[#C9A961]" />
             <span className="text-xs font-bold uppercase tracking-wider text-white/80">
@@ -330,7 +330,7 @@ export function MedicalAppointmentModal({
               <button
                 type="button"
                 onClick={onClose}
-                className="mt-8 min-h-[48px] cursor-pointer rounded-full bg-[#16352D] px-8 py-3.5 text-sm font-bold text-white transition-colors hover:bg-[#B49A68] hover:text-[#16352D]"
+                className="mt-8 min-h-[48px] cursor-pointer rounded-full bg-[#0a3566] px-8 py-3.5 text-sm font-bold text-white transition-colors hover:bg-[#B49A68] hover:text-[#0a3566]"
               >
                 {c.close}
               </button>
@@ -371,7 +371,7 @@ export function MedicalAppointmentModal({
                       onChange={(e) => setDoctor(e.target.value)}
                       placeholder={c.doctorPlaceholder}
                       required
-                      className="min-h-[48px] w-full rounded-xl border border-stone-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#16352D] sm:text-base"
+                      className="min-h-[48px] w-full rounded-xl border border-stone-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3566] sm:text-base"
                     />
                     {errors.includes("doctor") && (
                       <p className="mt-1 text-xs text-rose-600">{c.required}</p>
@@ -387,7 +387,7 @@ export function MedicalAppointmentModal({
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
                       required
-                      className="min-h-[48px] w-full rounded-xl border border-stone-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#16352D] sm:text-base"
+                      className="min-h-[48px] w-full rounded-xl border border-stone-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3566] sm:text-base"
                     />
                     {errors.includes("date") && (
                       <p className="mt-1 text-xs text-rose-600">{c.required}</p>
@@ -408,7 +408,7 @@ export function MedicalAppointmentModal({
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder={c.phonePlaceholder}
                       required
-                      className="min-h-[48px] w-full rounded-xl border border-stone-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#16352D] sm:text-base"
+                      className="min-h-[48px] w-full rounded-xl border border-stone-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3566] sm:text-base"
                     />
                     {errors.includes("phone") && (
                       <p className="mt-1 text-xs text-rose-600">{c.invalidPhone}</p>
@@ -425,7 +425,7 @@ export function MedicalAppointmentModal({
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder={c.emailPlaceholder}
                       required
-                      className="min-h-[48px] w-full rounded-xl border border-stone-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#16352D] sm:text-base"
+                      className="min-h-[48px] w-full rounded-xl border border-stone-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3566] sm:text-base"
                     />
                     {errors.includes("email") && (
                       <p className="mt-1 text-xs text-rose-600">{c.invalidEmail}</p>
@@ -442,7 +442,7 @@ export function MedicalAppointmentModal({
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
                     placeholder={c.countryPlaceholder}
-                    className="min-h-[48px] w-full rounded-xl border border-stone-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#16352D] sm:text-base"
+                    className="min-h-[48px] w-full rounded-xl border border-stone-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3566] sm:text-base"
                   />
                 </div>
 
@@ -450,7 +450,7 @@ export function MedicalAppointmentModal({
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="flex min-h-[50px] w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-[#16352D] px-8 py-4 text-sm font-bold tracking-wide text-white shadow-md transition-colors hover:bg-[#B49A68] hover:text-[#16352D] disabled:opacity-70 sm:text-base"
+                  className="flex min-h-[50px] w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-[#0a3566] px-8 py-4 text-sm font-bold tracking-wide text-white shadow-md transition-colors hover:bg-[#B49A68] hover:text-[#0a3566] disabled:opacity-70 sm:text-base"
                 >
                   {status === "submitting" ? (
                     <>

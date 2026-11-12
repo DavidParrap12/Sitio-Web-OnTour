@@ -153,7 +153,7 @@ export default async function EditCircuitPage({
         <div>
           <Link
             href="/admin"
-            className="inline-flex items-center gap-2 text-sm font-medium text-stone-500 transition hover:text-[#16352D]"
+            className="inline-flex items-center gap-2 text-sm font-medium text-stone-500 transition hover:text-[#0a3566]"
           >
             <ArrowLeft className="h-4 w-4" />
             Circuitos
@@ -177,7 +177,7 @@ export default async function EditCircuitPage({
           <Link
             href={"/es/"+(circuit.kind==="day_trip"?"pasadias":"circuitos")+"/"+circuit.id}
             target="_blank"
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 transition hover:border-[#16352D] hover:text-[#16352D]"
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 transition hover:border-[#0a3566] hover:text-[#0a3566]"
           >
             <ExternalLink className="h-4 w-4" />
             Ver ficha

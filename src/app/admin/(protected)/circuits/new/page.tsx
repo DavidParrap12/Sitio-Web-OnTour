@@ -9,7 +9,7 @@ export default function NewCircuitPage() {
     <div>
       <Link
         href="/admin"
-        className="inline-flex items-center gap-2 text-sm font-medium text-stone-500 transition hover:text-[#16352D]"
+        className="inline-flex items-center gap-2 text-sm font-medium text-stone-500 transition hover:text-[#0a3566]"
       >
         <ArrowLeft className="h-4 w-4" />
         Circuitos

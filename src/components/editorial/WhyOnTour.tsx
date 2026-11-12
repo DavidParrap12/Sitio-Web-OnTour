@@ -188,13 +188,13 @@ export function WhyOnTour({ locale }: WhyOnTourProps) {
                   className="bg-white rounded-2xl p-7 border border-stone-200/80 shadow-sm hover:shadow-xl hover:border-editorial-accent/40 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-[#16352D]/5 text-[#16352D] group-hover:bg-[#16352D] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-[#0a3566]/5 text-[#0a3566] group-hover:bg-[#0a3566] group-hover:text-white flex items-center justify-center mb-5 transition-all duration-300">
                       <Icon className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
                     </div>
                     <span className="text-[11px] font-bold uppercase tracking-wider text-editorial-accent block mb-1">
                       {pillar.highlight}
                     </span>
-                    <h3 className="heading-3 text-editorial-dark mb-3 group-hover:text-[#16352D] transition-colors">
+                    <h3 className="heading-3 text-editorial-dark mb-3 group-hover:text-[#0a3566] transition-colors">
                       {pillar.title}
                     </h3>
                     <p className="caption text-editorial-muted leading-relaxed">
@@ -207,7 +207,7 @@ export function WhyOnTour({ locale }: WhyOnTourProps) {
           </div>
 
           {/* Metrics Ribbon */}
-          <div className="bg-[#16352D] text-white rounded-2xl p-6 md:p-8 shadow-xl">
+          <div className="bg-[#0a3566] text-white rounded-2xl p-6 md:p-8 shadow-xl">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
               {content.metrics.map((metric, idx) => {
                 const Icon = metric.icon;

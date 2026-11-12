@@ -82,7 +82,7 @@ export function MobileStickyBar({ locale, onOpenQuote }: MobileStickyBarProps) {
                 trackRequestQuoteClick("mobile_sticky_bar");
                 onOpenQuote();
               }}
-              className="flex-1 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white font-bold text-xs sm:text-sm shadow-md active:scale-95 transition-all min-h-[44px] touch-manipulation cursor-pointer"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white font-bold text-xs sm:text-sm shadow-md active:scale-95 transition-all min-h-[44px] touch-manipulation cursor-pointer"
             >
               <span>{strings.quote}</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

@@ -137,7 +137,7 @@ export function ServiciosInteractiveGrid({ services }: ServiciosInteractiveGridP
                 <div
                   className={`absolute inset-0 transition-opacity duration-300 ${
                     isExpanded
-                      ? "bg-gradient-to-t from-[#16352D]/90 via-[#16352D]/40 to-transparent"
+                      ? "bg-gradient-to-t from-[#0a3566]/90 via-[#0a3566]/40 to-transparent"
                       : "bg-gradient-to-t from-black/60 via-black/20 to-transparent"
                   }`}
                 />
@@ -146,8 +146,8 @@ export function ServiciosInteractiveGrid({ services }: ServiciosInteractiveGridP
                 <div
                   className={`absolute top-4 left-4 w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-md ${
                     isExpanded
-                      ? "bg-[#B49A68] text-[#16352D] scale-110"
-                      : "bg-white/95 text-[#16352D] backdrop-blur-md"
+                      ? "bg-[#B49A68] text-[#0a3566] scale-110"
+                      : "bg-white/95 text-[#0a3566] backdrop-blur-md"
                   }`}
                 >
                   <Icon className="w-6 h-6" />
@@ -158,7 +158,7 @@ export function ServiciosInteractiveGrid({ services }: ServiciosInteractiveGridP
                   <span
                     className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium tracking-wide transition-all backdrop-blur-md ${
                       isExpanded
-                        ? "bg-white text-[#16352D] shadow-sm"
+                        ? "bg-white text-[#0a3566] shadow-sm"
                         : "bg-black/50 text-white/90"
                     }`}
                   >
@@ -204,7 +204,7 @@ export function ServiciosInteractiveGrid({ services }: ServiciosInteractiveGridP
                     >
                       {/* Highlight Box */}
                       <div className="p-3.5 rounded-2xl bg-[#F7F5EF] border border-[#B49A68]/20 text-xs text-stone-800">
-                        <div className="flex items-center gap-1.5 font-bold text-[#16352D] mb-1">
+                        <div className="flex items-center gap-1.5 font-bold text-[#0a3566] mb-1">
                           <Award className="w-3.5 h-3.5 text-[#B49A68]" />
                           <span>{ui.certLabel}</span>
                         </div>
@@ -220,7 +220,7 @@ export function ServiciosInteractiveGrid({ services }: ServiciosInteractiveGridP
                           {item.extendedInfo.specialties.map((spec, sIdx) => (
                             <span
                               key={sIdx}
-                              className="text-[11px] px-2.5 py-1 rounded-full bg-[#16352D]/5 text-[#16352D] font-medium border border-[#16352D]/10"
+                              className="text-[11px] px-2.5 py-1 rounded-full bg-[#0a3566]/5 text-[#0a3566] font-medium border border-[#0a3566]/10"
                             >
                               {spec}
                             </span>
@@ -235,7 +235,7 @@ export function ServiciosInteractiveGrid({ services }: ServiciosInteractiveGridP
                           e.stopPropagation();
                           handleOpenQuote(item.title);
                         }}
-                        className="group/btn w-full mt-2 py-3 px-5 rounded-full bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white text-xs sm:text-sm font-medium tracking-wide flex items-center justify-center gap-2 transition-all duration-300 shadow-sm min-h-[44px] cursor-pointer"
+                        className="group/btn w-full mt-2 py-3 px-5 rounded-full bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white text-xs sm:text-sm font-medium tracking-wide flex items-center justify-center gap-2 transition-all duration-300 shadow-sm min-h-[44px] cursor-pointer"
                       >
                         <span>{ui.quoteService}</span>
                         <ArrowRight className="w-4 h-4 ml-0.5 transition-transform duration-300 group-hover/btn:translate-x-1" />

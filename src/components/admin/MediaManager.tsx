@@ -115,7 +115,7 @@ export function MediaManager({
             type="file"
             accept={kind === "image" ? "image/*" : "video/*"}
             required
-            className="block w-full cursor-pointer rounded-xl border border-stone-300 bg-white px-3 py-2 text-sm file:mr-3 file:cursor-pointer file:rounded-lg file:border-0 file:bg-[#16352D] file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-white"
+            className="block w-full cursor-pointer rounded-xl border border-stone-300 bg-white px-3 py-2 text-sm file:mr-3 file:cursor-pointer file:rounded-lg file:border-0 file:bg-[#0a3566] file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-white"
           />
         </div>
 
@@ -128,7 +128,7 @@ export function MediaManager({
             onChange={(event) =>
               setKind(event.target.value === "video" ? "video" : "image")
             }
-            className="min-h-10 w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#16352D]"
+            className="min-h-10 w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#0a3566]"
           >
             <option value="image">Foto</option>
             <option value="video">Vídeo</option>
@@ -143,14 +143,14 @@ export function MediaManager({
             value={location}
             onChange={(event) => setLocation(event.target.value)}
             placeholder="Cartagena"
-            className="min-h-10 w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#16352D]"
+            className="min-h-10 w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#0a3566]"
           />
         </div>
 
         <button
           type="submit"
           disabled={uploading}
-          className="inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#16352D] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#B49A68] hover:text-[#16352D] disabled:cursor-wait disabled:opacity-70"
+          className="inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#0a3566] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#B49A68] hover:text-[#0a3566] disabled:cursor-wait disabled:opacity-70"
         >
           {uploading ? (
             <Loader2 className="h-4 w-4 animate-spin" />
@@ -209,7 +209,7 @@ export function MediaManager({
                     {item.kind === "image" ? "Foto" : "Vídeo"}
                   </span>
                   {isCover ? (
-                    <span className="absolute right-2 top-2 inline-flex items-center gap-1 rounded-full bg-[#B49A68] px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-[#16352D]">
+                    <span className="absolute right-2 top-2 inline-flex items-center gap-1 rounded-full bg-[#B49A68] px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-[#0a3566]">
                       <Star className="h-3 w-3" />
                       Portada
                     </span>
@@ -223,11 +223,11 @@ export function MediaManager({
                       name="location"
                       defaultValue={item.location}
                       placeholder="Lugar o título"
-                      className="min-h-9 w-full rounded-lg border border-stone-200 px-2.5 py-1.5 text-xs outline-none focus:border-[#16352D]"
+                      className="min-h-9 w-full rounded-lg border border-stone-200 px-2.5 py-1.5 text-xs outline-none focus:border-[#0a3566]"
                     />
                     <button
                       type="submit"
-                      className="shrink-0 cursor-pointer rounded-lg border border-stone-300 px-3 py-1.5 text-xs font-semibold text-stone-600 transition hover:border-[#16352D] hover:text-[#16352D]"
+                      className="shrink-0 cursor-pointer rounded-lg border border-stone-300 px-3 py-1.5 text-xs font-semibold text-stone-600 transition hover:border-[#0a3566] hover:text-[#0a3566]"
                     >
                       Guardar
                     </button>
@@ -240,7 +240,7 @@ export function MediaManager({
                         <input type="hidden" name="media_id" value={item.id} />
                         <button
                           type="submit"
-                          className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg bg-[#16352D]/5 px-3 py-1.5 text-xs font-semibold text-[#16352D] transition hover:bg-[#16352D] hover:text-white"
+                          className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg bg-[#0a3566]/5 px-3 py-1.5 text-xs font-semibold text-[#0a3566] transition hover:bg-[#0a3566] hover:text-white"
                         >
                           <Star className="h-3.5 w-3.5" />
                           Usar como portada

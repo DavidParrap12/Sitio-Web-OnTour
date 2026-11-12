@@ -336,8 +336,8 @@ export function Navbar() {
                     onClick={() => setActiveDropdown(null)}
                     className={`flex items-center gap-1 px-3 py-2 rounded-xl text-sm font-semibold transition-all min-h-[44px] ${
                       isActive
-                        ? "text-[#16352D] bg-[#16352D]/5 font-bold"
-                        : "text-stone-700 hover:text-[#16352D] hover:bg-stone-50"
+                        ? "text-[#0a3566] bg-[#0a3566]/5 font-bold"
+                        : "text-stone-700 hover:text-[#0a3566] hover:bg-stone-50"
                     }`}
                     aria-expanded={isOpen}
                   >
@@ -375,10 +375,10 @@ export function Navbar() {
                               className="group flex flex-col p-2.5 rounded-xl hover:bg-[#F7F5EF] transition-colors min-h-[44px]"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-xs font-bold text-stone-900 group-hover:text-[#16352D] transition-colors">
+                                <span className="text-xs font-bold text-stone-900 group-hover:text-[#0a3566] transition-colors">
                                   {item.name[langKey]}
                                 </span>
-                                <ArrowUpRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-[#16352D] transition-colors" />
+                                <ArrowUpRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-[#0a3566] transition-colors" />
                               </div>
                               <span className="text-[11px] text-stone-500 mt-0.5 line-clamp-1">
                                 {item.desc[langKey]}
@@ -439,7 +439,7 @@ export function Navbar() {
                         onClick={() => switchLocale(loc.code)}
                         className={`w-full flex items-center gap-2.5 px-3.5 py-2 text-xs transition-colors min-h-[44px] ${
                           locale === loc.code
-                            ? "text-[#16352D] font-bold bg-[#16352D]/5"
+                            ? "text-[#0a3566] font-bold bg-[#0a3566]/5"
                             : "text-stone-700 hover:bg-stone-50"
                         }`}
                       >
@@ -458,7 +458,7 @@ export function Navbar() {
                 trackRequestQuoteClick("navbar_desktop");
                 router.push("/contacto");
               }}
-              className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium tracking-wide text-xs sm:text-sm text-white bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] shadow-sm hover:shadow-md transition-all duration-300 min-h-[44px] cursor-pointer shrink-0"
+              className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium tracking-wide text-xs sm:text-sm text-white bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] shadow-sm hover:shadow-md transition-all duration-300 min-h-[44px] cursor-pointer shrink-0"
             >
               <span>
                 {langKey === "es" && "Cotizar un grupo"}
@@ -477,7 +477,7 @@ export function Navbar() {
                 trackRequestQuoteClick("navbar_mobile_header");
                 router.push("/contacto");
               }}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full font-medium tracking-wide text-xs text-white bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] shadow-sm min-h-[44px] touch-manipulation transition-colors shrink-0"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full font-medium tracking-wide text-xs text-white bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] shadow-sm min-h-[44px] touch-manipulation transition-colors shrink-0"
             >
               <span>
                 {langKey === "es" && "Cotizar"}
@@ -549,7 +549,7 @@ export function Navbar() {
                         <Link
                           href={pillar.href as AppHref}
                           onClick={() => setIsOpen(false)}
-                          className="flex-1 py-3.5 px-2 font-heading text-base font-bold text-stone-900 min-h-[48px] flex items-center hover:text-[#16352D]"
+                          className="flex-1 py-3.5 px-2 font-heading text-base font-bold text-stone-900 min-h-[48px] flex items-center hover:text-[#0a3566]"
                         >
                           {pillar.label[langKey]}
                         </Link>
@@ -640,7 +640,7 @@ export function Navbar() {
                         onClick={() => switchLocale(loc.code)}
                         className={`flex flex-col items-center justify-center py-2 px-1 rounded-xl text-xs font-medium min-h-[44px] touch-manipulation ${
                           locale === loc.code
-                            ? "bg-[#16352D] text-white font-bold"
+                            ? "bg-[#0a3566] text-white font-bold"
                             : "bg-stone-100 text-stone-700"
                         }`}
                       >
@@ -658,7 +658,7 @@ export function Navbar() {
                     trackRequestQuoteClick("navbar_mobile_drawer");
                     router.push("/contacto");
                   }}
-                  className="w-full py-3.5 px-6 rounded-full bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white font-medium tracking-wide text-sm shadow-md flex items-center justify-center gap-2 min-h-[48px] touch-manipulation active:scale-[0.99] transition-all"
+                  className="w-full py-3.5 px-6 rounded-full bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white font-medium tracking-wide text-sm shadow-md flex items-center justify-center gap-2 min-h-[48px] touch-manipulation active:scale-[0.99] transition-all"
                 >
                   <span>
                     {langKey === "es" && "Solicitar Cotización (SLA <24h)"}

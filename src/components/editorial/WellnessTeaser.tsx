@@ -70,6 +70,12 @@ const WELLNESS_CONTENT = {
 
 export function WellnessTeaser({ locale }: WellnessTeaserProps) {
   const content = WELLNESS_CONTENT[(locale as keyof typeof WELLNESS_CONTENT)] || WELLNESS_CONTENT.es;
+  const dental = {
+    es: { title: "Odontología y estética dental", description: "Conoce las opciones de atención y planifica tu viaje con una valoración personalizada.", cta: "Explorar odontología" },
+    en: { title: "Dentistry & smile design", description: "Explore dental care options and plan your trip with a personalised assessment.", cta: "Explore dentistry" },
+    fr: { title: "Dentisterie et esthétique dentaire", description: "Découvrez les soins dentaires et préparez votre voyage avec une évaluation personnalisée.", cta: "Découvrir les soins dentaires" },
+    de: { title: "Zahnmedizin & Zahnästhetik", description: "Entdecken Sie zahnmedizinische Behandlungen und planen Sie Ihre Reise mit einer individuellen Beratung.", cta: "Zahnmedizin entdecken" },
+  }[locale] || { title: "Dentistry & smile design", description: "Explore dental care options with a personalised assessment.", cta: "Explore dentistry" };
 
   return (
     <section className="py-20 md:py-28 bg-[#FAF8F4] border-t border-stone-200/60 relative overflow-hidden">
@@ -105,7 +111,7 @@ export function WellnessTeaser({ locale }: WellnessTeaserProps) {
               <div>
                 <Link
                   href="/bienestar"
-                  className="inline-flex items-center gap-2 bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 shadow-md min-h-[44px]"
+                  className="inline-flex items-center gap-2 bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 shadow-md min-h-[44px]"
                 >
                   <span>{content.cta}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -133,6 +139,16 @@ export function WellnessTeaser({ locale }: WellnessTeaserProps) {
               </div>
             </div>
           </div>
+          <Link href={{ pathname: "/bienestar", hash: "odontologia" }} className="group mt-6 flex flex-col overflow-hidden rounded-2xl bg-[#0a3566] text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0a3566] sm:flex-row sm:items-center">
+            <div className="relative h-48 w-full shrink-0 sm:h-44 sm:w-52">
+              <Image src="/image/bienestar/tratamientos/odontologia.jpeg" alt={dental.title} fill sizes="(max-width: 639px) 100vw, 208px" className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-105" />
+            </div>
+            <div className="flex-1 p-6 md:px-8">
+              <h3 className="font-heading text-2xl md:text-3xl">{dental.title}</h3>
+              <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/75">{dental.description}</p>
+              <span className="mt-4 inline-flex items-center gap-3 text-sm font-semibold text-[#D8C398]">{dental.cta}<ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-1" /></span>
+            </div>
+          </Link>
         </SectionReveal>
       </div>
     </section>

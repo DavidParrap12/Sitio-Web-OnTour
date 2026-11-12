@@ -131,7 +131,7 @@ export function CircuitForm({
               disabled={mode === "edit"}
               readOnly={mode === "edit"}
               placeholder="tour-colombia-caribe"
-              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 font-mono text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15 disabled:bg-stone-100 disabled:text-stone-500"
+              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 font-mono text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15 disabled:bg-stone-100 disabled:text-stone-500"
             />
             <p className="mt-1 text-[11px] text-stone-400">
               Se usa en la dirección: /circuitos/…
@@ -149,7 +149,7 @@ export function CircuitForm({
               max={365}
               defaultValue={values.days}
               required
-              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
             />
           </div>
 
@@ -164,7 +164,7 @@ export function CircuitForm({
               max={364}
               defaultValue={values.nights}
               required
-              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
             />
           </div>
 
@@ -175,7 +175,7 @@ export function CircuitForm({
             <select
               name="region"
               defaultValue={values.region}
-              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
             >
               <option value="andes">Andes</option>
               <option value="cafetero">Eje Cafetero</option>
@@ -194,7 +194,7 @@ export function CircuitForm({
             <select
               name="color_theme"
               defaultValue={values.colorTheme}
-              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
             >
               <option value="cultura">Cultura</option>
               <option value="naturaleza">Naturaleza</option>
@@ -212,7 +212,7 @@ export function CircuitForm({
               name="sort_order"
               type="number"
               defaultValue={values.sortOrder}
-              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
             />
             <p className="mt-1 text-[11px] text-stone-400">
               Menor número aparece primero.
@@ -228,7 +228,7 @@ export function CircuitForm({
                 name="image"
                 defaultValue={values.image}
                 placeholder="/image/… o https://…"
-                className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+                className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
               />
               {values.image ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -253,7 +253,7 @@ export function CircuitForm({
               name="map_embed_url"
               defaultValue={values.mapEmbedUrl}
               placeholder="https://www.google.com/maps/d/u/0/embed?mid=…"
-              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
             />
           </div>
 
@@ -265,7 +265,7 @@ export function CircuitForm({
               name="brochure_url"
               defaultValue={values.brochureUrl}
               placeholder="/programas-circuitos/…docx"
-              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
             />
           </div>
 
@@ -277,7 +277,7 @@ export function CircuitForm({
               name="brochure_pdf_url"
               defaultValue={values.brochurePdfUrl}
               placeholder="/programas-circuitos/…pdf"
-              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+              className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
             />
           </div>
 
@@ -286,7 +286,7 @@ export function CircuitForm({
               type="checkbox"
               name="published"
               defaultChecked={values.published}
-              className="mt-0.5 h-4 w-4 accent-[#16352D]"
+              className="mt-0.5 h-4 w-4 accent-[#0a3566]"
             />
             <span>
               <span className="block text-sm font-semibold text-stone-800">
@@ -328,8 +328,8 @@ export function CircuitForm({
                 onClick={() => setLocale(item.id)}
                 className={`inline-flex cursor-pointer items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
                   active
-                    ? "border-[#16352D] bg-[#16352D] text-white"
-                    : "border-stone-300 bg-white text-stone-600 hover:border-[#16352D]/50"
+                    ? "border-[#0a3566] bg-[#0a3566] text-white"
+                    : "border-stone-300 bg-white text-stone-600 hover:border-[#0a3566]/50"
                 }`}
               >
                 <span
@@ -357,7 +357,7 @@ export function CircuitForm({
                     name={`name_${item.id}`}
                     defaultValue={translation.name}
                     required={item.id === "es"}
-                    className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+                    className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
                   />
                 </div>
                 <div>
@@ -368,7 +368,7 @@ export function CircuitForm({
                     name={`duration_${item.id}`}
                     defaultValue={translation.duration}
                     placeholder="8 horas / 7 días"
-                    className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+                    className="min-h-11 w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
                   />
                   <p className="mt-1 text-[11px] text-stone-400">
                     La tarifa se calcula desde la sección Tarifas.
@@ -384,7 +384,7 @@ export function CircuitForm({
                   name={`description_${item.id}`}
                   defaultValue={translation.description}
                   rows={4}
-                  className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
                 />
               </div>
 
@@ -398,7 +398,7 @@ export function CircuitForm({
                     defaultValue={translation.highlights.join("\n")}
                     rows={5}
                     placeholder={"Centro histórico de Cartagena\nIslas del Rosario"}
-                    className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+                    className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
                   />
                 </div>
                 <div>
@@ -410,7 +410,7 @@ export function CircuitForm({
                     defaultValue={translation.itinerary.join("\n")}
                     rows={5}
                     placeholder={"Día 1 — Llegada y city tour\nDía 2 — Islas del Rosario"}
-                    className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+                    className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
                   />
                 </div>
               </div>
@@ -422,7 +422,7 @@ export function CircuitForm({
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
           href="/admin"
-          className="inline-flex min-h-11 items-center gap-2 rounded-full border border-stone-300 px-5 py-2.5 text-sm font-medium text-stone-700 transition hover:border-[#16352D] hover:text-[#16352D]"
+          className="inline-flex min-h-11 items-center gap-2 rounded-full border border-stone-300 px-5 py-2.5 text-sm font-medium text-stone-700 transition hover:border-[#0a3566] hover:text-[#0a3566]"
         >
           <ArrowLeft className="h-4 w-4" />
           Volver
@@ -430,7 +430,7 @@ export function CircuitForm({
         <button
           type="submit"
           disabled={pending}
-          className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full bg-[#16352D] px-6 py-2.5 text-sm font-bold text-white transition hover:bg-[#B49A68] hover:text-[#16352D] disabled:cursor-wait disabled:opacity-70"
+          className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full bg-[#0a3566] px-6 py-2.5 text-sm font-bold text-white transition hover:bg-[#B49A68] hover:text-[#0a3566] disabled:cursor-wait disabled:opacity-70"
         >
           {pending ? (
             <Loader2 className="h-4 w-4 animate-spin" />

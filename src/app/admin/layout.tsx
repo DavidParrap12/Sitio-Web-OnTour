@@ -1,6 +1,6 @@
 import {headers} from "next/headers";
-import {DM_Sans} from "next/font/google";
-const font=DM_Sans({subsets:["latin"],variable:"--font-dm-sans",display:"swap"});
+import {Libre_Baskerville} from "next/font/google";
+const font=Libre_Baskerville({subsets:["latin"],variable:"--font-libre-baskerville",weight:["400","700"],style:["normal","italic"],display:"swap"});
 import type { Metadata } from "next";
 import "../globals.css";
 

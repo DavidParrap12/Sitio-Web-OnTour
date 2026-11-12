@@ -1124,7 +1124,7 @@ export function RequestQuoteModal({
         className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-stone-200/90 overflow-hidden z-10 flex flex-col my-auto max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-2.5rem)]"
       >
         {/* Header */}
-        <div className="relative px-6 py-4.5 bg-[#16352D] text-white flex items-center justify-between shrink-0 border-b border-white/10">
+        <div className="relative px-6 py-4.5 bg-[#0a3566] text-white flex items-center justify-between shrink-0 border-b border-white/10">
           <div className="flex items-center gap-3">
             {step > 1 && !isSubmitted && (
               <button
@@ -1166,7 +1166,7 @@ export function RequestQuoteModal({
         {!isSubmitted && (
           <div className="w-full bg-stone-100 h-1 shrink-0 overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-[#16352D] via-[#B49A68] to-[#16352D] transition-all duration-300 ease-out"
+              className="h-full bg-gradient-to-r from-[#0a3566] via-[#B49A68] to-[#0a3566] transition-all duration-300 ease-out"
               style={{ width: `${(step / 6) * 100}%` }}
             />
           </div>
@@ -1181,7 +1181,7 @@ export function RequestQuoteModal({
                 <CheckCircle2 className="w-9 h-9" />
               </div>
 
-              <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl font-medium text-[#16352D] mb-3 leading-tight">
+              <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl font-medium text-[#0a3566] mb-3 leading-tight">
                 {c.success.headline}
               </h3>
               <p className="text-sm sm:text-base uppercase tracking-wider text-editorial-accent font-bold mb-4">
@@ -1241,7 +1241,7 @@ export function RequestQuoteModal({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#16352D] hover:bg-[#16352D]/90 text-white font-semibold text-sm sm:text-base transition-all shadow-sm min-h-[48px] cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#0a3566] hover:bg-[#0a3566]/90 text-white font-semibold text-sm sm:text-base transition-all shadow-sm min-h-[48px] cursor-pointer"
                 >
                   {c.success.closeBtn}
                 </button>
@@ -1278,18 +1278,18 @@ export function RequestQuoteModal({
                           onClick={() => toggleDestination(dest.id)}
                           className={`p-4.5 rounded-2xl border text-left transition-all relative flex flex-col justify-between cursor-pointer min-h-[105px] ${
                             isSelected
-                              ? "border-[#16352D] bg-[#F7F5EF] ring-2 ring-[#16352D]/15 shadow-sm"
+                              ? "border-[#0a3566] bg-[#F7F5EF] ring-2 ring-[#0a3566]/15 shadow-sm"
                               : "border-stone-200 bg-white hover:border-editorial-accent/60 hover:bg-stone-50/70"
                           }`}
                         >
                           <div>
                             <div className="flex items-center justify-between mb-2">
-                              <div className="w-8 h-8 rounded-lg bg-[#16352D]/5 flex items-center justify-center">
+                              <div className="w-8 h-8 rounded-lg bg-[#0a3566]/5 flex items-center justify-center">
                                 {getDestinationIcon(dest.id)}
                               </div>
                               <div
                                 className={`w-5 h-5 rounded-full border flex items-center justify-center transition-colors ${
-                                  isSelected ? "bg-[#16352D] border-[#16352D] text-white" : "border-stone-300 bg-white"
+                                  isSelected ? "bg-[#0a3566] border-[#0a3566] text-white" : "border-stone-300 bg-white"
                                 }`}
                               >
                                 {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
@@ -1312,7 +1312,7 @@ export function RequestQuoteModal({
                     <Link
                       href="/circuitos"
                       onClick={onClose}
-                      className="mt-1.5 inline-flex items-center gap-1 font-semibold text-[#16352D] hover:text-[#B49A68] transition-colors"
+                      className="mt-1.5 inline-flex items-center gap-1 font-semibold text-[#0a3566] hover:text-[#B49A68] transition-colors"
                     >
                       {x.priceLink}
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -1323,7 +1323,7 @@ export function RequestQuoteModal({
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="inline-flex items-center gap-2 bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-9 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 shadow-md min-h-[48px] cursor-pointer"
+                      className="inline-flex items-center gap-2 bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white px-9 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 shadow-md min-h-[48px] cursor-pointer"
                     >
                       <span>{c.continue}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -1362,7 +1362,7 @@ export function RequestQuoteModal({
                           onClick={() => setSelectedTimeframe(tf.id)}
                           className={`p-4.5 rounded-2xl border text-left transition-all cursor-pointer ${
                             isSelected
-                              ? "border-[#16352D] bg-[#F7F5EF] ring-2 ring-[#16352D]/15 font-semibold"
+                              ? "border-[#0a3566] bg-[#F7F5EF] ring-2 ring-[#0a3566]/15 font-semibold"
                               : "border-stone-200 bg-white hover:border-editorial-accent/60 hover:bg-stone-50"
                           }`}
                         >
@@ -1370,7 +1370,7 @@ export function RequestQuoteModal({
                             <h3 className="font-heading font-bold text-stone-900 text-sm sm:text-base">
                               {tf.label}
                             </h3>
-                            {isSelected && <Check className="w-4 h-4 text-[#16352D] stroke-[3]" />}
+                            {isSelected && <Check className="w-4 h-4 text-[#0a3566] stroke-[3]" />}
                           </div>
                           <span className="caption text-stone-500 text-xs sm:text-sm block mt-1">
                             {tf.sub}
@@ -1395,7 +1395,7 @@ export function RequestQuoteModal({
                             onClick={() => setSelectedMonth(isMonthSelected ? "" : m)}
                             className={`py-2.5 px-3.5 rounded-xl border text-center text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                               isMonthSelected
-                                ? "bg-[#16352D] text-white border-[#16352D]"
+                                ? "bg-[#0a3566] text-white border-[#0a3566]"
                                 : "bg-white text-stone-700 border-stone-200 hover:border-editorial-accent hover:bg-stone-50"
                             }`}
                           >
@@ -1410,7 +1410,7 @@ export function RequestQuoteModal({
                     <button
                       type="button"
                       onClick={() => setStep(3)}
-                      className="inline-flex items-center gap-2 bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-9 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 shadow-md min-h-[48px] cursor-pointer"
+                      className="inline-flex items-center gap-2 bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white px-9 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 shadow-md min-h-[48px] cursor-pointer"
                     >
                       <span>{c.continue}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -1439,7 +1439,7 @@ export function RequestQuoteModal({
                   </div>
 
                   {/* Circuit Selector Card */}
-                  <div className="p-4 rounded-2xl bg-[#F7F5EF] border border-[#16352D]/15">
+                  <div className="p-4 rounded-2xl bg-[#F7F5EF] border border-[#0a3566]/15">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div>
                         <span className="text-[11px] uppercase tracking-wider font-bold text-stone-500 block">
@@ -1459,7 +1459,7 @@ export function RequestQuoteModal({
                         <select
                           value={selectedCircuitId}
                           onChange={(e) => setSelectedCircuitId(e.target.value)}
-                          className="w-full text-xs sm:text-sm font-semibold rounded-xl border border-stone-300 bg-white px-3 py-2.5 text-stone-800 focus:outline-none focus:ring-2 focus:ring-[#16352D]/30 cursor-pointer shadow-sm"
+                          className="w-full text-xs sm:text-sm font-semibold rounded-xl border border-stone-300 bg-white px-3 py-2.5 text-stone-800 focus:outline-none focus:ring-2 focus:ring-[#0a3566]/30 cursor-pointer shadow-sm"
                         >
                           {AVAILABLE_CIRCUITS_PRICING.map((circ) => (
                             <option key={circ.id} value={circ.id}>
@@ -1482,7 +1482,7 @@ export function RequestQuoteModal({
                         onClick={() => setHotelCategory("turista_sup_4")}
                         className={`rounded-2xl border p-4 text-left transition-all cursor-pointer ${
                           hotelCategory === "turista_sup_4"
-                            ? "border-[#16352D] bg-[#F7F5EF] ring-2 ring-[#16352D]/15 font-semibold"
+                            ? "border-[#0a3566] bg-[#F7F5EF] ring-2 ring-[#0a3566]/15 font-semibold"
                             : "border-stone-200 bg-white hover:border-editorial-accent/60"
                         }`}
                       >
@@ -1491,7 +1491,7 @@ export function RequestQuoteModal({
                             {c.step3.categoryTuristaSup4}
                           </span>
                           {hotelCategory === "turista_sup_4" && (
-                            <Check className="w-4 h-4 text-[#16352D] stroke-[3]" />
+                            <Check className="w-4 h-4 text-[#0a3566] stroke-[3]" />
                           )}
                         </div>
                         <span className="block text-xs text-stone-500 mt-1 leading-snug">
@@ -1507,7 +1507,7 @@ export function RequestQuoteModal({
                         onClick={() => setHotelCategory("turista_3")}
                         className={`rounded-2xl border p-4 text-left transition-all cursor-pointer ${
                           hotelCategory === "turista_3"
-                            ? "border-[#16352D] bg-[#F7F5EF] ring-2 ring-[#16352D]/15 font-semibold"
+                            ? "border-[#0a3566] bg-[#F7F5EF] ring-2 ring-[#0a3566]/15 font-semibold"
                             : "border-stone-200 bg-white hover:border-editorial-accent/60"
                         }`}
                       >
@@ -1516,7 +1516,7 @@ export function RequestQuoteModal({
                             {c.step3.categoryTurista3}
                           </span>
                           {hotelCategory === "turista_3" && (
-                            <Check className="w-4 h-4 text-[#16352D] stroke-[3]" />
+                            <Check className="w-4 h-4 text-[#0a3566] stroke-[3]" />
                           )}
                         </div>
                         <span className="block text-xs text-stone-500 mt-1 leading-snug">
@@ -1542,7 +1542,7 @@ export function RequestQuoteModal({
                           onClick={() => handleSelectTier(pt.id as PartyTierKey, pt.count)}
                           className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
                             isSelected
-                              ? "border-[#16352D] bg-[#F7F5EF] ring-2 ring-[#16352D]/15 font-semibold shadow-sm"
+                              ? "border-[#0a3566] bg-[#F7F5EF] ring-2 ring-[#0a3566]/15 font-semibold shadow-sm"
                               : "border-stone-200 bg-white hover:border-editorial-accent/60 hover:bg-stone-50"
                           }`}
                         >
@@ -1556,7 +1556,7 @@ export function RequestQuoteModal({
                               </span>
                             </div>
                             {isSelected && (
-                              <div className="w-5 h-5 rounded-full bg-[#16352D] text-white flex items-center justify-center shrink-0">
+                              <div className="w-5 h-5 rounded-full bg-[#0a3566] text-white flex items-center justify-center shrink-0">
                                 <Check className="w-3 h-3 stroke-[3]" />
                               </div>
                             )}
@@ -1568,7 +1568,7 @@ export function RequestQuoteModal({
                             </span>
                             <div>
                               {typeof tierPrice === "number" ? (
-                                <span className="font-heading font-bold text-base sm:text-lg text-[#16352D]">
+                                <span className="font-heading font-bold text-base sm:text-lg text-[#0a3566]">
                                   ${tierPrice.toLocaleString("en-US")}{" "}
                                   <span className="text-xs font-normal text-stone-500">
                                     {c.step3.perPerson}
@@ -1622,7 +1622,7 @@ export function RequestQuoteModal({
 
                   {/* Total calculation banner */}
                   {typeof currentPricePerPax === "number" && (
-                    <div className="rounded-2xl bg-[#16352D] text-white p-4.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
+                    <div className="rounded-2xl bg-[#0a3566] text-white p-4.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
                       <div>
                         <span className="text-xs text-[#E8DFD1] block font-medium uppercase tracking-wider">
                           {c.step3.netRateBadge} ({hotelCategory === "turista_sup_4" ? "4*" : "3*"})
@@ -1650,7 +1650,7 @@ export function RequestQuoteModal({
                     <button
                       type="button"
                       onClick={() => setStep(4)}
-                      className="inline-flex items-center gap-2 bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-9 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 shadow-md min-h-[48px] cursor-pointer"
+                      className="inline-flex items-center gap-2 bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white px-9 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 shadow-md min-h-[48px] cursor-pointer"
                     >
                       <span>{c.continue}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -1688,18 +1688,18 @@ export function RequestQuoteModal({
                           onClick={() => toggleInterest(item.id)}
                           className={`p-4.5 rounded-2xl border text-left transition-all relative flex flex-col justify-between cursor-pointer min-h-[100px] ${
                             isSelected
-                              ? "border-[#16352D] bg-[#F7F5EF] ring-2 ring-[#16352D]/15 shadow-sm"
+                              ? "border-[#0a3566] bg-[#F7F5EF] ring-2 ring-[#0a3566]/15 shadow-sm"
                               : "border-stone-200 bg-white hover:border-editorial-accent/60 hover:bg-stone-50"
                           }`}
                         >
                           <div>
                             <div className="flex items-center justify-between mb-2">
-                              <div className="w-8 h-8 rounded-lg bg-[#16352D]/5 flex items-center justify-center">
+                              <div className="w-8 h-8 rounded-lg bg-[#0a3566]/5 flex items-center justify-center">
                                 {getInterestIcon(item.id)}
                               </div>
                               <div
                                 className={`w-5 h-5 rounded-full border flex items-center justify-center transition-colors ${
-                                  isSelected ? "bg-[#16352D] border-[#16352D] text-white" : "border-stone-300 bg-white"
+                                  isSelected ? "bg-[#0a3566] border-[#0a3566] text-white" : "border-stone-300 bg-white"
                                 }`}
                               >
                                 {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
@@ -1721,7 +1721,7 @@ export function RequestQuoteModal({
                     <button
                       type="button"
                       onClick={() => setStep(5)}
-                      className="inline-flex items-center gap-2 bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-9 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 shadow-md min-h-[48px] cursor-pointer"
+                      className="inline-flex items-center gap-2 bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white px-9 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 shadow-md min-h-[48px] cursor-pointer"
                     >
                       <span>{c.continue}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -1755,7 +1755,7 @@ export function RequestQuoteModal({
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder={c.step5.placeholder}
-                      className="w-full p-4.5 text-sm sm:text-base rounded-2xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#16352D] leading-relaxed resize-none font-sans"
+                      className="w-full p-4.5 text-sm sm:text-base rounded-2xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#0a3566] leading-relaxed resize-none font-sans"
                     />
                   </div>
 
@@ -1770,7 +1770,7 @@ export function RequestQuoteModal({
                           key={tag}
                           type="button"
                           onClick={() => addQuickTag(tag)}
-                          className="px-3.5 py-2 rounded-full bg-stone-100 hover:bg-[#16352D] hover:text-white text-stone-700 text-xs sm:text-sm font-medium transition-colors cursor-pointer"
+                          className="px-3.5 py-2 rounded-full bg-stone-100 hover:bg-[#0a3566] hover:text-white text-stone-700 text-xs sm:text-sm font-medium transition-colors cursor-pointer"
                         >
                           + {tag}
                         </button>
@@ -1782,7 +1782,7 @@ export function RequestQuoteModal({
                     <button
                       type="button"
                       onClick={() => setStep(6)}
-                      className="inline-flex items-center gap-2 bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-9 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 shadow-md min-h-[48px] cursor-pointer"
+                      className="inline-flex items-center gap-2 bg-[#0a3566] hover:bg-[#B49A68] hover:text-[#0a3566] text-white px-9 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 shadow-md min-h-[48px] cursor-pointer"
                     >
                       <span>{c.continue}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -1810,7 +1810,7 @@ export function RequestQuoteModal({
                     </p>
                     {isB2B && (
                       <div className="mt-4 rounded-2xl border border-[#B49A68]/40 bg-[#faf6ed] px-4 py-3.5">
-                        <p className="font-heading font-bold text-[#16352D] text-sm">
+                        <p className="font-heading font-bold text-[#0a3566] text-sm">
                           {x.b2bTitle}
                         </p>
                         <p className="text-xs sm:text-sm text-stone-600 mt-1 leading-relaxed">
@@ -1859,7 +1859,7 @@ export function RequestQuoteModal({
                           value={agency}
                           onChange={(e) => setAgency(e.target.value)}
                           placeholder={x.agencyPlaceholder}
-                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#16352D] min-h-[48px]"
+                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#0a3566] min-h-[48px]"
                         />
                         <p className="text-xs text-stone-400 mt-1.5">{x.agencyRequired}</p>
                       </div>
@@ -1876,7 +1876,7 @@ export function RequestQuoteModal({
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder={c.step6.namePlaceholder}
-                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#16352D] min-h-[48px]"
+                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#0a3566] min-h-[48px]"
                         />
                       </div>
 
@@ -1890,7 +1890,7 @@ export function RequestQuoteModal({
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder={c.step6.emailPlaceholder}
-                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#16352D] min-h-[48px]"
+                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#0a3566] min-h-[48px]"
                         />
                       </div>
                     </div>
@@ -1906,7 +1906,7 @@ export function RequestQuoteModal({
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           placeholder={c.step6.phonePlaceholder}
-                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#16352D] min-h-[48px]"
+                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#0a3566] min-h-[48px]"
                         />
                       </div>
 
@@ -1919,7 +1919,7 @@ export function RequestQuoteModal({
                           value={country}
                           onChange={(e) => setCountry(e.target.value)}
                           placeholder={c.step6.countryPlaceholder}
-                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#16352D] min-h-[48px]"
+                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#0a3566] min-h-[48px]"
                         />
                       </div>
                     </div>
@@ -1929,7 +1929,7 @@ export function RequestQuoteModal({
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="flex-1 py-4 px-8 rounded-full bg-[#16352D] text-white font-bold text-sm sm:text-base hover:bg-[#B49A68] hover:text-[#16352D] shadow-md flex items-center justify-center gap-2 transition-all duration-300 min-h-[50px] disabled:opacity-70 cursor-pointer tracking-wide"
+                        className="flex-1 py-4 px-8 rounded-full bg-[#0a3566] text-white font-bold text-sm sm:text-base hover:bg-[#B49A68] hover:text-[#0a3566] shadow-md flex items-center justify-center gap-2 transition-all duration-300 min-h-[50px] disabled:opacity-70 cursor-pointer tracking-wide"
                       >
                         {isSubmitting ? (
                           <>

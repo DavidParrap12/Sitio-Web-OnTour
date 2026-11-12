@@ -67,7 +67,7 @@ export function LoginForm({ notice }: { notice?: string }) {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="equipo@agenciaontour.com"
-            className="min-h-12 w-full rounded-xl border border-stone-300 bg-white pl-11 pr-4 py-3 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+            className="min-h-12 w-full rounded-xl border border-stone-300 bg-white pl-11 pr-4 py-3 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
           />
         </div>
       </div>
@@ -89,7 +89,7 @@ export function LoginForm({ notice }: { notice?: string }) {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             placeholder="••••••••"
-            className="min-h-12 w-full rounded-xl border border-stone-300 bg-white pl-11 pr-4 py-3 text-sm outline-none transition focus:border-[#16352D] focus:ring-2 focus:ring-[#16352D]/15"
+            className="min-h-12 w-full rounded-xl border border-stone-300 bg-white pl-11 pr-4 py-3 text-sm outline-none transition focus:border-[#0a3566] focus:ring-2 focus:ring-[#0a3566]/15"
           />
         </div>
       </div>
@@ -106,7 +106,7 @@ export function LoginForm({ notice }: { notice?: string }) {
       <button
         type="submit"
         disabled={loading}
-        className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#16352D] px-6 py-3 text-sm font-bold tracking-wide text-white transition hover:bg-[#B49A68] hover:text-[#16352D] disabled:cursor-wait disabled:opacity-70"
+        className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#0a3566] px-6 py-3 text-sm font-bold tracking-wide text-white transition hover:bg-[#B49A68] hover:text-[#0a3566] disabled:cursor-wait disabled:opacity-70"
       >
         {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
         {loading ? "Entrando..." : "Entrar al panel"}

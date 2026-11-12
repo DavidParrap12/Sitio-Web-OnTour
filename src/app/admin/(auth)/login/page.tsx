@@ -11,8 +11,8 @@ function SetupNotice() {
   return (
     <div className="mx-auto w-full max-w-2xl rounded-3xl border border-stone-200 bg-white p-7 shadow-sm sm:p-10">
       <div className="mb-6 flex items-center gap-3">
-        <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#16352D]/5">
-          <Database className="h-5 w-5 text-[#16352D]" />
+        <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0a3566]/5">
+          <Database className="h-5 w-5 text-[#0a3566]" />
         </span>
         <div>
           <h1 className="font-heading text-xl font-semibold text-stone-900">
@@ -40,7 +40,7 @@ function SetupNotice() {
 
       <Link
         href="/"
-        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#16352D] hover:text-[#B49A68]"
+        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0a3566] hover:text-[#B49A68]"
       >
         <ArrowLeft className="h-4 w-4" />
         Volver a la web
@@ -78,7 +78,7 @@ export default async function AdminLoginPage({
     <main className="flex min-h-screen items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
-          <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#B49A68]/40 bg-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#16352D]">
+          <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#B49A68]/40 bg-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#0a3566]">
             <KeyRound className="h-3.5 w-3.5 text-[#B49A68]" />
             OnTour CMS
           </span>
@@ -102,7 +102,7 @@ export default async function AdminLoginPage({
 
         <Link
           href="/"
-          className="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-stone-500 hover:text-[#16352D]"
+          className="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-stone-500 hover:text-[#0a3566]"
         >
           <ArrowLeft className="h-4 w-4" />
           Volver a la web pública

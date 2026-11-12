@@ -15,7 +15,7 @@ export function ImportButton() {
         <button
           type="submit"
           disabled={pending}
-          className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full bg-[#16352D] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#B49A68] hover:text-[#16352D] disabled:cursor-wait disabled:opacity-70"
+          className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full bg-[#0a3566] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#B49A68] hover:text-[#0a3566] disabled:cursor-wait disabled:opacity-70"
         >
           {pending ? (
             <Loader2 className="h-4 w-4 animate-spin" />

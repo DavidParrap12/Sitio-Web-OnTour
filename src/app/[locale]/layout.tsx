@@ -1,6 +1,6 @@
 import {headers} from "next/headers";
 import type { Metadata } from "next";
-import { DM_Sans, Cormorant_Garamond } from "next/font/google";
+import { Archivo_Black, Libre_Baskerville } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -14,19 +14,18 @@ import { WhatsappButton } from "@/components/WhatsappButton";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import "../globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const archivoBlack = Archivo_Black({
+  variable: "--font-archivo-black",
   subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
-
-
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const libreBaskerville = Libre_Baskerville({
+  variable: "--font-libre-baskerville",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -102,7 +101,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${dmSans.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${archivoBlack.variable} ${libreBaskerville.variable} h-full antialiased`}
     >
       <body className="font-sans min-h-full flex flex-col bg-background text-foreground">
 

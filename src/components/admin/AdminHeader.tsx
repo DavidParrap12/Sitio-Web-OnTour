@@ -8,7 +8,7 @@ export function AdminHeader({ email }: { email: string }) {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6">
         <div className="flex items-center gap-4">
           <Link href="/admin" className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#16352D] text-xs font-black tracking-tight text-[#D8C49D]">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0a3566] text-xs font-black tracking-tight text-[#D8C49D]">
               OT
             </span>
             <span className="font-heading text-lg font-semibold text-stone-900">
@@ -26,7 +26,7 @@ export function AdminHeader({ email }: { email: string }) {
           <Link href="/admin/security" className="text-sm font-semibold underline">Seguridad</Link>
           <Link
             href="/admin/circuits/new"
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[#16352D] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#B49A68] hover:text-[#16352D]"
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[#0a3566] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#B49A68] hover:text-[#0a3566]"
           >
             <Plus className="h-4 w-4" />
             Nuevo producto
@@ -34,7 +34,7 @@ export function AdminHeader({ email }: { email: string }) {
           <Link
             href="/es/circuitos"
             target="_blank"
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 transition hover:border-[#16352D] hover:text-[#16352D]"
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 transition hover:border-[#0a3566] hover:text-[#0a3566]"
           >
             <ExternalLink className="h-4 w-4" />
             <span className="hidden sm:inline">Ver web</span>

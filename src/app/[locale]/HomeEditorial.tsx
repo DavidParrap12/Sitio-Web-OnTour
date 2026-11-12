@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 
 import { SectionReveal } from "@/components/editorial/SectionReveal";
 import { HeroEditorial } from "@/components/editorial/HeroEditorial";
-import { EditorialCarousel, type CarouselItem } from "@/components/editorial/EditorialCarousel";
+import { EditorialCardGrid, type CarouselItem } from "@/components/editorial/EditorialCarousel";
 import { EditorialParallax } from "@/components/editorial/EditorialParallax";
 import { MagneticButton } from "@/components/editorial/MagneticButton";
 import { type LogoItem } from "@/components/editorial/MarqueeLogos";
@@ -128,7 +128,7 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
       {/* 2. Cinta de Métricas & Confianza (4 Métricas Principales + Sellos Institucionales) */}
       <section
         aria-label="Trust indicators — OnTour DMC credentials"
-        className="bg-[#16352D] text-white py-5 px-4 md:px-8 border-y border-white/10"
+        className="bg-[#0a3566] text-white py-5 px-4 md:px-8 border-y border-white/10"
       >
         <div className="container mx-auto">
           {/* 4 Key Metrics */}
@@ -176,25 +176,25 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
           </div>
 
           {/* Institutional Seals Row */}
-          <div className="border-t border-white/10 pt-3.5 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-            <span className="text-[11px] uppercase tracking-wider text-white/40 font-medium">
+          <div className="border-t border-white/15 mt-2 pt-7 pb-4 flex flex-col items-center justify-center gap-6 md:flex-row md:gap-14">
+            <span className="text-lg font-heading text-white/90 md:text-2xl">
               {locale === "es" ? "Avales & Coberturas" : locale === "de" ? "Zertifizierungen & Partner" : locale === "fr" ? "Agrément & Partenaires" : "Accreditations & Partners"}
             </span>
-            <div className="flex items-center gap-6 sm:gap-8">
+            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14">
               {TRUST_LOGOS.map((logo) => (
                 <div
                   key={logo.alt}
-                  className="relative h-6 shrink-0 opacity-80 hover:opacity-100 transition-opacity"
+                  className="relative h-20 shrink-0 rounded-sm bg-white p-3"
                   style={{
-                    width: logo.width ? Math.round(logo.width * 0.42) : 55,
-                    ...(logo.bgColor ? { backgroundColor: logo.bgColor, padding: "2px 5px", borderRadius: "3px" } : {}),
+                    width: logo.width ? logo.width + 24 : 144,
+                    ...(logo.bgColor ? { backgroundColor: logo.bgColor } : {}),
                   }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    style={{ objectFit: "contain", height: "100%", width: "100%", filter: "brightness(0) invert(1)" }}
+                    style={{ objectFit: "contain", height: "100%", width: "100%" }}
                   />
                 </div>
               ))}
@@ -206,7 +206,7 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
       <TravelTradeB2B locale={locale} />
 
       {/* 3. Circuitos Destacados (3 experiencias con precio y duración) */}
-      <section id="circuitos-destacados" className="relative -mt-2 pt-14 pb-20 md:pb-28 bg-[#faf8f4] editorial-section--bleed">
+      <section id="circuitos-destacados" className="relative -mt-2 pt-4 pb-16 md:pb-20 bg-[#faf8f4] editorial-section--bleed">
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <SectionReveal>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-4">
@@ -223,18 +223,7 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
               </Link>
             </div>
 
-            <EditorialCarousel
-              items={carouselItems}
-              config={{
-                aspectRatio: "16:9",
-                contentPosition: "bottom",
-                showProgress: false,
-                autoplay: false,
-                variant: "editorial",
-              }}
-              intervalMs={4000}
-              ariaLabel={locale === "es" ? "Circuitos destacados" : locale === "de" ? "Ausgewählte Reisen" : locale === "fr" ? "Voyages sélectionnés" : "Signature journeys"}
-            />
+            <EditorialCardGrid items={carouselItems} />
           </SectionReveal>
         </div>
       </section>
