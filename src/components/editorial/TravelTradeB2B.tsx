@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import { SectionReveal } from "./SectionReveal";
-import { RequestQuoteModal } from "@/components/RequestQuoteModal";
 
 interface TravelTradeB2BProps {
   locale: string;
@@ -46,7 +44,6 @@ const B2B_CONTENT = {
 };
 
 export function TravelTradeB2B({ locale }: TravelTradeB2BProps) {
-  const [modalOpen, setModalOpen] = useState(false);
   const content = B2B_CONTENT[(locale as keyof typeof B2B_CONTENT)] || B2B_CONTENT.es;
 
   return (
@@ -79,13 +76,13 @@ export function TravelTradeB2B({ locale }: TravelTradeB2BProps) {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={() => setModalOpen(true)}
+              <Link
+                href={{pathname:"/contacto",hash:"agencias"}}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#B49A68] hover:bg-[#c9ae78] text-[#16352D] font-bold px-9 py-4 rounded-full text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl cursor-pointer"
               >
                 <span>{content.ctaModal}</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
 
               <Link
                 href="/servicios"
@@ -99,11 +96,7 @@ export function TravelTradeB2B({ locale }: TravelTradeB2BProps) {
       </section>
 
       {/* Quote Modal with B2B preselected */}
-      <RequestQuoteModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        preselectedExperience="b2b"
-      />
+
     </>
   );
 }

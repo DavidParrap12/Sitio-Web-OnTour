@@ -1,12 +1,5 @@
-﻿/**
- * JsonLd — injects a <script type="application/ld+json"> tag.
- * Use in Server Components only (no "use client").
- */
-export function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data, null, 0) }}
-    />
-  );
+import {headers} from "next/headers";
+export async function JsonLd({data}:{data:Record<string,unknown>|Record<string,unknown>[]}){
+ const nonce=(await headers()).get("x-nonce")??undefined;
+ return <script nonce={nonce} type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(data).replace(/</g,"\\u003c")}}/>;
 }

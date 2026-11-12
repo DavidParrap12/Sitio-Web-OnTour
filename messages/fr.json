@@ -18,12 +18,12 @@
   },
   "hero": {
     "tagline": "",
-    "title1": "La Colombie,",
-    "title2": "Pensée Pour Vous.",
-    "subtitle": "Voyages privés · Expertise locale · Service irréprochable",
+    "title1": "Votre réceptif local",
+    "title2": "en Colombie.",
+    "subtitle": "Circuits et voyages sur mesure pour les agences internationales. Coordination depuis Ibagué.",
     "ctaDayTrips": "Voir les excursions",
-    "ctaCircuits": "Explorer nos voyages ↓",
-    "ctaContact": "Planifiez Votre Voyage",
+    "ctaCircuits": "Explorer nos circuits",
+    "ctaContact": "Demander un devis groupe",
     "goToImage": "Aller à l'image {n}"
   },
   "home": {
@@ -102,7 +102,7 @@
     "metaTitle": "Contact & B2B",
     "metaDesc": "Planifiez votre voyage privé en Colombie ou demandez des tarifs nets en tant qu'agence de voyages. Réponse sous 24 heures ouvrées.",
     "title": "Contactez-nous",
-    "subtitle": "Voyageurs qui dessinent leur voyage et agences à la recherche d'un DMC en Colombie. Écrivez-nous : réponse sous 24 heures ouvrées.",
+    "subtitle": "Nous organisons des voyages en Colombie exclusivement pour les agences et tour-opérateurs. Indiquez vos dates, destinations et effectif ; nous répondons sous 24 heures ouvrées.",
     "schedule": "Du lundi au samedi, 8h – 18h",
     "support": "Assistance & réservations",
     "mainOffice": "Siège principal",
@@ -164,15 +164,43 @@
     "typeDmc": "DMC / réceptif",
     "typeMice": "MICE / entreprises",
     "typeOther": "Autre",
-    "volumeLabel": "Voyageurs vers la Colombie par an",
-    "volumePlaceholder": "Choisir une option",
-    "volumeNone": "Pas encore de vente Colombie",
-    "volumeSmall": "1 - 50",
-    "volumeMedium": "51 - 200",
-    "volumeLarge": "201 - 500",
-    "volumeExtra": "Plus de 500",
+    "peopleLabel": "Voyageurs pour ce devis",
+    "peoplePlaceholder": "Ex. 12",
+    "peopleHint": "Voyageurs concernés ou taille du groupe pour le devis.",
     "destinationsLabel": "Destinations ou circuits qui vous intéressent",
-    "destinationsPlaceholder": "Région du café, Carthagène, Tatacoa...",
+    "destinationsHint": "Sélectionnez une ou plusieurs destinations. Vous pouvez en ajouter ci-dessous.",
+    "destinationsOtherLabel": "Autre destination ou circuit",
+    "destinationsOtherPlaceholder": "Ex. Amazonie, Providencia, itinéraire sur mesure...",
+    "destinationOptions": {
+      "andesCapital": {
+        "label": "Andes & Capitale",
+        "desc": "Bogotá, Boyacá, Tolima et région du café"
+      },
+      "caribe": {
+        "label": "Caraïbes & Carthagène",
+        "desc": "Carthagène, Santa Marta et Tayrona"
+      },
+      "surArqueologico": {
+        "label": "Sud archéologique & Tatacoa",
+        "desc": "San Agustín, Huila et désert"
+      },
+      "medellin": {
+        "label": "Medellín & Antioquia",
+        "desc": "Guatapé, villages patrimoniaux et culture paisa"
+      },
+      "pacifico": {
+        "label": "Côte Pacifique & Chocó",
+        "desc": "Nuquí, baleines et forêt tropicale"
+      },
+      "granColombia": {
+        "label": "Grande Colombie",
+        "desc": "Circuit complet à travers plusieurs régions"
+      },
+      "abierto": {
+        "label": "À définir / conseil",
+        "desc": "Proposez-moi l'itinéraire adapté"
+      }
+    },
     "messageLabel": "Votre projet",
     "messagePlaceholder": "Dates, nombre de voyageurs, type de clientèle et ce que vous attendez d'un DMC.",
     "submit": "Demander les tarifs nets",
@@ -347,32 +375,65 @@
         "cirugiaPlastica": {
           "name": "Chirurgie Plastique & Esthétique",
           "desc": "Procédures chirurgicales faciales et corporelles de haute précision avec des spécialistes certifiés.",
-          "procedures": ["Blépharoplastie", "Liposuccion", "Augmentation Mammaire"]
+          "procedures": [
+            "Blépharoplastie",
+            "Liposuccion",
+            "Augmentation Mammaire"
+          ]
         },
         "chequeosPreventivos": {
           "name": "Bilans Préventifs",
           "desc": "Évaluations médicales complètes adaptées à la santé préventive des hommes et des femmes.",
-          "procedures": ["Élite Hommes", "Essentiel Femmes", "Analyses Laboratoire"]
+          "procedures": [
+            "Élite Hommes",
+            "Essentiel Femmes",
+            "Analyses Laboratoire"
+          ]
         },
         "cardiologia": {
           "name": "Cardiologie",
           "desc": "Diagnostic et suivi cardiovasculaire non invasif avec une technologie de pointe.",
-          "procedures": ["Échocardiogramme", "Holter", "Consultation Spécialisée"]
+          "procedures": [
+            "Échocardiogramme",
+            "Holter",
+            "Consultation Spécialisée"
+          ]
         },
         "urologia": {
           "name": "Urologie",
           "desc": "Soins urologiques spécialisés, traitement des calculs et santé prostatique.",
-          "procedures": ["Diagnostic Complet", "Lithiase", "Santé Prostatique"]
+          "procedures": [
+            "Diagnostic Complet",
+            "Lithiase",
+            "Santé Prostatique"
+          ]
         },
         "nutricion": {
           "name": "Nutrition Clinique",
           "desc": "Plans nutritionnels thérapeutiques, oncologiques et de soutien hospitalier personnalisé.",
-          "procedures": ["Nutrition Oncologique", "Soutien Hospitalier", "Plans Personnalisés"]
+          "procedures": [
+            "Nutrition Oncologique",
+            "Soutien Hospitalier",
+            "Plans Personnalisés"
+          ]
         },
         "psicologia": {
           "name": "Psychologie Clinique",
           "desc": "Accompagnement psycho-oncologique et émotionnel pré et post-chirurgical complet.",
-          "procedures": ["Psycho-oncologie", "Suivi Pré/Post", "Santé Mentale"]
+          "procedures": [
+            "Psycho-oncologie",
+            "Suivi Pré/Post",
+            "Santé Mentale"
+          ]
+        },
+        "odontologia": {
+          "name": "Dentisterie & Esth?tique Dentaire",
+          "desc": "R?habilitation orale, implants et smile design num?rique avec protocoles d'hygi?ne certifi?s.",
+          "procedures": [
+            "Implants",
+            "Smile Design",
+            "R?habilitation Orale"
+          ]
         }
       }
     },
@@ -380,11 +441,26 @@
       "title": "Votre Parcours en 5 Étapes",
       "subtitle": "Une expérience fluide depuis votre pays d'origine jusqu'à votre récupération en Colombie.",
       "steps": {
-        "s1": { "title": "Consultation Virtuelle Gratuite", "desc": "Partagez vos antécédents médicaux et photos. Notre spécialiste évalue votre cas en 24h." },
-        "s2": { "title": "Plan de Traitement Écrit", "desc": "Recevez un plan détaillé avec un devis fixe. Sans surprises." },
-        "s3": { "title": "Coordination du Voyage", "desc": "Nous organisons l'hébergement, les transferts et votre agenda médical complet." },
-        "s4": { "title": "Traitement & Récupération", "desc": "Détendez-vous au paradis pendant votre récupération." },
-        "s5": { "title": "Suivi à Domicile", "desc": "Télémédecine post-traitement pour votre tranquillité d'esprit." }
+        "s1": {
+          "title": "Consultation Virtuelle Gratuite",
+          "desc": "Partagez vos antécédents médicaux et photos. Notre spécialiste évalue votre cas en 24h."
+        },
+        "s2": {
+          "title": "Plan de Traitement Écrit",
+          "desc": "Recevez un plan détaillé avec un devis fixe. Sans surprises."
+        },
+        "s3": {
+          "title": "Coordination du Voyage",
+          "desc": "Nous organisons l'hébergement, les transferts et votre agenda médical complet."
+        },
+        "s4": {
+          "title": "Traitement & Récupération",
+          "desc": "Détendez-vous au paradis pendant votre récupération."
+        },
+        "s5": {
+          "title": "Suivi à Domicile",
+          "desc": "Télémédecine post-traitement pour votre tranquillité d'esprit."
+        }
       }
     },
     "tolima": {
@@ -427,11 +503,26 @@
     "faq": {
       "title": "Questions Fréquentes",
       "items": {
-        "q1": { "q": "Que se passe-t-il en cas de complications après le voyage ?", "a": "Nous disposons d'un protocole de télémédecine dédié pour les suivis post-traitement. Nos spécialistes sont disponibles par appel vidéo dans les 24 heures. Tous les traitements incluent une garantie écrite." },
-        "q2": { "q": "Quels matériaux sont utilisés ?", "a": "Nous utilisons exclusivement des matériaux et fournitures certifiés FDA/CE : implants, prothèses et dispositifs de pointe, toutes certifications disponibles sur demande." },
-        "q3": { "q": "Quelle est la durée de récupération ?", "a": "La récupération varie selon le traitement. Chirurgies : 5-7 jours de repos. Actes ambulatoires : le jour même, sans temps d'arrêt. Nous planifions votre voyage autour de votre récupération." },
-        "q4": { "q": "Quels sont les modes de paiement ?", "a": "Nous acceptons les virements bancaires internationaux, les cartes de crédit (Visa, Mastercard), et Wise/PayPal pour les patients internationaux. Un acompte de 30 % garantit votre rendez-vous ; le solde est dû avant la première procédure." },
-        "q5": { "q": "Est-il sûr de voyager en Colombie pour des soins médicaux ?", "a": "La Colombie a considérablement amélioré ses indicateurs de sécurité. Ibagué est l'une des villes moyennes les plus sûres du pays. Notre équipe gère la logistique de bout en bout, de la prise en charge à l'aéroport à la coordination hôtelière." }
+        "q1": {
+          "q": "Que se passe-t-il en cas de complications après le voyage ?",
+          "a": "Nous disposons d'un protocole de télémédecine dédié pour les suivis post-traitement. Nos spécialistes sont disponibles par appel vidéo dans les 24 heures. Tous les traitements incluent une garantie écrite."
+        },
+        "q2": {
+          "q": "Quels matériaux sont utilisés ?",
+          "a": "Nous utilisons exclusivement des matériaux et fournitures certifiés FDA/CE : implants, prothèses et dispositifs de pointe, toutes certifications disponibles sur demande."
+        },
+        "q3": {
+          "q": "Quelle est la durée de récupération ?",
+          "a": "La récupération varie selon le traitement. Chirurgies : 5-7 jours de repos. Actes ambulatoires : le jour même, sans temps d'arrêt. Nous planifions votre voyage autour de votre récupération."
+        },
+        "q4": {
+          "q": "Quels sont les modes de paiement ?",
+          "a": "Nous acceptons les virements bancaires internationaux, les cartes de crédit (Visa, Mastercard), et Wise/PayPal pour les patients internationaux. Un acompte de 30 % garantit votre rendez-vous ; le solde est dû avant la première procédure."
+        },
+        "q5": {
+          "q": "Est-il sûr de voyager en Colombie pour des soins médicaux ?",
+          "a": "La Colombie a considérablement amélioré ses indicateurs de sécurité. Ibagué est l'une des villes moyennes les plus sûres du pays. Notre équipe gère la logistique de bout en bout, de la prise en charge à l'aéroport à la coordination hôtelière."
+        }
       }
     },
     "cta": {
@@ -537,7 +628,7 @@
       ]
     },
     "tour-colombia-tres-ciudades": {
-      "name": "Colombie – Bogotá, Medellín et Cartagena de Indias",
+      "name": "Colombie – Diversité Culturelle",
       "description": "Un voyage de 14 jours à travers les trois joyaux de la Colombie : la cosmopolite Bogotá, l'innovante Medellín et la magique Cartagena de Indias. Histoire coloniale, culture paisa, plages caribéennes, art urbain et expériences uniques en un seul voyage.",
       "highlights": [
         "Visite de Bogotá avec dîner au Monserrate",
@@ -651,34 +742,8 @@
         "JOUR 7 : BOGOTÁ – AÉROPORT EL DORADO. Petit-déjeuner à l'hôtel. À l'heure convenue, transfert à l'aéroport international El Dorado pour prendre le vol vers le pays d'origine. Fin des prestations."
       ]
     },
-    "tour-colombia-eje-cafetero": {
-      "name": "Colombie Région du Café",
-      "description": "Un circuit de 7 jours le long de la route du café colombien : de Bogotá à la Région du café, en passant par le Tolima, Salento, Cocora, les fermes de café, les sources thermales et les capitales du triangle du café. Culture caféière, paysages andins et tradition coloniale en une seule aventure.",
-      "highlights": [
-        "Expérience gastronomique à El Espinal : Lechona Tolimense",
-        "Parc Mythologique du Magdalena",
-        "Salento : village colonial et Palmier à cire",
-        "Vallée de Cocora et ferme de café avec nuit sur place",
-        "Parc Recuca : tour de la culture caféière à Calarcá",
-        "Pijao : rues coloniales et belvédère",
-        "Sources thermales de San Vicente à Santa Rosa de Cabal",
-        "Tour panoramique de Pereira et Manizales",
-        "Plus grande tasse de café du monde (record Guinness)",
-        "Metrocable à Villa María"
-      ],
-      "price": "",
-      "itinerary": [
-        "JOUR 1 : BOGOTÁ – AÉROPORT EL DORADO. Accueil à l'aéroport international El Dorado, transfert à l'hôtel et enregistrement des passagers. Si le vol arrive le matin, nous ferons un tour panoramique de Bogotá. Sinon, hébergement.",
-        "JOUR 2 : BOGOTÁ – EL ESPINAL – IBAGUÉ, LA CITÉ MUSICALE. Petit-déjeuner à l'hôtel. Départ vers le Tolima. À El Espinal, expérience gastronomique héritée de la colonie espagnole et visite du Parc Mythologique, décor des légendes et mythes du Magdalena. Transfert à Ibagué, la Cité Musicale de Colombie. Hébergement.",
-        "JOUR 3 : SALENTO – COCORA – FILANDIA. Petit-déjeuner à l'hôtel. Départ vers le Quindío par la route de La Línea avec vue sur la cordillère centrale. Arrivée à Salento : rues coloniales, Palmier à cire (arbre national) et belvédère. Arrivée à la ferme de café. Hébergement.",
-        "JOUR 4 : TOUR DE LA CULTURE CAFÉIÈRE. Petit-déjeuner à la ferme. Visite du Parc Recuca à Calarcá : tour de la culture caféière. L'après-midi, visite de Pijao : rues coloniales, belvédère et place principale. Retour à la ferme de café. Hébergement.",
-        "JOUR 5 : TOUR DE PEREIRA & SOURCES THERMALES. Petit-déjeuner à la ferme. Tour panoramique de Pereira, la ville de l'éternel printemps. En soirée, expérience aux sources thermales de San Vicente. Nuit à Santa Rosa de Cabal. Hébergement.",
-        "JOUR 6 : TOUR DE MANIZALES & VILLA MARÍA. Petit-déjeuner à l'hôtel. Tour par Dosquebradas et route vers Manizales : visite de la plus grande tasse de café du monde (record Guinness), Basilique métropolitaine et belvédère Chipre. Tour en Metrocable à Villa María. Retour à Pereira. Hébergement.",
-        "JOUR 7 : PEREIRA – AÉROPORT EDÉN/MATECAÑA. Petit-déjeuner à l'hôtel. À l'heure convenue, transfert à l'aéroport Edén ou Matecaña pour le vol vers Bogotá. Fin des prestations."
-      ]
-    },
     "tour-tras-leyenda-dorado": {
-      "name": "Sur les traces de la légende d'El Dorado",
+      "name": "Colombie – Diversité Culturelle",
       "description": "Un voyage de 10 jours sur les traces des explorateurs espagnols à travers le cœur de la Colombie : Jardin botanique de Bogotá, villes patrimoniales, Honda colonial, l'Expédition Botanique Royale à Mariquita, le Parc National Los Nevados, le Canyon du Combeima, la Mer Intérieure de Prado et les parcs aquatiques de Melgar. Histoire, nature et aventure sur la route d'El Dorado.",
       "highlights": [
         "Jardin botanique José Celestino Mutis à Bogotá",
@@ -735,362 +800,6 @@
         "JOUR 9 : SAN GIL – FLORIDABLANCA – BUCARAMANGA. Petit-déjeuner à l'hôtel. Départ vers Bucaramanga via le Canyon du Chicamocha avec arrêts aux belvédères. Visite de Floridablanca pour déguster des obleas (gaufrettes) aux produits naturels. Arrivée à l'hôtel à Bucaramanga. Hébergement.",
         "JOUR 10 : BUCARAMANGA – AÉROPORT – BOGOTÁ. Petit-déjeuner à l'hôtel. À l'heure convenue, transfert à l'aéroport Palonegro pour le vol vers Bogotá. Fin des prestations."
       ]
-    }
-  },
-  "destinosData": {
-    "Medellin-Magica": {
-      "name": "Medellín magique",
-      "description": "Découvrez Medellín de l'intérieur : explorez ses quartiers les plus animés, ses jardins, la cuisine typique d'Antioquia et les points de vue les plus spectaculaires de la ville. Une expérience complète pour découvrir la capitale d'Antioquia en une seule journée.",
-      "duration": "Journée complète",
-      "highlights": [
-        "Transport inclus",
-        "Guides professionnels",
-        "Visite des zones emblématiques",
-        "Cuisine typique d'Antioquia",
-        "Assurance assistance"
-      ]
-    },
-    "bogota-tu-casa-pasadia": {
-      "name": "Bogotá, votre maison",
-      "description": "Découvrez la magie de Bogotá lors d'une journée riche en histoire, culture et gastronomie. Explorez l'impressionnante Cathédrale de sel de Zipaquirá, la ville patrimoniale coloniale de Villa de Leyva et les rues artisanales colorées de Ráquira. Complétez l'expérience avec un tour gastronomique des saveurs les plus authentiques de la région et une vue panoramique incomparable sur la capitale colombienne.",
-      "duration": "Journée complète",
-      "highlights": [
-        "Transport inclus",
-        "Cathédrale de sel de Zipaquirá",
-        "Tour de Villa de Leyva",
-        "Tour gastronomique",
-        "Vue panoramique de Bogotá",
-        "Guide touristique professionnel"
-      ]
-    },
-    "cascada-la-plata-pasadia": {
-      "name": "Tolima, cœur des Andes – Cascade La Plata",
-      "description": "Découvrez l'un des trésors naturels les plus impressionnants d'Ibagué. À travers une randonnée écologique, plongez dans des paysages de jungle, de rivières et de montagnes jusqu'à la majestueuse Cascade La Plata. Une expérience de connexion avec la nature idéale pour les amateurs de randonnée et d'aventure.",
-      "duration": "Journée complète",
-      "highlights": [
-        "Transport optionnel",
-        "Guide écologique",
-        "Entrée à la réserve naturelle",
-        "Hydratation incluse",
-        "Assurance randonnée"
-      ]
-    },
-    "Cali-es-donde-debe-estar": {
-      "name": "Cali, c'est là que vous devez être",
-      "description": "Découvrez et vivez la salsa et la culture de Cali lors d'une journée pleine de saveurs et de joie. Parcourez les points les plus emblématiques de la ville, dégustez sa gastronomie typique et laissez-vous emporter par l'énergie de la capitale de la salsa.",
-      "duration": "Journée complète",
-      "highlights": [
-        "Transport inclus",
-        "Guides professionnels",
-        "Visite des zones emblématiques",
-        "Cuisine typique de Cali",
-        "Assurance assistance"
-      ]
-    },
-    "Cartagena-Mas-Heroica": {
-      "name": "Cartagena, plus héroïque",
-      "description": "Découvrez la magie de Cartagena et de ses environs lors d'une journée riche en histoire, culture et gastronomie. Promenez-vous dans la ville fortifiée, explorez les forteresses coloniales, les places animées et les rues colorées. Complétez l'expérience avec un tour gastronomique des saveurs caribéennes les plus authentiques et une vue panoramique inoubliable sur la ville héroïque.",
-      "duration": "Journée complète",
-      "highlights": [
-        "Transport inclus",
-        "Tour de la ville fortifiée",
-        "Visite de la forteresse coloniale",
-        "Tour gastronomique",
-        "Vue panoramique de Cartagena",
-        "Guide touristique professionnel"
-      ]
-    },
-    "Santa-Marta-Naturalmente-Magica": {
-      "name": "Santa Marta, naturellement magique",
-      "description": "Découvrez la magie naturelle et culturelle de Santa Marta lors d'une journée pleine d'aventure et de découvertes. Explorez les points les plus emblématiques de la ville, dégustez sa cuisine caribéenne et laissez-vous emporter par l'énergie de la plus ancienne ville de Colombie.",
-      "duration": "Journée complète",
-      "highlights": [
-        "Transport inclus",
-        "Guides professionnels",
-        "Visite des zones emblématiques",
-        "Cuisine typique caribéenne",
-        "Assurance assistance"
-      ]
-    },
-    "San-Andres-Islas-Vas-A-mar": {
-      "name": "San Andrés, vous allez adorer la mer",
-      "description": "Découvrez le paradis caribéen de San Andrés, l'île aux sept couleurs. Plongez dans ses eaux cristallines, parcourez ses plages de sable blanc, explorez le centre commercial en plein air et profitez de la vibrante culture raizal dans une expérience unique dans les Caraïbes colombiennes.",
-      "duration": "Journée complète",
-      "highlights": [
-        "Transport inclus",
-        "Guides professionnels",
-        "Visite des zones emblématiques",
-        "Cuisine typique raizal",
-        "Assurance assistance"
-      ]
-    }
-  },
-  "testimonials": {
-    "googleBadge": "Google Reviews",
-    "ratingSubtitle": "Basé sur 40+ avis vérifiés",
-    "title": "Ce que disent nos voyageurs",
-    "subtitle": "Expériences réelles de ceux qui nous ont fait confiance pour découvrir la Colombie.",
-    "verifiedReview": "Avis vérifié",
-    "googleUser": "Utilisateur Google",
-    "goToReview": "Aller à l'avis",
-    "prevReview": "Avis précédent",
-    "nextReview": "Avis suivant",
-    "seeAllOnGoogle": "Voir tous les avis sur Google",
-    "reviews": {
-      "yamel": {
-        "text": "Nous avons fait le circuit de la Région du Café et du Tolima avec On Tour et ce fut une expérience merveilleuse. Organisation impeccable, guides incroyables et paysages à couper le souffle. Absolument recommandé !"
-      },
-      "angie": {
-        "text": "Un excellent service et de bons plans de voyage. Totalement recommandés pour tout type de voyage."
-      },
-      "samsung": {
-        "text": "Très bonne entreprise. On remarque le professionnalisme et le dévouement dans chaque détail du voyage."
-      },
-      "sandra": {
-        "text": "Bon service à l'agence. Toujours disposés à aider et à trouver la meilleure option."
-      },
-      "davidParra": {
-        "text": "Excellente, très bonne expérience, bon service et très bons guides touristiques."
-      },
-      "jennyHernandez": {
-        "text": "Bon service, très bons circuits et tarifs."
-      },
-      "micilene": {
-        "text": "Excellent service et attention, la nourriture, le bar et très ponctuels en tout. Je le recommande."
-      },
-      "ruthAhumada": {
-        "text": "Excellent, j'ai passé un super moment, tout ce qui avait été convenu avec l'agence Ontour a été respecté."
-      },
-      "mariaAntonia": {
-        "text": "Excellent service. Beaucoup de dévouement et d'engagement de la part du gérant et de ses collaborateurs. L'hôtel excellent. Les lieux visités étaient magnifiques, félicitations."
-      }
-    }
-  },
-  "legalTerms": {
-    "title": "Conditions générales",
-    "subtitle": "Conditions générales pour la prestation de services touristiques par Ontour DMC Colombia.",
-    "general": {
-      "title": "1. Conditions générales",
-      "text": "En contractant tout service touristique auprès d'Ontour S.A.S. (ci-après \"Ontour\"), le client accepte les conditions décrites dans ce document. Ontour est une agence de voyages dûment constituée selon les lois de la République de Colombie, basée à Ibagué, Tolima, inscrite au Registre national du tourisme administré par le Patrimoine autonome Fonds national du tourisme (FONTUR)."
-    },
-    "bookings": {
-      "title": "2. Réservations et paiements",
-      "text": "Les réservations sont confirmées à réception de l'acompte correspondant (minimum 30% du montant total). Le solde doit être réglé au moins 7 jours avant le début de la prestation. Les paiements peuvent être effectués par virement bancaire, Nequi, Daviplata ou en espèces à notre bureau. Les prix publiés sont sous réserve de disponibilité et peuvent être modifiés sans préavis."
-    },
-    "cancellations": {
-      "title": "3. Annulations et remboursements",
-      "text": "Annulation plus de 15 jours à l'avance : remboursement de 100% de l'acompte.\nAnnulation entre 8 et 14 jours : remboursement de 50% de l'acompte.\nAnnulation à moins de 7 jours : aucun remboursement.\nEn cas de force majeure (météo, ordre public, catastrophes naturelles), Ontour proposera un report sans frais supplémentaires ou un avoir applicable aux prestations futures."
-    },
-    "responsibilities": {
-      "title": "4. Responsabilités",
-      "text": "Ontour agit en tant qu'opérateur intermédiaire et n'est pas responsable des manquements des prestataires tiers (compagnies aériennes, hôtels, restaurants). Toutes nos prestations sont couvertes par des polices d'assurance et de conformité. Le client est responsable de détenir des documents d'identité valides et d'informer de toute condition médicale ou restriction de mobilité avant le voyage."
-    },
-    "modifications": {
-      "title": "5. Modifications de l'itinéraire",
-      "text": "Ontour se réserve le droit de modifier l'itinéraire pour des raisons de sécurité, météo, ordre public ou disponibilité des prestataires. Tout changement maintiendra la qualité et la portée équivalentes du service contracté. Le client sera notifié dans les meilleurs délais."
-    },
-    "jurisdiction": {
-      "title": "6. Juridiction et loi applicable",
-      "text": "Ce contrat est régi par les lois de la République de Colombie. Tout litige sera soumis aux tribunaux compétents de la ville d'Ibagué, Tolima. La réglementation touristique en vigueur établie par le Ministère du Commerce, de l'Industrie et du Tourisme s'applique."
-    },
-    "lastUpdated": "Dernière mise à jour : avril 2026"
-  },
-  "legalPrivacy": {
-    "title": "Politique de confidentialité",
-    "subtitle": "Comment nous collectons, utilisons et protégeons vos informations personnelles.",
-    "dataCollection": {
-      "title": "1. Données collectées",
-      "text": "Nous collectons les informations suivantes lorsque vous utilisez nos services ou formulaires de contact : nom complet, adresse e-mail, numéro de téléphone, ville d'origine, préférences de voyage et, dans le cas de réservations, informations de paiement. Nous ne stockons pas les données de carte bancaire sur nos serveurs."
-    },
-    "usage": {
-      "title": "2. Utilisation des données",
-      "text": "Vos données sont utilisées exclusivement pour : traiter les réservations et devis, envoyer les confirmations et itinéraires, communiquer les changements des services contractés, et améliorer votre expérience avec des offres et contenus pertinents (uniquement si vous y consentez)."
-    },
-    "sharing": {
-      "title": "3. Partage des données",
-      "text": "Nous ne vendons ni ne louons vos données personnelles à des tiers. Nous partageons les informations uniquement avec les prestataires directs du service contracté (hôtels, transporteurs, guides) et uniquement les informations nécessaires à la prestation."
-    },
-    "security": {
-      "title": "4. Sécurité",
-      "text": "Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre l'accès non autorisé, la perte ou l'altération. Notre site web utilise le chiffrement SSL/TLS pour la transmission des données."
-    },
-    "rights": {
-      "title": "5. Vos droits",
-      "text": "Conformément à la loi 1581 de 2012 (Protection des données personnelles en Colombie), vous avez le droit d'accéder, mettre à jour, rectifier et supprimer vos données personnelles. Pour exercer ces droits, écrivez-nous à info@ontourdmc.com."
-    },
-    "cookies": {
-      "title": "6. Cookies",
-      "text": "Nous utilisons des cookies techniques et analytiques pour améliorer les performances du site et comprendre son utilisation. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur, bien que certaines fonctionnalités puissent être affectées."
-    },
-    "lastUpdated": "Dernière mise à jour : avril 2026"
-  },
-  "legalTourism": {
-    "title": "Registre national du tourisme",
-    "subtitle": "Ontour DMC Colombia est une agence légalement enregistrée auprès des autorités touristiques colombiennes.",
-    "registryTitle": "Agence vérifiée",
-    "registryBody": "Ontour S.A.S. est inscrite au Registre national du tourisme, administré par le Patrimoine autonome Fonds national du tourisme (FONTUR).",
-    "rntNumber": "RNT 62212",
-    "downloadCertificate": "Télécharger le certificat officiel",
-    "whatIsRnt": {
-      "title": "Qu'est-ce que le RNT ?",
-      "text": "Le Registre national du tourisme (RNT) est une obligation légale pour tous les prestataires de services touristiques en Colombie, conformément à la loi 300 de 1996 et à la loi 1558 de 2012. L'inscription garantit que l'entreprise respecte les normes de qualité, de sécurité et de légalité exigées par le Ministère du Commerce, de l'Industrie et du Tourisme."
-    },
-    "guarantee": {
-      "title": "Que garantit-il au voyageur ?",
-      "text": "En voyageant avec une entreprise inscrite au RNT, le voyageur est assuré que :\n• L'entreprise dispose de polices de responsabilité civile et de conformité.\n• Les services sont opérés selon la réglementation en vigueur.\n• Il existe un soutien institutionnel en cas d'éventualité.\n• Le voyage contribue au développement durable du tourisme en Colombie."
-    },
-    "fontur": {
-      "title": "Patrimoine autonome FONTUR",
-      "text": "Le Fonds national du tourisme (FONTUR) est le patrimoine autonome qui administre les ressources destinées à la promotion, la compétitivité et la durabilité du tourisme en Colombie. En tant qu'agence enregistrée, Ontour contribue au renforcement du secteur touristique national."
-    },
-    "lastUpdated": "Dernière mise à jour : avril 2026"
-  },
-  "legalFaq": {
-    "title": "Questions fréquentes",
-    "subtitle": "Réponses aux questions les plus courantes de nos voyageurs.",
-    "q1": {
-      "question": "Comment puis-je réserver un voyage avec Ontour ?",
-      "answer": "Vous pouvez nous contacter via WhatsApp au +57 316 538 6892, par e-mail à info@ontourdmc.com, ou via le formulaire de contact sur notre site web. Un conseiller vous répondra avec un devis personnalisé."
-    },
-    "q2": {
-      "question": "Que comprennent les circuits touristiques ?",
-      "answer": "Nos circuits incluent le transport terrestre, l'hébergement, un guide touristique professionnel, les droits d'entrée aux destinations indiquées et l'assurance voyage. Les repas varient selon le plan. Les détails spécifiques sont disponibles sur la page de chaque circuit."
-    },
-    "q3": {
-      "question": "Puis-je personnaliser mon itinéraire ?",
-      "answer": "Oui ! Nous sommes un DMC (Destination Management Company) et concevons des expériences sur mesure. Contactez-nous avec vos dates, destinations et budget préférés et nous créerons un plan personnalisé."
-    },
-    "q4": {
-      "question": "Est-il sûr de voyager en Colombie ?",
-      "answer": "La Colombie a fait d'énormes progrès en matière de sécurité touristique. Tous nos circuits opèrent dans des zones touristiques établies et comprennent des polices d'assurance, des guides professionnels et des véhicules certifiés. Votre sécurité est notre priorité."
-    },
-    "q5": {
-      "question": "Quels modes de paiement acceptez-vous ?",
-      "answer": "Nous acceptons les virements bancaires nationaux, Nequi, Daviplata et les espèces dans notre bureau à Ibagué. Pour les réservations internationales, nous proposons des options de paiement via Western Union ou PayPal."
-    },
-    "q6": {
-      "question": "Quelle est la politique d'annulation ?",
-      "answer": "Plus de 15 jours à l'avance : remboursement de 100%. Entre 8-14 jours : remboursement de 50%. Moins de 7 jours : aucun remboursement. En cas de force majeure, nous proposons un report gratuit."
-    },
-    "q7": {
-      "question": "Gérez-vous de grands groupes ou des entreprises ?",
-      "answer": "Oui, nous gérons des groupes d'entreprises, des voyages d'incentive, des congrès et des excursions scolaires. Contactez-nous pour des tarifs spéciaux et une programmation personnalisée."
-    },
-    "q8": {
-      "question": "Êtes-vous légalement constitués ?",
-      "answer": "Oui. Ontour S.A.S. est inscrite au Registre national du tourisme (RNT 62212), administré par le Patrimoine autonome Fonds national du tourisme (FONTUR), et respecte toute la réglementation du secteur touristique en Colombie."
-    }
-  },
-  "services": {
-    "title": "Nos Services",
-    "subtitle": "Solutions touristiques complètes pour voyageurs et agences. Chaque détail de votre voyage, géré par des professionnels.",
-    "transport": {
-      "title": "Transport Terrestre",
-      "description": "Flotte propre et partenaires certifiés pour des transferts sûrs et confortables à travers toute la Colombie.",
-      "feature1": "Véhicules climatisés avec GPS",
-      "feature2": "Chauffeurs professionnels bilingues",
-      "feature3": "Couverture nationale porte à porte"
-    },
-    "accommodation": {
-      "title": "Hébergement",
-      "description": "Partenariats avec les meilleurs hôtels, domaines et éco-lodges de chaque destination.",
-      "feature1": "Hôtels 3 à 5 étoiles vérifiés",
-      "feature2": "Fermes et éco-lodges exclusifs",
-      "feature3": "Tarifs préférentiels garantis"
-    },
-    "guides": {
-      "title": "Guides Touristiques",
-      "description": "Équipe de guides professionnels certifiés avec une connaissance approfondie de chaque région.",
-      "feature1": "Guides bilingues et trilingues",
-      "feature2": "Certification nationale de tourisme",
-      "feature3": "Spécialistes régionaux et culturels"
-    },
-    "insurance": {
-      "title": "Assurance Voyage",
-      "description": "Polices d'assistance, de responsabilité civile et de conformité pour votre totale tranquillité.",
-      "feature1": "Assistance médicale 24h/24",
-      "feature2": "Couverture d'annulation",
-      "feature3": "Police de responsabilité civile"
-    },
-    "food": {
-      "title": "Restauration",
-      "description": "Expériences gastronomiques authentiques avec la cuisine régionale de chaque destination.",
-      "feature1": "Menus régionaux traditionnels",
-      "feature2": "Options végétariennes et spéciales",
-      "feature3": "Tours gastronomiques inclus"
-    },
-    "events": {
-      "title": "Logistique Événementielle",
-      "description": "Organisation complète de voyages d'affaires, incentives, conventions et excursions de groupe.",
-      "feature1": "Groupes d'entreprise et incentives",
-      "feature2": "Conventions et team building",
-      "feature3": "Excursions scolaires et universitaires"
-    },
-    "ctaTitle": "Besoin d'un service personnalisé ?",
-    "ctaSubtitle": "Contactez-nous et nous concevrons la solution parfaite pour votre groupe, agence ou entreprise.",
-    "ctaButton": "Demander un devis",
-    "aviaturButton": "Canal Aviatur"
-  },
-  "gallery": {
-    "title": "Galerie Photos",
-    "subtitle": "Les paysages les plus impressionnants de Colombie capturés sur nos routes et circuits.",
-    "all": "Toutes",
-    "noPhotos": "Aucune photo dans cette catégorie.",
-    "close": "Fermer",
-    "prev": "Précédent",
-    "next": "Suivant",
-    "experienciasLabel": "Expériences",
-    "experienciasTagline": "Photos de nos voyageurs",
-    "experienciasDesc": "Moments réels vécus par ceux qui ont fait confiance à OnTour pour découvrir la Colombie.",
-    "experienciasEmptyTitle": "Soyez le premier à partager!",
-    "experienciasEmptyDesc": "Avez-vous voyagé avec nous? Envoyez-nous votre photo préférée et nous la publierons ici.",
-    "experienciasEmptyBtn": "Partager via WhatsApp",
-    "experienciasCtaTitle": "Avez-vous voyagé avec OnTour?",
-    "experienciasCtaDesc": "Partagez votre photo et rejoignez notre communauté de voyageurs.",
-    "experienciasCtaBtn": "Envoyer ma photo"
-  },
-  "macrorregiones": {
-    "tagline": "ProColombia • Le Pays de la Beauté",
-    "title": "Macrorégions Touristiques de la Colombie",
-    "subtitle": "Nous connectons les voyageurs à l'immense richesse bioculturelle des six grands territoires touristiques officiels de la Colombie, en concevant des itinéraires authentiques aux quatre coins du pays.",
-    "mapBadge": "Carte Officielle des Destinations et Régions",
-    "exploreZoom": "Explorer avec le Zoom",
-    "clickToZoom": "Cliquer pour ouvrir et zoomer",
-    "mapAlt": "Carte des 6 Macrorégions Touristiques de la Colombie - ProColombia",
-    "mapDetailAlt": "Carte détaillée des 6 Macrorégions Touristiques de la Colombie",
-    "modalInstructions": "Double-cliquez ou utilisez les commandes pour zoomer/dézoomer et faites glisser pour explorer",
-    "closeLabel": "Fermer le visualiseur",
-    "closeTitle": "Fermer (Échap)",
-    "zoomIn": "Zoom avant (+)",
-    "zoomOut": "Zoom arrière (-)",
-    "reset": "Réinitialiser",
-    "resetTitle": "Réinitialiser la taille (0)",
-    "dragToMove": "Glisser pour déplacer",
-    "regions": {
-      "caribe": {
-        "name": "Grandes Caraïbes Colombiennes",
-        "slogan": "Bien plus que les Caraïbes"
-      },
-      "pacifico": {
-        "name": "Pacifique Colombien",
-        "slogan": "Saveur de jungle et d'océan"
-      },
-      "andesOccidentales": {
-        "name": "Andes Occidentales",
-        "slogan": "Montagnes de café et de fleurs"
-      },
-      "andesOrientales": {
-        "name": "Andes Orientales",
-        "slogan": "Paramos et vallées légendaires"
-      },
-      "macizo": {
-        "name": "Massif Colombien",
-        "slogan": "Origines ancestrales"
-      },
-      "amazoniaOrinoquia": {
-        "name": "Amazonie-Orénoquie",
-        "slogan": "Forêts et plaines sacrées"
-      }
     }
   },
   "destinosData": {
@@ -1838,6 +1547,274 @@
           "operador": "Agence de Voyage On Tour"
         }
       ]
+    }
+  },
+  "testimonials": {
+    "googleBadge": "Google Reviews",
+    "ratingSubtitle": "Basé sur 40+ avis vérifiés",
+    "title": "Ce que disent nos voyageurs",
+    "subtitle": "Expériences réelles de ceux qui nous ont fait confiance pour découvrir la Colombie.",
+    "verifiedReview": "Avis vérifié",
+    "googleUser": "Utilisateur Google",
+    "goToReview": "Aller à l'avis",
+    "prevReview": "Avis précédent",
+    "nextReview": "Avis suivant",
+    "seeAllOnGoogle": "Voir tous les avis sur Google",
+    "reviews": {
+      "yamel": {
+        "text": "Nous avons fait le circuit de la Région du Café et du Tolima avec On Tour et ce fut une expérience merveilleuse. Organisation impeccable, guides incroyables et paysages à couper le souffle. Absolument recommandé !"
+      },
+      "angie": {
+        "text": "Un excellent service et de bons plans de voyage. Totalement recommandés pour tout type de voyage."
+      },
+      "samsung": {
+        "text": "Très bonne entreprise. On remarque le professionnalisme et le dévouement dans chaque détail du voyage."
+      },
+      "sandra": {
+        "text": "Bon service à l'agence. Toujours disposés à aider et à trouver la meilleure option."
+      },
+      "davidParra": {
+        "text": "Excellente, très bonne expérience, bon service et très bons guides touristiques."
+      },
+      "jennyHernandez": {
+        "text": "Bon service, très bons circuits et tarifs."
+      },
+      "micilene": {
+        "text": "Excellent service et attention, la nourriture, le bar et très ponctuels en tout. Je le recommande."
+      },
+      "ruthAhumada": {
+        "text": "Excellent, j'ai passé un super moment, tout ce qui avait été convenu avec l'agence Ontour a été respecté."
+      },
+      "mariaAntonia": {
+        "text": "Excellent service. Beaucoup de dévouement et d'engagement de la part du gérant et de ses collaborateurs. L'hôtel excellent. Les lieux visités étaient magnifiques, félicitations."
+      }
+    }
+  },
+  "legalTerms": {
+    "title": "Conditions générales",
+    "subtitle": "Conditions générales pour la prestation de services touristiques par Ontour DMC Colombia.",
+    "general": {
+      "title": "1. Conditions générales",
+      "text": "En contractant tout service touristique auprès d'Ontour S.A.S. (ci-après \"Ontour\"), le client accepte les conditions décrites dans ce document. Ontour est une agence de voyages dûment constituée selon les lois de la République de Colombie, basée à Ibagué, Tolima, inscrite au Registre national du tourisme administré par le Patrimoine autonome Fonds national du tourisme (FONTUR)."
+    },
+    "bookings": {
+      "title": "2. Réservations et paiements",
+      "text": "Les réservations sont confirmées à réception de l'acompte correspondant (minimum 30% du montant total). Le solde doit être réglé au moins 7 jours avant le début de la prestation. Les paiements peuvent être effectués par virement bancaire, Nequi, Daviplata ou en espèces à notre bureau. Les prix publiés sont sous réserve de disponibilité et peuvent être modifiés sans préavis."
+    },
+    "cancellations": {
+      "title": "3. Annulations et remboursements",
+      "text": "Annulation plus de 15 jours à l'avance : remboursement de 100% de l'acompte.\nAnnulation entre 8 et 14 jours : remboursement de 50% de l'acompte.\nAnnulation à moins de 7 jours : aucun remboursement.\nEn cas de force majeure (météo, ordre public, catastrophes naturelles), Ontour proposera un report sans frais supplémentaires ou un avoir applicable aux prestations futures."
+    },
+    "responsibilities": {
+      "title": "4. Responsabilités",
+      "text": "Ontour agit en tant qu'opérateur intermédiaire et n'est pas responsable des manquements des prestataires tiers (compagnies aériennes, hôtels, restaurants). Toutes nos prestations sont couvertes par des polices d'assurance et de conformité. Le client est responsable de détenir des documents d'identité valides et d'informer de toute condition médicale ou restriction de mobilité avant le voyage."
+    },
+    "modifications": {
+      "title": "5. Modifications de l'itinéraire",
+      "text": "Ontour se réserve le droit de modifier l'itinéraire pour des raisons de sécurité, météo, ordre public ou disponibilité des prestataires. Tout changement maintiendra la qualité et la portée équivalentes du service contracté. Le client sera notifié dans les meilleurs délais."
+    },
+    "jurisdiction": {
+      "title": "6. Juridiction et loi applicable",
+      "text": "Ce contrat est régi par les lois de la République de Colombie. Tout litige sera soumis aux tribunaux compétents de la ville d'Ibagué, Tolima. La réglementation touristique en vigueur établie par le Ministère du Commerce, de l'Industrie et du Tourisme s'applique."
+    },
+    "lastUpdated": "Dernière mise à jour : avril 2026"
+  },
+  "legalPrivacy": {
+    "title": "Politique de confidentialité",
+    "subtitle": "Comment nous collectons, utilisons et protégeons vos informations personnelles.",
+    "dataCollection": {
+      "title": "1. Données collectées",
+      "text": "Nous collectons les informations suivantes lorsque vous utilisez nos services ou formulaires de contact : nom complet, adresse e-mail, numéro de téléphone, ville d'origine, préférences de voyage et, dans le cas de réservations, informations de paiement. Nous ne stockons pas les données de carte bancaire sur nos serveurs."
+    },
+    "usage": {
+      "title": "2. Utilisation des données",
+      "text": "Vos données sont utilisées exclusivement pour : traiter les réservations et devis, envoyer les confirmations et itinéraires, communiquer les changements des services contractés, et améliorer votre expérience avec des offres et contenus pertinents (uniquement si vous y consentez)."
+    },
+    "sharing": {
+      "title": "3. Partage des données",
+      "text": "Nous ne vendons ni ne louons vos données personnelles à des tiers. Nous partageons les informations uniquement avec les prestataires directs du service contracté (hôtels, transporteurs, guides) et uniquement les informations nécessaires à la prestation."
+    },
+    "security": {
+      "title": "4. Sécurité",
+      "text": "Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre l'accès non autorisé, la perte ou l'altération. Notre site web utilise le chiffrement SSL/TLS pour la transmission des données."
+    },
+    "rights": {
+      "title": "5. Vos droits",
+      "text": "Conformément à la loi 1581 de 2012 (Protection des données personnelles en Colombie), vous avez le droit d'accéder, mettre à jour, rectifier et supprimer vos données personnelles. Pour exercer ces droits, écrivez-nous à info@ontourdmc.com."
+    },
+    "cookies": {
+      "title": "6. Cookies",
+      "text": "Nous utilisons des cookies techniques et analytiques pour améliorer les performances du site et comprendre son utilisation. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur, bien que certaines fonctionnalités puissent être affectées."
+    },
+    "lastUpdated": "Dernière mise à jour : avril 2026"
+  },
+  "legalTourism": {
+    "title": "Registre national du tourisme",
+    "subtitle": "Ontour DMC Colombia est une agence légalement enregistrée auprès des autorités touristiques colombiennes.",
+    "registryTitle": "Agence vérifiée",
+    "registryBody": "Ontour S.A.S. est inscrite au Registre national du tourisme, administré par le Patrimoine autonome Fonds national du tourisme (FONTUR).",
+    "rntNumber": "RNT 62212",
+    "downloadCertificate": "Télécharger le certificat officiel",
+    "whatIsRnt": {
+      "title": "Qu'est-ce que le RNT ?",
+      "text": "Le Registre national du tourisme (RNT) est une obligation légale pour tous les prestataires de services touristiques en Colombie, conformément à la loi 300 de 1996 et à la loi 1558 de 2012. L'inscription garantit que l'entreprise respecte les normes de qualité, de sécurité et de légalité exigées par le Ministère du Commerce, de l'Industrie et du Tourisme."
+    },
+    "guarantee": {
+      "title": "Que garantit-il au voyageur ?",
+      "text": "En voyageant avec une entreprise inscrite au RNT, le voyageur est assuré que :\n• L'entreprise dispose de polices de responsabilité civile et de conformité.\n• Les services sont opérés selon la réglementation en vigueur.\n• Il existe un soutien institutionnel en cas d'éventualité.\n• Le voyage contribue au développement durable du tourisme en Colombie."
+    },
+    "fontur": {
+      "title": "Patrimoine autonome FONTUR",
+      "text": "Le Fonds national du tourisme (FONTUR) est le patrimoine autonome qui administre les ressources destinées à la promotion, la compétitivité et la durabilité du tourisme en Colombie. En tant qu'agence enregistrée, Ontour contribue au renforcement du secteur touristique national."
+    },
+    "lastUpdated": "Dernière mise à jour : avril 2026"
+  },
+  "legalFaq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Réponses aux questions les plus courantes de nos voyageurs.",
+    "q1": {
+      "question": "Comment puis-je réserver un voyage avec Ontour ?",
+      "answer": "Vous pouvez nous contacter via WhatsApp au +57 316 538 6892, par e-mail à info@ontourdmc.com, ou via le formulaire de contact sur notre site web. Un conseiller vous répondra avec un devis personnalisé."
+    },
+    "q2": {
+      "question": "Que comprennent les circuits touristiques ?",
+      "answer": "Nos circuits incluent le transport terrestre, l'hébergement, un guide touristique professionnel, les droits d'entrée aux destinations indiquées et l'assurance voyage. Les repas varient selon le plan. Les détails spécifiques sont disponibles sur la page de chaque circuit."
+    },
+    "q3": {
+      "question": "Puis-je personnaliser mon itinéraire ?",
+      "answer": "Oui ! Nous sommes un DMC (Destination Management Company) et concevons des expériences sur mesure. Contactez-nous avec vos dates, destinations et budget préférés et nous créerons un plan personnalisé."
+    },
+    "q4": {
+      "question": "Est-il sûr de voyager en Colombie ?",
+      "answer": "La Colombie a fait d'énormes progrès en matière de sécurité touristique. Tous nos circuits opèrent dans des zones touristiques établies et comprennent des polices d'assurance, des guides professionnels et des véhicules certifiés. Votre sécurité est notre priorité."
+    },
+    "q5": {
+      "question": "Quels modes de paiement acceptez-vous ?",
+      "answer": "Nous acceptons les virements bancaires nationaux, Nequi, Daviplata et les espèces dans notre bureau à Ibagué. Pour les réservations internationales, nous proposons des options de paiement via Western Union ou PayPal."
+    },
+    "q6": {
+      "question": "Quelle est la politique d'annulation ?",
+      "answer": "Plus de 15 jours à l'avance : remboursement de 100%. Entre 8-14 jours : remboursement de 50%. Moins de 7 jours : aucun remboursement. En cas de force majeure, nous proposons un report gratuit."
+    },
+    "q7": {
+      "question": "Gérez-vous de grands groupes ou des entreprises ?",
+      "answer": "Oui, nous gérons des groupes d'entreprises, des voyages d'incentive, des congrès et des excursions scolaires. Contactez-nous pour des tarifs spéciaux et une programmation personnalisée."
+    },
+    "q8": {
+      "question": "Êtes-vous légalement constitués ?",
+      "answer": "Oui. Ontour S.A.S. est inscrite au Registre national du tourisme (RNT 62212), administré par le Patrimoine autonome Fonds national du tourisme (FONTUR), et respecte toute la réglementation du secteur touristique en Colombie."
+    }
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Solutions touristiques complètes pour voyageurs et agences. Chaque détail de votre voyage, géré par des professionnels.",
+    "transport": {
+      "title": "Transport Terrestre",
+      "description": "Flotte privée avec chauffeurs professionnels certifiés, suivi GPS satellite 24/7 et couverture porte-à-porte à travers toute la Colombie.",
+      "feature1": "4x4, vans exécutifs et bus premium",
+      "feature2": "Chauffeurs bilingues certifiés de montagne",
+      "feature3": "Suivi GPS satellite et assistance routière"
+    },
+    "accommodation": {
+      "title": "Hébergement",
+      "description": "Sélection exclusive d'haciendas, hôtels boutique, glampings et éco-lodges vérifiés pour leur charme patrimonial, confort et luxe discret.",
+      "feature1": "Haciendas caféières, boutiques & éco-lodges",
+      "feature2": "Audit qualité et intimité OnTour",
+      "feature3": "Tarifs nets préférentiels pour agences"
+    },
+    "guides": {
+      "title": "Guides Touristiques",
+      "description": "Guides certifiés RNT, multilingues, passionnés par l'histoire et la biodiversité colombienne, avec brevet de premiers secours en milieu isolé.",
+      "feature1": "Guides certifiés RNT bilingues et trilingues",
+      "feature2": "Spécialistes en archéologie, nature et culture",
+      "feature3": "Brevet WFA en premiers secours isolés"
+    },
+    "insurance": {
+      "title": "Assurance Voyage",
+      "description": "Polices complètes d'assistance médicale, évacuation en milieu isolé et sports d'aventure pour voyageurs internationaux, avec support 24/7.",
+      "feature1": "Assistance médicale et évacuation d'urgence",
+      "feature2": "Couverture sports d'aventure et de montagne",
+      "feature3": "Ligne d'urgence multilingue 24h/24"
+    },
+    "food": {
+      "title": "Gastronomie",
+      "description": "Voyages culinaires d'origine : dégustations privées de cafés de spécialité, menus gastronomiques avec chefs locaux et saveurs authentiques de terroir.",
+      "feature1": "Gastronomie régionale certifiée du terroir",
+      "feature2": "Dégustations privées de cafés rares (Geisha, Bourbon)",
+      "feature3": "Options véganes, végétariennes et sans allergènes"
+    },
+    "events": {
+      "title": "Logistique Événementielle",
+      "description": "Production intégrale de voyages d'incentive MICE, conventions, retraites corporate et mariages de destination dans les plus beaux cadres de Colombie.",
+      "feature1": "Incentives MICE et conventions d'entreprise",
+      "feature2": "Mariages de destination et retraites bien-être",
+      "feature3": "Production audiovisuelle et logistique créative"
+    },
+    "ctaTitle": "Besoin d'un service personnalisé ?",
+    "ctaSubtitle": "Contactez-nous et nous concevrons la solution parfaite pour votre groupe, agence ou entreprise.",
+    "ctaButton": "Demander un devis",
+    "aviaturButton": "Canal Aviatur"
+  },
+  "gallery": {
+    "title": "Galerie Photos",
+    "subtitle": "Les paysages les plus impressionnants de Colombie capturés sur nos routes et circuits.",
+    "all": "Toutes",
+    "noPhotos": "Aucune photo dans cette catégorie.",
+    "close": "Fermer",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "experienciasLabel": "Expériences",
+    "experienciasTagline": "Photos de nos voyageurs",
+    "experienciasDesc": "Moments réels vécus par ceux qui ont fait confiance à OnTour pour découvrir la Colombie.",
+    "experienciasEmptyTitle": "Soyez le premier à partager!",
+    "experienciasEmptyDesc": "Avez-vous voyagé avec nous? Envoyez-nous votre photo préférée et nous la publierons ici.",
+    "experienciasEmptyBtn": "Partager via WhatsApp",
+    "experienciasCtaTitle": "Avez-vous voyagé avec OnTour?",
+    "experienciasCtaDesc": "Partagez votre photo et rejoignez notre communauté de voyageurs.",
+    "experienciasCtaBtn": "Envoyer ma photo"
+  },
+  "macrorregiones": {
+    "tagline": "ProColombia • Le Pays de la Beauté",
+    "title": "Macrorégions Touristiques de la Colombie",
+    "subtitle": "Nous connectons les voyageurs à l'immense richesse bioculturelle des six grands territoires touristiques officiels de la Colombie, en concevant des itinéraires authentiques aux quatre coins du pays.",
+    "mapBadge": "Carte Officielle des Destinations et Régions",
+    "exploreZoom": "Explorer avec le Zoom",
+    "clickToZoom": "Cliquer pour ouvrir et zoomer",
+    "mapAlt": "Carte des 6 Macrorégions Touristiques de la Colombie - ProColombia",
+    "mapDetailAlt": "Carte détaillée des 6 Macrorégions Touristiques de la Colombie",
+    "modalInstructions": "Double-cliquez ou utilisez les commandes pour zoomer/dézoomer et faites glisser pour explorer",
+    "closeLabel": "Fermer le visualiseur",
+    "closeTitle": "Fermer (Échap)",
+    "zoomIn": "Zoom avant (+)",
+    "zoomOut": "Zoom arrière (-)",
+    "reset": "Réinitialiser",
+    "resetTitle": "Réinitialiser la taille (0)",
+    "dragToMove": "Glisser pour déplacer",
+    "regions": {
+      "caribe": {
+        "name": "Grandes Caraïbes Colombiennes",
+        "slogan": "Bien plus que les Caraïbes"
+      },
+      "pacifico": {
+        "name": "Pacifique Colombien",
+        "slogan": "Saveur de jungle et d'océan"
+      },
+      "andesOccidentales": {
+        "name": "Andes Occidentales",
+        "slogan": "Montagnes de café et de fleurs"
+      },
+      "andesOrientales": {
+        "name": "Andes Orientales",
+        "slogan": "Paramos et vallées légendaires"
+      },
+      "macizo": {
+        "name": "Massif Colombien",
+        "slogan": "Origines ancestrales"
+      },
+      "amazoniaOrinoquia": {
+        "name": "Amazonie-Orénoquie",
+        "slogan": "Forêts et plaines sacrées"
+      }
     }
   },
   "notFound": {

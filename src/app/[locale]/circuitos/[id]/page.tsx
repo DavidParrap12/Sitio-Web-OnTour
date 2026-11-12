@@ -1,14 +1,15 @@
+export const revalidate = 60;
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-import { circuitos } from "@/data/circuitos";
+import { getCircuitEntry, getPublishedCircuitIds } from "@/lib/circuits";
 import { destinos } from "@/data/destinos";
 import { routing } from "@/i18n/routing";
-import { fetchDepartureDates } from "@/lib/googleSheets";
+import { getDepartures } from "@/lib/departures";
 import { CircuitoDetailEditorial } from "./CircuitoDetailEditorial";
 import { JsonLd } from "@/components/JsonLd";
-import { buildCircuitoSchema, buildBreadcrumbs, buildDepartureDateEvents } from "@/lib/schema";
+import { buildCircuitoSchema, buildBreadcrumbs } from "@/lib/schema";
 import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
 
 // Mirrors routing.ts pathnames for /circuitos
@@ -19,9 +20,10 @@ const JOURNEYS_PATH: Record<string, string> = {
   fr: "circuits",
 };
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const ids = await getPublishedCircuitIds();
   return routing.locales.flatMap((locale) =>
-    circuitos.map((c) => ({ locale, id: c.id }))
+    ids.map((id) => ({ locale, id }))
   );
 }
 
@@ -31,12 +33,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string; id: string }>;
 }): Promise<Metadata> {
   const { locale, id } = await params;
-  const tData = await getTranslations({ locale, namespace: "circuitosData" });
-  const circuito = circuitos.find((c) => c.id === id);
+  const circuito = await getCircuitEntry(locale, id);
   if (!circuito) return {};
 
-  const name = tData(`${id}.name`);
-  const description = tData(`${id}.description`);
+  const name = circuito.name;
+  const description = circuito.description;
   const ogImageUrl = circuito.image.startsWith("http")
     ? circuito.image
     : `https://www.ontourdmc.com${circuito.image}`;
@@ -69,19 +70,16 @@ export default async function CircuitoPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("circuitDetail");
-  const tData = await getTranslations("circuitosData");
-  const circuito = circuitos.find((c) => c.id === id);
+  const circuito = await getCircuitEntry(locale, id);
 
   if (!circuito) return notFound();
 
-  const name = tData(`${id}.name`);
-  const description = tData(`${id}.description`);
-  let highlights: string[] = [];
-  try { highlights = tData.raw(`${id}.highlights`) as string[]; } catch { highlights = []; }
-  let itinerary: string[] = [];
-  try { itinerary = tData.raw(`${id}.itinerary`) as string[]; } catch { itinerary = []; }
-  const price = tData(`${id}.price`);
-  const departureDates = await fetchDepartureDates();
+  const name = circuito.name;
+  const description = circuito.description;
+  const highlights = circuito.highlights;
+  const itinerary = circuito.itinerary;
+  const price = circuito.price;
+  const departureDates = await getDepartures(id);
   const whatsappMessage = t("whatsappMessage", { name });
   const whatsappUrl = `https://wa.me/573143415177?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -96,13 +94,12 @@ export default async function CircuitoPage({
       description: tDestinos(`${d.id}.description`),
       image: d.image,
       extensionLabel: d.asExtension?.extensionLabel,
-      extensionPrice: d.asExtension?.extensionPrice,
+      extensionPrice: undefined,
       extensionDuration: d.asExtension?.extensionDuration,
     }));
 
   // -- Editorial Layout ----------------------------------------
   const schema = buildCircuitoSchema({ id, name, description, days: circuito.days, nights: circuito.nights, image: circuito.image, locale });
-  const eventSchemas = buildDepartureDateEvents({ circuitId: id, circuitName: name, image: circuito.image, departureDates, locale });
   const path = JOURNEYS_PATH[locale] ?? "circuitos";
   const listUrl = locale === "es"
     ? `https://www.ontourdmc.com/${path}`
@@ -119,7 +116,6 @@ export default async function CircuitoPage({
     <>
       <JsonLd data={schema} />
       <JsonLd data={breadcrumb} />
-      {eventSchemas.map((e, i) => <JsonLd key={i} data={e} />)}
       <CircuitoDetailEditorial
         name={name} description={description} highlights={highlights}
         itinerary={itinerary} image={circuito.image}
@@ -129,6 +125,8 @@ export default async function CircuitoPage({
         departureDates={departureDates} whatsappUrl={whatsappUrl}
         extensions={extensions} colorTheme={circuito.colorTheme}
         mapEmbedUrl={circuito.mapEmbedUrl}
+        videos={circuito.videos}
+        prices={circuito.prices} included={circuito.included} excluded={circuito.excluded}
         t={{
           badge: t("badge"), colombia: t("colombia"),
           daysNights: t("daysNights", { days: circuito.days, nights: circuito.nights }),

@@ -14,7 +14,7 @@ import {
   Lock,
 } from "lucide-react";
 import { useLocale } from "next-intl";
-import { RequestQuoteModal } from "@/components/RequestQuoteModal";
+import { MedicalAppointmentModal } from "@/components/wellness/MedicalAppointmentModal";
 
 export interface SpecialtyTreatmentItem {
   name: string;
@@ -32,6 +32,7 @@ export interface TreatmentsStrings {
   urologia: SpecialtyTreatmentItem;
   nutricion: SpecialtyTreatmentItem;
   psicologia: SpecialtyTreatmentItem;
+  odontologia: SpecialtyTreatmentItem;
 }
 
 const SPECIALTY_KEYS = [
@@ -41,6 +42,7 @@ const SPECIALTY_KEYS = [
   "urologia",
   "nutricion",
   "psicologia",
+  "odontologia",
 ] as const;
 
 type SpecialtyKey = (typeof SPECIALTY_KEYS)[number];
@@ -52,6 +54,7 @@ const SPECIALTY_IMAGES: Record<SpecialtyKey, string> = {
   urologia: "/image/bienestar/tratamientos/urologia.jpg",
   nutricion: "/image/bienestar/tratamientos/nutricion.jpg",
   psicologia: "/image/bienestar/tratamientos/psicologia.jpg",
+  odontologia: "/image/bienestar/tratamientos/odontologia.jpeg",
 };
 
 interface ClinicalSheetData {
@@ -223,6 +226,32 @@ const CLINICAL_DATA: Record<SpecialtyKey, ClinicalSheetData> = {
       hospital: "Alianza Salud Mental & Neurociencias",
     },
   },
+  odontologia: {
+    basePrice: "Custom quote",
+    candidateProfile: {
+      es: "Adultos con pérdida dental, desgaste, manchas o insatisfacción estética que buscan implantes, carillas o rehabilitación oral completa.",
+      en: "Adults with missing teeth, wear, staining or aesthetic concerns seeking implants, veneers or full oral rehabilitation.",
+      fr: "Adultes avec dents manquantes, usure ou préoccupations esthétiques souhaitant implants, facettes ou réhabilitation complète.",
+      de: "Erwachsene mit fehlenden Zähnen, Abnutzung oder ästhetischen Wünschen für Implantate, Veneers oder vollständige Rehabilitation.",
+    },
+    stayAndRecovery: {
+      es: "Estancia sugerida: 7–10 días en Colombia. Cirugía de implantes y controles en Ibagué; seguimiento digital con tu odontólogo de origen.",
+      en: "Recommended stay: 7–10 days in Colombia. Implant surgery and follow-ups in Ibagué; digital follow-up with your home dentist.",
+      fr: "Séjour recommandé: 7–10 jours en Colombie. Chirurgie implantaire et contrôles à Ibagué ; suivi numérique avec votre dentiste.",
+      de: "Empfohlener Aufenthalt: 7–10 Tage in Kolumbien. Implantation und Kontrollen in Ibagué; digitale Nachsorge mit Ihrem Zahnarzt.",
+    },
+    specialist: {
+      name: "Equipo odontológico aliado",
+      role: {
+        es: "Odontología restauradora y estética dental",
+        en: "Restorative dentistry and smile design",
+        fr: "Dentisterie restauratrice et esthétique dentaire",
+        de: "Rekonstruktive Zahnmedizin und Smile Design",
+      },
+      rethus: "Credenciales verificadas al agendar",
+      hospital: "Clínica aliada — Ibagué, Tolima",
+    },
+  },
 };
 
 const UI_MODAL: Record<string, {
@@ -233,6 +262,7 @@ const UI_MODAL: Record<string, {
   estimatedBasePrice: string;
   assignedSpecialist: string;
   startIntake: string;
+  book: string;
   close: string;
   hipaaNotice: string;
 }> = {
@@ -244,6 +274,7 @@ const UI_MODAL: Record<string, {
     estimatedBasePrice: "Precio Base Estimado",
     assignedSpecialist: "Especialista Clínico Responsable",
     startIntake: "Solicitar Valoración Médica Segura",
+    book: "Agendar cita",
     close: "Cerrar",
     hipaaNotice: "Información médica protegida bajo secreto profesional (Ley 1581 / Estándares internacionales de privacidad). Respuesta garantizada en < 24h.",
   },
@@ -255,6 +286,7 @@ const UI_MODAL: Record<string, {
     estimatedBasePrice: "Estimated Starting Price",
     assignedSpecialist: "Lead Certified Specialist",
     startIntake: "Start Secure Medical Assessment",
+    book: "Book appointment",
     close: "Close",
     hipaaNotice: "Your clinical data is strictly confidential (Ley 1581 / International health privacy standards). Guaranteed response in < 24h.",
   },
@@ -266,6 +298,7 @@ const UI_MODAL: Record<string, {
     estimatedBasePrice: "Tarif de Base Estimé",
     assignedSpecialist: "Spécialiste Médical Référent",
     startIntake: "Demander une Évaluation Médicale Sécurisée",
+    book: "Prendre rendez-vous",
     close: "Fermer",
     hipaaNotice: "Données médicales strictement confidentielles. Réponse médicale garantie sous 24h.",
   },
@@ -277,6 +310,7 @@ const UI_MODAL: Record<string, {
     estimatedBasePrice: "Geschätzter Richtpreis",
     assignedSpecialist: "Leitender Facharzt",
     startIntake: "Sichere Medizinische Ersteinschätzung anfordern",
+    book: "Termin anfragen",
     close: "Schließen",
     hipaaNotice: "Ihre medizinischen Daten unterliegen strengster Schweigepflicht. Antwort innerhalb von 24h garantiert.",
   },
@@ -410,7 +444,7 @@ export function WellnessTreatmentsGrid({
                       onClick={() => handleStartIntake(item.name)}
                       className="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-deep-forest hover:text-white text-stone-700 text-xs font-medium transition-colors min-h-[36px]"
                     >
-                      Cotizar
+                      {tModal.book}
                     </button>
                   </div>
                 </div>
@@ -585,11 +619,10 @@ export function WellnessTreatmentsGrid({
       </AnimatePresence>
 
       {/* Direct Secure Intake Modal */}
-      <RequestQuoteModal
+      <MedicalAppointmentModal
         isOpen={isQuoteOpen}
         onClose={() => setIsQuoteOpen(false)}
-        preselectedExperience="wellness"
-        preselectedItem={preselectedTreatment}
+        treatment={preselectedTreatment}
       />
     </section>
   );

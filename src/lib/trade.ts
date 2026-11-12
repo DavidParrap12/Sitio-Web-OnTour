@@ -17,10 +17,12 @@ export const TRADE_LIMITS = {
   website: 200,
   phone: 40,
   agencyType: 24,
-  volume: 24,
-  destinations: 300,
+  destinations: 400,
   notes: 2000,
 } as const;
+
+/** Practical range for a single quotation request. */
+export const MAX_TRADE_PEOPLE = 500;
 
 export const AGENCY_TYPES = [
   "tour_operator",
@@ -32,16 +34,6 @@ export const AGENCY_TYPES = [
 
 export type AgencyType = (typeof AGENCY_TYPES)[number];
 
-export const AGENCY_VOLUMES = [
-  "none",
-  "1_50",
-  "51_200",
-  "201_500",
-  "500_plus",
-] as const;
-
-export type AgencyVolume = (typeof AGENCY_VOLUMES)[number];
-
 export type TradeInput = {
   name: string;
   email: string;
@@ -50,7 +42,8 @@ export type TradeInput = {
   website: string;
   phone: string;
   agencyType: AgencyType | "";
-  volume: AgencyVolume | "";
+  /** Number of travellers for this quotation (not annual volume). */
+  people: number;
   destinations: string;
   notes: string;
 };
@@ -87,6 +80,15 @@ function pickOption<T extends string>(
   return allowed.includes(cleaned) ? cleaned : "";
 }
 
+function parsePeople(value: unknown): number {
+  const raw = typeof value === "number" ? String(value) : cleanText(value, 6);
+  const digits = raw.replace(/[^\d]/g, "");
+  if (!digits) return 0;
+
+  const people = Number(digits);
+  return Number.isSafeInteger(people) ? people : 0;
+}
+
 export function validateTradePayload(raw: unknown): TradeValidation {
   const errors: string[] = [];
 
@@ -107,7 +109,7 @@ export function validateTradePayload(raw: unknown): TradeValidation {
     AGENCY_TYPES,
     TRADE_LIMITS.agencyType
   );
-  const volume = pickOption(body.volume, AGENCY_VOLUMES, TRADE_LIMITS.volume);
+  const people = parsePeople(body.people);
   const destinations = cleanText(body.destinations, TRADE_LIMITS.destinations);
   const notes = cleanText(body.notes, TRADE_LIMITS.notes);
 
@@ -115,6 +117,7 @@ export function validateTradePayload(raw: unknown): TradeValidation {
   if (!EMAIL_RE.test(email)) errors.push("email");
   if (agency.length < 2) errors.push("agency");
   if (phone && phone.replace(/[^\d]/g, "").length < 6) errors.push("phone");
+  if (people < 1 || people > MAX_TRADE_PEOPLE) errors.push("people");
 
   if (errors.length > 0) return { ok: false, errors };
 
@@ -128,7 +131,7 @@ export function validateTradePayload(raw: unknown): TradeValidation {
       website,
       phone,
       agencyType,
-      volume,
+      people,
       destinations,
       notes,
     },

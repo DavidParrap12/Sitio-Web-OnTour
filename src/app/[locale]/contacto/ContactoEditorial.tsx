@@ -17,8 +17,6 @@ interface ContactoEditorialProps {
   support: string;
   mainOffice: string;
   mapTitle: string;
-  tabs: { travellers: string; agencies: string };
-  travellerPanel: ContactPanelCopy;
   agencyPanel: ContactPanelCopy & { badge: string };
 }
 
@@ -29,8 +27,6 @@ export function ContactoEditorial({
   support,
   mainOffice,
   mapTitle,
-  tabs,
-  travellerPanel,
   agencyPanel,
 }: ContactoEditorialProps) {
   return (
@@ -77,8 +73,6 @@ export function ContactoEditorial({
         schedule={schedule}
         support={support}
         mainOffice={mainOffice}
-        tabs={tabs}
-        travellerPanel={travellerPanel}
         agencyPanel={agencyPanel}
       />
 

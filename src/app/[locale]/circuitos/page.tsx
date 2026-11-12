@@ -1,8 +1,9 @@
+export const revalidate = 60;
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { CircuitosEditorial } from "./CircuitosEditorial";
-import { circuitos } from "@/data/circuitos";
+import { getCircuitEntries } from "@/lib/circuits";
 import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -38,41 +39,20 @@ export default async function Circuitos({
   setRequestLocale(locale);
 
   const t = await getTranslations("circuits");
-  const tData = await getTranslations("circuitosData");
+  const entries = await getCircuitEntries(locale);
 
-  const slides = circuitos.map((c) => {
-    let highlights: string[] = [];
-    try {
-      highlights = (tData.raw(`${c.id}.highlights`) as string[]) || [];
-    } catch {
-      highlights = [];
-    }
-
-    const regionMap: Record<string, string> = {
-      "epoca-precolombina-sur-colombia": "sur",
-      "tour-colombia-corazon-andes": "cafetero",
-      "tour-colombia-boyaca-colonial": "boyaca",
-      "tour-colombia-tres-ciudades": "caribe",
-      "tour-colombia-capitales-cafeteras": "cafetero",
-      "tour-camino-real": "tolima",
-      "tour-colombia-eje-cafetero": "cafetero",
-      "tour-tras-leyenda-dorado": "tolima",
-      "tour-santander-expedicion-aventurera": "santander",
-    };
-
-    return {
-      id: c.id,
-      image: c.image,
-      days: c.days,
-      nights: c.nights,
-      name: tData(`${c.id}.name`),
-      description: tData(`${c.id}.description`),
-      price: tData(`${c.id}.price`),
-      colorTheme: c.colorTheme,
-      highlights,
-      region: regionMap[c.id] || "andes",
-    };
-  });
+  const slides = entries.map((c) => ({
+    id: c.id,
+    image: c.image,
+    days: c.days,
+    nights: c.nights,
+    name: c.name,
+    description: c.description,
+    price: c.price,
+    colorTheme: c.colorTheme,
+    highlights: c.highlights,
+    region: c.region,
+  }));
 
   return (
     <CircuitosEditorial

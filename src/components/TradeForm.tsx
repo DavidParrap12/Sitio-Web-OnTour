@@ -13,6 +13,17 @@ const fieldClass =
 const labelClass =
   "block text-sm font-medium text-foreground/70 mb-2";
 
+/** Destinations mirror the local concierge so agencies recognise the regions. */
+const DESTINATION_OPTIONS = [
+  "andesCapital",
+  "caribe",
+  "surArqueologico",
+  "medellin",
+  "pacifico",
+  "granColombia",
+  "abierto",
+] as const;
+
 /**
  * B2B enquiry form. Deliberately separate from the traveller form: an agency
  * needs to share company details and volume, and the submission goes through
@@ -34,6 +45,13 @@ export function TradeForm() {
       return;
     }
 
+    const destinations = [
+      ...formData.getAll("destinations").map(String).filter(Boolean),
+      String(formData.get("destinationsOther") ?? "").trim(),
+    ]
+      .filter(Boolean)
+      .join(", ");
+
     const payload = {
       agency: String(formData.get("agency") ?? ""),
       name: String(formData.get("name") ?? ""),
@@ -42,8 +60,8 @@ export function TradeForm() {
       country: String(formData.get("country") ?? ""),
       website: String(formData.get("website") ?? ""),
       agencyType: String(formData.get("agencyType") ?? ""),
-      volume: String(formData.get("volume") ?? ""),
-      destinations: String(formData.get("destinations") ?? ""),
+      people: String(formData.get("people") ?? ""),
+      destinations,
       notes: String(formData.get("notes") ?? ""),
     };
 
@@ -227,37 +245,68 @@ export function TradeForm() {
         </div>
 
         <div>
-          <label htmlFor="trade-volume" className={labelClass}>
-            {t("volumeLabel")}
-          </label>
-          <select
-            id="trade-volume"
-            name="volume"
-            className={fieldClass}
-            defaultValue=""
-          >
-            <option value="">{t("volumePlaceholder")}</option>
-            <option value="none">{t("volumeNone")}</option>
-            <option value="1_50">{t("volumeSmall")}</option>
-            <option value="51_200">{t("volumeMedium")}</option>
-            <option value="201_500">{t("volumeLarge")}</option>
-            <option value="500_plus">{t("volumeExtra")}</option>
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="trade-destinations" className={labelClass}>
-            {t("destinationsLabel")}
+          <label htmlFor="trade-people" className={labelClass}>
+            {t("peopleLabel")}
           </label>
           <input
-            id="trade-destinations"
-            name="destinations"
-            type="text"
+            id="trade-people"
+            name="people"
+            type="number"
+            inputMode="numeric"
+            min={1}
+            max={500}
+            required
             className={fieldClass}
-            placeholder={t("destinationsPlaceholder")}
+            placeholder={t("peoplePlaceholder")}
           />
+          <p className="caption text-editorial-muted mt-1.5">
+            {t("peopleHint")}
+          </p>
         </div>
       </div>
+
+      <fieldset>
+        <legend className={labelClass}>{t("destinationsLabel")}</legend>
+        <p className="caption text-editorial-muted -mt-1 mb-3">
+          {t("destinationsHint")}
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {DESTINATION_OPTIONS.map((key) => (
+            <label
+              key={key}
+              className="flex items-start gap-3 rounded-xl border border-editorial-border bg-white px-4 py-3 cursor-pointer hover:border-editorial-accent/60 transition-colors"
+            >
+              <input
+                type="checkbox"
+                name="destinations"
+                value={t(`destinationOptions.${key}.label`)}
+                className="mt-1 h-4 w-4 shrink-0 accent-accent"
+              />
+              <span>
+                <span className="block text-sm font-semibold text-foreground">
+                  {t(`destinationOptions.${key}.label`)}
+                </span>
+                <span className="block text-xs text-editorial-muted leading-snug mt-0.5">
+                  {t(`destinationOptions.${key}.desc`)}
+                </span>
+              </span>
+            </label>
+          ))}
+        </div>
+
+        <div className="mt-4">
+          <label htmlFor="trade-destinations-other" className={labelClass}>
+            {t("destinationsOtherLabel")}
+          </label>
+          <input
+            id="trade-destinations-other"
+            name="destinationsOther"
+            type="text"
+            className={fieldClass}
+            placeholder={t("destinationsOtherPlaceholder")}
+          />
+        </div>
+      </fieldset>
 
       <div>
         <label htmlFor="trade-message" className={labelClass}>

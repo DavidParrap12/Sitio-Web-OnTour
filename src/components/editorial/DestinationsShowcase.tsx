@@ -9,6 +9,7 @@ import { SectionReveal } from "./SectionReveal";
 
 interface DestinationsShowcaseProps {
   locale: string;
+  circuits: { id: string; price: string; days: number; nights: number; image: string }[];
 }
 
 interface CorridorData {
@@ -19,7 +20,6 @@ interface CorridorData {
   duration: string;
   circuitId: string;
   circuitName: string;
-  priceFrom: string;
   highlights: string[];
   description: string;
 }
@@ -34,7 +34,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "13 Días / 12 Noches",
       circuitId: "tour-colombia-corazon-andes",
       circuitName: "Tour Corazón de los Andes",
-      priceFrom: "Desde $1.980 USD pp",
       highlights: [
         "Palmas de cera gigantes en el Valle de Cocora",
         "Haciendas cafeteras tradicionales y catas especializadas",
@@ -51,7 +50,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "8 Días / 7 Noches",
       circuitId: "tour-colombia-boyaca-colonial",
       circuitName: "Tour Boyacá Colonial",
-      priceFrom: "Desde $1.320 USD pp",
       highlights: [
         "Vistas panorámicas desde el cerro de Monserrate",
         "Catedral de Sal subterránea de Zipaquirá",
@@ -68,7 +66,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "9 Días / 8 Noches",
       circuitId: "epoca-precolombina-sur-colombia",
       circuitName: "Época Precolombina Sur de Colombia",
-      priceFrom: "Desde $1.490 USD pp",
       highlights: [
         "Caminata por laberintos rojos y grises de la Tatacoa",
         "Observación de constelaciones astronómicas nocturnas",
@@ -78,21 +75,20 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       description: "El sur mítico de Colombia: cañones de arcilla esculpidos por el viento, cielos nocturnos infinitos y las enigmáticas esculturas de civilizaciones milenarias.",
     },
     {
-      id: "caribe-cartagena",
-      name: "Cartagena & Costa Caribe",
-      tagline: "Murallas Coloniales & Islas del Rosario",
-      image: "/image/cuidad-amurallada.jpg",
-      duration: "14 Días / 13 Noches",
-      circuitId: "tour-colombia-tres-ciudades",
-      circuitName: "Colombia Diversamente Cultural",
-      priceFrom: "Desde $2.150 USD pp",
+      id: "santander-chicamocha",
+      name: "Santander & Chicamocha",
+      tagline: "Aventura, Barichara & Cañón",
+      image: "/image/img-parque-nacional-del-chicamocha-home-1024x683.jpg",
+      duration: "10 Días / 9 Noches",
+      circuitId: "tour-santander-expedicion-aventurera",
+      circuitName: "Santander Expedición Aventurera",
       highlights: [
-        "Paseo privado por la Ciudad Amurallada y Getsemaní",
-        "Atardecer en las murallas con vista al Caribe",
-        "Navegación privada a las Islas del Rosario",
-        "Fusión gastronómica caribeña de autor",
+        "Vistas imponentes sobre el Cañón del Chicamocha",
+        "Paseo colonial por Barichara, joya patrimonial de piedra",
+        "Aventura fluvial y espeleología en San Gil",
+        "Cascadas naturales de Juan Curí y Parque El Gallineral",
       ],
-      description: "El encanto caribeño con arquitectura militar española del siglo XVI, brisa marina, música en cada plaza y playas de arena blanca.",
+      description: "Tierra de aventura y arquitectura colonial de piedra tallada. El impresionante cañón del Chicamocha y la serenidad inigualable de Barichara.",
     },
   ],
   en: [
@@ -104,7 +100,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "13 Days / 12 Nights",
       circuitId: "tour-colombia-corazon-andes",
       circuitName: "Heart of the Andes Journey",
-      priceFrom: "From $1,980 USD pp",
       highlights: [
         "Towering wax palms of the Cocora Valley",
         "Specialty coffee estate cupping & roasting workshops",
@@ -121,7 +116,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "8 Days / 7 Nights",
       circuitId: "tour-colombia-boyaca-colonial",
       circuitName: "Colonial Boyacá Journey",
-      priceFrom: "From $1,320 USD pp",
       highlights: [
         "Monserrate sanctuary overlooking Bogotá's skyline",
         "Underground Salt Cathedral of Zipaquirá",
@@ -138,7 +132,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "9 Days / 8 Nights",
       circuitId: "epoca-precolombina-sur-colombia",
       circuitName: "Pre-Columbian South & Tatacoa",
-      priceFrom: "From $1,490 USD pp",
       highlights: [
         "Trekking through red clay labyrinths of the Tatacoa Desert",
         "Guided astronomical stargazing under zero light pollution",
@@ -148,21 +141,20 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       description: "The mystical south of Colombia: wind-sculpted clay canyons, celestial night skies, and the continent's largest pre-Columbian necropolis.",
     },
     {
-      id: "caribe-cartagena",
-      name: "Cartagena & Caribbean Coast",
-      tagline: "Walled Splendor & Coral Islands",
-      image: "/image/cuidad-amurallada.jpg",
-      duration: "14 Days / 13 Nights",
-      circuitId: "tour-colombia-tres-ciudades",
-      circuitName: "Diverse Colombia Grand Tour",
-      priceFrom: "From $2,150 USD pp",
+      id: "santander-chicamocha",
+      name: "Santander & Chicamocha",
+      tagline: "Adventure, Barichara & Grand Canyon",
+      image: "/image/img-parque-nacional-del-chicamocha-home-1024x683.jpg",
+      duration: "10 Days / 9 Nights",
+      circuitId: "tour-santander-expedicion-aventurera",
+      circuitName: "Santander Adventurous Expedition",
       highlights: [
-        "Private historic strolls through the Walled City & Getsemaní",
-        "Golden-hour sunsets over Caribbean stone ramparts",
-        "Private boat charters to the Rosario Coral Islands",
-        "Tasting menus celebrating Afro-Caribbean coastal cuisine",
+        "Cable car and vistas over Chicamocha Grand Canyon",
+        "Heritage walking tour through stone-paved Barichara",
+        "Rafting and adventure sports in San Gil",
+        "Juan Curí waterfalls and lush Gallineral natural reserve",
       ],
-      description: "Timeless Caribbean romance with 16th-century Spanish bastions, vibrant bougainvillea, world-class seafood, and crystalline waters.",
+      description: "Rugged adventure meets serene colonial stone craft. Experience one of the world's deepest canyons and the timeless beauty of Barichara.",
     },
   ],
   de: [
@@ -174,7 +166,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "13 Tage / 12 Nächte",
       circuitId: "tour-colombia-corazon-andes",
       circuitName: "Reise Herz der Anden",
-      priceFrom: "Ab $1.980 USD pp",
       highlights: [
         "Wachspalmen im Cocora-Tal",
         "Traditionelle Kaffeefincas mit Verkostung",
@@ -191,7 +182,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "8 Tage / 7 Nächte",
       circuitId: "tour-colombia-boyaca-colonial",
       circuitName: "Koloniales Boyacá Tour",
-      priceFrom: "Ab $1.320 USD pp",
       highlights: [
         "Panoramablick vom Monserrate-Hügel",
         "Unterirdische Salzkathedrale von Zipaquirá",
@@ -208,7 +198,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "9 Tage / 8 Nächte",
       circuitId: "epoca-precolombina-sur-colombia",
       circuitName: "Präkolumbischer Süden",
-      priceFrom: "Ab $1.490 USD pp",
       highlights: [
         "Wanderung durch rote Lehmcanyons der Tatacoa",
         "Sternenbeobachtung am Nachthimmel",
@@ -218,21 +207,20 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       description: "Der mystische Süden: Lehmformationen, klarer Sternenhimmel und die monumentalen Steinstatuen präkolumbischer Kulturen.",
     },
     {
-      id: "caribe-cartagena",
-      name: "Cartagena & Karibikküste",
-      tagline: "Kolonialromantik & Koralleninseln",
-      image: "/image/cuidad-amurallada.jpg",
-      duration: "14 Tage / 13 Nächte",
-      circuitId: "tour-colombia-tres-ciudades",
-      circuitName: "Kulturelle Vielfalt Kolumbiens",
-      priceFrom: "Ab $2.150 USD pp",
+      id: "santander-chicamocha",
+      name: "Santander & Chicamocha",
+      tagline: "Abenteuer, Barichara & Canyon",
+      image: "/image/img-parque-nacional-del-chicamocha-home-1024x683.jpg",
+      duration: "10 Tage / 9 Nächte",
+      circuitId: "tour-santander-expedicion-aventurera",
+      circuitName: "Santander Abenteuer-Expedition",
       highlights: [
-        "Historische Altstadt und Viertel Getsemaní",
-        "Sonnenuntergang auf den Stadtmauern",
-        "Bootsausflug zu den Rosario-Inseln",
-        "Karibische Küche auf Sterneniveau",
+        "Seilbahn über den majestätischen Chicamocha-Canyon",
+        "Spaziergang durch das koloniale Kopfsteinpflaster von Barichara",
+        "Wildwasser-Rafting und Höhlenerkundung in San Gil",
+        "Wasserfälle von Juan Curí und Naturpark El Gallineral",
       ],
-      description: "Kolonialer Zauber mit spanischen Festungsmauern des 16. Jahrhunderts, Meeresbrise und türkisblauem Wasser.",
+      description: "Spektakuläre Canyons, Kolonialdörfer und unvergleichliche Naturerlebnisse in den Bergen von Santander.",
     },
   ],
   fr: [
@@ -244,7 +232,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "13 Jours / 12 Nuits",
       circuitId: "tour-colombia-corazon-andes",
       circuitName: "Voyage Cœur des Andes",
-      priceFrom: "À partir de $1 980 USD pp",
       highlights: [
         "Palmiers de cire géants dans la Vallée de Cocora",
         "Plantations de café traditionnelles et dégustations",
@@ -261,7 +248,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "8 Jours / 7 Nuits",
       circuitId: "tour-colombia-boyaca-colonial",
       circuitName: "Voyage Boyacá Colonial",
-      priceFrom: "À partir de $1 320 USD pp",
       highlights: [
         "Sanctuaire de Monserrate dominant Bogotá",
         "Cathédrale de Sel souterraine de Zipaquirá",
@@ -278,7 +264,6 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       duration: "9 Jours / 8 Nuits",
       circuitId: "epoca-precolombina-sur-colombia",
       circuitName: "Sud Précolombien & Tatacoa",
-      priceFrom: "À partir de $1 490 USD pp",
       highlights: [
         "Randonnée dans les canyons ocres du Désert de Tatacoa",
         "Soirée d'observation astronomique sous un ciel pur",
@@ -288,21 +273,20 @@ const CORRIDORS: Record<string, CorridorData[]> = {
       description: "Le sud mystique : paysages minéraux sculptés par le vent, ciels étoilés et mystérieuses statues millénaires.",
     },
     {
-      id: "caribe-cartagena",
-      name: "Carthagène & Côte Caraïbe",
-      tagline: "Remparts Historiques & Îles Coralliennes",
-      image: "/image/cuidad-amurallada.jpg",
-      duration: "14 Jours / 13 Nuits",
-      circuitId: "tour-colombia-tres-ciudades",
-      circuitName: "Grande Traversée de Colombie",
-      priceFrom: "À partir de $2 150 USD pp",
+      id: "santander-chicamocha",
+      name: "Santander & Chicamocha",
+      tagline: "Aventure, Barichara & Grand Canyon",
+      image: "/image/img-parque-nacional-del-chicamocha-home-1024x683.jpg",
+      duration: "10 Jours / 9 Nuits",
+      circuitId: "tour-santander-expedicion-aventurera",
+      circuitName: "Santander Expédition Aventure",
       highlights: [
-        "Flânerie privée dans la Cité Fortifiée et Getsemaní",
-        "Coucher de soleil sur les remparts face aux Caraïbes",
-        "Navigation privée vers les Îles du Rosaire",
-        "Gastronomie côtière d'auteur",
+        "Téléphérique au-dessus du majestueux canyon du Chicamocha",
+        "Balade dans les ruelles pavées et préservées de Barichara",
+        "Rafting et spéléologie à San Gil, capitale de l'aventure",
+        "Cascades de Juan Curí et parc naturel El Gallineral",
       ],
-      description: "Le romantisme caribéen avec ses bastions du XVIe siècle, ses façades colorées et ses eaux turquoise.",
+      description: "Sensations fortes et charme colonial au cœur des montagnes de Santander et de l'un des plus profonds canyons au monde.",
     },
   ],
 };
@@ -338,13 +322,14 @@ const SECTION_STRINGS = {
   },
 };
 
-export function DestinationsShowcase({ locale }: DestinationsShowcaseProps) {
+export function DestinationsShowcase({ locale, circuits }: DestinationsShowcaseProps) {
   const [activeId, setActiveId] = useState("tolima-cafetero");
-  const corridors = CORRIDORS[(locale as keyof typeof CORRIDORS)] || CORRIDORS.es;
+  const corridors = (CORRIDORS[(locale as keyof typeof CORRIDORS)] || CORRIDORS.es).filter(c=>circuits.some(p=>p.id===c.circuitId));
   const strings = SECTION_STRINGS[(locale as keyof typeof SECTION_STRINGS)] || SECTION_STRINGS.es;
 
   const active = corridors.find((c) => c.id === activeId) || corridors[0];
 
+  if(!active)return null;
   return (
     <section className="py-20 md:py-28 bg-white border-t border-stone-200/60 relative">
       <div className="container mx-auto px-4 md:px-8">
@@ -461,7 +446,7 @@ export function DestinationsShowcase({ locale }: DestinationsShowcaseProps) {
                       Tarifa base orientativa
                     </span>
                     <span className="text-base sm:text-lg font-bold text-[#16352D]">
-                      {active.priceFrom}
+                      {circuits.find(c => c.id === active.circuitId)?.price || ""}
                     </span>
                   </div>
                   <Link

@@ -49,6 +49,7 @@ export function checkRateLimit(
   }
 
   pruneExpired(now);
+  if(buckets.size+rules.length>MAX_TRACKED_KEYS)return {allowed:false,retryAfter:60,remaining:0};
 
   let allowed = true;
   let retryAfter = 0;

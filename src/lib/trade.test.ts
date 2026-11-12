@@ -14,7 +14,7 @@ const valid = {
   website: "agence-exemple.fr",
   phone: "+33 6 12 34 56 78",
   agencyType: "travel_agency",
-  volume: "51_200",
+  people: 24,
   destinations: "Café, Carthagène",
   notes: "Groupe de 24 personnes en mars",
 };
@@ -29,7 +29,7 @@ describe("validateTradePayload", () => {
     expect(result.data.email).toBe("claire@agence-exemple.fr");
     expect(result.data.website).toBe("https://agence-exemple.fr");
     expect(result.data.agencyType).toBe("travel_agency");
-    expect(result.data.volume).toBe("51_200");
+    expect(result.data.people).toBe(24);
   });
 
   it("requires name, a valid email and an agency name", () => {
@@ -57,14 +57,23 @@ describe("validateTradePayload", () => {
     const result = validateTradePayload({
       ...valid,
       agencyType: "hacker",
-      volume: "<script>",
     });
 
     expect(result.ok).toBe(true);
     if (!result.ok) return;
 
     expect(result.data.agencyType).toBe("");
-    expect(result.data.volume).toBe("");
+  });
+
+  it("requires a realistic group size for the quotation", () => {
+    expect(validateTradePayload({ ...valid, people: 0 }).ok).toBe(false);
+    expect(validateTradePayload({ ...valid, people: 501 }).ok).toBe(false);
+    expect(validateTradePayload({ ...valid, people: "12" }).ok).toBe(true);
+
+    const result = validateTradePayload({ ...valid, people: "12 viajeros" });
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(result.data.people).toBe(12);
   });
 
   it("strips control characters and enforces limits", () => {

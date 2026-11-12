@@ -11,7 +11,7 @@ const PILLARS_CONTENT = {
   es: {
     badge: "POR QUÉ ONTOUR DMC",
     title: "La diferencia de un operador local directo",
-    subtitle: "Diseñamos y operamos cada experiencia desde el corazón de Colombia, sin intermediarios internacionales y con un compromiso absoluto de calidad.",
+    subtitle: "Diseñamos y operamos cada experiencia desde el corazón de Colombia, en colaboración con su agencia y con atención local para sus viajeros.",
     pillars: [
       {
         icon: Compass,
@@ -48,7 +48,7 @@ const PILLARS_CONTENT = {
   en: {
     badge: "WHY ONTOUR DMC",
     title: "The Local Direct Operator Difference",
-    subtitle: "We design and operate every journey from the Andean heartland — without unnecessary layers, just licensed local excellence.",
+    subtitle: "We design and operate every journey from the Andean heartland — in partnership with your agency, with local care for your travellers.",
     pillars: [
       {
         icon: Compass,
@@ -85,7 +85,7 @@ const PILLARS_CONTENT = {
   de: {
     badge: "WARUM ONTOUR DMC",
     title: "Der Unterschied eines lokalen Direktanbieters",
-    subtitle: "Wir planen und führen jede Reise direkt aus dem Andenherzland durch — ohne Zwischenhändler und mit höchster Betreuungsqualität.",
+    subtitle: "Wir planen und führen jede Reise direkt aus dem Andenherzland durch — in Zusammenarbeit mit Ihrem Reisebüro und mit persönlicher Betreuung vor Ort.",
     pillars: [
       {
         icon: Compass,
@@ -122,7 +122,7 @@ const PILLARS_CONTENT = {
   fr: {
     badge: "POURQUOI ONTOUR DMC",
     title: "La différence d'un réceptif local direct",
-    subtitle: "Nous concevons et opérons chaque itinéraire depuis le cœur des Andes colombiennes, sans intermédiaire et avec une attention sur mesure.",
+    subtitle: "Nous concevons et opérons chaque itinéraire depuis le cœur des Andes colombiennes, en partenariat avec votre agence et avec une attention sur mesure.",
     pillars: [
       {
         icon: Compass,

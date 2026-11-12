@@ -11,6 +11,7 @@ export const QUOTE_LIMITS = {
   email: 254,
   phone: 40,
   country: 60,
+  agency: 120,
   destination: 160,
   travelMonth: 80,
   travelers: 20,
@@ -19,16 +20,23 @@ export const QUOTE_LIMITS = {
   notes: 2000,
 } as const;
 
+/** Distinguishes traveller quotes from agency and medical-appointment requests. */
+export const QUOTE_INQUIRY_TYPES = ["travel", "b2b", "medical"] as const;
+
+export type QuoteInquiryType = (typeof QUOTE_INQUIRY_TYPES)[number];
+
 export type QuoteInput = {
   name: string;
   email: string;
   phone: string;
   country: string;
+  agency: string;
   destination: string;
   travelMonth: string;
   travelers: string;
   interests: string[];
   notes: string;
+  inquiryType: QuoteInquiryType;
 };
 
 export type QuoteValidation =
@@ -78,6 +86,7 @@ export function validateQuotePayload(raw: unknown): QuoteValidation {
   const email = cleanText(body.email, QUOTE_LIMITS.email).toLowerCase();
   const phone = cleanText(body.phone, QUOTE_LIMITS.phone);
   const country = cleanText(body.country, QUOTE_LIMITS.country);
+  const agency = cleanText(body.agency, QUOTE_LIMITS.agency);
   const destination = cleanText(body.destination, QUOTE_LIMITS.destination);
   const travelMonth = cleanText(body.travelMonth, QUOTE_LIMITS.travelMonth);
   const travelers = cleanText(
@@ -86,10 +95,12 @@ export function validateQuotePayload(raw: unknown): QuoteValidation {
   );
   const interests = cleanInterests(body.interests);
   const notes = cleanText(body.notes, QUOTE_LIMITS.notes);
+  const inquiryType = pickInquiryType(body.inquiryType);
 
   if (name.length < 2) errors.push("name");
   if (!EMAIL_RE.test(email)) errors.push("email");
   if (phone && phone.replace(/[^\d]/g, "").length < 6) errors.push("phone");
+  if (inquiryType === "b2b" && agency.length < 2) errors.push("agency");
 
   if (errors.length > 0) return { ok: false, errors };
 
@@ -100,13 +111,22 @@ export function validateQuotePayload(raw: unknown): QuoteValidation {
       email,
       phone,
       country,
+      agency,
       destination,
       travelMonth,
       travelers,
       interests,
       notes,
+      inquiryType,
     },
   };
+}
+
+function pickInquiryType(value: unknown): QuoteInquiryType {
+  return typeof value === "string" &&
+    (QUOTE_INQUIRY_TYPES as readonly string[]).includes(value)
+    ? (value as QuoteInquiryType)
+    : "travel";
 }
 
 /** Returns true when a bot filled one of the hidden honeypot fields. */

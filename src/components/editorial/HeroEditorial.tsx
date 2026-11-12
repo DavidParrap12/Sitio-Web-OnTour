@@ -73,7 +73,7 @@ export function HeroEditorial({
   badge,
   intervalMs = 6000,
   actions = [],
-  minHeight = "90vh",
+  minHeight = "78svh",
   gradeClass = "",
   overlay = "cinematic",
   align,
@@ -82,6 +82,7 @@ export function HeroEditorial({
   const [current, setCurrent] = useState(0);
   const prefersReducedMotion = useReducedMotion();
   const isKenBurns = variant === "ken-burns";
+  const [paused,setPaused]=useState(false);
   const alignV = align ?? (isKenBurns ? "center" : "end");
 
   const next = useCallback(() => {
@@ -89,10 +90,10 @@ export function HeroEditorial({
   }, [slides.length]);
 
   useEffect(() => {
-    if (!isKenBurns || slides.length <= 1) return;
+    if (!isKenBurns || slides.length <= 1 || prefersReducedMotion || paused) return;
     const timer = setInterval(next, intervalMs);
     return () => clearInterval(timer);
-  }, [next, intervalMs, slides.length, isKenBurns]);
+  }, [next, intervalMs, slides.length, isKenBurns, prefersReducedMotion, paused]);
 
   const slideTransition = prefersReducedMotion
     ? { duration: 0 } as const
@@ -112,7 +113,7 @@ export function HeroEditorial({
         <AnimatePresence mode="popLayout">
           <motion.div
             key={slides[current].src}
-            initial={prefersReducedMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.1 }}
+            initial={false}
             animate={prefersReducedMotion ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
             exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0 }}
             transition={slideTransition}
@@ -146,6 +147,7 @@ export function HeroEditorial({
         </ParallaxFloat>
       )}
 
+      {isKenBurns&&!prefersReducedMotion&&slides.length>1&&<button type="button" className="absolute right-4 bottom-12 z-20 min-h-11 rounded-lg bg-black/50 px-4 text-sm text-white" aria-pressed={paused} onClick={()=>setPaused(!paused)}>{paused?"▶":"Ⅱ"} <span className="sr-only">Pause / Play</span></button>}
       {/* -- Overlay --------------------------------------------------- */}
       {overlay === "bottom" ? (
         <div className="absolute inset-0 bg-gradient-to-t from-editorial-dark/90 via-editorial-dark/40 to-transparent" />
@@ -171,7 +173,7 @@ export function HeroEditorial({
       {children ? (
         <div className="relative z-10 w-full">{children}</div>
       ) : (
-        <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 text-left max-w-full md:max-w-[52%] pt-24 pb-16">
+        <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 text-left max-w-7xl mx-auto pt-24 pb-16">
           {badge && (
             <span className="sr-only">
               {badge}
@@ -181,7 +183,7 @@ export function HeroEditorial({
           {/* Title — rendered as plain HTML, no motion wrapper.
               LCP elements must be visible on first frame; opacity:0 delays
               them until JS hydrates (+2500ms on slow connections). */}
-          <h1 className="display-1 text-white mb-6">
+          <h1 className="display-1 text-white mb-6 max-w-3xl">
             {title}
             {titleAccent && (
               <>
@@ -234,7 +236,7 @@ export function HeroEditorial({
                         type="button"
                         onClick={action.onClick}
                         className={`
-                          w-full sm:w-auto flex items-center justify-center gap-2
+                          w-full sm:w-auto flex items-center justify-center gap-2 whitespace-nowrap
                           px-8 py-4 rounded-full font-semibold text-base sm:text-lg
                           editorial-hover-rich shadow-lg cursor-pointer
                           ${
@@ -250,7 +252,7 @@ export function HeroEditorial({
                       <Link
                         href={isAnchorHref(action.href) || action.href === undefined ? "/" : action.href}
                         className={`
-                          w-full sm:w-auto flex items-center justify-center gap-2
+                          w-full sm:w-auto flex items-center justify-center gap-2 whitespace-nowrap
                           px-8 py-4 rounded-full font-semibold text-base sm:text-lg
                           editorial-hover-rich shadow-lg
                           ${

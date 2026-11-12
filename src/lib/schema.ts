@@ -130,8 +130,6 @@ export function buildPasadiaSchema({
     },
     offers: {
       "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      priceCurrency: "COP",
       url: `${BASE}/${locale === "es" ? "" : locale + "/"}contacto`,
     },
   };
@@ -192,8 +190,6 @@ export function buildCircuitoSchema({
     },
     offers: {
       "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      priceCurrency: "COP",
       url: `${BASE}/${locale === "es" ? "" : locale + "/"}contacto`,
     },
   };
@@ -276,9 +272,7 @@ export function buildDepartureDateEvents({
         },
         offers: {
           "@type": "Offer",
-          availability: "https://schema.org/InStock",
-          priceCurrency: "COP",
-          url: `${BASE}/${locale === "es" ? "" : locale + "/"}contacto`,
+                  url: `${BASE}/${locale === "es" ? "" : locale + "/"}contacto`,
         },
       };
     });

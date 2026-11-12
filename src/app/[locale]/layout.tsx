@@ -1,6 +1,6 @@
+import {headers} from "next/headers";
 import type { Metadata } from "next";
-import Script from "next/script";
-import { DM_Sans, Playfair_Display, Fraunces, Cormorant_Garamond } from "next/font/google";
+import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -20,27 +20,8 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  display: "swap",
-});
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
 
-/**
- * Google Tag Manager container — disabled by default.
- *
- * Analytics runs on gtag.js directly (see components/GoogleAnalytics.tsx).
- * Shipping a GTM container as well would load a second Google tag and invite
- * double counting, so it only activates when NEXT_PUBLIC_GTM_ID is defined.
- */
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID?.trim() || "";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -115,24 +96,16 @@ export default async function LocaleLayout({
 
   // Provide all messages to client components
   const messages = await getMessages();
+  const nonce=(await headers()).get("x-nonce")??undefined;
 
   return (
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${dmSans.variable} ${playfairDisplay.variable} ${fraunces.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="font-sans min-h-full flex flex-col bg-background text-foreground">
-        {GTM_ID && (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            />
-          </noscript>
-        )}
+
         <NextIntlClientProvider locale={locale} messages={messages}>
           {/*
             Preload the first hero slide so the browser fetches it during HTML parse.
@@ -145,30 +118,14 @@ export default async function LocaleLayout({
             fetchPriority="high"
           />
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <a href="#main-content" className="skip-link">{locale === "es" ? "Saltar al contenido" : "Skip to content"}</a>
+          <main id="main-content" className="flex-grow">{children}</main>
           <Footer />
           <WhatsappButton />
         </NextIntlClientProvider>
-        {/* Google Tag Manager (optional).
-            afterInteractive defers load until hydration — keeps it out of the
-            critical path (-114 KiB render-blocking, ~60ms main thread), while
-            still running before any user interaction.
-            NOTE: a GTM container and the direct gtag.js tag fight over the
-            same dataLayer, so only one should be enabled at a time. */}
-        {GTM_ID && (
-          <Script
-            id="gtm-script"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_ID}');`,
-            }}
-          />
-        )}
-        <GoogleAnalytics />
+
+
+        <GoogleAnalytics locale={locale} nonce={nonce}/>
       </body>
     </html>
   );

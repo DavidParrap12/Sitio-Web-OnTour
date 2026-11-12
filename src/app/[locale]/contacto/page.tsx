@@ -46,19 +46,6 @@ export default async function Contacto({
       support={t("support")}
       mainOffice={t("mainOffice")}
       mapTitle={t("mapTitle")}
-      tabs={{
-        travellers: t("tabs.travellers"),
-        agencies: t("tabs.agencies"),
-      }}
-      travellerPanel={{
-        title: t("travellerPanel.title"),
-        subtitle: t("travellerPanel.subtitle"),
-        points: [
-          t("travellerPanel.point1"),
-          t("travellerPanel.point2"),
-          t("travellerPanel.point3"),
-        ],
-      }}
       agencyPanel={{
         title: t("agencyPanel.title"),
         subtitle: t("agencyPanel.subtitle"),

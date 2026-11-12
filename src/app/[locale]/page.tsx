@@ -1,7 +1,8 @@
+export const revalidate = 60;
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-import { circuitos } from "@/data/circuitos";
+import { getCircuitEntries } from "@/lib/circuits";
 
 import { HomeEditorial } from "./HomeEditorial";
 import { JsonLd } from "@/components/JsonLd";
@@ -44,10 +45,9 @@ export default async function Home({
 
   const t = await getTranslations("home");
   const tHero = await getTranslations("hero");
-  const tCircuitos = await getTranslations("circuitosData");
 
   // All items for editorial carousel/rotation
-  const allCircuitos = circuitos;
+  const allCircuitos = await getCircuitEntries(locale);
 
   const translations: Record<string, string> = {
     _locale: locale,
@@ -75,11 +75,12 @@ export default async function Home({
       <HomeEditorial
         circuitos={allCircuitos.map((c) => ({
           id: c.id,
+          price: c.price,
           image: c.image,
           days: c.days,
           nights: c.nights,
-          name: tCircuitos(`${c.id}.name`),
-          description: tCircuitos(`${c.id}.description`),
+          name: c.name,
+          description: c.description,
           colorTheme: c.colorTheme,
         }))}
         t={translations}

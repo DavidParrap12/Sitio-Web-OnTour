@@ -10,7 +10,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import type { AppHref } from "@/lib/routes";
-import { RequestQuoteModal } from "./RequestQuoteModal";
 import { trackRequestQuoteClick } from "@/lib/analytics";
 
 const LOCALES = [
@@ -50,22 +49,22 @@ const NAV_PILLARS: NavPillar[] = [
       {
         name: { es: "Andes & Capital", en: "Andes & Capital", fr: "Andes & Capitale", de: "Anden & Hauptstadt" },
         desc: { es: "Bogotá, Monserrate y Catedral de Sal", en: "Bogotá, Monserrate & Salt Cathedral", fr: "Bogotá, Monserrate et Cathédrale de Sel", de: "Bogotá & Salzkathedrale" },
-        href: "/circuitos",
+        href: "/circuitos#tour-colombia-corazon-andes",
       },
       {
         name: { es: "Eje Cafetero & Tolima", en: "Coffee Region & Tolima", fr: "Région du Café & Tolima", de: "Kaffeeregion & Tolima" },
         desc: { es: "Ibagué, Cocora, Salento y termales", en: "Ibagué, Cocora Valley & hot springs", fr: "Ibagué, Vallée de Cocora et thermes", de: "Ibagué, Cocora-Tal & Thermalquellen" },
-        href: "/circuitos/tour-colombia-corazon-andes",
+        href: "/circuitos#tour-colombia-capitales-cafeteras",
       },
       {
         name: { es: "Boyacá Colonial", en: "Colonial Boyacá", fr: "Boyacá Colonial", de: "Koloniales Boyacá" },
         desc: { es: "Villa de Leyva, Paipa y Lago de Tota", en: "Villa de Leyva, Paipa & Lake Tota", fr: "Villa de Leyva, Paipa et Lac de Tota", de: "Villa de Leyva, Paipa & Tota-See" },
-        href: "/circuitos/tour-colombia-boyaca-colonial",
+        href: "/circuitos#tour-colombia-boyaca-colonial",
       },
       {
         name: { es: "San Agustín Arqueológico", en: "San Agustín & Archaeological South", fr: "San Agustín Archéologique", de: "San Agustín Archäologie" },
         desc: { es: "Misterio milenario, Desierto y Huila", en: "Ancient sculptures, Tatacoa Desert & Huila", fr: "Statues antiques, Désert de Tatacoa", de: "Antike Statuen & Tatacoa-Wüste" },
-        href: "/circuitos/epoca-precolombina-sur-colombia",
+        href: "/circuitos#epoca-precolombina-sur-colombia",
       },
     ],
   },
@@ -138,10 +137,10 @@ const NAV_PILLARS: NavPillar[] = [
   {
     id: "professionals",
     label: {
-      es: "Agencias & B2B",
-      en: "Travel Trade",
-      fr: "Pour Professionnels",
-      de: "Für Reisebüros",
+      es: "Nuestros Servicios",
+      en: "Our Services",
+      fr: "Nos Services",
+      de: "Unsere Dienstleistungen",
     },
     href: "/servicios",
     icon: Briefcase,
@@ -205,7 +204,6 @@ export function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
 
   const langRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -333,9 +331,9 @@ export function Navbar() {
                   onMouseEnter={() => setActiveDropdown(pillar.id)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <button
-                    type="button"
-                    onClick={() => setActiveDropdown(isOpen ? null : pillar.id)}
+                  <Link
+                    href={pillar.href as AppHref}
+                    onClick={() => setActiveDropdown(null)}
                     className={`flex items-center gap-1 px-3 py-2 rounded-xl text-sm font-semibold transition-all min-h-[44px] ${
                       isActive
                         ? "text-[#16352D] bg-[#16352D]/5 font-bold"
@@ -347,7 +345,7 @@ export function Navbar() {
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                     />
-                  </button>
+                  </Link>
 
                   {/* Dropdown Menu */}
                   <AnimatePresence>
@@ -364,7 +362,16 @@ export function Navbar() {
                             <Link
                               key={idx}
                               href={item.href as AppHref}
-                              onClick={() => setActiveDropdown(null)}
+                              onClick={() => {
+                                setActiveDropdown(null);
+                                if (typeof item.href === "string" && item.href.includes("#")) {
+                                  const hash = item.href.split("#")[1];
+                                  const el = document.getElementById(hash);
+                                  if (el) {
+                                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                                  }
+                                }
+                              }}
                               className="group flex flex-col p-2.5 rounded-xl hover:bg-[#F7F5EF] transition-colors min-h-[44px]"
                             >
                               <div className="flex items-center justify-between">
@@ -389,6 +396,22 @@ export function Navbar() {
 
           {/* Right Action Bar (Language + Persistent Quote CTA) */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
+            {/* ProColombia / Marca País Logo */}
+            <a
+              href="https://www.procolombia.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="ProColombia – Marca País Colombia"
+              className="flex items-center opacity-80 hover:opacity-100 transition-opacity duration-200 shrink-0"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/image/logo-aliados/procolombia.svg"
+                alt="Marca País Colombia"
+                className="h-7 w-auto object-contain"
+              />
+            </a>
+
             {/* Language Selector */}
             <div className="relative" ref={langRef}>
               <button
@@ -429,17 +452,17 @@ export function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* Persistent CTA Button: Plan Your Journey */}
+            {/* Persistent CTA Button: Agency Enquiry */}
             <button
               onClick={() => {
                 trackRequestQuoteClick("navbar_desktop");
-                setQuoteModalOpen(true);
+                router.push("/contacto");
               }}
               className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium tracking-wide text-xs sm:text-sm text-white bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] shadow-sm hover:shadow-md transition-all duration-300 min-h-[44px] cursor-pointer shrink-0"
             >
               <span>
-                {langKey === "es" && "Cotizar Viaje"}
-                {langKey === "en" && "Plan Your Journey"}
+                {langKey === "es" && "Cotizar un grupo"}
+                {langKey === "en" && "Agency Enquiry"}
                 {langKey === "fr" && "Demander un Devis"}
                 {langKey === "de" && "Angebot Anfordern"}
               </span>
@@ -452,7 +475,7 @@ export function Navbar() {
             <button
               onClick={() => {
                 trackRequestQuoteClick("navbar_mobile_header");
-                setQuoteModalOpen(true);
+                router.push("/contacto");
               }}
               className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full font-medium tracking-wide text-xs text-white bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] shadow-sm min-h-[44px] touch-manipulation transition-colors shrink-0"
             >
@@ -522,17 +545,27 @@ export function Navbar() {
 
                   return (
                     <div key={pillar.id} className="border-b border-stone-100/80">
-                      <button
-                        onClick={() => setMobileExpanded(isExp ? null : pillar.id)}
-                        className="w-full py-3.5 px-2 flex items-center justify-between text-left font-heading text-base font-bold text-stone-900 min-h-[48px] touch-manipulation"
-                      >
-                        <span>{pillar.label[langKey]}</span>
-                        <ChevronDown
-                          className={`w-4 h-4 text-stone-400 transition-transform duration-200 ${
-                            isExp ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
+                      <div className="flex items-center justify-between">
+                        <Link
+                          href={pillar.href as AppHref}
+                          onClick={() => setIsOpen(false)}
+                          className="flex-1 py-3.5 px-2 font-heading text-base font-bold text-stone-900 min-h-[48px] flex items-center hover:text-[#16352D]"
+                        >
+                          {pillar.label[langKey]}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => setMobileExpanded(isExp ? null : pillar.id)}
+                          className="p-3 text-stone-400 hover:text-stone-700 min-h-[48px] min-w-[48px] flex items-center justify-center touch-manipulation"
+                          aria-label={`Desplegar ${pillar.label[langKey]}`}
+                        >
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform duration-200 ${
+                              isExp ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      </div>
 
                       <AnimatePresence>
                         {isExp && (
@@ -546,7 +579,18 @@ export function Navbar() {
                               <Link
                                 key={sidx}
                                 href={sub.href as AppHref}
-                                onClick={() => setIsOpen(false)}
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  if (typeof sub.href === "string" && sub.href.includes("#")) {
+                                    const hash = sub.href.split("#")[1];
+                                    setTimeout(() => {
+                                      const el = document.getElementById(hash);
+                                      if (el) {
+                                        el.scrollIntoView({ behavior: "smooth", block: "start" });
+                                      }
+                                    }, 200);
+                                  }
+                                }}
                                 className="block py-2 px-3 rounded-xl bg-stone-50 hover:bg-[#F7F5EF] text-xs font-semibold text-stone-800 min-h-[44px] flex items-center justify-between"
                               >
                                 <span>{sub.name[langKey]}</span>
@@ -563,6 +607,24 @@ export function Navbar() {
 
               {/* Drawer Bottom Actions */}
               <div className="pt-4 border-t border-stone-100 space-y-4">
+                {/* ProColombia / Marca País Logo */}
+                <div className="flex items-center justify-center py-1">
+                  <a
+                    href="https://www.procolombia.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="ProColombia – Marca País Colombia"
+                    className="opacity-75 hover:opacity-100 transition-opacity duration-200"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/image/logo-aliados/procolombia.svg"
+                      alt="Marca País Colombia"
+                      className="h-9 w-auto object-contain"
+                    />
+                  </a>
+                </div>
+
                 {/* Language Picker */}
                 <div>
                   <span className="text-[11px] font-bold uppercase tracking-wider text-stone-400 block mb-2">
@@ -594,7 +656,7 @@ export function Navbar() {
                   onClick={() => {
                     setIsOpen(false);
                     trackRequestQuoteClick("navbar_mobile_drawer");
-                    setQuoteModalOpen(true);
+                    router.push("/contacto");
                   }}
                   className="w-full py-3.5 px-6 rounded-full bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white font-medium tracking-wide text-sm shadow-md flex items-center justify-center gap-2 min-h-[48px] touch-manipulation active:scale-[0.99] transition-all"
                 >
@@ -613,10 +675,7 @@ export function Navbar() {
       </AnimatePresence>
 
       {/* Global 3-Click Quote Modal */}
-      <RequestQuoteModal
-        isOpen={quoteModalOpen}
-        onClose={() => setQuoteModalOpen(false)}
-      />
+
     </>
   );
 }

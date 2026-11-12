@@ -76,9 +76,9 @@
 
   /* -- Fonts ------------------------------------------------------------ */
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-cormorant), var(--font-playfair), ui-serif, Georgia, serif;
-  --font-heading: var(--font-cormorant), var(--font-playfair), ui-serif, Georgia, serif;
-  --font-display: var(--font-cormorant), var(--font-playfair), ui-serif, Georgia, serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-heading: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
 }
 
 /* -- Easing & Duration (non-theme custom props) ------------------------ */
@@ -423,3 +423,14 @@ body {
     animation: none !important;
   }
 }
+
+/* Shared accessible controls and administration. */
+.skip-link { position: fixed; top: -100px; left: 16px; z-index: 100; background: #16352d; color: white; padding: 12px 20px; }
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 2px solid #937545; outline-offset: 4px; }
+.admin-field { display: block; width: 100%; min-height: 44px; border: 1px solid #d6d3d1; border-radius: 8px; padding: 10px 12px; background: white; color: #292524; }
+.admin-label { display: grid; gap: 6px; font-size: 14px; font-weight: 500; }
+.admin-button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 18px; border-radius: 8px; background: #16352d; color: white; cursor: pointer; font-weight: 600; }
+.admin-button:disabled { opacity: .5; cursor: wait; }
+.tabular-nums { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }

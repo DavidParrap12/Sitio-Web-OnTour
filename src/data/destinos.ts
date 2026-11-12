@@ -29,8 +29,6 @@ export const destinos: Destino[] = [
     colorTheme: "urbano",
     asExtension: {
       linkedCircuits: [
-        "tour-colombia-eje-cafetero",
-        "tour-colombia-tres-ciudades",
         "tour-colombia-corazon-andes",
       ],
       extensionPrice: 85,
@@ -78,7 +76,6 @@ export const destinos: Destino[] = [
         "tour-camino-real",
         "tour-colombia-corazon-andes",
         "tour-colombia-capitales-cafeteras",
-        "tour-tras-leyenda-dorado",
       ],
       extensionPrice: 70,
       extensionDuration: "1 day",
@@ -107,10 +104,8 @@ export const destinos: Destino[] = [
     asExtension: {
       linkedCircuits: [
         "epoca-precolombina-sur-colombia",
-        "tour-colombia-eje-cafetero",
         "tour-colombia-capitales-cafeteras",
         "tour-colombia-corazon-andes",
-        "tour-tras-leyenda-dorado",
       ],
       extensionPrice: 80,
       extensionDuration: "1 day",
@@ -131,7 +126,6 @@ export const destinos: Destino[] = [
     colorTheme: "playa",
     asExtension: {
       linkedCircuits: [
-        "tour-colombia-tres-ciudades",
         "tour-santander-expedicion-aventurera",
         "tour-colombia-boyaca-colonial",
       ],
@@ -154,7 +148,6 @@ export const destinos: Destino[] = [
     colorTheme: "naturaleza",
     asExtension: {
       linkedCircuits: [
-        "tour-colombia-tres-ciudades",
         "tour-santander-expedicion-aventurera",
       ],
       extensionPrice: 90,
@@ -177,8 +170,6 @@ export const destinos: Destino[] = [
     colorTheme: "playa",
     asExtension: {
       linkedCircuits: [
-        "tour-colombia-tres-ciudades",
-        "tour-colombia-eje-cafetero",
         "tour-colombia-corazon-andes",
         "epoca-precolombina-sur-colombia",
       ],

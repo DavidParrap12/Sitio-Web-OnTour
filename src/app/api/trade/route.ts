@@ -1,7 +1,10 @@
+import { readLimitedJson } from "@/lib/requestBody";
+import { captureLead } from "@/lib/crmIntake";
 import { NextResponse } from "next/server";
 import { getFormspreeEndpoint } from "@/lib/quote";
 import { isTradeHoneypotFilled, validateTradePayload } from "@/lib/trade";
-import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
+import {checkIntakeLimit} from "@/lib/intakeLimit";
+import { getClientIp } from "@/lib/rateLimit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,14 +21,6 @@ const AGENCY_TYPE_LABELS: Record<string, string> = {
   dmc: "DMC / receptivo",
   mice: "MICE / corporativo",
   other: "Otro",
-};
-
-const VOLUME_LABELS: Record<string, string> = {
-  none: "Aún no vende Colombia",
-  "1_50": "1–50 pasajeros",
-  "51_200": "51–200 pasajeros",
-  "201_500": "201–500 pasajeros",
-  "500_plus": "Más de 500 pasajeros",
 };
 
 function json(body: unknown, init?: ResponseInit) {
@@ -50,7 +45,7 @@ export async function POST(request: Request) {
   }
 
   const ip = getClientIp(request);
-  const rate = checkRateLimit(`trade:${ip}`, [
+  const rate = await checkIntakeLimit(`trade:${ip}`, [
     { limit: 4, windowMs: 10 * 60_000 },
     { limit: 12, windowMs: 60 * 60_000 },
   ]);
@@ -67,9 +62,10 @@ export async function POST(request: Request) {
 
   let raw: unknown;
   try {
-    raw = await request.json();
-  } catch {
-    return json({ error: "invalid_json" }, { status: 400 });
+    raw = await readLimitedJson(request, MAX_BODY_BYTES);
+  } catch (error) {
+    const large = error instanceof Error && error.message === "payload_too_large";
+    return json({ error: large ? "payload_too_large" : "invalid_json" }, { status: large ? 413 : 400 });
   }
 
   // Quiet success so bots do not learn which field was detected.
@@ -102,14 +98,15 @@ export async function POST(request: Request) {
     agencyType: data.agencyType
       ? AGENCY_TYPE_LABELS[data.agencyType] ?? data.agencyType
       : "No especificado",
-    annualVolume: data.volume
-      ? VOLUME_LABELS[data.volume] ?? data.volume
-      : "No especificado",
+    groupSize: `${data.people} ${data.people === 1 ? "persona" : "personas"}`,
+    quoteFor: "Grupo / viaje concreto",
     destinations: data.destinations || "No especificado",
     message: data.notes || "Sin mensaje",
     submittedAt: new Date().toISOString(),
   };
 
+  let stored = false;
+  try { stored = await captureLead({contact_name:data.name,email:data.email,agency_name:data.agency,phone:data.phone,country:data.country,travelers:data.people,destination:data.destinations,notes:data.notes,source:"trade"}); } catch { return json({error:"delivery_failed"},{status:503}); }
   let dispatched = false;
   try {
     const response = await fetch(getFormspreeEndpoint(), {
@@ -129,7 +126,7 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!dispatched) {
+  if (!dispatched && !stored) {
     // Never echo the payload or the destination address back to the client.
     return json({ error: "delivery_failed" }, { status: 502 });
   }

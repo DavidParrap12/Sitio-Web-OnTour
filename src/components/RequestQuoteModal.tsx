@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -30,18 +30,29 @@ import {
   Loader2,
 } from "lucide-react";
 import { useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { trackQuoteFormSubmit, trackWhatsAppClick } from "@/lib/analytics";
+import {
+  CIRCUIT_PRICING,
+  AVAILABLE_CIRCUITS_PRICING,
+  findCircuitPricing,
+  getTierKeyFromCount,
+  type HotelCategoryKey,
+  type PartyTierKey,
+  type CircuitTierPrices,
+} from "@/data/circuitPricing";
 
 interface RequestQuoteModalProps {
   isOpen: boolean;
   onClose: () => void;
   preselectedExperience?: string;
   preselectedItem?: string;
+  circuitId?: string;
 }
 
 const MODAL_CONTENT = {
   es: {
-    headerBadge: "OnTour DMC · Concierge Local",
+    headerBadge: "OnTour DMC · Agencias B2B",
     stepOf: "Paso {step} de 6",
     back: "Atrás",
     continue: "Continuar",
@@ -71,16 +82,24 @@ const MODAL_CONTENT = {
       months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
     },
     step3: {
-      title: "¿Cuántas personas viajan?",
-      subtitle: "Todos los viajes de OnTour son 100% privados y a la medida de tu grupo.",
+      title: "Categoría turista y tamaño del grupo",
+      subtitle: "Tarifas públicas según tamaño de grupo y categoría hotelera.",
+      circuitSelectorLabel: "Circuito seleccionado:",
+      hotelCategoryTitle: "Categoría de alojamiento (según programa oficial PDF):",
+      categoryTuristaSup4: "Turista Superior 4*",
+      categoryTurista3: "Turista 3*",
       partyTypes: [
-        { id: "solo", count: 1, label: "Viajero Solo (1)", sub: "Aventura personal" },
-        { id: "couple", count: 2, label: "En Pareja (2)", sub: "Escapada o aniversario" },
-        { id: "family", count: 4, label: "Familia / Amigos (3 a 5)", sub: "Grupo pequeño privado" },
-        { id: "group", count: 8, label: "Grupo Privado (6+)", sub: "Logística exclusiva" },
-        { id: "b2b", count: 12, label: "Agencia de Viajes / B2B", sub: "Tarifario y white-label" },
+        { id: "tier_1_4", count: 4, label: "1 a 4 personas", sub: "Tarifa B2B grupo reducido" },
+        { id: "tier_5_10", count: 6, label: "5 a 10 personas", sub: "Tarifa B2B grupo mediano" },
+        { id: "tier_11_15", count: 12, label: "11 a 15 personas", sub: "Tarifa B2B grupo estándar" },
+        { id: "tier_16_plus", count: 16, label: "16+ personas", sub: "Gran grupo · Cotización a medida" },
       ],
       exactCount: "Ajustar número exacto de viajeros:",
+      perPerson: "USD / persona",
+      netRateBadge: "Tarifa pública",
+      customQuote: "A cotizar",
+      totalEstimated: "Total grupo estimado:",
+      b2bAgencyNotice: "Tarifas públicas en USD por persona, en acomodación doble. Sujetas a fechas y disponibilidad hotelera.",
     },
     step4: {
       title: "¿Qué tipo de experiencia buscas?",
@@ -170,7 +189,7 @@ const MODAL_CONTENT = {
     },
   },
   en: {
-    headerBadge: "OnTour DMC · Local Concierge",
+    headerBadge: "OnTour DMC · Travel Agencies",
     stepOf: "Step {step} of 6",
     back: "Back",
     continue: "Continue",
@@ -200,16 +219,24 @@ const MODAL_CONTENT = {
       months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     },
     step3: {
-      title: "How many travelers?",
-      subtitle: "All OnTour journeys are 100% private and curated for your party size.",
+      title: "Tourist Category & Group Size",
+      subtitle: "Public pricing based on party size and hotel category.",
+      circuitSelectorLabel: "Selected Circuit:",
+      hotelCategoryTitle: "Accommodation category (from official brochure PDF):",
+      categoryTuristaSup4: "Tourist Superior 4*",
+      categoryTurista3: "Tourist 3*",
       partyTypes: [
-        { id: "solo", count: 1, label: "Solo Traveler (1)", sub: "Personal exploration" },
-        { id: "couple", count: 2, label: "Couple / Duo (2)", sub: "Romantic or getaway" },
-        { id: "family", count: 4, label: "Family / Friends (3 to 5)", sub: "Private small group" },
-        { id: "group", count: 8, label: "Private Group (6+)", sub: "Dedicated logistics" },
-        { id: "b2b", count: 12, label: "Travel Trade / Agency Partner", sub: "Net rates & white-label" },
+        { id: "tier_1_4", count: 4, label: "1 to 4 travelers", sub: "B2B small group rate" },
+        { id: "tier_5_10", count: 6, label: "5 to 10 travelers", sub: "B2B medium group rate" },
+        { id: "tier_11_15", count: 12, label: "11 to 15 travelers", sub: "B2B standard group rate" },
+        { id: "tier_16_plus", count: 16, label: "16+ travelers", sub: "Large group · Custom quote" },
       ],
       exactCount: "Fine-tune exact traveler count:",
+      perPerson: "USD / person",
+      netRateBadge: "Public rate",
+      customQuote: "On request",
+      totalEstimated: "Estimated group total:",
+      b2bAgencyNotice: "Public USD rates per person in double occupancy. Subject to dates and hotel availability.",
     },
     step4: {
       title: "What kind of experience are you looking for?",
@@ -299,7 +326,7 @@ const MODAL_CONTENT = {
     },
   },
   de: {
-    headerBadge: "OnTour DMC · Lokaler Concierge",
+    headerBadge: "OnTour DMC · Reiseagenturen",
     stepOf: "Schritt {step} von 6",
     back: "Zurück",
     continue: "Weiter",
@@ -329,16 +356,24 @@ const MODAL_CONTENT = {
       months: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
     },
     step3: {
-      title: "Wie viele Personen reisen?",
-      subtitle: "Alle OnTour-Reisen sind 100% privat und individuell auf Ihre Gruppe abgestimmt.",
+      title: "Touristenkategorie & Gruppengröße",
+      subtitle: "Öffentliche Preise nach Gruppengröße und Hotelkategorie.",
+      circuitSelectorLabel: "Ausgewählte Rundreise:",
+      hotelCategoryTitle: "Unterkunftskategorie (laut PDF-Programm):",
+      categoryTuristaSup4: "Tourist Superior 4*",
+      categoryTurista3: "Tourist 3*",
       partyTypes: [
-        { id: "solo", count: 1, label: "Alleinreisende(r) (1)", sub: "Individuelle Entdeckung" },
-        { id: "couple", count: 2, label: "Zu zweit (2)", sub: "Paare & Jubiläen" },
-        { id: "family", count: 4, label: "Familie / Freunde (3–5)", sub: "Kleine private Gruppe" },
-        { id: "group", count: 8, label: "Private Gruppe (6+)", sub: "Exklusive Logistik" },
-        { id: "b2b", count: 12, label: "Reisebüro / B2B-Partner", sub: "Nettotarife & White-Label" },
+        { id: "tier_1_4", count: 4, label: "1 bis 4 Personen", sub: "B2B-Tarif Kleingruppe" },
+        { id: "tier_5_10", count: 6, label: "5 bis 10 Personen", sub: "B2B-Tarif mittlere Gruppe" },
+        { id: "tier_11_15", count: 12, label: "11 bis 15 Personen", sub: "B2B-Tarif Standardgruppe" },
+        { id: "tier_16_plus", count: 16, label: "16+ Personen", sub: "Großgruppe · Maßgeschneidert" },
       ],
       exactCount: "Genaue Personenanzahl anpassen:",
+      perPerson: "USD / Person",
+      netRateBadge: "Öffentlicher Preis",
+      customQuote: "Auf Anfrage",
+      totalEstimated: "Geschätzte Gesamtsumme:",
+      b2bAgencyNotice: "Öffentliche Preise in USD pro Person im Doppelzimmer, abhängig von Reisedatum und Hotelverfügbarkeit.",
     },
     step4: {
       title: "Welche Reiseerlebnisse suchen Sie?",
@@ -428,7 +463,7 @@ const MODAL_CONTENT = {
     },
   },
   fr: {
-    headerBadge: "OnTour DMC · Concierge Local",
+    headerBadge: "OnTour DMC · Agences de voyages",
     stepOf: "Étape {step} sur 6",
     back: "Retour",
     continue: "Continuer",
@@ -458,16 +493,24 @@ const MODAL_CONTENT = {
       months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
     },
     step3: {
-      title: "Combien de voyageurs ?",
-      subtitle: "Tous les voyages OnTour sont 100% privés et adaptés à votre groupe.",
+      title: "Catégorie touriste & taille du groupe",
+      subtitle: "Tarifs publics selon la taille du groupe et la catégorie hôtelière.",
+      circuitSelectorLabel: "Circuit sélectionné :",
+      hotelCategoryTitle: "Catégorie d'hébergement (selon le programme PDF) :",
+      categoryTuristaSup4: "Touriste Supérieur 4*",
+      categoryTurista3: "Touriste 3*",
       partyTypes: [
-        { id: "solo", count: 1, label: "Voyageur Solo (1)", sub: "Aventure personnelle" },
-        { id: "couple", count: 2, label: "En Couple (2)", sub: "Échappée à deux ou anniversaire" },
-        { id: "family", count: 4, label: "Famille / Amis (3 à 5)", sub: "Petit groupe privé" },
-        { id: "group", count: 8, label: "Groupe Privé (6+)", sub: "Logistique dédiée" },
-        { id: "b2b", count: 12, label: "Professionnel / Agence B2B", sub: "Tarifs nets & marque blanche" },
+        { id: "tier_1_4", count: 4, label: "1 à 4 personnes", sub: "Tarif B2B petit groupe" },
+        { id: "tier_5_10", count: 6, label: "5 à 10 personnes", sub: "Tarif B2B groupe moyen" },
+        { id: "tier_11_15", count: 12, label: "11 à 15 personnes", sub: "Tarif B2B groupe standard" },
+        { id: "tier_16_plus", count: 16, label: "16+ personnes", sub: "Grand groupe · Sur mesure" },
       ],
       exactCount: "Ajuster le nombre exact de participants :",
+      perPerson: "USD / personne",
+      netRateBadge: "Tarif public",
+      customQuote: "Sur mesure",
+      totalEstimated: "Total groupe estimé :",
+      b2bAgencyNotice: "Tarifs publics en USD par personne en chambre double, selon les dates et la disponibilité hôtelière.",
     },
     step4: {
       title: "Quel style d'expérience recherchez-vous ?",
@@ -558,6 +601,112 @@ const MODAL_CONTENT = {
   },
 };
 
+/**
+ * Additive copy for the agency/medical improvements. Kept separate from the
+ * large legacy blocks above so the new fields stay easy to locate and edit.
+ */
+const QUOTE_EXTRAS = {
+  es: {
+    agencyLabel: "Agencia o empresa *",
+    agencyPlaceholder: "Nombre de la agencia",
+    agencyRequired: "Indica el nombre de la agencia para enviarte tarifas netas.",
+    hotelCategoryTitle: "Categoría de alojamiento preferida",
+    hotelCategories: [
+      { id: "turista_sup_4", label: "Turista Superior 4*", sub: "Cosmos 100, GHL Sonesta, Mocawa..." },
+      { id: "turista_3", label: "Turista 3*", sub: "Dann Carlton, Eco Star, Isa Victory..." },
+    ],
+    paxHint: "Tarifa B2B según rango de viajeros.",
+    priceNote:
+      "Tarifas publicadas «desde» por persona en habitación doble. La cotización final depende de fechas, categoría de hotel y disponibilidad.",
+    priceLink: "Ver circuitos y precios",
+    b2bTitle: "Tarifas netas para agencias",
+    b2bBody:
+      "Cuéntanos el tamaño del grupo y la categoría deseada; te enviamos tarifas netas, comisiones y one-pagers en menos de 24 horas hábiles.",
+  },
+  en: {
+    agencyLabel: "Agency or company *",
+    agencyPlaceholder: "Agency name",
+    agencyRequired: "Add the agency name so we can send you net rates.",
+    hotelCategoryTitle: "Preferred accommodation category",
+    hotelCategories: [
+      { id: "turista_sup_4", label: "Tourist Superior 4*", sub: "Cosmos 100, GHL Sonesta, Mocawa..." },
+      { id: "turista_3", label: "Tourist 3*", sub: "Dann Carlton, Eco Star, Isa Victory..." },
+    ],
+    paxHint: "B2B rate based on party size.",
+    priceNote:
+      "Published prices are “from” rates per person in double occupancy. The final quote depends on dates, hotel category and availability.",
+    priceLink: "View journeys and prices",
+    b2bTitle: "Net rates for agencies",
+    b2bBody:
+      "Tell us the group size and preferred category; we send net rates, commissions and one-pagers within 24 business hours.",
+    b2bSubtitle:
+      "Add your agency details and receive net rates, commissions and one-pagers per journey.",
+    b2bSubmit: "REQUEST NET RATES (SLA < 24H)",
+    b2bBadge: "OnTour DMC · Travel Trade",
+  },
+  fr: {
+    agencyLabel: "Agence ou entreprise *",
+    agencyPlaceholder: "Nom de l'agence",
+    agencyRequired: "Indiquez le nom de l'agence pour recevoir nos tarifs nets.",
+    hotelCategoryTitle: "Catégorie d'hébergement souhaitée",
+    hotelCategories: [
+      { id: "turista_sup_4", label: "Touriste Supérieur 4*", sub: "Cosmos 100, GHL Sonesta, Mocawa..." },
+      { id: "turista_3", label: "Touriste 3*", sub: "Dann Carlton, Eco Star, Isa Victory..." },
+    ],
+    paxHint: "Tarif B2B selon le nombre de voyageurs.",
+    priceNote:
+      "Les prix publiés sont des tarifs « à partir de » par personne en chambre double. Le devis final dépend des dates, de la catégorie et des disponibilités.",
+    priceLink: "Voir les circuits et les prix",
+    b2bTitle: "Tarifs nets pour agences",
+    b2bBody:
+      "Indiquez la taille du groupe et la catégorie souhaitée ; nous envoyons tarifs nets, commissions et one-pagers sous 24 heures ouvrées.",
+  },
+  de: {
+    agencyLabel: "Agentur oder Unternehmen *",
+    agencyPlaceholder: "Name der Agentur",
+    agencyRequired: "Bitte den Agenturnamen angeben, damit wir Nettoraten senden können.",
+    hotelCategoryTitle: "Gewünschte Hotelkategorie",
+    hotelCategories: [
+      { id: "turista_sup_4", label: "Tourist Superior 4*", sub: "Cosmos 100, GHL Sonesta, Mocawa..." },
+      { id: "turista_3", label: "Tourist 3*", sub: "Dann Carlton, Eco Star, Isa Victory..." },
+    ],
+    paxHint: "B2B-Tarif nach Reisendenzahl.",
+    priceNote:
+      "Veröffentlichte Preise sind „ab“-Preise pro Person im Doppelzimmer. Das endgültige Angebot hängt von Termin, Hotelkategorie und Verfügbarkeit ab.",
+    priceLink: "Rundreisen und Preise ansehen",
+    b2bTitle: "Nettoraten für Agenturen",
+    b2bBody:
+      "Nennen Sie Gruppengröße und gewünschte Kategorie; wir senden Nettoraten, Provisionen und One-Pager innerhalb von 24 Arbeitsstunden.",
+  },
+} as const;
+
+const B2B_TEXT = {
+  es: {
+    subtitle:
+      "Completa los datos de tu agencia y recibe tarifas netas, comisiones y one-pagers por circuito.",
+    submit: "SOLICITAR TARIFAS NETAS (SLA < 24H)",
+    badge: "OnTour DMC · Travel Trade",
+  },
+  en: {
+    subtitle:
+      "Add your agency details and receive net rates, commissions and one-pagers per journey.",
+    submit: "REQUEST NET RATES (SLA < 24H)",
+    badge: "OnTour DMC · Travel Trade",
+  },
+  fr: {
+    subtitle:
+      "Renseignez votre agence et recevez tarifs nets, commissions et one-pagers par circuit.",
+    submit: "DEMANDER LES TARIFS NETS (SLA < 24H)",
+    badge: "OnTour DMC · Travel Trade",
+  },
+  de: {
+    subtitle:
+      "Tragen Sie Ihre Agenturdaten ein und erhalten Sie Nettoraten, Provisionen und One-Pager pro Rundreise.",
+    submit: "NETTORATEN ANFRAGEN (SLA < 24H)",
+    badge: "OnTour DMC · Travel Trade",
+  },
+} as const;
+
 function getDestinationIcon(id: string) {
   switch (id) {
     case "andes-coffee":
@@ -601,20 +750,30 @@ export function RequestQuoteModal({
   onClose,
   preselectedExperience,
   preselectedItem,
+  circuitId,
 }: RequestQuoteModalProps) {
   const locale = useLocale();
   const lang = (["es", "en", "fr", "de"].includes(locale) ? locale : "es") as "es" | "en" | "fr" | "de";
   const c = MODAL_CONTENT[lang] || MODAL_CONTENT.es;
+  const x = QUOTE_EXTRAS[lang] || QUOTE_EXTRAS.es;
+  const bx = B2B_TEXT[lang] || B2B_TEXT.es;
 
   // Conversational Steps 1 to 6
   const [step, setStep] = useState<1 | 2 | 3 | 4 | 5 | 6>(1);
+
+  // Circuit pricing state
+  const initialCircuit = findCircuitPricing(circuitId || preselectedItem);
+  const [selectedCircuitId, setSelectedCircuitId] = useState<string>(
+    initialCircuit?.id || "tour-colombia-capitales-cafeteras"
+  );
+  const [hotelCategory, setHotelCategory] = useState<HotelCategoryKey>("turista_sup_4");
 
   // Selections state
   const [selectedDestinations, setSelectedDestinations] = useState<string[]>([]);
   const [selectedTimeframe, setSelectedTimeframe] = useState<string>("");
   const [selectedMonth, setSelectedMonth] = useState<string>("");
-  const [travelerCount, setTravelerCount] = useState<number>(2);
-  const [partyType, setPartyType] = useState<string>("couple");
+  const [travelerCount, setTravelerCount] = useState<number>(4);
+  const [partyType, setPartyType] = useState<PartyTierKey>("tier_1_4");
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [notes, setNotes] = useState<string>("");
 
@@ -623,6 +782,9 @@ export function RequestQuoteModal({
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [country, setCountry] = useState<string>("");
+  const [agency, setAgency] = useState<string>("");
+
+  const isB2B = true;
 
   // Status state
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -633,9 +795,33 @@ export function RequestQuoteModal({
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
+  // Active circuit config & pricing calculations
+  const activeCircuit =
+    CIRCUIT_PRICING[selectedCircuitId] || CIRCUIT_PRICING["tour-colombia-capitales-cafeteras"];
+
+  const getTierPrice = (tierId: string): number | null => {
+    if (tierId === "tier_16_plus") return null;
+    return activeCircuit?.categories[hotelCategory]?.prices[tierId as keyof CircuitTierPrices] ?? null;
+  };
+
+  const currentPricePerPax = getTierPrice(partyType);
+
+  const handleSelectTier = (tierId: PartyTierKey, defaultCount: number) => {
+    setPartyType(tierId);
+    setTravelerCount(defaultCount);
+  };
+
+  const handleUpdateTravelerCount = (newCount: number) => {
+    setTravelerCount(newCount);
+    setPartyType(getTierKeyFromCount(newCount));
+  };
+
   // Portals need the DOM, so only render after hydration.
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   // Reset transient form state whenever the dialog opens. Adjusting state
   // during render (instead of in an effect) avoids an extra render pass that
@@ -647,14 +833,21 @@ export function RequestQuoteModal({
       setIsSubmitted(false);
       setSubmitError(false);
 
+      if (circuitId) {
+        setSelectedCircuitId(circuitId);
+      } else if (preselectedItem) {
+        const matched = findCircuitPricing(preselectedItem);
+        if (matched) setSelectedCircuitId(matched.id);
+      }
+
       if (preselectedExperience === "wellness") {
         setSelectedInterests(["wellness"]);
         if (preselectedItem) {
           setNotes((prev) => (prev ? prev : `${c.preselection.medical} ${preselectedItem}`));
         }
       } else if (preselectedExperience === "b2b") {
-        setPartyType("b2b");
-        setTravelerCount(10);
+        setPartyType("tier_5_10");
+        setTravelerCount(6);
         setNotes((prev) => (prev ? prev : c.preselection.b2b));
       } else if (preselectedItem) {
         setNotes((prev) => (prev ? prev : `${c.preselection.itinerary} ${preselectedItem}`));
@@ -780,15 +973,50 @@ export function RequestQuoteModal({
       .join(", ");
   };
 
+  const getHotelLabel = () =>
+    hotelCategory === "turista_sup_4" ? "Turista Superior 4*" : "Turista 3*";
+
+  const getPartyLabel = () => {
+    const pt = c.step3.partyTypes.find((p) => p.id === partyType);
+    return pt ? pt.label : `${travelerCount} personas`;
+  };
+
+  const getComposedNotes = () => {
+    const tierPrice = getTierPrice(partyType);
+    const priceText =
+      typeof tierPrice === "number"
+        ? `Tarifa B2B: $${tierPrice.toLocaleString("en-US")} USD/pax (Total est: $${(tierPrice * travelerCount).toLocaleString("en-US")} USD)`
+        : "Tarifa B2B: Cotización a medida";
+
+    return [
+      notes,
+      activeCircuit ? `Circuito: ${activeCircuit.name}` : null,
+      `Categoría: ${getHotelLabel()}`,
+      `Grupo: ${travelerCount} pax (${getPartyLabel()})`,
+      priceText,
+    ]
+      .filter(Boolean)
+      .join(" · ");
+  };
+
   // Build WhatsApp text (strictly without emojis)
   const buildWhatsAppMessage = () => {
     const w = c.whatsapp;
+    const tierPrice = getTierPrice(partyType);
+
     const lines = [
       `*${w.intro}*`,
       ``,
-      `• ${w.destination}: ${getDestinationLabel()}`,
+      isB2B && agency ? `• ${x.agencyLabel.replace(" *", "")}: ${agency}` : null,
+      activeCircuit
+        ? `• Circuito: ${activeCircuit.name} (${activeCircuit.days}D/${activeCircuit.nights}N)`
+        : `• ${w.destination}: ${getDestinationLabel()}`,
       `• ${w.dates}: ${getTimeLabel()}`,
-      `• ${w.travelers}: ${travelerCount} ${w.people} (${partyType})`,
+      `• ${w.travelers}: ${travelerCount} ${w.people} (${getPartyLabel()})`,
+      `• Categoría de hotel: ${getHotelLabel()}`,
+      typeof tierPrice === "number"
+        ? `• Tarifa pública: $${tierPrice.toLocaleString("en-US")} USD / persona (Total est: $${(tierPrice * travelerCount).toLocaleString("en-US")} USD)`
+        : `• Tarifa pública: A cotizar a medida`,
       `• ${w.style}: ${getInterestsLabel()}`,
       notes ? `• ${w.notes}: ${notes}` : null,
       ``,
@@ -828,11 +1056,13 @@ export function RequestQuoteModal({
       email: email.trim(),
       phone,
       country,
+      agency: isB2B ? agency.trim() : "",
       destination: getDestinationLabel(),
       travelMonth: getTimeLabel(),
       travelers: travelerCount.toString(),
       interests: selectedInterests,
-      notes,
+      notes: getComposedNotes(),
+      inquiryType: isB2B ? "b2b" : "travel",
       company,
     };
 
@@ -885,7 +1115,7 @@ export function RequestQuoteModal({
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-label={c.headerBadge}
+        aria-label={isB2B ? bx.badge : c.headerBadge}
         tabIndex={-1}
         initial={{ opacity: 0, scale: 0.95, y: 16 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -911,7 +1141,7 @@ export function RequestQuoteModal({
             <div className="flex items-center gap-2">
               <Compass className="w-4 h-4 text-[#B49A68]" />
               <span className="text-xs uppercase tracking-widest font-semibold text-white/85">
-                {c.headerBadge}
+                {isB2B ? bx.badge : c.headerBadge}
               </span>
             </div>
           </div>
@@ -980,6 +1210,16 @@ export function RequestQuoteModal({
                     <Users className="w-4 h-4 text-editorial-accent shrink-0 mt-1" />
                     <span><strong>{c.recap.travelers}</strong> {travelerCount} pax</span>
                   </div>
+                  <div className="flex items-start gap-2.5">
+                    <Building2 className="w-4 h-4 text-editorial-accent shrink-0 mt-1" />
+                    <span><strong>{x.hotelCategoryTitle}:</strong> {getHotelLabel()}</span>
+                  </div>
+                  {isB2B && agency ? (
+                    <div className="flex items-start gap-2.5">
+                      <Compass className="w-4 h-4 text-editorial-accent shrink-0 mt-1" />
+                      <span><strong>{x.agencyLabel.replace(" *", "")}:</strong> {agency}</span>
+                    </div>
+                  ) : null}
                   <div className="flex items-start gap-2.5">
                     <Sparkles className="w-4 h-4 text-editorial-accent shrink-0 mt-1" />
                     <span><strong>{c.recap.style}</strong> {getInterestsLabel()}</span>
@@ -1065,6 +1305,18 @@ export function RequestQuoteModal({
                         </button>
                       );
                     })}
+                  </div>
+
+                  <div className="rounded-2xl border border-[#B49A68]/30 bg-[#faf6ed] px-4 py-3.5 text-xs sm:text-sm text-stone-600 leading-relaxed">
+                    <p>{x.priceNote}</p>
+                    <Link
+                      href="/circuitos"
+                      onClick={onClose}
+                      className="mt-1.5 inline-flex items-center gap-1 font-semibold text-[#16352D] hover:text-[#B49A68] transition-colors"
+                    >
+                      {x.priceLink}
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
 
                   <div className="pt-3 flex justify-end">
@@ -1167,7 +1419,7 @@ export function RequestQuoteModal({
                 </motion.div>
               )}
 
-              {/* STEP 3: TRAVELERS */}
+              {/* STEP 3: TRAVELERS & B2B CIRCUIT PRICING */}
               {step === 3 && (
                 <motion.div
                   key="step-3"
@@ -1186,53 +1438,170 @@ export function RequestQuoteModal({
                     </p>
                   </div>
 
+                  {/* Circuit Selector Card */}
+                  <div className="p-4 rounded-2xl bg-[#F7F5EF] border border-[#16352D]/15">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <div>
+                        <span className="text-[11px] uppercase tracking-wider font-bold text-stone-500 block">
+                          {c.step3.circuitSelectorLabel}
+                        </span>
+                        <span className="font-heading font-bold text-base text-stone-900 block mt-0.5">
+                          {activeCircuit?.name || "Circuito"}
+                        </span>
+                        {activeCircuit?.days && (
+                          <span className="text-xs text-stone-500 block mt-0.5">
+                            {activeCircuit.days} días / {activeCircuit.nights} noches · Tarifario oficial B2B
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="sm:w-64">
+                        <select
+                          value={selectedCircuitId}
+                          onChange={(e) => setSelectedCircuitId(e.target.value)}
+                          className="w-full text-xs sm:text-sm font-semibold rounded-xl border border-stone-300 bg-white px-3 py-2.5 text-stone-800 focus:outline-none focus:ring-2 focus:ring-[#16352D]/30 cursor-pointer shadow-sm"
+                        >
+                          {AVAILABLE_CIRCUITS_PRICING.map((circ) => (
+                            <option key={circ.id} value={circ.id}>
+                              {circ.shortName}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Hotel Category Selector */}
+                  <div>
+                    <span className="font-heading font-bold text-stone-900 text-sm sm:text-base block mb-2.5">
+                      {c.step3.hotelCategoryTitle}
+                    </span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setHotelCategory("turista_sup_4")}
+                        className={`rounded-2xl border p-4 text-left transition-all cursor-pointer ${
+                          hotelCategory === "turista_sup_4"
+                            ? "border-[#16352D] bg-[#F7F5EF] ring-2 ring-[#16352D]/15 font-semibold"
+                            : "border-stone-200 bg-white hover:border-editorial-accent/60"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="block font-heading font-bold text-stone-900 text-sm sm:text-base">
+                            {c.step3.categoryTuristaSup4}
+                          </span>
+                          {hotelCategory === "turista_sup_4" && (
+                            <Check className="w-4 h-4 text-[#16352D] stroke-[3]" />
+                          )}
+                        </div>
+                        <span className="block text-xs text-stone-500 mt-1 leading-snug">
+                          {activeCircuit?.categories.turista_sup_4.sub || "Hoteles 4* seleccionados"}
+                        </span>
+                        <span className="block text-[11px] text-stone-400 mt-1.5 italic line-clamp-1">
+                          Ej: {activeCircuit?.categories.turista_sup_4.hotelExamples}
+                        </span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => setHotelCategory("turista_3")}
+                        className={`rounded-2xl border p-4 text-left transition-all cursor-pointer ${
+                          hotelCategory === "turista_3"
+                            ? "border-[#16352D] bg-[#F7F5EF] ring-2 ring-[#16352D]/15 font-semibold"
+                            : "border-stone-200 bg-white hover:border-editorial-accent/60"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="block font-heading font-bold text-stone-900 text-sm sm:text-base">
+                            {c.step3.categoryTurista3}
+                          </span>
+                          {hotelCategory === "turista_3" && (
+                            <Check className="w-4 h-4 text-[#16352D] stroke-[3]" />
+                          )}
+                        </div>
+                        <span className="block text-xs text-stone-500 mt-1 leading-snug">
+                          {activeCircuit?.categories.turista_3.sub || "Hoteles 3* confort"}
+                        </span>
+                        <span className="block text-[11px] text-stone-400 mt-1.5 italic line-clamp-1">
+                          Ej: {activeCircuit?.categories.turista_3.hotelExamples}
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Party Types / Tiers */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     {c.step3.partyTypes.map((pt) => {
                       const isSelected = partyType === pt.id;
+                      const tierPrice = getTierPrice(pt.id);
+
                       return (
                         <button
                           key={pt.id}
                           type="button"
-                          onClick={() => {
-                            setPartyType(pt.id);
-                            setTravelerCount(pt.count);
-                          }}
-                          className={`p-4.5 rounded-2xl border text-left transition-all cursor-pointer ${
+                          onClick={() => handleSelectTier(pt.id as PartyTierKey, pt.count)}
+                          className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
                             isSelected
-                              ? "border-[#16352D] bg-[#F7F5EF] ring-2 ring-[#16352D]/15 font-semibold"
+                              ? "border-[#16352D] bg-[#F7F5EF] ring-2 ring-[#16352D]/15 font-semibold shadow-sm"
                               : "border-stone-200 bg-white hover:border-editorial-accent/60 hover:bg-stone-50"
                           }`}
                         >
-                          <div className="flex items-center justify-between">
-                            <h3 className="font-heading font-bold text-stone-900 text-sm sm:text-base">
-                              {pt.label}
-                            </h3>
-                            {isSelected && <Check className="w-4 h-4 text-[#16352D] stroke-[3]" />}
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <h3 className="font-heading font-bold text-stone-900 text-sm sm:text-base">
+                                {pt.label}
+                              </h3>
+                              <span className="caption text-stone-500 text-xs sm:text-sm block mt-0.5">
+                                {pt.sub}
+                              </span>
+                            </div>
+                            {isSelected && (
+                              <div className="w-5 h-5 rounded-full bg-[#16352D] text-white flex items-center justify-center shrink-0">
+                                <Check className="w-3 h-3 stroke-[3]" />
+                              </div>
+                            )}
                           </div>
-                          <span className="caption text-stone-500 text-xs sm:text-sm block mt-1">
-                            {pt.sub}
-                          </span>
+
+                          <div className="mt-3 pt-2.5 border-t border-stone-200/80 flex items-baseline justify-between">
+                            <span className="text-[11px] uppercase tracking-wider text-stone-400 font-semibold">
+                              {c.step3.netRateBadge}
+                            </span>
+                            <div>
+                              {typeof tierPrice === "number" ? (
+                                <span className="font-heading font-bold text-base sm:text-lg text-[#16352D]">
+                                  ${tierPrice.toLocaleString("en-US")}{" "}
+                                  <span className="text-xs font-normal text-stone-500">
+                                    {c.step3.perPerson}
+                                  </span>
+                                </span>
+                              ) : (
+                                <span className="text-xs sm:text-sm font-medium text-stone-500 italic">
+                                  {c.step3.customQuote}
+                                </span>
+                              )}
+                            </div>
+                          </div>
                         </button>
                       );
                     })}
                   </div>
 
                   {/* Stepper for exact passenger count */}
-                  <div className="p-5 rounded-2xl bg-[#faf8f4] border border-stone-200 flex items-center justify-between">
+                  <div className="p-4 sm:p-5 rounded-2xl bg-[#faf8f4] border border-stone-200 flex items-center justify-between">
                     <div>
                       <span className="font-heading font-bold text-stone-900 text-sm sm:text-base block">
                         {c.step3.exactCount}
                       </span>
                       <span className="text-xs sm:text-sm text-stone-500 mt-0.5 block">
-                        {travelerCount} {travelerCount === 1 ? "viajero" : "viajeros"}
+                        {travelerCount} {travelerCount === 1 ? "viajero" : "viajeros"} · Base {c.step3.partyTypes.find((p) => p.id === partyType)?.label || partyType}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-3.5">
+                    <div className="flex items-center gap-3">
                       <button
                         type="button"
-                        onClick={() => setTravelerCount((c) => Math.max(1, c - 1))}
-                        className="w-10 h-10 rounded-full bg-white border border-stone-300 text-stone-800 font-bold hover:bg-stone-100 flex items-center justify-center transition-colors cursor-pointer text-lg"
+                        onClick={() => handleUpdateTravelerCount(Math.max(1, travelerCount - 1))}
+                        className="w-10 h-10 rounded-full bg-white border border-stone-300 text-stone-800 font-bold hover:bg-stone-100 flex items-center justify-center transition-colors cursor-pointer text-lg shadow-sm"
                         aria-label="Disminuir viajeros"
                       >
                         -
@@ -1242,14 +1611,40 @@ export function RequestQuoteModal({
                       </span>
                       <button
                         type="button"
-                        onClick={() => setTravelerCount((c) => c + 1)}
-                        className="w-10 h-10 rounded-full bg-white border border-stone-300 text-stone-800 font-bold hover:bg-stone-100 flex items-center justify-center transition-colors cursor-pointer text-lg"
+                        onClick={() => handleUpdateTravelerCount(Math.min(100, travelerCount + 1))}
+                        className="w-10 h-10 rounded-full bg-white border border-stone-300 text-stone-800 font-bold hover:bg-stone-100 flex items-center justify-center transition-colors cursor-pointer text-lg shadow-sm"
                         aria-label="Aumentar viajeros"
                       >
                         +
                       </button>
                     </div>
                   </div>
+
+                  {/* Total calculation banner */}
+                  {typeof currentPricePerPax === "number" && (
+                    <div className="rounded-2xl bg-[#16352D] text-white p-4.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
+                      <div>
+                        <span className="text-xs text-[#E8DFD1] block font-medium uppercase tracking-wider">
+                          {c.step3.netRateBadge} ({hotelCategory === "turista_sup_4" ? "4*" : "3*"})
+                        </span>
+                        <span className="text-2xl font-bold font-heading">
+                          ${currentPricePerPax.toLocaleString("en-US")} USD
+                        </span>
+                      </div>
+                      <div className="sm:text-right border-t sm:border-t-0 border-white/10 pt-2 sm:pt-0">
+                        <span className="text-xs text-[#E8DFD1] block font-medium uppercase tracking-wider">
+                          {c.step3.totalEstimated} ({travelerCount} pax)
+                        </span>
+                        <span className="text-2xl font-bold font-heading text-[#E0B253]">
+                          ${(currentPricePerPax * travelerCount).toLocaleString("en-US")} USD
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  <p className="text-xs text-stone-500 leading-relaxed italic">
+                    {c.step3.b2bAgencyNotice}
+                  </p>
 
                   <div className="pt-3 flex justify-end">
                     <button
@@ -1411,8 +1806,18 @@ export function RequestQuoteModal({
                       {c.step6.title}
                     </h2>
                     <p className="text-sm sm:text-base text-stone-500 leading-relaxed">
-                      {c.step6.subtitle}
+                      {isB2B ? bx.subtitle : c.step6.subtitle}
                     </p>
+                    {isB2B && (
+                      <div className="mt-4 rounded-2xl border border-[#B49A68]/40 bg-[#faf6ed] px-4 py-3.5">
+                        <p className="font-heading font-bold text-[#16352D] text-sm">
+                          {x.b2bTitle}
+                        </p>
+                        <p className="text-xs sm:text-sm text-stone-600 mt-1 leading-relaxed">
+                          {x.b2bBody}
+                        </p>
+                      </div>
+                    )}
                   </div>
 
                   <form onSubmit={handleEmailSubmit} className="space-y-4.5">
@@ -1440,6 +1845,23 @@ export function RequestQuoteModal({
                       >
                         <p className="font-bold">{c.error.title}</p>
                         <p className="mt-1 leading-relaxed">{c.error.body}</p>
+                      </div>
+                    )}
+
+                    {isB2B && (
+                      <div>
+                        <label className="block text-xs sm:text-sm font-bold text-stone-800 mb-1.5">
+                          {x.agencyLabel}
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={agency}
+                          onChange={(e) => setAgency(e.target.value)}
+                          placeholder={x.agencyPlaceholder}
+                          className="w-full px-4 py-3 text-sm sm:text-base rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#16352D] min-h-[48px]"
+                        />
+                        <p className="text-xs text-stone-400 mt-1.5">{x.agencyRequired}</p>
                       </div>
                     )}
 
@@ -1517,7 +1939,7 @@ export function RequestQuoteModal({
                         ) : (
                           <>
                             <Send className="w-5 h-5 text-amber-300" />
-                            <span>{submitError ? c.error.retry : c.step6.submitBtn}</span>
+                            <span>{submitError ? c.error.retry : isB2B ? bx.submit : c.step6.submitBtn}</span>
                           </>
                         )}
                       </button>

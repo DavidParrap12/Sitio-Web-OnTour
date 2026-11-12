@@ -18,12 +18,12 @@
   },
   "hero": {
     "tagline": "",
-    "title1": "Kolumbien,",
-    "title2": "Für Sie Entworfen.",
-    "subtitle": "Private Reisen · Lokale Expertise · Nahtloser Service",
+    "title1": "Ihr lokaler Reiseveranstalter",
+    "title2": "in Kolumbien.",
+    "subtitle": "Maßgeschneiderte Reisen für internationale Reisebüros. Koordination ab Ibagué.",
     "ctaDayTrips": "Tagesausflüge ansehen",
-    "ctaCircuits": "Unsere Reisen entdecken ↓",
-    "ctaContact": "Planen Sie Ihre Reise",
+    "ctaCircuits": "Rundreisen entdecken",
+    "ctaContact": "Gruppenangebot anfordern",
     "goToImage": "Zum Bild {n}"
   },
   "home": {
@@ -102,7 +102,7 @@
     "metaTitle": "Kontakt & B2B",
     "metaDesc": "Planen Sie Ihre private Kolumbienreise oder fordern Sie als Reisebüro Nettotarife an. Wir antworten innerhalb von 24 Arbeitsstunden.",
     "title": "Kontakt",
-    "subtitle": "Reisende, die ihre Reise gestalten möchten, und Agenturen, die einen DMC in Kolumbien suchen. Schreiben Sie uns – wir antworten innerhalb von 24 Arbeitsstunden.",
+    "subtitle": "Wir organisieren Kolumbienreisen ausschließlich für Reiseagenturen und Veranstalter. Nennen Sie uns Reisedaten, Ziele und Gruppengröße; wir antworten innerhalb von 24 Arbeitsstunden.",
     "schedule": "Montag bis Samstag, 8:00 – 18:00 Uhr",
     "support": "Support & Buchungen",
     "mainOffice": "Hauptsitz",
@@ -164,15 +164,43 @@
     "typeDmc": "DMC / Incoming",
     "typeMice": "MICE / Firmenreisen",
     "typeOther": "Sonstiges",
-    "volumeLabel": "Gäste nach Kolumbien pro Jahr",
-    "volumePlaceholder": "Bitte wählen",
-    "volumeNone": "Noch kein Kolumbien-Verkauf",
-    "volumeSmall": "1 - 50",
-    "volumeMedium": "51 - 200",
-    "volumeLarge": "201 - 500",
-    "volumeExtra": "Mehr als 500",
+    "peopleLabel": "Reisende für dieses Angebot",
+    "peoplePlaceholder": "z. B. 12",
+    "peopleHint": "Reisende oder Gruppengröße, für die Sie kalkulieren.",
     "destinationsLabel": "Interessante Ziele oder Rundreisen",
-    "destinationsPlaceholder": "Kaffeeregion, Cartagena, Tatacoa …",
+    "destinationsHint": "Wählen Sie ein oder mehrere Ziele. Weitere können Sie unten ergänzen.",
+    "destinationsOtherLabel": "Anderes Ziel oder Rundreise",
+    "destinationsOtherPlaceholder": "z. B. Amazonas, Providencia, individuelle Route …",
+    "destinationOptions": {
+      "andesCapital": {
+        "label": "Anden & Hauptstadt",
+        "desc": "Bogotá, Boyacá, Tolima und Kaffeeregion"
+      },
+      "caribe": {
+        "label": "Karibik & Cartagena",
+        "desc": "Cartagena, Santa Marta und Tayrona"
+      },
+      "surArqueologico": {
+        "label": "Archäologischer Süden & Tatacoa",
+        "desc": "San Agustín, Huila und Wüste"
+      },
+      "medellin": {
+        "label": "Medellín & Antioquia",
+        "desc": "Guatapé, Kolonialdörfer und Paisa-Kultur"
+      },
+      "pacifico": {
+        "label": "Pazifikküste & Chocó",
+        "desc": "Nuquí, Wale und Regenwald"
+      },
+      "granColombia": {
+        "label": "Großes Kolumbien",
+        "desc": "Komplette Rundreise durch mehrere Regionen"
+      },
+      "abierto": {
+        "label": "Noch offen / Beratung",
+        "desc": "Bitte schlagen Sie die passende Route vor"
+      }
+    },
     "messageLabel": "Ihr Projekt",
     "messagePlaceholder": "Reisezeitraum, Teilnehmerzahl, Zielgruppe und was Sie von einem DMC erwarten.",
     "submit": "Nettotarife anfordern",
@@ -347,32 +375,65 @@
         "cirugiaPlastica": {
           "name": "Plastische & Ästhetische Chirurgie",
           "desc": "Hochpräzise chirurgische Eingriffe für Gesicht und Körper mit zertifizierten Spezialisten.",
-          "procedures": ["Oberlidstraffung", "Fettabsaugung", "Brustvergrößerung"]
+          "procedures": [
+            "Oberlidstraffung",
+            "Fettabsaugung",
+            "Brustvergrößerung"
+          ]
         },
         "chequeosPreventivos": {
           "name": "Präventive Vorsorgeuntersuchungen",
           "desc": "Ganzheitliche medizinische Checks speziell für die Vorsorge bei Männern und Frauen.",
-          "procedures": ["Elite Männer", "Essentiell Frauen", "Laboranalysen"]
+          "procedures": [
+            "Elite Männer",
+            "Essentiell Frauen",
+            "Laboranalysen"
+          ]
         },
         "cardiologia": {
           "name": "Kardiologie",
           "desc": "Nicht-invasive kardiovaskuläre Diagnostik und Überwachung mit modernster Technologie.",
-          "procedures": ["Echokardiogramm", "Langzeit-EKG (Holter)", "Facharzt-Beratung"]
+          "procedures": [
+            "Echokardiogramm",
+            "Langzeit-EKG (Holter)",
+            "Facharzt-Beratung"
+          ]
         },
         "urologia": {
           "name": "Urologie",
           "desc": "Spezialisierte urologische Versorgung, Behandlung von Nierensteinen und Prostatagesundheit.",
-          "procedures": ["Ganzheitliche Diagnostik", "Lithiasis", "Prostata-Vorsorge"]
+          "procedures": [
+            "Ganzheitliche Diagnostik",
+            "Lithiasis",
+            "Prostata-Vorsorge"
+          ]
         },
         "nutricion": {
           "name": "Klinische Ernährung",
           "desc": "Therapeutische, onkologische und individuelle Ernährungspläne mit klinischem Support.",
-          "procedures": ["Onkologische Ernährung", "Klinischer Support", "Individuelle Pläne"]
+          "procedures": [
+            "Onkologische Ernährung",
+            "Klinischer Support",
+            "Individuelle Pläne"
+          ]
         },
         "psicologia": {
           "name": "Klinische Psychologie",
           "desc": "Ganzheitliche psychoonkologische sowie prä- und postoperative emotionale Begleitung.",
-          "procedures": ["Psychoonkologie", "Prä-/Postoperative Begleitung", "Mentale Gesundheit"]
+          "procedures": [
+            "Psychoonkologie",
+            "Prä-/Postoperative Begleitung",
+            "Mentale Gesundheit"
+          ]
+        },
+        "odontologia": {
+          "name": "Zahnmedizin & Smile Design",
+          "desc": "Orale Rehabilitation, Implantate und digitales Smile Design mit zertifizierten Hygieneprotokollen.",
+          "procedures": [
+            "Implantate",
+            "Smile Design",
+            "Orale Rehabilitation"
+          ]
         }
       }
     },
@@ -380,11 +441,26 @@
       "title": "Ihre Reise in 5 Schritten",
       "subtitle": "Ein reibungsloses Erlebnis von Ihrem Heimatland bis zu Ihrer Genesung in Kolumbien.",
       "steps": {
-        "s1": { "title": "Kostenlose Virtuelle Beratung", "desc": "Teilen Sie Ihre Krankenakte und Fotos. Unser Spezialist prüft Ihren Fall innerhalb von 24h." },
-        "s2": { "title": "Schriftlicher Behandlungsplan", "desc": "Erhalten Sie einen detaillierten Plan mit Festpreis. Ohne Überraschungen." },
-        "s3": { "title": "Reisekoordination", "desc": "Wir kümmern uns um Unterkunft, Transfers und Ihren kompletten medizinischen Ablauf." },
-        "s4": { "title": "Behandlung & Erholung", "desc": "Entspannen Sie im Paradies, während Sie sich erholen." },
-        "s5": { "title": "Nachsorge zu Hause", "desc": "Telemedizin nach der Behandlung für Ihre Sicherheit." }
+        "s1": {
+          "title": "Kostenlose Virtuelle Beratung",
+          "desc": "Teilen Sie Ihre Krankenakte und Fotos. Unser Spezialist prüft Ihren Fall innerhalb von 24h."
+        },
+        "s2": {
+          "title": "Schriftlicher Behandlungsplan",
+          "desc": "Erhalten Sie einen detaillierten Plan mit Festpreis. Ohne Überraschungen."
+        },
+        "s3": {
+          "title": "Reisekoordination",
+          "desc": "Wir kümmern uns um Unterkunft, Transfers und Ihren kompletten medizinischen Ablauf."
+        },
+        "s4": {
+          "title": "Behandlung & Erholung",
+          "desc": "Entspannen Sie im Paradies, während Sie sich erholen."
+        },
+        "s5": {
+          "title": "Nachsorge zu Hause",
+          "desc": "Telemedizin nach der Behandlung für Ihre Sicherheit."
+        }
       }
     },
     "tolima": {
@@ -427,11 +503,26 @@
     "faq": {
       "title": "Häufig Gestellte Fragen",
       "items": {
-        "q1": { "q": "Was passiert bei Komplikationen nach der Reise?", "a": "Wir verfügen über ein spezielles Telemedizin-Protokoll für Nachuntersuchungen. Unsere Spezialisten sind innerhalb von 24 Stunden per Videoanruf erreichbar. Alle Behandlungen beinhalten eine schriftliche Garantie." },
-        "q2": { "q": "Welche Materialien werden verwendet?", "a": "Wir verwenden ausschließlich FDA/CE-zertifizierte Materialien und Produkte: Implantate, Prothesen und modernste Geräte, alle Zertifikate auf Anfrage erhältlich." },
-        "q3": { "q": "Wie lange dauert die Erholungszeit?", "a": "Die Erholungszeit variiert je nach Eingriff. Operationen: 5–7 Tage Ruhe. Ambulante Eingriffe: am selben Tag, keine Ausfallzeit. Wir planen Ihre Reise um Ihre Genesung herum." },
-        "q4": { "q": "Welche Zahlungsmethoden gibt es?", "a": "Wir akzeptieren internationale Banküberweisungen, Kreditkarten (Visa, Mastercard) und Wise/PayPal für internationale Patienten. Eine Anzahlung von 30 % sichert Ihren Termin; der Restbetrag ist vor der ersten Behandlung fällig." },
-        "q5": { "q": "Ist es sicher, für eine medizinische Behandlung nach Kolumbien zu reisen?", "a": "Kolumbien hat seine Sicherheitsindikatoren deutlich verbessert. Ibagué ist eine der sichersten mittelgroßen Städte des Landes. Unser Team übernimmt die gesamte Logistik von der Flughafenabholung bis zur Hotelkoordination." }
+        "q1": {
+          "q": "Was passiert bei Komplikationen nach der Reise?",
+          "a": "Wir verfügen über ein spezielles Telemedizin-Protokoll für Nachuntersuchungen. Unsere Spezialisten sind innerhalb von 24 Stunden per Videoanruf erreichbar. Alle Behandlungen beinhalten eine schriftliche Garantie."
+        },
+        "q2": {
+          "q": "Welche Materialien werden verwendet?",
+          "a": "Wir verwenden ausschließlich FDA/CE-zertifizierte Materialien und Produkte: Implantate, Prothesen und modernste Geräte, alle Zertifikate auf Anfrage erhältlich."
+        },
+        "q3": {
+          "q": "Wie lange dauert die Erholungszeit?",
+          "a": "Die Erholungszeit variiert je nach Eingriff. Operationen: 5–7 Tage Ruhe. Ambulante Eingriffe: am selben Tag, keine Ausfallzeit. Wir planen Ihre Reise um Ihre Genesung herum."
+        },
+        "q4": {
+          "q": "Welche Zahlungsmethoden gibt es?",
+          "a": "Wir akzeptieren internationale Banküberweisungen, Kreditkarten (Visa, Mastercard) und Wise/PayPal für internationale Patienten. Eine Anzahlung von 30 % sichert Ihren Termin; der Restbetrag ist vor der ersten Behandlung fällig."
+        },
+        "q5": {
+          "q": "Ist es sicher, für eine medizinische Behandlung nach Kolumbien zu reisen?",
+          "a": "Kolumbien hat seine Sicherheitsindikatoren deutlich verbessert. Ibagué ist eine der sichersten mittelgroßen Städte des Landes. Unser Team übernimmt die gesamte Logistik von der Flughafenabholung bis zur Hotelkoordination."
+        }
       }
     },
     "cta": {
@@ -537,7 +628,7 @@
       ]
     },
     "tour-colombia-tres-ciudades": {
-      "name": "Kolumbien – Bogotá, Medellín und Cartagena de Indias",
+      "name": "Kolumbien – Kulturelle Vielfalt",
       "description": "Eine 14-tägige Reise durch die drei Juwelen Kolumbiens: das kosmopolitische Bogotá, das innovative Medellín und das magische Cartagena de Indias. Kolonialgeschichte, Paisa-Kultur, Karibikstrände, Straßenkunst und einzigartige Erlebnisse in einer einzigen Reise.",
       "highlights": [
         "Stadtrundfahrt in Bogotá mit Abendessen auf dem Monserrate",
@@ -651,34 +742,8 @@
         "TAG 7: BOGOTÁ – FLUGHAFEN EL DORADO. Frühstück im Hotel. Zur vereinbarten Zeit Transfer zum internationalen Flughafen El Dorado zum Abflug ins Heimatland. Ende unserer Leistungen."
       ]
     },
-    "tour-colombia-eje-cafetero": {
-      "name": "Kolumbien Kaffeeregion",
-      "description": "Eine 7-tägige Reise entlang der Kaffeeroute Kolumbiens: von Bogotá zur Kaffeeregion, durch Tolima, Salento, Cocora, Kaffeefarmen, Thermalquellen und die Hauptstädte des Kaffeedreiecks. Kaffeekultur, Andenlandschaften und koloniale Tradition in einem einzigen Abenteuer.",
-      "highlights": [
-        "Gastronomisches Erlebnis in El Espinal: Lechona Tolimense",
-        "Mythologischer Park des Magdalena",
-        "Salento: Kolonialstadt und Wachspalme",
-        "Cocora-Tal und Kaffeefarm mit Übernachtung",
-        "Recuca-Park: Kaffeekultur-Tour in Calarcá",
-        "Pijao: Kolonialstraßen und Aussichtspunkt",
-        "San-Vicente-Thermalquellen in Santa Rosa de Cabal",
-        "Panorama-Stadtrundfahrt durch Pereira und Manizales",
-        "Größte Kaffeetasse der Welt (Guinness-Weltrekord)",
-        "Metrocable in Villa María"
-      ],
-      "price": "",
-      "itinerary": [
-        "TAG 1: BOGOTÁ – FLUGHAFEN EL DORADO. Empfang am internationalen Flughafen El Dorado, Transfer zum Hotel und Passagierregistrierung. Wenn der Flug morgens ankommt, machen wir eine Panorama-Stadtrundfahrt durch Bogotá. Andernfalls Übernachtung.",
-        "TAG 2: BOGOTÁ – EL ESPINAL – IBAGUÉ, DIE MUSIKSTADT. Frühstück im Hotel. Abfahrt Richtung Tolima. In El Espinal gastronomisches Erlebnis aus der spanischen Kolonialzeit und Besuch des Mythologischen Parks, Schauplatz der Legenden und Mythen des Magdalena. Transfer nach Ibagué, Kolumbiens Musikstadt. Übernachtung.",
-        "TAG 3: SALENTO – COCORA – FILANDIA. Frühstück im Hotel. Abfahrt Richtung Quindío über die La-Línea-Straße mit Blick auf die Zentralkordillere. Ankunft in Salento: Kolonialstraßen, Wachspalme (Nationalbaum) und Aussichtspunkt. Ankunft auf der Kaffeefarm. Übernachtung.",
-        "TAG 4: KAFFEEKULTUR-TOUR. Frühstück auf der Farm. Besuch des Recuca-Parks in Calarcá: Tour durch die Kaffeekultur. Nachmittags Besuch von Pijao: Kolonialstraßen, Aussichtspunkt und Hauptplatz. Rückkehr zur Kaffeefarm. Übernachtung.",
-        "TAG 5: PEREIRA CITY TOUR & THERMALQUELLEN. Frühstück auf der Farm. Panoramatour durch Pereira, die Stadt des ewigen Frühlings. Am Abend Erlebnis in den San-Vicente-Thermalquellen. Nacht in Santa Rosa de Cabal. Übernachtung.",
-        "TAG 6: MANIZALES & VILLA MARÍA CITY TOUR. Frühstück im Hotel. Tour durch Dosquebradas und Route nach Manizales: Besuch der größten Kaffeetasse der Welt (Guinness-Rekord), Metropolitanbasilika und Chipre-Aussichtspunkt. Metrocable-Tour durch Villa María. Rückkehr nach Pereira. Übernachtung.",
-        "TAG 7: PEREIRA – FLUGHAFEN EDÉN/MATECAÑA. Frühstück im Hotel. Zur vereinbarten Zeit Transfer zum Flughafen Edén oder Matecaña zum Flug nach Bogotá. Ende unserer Leistungen."
-      ]
-    },
     "tour-tras-leyenda-dorado": {
-      "name": "Auf den Spuren der Legende von El Dorado",
+      "name": "Kolumbien – Kulturelle Vielfalt",
       "description": "Eine 10-tägige Reise auf den Spuren der spanischen Entdecker durch das Herz Kolumbiens: Botanischer Garten von Bogotá, Kulturerbe-Städte, koloniales Honda, die Königliche Botanische Expedition in Mariquita, der Nationalpark Los Nevados, die Combeima-Schlucht, das Binnenmeer von Prado und die Wasserparks von Melgar. Geschichte, Natur und Abenteuer auf der Route von El Dorado.",
       "highlights": [
         "Botanischer Garten José Celestino Mutis in Bogotá",
@@ -1964,45 +2029,45 @@
     "subtitle": "Umfassende Tourismuslösungen für Reisende und Agenturen. Jedes Detail Ihrer Reise, professionell betreut.",
     "transport": {
       "title": "Bodentransport",
-      "description": "Eigene Flotte und zertifizierte Partner für sichere, komfortable Transfers in ganz Kolumbien.",
-      "feature1": "Klimatisierte Fahrzeuge mit GPS",
-      "feature2": "Professionelle zweisprachige Fahrer",
-      "feature3": "Landesweiter Tür-zu-Tür-Service"
+      "description": "Eigene Fahrzeugflotte mit zertifizierten Chauffeuren, 24/7 GPS-Satellitenüberwachung und reibungslosem Tür-zu-Tür-Service in ganz Kolumbien.",
+      "feature1": "4x4-Expeditionsfahrzeuge, Executive-Vans & Luxusbusse",
+      "feature2": "Zertifizierte zweisprachige Gebirgsfahrer",
+      "feature3": "GPS-Satellitenverfolgung & Pannenhilfe"
     },
     "accommodation": {
       "title": "Unterkunft",
-      "description": "Partnerschaften mit den besten Hotels, Landgütern und Öko-Lodges an jedem Reiseziel.",
-      "feature1": "Geprüfte 3- bis 5-Sterne-Hotels",
-      "feature2": "Exklusive Fincas und Öko-Lodges",
-      "feature3": "Garantierte Vorzugspreise"
+      "description": "Exklusive Kuration von Haciendas, Boutique-Hotels, Glampings und Öko-Lodges — geprüft auf historischen Charme, Komfort und diskreten Luxus.",
+      "feature1": "Kaffee-Haciendas, Boutique-Hotels & Öko-Lodges",
+      "feature2": "OnTour Qualitäts- und Privatsphäre-Audit",
+      "feature3": "Vergünstigte Netto-Tarife für Agenturen"
     },
     "guides": {
       "title": "Reiseführer",
-      "description": "Team zertifizierter professioneller Führer mit tiefem Wissen über jede Region.",
-      "feature1": "Zwei- und dreisprachige Führer",
-      "feature2": "Nationale Tourismuszertifizierung",
-      "feature3": "Regional- und Kulturspezialisten"
+      "description": "RNT-zertifizierte Reiseleiter mit Mehrsprachigkeit, kultureller Expertise und WFA-Wildnis-Erste-Hilfe-Zertifizierung für entlegene Expeditionen.",
+      "feature1": "RNT-zertifizierte zwei- und dreisprachige Führer",
+      "feature2": "Spezialisten für Archäologie, Natur & Kultur",
+      "feature3": "WFA-Wildnis-Erste-Hilfe zertifiziert"
     },
     "insurance": {
       "title": "Reiseversicherung",
-      "description": "Hilfs-, Haftpflicht- und Compliance-Policen für Ihre vollständige Sicherheit.",
-      "feature1": "24/7 medizinische Hilfe",
-      "feature2": "Stornierungsschutz",
-      "feature3": "Haftpflichtversicherung"
+      "description": "Umfassender medizinischer Schutz, Notfall-Evakuierung in Expeditionsgebieten und Outdoorsport-Versicherung für internationale Reisende.",
+      "feature1": "Medizinische Hilfe & Notfallevakuierung",
+      "feature2": "Abenteuer- & Bergsportversicherung",
+      "feature3": "24/7 mehrsprachige Notfall-Hotline"
     },
     "food": {
-      "title": "Verpflegung",
-      "description": "Authentische gastronomische Erlebnisse mit der regionalen Küche jedes Reiseziels.",
-      "feature1": "Traditionelle regionale Menüs",
-      "feature2": "Vegetarische und spezielle Optionen",
-      "feature3": "Gastronomische Touren inklusive"
+      "title": "Gastronomie",
+      "description": "Kulinarische Erlebnisse am Ursprungsort: private Kaffeeverkostungen seltener Varietäten, Degustationsmenüs mit Einheimischen und authentische Regionalküche.",
+      "feature1": "Zertifizierte regionale Originalküche",
+      "feature2": "Private Spezialitätenkaffee-Verkostungen (Geisha, Bourbon)",
+      "feature3": "Vegane, vegetarische und allergikerfreundliche Optionen"
     },
     "events": {
       "title": "Veranstaltungslogistik",
-      "description": "Komplettorganisation für Geschäftsreisen, Incentives, Kongresse und Gruppenausflüge.",
-      "feature1": "Firmengruppen und Incentives",
-      "feature2": "Kongresse und Teambuilding",
-      "feature3": "Schul- und Universitätsausflüge"
+      "description": "Komplette Produktion von MICE-Incentivereisen, Kongressen, Corporate-Wellness-Retreats und Destination-Weddings in Kolumbiens spektakulärsten Kulissen.",
+      "feature1": "MICE-Incentives & Unternehmenskonferenzen",
+      "feature2": "Destination-Weddings & Wellness-Retreats",
+      "feature3": "AV-Produktion & kreative Eventlogistik"
     },
     "ctaTitle": "Benötigen Sie einen maßgeschneiderten Service?",
     "ctaSubtitle": "Kontaktieren Sie uns und wir entwickeln die perfekte Lösung für Ihre Gruppe, Agentur oder Firma.",

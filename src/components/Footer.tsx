@@ -81,7 +81,15 @@ export async function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
-                <a href="tel:+573165386892" className="hover:text-accent transition-colors"> +57 314 341 5177 / +57 316 538 6892</a>
+                <span className="flex flex-wrap items-center gap-x-2">
+                  <a href="tel:+573143415177" className="hover:text-accent transition-colors">
+                    +57 314 341 5177
+                  </a>
+                  <span aria-hidden="true" className="text-white/40">/</span>
+                  <a href="tel:+573165386892" className="hover:text-accent transition-colors">
+                    +57 316 538 6892
+                  </a>
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent shrink-0" />

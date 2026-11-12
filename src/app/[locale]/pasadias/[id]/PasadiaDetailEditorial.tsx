@@ -1,5 +1,8 @@
 "use client";
 
+import {BookingForm} from "@/components/BookingForm";
+import type {Tariff} from "@/lib/pricing";
+import type {Departure} from "@/lib/departures";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { CheckCircle2, Clock, MapPin, Send } from "lucide-react";
@@ -31,6 +34,7 @@ interface Activity {
 }
 
 interface PasadiaDetailEditorialProps {
+  tariffs: Tariff[]; departureDates: Departure[]; included: string; excluded: string;
   name: string;
   description: string;
   duration: string;
@@ -45,7 +49,7 @@ interface PasadiaDetailEditorialProps {
 }
 
 export function PasadiaDetailEditorial({
-  name, description, duration, highlights, activities = [], image, gallery, locale, id, colorTheme, t,
+  tariffs, departureDates, included, excluded, name, description, duration, highlights, activities = [], image, gallery, locale, id, colorTheme, t,
 }: PasadiaDetailEditorialProps) {
   const theme = useDestinationTheme(colorTheme, locale);
 
@@ -101,6 +105,8 @@ export function PasadiaDetailEditorial({
       {/* Content */}
       <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 max-w-7xl">
 
+        <BookingForm locale={locale} departureDates={departureDates} circuitName={name} circuitId={id} tariffs={tariffs}/>
+        {(included||excluded)&&<div className="my-10 grid gap-6 sm:grid-cols-2"><div><h2 className="text-xl">{t.includes}</h2><p className="whitespace-pre-line">{included}</p></div><div><h2 className="text-xl">{locale==="es"?"No incluye":locale==="de"?"Nicht enthalten":locale==="fr"?"Non inclus":"Not included"}</h2><p className="whitespace-pre-line">{excluded}</p></div></div>}
         {/* Description */}
         <SectionReveal>
           <section className="mb-16 md:mb-20 max-w-4xl">

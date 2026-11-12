@@ -364,7 +364,7 @@ function CardSlide({
           fill
           draggable={false}
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1280px) 48vw, 560px"
-          quality={85}
+          quality={80}
           className={`object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] pointer-events-none select-none ${theme.gradeClass}`}
         />
         {/* Duration badge chip */}
@@ -376,7 +376,7 @@ function CardSlide({
       </div>
       <div className="p-5 sm:p-6 flex flex-col flex-1 justify-between">
         <div>
-          <h3 className="heading-2 text-editorial-dark mb-2 group-hover:text-editorial-accent transition-colors line-clamp-1">
+          <h3 className="heading-2 text-editorial-dark mb-2 group-hover:text-editorial-accent transition-colors line-clamp-2">
             {item.title}
           </h3>
           {item.description && (

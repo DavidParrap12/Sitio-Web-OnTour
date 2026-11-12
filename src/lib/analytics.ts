@@ -18,6 +18,8 @@ export function trackEvent(
   params: Record<string, unknown> = {}
 ) {
   if (typeof window === "undefined") return;
+  try { if(localStorage.getItem("ontour-analytics") !== "accepted") return; } catch { return; }
+  if (eventName.includes("medical") || JSON.stringify(params).includes("medical")) return;
 
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
@@ -59,7 +61,7 @@ export function trackQuoteFormSubmit(data: {
     selected_item: data.item,
     submission_method: data.method,
     travelers_count: data.travelers || "2",
-    travel_dates: data.dates || "Unspecified",
+
   });
 }
 

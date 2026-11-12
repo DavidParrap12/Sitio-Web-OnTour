@@ -10,6 +10,7 @@ import { WellnessProcessTimeline } from "@/components/wellness/WellnessProcessTi
 import { WellnessTolimaExperience } from "@/components/wellness/WellnessTolimaExperience";
 import { WellnessTestimonials } from "@/components/wellness/WellnessTestimonials";
 import { WellnessSpecialists } from "@/components/wellness/WellnessSpecialists";
+import { WellnessAllies } from "@/components/wellness/WellnessAllies";
 import { WellnessFaqAccordion } from "@/components/wellness/WellnessFaqAccordion";
 import { WellnessFinalCTA } from "@/components/wellness/WellnessFinalCTA";
 import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
@@ -108,6 +109,11 @@ export default async function BienestarPage({
       desc: t("treatments.items.psicologia.desc"),
       procedures: (t.raw("treatments.items.psicologia.procedures") || []) as string[],
     },
+    odontologia: {
+      name: t("treatments.items.odontologia.name"),
+      desc: t("treatments.items.odontologia.desc"),
+      procedures: (t.raw("treatments.items.odontologia.procedures") || []) as string[],
+    },
   };
 
   const processStrings = {
@@ -167,6 +173,7 @@ export default async function BienestarPage({
       <WellnessTolimaExperience strings={tolimaStrings} />
       <WellnessTestimonials strings={testimonialsStrings} />
       <WellnessSpecialists strings={specialistsStrings} locale={locale} />
+      <WellnessAllies />
       <WellnessFaqAccordion strings={faqStrings} />
       <WellnessFinalCTA strings={ctaStrings} />
     </div>

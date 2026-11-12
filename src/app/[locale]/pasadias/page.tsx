@@ -2,7 +2,8 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { PasadiasEditorial } from "./PasadiasEditorial";
-import { destinos } from "@/data/destinos";
+import { getCircuitEntries } from "@/lib/circuits";
+export const revalidate = 60;
 import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -38,14 +39,14 @@ export default async function Pasadias({
   setRequestLocale(locale);
 
   const t = await getTranslations("dayTrips");
-  const tData = await getTranslations("destinosData");
+  const destinos = await getCircuitEntries(locale,"day_trip");
 
   const slides = destinos.map((d) => ({
     id: d.id,
     image: d.image,
-    name: tData(`${d.id}.name`),
-    description: tData(`${d.id}.description`),
-    duration: tData(`${d.id}.duration`),
+    name: d.name,
+    description: d.description,
+    duration: d.duration,
     brochureUrl: d.brochureUrl,
     colorTheme: d.colorTheme,
   }));

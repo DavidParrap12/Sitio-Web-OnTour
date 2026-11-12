@@ -34,22 +34,7 @@
  * Days follow the historical monthly pattern so the calendar stays in the
  * future instead of silently expiring at a fixed date.
  */
-const FALLBACK_DAYS_BY_MONTH = [9, 13, 13, 17, 15, 12, 10, 14, 11, 9, 13, 11];
-
-function buildFallbackDates(now: Date = new Date()): Record<string, number> {
-  const dates: Record<string, number> = {};
-  const cursor = new Date(now.getFullYear(), now.getMonth(), 1);
-
-  for (let i = 0; i < 18; i += 1) {
-    const year = cursor.getFullYear();
-    const monthIndex = cursor.getMonth();
-    const key = `${year}-${String(monthIndex + 1).padStart(2, "0")}`;
-    dates[key] = FALLBACK_DAYS_BY_MONTH[monthIndex];
-    cursor.setMonth(cursor.getMonth() + 1);
-  }
-
-  return dates;
-}
+function buildFallbackDates(): Record<string, number> { return {}; }
 
 export type DepartureDates = Record<string, number>;
 

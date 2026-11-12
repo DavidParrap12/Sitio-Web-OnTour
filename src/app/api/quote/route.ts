@@ -1,10 +1,13 @@
+import { readLimitedJson } from "@/lib/requestBody";
+import { captureLead } from "@/lib/crmIntake";
 import { NextResponse } from "next/server";
 import {
   getFormspreeEndpoint,
   isHoneypotFilled,
   validateQuotePayload,
 } from "@/lib/quote";
-import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
+import {checkIntakeLimit} from "@/lib/intakeLimit";
+import { getClientIp } from "@/lib/rateLimit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -33,7 +36,7 @@ export async function POST(request: Request) {
   }
 
   const ip = getClientIp(request);
-  const rate = checkRateLimit(`quote:${ip}`, [
+  const rate = await checkIntakeLimit(`quote:${ip}`, [
     { limit: 5, windowMs: 10 * 60_000 },
     { limit: 20, windowMs: 60 * 60_000 },
   ]);
@@ -50,9 +53,10 @@ export async function POST(request: Request) {
 
   let raw: unknown;
   try {
-    raw = await request.json();
-  } catch {
-    return json({ error: "invalid_json" }, { status: 400 });
+    raw = await readLimitedJson(request, MAX_BODY_BYTES);
+  } catch (error) {
+    const large = error instanceof Error && error.message === "payload_too_large";
+    return json({ error: large ? "payload_too_large" : "invalid_json" }, { status: large ? 413 : 400 });
   }
 
   // Bots that fill hidden fields get a quiet success response so they do not
@@ -68,22 +72,34 @@ export async function POST(request: Request) {
 
   const data = parsed.data;
   const travelers = data.travelers || "2";
-  const subject = `Nueva Solicitud: ${data.destination || "Colombia Custom Journey"} — ${data.name} (${travelers} pax)`;
+  const subject =
+    data.inquiryType === "medical"
+      ? `Solicitud de contacto — ${data.name}`
+      : data.inquiryType === "b2b"
+        ? `Solicitud B2B: ${data.agency || "Agencia"} — ${data.name}`
+        : `Nueva Solicitud: ${data.destination || "Colombia Custom Journey"} — ${data.name} (${travelers} pax)`;
 
   const payload = {
     _subject: subject,
+    type: data.inquiryType,
     name: data.name,
     email: data.email,
     phone: data.phone || "No proporcionado",
     country: data.country || "No especificado",
-    destination: data.destination || "Colombia Custom Journey",
-    timing: data.travelMonth || "Flexible",
+    agency: data.agency || "No aplica",
+    destination: data.inquiryType === "medical" ? "Solicitud de contacto" : data.destination || "Colombia Custom Journey",
+    timing:
+      data.inquiryType === "medical"
+        ? data.travelMonth || "Fecha de cita por definir"
+        : data.travelMonth || "Flexible",
     travelers,
-    interests: data.interests.length > 0 ? data.interests.join(", ") : "Tailor-made",
-    notes: data.notes || "Sin notas adicionales",
+    interests: data.inquiryType === "medical" ? "" : data.interests.join(", "),
+    notes: data.inquiryType === "medical" ? "Solicitud de contacto. Sin información clínica." : data.notes || "Sin notas adicionales",
     submittedAt: new Date().toISOString(),
   };
 
+  let stored = false;
+  try { stored = await captureLead({contact_name:data.name,email:data.email,agency_name:data.agency,phone:data.phone,country:data.country,travelers:/^\d+$/.test(data.travelers)&&Number(data.travelers)>=1&&Number(data.travelers)<=500?Number(data.travelers):undefined,travel_dates:data.travelMonth,destination:data.inquiryType === "medical" ? "Solicitud de contacto" : data.destination,notes:data.inquiryType === "medical" ? "" : data.notes,source:data.inquiryType === "medical" ? "contact" : data.inquiryType}); } catch { return json({error:"delivery_failed"},{status:503}); }
   let dispatched = false;
   try {
     const response = await fetch(getFormspreeEndpoint(), {
@@ -103,7 +119,7 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!dispatched) {
+  if (!dispatched && !stored) {
     // Do not echo the payload or the destination address back to the client.
     return json({ error: "delivery_failed" }, { status: 502 });
   }

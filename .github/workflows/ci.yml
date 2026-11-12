@@ -47,7 +47,6 @@ jobs:
     name: Dependency audit (production)
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    continue-on-error: true
 
     steps:
       - name: Checkout

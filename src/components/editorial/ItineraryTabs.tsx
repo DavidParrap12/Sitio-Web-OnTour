@@ -46,7 +46,7 @@ export function ItineraryTabs({
       <div
         role="tablist"
         aria-label="Secciones del circuito"
-        className="flex gap-1 p-1 bg-editorial-warm rounded-2xl mb-8 w-fit"
+        className="flex flex-wrap gap-1 p-1 bg-editorial-warm rounded-2xl mb-8 max-w-full"
       >
         {tabs.map((tab) => {
           const isActive = active === tab.id;

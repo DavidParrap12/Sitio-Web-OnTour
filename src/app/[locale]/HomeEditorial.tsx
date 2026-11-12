@@ -10,6 +10,7 @@ import { EditorialCarousel, type CarouselItem } from "@/components/editorial/Edi
 import { EditorialParallax } from "@/components/editorial/EditorialParallax";
 import { MagneticButton } from "@/components/editorial/MagneticButton";
 import { type LogoItem } from "@/components/editorial/MarqueeLogos";
+import { HomePartners } from "@/components/editorial/HomePartners";
 import { type DestinationTheme } from "@/lib/design-config";
 import { Star } from "lucide-react";
 
@@ -36,6 +37,7 @@ const TRUST_LOGOS: LogoItem[] = [
 interface CircuitoData {
   id: string;
   image: string;
+  price: string;
   days: number;
   nights: number;
   name: string;
@@ -81,27 +83,6 @@ const heroSlides = (locale: string) => {
   ];
 };
 
-const CIRCUIT_PRICES: Record<string, Record<string, string>> = {
-  "epoca-precolombina-sur-colombia": {
-    es: "Desde $3.590 USD pp",
-    en: "From $3.590 USD pp",
-    de: "Ab $3.590 USD pp",
-    fr: "À partir de $3.590 USD pp",
-  },
-  "tour-colombia-corazon-andes": {
-    es: "Desde $1.980 USD pp",
-    en: "From $1,980 USD pp",
-    de: "Ab $1.980 USD pp",
-    fr: "À partir de $1 980 USD pp",
-  },
-  "tour-colombia-boyaca-colonial": {
-    es: "Desde $3.790 USD pp",
-    en: "From $3.790 USD pp",
-    de: "Ab $3.790 USD pp",
-    fr: "À partir de $3.790 USD pp",
-  },
-};
-
 export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
   const locale = t["_locale"] || "es";
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -117,7 +98,7 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
     description: c.description,
     meta: [`${c.days}D / ${c.nights}N`],
     colorTheme: c.colorTheme,
-    price: CIRCUIT_PRICES[c.id]?.[locale] || (locale === "es" ? "Desde $1.490 USD pp" : "From $1,490 USD pp"),
+    price: c.price || "",
     ctaLabel: locale === "es" ? "Ver Itinerario" : locale === "de" ? "Reise ansehen" : locale === "fr" ? "Voir l'itinéraire" : "View Journey",
   }));
 
@@ -133,7 +114,7 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
         actions={[
           {
             label: t["hero.ctaContact"] || (locale === "es" ? "Planea tu Viaje" : "Plan Your Journey"),
-            onClick: () => setQuoteModalOpen(true),
+            href: { pathname: "/contacto", hash: "agencias" },
             variant: "primary",
           },
           {
@@ -222,6 +203,8 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
         </div>
       </section>
 
+      <TravelTradeB2B locale={locale} />
+
       {/* 3. Circuitos Destacados (3 experiencias con precio y duración) */}
       <section id="circuitos-destacados" className="relative -mt-2 pt-14 pb-20 md:pb-28 bg-[#faf8f4] editorial-section--bleed">
         <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -246,7 +229,7 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
                 aspectRatio: "16:9",
                 contentPosition: "bottom",
                 showProgress: false,
-                autoplay: true,
+                autoplay: false,
                 variant: "editorial",
               }}
               intervalMs={4000}
@@ -257,7 +240,7 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
       </section>
 
       {/* 4. Destinos (Corredores Turísticos de Colombia) */}
-      <DestinationsShowcase locale={locale} />
+      <DestinationsShowcase locale={locale} circuits={circuitos} />
 
       {/* 5. Why OnTour (Propuesta de Valor & 4 Pilares DMC) */}
       <WhyOnTour locale={locale} />
@@ -271,8 +254,10 @@ export function HomeEditorial({ circuitos, t }: HomeEditorialProps) {
       {/* 8. Teaser de Bienestar (Turismo Médico & Recuperación) */}
       <WellnessTeaser locale={locale} />
 
-      {/* 9. Bloque B2B / Travel Trade (Para Agencias y Profesionales) */}
-      <TravelTradeB2B locale={locale} />
+
+
+      {/* 9b. Aliados institucionales y comerciales */}
+      <HomePartners locale={locale} />
 
       {/* 10. CTA Final (Parallax inmersivo con modal de cotización directa) */}
       <div

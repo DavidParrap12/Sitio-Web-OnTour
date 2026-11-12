@@ -2,17 +2,18 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-import { destinos } from "@/data/destinos";
+import {getCircuitEntry,getPublishedCircuitIds} from "@/lib/circuits";
+import {getDepartures} from "@/lib/departures";
+export const revalidate = 60;
 import { routing } from "@/i18n/routing";
 import { PasadiaDetailEditorial } from "./PasadiaDetailEditorial";
 import { JsonLd } from "@/components/JsonLd";
 import { buildPasadiaSchema, buildBreadcrumbs } from "@/lib/schema";
 import { buildAlternates, buildOpenGraph, buildTwitter, canonicalFor } from "@/lib/seo";
 
-export function generateStaticParams() {
-  return routing.locales.flatMap((locale) =>
-    destinos.map((d) => ({ locale, id: d.id }))
-  );
+export async function generateStaticParams() {
+ const ids=await getPublishedCircuitIds("day_trip");
+ return routing.locales.flatMap(locale=>ids.map(id=>({locale,id})));
 }
 
 export async function generateMetadata({
@@ -21,12 +22,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string; id: string }>;
 }): Promise<Metadata> {
   const { locale, id } = await params;
-  const tData = await getTranslations({ locale, namespace: "destinosData" });
-  const pasadia = destinos.find((d) => d.id === id);
+  const pasadia = await getCircuitEntry(locale,id,"day_trip");
   if (!pasadia) return {};
 
-  const name = tData(`${id}.name`);
-  const description = tData(`${id}.description`);
+  const name = pasadia.name;
+  const description = pasadia.description;
   const ogImageUrl = pasadia.image.startsWith("http")
     ? pasadia.image
     : `https://www.ontourdmc.com${pasadia.image}`;
@@ -58,20 +58,11 @@ export default async function PasadiaPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("pasadiaDetail");
-  const tData = await getTranslations("destinosData");
-  const pasadia = destinos.find((d) => d.id === id);
-
-  if (!pasadia) return notFound();
-
-  const name = tData(`${id}.name`);
-  const description = tData(`${id}.description`);
-  const duration = tData(`${id}.duration`);
-  let highlights: string[] = [];
-  try { highlights = tData.raw(`${id}.highlights`) as string[]; } catch { highlights = []; }
-  let activitiesRaw: unknown;
-  try { activitiesRaw = tData.raw(`${id}.activities`); } catch { activitiesRaw = []; }
-  const activities = Array.isArray(activitiesRaw) ? activitiesRaw : [];
-  const gallery = pasadia.gallery ?? [];
+  const pasadia = await getCircuitEntry(locale,id,"day_trip");
+  if(!pasadia)return notFound();
+  const {name,description,duration,highlights,activities}=pasadia;
+  const gallery=pasadia.dayImages.map(m=>m.image);
+  const departureDates=await getDepartures(id);
 
   const schema = buildPasadiaSchema({ id, name, description, duration, image: pasadia.image, locale });
   const breadcrumb = buildBreadcrumbs([
@@ -86,6 +77,7 @@ export default async function PasadiaPage({
       <JsonLd data={breadcrumb} />
       <PasadiaDetailEditorial
         name={name} description={description} duration={duration}
+        tariffs={pasadia.prices} departureDates={departureDates} included={pasadia.included} excluded={pasadia.excluded}
         highlights={highlights} activities={activities} image={pasadia.image} gallery={gallery}
         locale={locale} id={id} colorTheme={pasadia.colorTheme}
         t={{

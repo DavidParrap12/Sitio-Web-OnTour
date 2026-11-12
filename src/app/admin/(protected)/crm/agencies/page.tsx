@@ -1,0 +1,9 @@
+import Link from "next/link";
+import {requireAdmin} from "@/lib/adminAuth";
+import {ActionForm} from "@/components/admin/ActionForm";
+import {saveAgency} from "@/app/admin/crm-actions";
+export default async function AgenciesPage(){
+ const {supabase}=await requireAdmin(["admin","sales"]);const {data,error}=await supabase.from("agencies").select("*").order("name").limit(100);
+ const form=(a?:Record<string,string>)=><ActionForm action={saveAgency}><input type="hidden" name="id" value={a?.id??""}/><div className="grid gap-4 sm:grid-cols-2">{[["name","Agencia"],["contact_name","Contacto"],["email","Correo"],["phone","Teléfono"],["country","País"]].map(([key,label])=><label className="admin-label" key={key}>{label}<input name={key} className="admin-field" type={key==="email"?"email":"text"} required={key==="name"||key==="email"} defaultValue={a?.[key]??""}/></label>)}<label className="admin-label">Idioma<select name="language" className="admin-field" defaultValue={a?.language??"es"}>{["es","en","fr","de"].map(l=><option key={l}>{l}</option>)}</select></label></div><label className="admin-label">Acuerdo comercial privado<textarea name="agreement" className="admin-field" rows={3} defaultValue={a?.agreement??""}/></label></ActionForm>;
+ return <div><Link href="/admin/crm" className="underline">Volver al CRM</Link><h1 className="my-6 text-3xl font-semibold">Agencias y contactos</h1>{error&&<p role="alert">No se pudieron cargar las agencias.</p>}<details className="mb-6 rounded-xl border border-stone-300 bg-white p-5"><summary className="cursor-pointer font-semibold">Nueva agencia</summary><div className="mt-5">{form()}</div></details>{data?.map(a=><details key={a.id} className="mb-3 rounded-xl border border-stone-300 bg-white p-5"><summary className="cursor-pointer font-semibold">{a.name} · {a.country} · {a.email}</summary><div className="mt-5">{form(a)}</div></details>)}</div>;
+}

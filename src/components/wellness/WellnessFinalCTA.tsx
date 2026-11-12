@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { RequestQuoteModal } from "@/components/RequestQuoteModal";
+import { MedicalAppointmentModal } from "@/components/wellness/MedicalAppointmentModal";
 import { trackRequestQuoteClick, trackWhatsAppClick } from "@/lib/analytics";
 
 export interface CtaStrings {
@@ -87,10 +87,9 @@ export function WellnessFinalCTA({ strings: s }: { strings: CtaStrings }) {
         </motion.div>
       </div>
 
-      <RequestQuoteModal
+      <MedicalAppointmentModal
         isOpen={isQuoteOpen}
         onClose={() => setIsQuoteOpen(false)}
-        preselectedExperience="wellness"
       />
     </section>
   );

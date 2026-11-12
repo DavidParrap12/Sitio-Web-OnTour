@@ -1,0 +1,2 @@
+export const STAGES = {new:"Nueva",qualified:"Calificada",preparing:"En preparación",sent:"Propuesta enviada",negotiating:"Negociación",won:"Confirmada",lost:"Perdida"} as const;
+export interface Opportunity {id:string;contact_name:string;email:string;agency_id:string|null;agency_name:string;country:string;phone:string;travelers:number|null;travel_dates:string;destination:string;notes:string;stage:string;owner_id:string|null;next_task:string;due_date:string|null;created_at:string}

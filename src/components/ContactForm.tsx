@@ -1,11 +1,20 @@
 "use client";
 
-import { useForm, ValidationError } from "@formspree/react";
+import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 
 export function ContactForm() {
   const t = useTranslations("contactForm");
-  const [state, handleSubmit] = useForm("mojgzoqw");
+  const [state,setState]=useState({succeeded:false,submitting:false,error:false});
+  async function handleSubmit(event:FormEvent<HTMLFormElement>){
+   event.preventDefault();const form=new FormData(event.currentTarget);
+   setState({succeeded:false,submitting:true,error:false});
+   try{
+    const response=await fetch("/api/quote",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:form.get("name"),email:form.get("email"),notes:form.get("message"),inquiryType:"travel",_gotcha:form.get("_gotcha")})});
+    if(!response.ok)throw new Error("delivery");
+    setState({succeeded:true,submitting:false,error:false});
+   }catch{setState({succeeded:false,submitting:false,error:true});}
+  }
 
   if (state.succeeded) {
     return (
@@ -29,7 +38,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-      <h3 className="text-2xl font-heading font-bold mb-2">{t("title")}</h3>
+      <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true"/>{state.error&&<p role="alert">No se pudo enviar / Unable to send. Inténtelo de nuevo / Please retry.</p>}<h3 className="text-2xl font-heading font-bold mb-2">{t("title")}</h3>
 
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-foreground/70 mb-2">
@@ -43,7 +52,6 @@ export function ContactForm() {
           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
           placeholder={t("namePlaceholder")}
         />
-        <ValidationError prefix="Name" field="name" errors={state.errors} />
       </div>
 
       <div>
@@ -58,7 +66,6 @@ export function ContactForm() {
           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
           placeholder={t("emailPlaceholder")}
         />
-        <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
 
       <div>
@@ -73,7 +80,6 @@ export function ContactForm() {
           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
           placeholder={t("messagePlaceholder")}
         />
-        <ValidationError prefix="Message" field="message" errors={state.errors} />
       </div>
 
       <button

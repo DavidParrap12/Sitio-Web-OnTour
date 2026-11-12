@@ -103,14 +103,14 @@ const EXTENDED_DETAILS: Record<
       certification: "Respaldo de aseguradoras líderes · Pólizas integrales para viajeros internacionales",
     },
     food: {
-      highlight: "Sabores auténticos de origen, catas privadas de café especial y alta cocina regional.",
+      highlight: "Gastronomía de origen con identidad: sabores auténticos del terroir, catas privadas de café especial y alta cocina regional con chefs locales.",
       specialties: [
         "Catas de Café Varietales (Geisha, Borbón)",
         "Menús Degustación con Chefs Locales",
         "Gastronomía Típica del Tolima & Huila",
-        "Adaptabilidad Vegetariana & Alérgenos",
+        "Opciones Veganas, Vegetarianas & Alérgenos",
       ],
-      certification: "Estándares higiénicos certificados · Insumos de cooperativas y familias campesinas",
+      certification: "Estándares higiénicos certificados · Insumos de cooperativas y familias campesinas · Trazabilidad de origen garantizada",
     },
     events: {
       highlight: "Coordinación experta de incentivos corporativos, convenciones y bodas de destino.",
@@ -348,50 +348,165 @@ export default async function ServiciosPage({
     extendedInfo: detailsByLang[key],
   }));
 
+  const TRUST_STATS = {
+    es: [
+      { value: "+500", label: "Viajeros Internacionales", icon: "globe" },
+      { value: "RNT", label: "Registro Nacional de Turismo 62212", icon: "shield" },
+      { value: "24/7", label: "Soporte Continuo en Destino", icon: "clock" },
+      { value: "+15", label: "Países de Origen Atendidos", icon: "star" },
+    ],
+    en: [
+      { value: "+500", label: "International Travelers Served", icon: "globe" },
+      { value: "RNT", label: "National Tourism Registry 62212", icon: "shield" },
+      { value: "24/7", label: "In-Destination Support", icon: "clock" },
+      { value: "+15", label: "Countries of Origin Served", icon: "star" },
+    ],
+    fr: [
+      { value: "+500", label: "Voyageurs Internationaux Accueillis", icon: "globe" },
+      { value: "RNT", label: "Registre National du Tourisme 62212", icon: "shield" },
+      { value: "24/7", label: "Assistance Continue en Destination", icon: "clock" },
+      { value: "+15", label: "Pays d'Origine Desservis", icon: "star" },
+    ],
+    de: [
+      { value: "+500", label: "Internationale Reisende Betreut", icon: "globe" },
+      { value: "RNT", label: "Nationales Tourismusregister 62212", icon: "shield" },
+      { value: "24/7", label: "Vor-Ort-Betreuung in Kolumbien", icon: "clock" },
+      { value: "+15", label: "Betreute Herkunftsländer", icon: "star" },
+    ],
+  };
+
+  const trustStats = TRUST_STATS[langKey] || TRUST_STATS.es;
+
+  const PROMISE_ITEMS = {
+    es: [
+      "Operación terrestre 100% propia · sin subcontratación crítica",
+      "Tarifas netas protegidas para agencias y tour operadores",
+      "Respuesta garantizada en menos de 24 horas hábiles",
+      "Guías certificados RNT con formación multilingüe",
+    ],
+    en: [
+      "100% in-house ground operations · no critical subcontracting",
+      "Protected net rates for agencies and tour operators",
+      "Guaranteed response within 24 business hours",
+      "RNT-certified guides with multilingual training",
+    ],
+    fr: [
+      "Opérations terrain 100% maison · sans sous-traitance critique",
+      "Tarifs nets protégés pour agences et tour-opérateurs",
+      "Réponse garantie en moins de 24 heures ouvrables",
+      "Guides certifiés RNT avec formation multilingue",
+    ],
+    de: [
+      "100% eigene Bodenoperationen · keine kritische Auslagerung",
+      "Geschützte Nettotarife für Agenturen und Veranstalter",
+      "Garantierte Antwort innerhalb von 24 Wertstunden",
+      "RNT-zertifizierte Reiseleiter mit Mehrsprachigkeit",
+    ],
+  };
+
+  const promiseItems = PROMISE_ITEMS[langKey] || PROMISE_ITEMS.es;
+
   return (
     <div className="min-h-screen bg-[#F7F5EF]">
       {/* Hero — editorial style */}
       <ServiciosHero title={t("title")} subtitle={t("subtitle")} />
 
+      {/* ── Trust / Stats Bar ── */}
+      <div className="bg-[#16352D] text-white py-10 md:py-12">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {trustStats.map((stat, i) => (
+              <div key={i} className="text-center group">
+                <p className="text-3xl md:text-4xl font-heading font-bold text-[#B49A68] mb-1 tracking-tight">
+                  {stat.value}
+                </p>
+                <p className="text-xs md:text-sm text-white/70 font-light leading-snug">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Our Promise Strip ── */}
+      <div className="bg-white border-b border-stone-200">
+        <div className="container mx-auto px-4 md:px-6 py-8">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {promiseItems.map((item, i) => (
+              <div key={i} className="flex items-start gap-3 group">
+                <span className="mt-0.5 w-5 h-5 rounded-full bg-[#B49A68]/15 flex items-center justify-center shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-[#B49A68]" />
+                </span>
+                <span className="text-xs text-stone-600 leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Services Grid with Interactive Hover/Tap Expansion */}
       <div className="container mx-auto px-4 md:px-6 mt-16 md:mt-20 pb-16 md:pb-24">
-        <div className="max-w-6xl mx-auto mb-8 text-center sm:text-left">
-          <p className="text-xs uppercase font-bold tracking-widest text-[#B49A68]">
+        <div className="max-w-6xl mx-auto mb-10 text-center">
+          <p className="text-xs uppercase font-bold tracking-widest text-[#B49A68] mb-3">
             {headerTexts.tag}
           </p>
-          <p className="text-stone-500 text-sm mt-1">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#16352D] mb-3 tracking-tight">
+            {t("title")}
+          </h2>
+          <p className="text-stone-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             {headerTexts.sub}
           </p>
+          {/* Decorative divider */}
+          <div className="flex items-center justify-center gap-3 mt-6">
+            <span className="h-px w-16 bg-[#B49A68]/40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#B49A68]" />
+            <span className="h-px w-16 bg-[#B49A68]/40" />
+          </div>
         </div>
 
         <div className="max-w-6xl mx-auto">
           <ServiciosInteractiveGrid services={servicesData} />
         </div>
 
-        {/* CTA B2B / Direct Booking with generous bottom margin */}
-        <div className="max-w-6xl mx-auto mt-20 mb-20 md:mb-28 text-center bg-white rounded-3xl p-10 sm:p-14 md:p-16 shadow-sm border border-stone-200">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#16352D] mb-5">
-            {t("ctaTitle")}
-          </h2>
-          <p className="text-stone-600 max-w-3xl mx-auto mb-10 text-lg md:text-xl font-normal leading-relaxed">
-            {t("ctaSubtitle")}
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contacto"
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-10 py-4.5 rounded-full font-bold text-base sm:text-lg shadow-md hover:shadow-lg transition-all min-h-[48px]"
-            >
-              {t("ctaButton")}
-            </Link>
-            <a
-              href="https://reservas.ontourdmc.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4.5 rounded-full border border-stone-300 hover:border-stone-400 bg-stone-50 hover:bg-stone-100 text-stone-700 text-base sm:text-lg font-medium transition-all min-h-[48px]"
-            >
-              <span>{t("aviaturButton")}</span>
-              <ExternalLink className="w-5 h-5 text-stone-400" />
-            </a>
+        {/* ── CTA B2B — Premium Dark Card ── */}
+        <div className="max-w-6xl mx-auto mt-20 mb-20 md:mb-28 overflow-hidden rounded-3xl shadow-2xl">
+          {/* Top dark strip */}
+          <div className="bg-[#16352D] px-10 sm:px-14 md:px-16 pt-12 pb-10 relative overflow-hidden">
+            {/* Subtle radial glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_0%,rgba(180,154,104,0.15),transparent_60%)] pointer-events-none" />
+            <p className="text-xs uppercase tracking-widest text-[#B49A68] font-bold mb-4">
+              {langKey === "es" && "PARA AGENCIAS Y VIAJEROS"}
+              {langKey === "en" && "FOR AGENCIES & TRAVELERS"}
+              {langKey === "fr" && "POUR AGENCES ET VOYAGEURS"}
+              {langKey === "de" && "FÜR AGENTUREN UND REISENDE"}
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
+              {t("ctaTitle")}
+            </h2>
+            <p className="text-white/70 max-w-2xl text-base md:text-lg font-light leading-relaxed">
+              {t("ctaSubtitle")}
+            </p>
+          </div>
+          {/* Bottom light strip with CTAs */}
+          <div className="bg-[#F7F5EF] border border-t-0 border-stone-200 px-10 sm:px-14 md:px-16 py-8">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <Link
+                href="/contacto"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-[#16352D] hover:bg-[#B49A68] hover:text-[#16352D] text-white px-10 py-4 rounded-full font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 min-h-[52px]"
+              >
+                {t("ctaButton")}
+              </Link>
+              <a
+                href="https://reservas.ontourdmc.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full border border-stone-300 hover:border-[#16352D] bg-white hover:bg-stone-50 text-stone-700 hover:text-[#16352D] text-sm sm:text-base font-medium transition-all duration-300 min-h-[52px]"
+              >
+                <span>{t("aviaturButton")}</span>
+                <ExternalLink className="w-4 h-4 text-stone-400" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

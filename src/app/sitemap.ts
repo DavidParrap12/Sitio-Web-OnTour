@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/seo";
-import { destinos } from "@/data/destinos";
-import { circuitos } from "@/data/circuitos";
+export const revalidate = 60;
+import { getPublishedCircuitIds } from "@/lib/circuits";
 
 type AppHref = Parameters<typeof getPathname>[0]["href"];
 
@@ -41,8 +41,10 @@ function languagesFor(href: AppHref): Record<string, string> {
   return languages;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
+  const dayTripIds=await getPublishedCircuitIds("day_trip");
+  const circuitIds = await getPublishedCircuitIds();
 
   const staticPages: MetadataRoute.Sitemap = STATIC_ROUTES.flatMap(
     ({ href, changeFrequency, priority }) =>
@@ -55,10 +57,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }))
   );
 
-  const pasadiaPages: MetadataRoute.Sitemap = destinos.flatMap((destino) => {
+  const pasadiaPages: MetadataRoute.Sitemap = dayTripIds.flatMap((id) => {
     const href = {
       pathname: "/pasadias/[id]",
-      params: { id: destino.id },
+      params: { id },
     } as const;
 
     return routing.locales.map((locale) => ({
@@ -70,10 +72,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
   });
 
-  const circuitoPages: MetadataRoute.Sitemap = circuitos.flatMap((circuito) => {
+  const circuitoPages: MetadataRoute.Sitemap = circuitIds.flatMap((id) => {
     const href = {
       pathname: "/circuitos/[id]",
-      params: { id: circuito.id },
+      params: { id },
     } as const;
 
     return routing.locales.map((locale) => ({

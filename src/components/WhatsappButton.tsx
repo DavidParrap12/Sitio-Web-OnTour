@@ -21,7 +21,7 @@ export function WhatsappButton() {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-20 lg:bottom-6 right-4 sm:right-6 z-50 flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-colors"
+      className="hidden lg:flex fixed bottom-20 lg:bottom-6 right-4 sm:right-6 z-50 flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-colors"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       initial={{ opacity: 0, scale: 0 }}
@@ -35,8 +35,6 @@ export function WhatsappButton() {
       aria-label="Contactar por WhatsApp"
     >
       {/* Pulse rings */}
-      <span className="absolute inset-0 rounded-full bg-green-400 animate-[wa-pulse_3s_ease-out_infinite]" />
-      <span className="absolute inset-0 rounded-full bg-green-400 animate-[wa-pulse_3s_ease-out_1.5s_infinite]" />
       <MessageCircle className="w-7 h-7 relative z-10" />
     </motion.a>
   );

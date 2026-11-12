@@ -1,0 +1,9 @@
+import Link from "next/link";
+import {notFound} from "next/navigation";
+import {requireAdmin} from "@/lib/adminAuth";
+import {formatMoney} from "@/lib/pricing";
+export default async function QuotePage({params}:{params:Promise<{id:string}>}){
+ const {id}=await params;const {supabase}=await requireAdmin(["admin","sales"]);const {data:q,error}=await supabase.from("quote_versions").select("*,opportunities(contact_name,agency_name)").eq("id",id).maybeSingle();if(error)throw new Error("No se pudo leer la propuesta.");if(!q)notFound();
+ const items=q.items as {description:string;quantity:number;unit_price:number}[];
+ return <article className="mx-auto max-w-4xl bg-white p-6 sm:p-12"><Link className="underline print:hidden" href={"/admin/crm/"+q.opportunity_id}>Volver a la oportunidad</Link><p className="mt-8 text-sm tracking-widest">ONTOUR DMC · COLOMBIA</p><h1 className="my-5 text-3xl font-semibold">Propuesta de viaje · v{q.version}</h1><p>{q.opportunities?.agency_name} · {q.opportunities?.contact_name}</p><p className="mt-2 text-sm">Referencia {q.id} · Válida hasta {q.valid_until}</p><table className="my-8 w-full text-left text-sm"><thead><tr><th className="py-3">Concepto</th><th>Cantidad</th><th>Unitario</th><th>Total</th></tr></thead><tbody>{items.map((i,n)=><tr key={n} className="border-t border-stone-200"><td className="py-4">{i.description}</td><td>{i.quantity}</td><td>{formatMoney(i.unit_price,q.currency,"es")}</td><td>{formatMoney(i.quantity*i.unit_price,q.currency,"es")}</td></tr>)}</tbody></table><p className="text-right text-xl font-semibold">Total: {formatMoney(Number(q.total),q.currency,"es")}</p><h2 className="mt-8 font-semibold">Condiciones</h2><p className="mt-3 whitespace-pre-wrap leading-relaxed">{q.terms}</p><p className="mt-8 text-xs text-stone-500 print:hidden">Versión guardada. Use Imprimir → Guardar como PDF para exportarla.</p></article>;
+}

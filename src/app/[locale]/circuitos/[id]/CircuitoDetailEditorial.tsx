@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,6 +27,7 @@ const CircuitRouteMap = dynamic(
 );
 
 interface CircuitoDetailEditorialProps {
+  included?: string; excluded?: string;
   name: string;
   description: string;
   highlights: string[];
@@ -40,11 +41,13 @@ interface CircuitoDetailEditorialProps {
   dayImages?: { image: string; location: string }[];
   brochureUrl?: string;
   brochurePdfUrl?: string;
-  departureDates: Record<string, number>;
+  departureDates: import("@/lib/departures").Departure[];
   whatsappUrl: string;
   extensions?: ExtensionItem[];
   colorTheme?: DestinationTheme;
   mapEmbedUrl?: string;
+  videos?: { url: string; title: string }[];
+  prices?: import("@/lib/pricing").Tariff[];
   t: Record<string, string>;
 }
 
@@ -52,26 +55,18 @@ export function CircuitoDetailEditorial({
   name, description, highlights, itinerary, image,
   days, nights, price, id, locale, dayImages,
   brochureUrl, brochurePdfUrl, departureDates, whatsappUrl,
-  extensions = [], colorTheme, mapEmbedUrl,
+  extensions = [], colorTheme, mapEmbedUrl, videos = [],
+  prices = [], included="",excluded="",
   t,
 }: CircuitoDetailEditorialProps) {
   const theme = useDestinationTheme(colorTheme, locale);
+  const numberLocale =
+    locale === "en" ? "en-US" : locale === "de" ? "de-DE" : locale === "fr" ? "fr-FR" : "es-CO";
 
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [showStickyBar, setShowStickyBar] = useState(false);
 
-  const formattedPrice = useMemo(() => {
-    if (!price || !price.trim()) return t.priceLabel || "A Cotizar";
-    const cleanNumber = price.replace(/[^\d]/g, "").trim();
-    if (cleanNumber) {
-      const num = parseInt(cleanNumber, 10);
-      if (!isNaN(num)) {
-        const separator = locale === "en" ? "en-US" : "es-CO";
-        return `$${num.toLocaleString(separator)} USD`;
-      }
-    }
-    return price;
-  }, [price, locale, t.priceLabel]);
+  const formattedPrice = price.trim() || t.priceLabel || "Consultar";
 
   useEffect(() => {
     let trackedImpression = false;
@@ -135,7 +130,8 @@ export function CircuitoDetailEditorial({
 
       {/* -- Booking Form (overlapping hero) --------------------- */}
       <div className="container mx-auto px-4 md:px-6 -mt-20 relative z-10 max-w-6xl">
-        <BookingForm locale={locale} departureDates={departureDates} />
+        {(included||excluded)&&<div className="my-8 grid gap-6 sm:grid-cols-2">{[[locale==="es"?"Incluye":"Included",included],[locale==="es"?"No incluye":"Not included",excluded]].map(([label,value])=><section key={label}><h2 className="text-xl font-semibold">{label}</h2><p className="whitespace-pre-line">{value}</p></section>)}</div>}
+        <BookingForm locale={locale} departureDates={departureDates} circuitName={name} circuitId={id} tariffs={prices}/>
       </div>
 
       {/* Content */}
@@ -168,6 +164,43 @@ export function CircuitoDetailEditorial({
                 />
               </section>
             </SectionReveal>
+
+            {videos.length > 0 ? (
+              <SectionReveal>
+                <section>
+                  <h2 className="display-2 text-editorial-dark mb-6 pb-4 border-b border-editorial-border">
+                    {locale === "en"
+                      ? "Journey videos"
+                      : locale === "de"
+                        ? "Videos der Reise"
+                        : locale === "fr"
+                          ? "Vidéos du voyage"
+                          : "Vídeos del viaje"}
+                  </h2>
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    {videos.map((video) => (
+                      <figure
+                        key={video.url}
+                        className="overflow-hidden rounded-2xl border border-editorial-border bg-black"
+                      >
+                        <video
+                          src={video.url}
+                          controls
+                          preload="metadata"
+                          playsInline
+                          className="aspect-video w-full bg-black object-contain"
+                        />
+                        {video.title ? (
+                          <figcaption className="bg-white px-4 py-3 text-sm text-editorial-muted">
+                            {video.title}
+                          </figcaption>
+                        ) : null}
+                      </figure>
+                    ))}
+                  </div>
+                </section>
+              </SectionReveal>
+            ) : null}
 
             {/* Optional extensions — only renders when linked pasadías exist */}
             {extensions.length > 0 && (
@@ -240,6 +273,42 @@ export function CircuitoDetailEditorial({
                 <div className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight text-deep-forest mb-1.5">{formattedPrice}</div>
                 <p className="font-sans text-xs text-stone-400 font-medium">{t.priceNote}</p>
               </div>
+
+              {prices.length > 0 ? (
+                <div className="mb-8 rounded-2xl border border-editorial-border bg-white/70 p-4">
+                  <p className="font-sans text-[11px] uppercase tracking-wider font-bold text-stone-500 mb-2">
+                    {locale === "en"
+                      ? "Reference rates"
+                      : locale === "de"
+                        ? "Referenzpreise"
+                        : locale === "fr"
+                          ? "Tarifs de référence"
+                          : "Tarifas de referencia"}
+                  </p>
+                  <ul className="divide-y divide-editorial-border/70">
+                    {prices.map((price,index) => (
+                      <li
+                        key={index}
+                        className="flex items-start justify-between gap-3 py-2 text-sm"
+                      >
+                        <span className="text-stone-700">
+                          {price.label}<span className="block text-xs text-stone-500">{price.valid_from} — {price.valid_until} · {price.min_guests}–{price.max_guests} pax · {price.occupancy}</span>
+                          {price.notes ? (
+                            <span className="mt-0.5 block text-[11px] leading-snug text-stone-400">
+                              {price.notes}
+                            </span>
+                          ) : null}
+                        </span>
+                        <span className="whitespace-nowrap font-semibold text-stone-900">
+                          {price.amount
+                            ? `${Number(price.amount).toLocaleString(numberLocale)} ${price.currency}`
+                            : "—"}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
 
               <div className="space-y-3">
                 <button
@@ -345,6 +414,7 @@ export function CircuitoDetailEditorial({
         onClose={() => setIsQuoteModalOpen(false)}
         preselectedExperience="circuits"
         preselectedItem={name}
+        circuitId={id}
       />
     </div>
   );

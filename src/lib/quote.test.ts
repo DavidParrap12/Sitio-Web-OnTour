@@ -17,6 +17,7 @@ const valid = {
   travelers: "2",
   interests: ["nature", "coffee"],
   notes: "Anniversary trip",
+  inquiryType: "travel",
 };
 
 describe("validateQuotePayload", () => {
@@ -81,6 +82,35 @@ describe("validateQuotePayload", () => {
     expect(validateQuotePayload(null).ok).toBe(false);
     expect(validateQuotePayload("hello").ok).toBe(false);
     expect(validateQuotePayload([]).ok).toBe(false);
+  });
+
+  it("defaults to a traveller enquiry and keeps agency data for B2B", () => {
+    const travel = validateQuotePayload({ ...valid, inquiryType: "unknown" });
+    expect(travel.ok).toBe(true);
+    if (!travel.ok) return;
+    expect(travel.data.inquiryType).toBe("travel");
+
+    const b2b = validateQuotePayload({
+      ...valid,
+      inquiryType: "b2b",
+      agency: "Agence Exemple",
+    });
+    expect(b2b.ok).toBe(true);
+    if (!b2b.ok) return;
+    expect(b2b.data.inquiryType).toBe("b2b");
+    expect(b2b.data.agency).toBe("Agence Exemple");
+  });
+
+  it("requires an agency name for B2B enquiries", () => {
+    const result = validateQuotePayload({
+      ...valid,
+      inquiryType: "b2b",
+      agency: "",
+    });
+
+    expect(result.ok).toBe(false);
+    if (result.ok) return;
+    expect(result.errors).toContain("agency");
   });
 });
 

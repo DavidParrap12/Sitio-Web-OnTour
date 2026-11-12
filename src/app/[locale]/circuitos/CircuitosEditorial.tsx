@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from "next-intl";
@@ -199,6 +199,54 @@ export function CircuitosEditorial({ slides, title, subtitle, heroImage }: Circu
   const [durationFilter, setDurationFilter] = useState<string>("all");
   const [regionFilter, setRegionFilter] = useState<string>("all");
   const [styleFilter, setStyleFilter] = useState<string>("all");
+  const [highlightedId, setHighlightedId] = useState<string | null>(null);
+
+  // Smooth scroll to destination or circuit on hash change / direct navigation
+  useEffect(() => {
+    const scrollToTarget = () => {
+      const rawHash = window.location.hash.replace("#", "");
+      if (!rawHash) return;
+
+      const aliasMap: Record<string, string> = {
+        andes: "tour-colombia-corazon-andes",
+        "region-andes": "tour-colombia-corazon-andes",
+        "andes-capital": "tour-colombia-corazon-andes",
+        cafetero: "tour-colombia-capitales-cafeteras",
+        "region-cafetero": "tour-colombia-capitales-cafeteras",
+        "eje-cafetero": "tour-colombia-capitales-cafeteras",
+        boyaca: "tour-colombia-boyaca-colonial",
+        "region-boyaca": "tour-colombia-boyaca-colonial",
+        "boyaca-colonial": "tour-colombia-boyaca-colonial",
+        sur: "epoca-precolombina-sur-colombia",
+        "region-sur": "epoca-precolombina-sur-colombia",
+        "san-agustin": "epoca-precolombina-sur-colombia",
+      };
+
+      const targetId = aliasMap[rawHash] || rawHash;
+
+      // Reset filters so the target card is rendered
+      setDurationFilter("all");
+      setRegionFilter("all");
+      setStyleFilter("all");
+
+      setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          setHighlightedId(targetId);
+          setTimeout(() => setHighlightedId(null), 3500);
+        }
+      }, 150);
+    };
+
+    const timer = setTimeout(scrollToTarget, 300);
+    window.addEventListener("hashchange", scrollToTarget);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("hashchange", scrollToTarget);
+    };
+  }, []);
 
   const isFiltered = durationFilter !== "all" || regionFilter !== "all" || styleFilter !== "all";
 
@@ -431,11 +479,17 @@ export function CircuitosEditorial({ slides, title, subtitle, heroImage }: Circu
                   return (
                     <motion.div
                       key={slide.id}
+                      id={slide.id}
                       layout
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.4, delay: i * 0.04 }}
+                      className={`scroll-mt-28 md:scroll-mt-36 transition-all duration-500 rounded-2xl ${
+                        highlightedId === slide.id
+                          ? "ring-4 ring-[#B49A68] shadow-2xl scale-[1.01]"
+                          : ""
+                      }`}
                     >
                       <article className="group relative flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden border border-stone-200 hover:border-muted-gold/50 hover:shadow-lg transition-all duration-300">
                         {/* 4:3 Image Container */}

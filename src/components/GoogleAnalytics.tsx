@@ -1,73 +1,18 @@
 "use client";
-
-import { Suspense, useEffect } from "react";
+import {useEffect,useState} from "react";
 import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
-
-const GA_ID =
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "G-NHTMFECR3B";
-
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
-function PageViewTracker() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    if (!GA_ID || typeof window.gtag !== "function") return;
-
-    const query = searchParams.toString();
-    const pagePath = query ? `${pathname}?${query}` : pathname;
-
-    window.gtag("event", "page_view", {
-      page_path: pagePath,
-      page_location: window.location.href,
-      page_title: document.title,
-    });
-  }, [pathname, searchParams]);
-
-  return null;
-}
-
-/**
- * Direct GA4 integration (gtag.js).
- *
- * The measurement ID is hard-coded as the default so analytics works without
- * touching hosting configuration, and NEXT_PUBLIC_GA_MEASUREMENT_ID can still
- * override it per environment.
- *
- * `send_page_view: false` disables GA4's own automatic page_view so this
- * component can send exactly one per navigation, including client-side route
- * changes (App Router navigations never reload the page).
- *
- * Do NOT also create a GA4 tag inside the GTM container: that would send every
- * hit twice.
- */
-export function GoogleAnalytics() {
-  return (
-    <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script
-        id="ga4-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          // `window.gtag ||` matters: both scripts are afterInteractive, and
-          // if gtag.js loads first it installs the real implementation. A bare
-          // `function gtag(){dataLayer.push(arguments)}` would overwrite it and
-          // every later event would sit in dataLayer, never reaching GA4.
-          __html: `window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};window.gtag('js',new Date());window.gtag('config','${GA_ID}',{send_page_view:false});`,
-        }}
-      />
-      <Suspense fallback={null}>
-        <PageViewTracker />
-      </Suspense>
-    </>
-  );
+import {usePathname} from "next/navigation";
+const raw=process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim()??"";
+const ID=/^G-[A-Z0-9]+$/.test(raw)?raw:"";
+const copy:Record<string,string[]>={es:["Privacidad","Con su permiso medimos el uso del sitio. Puede rechazar la analítica y seguir navegando.","Aceptar analítica","Solo necesarias","Preferencias de privacidad"],en:["Privacy","With your permission we measure site usage. You can decline analytics and continue browsing.","Accept analytics","Necessary only","Privacy preferences"],fr:["Confidentialité","Avec votre accord, nous mesurons l’utilisation du site. Vous pouvez refuser et continuer à naviguer.","Accepter les statistiques","Nécessaires uniquement","Préférences de confidentialité"],de:["Datenschutz","Mit Ihrer Zustimmung messen wir die Nutzung der Website. Sie können ablehnen und weiter surfen.","Analyse erlauben","Nur notwendige","Datenschutzeinstellungen"]};
+export function GoogleAnalytics({locale="es",nonce}:{locale?:string;nonce?:string}){
+ const [choice,setChoice]=useState<string|null>(null);const [open,setOpen]=useState(false);const [ready,setReady]=useState(false);
+ const path=usePathname();const c=copy[locale]??copy.en;
+ useEffect(()=>{const read=()=>{let v=null;try{v=localStorage.getItem("ontour-analytics");}catch{}setChoice(v);setOpen(!v);};read();},[]);
+ useEffect(()=>{if(choice==="accepted"&&ready&&window.gtag){window.gtag("event","page_view",{page_path:path,page_location:window.location.origin+path});}},[choice,ready,path]);
+ function choose(v:string){try{localStorage.setItem("ontour-analytics",v);}catch{}setChoice(v);setOpen(false);(window as unknown as Record<string,unknown>)["ga-disable-"+ID]=v!=="accepted";if(v!=="accepted"){window.gtag?.("consent","update",{analytics_storage:"denied"});for(const entry of document.cookie.split(";")){const name=entry.split("=")[0].trim();if(name.startsWith("_ga")){document.cookie=name+"=; Max-Age=0; Path=/";document.cookie=name+"=; Max-Age=0; Path=/; Domain=."+location.hostname;}}}else window.gtag?.("consent","update",{analytics_storage:"granted"});}
+ if(!ID)return null;
+ return <>{choice==="accepted"&&<Script nonce={nonce} src={"https://www.googletagmanager.com/gtag/js?id="+ID} strategy="afterInteractive" onReady={()=>{window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(...args:unknown[]){window.dataLayer.push(args as unknown as Record<string,unknown>);};window.gtag("consent","default",{analytics_storage:"granted",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"});window.gtag("js",new Date());window.gtag("config",ID,{send_page_view:false,page_location:location.origin+path});setReady(true);}}/>}
+ <button className="fixed bottom-2 left-3 z-40 rounded bg-white px-3 py-2 text-xs text-stone-700 shadow-sm" onClick={()=>setOpen(true)}>{c[4]}</button>
+ {open&&<section aria-label={c[0]} className="fixed bottom-4 left-4 right-4 z-[80] max-w-lg rounded-xl border border-stone-300 bg-white p-5 shadow-xl"><h2 className="font-semibold">{c[0]}</h2><p className="my-3 text-sm leading-relaxed">{c[1]}</p><div className="flex flex-wrap gap-3"><button className="admin-button" onClick={()=>choose("accepted")}>{c[2]}</button><button className="min-h-11 rounded-lg border border-stone-400 px-4 font-semibold" onClick={()=>choose("rejected")}>{c[3]}</button></div></section>}</>;
 }
