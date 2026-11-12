@@ -256,6 +256,11 @@ export function EditorialCarousel({
   );
 }
 
+/** Static cards for a collection that fits on the page. */
+export function EditorialCardGrid({ items }: { items: CarouselItem[] }) {
+  return <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">{items.map(item => <CardSlide key={item.id} item={item} aspectRatio="16:9" />)}</div>;
+}
+
 // -- Built-in slide renderers -------------------------------------------------
 
 function FullBleedSlide({
